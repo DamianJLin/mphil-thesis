@@ -1,0 +1,228 @@
+\documentclass[12pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Colour Pallete Notes
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% General Packages
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{enumerate}
+
+\usepackage[hidelinks]{hyperref}
+
+
+
+%%% Font and Text Packages
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+
+\usepackage[dvipsnames]{xcolor}
+
+
+%%% Graphics, Figure and Listing Packages
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{calc}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+%%% Table Packages
+\usepackage{longtable}
+
+
+%%% Epigraph
+\usepackage{epigraph}
+
+
+%%% Listings
+\usepackage{listings}
+\usepackage{lstfiracode}
+
+
+%%% Bibliography Packages
+\usepackage[style=alphabetic]{biblatex}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Page Formatting Options
+\geometry{left = 2.5cm}
+\geometry{right = 2.5cm}
+\geometry{top = 2.5cm}
+\geometry{bottom = 2.5cm}
+
+%%% Section and Chapter Titling Options
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\LARGE}
+{\chaptertitlename~\thechapter}
+{0pc}
+{{\color{black!30!white}\titlerule[2pt]}\vspace{0.8pc}\normalfont\Large}
+
+\titleformat{name=\chapter, numberless}[display]
+{\normalfont\bfseries\LARGE}{}{1pc}
+{\normalfont\Large}
+
+\titlespacing*{\chapter}{0pt}{30pt}{40pt}
+
+\titleformat{\section}
+{\normalfont\bfseries\large}
+{\normalfont\bfseries\large{\thesection}}
+{1em}
+{}
+
+%%% Hyperlink Formatting Options
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={blue!60!black},
+	urlcolor={blue!80!black}
+}
+
+%%% Epigraph Options and Setup
+\setlength\epigraphwidth{0.6\textwidth}
+\setlength{\epigraphrule}{0pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Graphics and Figure Options
+% Graphics path (necessary for .svg images).
+\graphicspath{{graphics/}}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Caption setup
+\captionsetup{margin=1.5cm}
+
+
+%%% Listings Options
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeback}{rgb}{0.95,0.95,0.92}
+\lstset{
+	language=Python,
+	backgroundcolor=\color{codeback},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	style=FiraCodeStyle,   % Use predefined FiraCodeStyle
+	basicstyle=\ttfamily,   % Use \ttfamily for source code listings
+	numbers=left
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Personal Macros
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\inject}{\lhook\joinrel\longrightarrow}
+
+\newcommand{\kob}{\operatorname{kob}}
+\newcommand{\lk}{\operatorname{\ell\textit{k}}}
+
+\newcommand{\hash}{\ensuremath{\mathbin{\#}}}
+\renewcommand{\over}{\text{O}}
+\newcommand{\under}{\text{U}}
+
+%%% Drafting Macros
+\newcommand{\notered}[1]{{\color{Red} \textbf{#1}}}
+\newcommand{\notegreen}[1]{{\color{Green} \textbf{#1}}}
+\newcommand{\noteblue}[1]{{\color{Blue} \textbf{#1}}}
+
+%%% amsthm Options
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{conjecture}{Conjecture}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+
+\newtheoremstyle{upright}{3pt}{3pt}{}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{upright}
+\newtheorem*{algorithm}{Algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+	%%% Make titlepage.
+	
+	% Titlepage Options
+	\author{Damian Lin}
+	\title{thesistitle}
+	
+	\cleardoublepage \thispagestyle{empty}
+	\null \vfil
+	\begingroup
+	\LARGE \bfseries \centering
+	\openup \medskipamount
+	\thetitle \par \vspace{30pt}
+	\centering \mdseries \theauthor \par \bigskip
+	\endgroup
+	\vfil \vfil \vfil
+	\begin{center}
+		An essay submitted in partial fulfilment of\\
+		the requirements for the degree of\\
+		Master of Philosophy (Science)
+		\vfil\vfil
+		{\large Pure Mathematics\\[5pt]
+			University of Sydney}\\
+		\vskip6mm
+		\includegraphics[width=25mm]{graphics/USY_MB1_CMYK_Stacked_Logo}
+		\vfil
+		\normalsize\today
+	\end{center}
+	\vfil
+	\cleardoublepage
+	
+	\tableofcontents
+	
+	\chapter*{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}
+	
+	This is the introduction. Maybe it could be on the first page.
+	
+	
+	\chapter*{Acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
+	
+	These are the acknowledgements. We are very grateful.
+	
+	
+	\chapter{chaptername}
+	This is chapter 1 - the first chapter.
+	
+	\section{sectionname}
+	
+	This is section 1. This is a reference to \cite{the-knot-book}.
+	
+	\appendix 	
+	\titleformat{\chapter}[display]
+	{\normalfont\bfseries\LARGE}
+	{\chaptertitlename~\thechapter}
+	{0pc}
+	{{\color{black!30!white}\titlerule[0.7pt]}{\color{white}\titlerule[0.7pt]}{\color{black!30!white}\titlerule[0.7pt]}\vspace{0.8pc}\normalfont\Large}
+	
+	\chapter{appendixname}
+	This is the first appendix.
+	
+	
+	\newpage
+	\printbibliography[title=References]
+	
+	
+\end{document}
