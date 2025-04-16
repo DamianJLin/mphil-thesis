@@ -161,11 +161,25 @@
         innerlinewidth=0.4pt,
         middlelinewidth=1pt,
         middlelinecolor=white,
-        backgroundcolor=red!10,
+        backgroundcolor=red!15,
 }
 \newcommand{\draftnote}[1]{
 \begin{mdframed}[style=draftnote]
         {\color{Gray}{\scshape Note:} #1 }
+\end{mdframed}
+}
+
+
+\mdfdefinestyle{scaffold}{%
+        outerlinewidth=0.4pt,
+        innerlinewidth=0.4pt,
+        middlelinewidth=1pt,
+        middlelinecolor=white,
+        backgroundcolor=lightgray!60,
+}
+\newcommand{\scaffold}[1]{
+\begin{mdframed}[style=scaffold]
+        {\color{teal}#1}
 \end{mdframed}
 }
 
@@ -217,35 +231,56 @@
         \section*{The idea of Finite Type invariants}
         \draftnote{Here I want to motivate the study of Finite-type invariants in general, using analogies from discriminant theory.}
 
-        Various geometric or topological objects can be studied by considering not only those objects, but also their singular versions, and using this `discriminant set' to define and compute invariants. Take for example the following (simple) analogy:
+        Various geometric or topological objects can be studied by considering not only those objects, but also their singular versions, and using this `discriminant set' to define and compute invariants. Take for example the following (simple) analogy, made also in \cite{knots-links-and-their-invariants}.
+
+        In this analogy, instead of studying some topological object (say, knots), we study a much simpler geometric one: quadratic equations. However, just as when we study knots, we do not care about the exact parametrisation, but only the ambient isotopy class of the knot, suppose we only wish to distinguish two quadratic equations if they have a different number of real roots. To play the devil's advocate, let us also ignore those quadratic equations with exactly one root, which is not too grevious as a `generic' quadratic equation is unlikely to be such a one.
 
         \begin{example}[Finite type invariants of Quadratic Equations]
-                aksldjhkalsjd aksjd lkajs dlkasj lkdaj dklasj dlkajslkdjkashg fkjfsh kjshks
-                aksldjhkalsjd aksjd lkajs dlkasj lkdaj dklasj dlkajslkdjkashg fkjfsh kjshks
-                aksldjhkalsjd aksjd lkajs dlkasj lkdaj dklasj dlkajslkdjkashg fkjfsh kjshks
-                aksldjhkalsjd aksjd lkajs dlkasj lkdaj dklasj dlkajslkdjkashg fkjfsh kjshks
-                aksldjhkalsjd aksjd lkajs dlkasj lkdaj dklasj dlkajslkdjkashg fkjfsh kjshks
+
+                All quadratic equations can be put in the form \(x^{2} + px + q = 0\), and then represented as a point in the \((p, q)\) coordinate plane. By completing the square, those quadratic equations with one root which we ignored live on the parabola \(P\) given by \(q = p^{2}/4\).
+
+                % TODO: Insert figure and reference in below paragraph.
+                The number of roots of each point \((p, q)\) can then be calculated as follows. First, choose a starting point, say \((1, 0)\) which represents \(x^{2} + x = 0\), having two roots. Choose also a curve \(C\) in general position with respect to \(P\), from \((1, 0)\) to \((p, q)\). Put an orientation on the curve traced out by the parabola \(P\), such as in <insert figure> and then, starting at \((1, 0)\) and traversing along the curve, note that every time the \(C\) intersects \(P\) from the left, the number of roots decreases by two, and an intersection from the right increases the number of roots by two.
+
+                \draftnote{insert figure here}
+
         \end{example}
 
-        Countless other geometric and topological objects and their invariants can be described this way, for example, the inertial index of a quadratic form, the number of roots of cubic equations, etc. \cite{knots-links-and-their-invariants}.
+        The function \(R(p, q)\) that sends a quadratic equation to its number of roots is an invariant of the nice `space' of all quadratic equations with the singular locus \(P\) removed. But the moral of the story is that certain nice invariants of the `nice' space can be constructed by considering the `ugly' space that includes some `discriminant set' (in this case \(P\)), by setting the invariant, say \(f\) to take some value on \(P\), and enforcing that the value of the invariant changes by \(\pm f(P)\) on any path crossing through \(P\), depending on orientation. One could write this rule as
 
-        \draftnote{Then I want to talk about the Dror Bar-Natan multiavriable calculus analogy a bit here.}
+        Let us look at finite type invariants in knot theory. Knots are equivalence classes within the large space of all embedded curves in \(\R^{3}\), an infinite dimensional vector-space. The fact that we require the curves be embedded means that we are excluding, for example, \textit{singular knots} (knots that can have finitely many `double points' points of transverse self-intersection), such as the following.
 
-        \chapter{Formality}
-        Filtered structures, associated graded structures, formality and how this leads to conections between Vassiliev Invariants and quantum algebra via a general application of Von Dyck's Theorem. Can include intro to PaT Vassiliev filatration, chord diagrams, Drinfeld Associators on a story sort of level.
+        We should consider instead the large infinite-dimensional vector space of all curves with finitely many transverse intersections. A specific embedding of a knot is a point in this space, and we can `walk around' by continuously deforming the curve slightly by ambient isotopy. The connected components of this space are the knots, which are separated by walls that are singular knots. There are codimension-1 walls, the knots with a single double point, codimension-2 walls, the knots with two double points and so forth.
+
+        \draftnote{Put some maths here.}
+
+        \chapter{Formality and Chord Diagrams}
+        \scaffold{Filtered structures, associated graded structures, formality and how this leads to conections between Vassiliev Invariants and quantum algebra via a general application of Von Dyck's Theorem. Can include intro to PaT Vassiliev filatration, chord diagrams, Drinfeld Associators on a story sort of level.}
 
         \section{Filtrations}
         \section{Associated Graded Functor}
 
-        This is a reference to \cite{the-knot-book}.
-
         \section{Finite Type Invariants and Chord Diagrams}
 
-        \chapter{Lie Theory and the Kashiwara-Vergne Problem}
+        \chapter{Lie Theory and Jacobi Diagrams}
 
-        Base this on Alekseev-Torossian or even WKOII.
+        \section{(Rooted) Jacobi Diagrams}
 
-        \chapter{Existing Topological Interpretations of the Kashiwara Vergne Equations}
+        \section{Floating Jacobi Diagrams}
+
+        \scaffold{In the next section we construct the suprising isomorphism between these two spaces.}
+
+        \section{PBW Theorem}
+
+        \scaffold{The Poincare-Birkhoff-Witt theorem for Lie algebras has many forms. One of these is that [...] . A corollary of this theorem \cite{enveloping-algebras} is that there is a `canonical' (though, not natural) isomorphism \(S(\mathfrak{g}) \to \mathcal{U}(\mathfrak{g})\) given by \[\omega(x_{1} \cdots x_{n}) = \frac{1}{n!} \sum_{\sigma \in S_{n}} x_{\sigma(1)} \cdots x_{\sigma(n)}.\] Which simply exhibits that fact that \(\operatorname{gr} A \cong A\) unnaturally.}
+
+        \scaffold{Futher, \cite{enveloping-algebras}, the two spaces (though not isomorphic as algebras) are isomorphic as \(\mathfrak{g}\)-modules: \(\mathcal{U}(\mathfrak{g})^{\mathfrak{g}} \cong S(\mathfrak{g})^{\mathfrak{g}}\).}
+
+        \scaffold{The following theorem is a diagrammatic version of the above.}
+
+        \chapter{Welded Knots, Foams and the Kashiwara-Vergne Equations}
+
+        \chapter{Existing Topological Interpretations of the Kashiwara-Vergne Equations}
 
         \section{Lie Theory}
 
@@ -254,17 +289,17 @@
         \section{Welded Foams}
 
         \chapter{Topological Approaches}
-        Welded foams (WKOII) vs Goldman-Turaev (AKKN) - pointing out the differences.
+        \scaffold{Welded foams (WKOII) vs Goldman-Turaev (AKKN) - pointing out the differences.}
 
-        Would be good to try writing here.
+        \draftnote{Would be good to try writing here.}
 
-        \chapter{Emergent Tangles: Lifting Goldman-Turaev to 3 dimensions}
-        Zsuzsi et al paper in the works
+        \chapter{Emergent Tangles: Lifting Goldman-Turaev to 3 Dimensions}
+        \scaffold{Paper of Zsuzsi, Dror, Nancy, Jessica, Tamara.}
 
-        \chapter{Emergent w-foams: Lifting goldman-Turaev to 4 dimensions}
-        Needs to be done mathematically
+        \chapter{Emergent w-foams: Lifting Goldman-Turaev to 4 Dimensions}
+        \draftnote{The content of this chapter is mathematics that still needs to be done.}
 
-        \chapter{Virtual Knot Tabulation?}
+        \chapter{Virtual Knot Tabulation (if present)}
 
         \appendix
         \titleformat{\chapter}[display]
@@ -273,8 +308,8 @@
         {0pc}
         {{\color{black!30!white}\titlerule[0.7pt]}{\color{white}\titlerule[0.7pt]}{\color{black!30!white}\titlerule[0.7pt]}\vspace{0.8pc}\normalfont\Large}
 
-        \chapter{appendixname}
-        This is the first appendix. The subject will be bialgebras.
+        % \chapter{appendixname}
+        % This is the first appendix.
 
 
         \newpage
