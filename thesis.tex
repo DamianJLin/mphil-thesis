@@ -142,6 +142,9 @@
 \newtheorem{example}{Example}
 \surroundwithmdframed[style=lined,middlelinecolor=PineGreen]{example}
 
+\newtheorem{definition}{Definition}
+\surroundwithmdframed[style=lined,middlelinecolor=RubineRed]{definition}
+
 \newtheorem{proposition}{Proposition}
 \surroundwithmdframed[style=lined,middlelinecolor=Plum]{proposition}
 
@@ -228,10 +231,10 @@
         \chapter*{Introduction}
         \addcontentsline{toc}{chapter}{Introduction}
 
-        \section*{The idea of Finite Type invariants}
+        \section*{The Idea of Finite Type Invariants}
         \draftnote{Here I want to motivate the study of Finite-type invariants in general, using analogies from discriminant theory.}
 
-        Various geometric or topological objects can be studied by considering not only those objects, but also their singular versions, and using this `discriminant set' to define and compute invariants. Take for example the following (simple) analogy, made also in \cite{knots-links-and-their-invariants}.
+        The essence of the theory of singularities developed by Arnold, Thom, Vassiliev, etc. is that various geometric or topological objects can be studied by considering not only those objects, but also their singular versions, and using this `discriminant set' to define and compute invariants. Take for example the following (simple) analogy, made also in \cite{knots-links-and-their-invariants}.
 
         In this analogy, instead of studying some topological object (say, knots), we study a much simpler geometric one: quadratic equations. However, just as when we study knots, we do not care about the exact parametrisation, but only the ambient isotopy class of the knot, suppose we only wish to distinguish two quadratic equations if they have a different number of real roots. To play the devil's advocate, let us also ignore those quadratic equations with exactly one root, which is not too grevious as a `generic' quadratic equation is unlikely to be such a one.
 
@@ -242,19 +245,44 @@
                 % TODO: Insert figure and reference in below paragraph.
                 The number of roots of each point \((p, q)\) can then be calculated as follows. First, choose a starting point, say \((1, 0)\) which represents \(x^{2} + x = 0\), having two roots. Choose also a curve \(C\) in general position with respect to \(P\), from \((1, 0)\) to \((p, q)\). Put an orientation on the curve traced out by the parabola \(P\), such as in <insert figure> and then, starting at \((1, 0)\) and traversing along the curve, note that every time the \(C\) intersects \(P\) from the left, the number of roots decreases by two, and an intersection from the right increases the number of roots by two.
 
-                \draftnote{insert figure here}
+                \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.4\textwidth]{graphics/parabola_example.jpg}
+                \end{figure}
 
         \end{example}
 
         The function \(R(p, q)\) that sends a quadratic equation to its number of roots is an invariant of the nice `space' of all quadratic equations with the singular locus \(P\) removed. But the moral of the story is that certain nice invariants of the `nice' space can be constructed by considering the `ugly' space that includes some `discriminant set' (in this case \(P\)), by setting the invariant, say \(f\) to take some value on \(P\), and enforcing that the value of the invariant changes by \(\pm f(P)\) on any path crossing through \(P\), depending on orientation. One could write this rule as
 
-        Let us look at finite type invariants in knot theory. Knots are equivalence classes within the large space of all embedded curves in \(\R^{3}\), an infinite dimensional vector-space. The fact that we require the curves be embedded means that we are excluding, for example, \textit{singular knots} (knots that can have finitely many `double points' points of transverse self-intersection), such as the following.
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.3\textwidth]{graphics/simple_singularity_relation.jpg}
+        \end{figure}
 
-        We should consider instead the large infinite-dimensional vector space of all curves with finitely many transverse intersections. A specific embedding of a knot is a point in this space, and we can `walk around' by continuously deforming the curve slightly by ambient isotopy. The connected components of this space are the knots, which are separated by walls that are singular knots. There are codimension-1 walls, the knots with a single double point, codimension-2 walls, the knots with two double points and so forth.
+        \section*{Finite Type Invariants of Knots}
 
-        \draftnote{Put some maths here.}
+        Let's translate this idea into knot theory, following the work of Vassiliev in \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications}. The generic objects of study in knot theory are smooth embeddings \(S^{1} \hookrightarrow \R^{3}\). A \textit{knot} can either mean an equivalence class of such embeddings up to ambient isotopy, or a specific embedding, depending on the context.
+
+        The space of knots, that is the configuration space of all smooth embeddings, lies within the space of all smooth maps \(S^{1} \to \R^{3}\) (which we denote \(K\)). And the discriminant space \(\Sigma\) is the space of all maps with singularities or self-intersections. The discriminant space is `stratified' into the components by subspaces of smooth maps with multiple self-intersections; the space with \(i\) such singularities we call \(\Sigma_{i}\).
+
+        Then, each knot corresponds to a component of \(K \smallsetminus \Sigma\), and numerical invariants of knots correspond to elements of \(H^{0}(K \smallsetminus \Sigma)\).
+        \scaffold{
+                My intention here is to convince the reader that finite type invariants and chord diagrams are important by fleshing out the above analogy. I want to expand the above paragraph to include:
+                \begin{itemize}
+                        \item If \(H^{0}(K \smallsetminus \Sigma\) are all knot invariants, in terms of cohomology, what are the finite type invariants?
+                        \item Are the above defined in terms of invariants (functions) \(H^{0}(K \smallsetminus \Sigma_{i})\) (defined on higher levels of the stratification)?
+                        \item What are the interpretations of \(H^{i}(K \smallsetminus \Sigma)\) \cite[p.149]{complements-of-discriminants-of-smooth-maps-topology-and-applications}?
+                        \item According to Sossinsky in \cite[p. 49]{knots-mathematics-with-a-twist} Vassiliev's work (presumably in \cite{complements-of-discriminants-of-smooth-maps-topology-and-applications, cohomology-of-knot-spaces}) says that different paths through \(K\), amounting to different calculations of a finite type invariant, give the same result. What, precisely, is this statement in terms of homology/cohomology?
+                        \item How do chord diagrams come into this? (I think they determine how the higher levels of the stratification can take on different values under finite type invariants).
+                \end{itemize}
+        }
+
+        Invariants of Vassiliev's type are determined (up to lower order Vassiliev invariants) by \textit{weight systems} or equivalently, by their values on the the dual space of \textit{chord diagrams}. We will encounter these in Chapter \ref{ch:formality-chord-diagrams}.
+
+        \scaffold{In chapter \(X\) we will talk about \(Y\).}
 
         \chapter{Formality and Chord Diagrams}
+        \label{ch:formality-chord-diagrams}
         \scaffold{Filtered structures, associated graded structures, formality and how this leads to conections between Vassiliev Invariants and quantum algebra via a general application of Von Dyck's Theorem. Can include intro to PaT Vassiliev filatration, chord diagrams, Drinfeld Associators on a story sort of level.}
 
         \section{Filtrations}
