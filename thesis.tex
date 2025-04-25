@@ -20,10 +20,17 @@
 \usepackage[sc]{mathpazo}
 \usepackage{avant}
 
+\usepackage{parskip}
+\setlength{\parindent}{1.5em}
+
 \usepackage[dvipsnames]{xcolor}
 
 
 %%% Graphics, Figure and Listing Packages
+\usepackage{svg}
+\usepackage{svg-extract}
+\svgsetup{clean=true}
+\usepackage[export]{adjustbox}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{float}
@@ -105,15 +112,13 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\T}{\mathbb{T}}
 \renewcommand{\S}{\mathbb{S}}
-\newcommand{\ip}[2]{\langle #1, #2 \rangle}
-\newcommand{\inject}{\lhook\joinrel\longrightarrow}
 
-\newcommand{\kob}{\operatorname{kob}}
-\newcommand{\lk}{\operatorname{\ell\textit{k}}}
+%%% Personal Symbols
+\newcommand*{\singular}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_singular_point.svg}}}
+\newcommand*{\poscross}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_positive_crossing.svg}}}
+\newcommand*{\negcross}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_negative_crossing.svg}}}
 
-\newcommand{\hash}{\ensuremath{\mathbin{\#}}}
-\renewcommand{\over}{\text{O}}
-\newcommand{\under}{\text{U}}
+\newcommand*{\uposcross}{\adjustbox{valign=u}{\includesvg[width=0.05\textwidth]{graphics/glyph_positive_crossing.svg}}}
 
 %%% amsthm Environments
 
@@ -126,7 +131,7 @@
 }
 
 \newtheoremstyle{regular}% name
-  {}%         Space above, empty
+  {1.2em}%         Space above, empty
   {}%         Space below
   {\upshape}% Body font
   {}%         Indent amount (empty = no indent, \parindent = para indent)
@@ -238,8 +243,8 @@
         \chapter*{Introduction}
         \addcontentsline{toc}{chapter}{Introduction}
 
-        \section*{The Idea of Finite Type Invariants}
-        \draftnote{Here I want to motivate the study of Finite-type invariants in general, using analogies from discriminant theory.}
+        \section*{The idea of finite type invariants}
+        \draftnote{Here I want to motivate the study of finite type invariants in general, using analogies from discriminant theory.}
 
         The essence of singularity theory, developed by Arnold, Thom, Vassiliev, etc. is that various geometric or topological objects can be studied by considering not only those objects, but also their singular versions, and using this `discriminant set' to define and compute invariants. Take for example the following simple analogy, from \cite{knots-links-and-their-invariants}.
 
@@ -265,7 +270,7 @@
 
 
 
-        \section*{Finite Type Invariants of Knots}
+        \section*{Vassiliev invariants}
 
         Let's translate this idea into knot theory, following the work of Vassiliev in \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications}. The generic objects of study in knot theory are smooth embeddings \(S^{1} \hookrightarrow \R^{3}\). A \textit{knot} can either mean an equivalence class of such embeddings up to ambient isotopy, or a specific embedding, depending on the context.
 
@@ -312,11 +317,19 @@
 
         Invariants of Vassiliev's type are determined (up to lower order Vassiliev invariants) by \textit{weight systems} or equivalently, by their values on the the dual space of \textit{chord diagrams}. In Chapter \ref{ch:formality-and-chord-diagrams} we will approach Vassiliev invariants from this angle: by focussing instead on the algebra of chord diagrams, the associated graded space of knots. We discuss an algebraic construction of the Universal Vassiliev Invariant due to Drinfeld which makes the link to quantum algebra.
 
-        In Chapter \ref{ch:lie-theory-and-jocobi-diagrams}, we find an isomorphism between the algebra of chord diagrams and the algebra of Jacobi diagrams. It becomes clear that Lie theory is the proper way to view this algebra and others like it.
+        In Chapter \ref{ch:lie-theory-and-jacobi-diagrams}, we find an isomorphism between the algebra of chord diagrams and the algebra of Jacobi diagrams. It becomes clear that Lie theory is the proper way to view this algebra and others like it.
 
         \scaffold{In chapter \(X\) we will talk about \(Y\).}
 
-        \chapter{Formality and Chord Diagrams}
+        \section*{Notation and Nomenclature}
+
+        % TODO: Insert example skein relation.
+
+        Note that in `skein' relations/diagrams such as above, knots are variables that only differ in the regions that are drawn, and are identical in the regions omitted. We will begin to omit the dotted lines indicating these regions.
+
+        The term `knot` will be used both for specific embeddings of a knot, as well as an equivalence class under ambient isotopy: context should make it clear.
+
+        \chapter{Vassiliev Invariants and Chord Diagrams}
         \label{ch:formality-and-chord-diagrams}
 
         \scaffold{Filtered structures, associated graded structures, formality and how this leads to conections between Vassiliev Invariants and quantum algebra via a general application of Von Dyck's Theorem. Can include intro to PaT Vassiliev filatration, chord diagrams, Drinfeld Associators on a story sort of level.}
@@ -324,13 +337,47 @@
 
         \scaffold{In more detail. A section will be on chord diagrams and the associated graded. Since the introduction comes from the Vassiliev history space-of-knots point-of-view, I want to do things pretty formally with respect to the associated graded space. i.e. I don't want to say double point = overcrossing - undercrossing, as these two things are definitely not equal, but it is okay to say V(d.p.) = V(over) - V(under). To do this requires the treatment in \cite{the-fundamental-theorem-of-vassiliev-invariants}, which on the bright side means I get to talk about the polynomials analogy. It means that the statement becomes \[\text{weight systems} = \operatorname{gr}(\text{Vassiliev invariants})\] instead of directly \[\text{chord diagrams} = \operatorname{gr}(\text{singular knots})\] (or at least that's how it's put in \cite{the-fundamental-theorem-of-vassiliev-invariants}, but perhaps this can also be turned into a statement without all the implicit duals.}
 
+        In \cite{on-the-vassiliev-knot-invariants} Bar-Natan makes the following analogy between knot theory and calculus: two knots that differ only by a single crossing such as
+        \[(1)\]
+        are `close' to each other in the sense of being close in the space of smooth maps \(S^{1} \to \R^{3}\) from the introduction. This space includes the \(n\)-singular knots:
+        \begin{definition}[\(n\)-singular knot]
+                An \(n\)-singular knot is a singular knot (smooth map \(S^{1} \to \R^{3}\)) whose only singularities are exactly \(n\) transverse double points.
+        \end{definition}
+
+        Indeed any knot invariant \(V\) can be extended to a function \(V^{n}\) of \(n\)-singular knots \(n\) transverse double points by the formula
+        \[V^{(0)} = V\]
+        \[V^{(n + 1)}\left(\singular\right) = V^{(n)}\left(\poscross\right) - V^{(n)}\left(\negcross\right)\]
+        The analogy stems from treating this evaluation of an invariant on two very close knots as derivative.
+
+        Just as polynomials are the functions that vanish after a certain number of derivatives, we define:
+
+        \begin{definition}[Vassiliev Invariant]
+                A knot invariant is a \textit{Vassiliev invariant} of order (or type) \(n\) if
+                \[V^{(n + 1)}\left( \underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n + 1}} \right) = 0.\]
+
+                The \textit{order} of a Vassiliev invariant \(V\) is the highest \(n\) such that \(V\) is a Vassiliev invariant of order \(n\). Equivalently, it's the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
+        \end{definition}
+
+        If this analogy is worth its salt, then we should find something corrsponding to the calculus fact that \(f^{(n + 1)} \equiv 0\) implies \(f^{(n)}\) is a constant. This is not exactly true for Vassiliev invariants, but it is essentially true in the following sense. If
+        \(V^{(n + 1)} \equiv 0\)
+        then \(V^{(n)}\)
+        is a collection of constants, one for each `kind' of \(n\)-singular knot that the variable
+        \[\underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n}}\] could represent. Exactly what describes a `kind' of \(n\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(n\)th derivative of an \(n\)-singular knot does not depend on the \(n\)-singular knot, and in that sense it is a constant.
+
+        Many well known invariants have been shown to either be Vassiliev invariants themselves, or be approximatable to arbitrary degree by a series of Vassiliev invariants. The following conjecture is the analogue of the Stone-Weierstra{\ss} theorem:
+        \begin{conjecture}
+                Every knot invariant can be approximated arbitrarily well by a series of Vassiliev invariants.
+        \end{conjecture}
+        \draftnote{Is this equivalent to Vassiliev invariants separate knots?}
+
+
 
         %\section{Filtrations}
         %\section{Associated Graded Functor}
         %\section{Finite Type Invariants and Chord Diagrams}
 
         \chapter{Lie Theory and Jacobi Diagrams}
-        \label{ch:lie-theory-and-jocobi-diagrams}
+        \label{ch:lie-theory-and-jacobi-diagrams}
 
         \section{(Rooted) Jacobi Diagrams}
 
@@ -379,7 +426,7 @@
         % \chapter{appendixname}
         % This is the first appendix.
 
-
+        \emergencystretch=1em
         \newpage
         \printbibliography[title=References]
 
