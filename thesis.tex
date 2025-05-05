@@ -114,11 +114,27 @@
 \renewcommand{\S}{\mathbb{S}}
 
 %%% Personal Symbols
-\newcommand*{\singular}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_singular_point.svg}}}
-\newcommand*{\poscross}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_positive_crossing.svg}}}
-\newcommand*{\negcross}{\adjustbox{valign=c}{\includesvg[width=0.05\textwidth]{graphics/glyph_negative_crossing.svg}}}
+\newcommand*{\singular}{\adjustbox{valign=c}{\includegraphics[width=0.05\textwidth]{graphics/glyph_singular_point.pdf}}}
+\newcommand*{\poscross}{\adjustbox{valign=c}{\includegraphics[width=0.05\textwidth]{graphics/glyph_positive_crossing.pdf}}}
+\newcommand*{\negcross}{\adjustbox{valign=c}{\includegraphics[width=0.05\textwidth]{graphics/glyph_negative_crossing.pdf}}}
 
-\newcommand*{\uposcross}{\adjustbox{valign=u}{\includesvg[width=0.05\textwidth]{graphics/glyph_positive_crossing.svg}}}
+\newcommand*{\uposcross}{\adjustbox{valign=u}{\includegraphics[width=0.05\textwidth]{graphics/glyph_positive_crossing.pdf}}}
+
+\newcommand\quotient[2]{
+        \mathchoice
+            {% \displaystyle
+                \text{\raise0.6ex\hbox{$#1$}\Big/\lower0.6ex\hbox{$#2$}}%
+            }
+            {% \textstyle
+                #1\,/\,#2
+            }
+            {% \scriptstyle
+                #1\,/\,#2
+            }
+            {% \scriptscriptstyle
+                #1\,/\,#2
+            }
+    }
 
 %%% amsthm Environments
 
@@ -351,25 +367,93 @@
 
         Just as polynomials are the functions that vanish after a certain number of derivatives, we define:
 
-        \begin{definition}[Vassiliev Invariant]
+        \begin{definition}[Vassiliev Invariant] \label{def:vassiliev_invairant}
                 A knot invariant is a \textit{Vassiliev invariant} of order (or type) \(n\) if
                 \[V^{(n + 1)}\left( \underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n + 1}} \right) = 0.\]
 
                 The \textit{order} of a Vassiliev invariant \(V\) is the highest \(n\) such that \(V\) is a Vassiliev invariant of order \(n\). Equivalently, it's the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
         \end{definition}
 
-        If this analogy is worth its salt, then we should find something corrsponding to the calculus fact that \(f^{(n + 1)} \equiv 0\) implies \(f^{(n)}\) is a constant. This is not exactly true for Vassiliev invariants, but it is essentially true in the following sense. If
+        If this analogy is worth its salt, then there should be some artefact of the calculus fact that \(f^{(n + 1)} \equiv 0\) implies \(f^{(n)}\) is a constant. This is not exactly true for Vassiliev invariants, but it is essentially true in the following sense. If
         \(V^{(n + 1)} \equiv 0\)
         then \(V^{(n)}\)
         is a collection of constants, one for each `kind' of \(n\)-singular knot that the variable
         \[\underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n}}\] could represent. Exactly what describes a `kind' of \(n\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(n\)th derivative of an \(n\)-singular knot does not depend on the \(n\)-singular knot, and in that sense it is a constant.
 
-        Many well known invariants have been shown to either be Vassiliev invariants themselves, or be approximatable to arbitrary degree by a series of Vassiliev invariants. The following conjecture is the analogue of the Stone-Weierstra{\ss} theorem:
+        Many well known invariants have been shown to either be Vassiliev invariants themselves, or be approximatable to arbitrary degree by a series of Vassiliev invariants. The following conjecture is the analogue of the Stone-Weierstrass theorem:
         \begin{conjecture}
                 Every knot invariant can be approximated arbitrarily well by a series of Vassiliev invariants.
         \end{conjecture}
         \draftnote{Is this equivalent to Vassiliev invariants separate knots?}
 
+        \section{Vassiliev Invariants and Chord Diagrams}
+
+        Let us put on solid ground this notion of differentiation.
+
+        \begin{definition}
+                Let \[\mathcal{K}^{0}_{m} = \quotient{\operatorname{span}(\{m\text{-singular knots}\})}{\eqref{eq:diff_relation}}\]
+                where \eqref{eq:diff_relation} is the following relation:
+
+                \begin{equation} \label{eq:diff_relation} \tag{diff}
+                        \singular \ \poscross - \singular \ \negcross = \poscross \ \singular - \negcross \ \singular
+                \end{equation}
+        \end{definition}
+
+        The relation \eqref{eq:diff_relation} asserts that `differentiating' a knot is well-defined and independent of the crossing chosen, allowing the following definition.
+
+        \begin{definition}
+                Let \(\delta: \mathcal{K}^{0}_{m + 1} \to \mathcal{K}^{0}_{m}\) be the maps defined by
+                \[\singular \longmapsto \poscross \ - \ \negcross.\]
+        \end{definition}
+
+        \begin{proposition}[Bar-Natan 1.6]
+                To every Vassiliev invariant \(V\) of order \(n\), we can assign a linear functional on \(\mathcal{K}^{0}_{n}\) that vanishes on \(\delta\mathcal{K}^{0}_{n + 1}\), that is an element of \((\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1})^{\ast}\).
+        \end{proposition}
+        \begin{proof}
+                Certainly a type \(n\) invariant \(v\) defines a functional on \(\mathcal{K}^{0}_{n}\). Since by definition a type \(n\) invariant vanishes on \(\mathcal{K}^{0}_{n + 1}\), so \(v\) vanishes on \(\delta\mathcal{K}^{0}_{n + 1}\), as \(\delta\) does not affect the value of any functional (it is only required embed \(\mathcal{K}^{0}_{n + 1}\) into \(\mathcal{K}^{0}_{n}\) so that the quotient can be taken).
+        \end{proof}
+
+        % TODO: Make figure.
+        This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1}\) turns out to be very important for describing Vassiliev invariants. Let's look at some properties of this space. Note that an \(m\)-singular knot induces a cyclic order on \(m\) in which its singular points are reached as the knot is traversed. Each singular point is reach twice, as all the singular points in \(\mathcal{K}^{0}_{m}\) are double points. For example, take the knot [...], and label its double points as in the figure. This induces the cyclic order \((1212) = (2121)\).
+
+        \begin{lemma}
+                In \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1}\), the classes represented by \(m\)-singular knots are equivalent if and only if the cyclic orders they induce are equivalent.
+        \end{lemma}
+
+        \begin{proof}
+                Put proof here.
+        \end{proof}
+
+        \begin{definition}
+                A \textit{chord diagram} of order (or degree) \(m\) is an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle.
+
+                Equivalently, it should be thought of as a cyclic order on \(m\) distinct pairs of indistinct points.
+
+                The \textit{space of chord diagrams} of order \(m\), denoted \(\mathbf{A}_{m}\) is the vector space generated by all chord diagrams of degree \(m\).
+        \end{definition}
+
+        \begin{example}
+                The following are examples of chord diagrams.
+
+                % TODO: Some chord diagrams.
+        \end{example}
+
+        To each \(n\)-singular knot, we can associate an \(n\)-singular chord diagram by ...
+
+
+        The two following propositions are corollaries of the same lemma:
+
+        \begin{proposition}
+                There is an isomorpshism \(\mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1} \cong \mathbf{A}_{m}\). That is, the space of knots with \(m\) double points modulo the image of knots with \(m + 1\) double points is isomorphic to the space of chord diagrams of order \(m\).
+        \end{proposition}
+
+        \begin{proposition}
+                The value of a Vassiliev invariant of order \(m\) on a knot with \(m\) double points depends only on the chord diagram.
+        \end{proposition}
+
+
+
+        \section{Weight Systems}
 
 
         %\section{Filtrations}
