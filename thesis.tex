@@ -158,28 +158,32 @@
 
 \theoremstyle{regular}
 
-\newtheorem{thm}{Theorem}
+\newtheorem{clause}{Theorem}
+\numberwithin{clause}{chapter}
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}[clause]{Theorem}
 \surroundwithmdframed[style=lined,middlelinecolor=PineGreen]{theorem}
 
-\newtheorem{example}{Example}
+\newtheorem{example}[clause]{Example}
 \surroundwithmdframed[style=lined,middlelinecolor=PineGreen]{example}
 
-\newtheorem{definition}{Definition}
+\newtheorem{definition}[clause]{Definition}
 \surroundwithmdframed[style=lined,middlelinecolor=RubineRed]{definition}
 
-\newtheorem{proposition}{Proposition}
+\newtheorem{proposition}[clause]{Proposition}
 \surroundwithmdframed[style=lined,middlelinecolor=Plum]{proposition}
 
-\newtheorem{conjecture}{Conjecture}
+\newtheorem{conjecture}[clause]{Conjecture}
 \surroundwithmdframed[style=lined,middlelinecolor=BrickRed]{conjecture}
 
-\newtheorem{lemma}{Lemma}
+\newtheorem{lemma}[clause]{Lemma}
 \surroundwithmdframed[style=lined,middlelinecolor=Aquamarine]{lemma}
 
-\newtheorem{corollary}{Corollary}
+\newtheorem{corollary}[clause]{Corollary}
 \surroundwithmdframed[style=lined,middlelinecolor=RoyalPurple]{corollary}
+
+\newtheorem{remark}[clause]{Remark}
+\surroundwithmdframed[style=lined,middlelinecolor=MidnightBlue]{remark}
 
 %%% Drafting Macros
 
@@ -369,7 +373,7 @@
 
         \begin{definition}[Vassiliev Invariant] \label{def:vassiliev_invairant}
                 A knot invariant is a \textit{Vassiliev invariant} of order (or type) \(n\) if
-                \[V^{(n + 1)}\left( \underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n + 1}} \right) = 0.\]
+                \[V^{(n + 1)}\biggl( \underbrace{\singular \cdots \singular}_{{\scriptscriptstyle n + 1}} \biggr) = 0.\]
 
                 The \textit{order} of a Vassiliev invariant \(V\) is the highest \(n\) such that \(V\) is a Vassiliev invariant of order \(n\). Equivalently, it's the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
         \end{definition}
@@ -378,7 +382,8 @@
         \(V^{(n + 1)} \equiv 0\)
         then \(V^{(n)}\)
         is a collection of constants, one for each `kind' of \(n\)-singular knot that the variable
-        \[\underbrace{\raisebox{.5\height}{\(\singular \cdots \singular\)}}_{{\scriptscriptstyle n}}\] could represent. Exactly what describes a `kind' of \(n\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(n\)th derivative of an \(n\)-singular knot does not depend on the \(n\)-singular knot, and in that sense it is a constant.
+        \[\underbrace{\singular \cdots \singular}_{{\scriptscriptstyle n}}\]
+        could represent. Exactly what describes a `kind' of \(n\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(n\)th derivative of an \(n\)-singular knot does not depend on the \(n\)-singular knot, and in that sense it is a constant.
 
         Many well known invariants have been shown to either be Vassiliev invariants themselves, or be approximatable to arbitrary degree by a series of Vassiliev invariants. The following conjecture is the analogue of the Stone-Weierstrass theorem:
         \begin{conjecture}
@@ -399,6 +404,8 @@
                 \end{equation}
         \end{definition}
 
+        With this definition, it doesn't matter whether an invariant is evaluated on a singular knot or its \(\delta\) image.
+
         The relation \eqref{eq:diff_relation} asserts that `differentiating' a knot is well-defined and independent of the crossing chosen, allowing the following definition.
 
         \begin{definition}
@@ -406,52 +413,67 @@
                 \[\singular \longmapsto \poscross \ - \ \negcross.\]
         \end{definition}
 
-        \begin{proposition}[Bar-Natan 1.6]
-                To every Vassiliev invariant \(V\) of order \(n\), we can assign a linear functional on \(\mathcal{K}^{0}_{n}\) that vanishes on \(\delta\mathcal{K}^{0}_{n + 1}\), that is an element of \((\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1})^{\ast}\).
-        \end{proposition}
-        \begin{proof}
-                Certainly a type \(n\) invariant \(v\) defines a functional on \(\mathcal{K}^{0}_{n}\). Since by definition a type \(n\) invariant vanishes on \(\mathcal{K}^{0}_{n + 1}\), so \(v\) vanishes on \(\delta\mathcal{K}^{0}_{n + 1}\), as \(\delta\) does not affect the value of any functional (it is only required embed \(\mathcal{K}^{0}_{n + 1}\) into \(\mathcal{K}^{0}_{n}\) so that the quotient can be taken).
-        \end{proof}
 
-        % TODO: Make figure.
-        This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1}\) turns out to be very important for describing Vassiliev invariants. Let's look at some properties of this space. Note that an \(m\)-singular knot induces a cyclic order on \(m\) in which its singular points are reached as the knot is traversed. Each singular point is reach twice, as all the singular points in \(\mathcal{K}^{0}_{m}\) are double points. For example, take the knot [...], and label its double points as in the figure. This induces the cyclic order \((1212) = (2121)\).
+        An important property of any \(m\)-singular knot is the cyclic order in which the double points are visited.
 
-        \begin{lemma}
-                In \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1}\), the classes represented by \(m\)-singular knots are equivalent if and only if the cyclic orders they induce are equivalent.
-        \end{lemma}
-
-        \begin{proof}
-                Put proof here.
-        \end{proof}
-
-        \begin{definition}
-                A \textit{chord diagram} of order (or degree) \(m\) is an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle.
-
-                Equivalently, it should be thought of as a cyclic order on \(m\) distinct pairs of indistinct points.
-
-                The \textit{space of chord diagrams} of order \(m\), denoted \(\mathbf{A}_{m}\) is the vector space generated by all chord diagrams of degree \(m\).
+        \begin{definition} \label{def:chord_diagram}
+                \begin{enumerate}[(a)]
+                        \item A \textbf{chord diagram} of order \(m\) is an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle.
+                        \item The \textbf{chord diagram of an \(n\)-singular knot}, denoted \(\sigma(K)\), is the chord diagram of order \(n\) obtained by taking the circle to be the circle in the definition of an \(n\)-singular knot as an immersion of \(S^{1}\), and the \(m\) pairs of points to be the preimages of the double points.
+                        \item The \textbf{space of chord diagrams}, denoted \(\mathbf{A}_{m}\) is the linear span of all chord diagrams of order \(m\).
+                \end{enumerate}
         \end{definition}
 
         \begin{example}
-                The following are examples of chord diagrams.
-
-                % TODO: Some chord diagrams.
+                \[\sigma \biggl( \includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf} \biggr) =
+                \includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}\]
         \end{example}
 
-        To each \(n\)-singular knot, we can associate an \(n\)-singular chord diagram by ...
+        Let's make an important geometric observation about the space of \(m\)-singular knots.
 
+        \begin{lemma} \label{lem:chord_diagram_crossing_change}
+                The following are equivalent
+                \begin{enumerate}[(a)]
+                        \item Two \(m\)-singular knots \(K_{1}\) and \(K_{2}\) have the same chord diagram.
+                        \item There is a sequence of \(m\)-singular knots \(K_{1}, K', K'', \cdots, K_{2}\) where consecutive knots differ by a crossing change.
+                \end{enumerate}
+        \end{lemma}
 
-        The two following propositions are corollaries of the same lemma:
+        Chord diagrams as defined in definition \ref{def:chord_diagram} are geometric objects, but by the proposition below, the definition could just as well be \(m\)-singular knots modulo the images of \((m + 1)\)-singular knots.
 
-        \begin{proposition}
-                There is an isomorpshism \(\mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1} \cong \mathbf{A}_{m}\). That is, the space of knots with \(m\) double points modulo the image of knots with \(m + 1\) double points is isomorphic to the space of chord diagrams of order \(m\).
+        \begin{proposition} \label{prop:chord_diagrams_isom_singular_quotient_as_vs}
+                There is a vector space isomorphism
+                \[\mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1} \cong \mathbf{A}_{m}\]
+                given by sending a class \([K] \in \mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1}\) to its chord diagram \(\sigma(K)\).
         \end{proposition}
 
+        \begin{remark}
+                Proposition \ref{prop:chord_diagrams_isom_singular_quotient_as_vs} should really be thought of as an alternative definition of a chord diagram, than a proposition, so we may even write \(\mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1} = \mathbf{A}_{m}\).
+        \end{remark}
+
+        \begin{proof}
+                By lemma \ref{lem:chord_diagram_crossing_change}, if \(m\)-singular knots have the same chord diagram, they must be related by crossing changes. However, the difference between two \(m\) singular knots that are related by a crossing change is in \(\delta\mathcal{K}^{0}_{m + 1}\):
+                \[\underbrace{\singular \cdots \singular}_{{\scriptscriptstyle m}} \ \poscross \ - \ \underbrace{\singular \cdots \singular}_{{\scriptscriptstyle m}} \ \negcross \ = \delta \biggl( \underbrace{\singular \cdots \singular \ \singular}_{{\scriptscriptstyle m + 1}} \biggr),\]
+                so the map is injective. It is surjective as a knot with a given chord diagram can easily be constructed by adding crossings as necessary.
+        \end{proof}
+
+        This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1} = \mathbf{A}_{m}\) is very important for describing Vassiliev invariants.
+
         \begin{proposition}
-                The value of a Vassiliev invariant of order \(m\) on a knot with \(m\) double points depends only on the chord diagram.
+                To every Vassiliev invariant \(v\) of order \(n\), we can assign a linear functional on \(\mathbf{A}_{m}\), that is an element of \((\mathbf{A}_{m})^{\ast}\).
         \end{proposition}
+        \begin{proof}
+                We make use of that fact that \(\mathbf{A}_{m} = \mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1}\). Certainly a type \(m\) invariant \(v\) defines a functional on \(\mathcal{K}^{0}_{m}\). Since by definition a type \(m\) invariant vanishes on \(\mathcal{K}^{0}_{m + 1}\), so \(v\) vanishes on \(\delta\mathcal{K}^{0}_{m + 1}\), as \(\delta\) does not affect the value of any functional (it is only required embed \(\mathcal{K}^{0}_{m + 1}\) into \(\mathcal{K}^{0}_{m}\) so that the quotient can be taken).
+        \end{proof}
 
+        \scaffold{THIS MAP IS THE DERIVATIVE. GOING IN REVERSE IS INTEGRATION. WHEN DOES SOMETHING INTEGRATE? WHEN IT'S A FUNCTION OBEYING 4T and 1T!!!}
 
+        \begin{proposition}
+                The vassiliev invariant above is completely determined by the linear functional when evaluataed on \(m\)-singular knots; i.e. something related to the 'derivative' map is injective on these knots, maybe?
+        \end{proposition}
+        \begin{proof}
+                Computing \(v\) shows it depends only on its value on the chord diagram of the \(m\)-singular knot. So, specifying a value on the chord diagram determines \(v(K)\).
+        \end{proof}
 
         \section{Weight Systems}
 
