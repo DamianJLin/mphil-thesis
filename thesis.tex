@@ -359,31 +359,35 @@
 
         In \cite{on-the-vassiliev-knot-invariants} Bar-Natan makes the following analogy between knot theory and calculus: two knots that differ only by a single crossing such as
         \[(1)\]
-        are `close' to each other in the sense of being close in the space of smooth maps \(S^{1} \to \R^{3}\) from the introduction. This space includes the \(n\)-singular knots:
+        are `close' to each other in the sense of being close in the space of smooth maps \(S^{1} \to \R^{3}\) from the introduction. This space includes the \(m\)-singular knots:
         \begin{definition}[\(n\)-singular knot]
-                An \(n\)-singular knot is a singular knot (smooth map \(S^{1} \to \R^{3}\)) whose only singularities are exactly \(n\) transverse double points.
+                An \(m\)-singular knot is a singular knot (smooth map \(S^{1} \to \R^{3}\)) whose only singularities are exactly \(m\) transverse double points.
         \end{definition}
 
-        Indeed any knot invariant \(V\) can be extended to a function \(V^{n}\) of \(n\)-singular knots \(n\) transverse double points by the formula
+        Indeed any knot invariant \(V\) can be extended to a function \(V^{m}\) of \(m\)-singular knots \(m\) transverse double points by the formula
         \[V^{(0)} = V\]
-        \[V^{(n + 1)}\left(\singular\right) = V^{(n)}\left(\poscross\right) - V^{(n)}\left(\negcross\right)\]
+        \[V^{(m + 1)}\left(\singular\right) = V^{(m)}\left(\poscross\right) - V^{(m)}\left(\negcross\right)\]
         The analogy stems from treating this evaluation of an invariant on two very close knots as derivative.
 
         Just as polynomials are the functions that vanish after a certain number of derivatives, we define:
 
         \begin{definition}[Vassiliev Invariant] \label{def:vassiliev_invairant}
-                A knot invariant is a \textit{Vassiliev invariant} of order (or type) \(n\) if
-                \[V^{(n + 1)}\biggl( \underbrace{\singular \cdots \singular}_{{\scriptscriptstyle n + 1}} \biggr) = 0.\]
+                \begin{enumerate}[(a)]
+                        \item A knot invariant is a \textit{Vassiliev invariant} of order (or type) \(m\) if
+                        \[V^{(m + 1)}\biggl( \underbrace{\singular \cdots \singular}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
 
-                The \textit{order} of a Vassiliev invariant \(V\) is the highest \(n\) such that \(V\) is a Vassiliev invariant of order \(n\). Equivalently, it's the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
+                        The \textit{order} of a Vassiliev invariant \(V\) is the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). Equivalently, it's the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
+
+                        \item The set of Vassiliev invariants of order \(m\) is a vector space, and we denote it \(\mathcal{V}_{m}\).
+        \end{enumerate}
         \end{definition}
 
-        If this analogy is worth its salt, then there should be some artefact of the calculus fact that \(f^{(n + 1)} \equiv 0\) implies \(f^{(n)}\) is a constant. This is not exactly true for Vassiliev invariants, but it is essentially true in the following sense. If
-        \(V^{(n + 1)} \equiv 0\)
-        then \(V^{(n)}\)
-        is a collection of constants, one for each `kind' of \(n\)-singular knot that the variable
-        \[\underbrace{\singular \cdots \singular}_{{\scriptscriptstyle n}}\]
-        could represent. Exactly what describes a `kind' of \(n\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(n\)th derivative of an \(n\)-singular knot does not depend on the \(n\)-singular knot, and in that sense it is a constant.
+        If this analogy is worth its salt, then there should be some artefact of the calculus fact that \(f^{(m + 1)} \equiv 0\) implies \(f^{(m)}\) is a constant. This is not exactly true for Vassiliev invariants, but it is essentially true in the following sense. If
+        \(V^{(m + 1)} \equiv 0\)
+        then \(V^{(m)}\)
+        is a collection of constants, one for each `kind' of \(m\)-singular knot that the variable
+        \[\underbrace{\singular \cdots \singular}_{{\scriptscriptstyle m}}\]
+        could represent. Exactly what describes a `kind' of \(m\)-singular knot will turn out to be a chord diagram, but note: other than this kind, the \(m\)th derivative of an \(m\)-singular knot does not depend on the \(m\)-singular knot, and in that sense it is a constant.
 
         Many well known invariants have been shown to either be Vassiliev invariants themselves, or be approximatable to arbitrary degree by a series of Vassiliev invariants. The following conjecture is the analogue of the Stone-Weierstrass theorem:
         \begin{conjecture}
@@ -439,6 +443,10 @@
                 \end{enumerate}
         \end{lemma}
 
+        \begin{proof}
+                % TODO: Prove me.
+        \end{proof}
+
         Chord diagrams as defined in definition \ref{def:chord_diagram} are geometric objects, but by the proposition below, the definition could just as well be \(m\)-singular knots modulo the images of \((m + 1)\)-singular knots.
 
         \begin{proposition} \label{prop:chord_diagrams_isom_singular_quotient_as_vs}
@@ -457,25 +465,34 @@
                 so the map is injective. It is surjective as a knot with a given chord diagram can easily be constructed by adding crossings as necessary.
         \end{proof}
 
-        This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1} = \mathbf{A}_{m}\) is very important for describing Vassiliev invariants.
+        % TODO: Change all (m + 1)th to m + 1st?
+        This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1} = \mathbf{A}_{m}\) is very important for describing Vassiliev invariants. With polynomials, when the \((m + 1)\)th derivative vanishes, the \(m\)th derivative should be a constant. With Vassiliev invariants, instead we get a series of constants, one for each chord diagram of order \(m\).
 
         \begin{proposition}
-                To every Vassiliev invariant \(v\) of order \(n\), we can assign a linear functional on \(\mathbf{A}_{m}\), that is an element of \((\mathbf{A}_{m})^{\ast}\).
+                To every Vassiliev invariant \(v\) of order \(n\), we can assign a linear functional on \(\mathcal{K}^{0}_{m}\) that vanishes on \(\delta \mathcal{K}^{0}_{m + 1}\), that is an element of \((\mathbf{A}_{m})^{\ast}\).
         \end{proposition}
         \begin{proof}
                 We make use of that fact that \(\mathbf{A}_{m} = \mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1}\). Certainly a type \(m\) invariant \(v\) defines a functional on \(\mathcal{K}^{0}_{m}\). Since by definition a type \(m\) invariant vanishes on \(\mathcal{K}^{0}_{m + 1}\), so \(v\) vanishes on \(\delta\mathcal{K}^{0}_{m + 1}\), as \(\delta\) does not affect the value of any functional (it is only required embed \(\mathcal{K}^{0}_{m + 1}\) into \(\mathcal{K}^{0}_{m}\) so that the quotient can be taken).
         \end{proof}
 
-        \scaffold{THIS MAP IS THE DERIVATIVE. GOING IN REVERSE IS INTEGRATION. WHEN DOES SOMETHING INTEGRATE? WHEN IT'S A FUNCTION OBEYING 4T and 1T!!!}
+        This defines a map
+        \begin{align*}
+                \mathcal{V}_{m} &\longrightarrow (\mathbf{A}_{m})^{\ast} \\
+                v               & \longmapsto W
+        \end{align*}
+        which is precisely the map we should think of as `taking the \(m\)th derivative'.
 
         \begin{proposition}
-                The vassiliev invariant above is completely determined by the linear functional when evaluataed on \(m\)-singular knots; i.e. something related to the 'derivative' map is injective on these knots, maybe?
+                Suppose that \(v\) has `\(m\)th derivative' \(W\). The collection of constants \(W \in (\mathbf{A}_{m})^{\ast}\) completely determines the value of the Vassiliev invariant \(v\) on an \(m\)-singular knot.
         \end{proposition}
+
         \begin{proof}
-                Computing \(v\) shows it depends only on its value on the chord diagram of the \(m\)-singular knot. So, specifying a value on the chord diagram determines \(v(K)\).
+                By lemma \ref{lem:chord_diagram_crossing_change}, (and just as in the proof of proposition \ref{prop:chord_diagrams_isom_singular_quotient_as_vs}), any two \(n\)-singular knots are related by a sequence of elements of \(n\)-singular knots, such that consecutive differences are elements of \(\delta(\mathcal{K}^{0}_{m + 1})\). But since \(v\) is of type \(m\), this is zero.
         \end{proof}
 
         \section{Weight Systems}
+
+        \scaffold{THIS MAP IS THE DERIVATIVE. GOING IN REVERSE IS INTEGRATION. WHEN DOES SOMETHING INTEGRATE? WHEN IT'S A FUNCTION OBEYING 4T and 1T!!!}
 
 
         %\section{Filtrations}
