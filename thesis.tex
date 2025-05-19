@@ -469,18 +469,18 @@
         This space \(\mathcal{K}^{0}_{n} / \delta\mathcal{K}^{0}_{n + 1} = \mathbf{A}_{m}\) is very important for describing Vassiliev invariants. With polynomials, when the \((m + 1)\)th derivative vanishes, the \(m\)th derivative should be a constant. With Vassiliev invariants, instead we get a series of constants, one for each chord diagram of order \(m\).
 
         \begin{proposition}
-                To every Vassiliev invariant \(v\) of order \(n\), we can assign a linear functional on \(\mathcal{K}^{0}_{m}\) that vanishes on \(\delta \mathcal{K}^{0}_{m + 1}\), that is an element of \((\mathbf{A}_{m})^{\ast}\).
+                To every Vassiliev invariant \(v\) of order \(m\), we can assign a linear functional on \(\mathcal{K}^{0}_{m}\) that vanishes on \(\delta \mathcal{K}^{0}_{m + 1}\), that is an element of \((\mathbf{A}_{m})^{\ast}\).
         \end{proposition}
         \begin{proof}
                 We make use of that fact that \(\mathbf{A}_{m} = \mathcal{K}^{0}_{m} / \delta\mathcal{K}^{0}_{m + 1}\). Certainly a type \(m\) invariant \(v\) defines a functional on \(\mathcal{K}^{0}_{m}\). Since by definition a type \(m\) invariant vanishes on \(\mathcal{K}^{0}_{m + 1}\), so \(v\) vanishes on \(\delta\mathcal{K}^{0}_{m + 1}\), as \(\delta\) does not affect the value of any functional (it is only required embed \(\mathcal{K}^{0}_{m + 1}\) into \(\mathcal{K}^{0}_{m}\) so that the quotient can be taken).
         \end{proof}
 
-        This defines a map
+        In fact, the map in the proposition above is independent of the value of \(v\) on any \((m - 1)\)-singular knot, and thus, there is a well-defined map
         \begin{align*}
-                \mathcal{V}_{m} &\longrightarrow (\mathbf{A}_{m})^{\ast} \\
-                v               & \longmapsto W
+                \mathcal{V}_{m} / \mathcal{V}_{m - 1} &\longrightarrow (\mathbf{A}_{m})^{\ast} \\
+                [v]             & \longmapsto W.
         \end{align*}
-        which is precisely the map we should think of as `taking the \(m\)th derivative'.
+        Just as with polynomials, when we take the \(m\)th derivative of a polynomial of degree \(m\), we recieve a (collection of) constant(s), well-defined up to the addition of any degree \(m - 1\) polynomial.
 
         \begin{proposition}
                 Suppose that \(v\) has `\(m\)th derivative' \(W\). The collection of constants \(W \in (\mathbf{A}_{m})^{\ast}\) completely determines the value of the Vassiliev invariant \(v\) on an \(m\)-singular knot.
@@ -490,15 +490,16 @@
                 By lemma \ref{lem:chord_diagram_crossing_change}, (and just as in the proof of proposition \ref{prop:chord_diagrams_isom_singular_quotient_as_vs}), any two \(n\)-singular knots are related by a sequence of elements of \(n\)-singular knots, such that consecutive differences are elements of \(\delta(\mathcal{K}^{0}_{m + 1})\). But since \(v\) is of type \(m\), this is zero.
         \end{proof}
 
+
         \section{Weight Systems}
 
-        \scaffold{Define weight system.}
-
-        \scaffold{Going in reverse is integration. But not every functional on \(\mathbf{A}^{\ast}\) integrates.}
+        One might hope that any collection of constants \(W \in (\mathbf{A}_{m})^{\ast}\) is obtained as the collection of differentiation constants for some order \(m\) Vassiliev invariant \(v\). Certainly this is true for polynomials, one only needs to integrate the constant \(m\) times to find a suitable polynomial. However, this is not the case for Vassiliev invariants. It is necessary for \(W\) to satisfy some equations to be `integrated'.
 
         \subsection{One-term relations}
 
-        \scaffold{Which ones do integrate? Clearly not those that have isolated chords (1T). These ones can't become knot invariants, as \(v_{m}(\delta(K_{\text{1T}})) = v_{m}(K - K) = 0\). As we see in this way, elements of \(\ker \delta\) become relations that weight systems must satisfy to integrate. These relations on knots ("topologiocal relations") pass down to relations on chord diagrams.}
+        Knots are
+
+        \scaffold{Which ones do integrate? Clearly not those that have isolated chords (1T). These ones can't become knot invariants, as \(v_{m}(\delta(K_{\text{1T}})) = v_{m}(K - K) = 0\). As we see in this way, elements of \(\ker \delta\) become relations that weight systems must satisfy to integrate. These relations on knots ("topological relations") pass down to relations on chord diagrams.}
 
         \scaffold{We have not discovered the whole of \(\ker \delta\).}
 
