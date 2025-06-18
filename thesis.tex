@@ -3,7 +3,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% General Packages
-\usepackage{amsmath, amssymb, amsthm}
+\usepackage{amsmath, amssymb}
+\usepackage[amsmath, thmmarks]{ntheorem}
 \usepackage{titling}
 \usepackage{titlesec}
 \usepackage{geometry}
@@ -136,7 +137,47 @@
             }
     }
 
-%%% amsthm Environments
+%%% Theorem Environments
+
+    % the symbol (the gap) between the theorem header and body.
+\theoremseparator{\hspace{0.5em}}
+
+% Environments with body text set in italics
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% Environments with body set in upright
+\theorembodyfont{\normalfont}
+
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{warning}[theorem]{Warning}
+
+% Environments for proofs
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\qedsymbol{\ensuremath{\Box}}
+
+\newtheorem{proof}{Proof}
+
+    % and for proofs of a statement long past
+\newcommand{\statementname}{}
+\newtheorem{proofofstatement}{Proof of \statementname}
+
+\newenvironment{proofof}[1]
+{ % code before
+\renewcommand{\statementname}{#1}
+\begin{proofofstatement}
+}
+{ % code after
+\end{proofofstatement}
+}
 
 % Define mdf style
 \mdfdefinestyle{lined}{%
@@ -145,45 +186,6 @@
         bottomline=false,topline=false,rightline=false,
         innertopmargin=-3pt
 }
-
-\newtheoremstyle{regular}% name
-  {1.2em}%         Space above, empty
-  {}%         Space below
-  {\upshape}% Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries\scshape}% Thm head font
-  {.}%        Punctuation after thm head
-  {.7em}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
-
-\theoremstyle{regular}
-
-\newtheorem{clause}{Theorem}
-\numberwithin{clause}{chapter}
-
-\newtheorem{theorem}[clause]{Theorem}
-\surroundwithmdframed[style=lined,middlelinecolor=PineGreen]{theorem}
-
-\newtheorem{example}[clause]{Example}
-\surroundwithmdframed[style=lined,middlelinecolor=PineGreen]{example}
-
-\newtheorem{definition}[clause]{Definition}
-\surroundwithmdframed[style=lined,middlelinecolor=RubineRed]{definition}
-
-\newtheorem{proposition}[clause]{Proposition}
-\surroundwithmdframed[style=lined,middlelinecolor=Plum]{proposition}
-
-\newtheorem{conjecture}[clause]{Conjecture}
-\surroundwithmdframed[style=lined,middlelinecolor=BrickRed]{conjecture}
-
-\newtheorem{lemma}[clause]{Lemma}
-\surroundwithmdframed[style=lined,middlelinecolor=Aquamarine]{lemma}
-
-\newtheorem{corollary}[clause]{Corollary}
-\surroundwithmdframed[style=lined,middlelinecolor=RoyalPurple]{corollary}
-
-\newtheorem{remark}[clause]{Remark}
-\surroundwithmdframed[style=lined,middlelinecolor=MidnightBlue]{remark}
 
 %%% Drafting Macros
 
