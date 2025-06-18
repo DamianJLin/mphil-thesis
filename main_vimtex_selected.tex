@@ -1,0 +1,118 @@
+\documentclass[12pt]{report}
+
+% PAGE GEOMETRY
+
+\usepackage{geometry}
+\geometry{left = 2.5cm}
+\geometry{right = 2.5cm}
+\geometry{top = 2.5cm}
+\geometry{bottom = 2.5cm}
+
+
+% ENCODING AND FONT
+
+\usepackage[T1]{fontenc}  % this does a bunch of things, but for one, it makes
+                % complicated characters searchable in the produced .pdf.
+
+\usepackage[sc]{mathpazo}
+\usepackage{avant}
+
+
+% TITLE PAGE
+
+\usepackage{titling}
+\usepackage{titlesec}
+
+
+% MATHS SYMBOLS
+
+\usepackage{amsmath, amssymb}
+
+
+% BODY TEXT
+
+\usepackage{parskip}
+\setlength{\parindent}{1.5em}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{xcolor}
+
+
+% LIST ENVIRONMENTS
+
+\usepackage{enumerate}
+
+
+% GRAPHICS AND FIGURES
+
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\usepackage[export]{adjustbox}
+
+% Captions
+\usepackage{caption}
+\usepackage{subcaption}
+
+\captionsetup{margin=1.5cm}
+
+\counterwithout{figure}{chapter} % figures and tables can be
+\counterwithout{table}{chapter} % numbered only by section
+
+% Support for direct inclusion of .svg's
+\usepackage{svg}
+\usepackage{svg-extract}
+\svgsetup{clean=true}
+\graphicspath{{graphics/}}
+
+% STATEMENT ENVIRONMENTS (theorem, definition, proof, etc.)
+
+\usepackage[amsmath, thmmarks]{ntheorem}
+
+\theoremseparator{\hspace{0.5em}}  % this is the symbol (the gap) between
+                % the theorem header and body.
+
+% Environments with body text set in italics
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% Environments with body set in upright
+\theorembodyfont{\normalfont}
+
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{warning}[theorem]{Warning}
+
+% Environments for proofs
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\Box}}
+\qedsymbol{\ensuremath{\Box}}
+
+\newtheorem{proof}{Proof}
+
+    % and for proofs of a statement long past
+\newcommand{\statementname}{}
+\newtheorem{proofofstatement}{Proof of \statementname}
+
+\newenvironment{proofof}[1]
+{ % code before
+\renewcommand{\statementname}{#1}
+\begin{proofofstatement}
+}
+{ % code after
+\end{proofofstatement}
+}
+
+
+
+
+\begin{document}
+\chapter{Arrowed Jacobi diagrams as a universal enveloping algebra}
+\end{document}
