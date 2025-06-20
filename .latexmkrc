@@ -1,5 +1,4 @@
 $pdf_mode = 1;
-$jobname = "thesis";
 $aux_dir = "aux";
 
 push @generated_exts, "thm";

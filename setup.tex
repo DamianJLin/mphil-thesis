@@ -20,25 +20,32 @@
 \usepackage{titling}
 \usepackage{titlesec}
 
-% The following commands make the chapter titles nice. The -4.35pc a few lines
-% below is a hack to make the spacings between starred and unstarred \chapter
-% titles match, as titlesec treats those cases differently.
-\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\titlespacing*{\chapter}{0pt}{-4.3pc plus -15pt}{0pt}
 
 \titleformat{\chapter}[display]
 {\normalfont\filcenter}
-{\Huge \bfseries \vspace*{-4.35pc} \thechapter}
+{\Huge \bfseries \thechapter}
 {.5em}
 {
 \titlerule
 \vspace{0.5pc}%
 \Large \libertineDisplay}
-[\vspace{4cm}]
+[\vspace{6cm}]
+
+\titleformat{name=\chapter, numberless}[display]
+{\normalfont\filcenter}
+{}
+{.5em}
+{
+\titlerule
+\vspace{0.5pc}%
+\Large \libertineDisplay}
+[\vspace{6cm}]
 
 \titlespacing*{\section}{0pt}{5.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
 \titleformat{\section}[block]
-{\Large \bfseries \filcenter}
+{\large \bfseries \filcenter}
 {\thesection}
 {1em}
 {}
@@ -49,7 +56,27 @@
 
 % HEADERS AND FOOTERS
 
-% TODO: Add headers and/or footers.
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt} % The second length argument of \titlespacing* above
+% should be set according to this argument.
+\renewcommand{\headrulewidth}{0pt}
+
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{\thesection.\ #1} }
+
+\fancyhf{}
+\fancypagestyle{chapterchapter}{
+                \fancyhead[LE,RO]{\thepage}
+                \fancyhead[CE]{\textit{ \nouppercase{\leftmark}} }
+                \fancyhead[CO]{\textit{ \nouppercase{\leftmark}} }
+}
+\fancypagestyle{chaptersection}{
+                \fancyhead[LE,RO]{\thepage}
+                \fancyhead[CE]{\textit{ \nouppercase{\leftmark}} }
+                \fancyhead[CO]{\textit{ \nouppercase{\rightmark}} }
+}
+
+
 
 
 % MATHS SYMBOLS
@@ -74,13 +101,21 @@
 
 % BODY TEXT
 
-\usepackage{parskip}
-\setlength{\parindent}{1.5em}
+\usepackage[lines=2, nindent=0pt]{lettrine}
 
 \usepackage[dvipsnames]{xcolor}
 
 \usepackage{xcolor}
+\usepackage[framemethod=latex]{mdframed}
+\mdfsetup{backgroundcolor=Apricot, middlelinecolor=gray}
 
+\usepackage[hidelinks, ocgcolorlinks]{hyperref}
+\hypersetup{
+        colorlinks,
+        linkcolor={black},
+        citecolor={blue!60!black},
+        urlcolor={blue!80!black}
+}
 
 % LIST ENVIRONMENTS
 
@@ -104,11 +139,8 @@
 \counterwithout{figure}{chapter} % figures and tables can be
 \counterwithout{table}{chapter} % numbered only by section
 
-% Support for direct inclusion of .svg's
-\usepackage{svg}
-\usepackage{svg-extract}
-\svgsetup{clean=true}
 \graphicspath{{graphics/}}
+
 
 % STATEMENT ENVIRONMENTS (theorem, definition, proof, etc.)
 
@@ -127,6 +159,7 @@
 \theorembodyfont{\normalfont}
 
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{definitions}[theorem]{Definitions}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{examples}[theorem]{Examples}
 \newtheorem{remark}[theorem]{Remark}
@@ -154,3 +187,6 @@
 }
 
 
+% BIBLIOGRAPHY
+\usepackage[style=alphabetic]{biblatex}
+\bibliography{references}

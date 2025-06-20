@@ -1,8 +1,47 @@
 \chapter{Vassiliev invariants and chord diagrams}
+\label{ch:vassiliev-invariants-and-chord-diagrams}
 
-Vassiliev invariants ...
+\lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy first made by Bar-Natan in \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
 
-\section{First subsection}
+In the introduction below we loosely follow \cite{the-fundamental-theorem-of-vassiliev-invariants} and \cite{integration-of-singular-braid-invariants}.
+
+\section{Vassiliev Invariants}
+
+\begin{definition}
+	A \textbf{singular knot} is an immersion of \(S^{1}\) into \(\R^{3}\) which fails to be an embedding at finitely many singularities, and where the singularities are double-points and transverse. When a singular knot has \(m\) such singularities, we call it \textbf{\(m\)-singular}.
+\end{definition}
+
+\begin{remark}
+	Knots with triple-points are excluded from this definition, despite also being immersions with singularities.
+\end{remark}
+
+Any knot invariant, \(V\) can be extended to an invariant \(V^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation
+\begin{equation}
+	\label{eq:extend-to-singular-trivial}
+	V^{(0)} = V
+\end{equation}
+and
+\begin{equation}
+	\label{eq:extend-to-m-singular}
+	V^{(m + 1)}\left(\double\right) = V^{(m)}\left(\poscross\right) - V^{(m)}\left(\negcross\right).
+\end{equation}
+
+\begin{definitions}
+	\begin{enumerate}[(a)]
+		\item A knot invariant is a \textbf{Vassiliev invariant} of order (or type) if there is an integer \(m\) such that
+		\[V^{(m + 1)}\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
+	\item The \textbf{order} of a Vassiliev invariant \(V\) it the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\).
+	\end{enumerate}
+\end{definitions}
+The order of a Vassiliev invariant is the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish.
+
+The Vassiliev skein relation is more often seen as
+\[V\left(\double\right) = V\left(\poscross\right) - V\left(\negcross\right),\]
+however equations (\ref{eq:extend-to-singular-trivial}) and (\ref{eq:extend-to-m-singular}) are reminiscent of the notation of the \((m + 1)\)st derivative of a function \(V\). This is reflected in the substance of (\ref{eq:extend-to-m-singular}) too: \(V\) evaluated at a double point is the difference between \(V\) evaluated at two very close points in the space of knots.
+
+\begin{remark}
+	Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
+\end{remark}
 
 \section{Second section}
 
