@@ -79,8 +79,33 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 There are many other similar remarks to be made about the analogy between Vassiliev invariants and polynomials. To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
 
 \begin{definition}
-	An \textbf{integration theory} is a sequence of abelian groups
+	An \textbf{integration theory} is a sequence
+	% https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219Il0sWzAsMCwiXFxjZG90cyJdLFsyLDAsIlxcbWF0aGNhbHtPfV97bSAtIDF9Il0sWzMsMCwiXFxjZG90cyJdLFs0LDAsIlxcbWF0aGNhbHtPfV97MX0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9Il0sWzEsMCwiXFxwYXJ0aWFsIl0sWzAsMiwiXFxwYXJ0aWFsIl0sWzIsMywiXFxwYXJ0aWFsIl0sWzMsNCwiXFxwYXJ0aWFsIl0sWzQsNSwiXFxwYXJ0aWFsIl1d
+	\[\begin{tikzcd}
+		\cdots & {\mathcal{O}_{m}} & {\mathcal{O}_{m - 1}} & \cdots & {\mathcal{O}_{1}} & {\mathcal{O}_{0}}
+		\arrow["\partial", from=1-1, to=1-2]
+		\arrow["\partial", from=1-2, to=1-3]
+		\arrow["\partial", from=1-3, to=1-4]
+		\arrow["\partial", from=1-4, to=1-5]
+		\arrow["\partial", from=1-5, to=1-6]
+	\end{tikzcd}\]
+	of abelian groups. Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
+
+The group is \(\mathcal{O}_{0}\) is typically free abelian, and in our case is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singualr objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
+
+By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, G)\), we get the sequence
+% https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219XntcXGFzdH0iXSxbMCwwLCJcXGNkb3RzIl0sWzIsMCwiXFxtYXRoY2Fse099X3ttIC0gMX1ee1xcYXN0fSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJcXG1hdGhjYWx7T31fezF9XntcXGFzdH0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9XntcXGFzdH0iXSxbMCwxLCJcXGRlbHRhIiwyXSxbMiwwLCJcXGRlbHRhIiwyXSxbMywyLCJcXGRlbHRhIiwyXSxbNCwzLCJcXGRlbHRhIiwyXSxbNSw0LCJcXGRlbHRhIiwyXV0=
+\[\begin{tikzcd}
+	\cdots & {\mathcal{O}_{m}^{\ast}} & {\mathcal{O}_{m - 1}^{\ast}} & \cdots & {\mathcal{O}_{1}^{\ast}} & {\mathcal{O}_{0}^{\ast}}
+	\arrow["\delta"', from=1-2, to=1-1]
+	\arrow["\delta"', from=1-3, to=1-2]
+	\arrow["\delta"', from=1-4, to=1-3]
+	\arrow["\delta"', from=1-5, to=1-4]
+	\arrow["\delta"', from=1-6, to=1-5]
+\end{tikzcd}\]
+where \(\delta\) is the transpose of \(\partial\).
+
 
 % TODO: Integration constants (chord diagrams). We then ask if there are any relations. Explain this in terms of path "integrals". Say that if we find any relationship the functionals have to satisfy, we would should impose relations on objects rather than on functions.
 
