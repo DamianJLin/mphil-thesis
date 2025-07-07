@@ -10,7 +10,8 @@
 \end{definition}
 
 \begin{remark}
-	Knots with triple-points (and so on) are excluded from this definition, despite also being immersions with singularities.
+	\label{rem:other-singularities}
+	Knots with other types of singularities, such as triple-points (and so on) are excluded from this definition, despite also being immersions with singularities.
 \end{remark}
 
 A singular knot with one double point is very close to two other knots, one where it's replaced by a positive crossing and one by a negative. If the conditions are right, we can extend a knot invariant to an invariant of singular knots by ``taking its derivative''.
@@ -65,7 +66,7 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 
 % TODO: Could move later, even.
 \begin{definitions}
-	\begin{enumerate}[(a)]
+	\begin{enumerate}
 		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation, there is an integer \(m\) such that
 		\[V\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
 	\item The \textbf{order} of a Vassiliev invariant \(V\) it the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish).
@@ -79,7 +80,7 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 There are many other similar remarks to be made about the analogy between Vassiliev invariants and polynomials. To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
 
 \begin{definition}
-	An \textbf{integration theory} is a sequence
+	An \textbf{integration theory} \((\mathcal{O}_{\star}, \partial_{\star})\) is a sequence
 	% https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219Il0sWzAsMCwiXFxjZG90cyJdLFsyLDAsIlxcbWF0aGNhbHtPfV97bSAtIDF9Il0sWzMsMCwiXFxjZG90cyJdLFs0LDAsIlxcbWF0aGNhbHtPfV97MX0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9Il0sWzEsMCwiXFxwYXJ0aWFsIl0sWzAsMiwiXFxwYXJ0aWFsIl0sWzIsMywiXFxwYXJ0aWFsIl0sWzMsNCwiXFxwYXJ0aWFsIl0sWzQsNSwiXFxwYXJ0aWFsIl1d
 	\[\begin{tikzcd}
 		\cdots & {\mathcal{O}_{m}} & {\mathcal{O}_{m - 1}} & \cdots & {\mathcal{O}_{1}} & {\mathcal{O}_{0}}
@@ -92,7 +93,7 @@ There are many other similar remarks to be made about the analogy between Vassil
 	of abelian groups. Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
 
-The group is \(\mathcal{O}_{0}\) is typically free abelian, and in our case is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singualr objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
+The group is \(\mathcal{O}_{0}\) is typically free abelian, and in our case is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
 
 By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, G)\), we get the sequence
 % https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219XntcXGFzdH0iXSxbMCwwLCJcXGNkb3RzIl0sWzIsMCwiXFxtYXRoY2Fse099X3ttIC0gMX1ee1xcYXN0fSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJcXG1hdGhjYWx7T31fezF9XntcXGFzdH0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9XntcXGFzdH0iXSxbMCwxLCJcXGRlbHRhIiwyXSxbMiwwLCJcXGRlbHRhIiwyXSxbMywyLCJcXGRlbHRhIiwyXSxbNCwzLCJcXGRlbHRhIiwyXSxbNSw0LCJcXGRlbHRhIiwyXV0=
@@ -104,11 +105,48 @@ By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operato
 	\arrow["\delta"', from=1-5, to=1-4]
 	\arrow["\delta"', from=1-6, to=1-5]
 \end{tikzcd}\]
-where \(\delta\) is the transpose of \(\partial\).
+where \(\delta\) is the transpose of \(\partial\). The map \(\delta\) behaves like a derivative: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects. We wish to understand how to invert this process, and find when a functional in \(\mathcal{O}_{m}^{\ast}\) ``integrates'' into a functional in \(\mathcal{O}_{m - 1}^{\ast}\). In particular, if some functional in \(\mathcal{O}_{m}^{\ast}\) integrates all the way into a functional of \(\mathcal{O}_{0}^{\ast}\), then it's a genuine knot invariant.
+
+\begin{definitions} Let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\), and \(\delta_{m}\) its transpose. Define the following abelian groups:
+	\begin{enumerate}
+		\item The \textbf{constants of integration} are the group
+			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
+		\item The \textbf{primary obstructions to integration} are the group
+			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
+		\item The \textbf{secondary obstructions to integration} are the group
+			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m}.\]
+		\item The \textbf{finite type invariants} of order \(m\) are the group
+			\[FT\mathcal{O}_{m} = \ker \delta^{m + 1},\]
+			where \(\delta^{m + 1}\) denotes \(m + 1\) applications of \(\delta\) with appropriate indices, ending with \(\delta_{m}\).
+
+	\end{enumerate}
+\end{definitions}
+
+\begin{remarks}
+	\begin{enumerate}
+		\item The group of obstructions to integration of any order is also defined in the natural way.
+
+		\item In the case of knots, where \(\mathcal{O}_{\star} = \mathcal{K}_{\star}\), and where \(\partial_{\star}\) is the boundary operator of definition~\ref{def:boundary}, the theory has the following nice interpretation:
+
+			\begin{enumerate}
+				\item The constants of integration \(C\mathcal{O}_{m}\) are associated to the ``walls'' in the strata of depth \(m\) that were discussed in the introduction.
+
+				\item The process of integration is akin to path integration in the space of knots: it has to do with choosing some path from some basepoint to the given knot, potentially cutting transversely through some walls of the strata. Each time that happens, the wall is a singular knot, so according the the orientation of the path and the strata, add or substract the corresponding constant of integration. The exact procedure will be given in Section \ref{sec:chord-diagrams} with the definition of actuality tables.
+
+				\item The primary obstructions to integration are the noncontractible ``loops'' in the space. For example, a type of ``hole'' in the space of knots was described in remark~\ref{rem:other-singularities}. Loops around such holes lead to a class of primary obstruction.
+
+				\item The finite type invariants of order \(m\) coincide with the Vassiliev invariants of order \(m\). These are the invariants for which the constants of integration vanish above depth \(m\) in the strata.
+
+			\end{enumerate}
+	\end{enumerate}
+\end{remarks}
 
 
-% TODO: Integration constants (chord diagrams). We then ask if there are any relations. Explain this in terms of path "integrals". Say that if we find any relationship the functionals have to satisfy, we would should impose relations on objects rather than on functions.
+\section{Chord diagrams}
+\label{sec:chord-diagrams}
 
-\section{Second section}
+% TODO: Justify or motivate the quotient in the definition of the constants of integration. This leads to chord diagrams. Chord diagrams are exactly singular knots up to crossing change. Actuality tables and the full integration procedure. The Hutchings and Dror stuff about the secondart obstructions vanishing, and the fundamental theorem of Vassiliev invariants.
+% TODO: Reformulation of the Weierstrauss conjecture as the fact that no knot invariant extends to contradict the relations. Perhaps the chord diagram ncatlab statements about cohomology.
+
 
 \section{Third subsection}
