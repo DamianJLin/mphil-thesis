@@ -121,29 +121,48 @@ where \(\delta\) is the transpose of \(\partial\). The map \(\delta\) behaves li
 
 	\end{enumerate}
 \end{definitions}
+The group of obstructions to integration of any order is also defined in the natural way.
 
 \begin{remarks}
+
+	In the case of knots, where \(\mathcal{O}_{\star} = \mathcal{K}_{\star}\), and where \(\partial_{\star}\) is the boundary operator of definition~\ref{def:boundary}, the theory has the following nice interpretation:
+
 	\begin{enumerate}
-		\item The group of obstructions to integration of any order is also defined in the natural way.
+		\item The constants of integration \(C\mathcal{O}_{m}\) are associated to the ``walls'' in the strata of depth \(m\) that were discussed in the introduction.
 
-		\item In the case of knots, where \(\mathcal{O}_{\star} = \mathcal{K}_{\star}\), and where \(\partial_{\star}\) is the boundary operator of definition~\ref{def:boundary}, the theory has the following nice interpretation:
+		\item The process of integration is akin to path integration in the space of knots: it has to do with choosing some path from some basepoint to the given knot, potentially cutting transversely through some walls of the strata. Each time that happens, the wall is a singular knot, so according the the orientation of the path and the strata, add or substract the corresponding constant of integration. The exact procedure will be given in Section \ref{sec:chord-diagrams} with the definition of actuality tables.
 
-			\begin{enumerate}
-				\item The constants of integration \(C\mathcal{O}_{m}\) are associated to the ``walls'' in the strata of depth \(m\) that were discussed in the introduction.
+		\item The primary obstructions to integration are the noncontractible ``loops'' in the space. For example, a type of ``hole'' in the space of knots was described in remark~\ref{rem:other-singularities}. Loops around such holes lead to a class of primary obstruction.
 
-				\item The process of integration is akin to path integration in the space of knots: it has to do with choosing some path from some basepoint to the given knot, potentially cutting transversely through some walls of the strata. Each time that happens, the wall is a singular knot, so according the the orientation of the path and the strata, add or substract the corresponding constant of integration. The exact procedure will be given in Section \ref{sec:chord-diagrams} with the definition of actuality tables.
+		\item The finite type invariants of order \(m\) coincide with the Vassiliev invariants of order \(m\). These are the invariants for which the constants of integration vanish above depth \(m\) in the strata.
 
-				\item The primary obstructions to integration are the noncontractible ``loops'' in the space. For example, a type of ``hole'' in the space of knots was described in remark~\ref{rem:other-singularities}. Loops around such holes lead to a class of primary obstruction.
-
-				\item The finite type invariants of order \(m\) coincide with the Vassiliev invariants of order \(m\). These are the invariants for which the constants of integration vanish above depth \(m\) in the strata.
-
-			\end{enumerate}
 	\end{enumerate}
 \end{remarks}
 
 
 \section{Chord diagrams}
 \label{sec:chord-diagrams}
+
+The constants of integration are the information that is lost when differentiating, or the information to be chosen when integrating. In the case of knots, \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), so \(m\)-singular knots modulo (the image of) \((m + 1)\)-singular knots. Since the objects already have \(m\) singular points, the quotient asserts that additional crossing changes are free. The objects are described only by the combinatorial information of the cyclic order in which the singular points are traversed on the knot.
+
+\begin{definitions}
+	\label{def:chord-diagram}
+
+	\begin{enumerate}
+		\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), or equivalently an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. Chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\).
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\sigma(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\sigma(K)\).
+	\end{enumerate}
+\end{definitions}
+
+\begin{example}
+	\[
+		\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
+		\quad \overset{\sigma}{\longmapsto} \quad
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
+	\]
+\end{example}
+
+Given a functional
 
 % TODO: Justify or motivate the quotient in the definition of the constants of integration. This leads to chord diagrams. Chord diagrams are exactly singular knots up to crossing change. Actuality tables and the full integration procedure. The Hutchings and Dror stuff about the secondart obstructions vanishing, and the fundamental theorem of Vassiliev invariants.
 % TODO: Reformulation of the Weierstrauss conjecture as the fact that no knot invariant extends to contradict the relations. Perhaps the chord diagram ncatlab statements about cohomology.
