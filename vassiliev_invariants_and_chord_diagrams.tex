@@ -3,7 +3,8 @@
 
 \lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy first made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
 
-\section{Vassiliev Invariants}
+\section{Singular Knots}
+\label{sec:singular-knots}
 
 \begin{definition}
 	A \textbf{singular knot} is an immersion of \(S^{1}\) into \(\R^{3}\) which fails to be an embedding at finitely many singularities, and where the singularities are double-points and transverse. When a singular knot has \(m\) such singularities, we call it \textbf{\(m\)-singular}.
@@ -11,7 +12,12 @@
 
 \begin{remark}
 	\label{rem:other-singularities}
-	Knots with other types of singularities, such as triple-points (and so on) are excluded from this definition, despite also being immersions with singularities.
+	Immersions with other types of singularities, are excluded from this definition, so the word ``singular'' in ``singular knot'' refers specifically to double point singularities. In particular immersions with
+	\begin{enumerate}
+		\item triple points
+		\item points with vanishing derivative
+	\end{enumerate}
+	are excluded from the definition.
 \end{remark}
 
 A singular knot with one double point is very close to two other knots, one where it's replaced by a positive crossing and one by a negative. If the conditions are right, we can extend a knot invariant to an invariant of singular knots by ``taking its derivative''.
@@ -90,7 +96,7 @@ There are many other similar remarks to be made about the analogy between Vassil
 		\arrow["\partial", from=1-4, to=1-5]
 		\arrow["\partial", from=1-5, to=1-6]
 	\end{tikzcd}\]
-	of abelian groups. Note that we do not assume \(\partial^{2} = 0\).
+	of abelian groups. In case we need to refer to a specific map, \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
 
 The group is \(\mathcal{O}_{0}\) is typically free abelian, and in our case is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
@@ -105,45 +111,71 @@ By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operato
 	\arrow["\delta"', from=1-5, to=1-4]
 	\arrow["\delta"', from=1-6, to=1-5]
 \end{tikzcd}\]
-where \(\delta\) is the transpose of \(\partial\). The map \(\delta\) behaves like a derivative: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects. We wish to understand how to invert this process, and find when a functional in \(\mathcal{O}_{m}^{\ast}\) ``integrates'' into a functional in \(\mathcal{O}_{m - 1}^{\ast}\). In particular, if some functional in \(\mathcal{O}_{m}^{\ast}\) integrates all the way into a functional of \(\mathcal{O}_{0}^{\ast}\), then it's a genuine knot invariant.
+where \(\delta_{m}\) is the transpose of \(\partial_{m}\). The maps \(\delta\) behaves like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects.
 
-\begin{definitions} Let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\), and \(\delta_{m}\) its transpose. Define the following abelian groups:
+We wish to understand how to invert this process, namely:
+\begin{questions}
 	\begin{enumerate}
-		\item The \textbf{constants of integration} are the group
-			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
+		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' into a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
+		\item When does such a functional integrate multiple times, in-particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
+		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there choices to be made?
+		\item Which functions on the non-singular objects are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
+	\end{enumerate}
+\end{questions}
+The following abelian groups provide the tautological answers to the above questions in the general theory.
+\begin{definitions}
+	\begin{enumerate}
 		\item The \textbf{primary obstructions to integration} are the group
 			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
 		\item The \textbf{secondary obstructions to integration} are the group
-			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m}.\]
+			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m},\]
+			and likewise the \textbf{order \(k\) obstructions to integration} are defined analagously.
+		\item The \textbf{constants of integration} are the group
+			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
 		\item The \textbf{finite type invariants} of order \(m\) are the group
 			\[FT\mathcal{O}_{m} = \ker \delta^{m + 1},\]
 			where \(\delta^{m + 1}\) denotes \(m + 1\) applications of \(\delta\) with appropriate indices, ending with \(\delta_{m}\).
 
 	\end{enumerate}
 \end{definitions}
-The group of obstructions to integration of any order is also defined in the natural way.
-
-\begin{remarks}
-
-	In the case of knots, where \(\mathcal{O}_{\star} = \mathcal{K}_{\star}\), and where \(\partial_{\star}\) is the boundary operator of definition~\ref{def:boundary}, the theory has the following nice interpretation:
-
-	\begin{enumerate}
-		\item The constants of integration \(C\mathcal{O}_{m}\) are associated to the ``walls'' in the strata of depth \(m\) that were discussed in the introduction.
-
-		\item The process of integration is akin to path integration in the space of knots: it has to do with choosing some path from some basepoint to the given knot, potentially cutting transversely through some walls of the strata. Each time that happens, the wall is a singular knot, so according the the orientation of the path and the strata, add or substract the corresponding constant of integration. The exact procedure will be given in Section \ref{sec:chord-diagrams} with the definition of actuality tables.
-
-		\item The primary obstructions to integration are the noncontractible ``loops'' in the space. For example, a type of ``hole'' in the space of knots was described in remark~\ref{rem:other-singularities}. Loops around such holes lead to a class of primary obstruction.
-
-		\item The finite type invariants of order \(m\) coincide with the Vassiliev invariants of order \(m\). These are the invariants for which the constants of integration vanish above depth \(m\) in the strata.
-
-	\end{enumerate}
-\end{remarks}
+The aim of the rest of this chapter will be to develop a geometric answer to the above questions in the case \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\) through a geometric understanding of the above definitions in that case.
 
 
 \section{Chord diagrams}
 \label{sec:chord-diagrams}
 
-The constants of integration are the information that is lost when differentiating, or the information to be chosen when integrating. In the case of knots, \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), so \(m\)-singular knots modulo (the image of) \((m + 1)\)-singular knots. Since the objects already have \(m\) singular points, the quotient asserts that additional crossing changes are free. The objects are described only by the combinatorial information of the cyclic order in which the singular points are traversed on the knot.
+Recall from the picture from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
+
+\begin{definition}
+	A \textbf{singular isotopy}, \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : 1 \leq s \leq r\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = \varepsilon(s): \{s\} \to \{\pm 1\}\) of the singularities give the signs of the corresponding intersection.
+\end{definition}
+
+% TODO: Insert an image of a singular isotopy.
+
+To rephrase the definitions in section \ref{sec:singular-knots}, in the integration theory \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\), differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
+\[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} Q'(\Psi_{s}).\]
+Due to the boundary relation this is always well-defined.
+
+Integration, is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
+\[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} P(\Psi_{s}),\]
+in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, it needs to be path-independent, or vanish along closed paths. In particular, recall from remark \ref{rem:other-singularities} that triple points and points with vanishing derivative are excluded from all levels of the stratification, and form holes in the strata. Singular isotopies around such holes give rise to the following relations which \(P\) must satisfy to integrate:
+
+\begin{definitions}
+	\begin{enumerate}
+		\item The \textbf{topological four-term relation} is the relation
+			\[f(N) - f(W) = f(E) - f(S) \label{}\]
+		\item The \textbf{topological one-term relation} is the relation
+			\[T1T\]
+	\end{enumerate}
+\end{definitions}
+
+% NOTE: Here: why is it necessary only to consider weight systems? The symbol-level 4T and 1T relations.
+
+The constants of integration are the information that is lost when differentiating, or the information to be chosen when integrating. In the case of knots, \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), so \(m\)-singular knots modulo (the image of) \((m + 1)\)-singular knots. Since the objects already have \(m\) singular points, the quotient asserts that additional crossing changes are free. For example, the following \(2\)-singular knots differ by the image of a \(3\)-singular knot, so are equivalent in \(C\mathcal{K}_{2}\):
+
+% TODO: Insert figure of crossing change.
+
+Thus, elements of \(C\mathcal{K}_{m}\) are described only by the combinatorial data of the cyclic order in which the singular points are traversed on the knot.
 
 \begin{definitions}
 	\label{def:chord-diagram}
