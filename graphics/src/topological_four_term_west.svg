@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="34.997887mm"
+   height="34.997887mm"
+   viewBox="0 0 34.997887 34.997887"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="topological_four_term_west.svg"
+   inkscape:export-filename="../topological_four_term_west.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.5156072"
+     inkscape:cx="28.041566"
+     inkscape:cy="33.319979"
+     inkscape:window-width="2560"
+     inkscape:window-height="1412"
+     inkscape:window-x="1440"
+     inkscape:window-y="560"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow-26"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-41" />
+    </marker>
+    <inkscape:path-effect
+       effect="knot"
+       id="path-effect19"
+       is_visible="true"
+       lpeversion="1"
+       switcher_size="15"
+       interruption_width="5"
+       prop_to_stroke_width="true"
+       add_stroke_width="inkscape_1.0_and_up"
+       both="false"
+       inverse_width="false"
+       add_other_stroke_width="inkscape_1.0_and_up"
+       crossing_points_vector="671.36487 | 407.80743 | 0 | 1 | 0 | 0 | 0.87594729 | 0.37487045 | -1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.501056,-131.00106)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-26)"
+       d="M 87.501056,148.5 H 120.8427"
+       id="path3-8" />
+    <g
+       id="g19"
+       inkscape:path-effect="#path-effect19"
+       transform="matrix(0.26458333,0,0,0.26458333,-76.71334,43.499999)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-26)"
+         d="m 686.79059,462.98814 c 0,-31.23339 -11.30001,-33.33394 -14.97097,-52.44241 m -0.78773,-5.56187 c -0.22556,-2.35489 -0.34917,-4.94092 -0.34917,-7.81088 0,-32.76217 16.10787,-24.81522 16.10787,-60.2005"
+         id="path4-8"
+         sodipodi:nodetypes="czc"
+         inkscape:original-d="m 686.79059,462.98814 c 0,-37.29055 -16.10787,-33.05299 -16.10787,-65.81516 0,-32.76217 16.10787,-24.81522 16.10787,-60.2005" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-26)"
+         d="M 632.6685,434.90292 735.89449,362.6233"
+         id="path5-8"
+         inkscape:original-d="M 632.6685,434.90292 735.89449,362.6233" />
+    </g>
+    <circle
+       style="fill:#000000;stroke-width:0.264999;stroke-miterlimit:2.7;stroke-dasharray:none"
+       id="path15-68"
+       cx="105"
+       cy="148.49998"
+       r="0.65461349" />
+    <circle
+       style="fill:#000000;stroke-width:0.264999;stroke-miterlimit:2.7;stroke-dasharray:none"
+       id="path15-91-3"
+       cx="100.7283"
+       cy="148.5"
+       r="0.65461349" />
+  </g>
+</svg>

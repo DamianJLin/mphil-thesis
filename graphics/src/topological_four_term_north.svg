@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="34.997887mm"
+   height="34.997887mm"
+   viewBox="0 0 34.997887 34.997887"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="topological_four_term_north.svg"
+   inkscape:export-filename="../topological_four_term_north.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0716961"
+     inkscape:cx="66.716675"
+     inkscape:cy="65.783574"
+     inkscape:window-width="2560"
+     inkscape:window-height="1412"
+     inkscape:window-x="1440"
+     inkscape:window-y="560"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="knot"
+       id="path-effect18"
+       is_visible="true"
+       lpeversion="1"
+       switcher_size="15"
+       interruption_width="5"
+       prop_to_stroke_width="true"
+       add_stroke_width="inkscape_1.0_and_up"
+       both="false"
+       inverse_width="false"
+       add_other_stroke_width="inkscape_1.0_and_up"
+       crossing_points_vector="495.46233 | 396.85039 | 0 | 1 | 0 | 0 | 0.61299778 | 0.86166316 | -1" />
+    <marker
+       style="overflow:visible"
+       id="DartArrow-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.501058,-131.00106)">
+    <g
+       id="g1"
+       transform="translate(-65.163525,25.167727)">
+      <g
+         id="g18"
+         inkscape:path-effect="#path-effect18"
+         transform="matrix(0.26458333,0,0,0.26458333,42.011863,18.332272)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-9)"
+           d="M 418.21501,396.85039 H 544.23067"
+           id="path3-3"
+           inkscape:original-d="M 418.21501,396.85039 H 544.23067" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-9)"
+           d="m 484.35276,462.98814 c 0,-38.51855 6.95692,-48.89274 10.5444,-63.63383 m 1.0379,-5.00784 c 0.31764,-1.869 0.57456,-3.84483 0.75452,-5.97858 2.47412,-29.33507 -12.33682,-9.41245 -12.33682,-51.39541"
+           id="path4-1"
+           sodipodi:nodetypes="csc"
+           inkscape:original-d="m 484.35276,462.98814 c 0,-47.18707 10.44055,-52.1367 12.33682,-74.62025 2.47412,-29.33507 -12.33682,-9.41245 -12.33682,-51.39541" />
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-9)"
+         d="M 155.84373,133.40033 183.1556,114.27635"
+         id="path5-4" />
+      <circle
+         style="fill:#000000;stroke-width:0.264999;stroke-miterlimit:2.7;stroke-dasharray:none"
+         id="path15-6"
+         cx="170.16353"
+         cy="123.33227"
+         r="0.65461349" />
+      <circle
+         style="fill:#000000;stroke-width:0.264999;stroke-miterlimit:2.7;stroke-dasharray:none"
+         id="path15-91-9"
+         cx="173.42764"
+         cy="121.08794"
+         r="0.65461349" />
+    </g>
+  </g>
+</svg>

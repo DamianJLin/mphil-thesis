@@ -34,6 +34,8 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 	\label{def:differentiable-invariant}
 	An invariant \(f\) of \(m\)-singular knots is \textbf{differentiable} if
 	\begin{equation}
+		\label{eq:diff}
+		\tag{\biolinum{DIFF}}
 		f \left( \poscross \ \double \right) - f\left( \negcross \ \double \right) = f \left( \double \ \poscross \right) - f\left( \double \ \negcross \right).
 	\end{equation}
 \end{definition}
@@ -43,12 +45,15 @@ If an invariant of \(m\)-singular knots is differentiable, so is its derivative,
 Rather than thinking about functions on knots satisfying certain relations, the modern version of this subject takes the philosophy of imposing relations on the objects directly.
 
 \begin{definition}
-	\label{def:differentiability-relation}
-	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})/\text{boundary relation}\),\\
-	where the boundary relation is
-	\[\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.\]
+	\label{def:differentiable-knot}
+	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) modulo the following boundary relation (also known as a codifferentiability relation):
+	\begin{equation}
+		\label{eq:boundary}
+		\tag{\biolinum{DIFF*}}
+		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
+	\end{equation}
 
-	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, and the DIFF relation will be implicit in everything.
+	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:boundary} relation will be implicit in everything.
 \end{definition}
 
 \begin{definition}
@@ -58,7 +63,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 \end{definition}
 
 \begin{remark}
-	The definitions \ref{def:derivative} and \ref{def:differentiable-invariant} are dual to \ref{def:differentiability-relation} and \ref{def:boundary}. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
+	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:boundary} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
 \end{remark}
 
 Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation
@@ -158,14 +163,29 @@ Due to the boundary relation this is always well-defined.
 
 Integration, is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
 \[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} P(\Psi_{s}),\]
-in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, it needs to be path-independent, or vanish along closed paths. In particular, recall from remark \ref{rem:other-singularities} that triple points and points with vanishing derivative are excluded from all levels of the stratification, and form holes in the strata. Singular isotopies around such holes give rise to the following relations which \(P\) must satisfy to integrate:
+in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that triple points and points with vanishing derivative are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate:
 
 \begin{definitions}
 	\begin{enumerate}
-		\item The \textbf{topological four-term relation} is the relation
-			\[f(N) - f(W) = f(E) - f(S) \label{}\]
-		\item The \textbf{topological one-term relation} is the relation
-			\[T1T\]
+		\item The following singular isotopy around a triple point:
+			\begin{center}
+				\def\svgwidth{0.6\columnwidth}
+				\input{graphics/triple_point_singular_isotopy.pdf_tex}
+			\end{center}
+			gives rise to the \textbf{topological four-term relation}
+			\begin{equation}
+				\label{eq:topological-four-term}
+				\tag{\biolinumLF{T4T}}
+				f\left( \tftsouth \right)
+				-
+				f\left( \tfteast \right)
+				-
+				f\left( \tftnorth \right)
+				+
+				f\left( \tftwest \right)
+				= 0.
+			\end{equation}
+		\item The singular isotopy around a singular point with vanishing derivative
 	\end{enumerate}
 \end{definitions}
 
