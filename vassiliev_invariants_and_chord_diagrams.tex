@@ -35,7 +35,7 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 	An invariant \(f\) of \(m\)-singular knots is \textbf{differentiable} if
 	\begin{equation}
 		\label{eq:diff}
-		\tag{\biolinum{DIFF}}
+		\tag{\texttt{DIFF}}
 		f \left( \poscross \ \double \right) - f\left( \negcross \ \double \right) = f \left( \double \ \poscross \right) - f\left( \double \ \negcross \right).
 	\end{equation}
 \end{definition}
@@ -49,11 +49,12 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
 		\label{eq:boundary}
-		\tag{\biolinum{DIFF*}}
+		\tag{\texttt{DIFF\dual}}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 
 	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:boundary} relation will be implicit in everything.
+	% TODO: Make equation reference change font to \ttfamily
 \end{definition}
 
 \begin{definition}
@@ -175,7 +176,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 		gives rise to the \textbf{topological four-term relation}
 			\begin{equation}
 				\label{eq:topological-four-term}
-				\tag{\biolinumLF{T4T}}
+				\tag{\texttt{T4T}}
 				f\left( \tftsouth \right)
 				-
 				f\left( \tfteast \right)
@@ -193,7 +194,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 		around a point with a vanishing derivative gives rise to the \textbf{topological one-term relation}
 			\begin{equation}
 				\label{eq:topological-one-term}
-				\tag{\biolinumLF{T1T}}
+				\tag{\texttt{T1T}}
 				f\left( \tot \right) = 0.
 			\end{equation}
 	\end{enumerate}
