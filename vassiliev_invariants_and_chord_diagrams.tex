@@ -35,7 +35,7 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 	An invariant \(f\) of \(m\)-singular knots is \textbf{differentiable} if
 	\begin{equation}
 		\label{eq:diff}
-		\tag{\diffinv}
+		\tag{\diff}
 		f \left( \poscross \ \double \right) - f\left( \negcross \ \double \right) = f \left( \double \ \poscross \right) - f\left( \double \ \negcross \right).
 	\end{equation}
 \end{definition}
@@ -49,7 +49,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
 		\label{eq:boundary}
-		\tag{\diffrel}
+		\tag{\diffdual}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 
@@ -89,7 +89,10 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 	Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
 \end{remark}
 
-There are many other similar remarks to be made about the analogy between Vassiliev invariants and polynomials. To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
+\section{Integration Theory}
+\label{sec:integration-theory}
+
+To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
 
 \begin{definition}
 	An \textbf{integration theory} \((\mathcal{O}_{\star}, \partial_{\star})\) is a sequence
@@ -124,33 +127,33 @@ We wish to understand how to invert this process, namely:
 	\label{qu:integration-theory}
 	\begin{enumerate}
 		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' into a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
-		\item When does such a functional integrate multiple times, in-particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
 		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there choices to be made?
-		\item Which functions on the non-singular objects are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
+		\item When does such a functional integrate multiple times, in-particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
+		\item If there are choices to be made in integration, do they affect whether the new functional is integrable again?
+		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
 	\end{enumerate}
 \end{questions}
-The following abelian groups provide the tautological answers to the above questions in the general theory.
+The following modules provide the tautological answers to the above questions in the general theory.
 \begin{definitions}
-	\label{def:integration-theory-groups}
+	\label{def:integration-theory-modules}
 	\begin{enumerate}
-		\item The \textbf{primary obstructions to integration} are the group
+		\item The \textbf{primary obstructions to integration} are the module
 			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
-		\item The \textbf{secondary obstructions to integration} are the group
+		\item The \textbf{constants of integration} are the module
+			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
+		\item The \textbf{secondary obstructions to integration} are the module
 			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m},\]
 			and likewise the \textbf{order \(k\) obstructions to integration} are defined analagously.
-		\item The \textbf{constants of integration} are the group
-			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
-		\item The \textbf{finite type invariants} of order \(m\) are the group
+		\item The \textbf{weights of integration} are the module
+			\[W\mathcal{O}_{m} = C\mathcal{O}_{m} / \pi(P\mathcal{O}_{m})\]
+			where \(\pi: \mathcal{O}_{m} \to C\mathcal{O}_{m}\) is the projection.
+		\item The \textbf{finite type invariants} of order \(m\) are the module
 			\[FT\mathcal{O}_{m} = \ker \delta^{m + 1},\]
 			where \(\delta^{m + 1}\) denotes \(m + 1\) applications of \(\delta\) with appropriate indices, ending with \(\delta_{m}\).
 
 	\end{enumerate}
 \end{definitions}
-The aim of the rest of this chapter will be to develop a geometric answer to the above questions in the case \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\) through a geometric understanding of the above definitions in that case.
-
-
-\section{Chord diagrams}
-\label{sec:chord-diagrams}
+It may not be entirely obvious how these definitons provide answers to the questions above. In the rest of this section we will see the truth of this in the case \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\) which should provide good intuition for the general case.
 
 Recall from the picture from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
 
@@ -178,7 +181,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 		gives rise to the \textbf{topological four-term relation}
 			\begin{equation}
 				\label{eq:topological-four-term}
-				\tag{\tftinv}
+				\tag{\tft}
 				f\left( \tftsouth \right)
 				-
 				f\left( \tfteast \right)
@@ -196,8 +199,8 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 		around a point with a vanishing derivative gives rise to the \textbf{topological one-term relation}
 			\begin{equation}
 				\label{eq:topological-one-term}
-				\tag{\totinv}
-				f\left( \tot \right) = 0.
+				\tag{\tot}
+				f\left( \totknot \right) = 0.
 			\end{equation}
 	\end{enumerate}
 \end{definitions}
@@ -212,13 +215,14 @@ The necessity of the above relations for an invariant of \(m\)-singular knots to
 	\ + \
 	\tftwest
 	\quad \text{and} \quad
-	\tot
+	\totknot
 \]
 are in \(P\mathcal{K}_{m} = \ker \partial_{m}\). Let us denote arbitrary such singular knots \(\tftterm\) and \(\totterm\).
 
 The question that arises is whether we have found all primary obstructions. Do \(\tftterm\) and \(\totterm\) span \(\ker \partial\)?
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
+	\label{thm:stanford-integrates-once}
 	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}}.
 \end{theorem}
 
@@ -231,44 +235,104 @@ The question that arises is whether we have found all primary obstructions. Do \
 	\end{mdframed}
 \end{proof}
 
-In the order of Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-groups}, it would be natural to next talk about the secondary and further obstructions to integration. However, but let us postpone this until after we have discussed constants of integration and finite type invariants, at which point we will be able to express things more clearly.
+In the order of Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, we ought to talk next about the secondary and further obstructions to integration. However, let us postpone this until after we have discussed constants of integration, which will be a more natural place.
 
-% TODO: The following:
-% - Are these sufficient conditions for integration?
-% - What about integrating again and again? i.e. secondary obstructions: Willerton and Hutchings' results
-% - This will involve introducing weight systems and chord diagrams
-% - Finite type/Vassiliev invariants
+The constants of integration comprise the information that is lost when integrating. In the case of knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two neighbouring \(m\)-singular knots, but the value of the invariant on either of these \(m\)-singular knots is lost. When integrating, values on these can be chosen freely. Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). The difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). We see that constants of integration are singular knots which are blind to crossing changes, so the only data needed to describe them is the order in which the double points are traversed around the knot.
 
-\begin{mdframed}
+\begin{definitions}
+	\label{def:chord-diagram}
+	\begin{enumerate}
+		\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). This is equivalent to an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. Chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\mathcal{K}_{m}\).
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\pi(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\pi(K)\).
+	\end{enumerate}
+\end{definitions}
 
-	The constants of integration are the information that is lost when differentiating, or the information to be chosen when integrating. In the case of knots, \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), so \(m\)-singular knots modulo (the image of) \((m + 1)\)-singular knots. Since the objects already have \(m\) singular points, the quotient asserts that additional crossing changes are free. For example, the following \(2\)-singular knots differ by the image of a \(3\)-singular knot, so are equivalent in \(C\mathcal{K}_{2}\):
+\begin{example}
+	\[
+		\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
+		\quad \overset{\pi}{\longmapsto} \quad
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
+	\]
+\end{example}
 
-	% TODO: Insert figure of crossing change.
+\begin{proposition}
+	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
+	\[Q_{0}(k) = Q(k) + q(\pi(k))\]
+	for \(q \in \mathcal{D}_{m}^{\ast}\)
+	Then \(Q_{0}\) is also an integral of \(P\).
+\end{proposition}
 
-	Thus, elements of \(C\mathcal{K}_{m}\) are described only by the combinatorial data of the cyclic order in which the singular points are traversed on the knot.
+\begin{proof}
+	The derivative of a function of chord diagrams is zero, as two knots which differ by a crossing change have the same chord diagram. Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
+\end{proof}
 
-	\begin{definitions}
-		\label{def:chord-diagram}
+\begin{remark}
+	We defined a constant of integration as a set of objects (e.g. \(c \in \mathcal{D}_{m}\)) but perhaps it would have been more accurate to define it as a functional (e.g. \(q \in \mathcal{D}_{m}^{\ast}\)). After all the constant of integration on the real line is ``\(+ \ C\)'' rather than the set \(\{\ast\}\) with one object. There is no real risk of confusion, so let us be slightly loose and use the terminology for either.
+\end{remark}
 
-		\begin{enumerate}
-			\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\), or equivalently an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. Chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\).
-			\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\sigma(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\sigma(K)\).
-		\end{enumerate}
-	\end{definitions}
+Since we are trying to integrate more than once, we might wish to know which constants of integration are themselves integrable.
 
-	\begin{example}
-		\[
-			\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
-			\quad \overset{\sigma}{\longmapsto} \quad
-			\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
-		\]
-	\end{example}
+\begin{definition}
+	\label{def:weight-system}
+	A \textbf{weight system} is an integrable \(w \in \mathcal{D}_{m}^{\ast}\).
+\end{definition}
 
-\end{mdframed}
+If we take the relations for a knot invariant to be integrable and project them into the space of chord diagrams, we get the following relations.
 
-We return now to the secondary (and higher) obstructions, the association between \(S\mathcal{K}\) and \(\ker \partial\) remains, namely \(S\mathcal{K}_{m} = \ker(\partial_{m + 1} \partial_{m}) / \ker(\partial_{m})\). To answer Question \ref{qu:integration-theory} (b), and determine when a singular knot invariant intgrates fully, it means computing these obstructions, however kernel of \(\partial^{2}\) and higher powers are quite difficult to compute. As such, there are only partial results in this direction, though that's not to say they aren't fundamental.
+\begin{definition}
+	\label{def:ft-ot-relations}
+	\begin{enumerate}
+		\item The \textbf{four-term relation} is the relation
+			\begin{mdframed}
+				\begin{equation}
+					\label{eq:four-term}
+					\tag{\ft}
+					4T = 0
+				\end{equation}
+			\end{mdframed}
 
-\begin{theorem}[Fundamental Theorem of Vassiliev Invariants]
+		\item The \textbf{one-term relation} is the relation
+			\begin{mdframed}
+				\begin{equation}
+					\label{eq:one-term}
+					\tag{\ot}
+					1T = 0
+				\end{equation}
+			\end{mdframed}
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:four-term}} and \textup{\ref{eq:one-term}}.
+\end{proposition}
+\begin{proof}
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:four-term}  and \ref{eq:one-term}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
+\end{proof}
+
+
+
+
+We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
+\[Q + q \circ \pi.\]
+Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that \(S\mathcal{K}_{m}\) vanishes. But this is a tautological statement of the general theory --- it doesn't mean much when we don't know what \(S\mathcal{K}_{m}\) is.
+
+\begin{conjecture}
+	\label{conj:every-t4t-t1t-integrates}
+	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}} integrates \(m\) times into a genuine knot invariant.
+\end{conjecture}
+
+\begin{remarks}
+	\begin{enumerate}
+		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-term}\) and \(\ref{eq:topological-one-term}\), which is what \(S\mathcal{K}\) measures.
+		\item Computing \(S\mathcal{K}_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
+		% TODO: Expand this out into a little interlude on graph cohomology?
+		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}. In a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}. In Chapter \ref{ch:combinatorial-integration_of_weight_systems} we extend this to ``a little more than half''.
+	\end{enumerate}
+\end{remarks}
+
+% NOTE: Finite type/Vassiliev invariants definiions and take duals and end up with chord diagram algebra.
+
+\begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
 	Let \(f\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-term}}, \textup{\ref{eq:topological-one-term}} and the additional condition that \(\delta f = 0\). Then \(f\) integrates \(m\) times into a genuine knot invariant.
 \end{theorem}
@@ -277,10 +341,6 @@ We return now to the secondary (and higher) obstructions, the association betwee
 	The fundamental theorem of Vassiliev invariants holds even if the additional condition is replaced by \(\delta^{k} f = 0\) for some \(k\).
 \end{corollary}
 
-\begin{conjecture}
-	\label{conj:every-t4t-t1t-integrates}
-	An invariant \(f\) of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}} integrates \(m\) times into a genuine knot invariant.
-\end{conjecture}
 
 % TODO: Reformulation of the Weierstrauss conjecture as the fact that no knot invariant extends to contradict the relations. Perhaps the chord diagram ncatlab statements about cohomology.
 
