@@ -163,7 +163,7 @@ Recall from the picture from the introduction that \(m\)-singular knots are comp
 
 % TODO: Insert an image of a singular isotopy.
 
-To rephrase the definitions in section \ref{sec:singular-knots}, in the integration theory \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\), differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
+To rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\), differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
 \[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} Q'(\Psi_{s}).\]
 Due to the boundary relation this is always well-defined.
 
@@ -200,7 +200,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 			\begin{equation}
 				\label{eq:topological-one-term}
 				\tag{\tot}
-				f\left( \totknot \right) = 0.
+				f\left( \totgraphic \right) = 0.
 			\end{equation}
 	\end{enumerate}
 \end{definitions}
@@ -215,7 +215,7 @@ The necessity of the above relations for an invariant of \(m\)-singular knots to
 	\ + \
 	\tftwest
 	\quad \text{and} \quad
-	\totknot
+	\totgraphic
 \]
 are in \(P\mathcal{K}_{m} = \ker \partial_{m}\). Let us denote arbitrary such singular knots \(\tftterm\) and \(\totterm\).
 
@@ -283,24 +283,28 @@ If we take the relations for a knot invariant to be integrable and project them 
 	\label{def:ft-ot-relations}
 	\begin{enumerate}
 		\item The \textbf{four-term relation} is the relation
-			\begin{mdframed}
-				\begin{equation}
-					\label{eq:four-term}
-					\tag{\ft}
-					4T = 0
-				\end{equation}
-			\end{mdframed}
+			\begin{equation}
+				\label{eq:four-term}
+				\tag{\ft}
+				q\left(\ftsouth\right)
+				- q\left(\fteast\right)
+				- q\left(\ftnorth\right)
+				+ q\left(\ftwest\right)
+				= 0.
+			\end{equation}
 
 		\item The \textbf{one-term relation} is the relation
-			\begin{mdframed}
-				\begin{equation}
-					\label{eq:one-term}
-					\tag{\ot}
-					1T = 0
-				\end{equation}
-			\end{mdframed}
+			\begin{equation}
+				\label{eq:one-term}
+				\tag{\ot}
+				q\left( \otgraphic \right) = 0.
+			\end{equation}
 	\end{enumerate}
 \end{definition}
+
+\begin{remark}
+	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:four-term} and \ref{eq:one-term} are not individual relations, but kinds of relations. To satisfy them, \(q \in \mathcal{D}_{m}^{\ast}\) needs to satisfy them for all ways additional chords can be placed into the diagram to make a diagram of degree \(m\), so long as they don't go between the close chord-ends.
+\end{remark}
 
 \begin{proposition}
 	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:four-term}} and \textup{\ref{eq:one-term}}.
@@ -308,9 +312,6 @@ If we take the relations for a knot invariant to be integrable and project them 
 \begin{proof}
 	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:four-term}  and \ref{eq:one-term}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
 \end{proof}
-
-
-
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
 \[Q + q \circ \pi.\]
@@ -326,7 +327,7 @@ Since integration is linear, to be integrable again, both terms need to be integ
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-term}\) and \(\ref{eq:topological-one-term}\), which is what \(S\mathcal{K}\) measures.
 		\item Computing \(S\mathcal{K}_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
-		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}. In a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}. In Chapter \ref{ch:combinatorial-integration_of_weight_systems} we extend this to ``a little more than half''.
+		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}. In Chapter \ref{ch:combinatorial-integration_of_weight_systems} we extend this to ``a little more than half''.
 	\end{enumerate}
 \end{remarks}
 
