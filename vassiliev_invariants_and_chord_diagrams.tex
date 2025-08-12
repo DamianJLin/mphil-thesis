@@ -53,7 +53,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 
-	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:boundary} relation will be implicit in everything.
+	From now on, we will referto elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:boundary} relation will be implicit in everything.
 	% TODO: Make equation reference change font to \ttfamily
 \end{definition}
 
@@ -76,8 +76,8 @@ Often, we omit the superscript and write
 
 The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary.
 
-% TODO: Could move later, even.
 \begin{definitions}
+	\label{def:vassiliev-invariant}
 	\begin{enumerate}
 		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation, there is an integer \(m\) such that
 		\[V\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
@@ -89,8 +89,8 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 	Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
 \end{remark}
 
-\section{Integration Theory}
-\label{sec:integration-theory}
+\section{Integration and the fundamental theorem}
+\label{sec:integration-and-the-fundamental-theorem}
 
 To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
 
@@ -315,10 +315,10 @@ If we take the relations for a knot invariant to be integrable and project them 
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
 \[Q + q \circ \pi.\]
-Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that \(S\mathcal{K}_{m}\) vanishes. But this is a tautological statement of the general theory --- it doesn't mean much when we don't know what \(S\mathcal{K}_{m}\) is.
+Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that \(S\mathcal{K}_{m}\) vanishes. But this is a tautological statement of the general theory --- it doesn't mean much if we don't know what \(S\mathcal{K}_{m}\) is.
 
 \begin{conjecture}
-	\label{conj:every-t4t-t1t-integrates}
+	\label{conj:strong-fundamental-theorem}
 	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}} integrates \(m\) times into a genuine knot invariant.
 \end{conjecture}
 
@@ -331,20 +331,36 @@ Since integration is linear, to be integrable again, both terms need to be integ
 	\end{enumerate}
 \end{remarks}
 
-% NOTE: Finite type/Vassiliev invariants definiions and take duals and end up with chord diagram algebra.
+The finite type invariants in \(\mathcal{K}^{\star}\) are simply the Vassiliev invariants, as checked by a simple comparison between Definitions \ref{def:vassiliev-invariant} and \ref{def:integration-theory-modules}. In other words, Vassiliev invariants of order \(m\) are those which vanish on parts of the strata at and above some depth \(m + 1\).
+
+If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev invariants, then we get the following.
 
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
-	Let \(f\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-term}}, \textup{\ref{eq:topological-one-term}} and the additional condition that \(\delta f = 0\). Then \(f\) integrates \(m\) times into a genuine knot invariant.
+	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-term}}, \textup{\ref{eq:topological-one-term}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
 \end{theorem}
 
-\begin{corollary}
-	The fundamental theorem of Vassiliev invariants holds even if the additional condition is replaced by \(\delta^{k} f = 0\) for some \(k\).
-\end{corollary}
+There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections. To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
 
+\begin{remark}
+	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
+\end{remark}
 
+In the next section we will look at equivalent formulation of the fundamental theorem, and then in Chapter \ref{ch:combinatorial-integration_of_weight_systems} we present some progress towards Conjecture \ref{conj:strong-fundamental-theorem}.
 
-% TODO: Reformulation of the Weierstrauss conjecture as the fact that no knot invariant extends to contradict the relations. Perhaps the chord diagram ncatlab statements about cohomology.
+\section{Chord diagrams and the universal Vassiliev invariant}
+\label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
 
+\begin{mdframed}
+	We may take dual and end up with relations on chord diagrams instead. This gives us an algebra \(\mathcal{A}\) which we also call chord diagrams. (Are we *free* to choose values on these? Potentially a technical detail here.) Either way.
 
-\section{Third subsection}
+	Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
+
+	For knots this is the Knotsevich integral. It comes about roughly as follows.
+\end{mdframed}
+
+% NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? Potentially a technical detail here.) Either way.
+
+% NOTE: Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
+
+% NOTE: For knots this is the Knotsevich integral.
