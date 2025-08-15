@@ -48,12 +48,12 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 	\label{def:differentiable-knot}
 	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
-		\label{eq:boundary}
+		\label{eq:codiff}
 		\tag{\diffdual}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 
-	From now on, we will referto elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:boundary} relation will be implicit in everything.
+	From now on, we will referto elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicit in everything.
 	% TODO: Make equation reference change font to \ttfamily
 \end{definition}
 
@@ -64,7 +64,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 \end{definition}
 
 \begin{remark}
-	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:boundary} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
+	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
 \end{remark}
 
 Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation
@@ -352,14 +352,20 @@ In the next section we will look at equivalent formulation of the fundamental th
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
 
 \begin{mdframed}
-	We may take dual and end up with relations on chord diagrams instead. This gives us an algebra \(\mathcal{A}\) which we also call chord diagrams. (Are we *free* to choose values on these? Potentially a technical detail here.) Either way.
+
+	We may take dual and end up with relations on chord diagrams instead. This gives us an algebra \(\mathcal{A}\) which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
 
 	Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
 
 	For knots this is the Knotsevich integral. It comes about roughly as follows.
 \end{mdframed}
 
-% NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? Potentially a technical detail here.) Either way.
+The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish the following relationship between Vassiliev invariants and weight systems.
+
+Just like with the \ref{eq:diff} and \ref{eq:codiff} relation, 
+
+
+% NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
 
 % NOTE: Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
 
