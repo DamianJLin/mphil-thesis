@@ -19,16 +19,18 @@
 	\end{enumerate}
 	are excluded from the definition.
 \end{remark}
+% TODO: (Zsuzsi) Also, tangential points. (Not sure you need an enumerate environment here)
 
-A singular knot with one double point is very close to two other knots, one where it's replaced by a positive crossing and one by a negative. If the conditions are right, we can extend a knot invariant to an invariant of singular knots by ``taking its derivative''.
-
+A singular knot with one double point is very close to two other knots, one where it's replaced by a positive crossing and one by a negative. % TODO: (Zsuzsi) This sentence makes a great point but it's not grammatically sound
+If the conditions are right, we can extend a knot invariant to an invariant of singular knots by ``taking its derivative''. %TODO (Zsuzsi): Taking the difference of these two values, called the derivateive? (To connect to previous point)
+%TODO: (Zsuzsi) Make it clear that in general the derivative of an $m$-singular knot invariant is an $(m+1)$-singular knot invariant. 
 \begin{definition}
 	\label{def:derivative}
 	The \textbf{derivative} \(\delta\) of a differentiable \(m\)-singular knot invariant \(f\) is
 	\[\delta f \left( \double \right) = f \left( \poscross \right) - f\left( \negcross \right).\]
 \end{definition}
 
-What are the conditions? For this to be a well-defined operation, it mustn't matter which double point we choose.
+What are the conditions? For this to be a well-defined operation, it mustn't matter which double point we choose. %TODO: (Zsuzsi) I would only use a definition environment when you're ready to be precise and well defined. Here, we don't know yet what differentiable means, so I would save the definition environment for later (swap the two definitions).
 
 \begin{definition}
 	\label{def:differentiable-invariant}
@@ -42,18 +44,19 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 
 If an invariant of \(m\)-singular knots is differentiable, so is its derivative, so it can be extended to any number of double points.
 
-Rather than thinking about functions on knots satisfying certain relations, the modern version of this subject takes the philosophy of imposing relations on the objects directly.
+Rather than thinking about functions on knots satisfying certain relations, the modern view of this subject takes the philosophy of imposing relations on the objects directly. %TODO: (Zsuzsi) I assume you talk about the classical view in the Intro, so this contrast makes sense?
 
 \begin{definition}
 	\label{def:differentiable-knot}
-	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) modulo the following boundary relation (also known as a codifferentiability relation):
+	Define \(\mathcal{K}_{m} = \operatorname{span}(\{m\text{-singular knots}\})\) 
+    %TODO: (Zsuzsi) Specify what kind of span (linear over $\Q$?)
+    modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
 		\label{eq:codiff}
 		\tag{\diffdual}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
-
-	From now on, we will referto elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicit in everything.
+	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicitly assumed.
 	% TODO: Make equation reference change font to \ttfamily
 \end{definition}
 
@@ -64,29 +67,29 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 \end{definition}
 
 \begin{remark}
-	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
+	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\). %TODO: (Zsuzsi) This might deserve to be deminstrated on a small example. %TODO: (Zsuzsi) Worth noting that any invariant of actual (non-singular) knots is differentiable.
 \end{remark}
 
-Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation
+Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation 
 \[f^{(0)} = f\]
 and
 \[f^{(m + 1)}\left(\double\right) = f^{(m)}\left(\poscross\right) - f^{(m)}\left(\negcross\right).\]
 Often, we omit the superscript and write
 \[f\left(\double\right) = f\left(\poscross\right) - f\left(\negcross\right).\]
 
-The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary.
+The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary. %TODO: (Zsuzsi) I would move this sentence to before the skein relation: otherwise readers might get stuck trying to figure out the difference between the derivative and the Vassiliev skein relation before getting to this sentence.
 
 \begin{definitions}
-	\label{def:vassiliev-invariant}
+	\label{def:vassiliev-invariant} %TODO: (Zsuzsi) Insert an intro sentence so (a) and (b) are aligned
 	\begin{enumerate}
-		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation, there is an integer \(m\) such that
+		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation, there is an integer \(m\) such that %TODO: (Zsuzsi) Fix the logic here (if it's order $m$ then it's not "there exist" $m$).
 		\[V\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
 	\item The \textbf{order} of a Vassiliev invariant \(V\) it the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the highest number of double points a knot \(K\) can have without \(V(K)\) having to vanish).
-	\end{enumerate}
+	\end{enumerate} %TODO: (Zsuzsi) Highest or lowest?
 \end{definitions}
 
 \begin{remark}
-	Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
+	In other words, Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
 \end{remark}
 
 \section{Integration and the fundamental theorem}
