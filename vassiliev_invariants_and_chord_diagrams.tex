@@ -53,7 +53,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
     modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
 		\label{eq:codiff}
-		\tag{\diffdual}
+		\tag{\codiff}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 	From now on, we will refer to elements \(\mathcal{K}_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicitly assumed.
@@ -287,7 +287,7 @@ If we take the relations for a knot invariant to be integrable and project them 
 	\begin{enumerate}
 		\item The \textbf{four-term relation} is the relation
 			\begin{equation}
-				\label{eq:four-term}
+				\label{eq:4T}
 				\tag{\ft}
 				q\left(\ftsouth\right)
 				- q\left(\fteast\right)
@@ -298,7 +298,7 @@ If we take the relations for a knot invariant to be integrable and project them 
 
 		\item The \textbf{one-term relation} is the relation
 			\begin{equation}
-				\label{eq:one-term}
+				\label{eq:1T}
 				\tag{\ot}
 				q\left( \otgraphic \right) = 0.
 			\end{equation}
@@ -306,14 +306,14 @@ If we take the relations for a knot invariant to be integrable and project them 
 \end{definition}
 
 \begin{remark}
-	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:four-term} and \ref{eq:one-term} are not individual relations, but kinds of relations. To satisfy them, \(q \in \mathcal{D}_{m}^{\ast}\) needs to satisfy them for all ways additional chords can be placed into the diagram to make a diagram of degree \(m\), so long as they don't go between the close chord-ends.
+	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. To satisfy them, \(q \in \mathcal{D}_{m}^{\ast}\) needs to satisfy them for all ways additional chords can be placed into the diagram to make a diagram of degree \(m\), so long as they don't go between the close chord-ends.
 \end{remark}
 
 \begin{proposition}
-	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:four-term}} and \textup{\ref{eq:one-term}}.
+	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4T}} and \textup{\ref{eq:1T}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:four-term}  and \ref{eq:one-term}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T}  and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
@@ -349,23 +349,100 @@ There are various proofs of the fundamental theorem. They are listed in \cite{th
 	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
 \end{remark}
 
-In the next section we will look at equivalent formulation of the fundamental theorem, and then in Chapter \ref{ch:combinatorial-integration_of_weight_systems} we present some progress towards Conjecture \ref{conj:strong-fundamental-theorem}.
+In the Section \ref{sec:chord-diagrams-and-the-universal-Vassiliev-invariant} we will look at equivalent formulation of the fundamental theorem, and then in Chapter \ref{ch:combinatorial-integration_of_weight_systems} we present some progress towards Conjecture \ref{conj:strong-fundamental-theorem}.
+
+\section{The algebra of chord diagrams}
+\label{sec:the-algebra-of-chord-diagrams}
+
+
+Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+
+\begin{equation}
+	\label{eq:co4T}
+	\tag{\coft}
+	\ftsouth
+	\ - \ 
+	\fteast
+	\ -\ 
+	\ftnorth
+	\ + \ 
+	\ftwest
+	\ = \ 0.
+\end{equation}
+
+\begin{equation}
+	\label{eq:co1T}
+	\tag{\coot}
+	\otgraphic \ = \ 0
+\end{equation}
+
+\begin{definition}
+	We define \(\mathcal{A}\), which is also known as the \textbf{space of chord diagrams} as
+	\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}}.\]
+\end{definition}
+
+\begin{mdframed}
+	(Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.)
+\end{mdframed}
+
+\begin{warning}
+	Elements of both \(\mathcal{A}\) and \(\mathcal{C}\) are called chord diagrams. From now, a chord diagram can be assumed to be an element of \(\mathcal{A}\) unless it is otherwise obvious.
+\end{warning}
+
+\begin{mdframed}
+	The space \(\mathcal{K}\) has an algebra structure which it inherits from the algebra structure on \(\mathcal{K}_{0}\).
+
+	\begin{definition}
+		The \textbf{connected sum} of two knots ...
+	\end{definition}
+
+	Question: Chord diagrams connected sum obviously omes from the knot connected sum. However, chord diagram connected sum is only well-defined up to four-term and one-term. Is it possible to define singular knot connected sum and then make chord diagram connected sum come from that? Do I need to quotient \(\mathcal{K}\) by \ref{eq:co4T} and \ref{eq:co1T} here?
+\end{mdframed}
+
 
 \section{Chord diagrams and the universal Vassiliev invariant}
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
+% NOTE: Perhaps, "The fundamental theorem and the universal Vassiliev invariant"?
 
 \begin{mdframed}
-
-	We may take dual and end up with relations on chord diagrams instead. This gives us an algebra \(\mathcal{A}\) which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
+	 Either way.
 
 	Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
 
 	For knots this is the Knotsevich integral. It comes about roughly as follows.
 \end{mdframed}
 
-The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish the following relationship between Vassiliev invariants and weight systems.
+The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between Vassiliev invariants and weight systems. In this section we will reformulate the fundamental theorem in a way that makes this apparent. At the same time we will describe the algebra structure on the spaces at play.
 
-Just like with the \ref{eq:diff} and \ref{eq:codiff} relation, 
+\begin{definitions}
+	\label{def:grading-filtration}
+	\begin{enumerate}
+		\item A \textbf{filtration} on a vector space \(X\) is a descending sequence of nested subspaces
+			\[X = X_{0} \supseteq X_{1} \supseteq X_{2} \supseteq \cdots\]
+			indexed by natural numbers
+	\end{enumerate}
+\end{definitions}
+
+\begin{notation}
+	\label{not:spaces-of-vassiliev-invariants-and-weight-systems}
+	\begin{enumerate}
+		\item Let \(\mathcal{V}_{m}\) be the vector space of Vassiliev invariants of degree \(m\). The space \(\mathcal{V}\) will be the space of all Vassiliev invariants,  and it is filtered by degree.
+		\item Let \(W_{m}\) be the vector space of weight systems of degree \(m\). Define \(W = \displaystyle\bigoplus_{i = 0}^{\infty} W_{m}\).
+	\end{enumerate}
+\end{notation}
+
+
+
+
+\begin{corollary}
+	The space of weight systems is the associated graded space of the space of Vassiliev invariants:
+
+	\[W = \bigoplus_{i = 0}^{\infty}\mathcal{V}_{m} / \mathcal{V}_{m - 1},\]
+	or
+	\[W = \gr\mathcal{V}\]
+\end{corollary}
+
+
 
 
 % NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
