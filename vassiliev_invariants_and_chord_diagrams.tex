@@ -374,16 +374,41 @@ In the Section \ref{sec:chord-diagrams-and-the-universal-Vassiliev-invariant} we
 There is also an interesting algebraic structure on the space of knots, \(\mathcal{K}_{0}\) which extends to chord diagrams.
 
 \begin{definition}
-	The \textbf{connected sum} of two knots \(K_{1}\) and \(K_{2}\) is defined by figure below (insert).
+	\label{def:connected-sum}
+	The \textbf{connected sum} of two knots \(K_{1}\) and \(K_{2}\) is the knot obtained by removing a small arc from each of \(K_{1}\) and \(K_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
 
-	\begin{mdframed}
-		Insert figure and reference to it.
-	\end{mdframed}
+	\[
+		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
+		\quad
+		\overset{\#}{\longmapsto}
+		\quad
+		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
+	\]
+
+	This defines a multiplication operation \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\).
 \end{definition}
 
+\begin{remark}
+	The connected sum is a well-defined operation. It does not matter where along either knot the small arc was removed, all the reslts are ambient-isotopic.
+\end{remark}
 
+The definition can be extended to singular knots.
 
-****
+\begin{definition}
+	The \textbf{connected sum} of two singular knots is defined in the same way as the connected sum of two non-singular knots.
+\end{definition}
+
+\begin{mdframed}
+	There's a slight problem here. The usual definition when singular knots are defined as linear combinations is by bilinear extension. This makes everything well-defined. However, for us, singular knots are literally singular knots. So the usual connected-sum-well-definedness argument fails because we can't move the small knot in a bubble through a double point.
+
+	But perhaps we should expand our definition of singular isotopy to make this okay. Maybe a good place to start would be to properly look at Stanford's paper.
+
+	Or maybe this is solved by imposing T4T earlier (though I suspect not?)
+\end{mdframed}
+
+The connected sum operation makes the space \(\mathcal{K} = \bigoplus_{i = 0}^{\infty} \mathcal{K}_{i}\) into a graded algebra with the grading given by the order of the singular knot.
+
+****(after here should go later)
 
 	Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
 
