@@ -384,13 +384,19 @@ There is also an interesting algebraic structure on the space of knots, \(\mathc
 		\quad
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
+% TODO: Fix alpha layers being different in the above.
 
-	This defines a multiplication operation \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\).
 \end{definition}
 
-\begin{remark}
-	The connected sum is a well-defined operation. It does not matter where along either knot the small arc was removed, all the reslts are ambient-isotopic.
-\end{remark}
+This in not a-priori well-defined: we have not specified where along either \(K_{1}\) or \(K_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
+
+\begin{proposition}
+	The connected sum \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the reslts are ambient-isotopic.
+\end{proposition}
+
+\begin{proof}
+	We exhibit an ambient isotopy starting at \(K_{1} \# K_{2}\) where the small arc is removed from \(K_{1}\) as in the example above. The part of the connected sum coming from \(K_{2}\) is shrunk by ambient isotopy to an arbirarily small tubular neighbourhood of \(K_{1}\). \(K_{2}\) is then isotoped along \(K_{1}\), then reenlarged and isotoped back to its original position.
+\end{proof}
 
 The definition can be extended to singular knots.
 
@@ -404,37 +410,52 @@ The definition can be extended to singular knots.
 	But perhaps we should expand our definition of singular isotopy to make this okay. Maybe a good place to start would be to properly look at Stanford's paper.
 
 	Or maybe this is solved by imposing T4T earlier (though I suspect not?)
+
+	Actually this might be possible. Needs investigation.
+
+	Latest update: I don't think this works; I think we need the extra move.
 \end{mdframed}
 
 The connected sum operation makes the space \(\mathcal{K} = \bigoplus_{i = 0}^{\infty} \mathcal{K}_{i}\) into a graded algebra with the grading given by the order of the singular knot.
 
-****(after here should go later)
+Via the projection \(\pi\), the algebra structure on singular knots induces an algebra structure on chord diagrams.
 
-	Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+From this algebra structure on the space of singular knots, an algebra structure on a space of chord diagrams is induced. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
 
-	\begin{equation}
-		\label{eq:co4T}
-		\tag{\coft}
-		\ftsouth
-		\ - \ 
-		\fteast
-		\ -\ 
-		\ftnorth
-		\ + \ 
-		\ftwest
-		\ = \ 0.
-	\end{equation}
+\begin{equation}
+	\label{eq:co4T}
+	\tag{\coft}
+	\ftsouth
+	\ - \ 
+	\fteast
+	\ -\ 
+	\ftnorth
+	\ + \ 
+	\ftwest
+	\ = \ 0.
+\end{equation}
 
-	\begin{equation}
-		\label{eq:co1T}
-		\tag{\coot}
-		\otgraphic \ = \ 0
-	\end{equation}
+\begin{equation}
+	\label{eq:co1T}
+	\tag{\coot}
+	\otgraphic \ = \ 0
+\end{equation}
 
-	\begin{definition}
-		We define \(\mathcal{A}\), which is also known as the \textbf{space of chord diagrams} as
-		\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}}.\]
-	\end{definition}
+\begin{definition}
+	We define \(\mathcal{A}\), which is also known as the \textbf{space of chord diagrams} as
+	\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}, \ref{eq:co1T}}.\]
+	Denote the projection from \(\mathcal{D}\) to \(\mathcal{A}\) by \(p\).
+\end{definition}
+
+Recall the projection \(\pi: \mathcal{K} \to \mathcal{D}\) from singular knots to chord diagrams. This can be extended to a projection \(p \circ \pi : \mathcal{K} \to \mathcal{A}\), and this induces a multiplication on \(\mathcal{A}\).
+
+\begin{proposition}
+	The connected sum operation on knots induces a well-defined multiplication on \(\mathcal{A}\).
+\end{proposition}
+
+\begin{proof}
+	proof here
+\end{proof}
 
 \begin{mdframed}
 	(Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.)
@@ -452,7 +473,7 @@ The connected sum operation makes the space \(\mathcal{K} = \bigoplus_{i = 0}^{\
 		The \textbf{connected sum} of two knots ...
 	\end{definition}
 
-	Question: Chord diagrams connected sum obviously omes from the knot connected sum. However, chord diagram connected sum is only well-defined up to four-term and one-term. Is it possible to define singular knot connected sum and then make chord diagram connected sum come from that? Do I need to quotient \(\mathcal{K}\) by \ref{eq:co4T} and \ref{eq:co1T} here?
+	Question: Chord diagrams connected sum obviously comes from the knot connected sum. However, chord diagram connected sum is only well-defined up to four-term and one-term. Is it possible to define singular knot connected sum and then make chord diagram connected sum come from that? Do I need to quotient \(\mathcal{K}\) by \ref{eq:co4T} and \ref{eq:co1T} here?
 \end{mdframed}
 
 
