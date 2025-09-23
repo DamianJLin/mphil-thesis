@@ -1,7 +1,7 @@
 \chapter{Vassiliev invariants and chord diagrams}
 \label{ch:vassiliev-invariants-and-chord-diagrams}
 
-\lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy first made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
+\lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
 
 \section{Singular knots}
 \label{sec:singular-knots}
@@ -19,8 +19,7 @@
 	\end{enumerate}
 	are excluded from the definition.
 \end{remark}
-% TODO: (Zsuzsi) Also, tangential points. (Not sure you need an enumerate environment here)
-% (Damian) Tangential points are excluded, but they don't hold the same status as the above which lead to 4T and 1T. So I am happy with this. (You can delete this when you see it if I've convinced you).
+
 
 A singular knot with one double point is very close to two other knots. In one, the double point is replaced by a positive crosing, and in the other a negative crossing.
 If the conditions are right, we can extend a knot invariant to an invariant of singular knots by a procedure analagous to taking its derivative.
@@ -32,6 +31,7 @@ If the conditions are right, we can extend a knot invariant to an invariant of s
 
 What are the conditions? For this to be a well-defined operation, it mustn't matter which double point we choose. % TODO: (Zsuzsi) I would only use a definition environment when you're ready to be precise and well defined. Here, we don't know yet what differentiable means, so I would save the definition environment for later (swap the two definitions).
 % TODO (Damian) I'll think about this! My initial thought is that it's not too bad since differentiable is really close after, and since I disliked the other order.
+%TODO (Zsuzsi) I still think this will annoy at least a significant subset of potential readers. You could start with an informal definition of the derivateive (ie not in an environment), then define differentiable, followed by the fornal definition of the derivaltive.
 
 \begin{definition}
 	\label{def:differentiable-invariant}
@@ -45,8 +45,7 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 
 If an invariant of \(m\)-singular knots is differentiable, so is its derivative, so it can be extended to any number of double points.
 
-Rather than thinking about functions on knots satisfying certain relations, the modern view of this subject takes the philosophy of imposing relations on the objects directly. % TODO: (Zsuzsi) I assume you talk about the classical view in the Intro, so this contrast makes sense?
-% NOTE: (Damian) No, as in we have motivated the DIFF relation but where does the diff* relation come from? This philosophy. I don't think I will talk in that level of detail in the introduction.
+Rather than thinking about functions on knots satisfying certain relations, the modern view of this subject takes the philosophy of imposing relations on the objects directly. 
 
 \begin{definition}
 	\label{def:differentiable-knot}
@@ -67,9 +66,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 \end{definition}
 
 \begin{remark}
-	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as a invariant of knots in \(\mathcal{K}_{m}\).
-	% TODO: (Zsuzsi) This might deserve to be deminstrated on a small example.
-	% TODO: (Zsuzsi) Worth noting that any invariant of actual (non-singular) knots is differentiable.
+	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as an invariant of knots in \(\mathcal{K}_{m}\).
 \end{remark}
 
 Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation 
@@ -79,20 +76,17 @@ and
 Often, we omit the superscript and write
 \[f\left(\double\right) = f\left(\poscross\right) - f\left(\negcross\right).\]
 
-The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary. %TODO: (Zsuzsi) I would move this sentence to before the skein relation: otherwise readers might get stuck trying to figure out the difference between the derivative and the Vassiliev skein relation before getting to this sentence.
+The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary.
 
-% TODO: (Zsuzsi) Insert an intro sentence so (a) and (b) are aligned
-% NOTE: (Damian) I actually prefer it this way -- I think the (x) makes it easy enough to see, and I dislike being forced to come up with an intro sentence where one doesn't belong.
+
 
 \begin{definitions}
 	\label{def:vassiliev-invariant}
 	\begin{enumerate}
 		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation,
 		\[V\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
-	\item The \textbf{order} of a Vassiliev invariant \(V\) it the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the most double points a knot \(K\) can have without \(V(K)\) having to vanish).
+	\item The \textbf{order} of a Vassiliev invariant \(V\) is the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the most double points a knot \(K\) can have without \(V(K)\) having to vanish).
 	\end{enumerate}
-	% TODO: (Zsuzsi) Highest or lowest?
-	% NOTE: (Damian) Indeed, highest.
 \end{definitions}
 
 \begin{remark}
@@ -103,6 +97,8 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 \label{sec:integration-and-the-fundamental-theorem}
 
 To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
+%TODO (Zsuzsi) Since this is the first sentence of a section, I would replace "this" with what "this" is referring to.
+
 
 \begin{definition}
 	An \textbf{integration theory} \((\mathcal{O}_{\star}, \partial_{\star})\) is a sequence
@@ -115,10 +111,10 @@ To help see the bird's eye view, and following \cite{integration-of-singular-bra
 		\arrow["\partial", from=1-4, to=1-5]
 		\arrow["\partial", from=1-5, to=1-6]
 	\end{tikzcd}\]
-	of abelian groups. In case we need to refer to a specific map, \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
+	of abelian groups. In case we need to refer to a specific map, let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
 
-The group is \(\mathcal{O}_{0}\) is typically free abelian, and in our case is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
+The group \(\mathcal{O}_{0}\) is typically free abelian, and in our case this is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
 
 By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, G)\), we get the sequence
 % https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219XntcXGFzdH0iXSxbMCwwLCJcXGNkb3RzIl0sWzIsMCwiXFxtYXRoY2Fse099X3ttIC0gMX1ee1xcYXN0fSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJcXG1hdGhjYWx7T31fezF9XntcXGFzdH0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9XntcXGFzdH0iXSxbMCwxLCJcXGRlbHRhIiwyXSxbMiwwLCJcXGRlbHRhIiwyXSxbMywyLCJcXGRlbHRhIiwyXSxbNCwzLCJcXGRlbHRhIiwyXSxbNSw0LCJcXGRlbHRhIiwyXV0=
@@ -130,20 +126,22 @@ By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operato
 	\arrow["\delta"', from=1-5, to=1-4]
 	\arrow["\delta"', from=1-6, to=1-5]
 \end{tikzcd}\]
-where \(\delta_{m}\) is the transpose of \(\partial_{m}\). The maps \(\delta\) behaves like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects.
+where \(\delta_{m}\) is the transpose of \(\partial_{m}\). The maps \(\delta\) behave like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects.
 
 We wish to understand how to invert this process, namely:
+%TODO (Zsuzsi) I would move the sentence above into the question environment.
 \begin{questions}
 	\label{qu:integration-theory}
 	\begin{enumerate}
-		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' into a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
+		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' to a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
 		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there choices to be made?
 		\item When does such a functional integrate multiple times, in-particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
 		\item If there are choices to be made in integration, do they affect whether the new functional is integrable again?
 		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
 	\end{enumerate}
 \end{questions}
-The following modules provide the tautological answers to the above questions in the general theory.
+The following modules provide the tautological answers to the above questions in the general theory. %TODO (Zsuzsi) I would explain in what sense these are modules (under what action).
+%TODO (Zsuzsi) I see what you're saying here with "tautological", though it's a bit intimidating to use that word when the way in which these are tautological answers is non-trivial. Maybe you can make it into a word joke by saying this here, rather then after the intimidation...
 \begin{definitions}
 	\label{def:integration-theory-modules}
 	\begin{enumerate}
@@ -163,21 +161,27 @@ The following modules provide the tautological answers to the above questions in
 
 	\end{enumerate}
 \end{definitions}
-It may not be entirely obvious how these definitons provide answers to the questions above. In the rest of this section we will see the truth of this in the case \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\) which should provide good intuition for the general case.
+It may not be entirely obvious how these definitons provide answers to the questions above. In the rest of this section we will see the truth of this in the case \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\) 
+%TODO (Zuzsi) $\mathcal{O}=\mathcak{K}$?
+which provides good intuition for the general case.
 
-Recall from the picture from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
+Recall from the picture from the introduction 
+%TODO Zsuzsi If you're referencing a figure, have the figure number (eventually)
+that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
 
 \begin{definition}
-	A \textbf{singular isotopy}, \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : 1 \leq s \leq r\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = \varepsilon(s): \{s\} \to \{\pm 1\}\) of the singularities give the signs of the corresponding intersection.
+	A \textbf{singular isotopy}, \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)-th and \((m + 1)\)-st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : 1 \leq s \leq r\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = \varepsilon(s): \{s\} \to \{\pm 1\}\) of the singularities give the signs of the corresponding intersection.
 \end{definition}
 
 % TODO: Insert an image of a singular isotopy.
 
-To rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\), differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
+To rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}^{\star} = \mathcal{K}^{\star}\), 
+%TODO (Zuzsi) $\mathcal{O}=\mathcak{K}$?
+differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
 \[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} Q'(\Psi_{s}).\]
 Due to the boundary relation this is always well-defined.
 
-Integration, is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
+Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
 \[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} P(\Psi_{s}),\]
 in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that triple points and points with vanishing derivative are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate:
 
@@ -227,14 +231,18 @@ The necessity of the above relations for an invariant of \(m\)-singular knots to
 	\quad \text{and} \quad
 	\totgraphic
 \]
-are in \(P\mathcal{K}_{m} = \ker \partial_{m}\). Let us denote arbitrary such singular knots \(\tftterm\) and \(\totterm\).
+are in \(P\mathcal{K}_{m} = \ker \partial_{m}\). Let us denote arbitrary such singular knots \(\tftterm\) and \(\totterm\). 
+%TODO (Zsuzsi) I have trouble parsing the last sentence... The set of all (linear combinations of) such singular knots? Any particular singular knot participating in these relations?
 
-The question that arises is whether we have found all primary obstructions. Do \(\tftterm\) and \(\totterm\) span \(\ker \partial\)?
+This raises the question of whether we have found all primary obstructions. Do \(\tftterm\) and \(\totterm\) span \(\ker \partial\)?
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
 	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}}.
 \end{theorem}
+
+{\color{red}
+ZSUZSI READ TO HERE}
 
 \begin{proof}[sketch]
 	% TODO: Fill out Stanford's integration homotopy proof
