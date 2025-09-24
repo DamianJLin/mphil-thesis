@@ -392,7 +392,6 @@ There is also an interesting algebraic structure on the space of knots, \(\mathc
 \begin{definition}
 	\label{def:connected-sum}
 	The \textbf{connected sum} of two knots \(K_{1}\) and \(K_{2}\) is the knot obtained by removing a small arc from each of \(K_{1}\) and \(K_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
-
 	\[
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
 		\quad
@@ -400,37 +399,54 @@ There is also an interesting algebraic structure on the space of knots, \(\mathc
 		\quad
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
-% TODO: Fix alpha layers being different in the above.
-
+	This definition is extended bilinearly to \(\mathcal{K}_{0}\), i.e. linear combinations.
 \end{definition}
 
 This in not a-priori well-defined: we have not specified where along either \(K_{1}\) or \(K_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
 
 \begin{proposition}
-	The connected sum \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the reslts are ambient-isotopic.
+	The connected sum \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
 \end{proposition}
 
 \begin{proof}
-	We exhibit an ambient isotopy starting at \(K_{1} \# K_{2}\) where the small arc is removed from \(K_{1}\) as in the example above. The part of the connected sum coming from \(K_{2}\) is shrunk by ambient isotopy to an arbirarily small tubular neighbourhood of \(K_{1}\). \(K_{2}\) is then isotoped along \(K_{1}\), then reenlarged and isotoped back to its original position.
+	We exhibit an ambient isotopy starting at \(K_{1} \# K_{2}\) where the small arc is removed from \(K_{1}\) as in the example above. The part of the connected sum coming from \(K_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(K_{1}\).
+	\[
+		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_1.pdf}
+		\rightsquigarrow
+		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_2.pdf}
+	\]
+	Then, \(K_{2}\) is then isotoped along \(K_{1}\), reenlarged and isotoped back to its original position.
+	\[
+		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_2.pdf}
+		\rightsquigarrow
+		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_3.pdf}
+		\rightsquigarrow
+		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_4.pdf}
+	\]
+	The above argument works for any choice of small arc removed along \(K_{1}\), and the same argument with the roles of \(K_{1}\) and \(K_{2}\) reversed completes the proof.
 \end{proof}
 
-The definition can be extended to singular knots.
+\begin{proposition}
+	There is a descending filtration on the space \(\mathcal{K}\)
+	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots\]
+	giving \(\mathcal{K}\) with the connected sum as multiplication the structure of a filtered algebra.
+\end{proposition}
 
-\begin{definition}
-	The \textbf{connected sum} of two singular knots is defined in the same way as the connected sum of two non-singular knots.
-\end{definition}
+\begin{proof}
+	Indeed the filtration is descending, since if \(k \in \delta^{j}(\mathcal{K}_{j})\), then it is the resolution of \(j\) double points of some singular knot with at least \(j\) double points. For any \(i < j\), by resolving only \(i\) of the double points, it can be seen that \(k \in \delta^{i}(\mathcal{K}_{i})\).
+
+	The connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. It remains to prove that \(\delta^{i}(\mathcal{K})\) are ideals, and that the connected sum respects the filtration.
+
+	For the former, if \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then \(k\) and \(\ell\) are images of singular knots under resolving \(i\) and \(j\) double points respectively.
+\end{proof}
 
 \begin{mdframed}
-	There's a slight problem here. The usual definition when singular knots are defined as linear combinations is by bilinear extension. This makes everything well-defined. However, for us, singular knots are literally singular knots. So the usual connected-sum-well-definedness argument fails because we can't move the small knot in a bubble through a double point.
-
-	But perhaps we should expand our definition of singular isotopy to make this okay. Maybe a good place to start would be to properly look at Stanford's paper.
-
-	Or maybe this is solved by imposing T4T earlier (though I suspect not?)
-
-	Actually this might be possible. Needs investigation.
-
-	Latest update: I don't think this works; I think we need the extra move.
+	Need to add an additional topological move for ambient isotopy on singular knots that allows moving a string link through a double-point (true after resolving). Need to make a remark here that well-definedness of the singular knot connected sum was exactly the point of having this move.
 \end{mdframed}
+
+\begin{proposition}
+	The operation \(\#: \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) makes \(\mathcal{K}\) into a filtered algebra, with the grading given by the number of singular points.
+\end{proposition}
 
 The connected sum operation makes the space \(\mathcal{K} = \bigoplus_{i = 0}^{\infty} \mathcal{K}_{i}\) into a graded algebra with the grading given by the order of the singular knot.
 
