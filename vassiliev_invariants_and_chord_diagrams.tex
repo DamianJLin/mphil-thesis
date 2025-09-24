@@ -241,11 +241,9 @@ This raises the question of whether we have found all primary obstructions. Do \
 	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}}.
 \end{theorem}
 
-{\color{red}
-ZSUZSI READ TO HERE}
-
 \begin{proof}[sketch]
-	% TODO: Fill out Stanford's integration homotopy proof
+	% TODO: Fill out Stanford's integration homotopy proof -- (Zsuzsi) Be minful of clearly distinguishing between intuition and precise maths. If this proof only exists as a sketch in the literature, it can be a nice contribution to fill in the details, and if you do, you should say so.
+    
 	\begin{mdframed}
 		Let \(\gamma = \Psi(t)\) be a singular isotopy and let \(\Phi(\gamma)\) be the path integral along it. Construct a homotopy from \(\gamma\) to the constant singular isotopy in the stratification of knots with at least \(m - 1\) double points, and additional worse singularities. The only events to consider are codimension \(m + 2\) (why \(m + 2\)? is it to do with homotopy being "2"-dimensional?) events. They all change the \(\Phi(\gamma)\) by \(f(\tftterm)\) or \(f(\totterm)\) (or similar with \ref{eq:diff} relations, which we've said are implicit).
 
@@ -254,14 +252,22 @@ ZSUZSI READ TO HERE}
 \end{proof}
 
 In the order of Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, we ought to talk next about the secondary and further obstructions to integration. However, let us postpone this until after we have discussed constants of integration, which will be a more natural place.
+%TODO (Zsuzsi): constants of integration are part (b) of your definition. Maybe you changed it but forgot to delete this paragraph? 
+%TODO (Zsuzsi): You could label the items within Definitions \ref{def:integration-theory-modules}, and refer to them specifically.
 
-The constants of integration comprise the information that is lost when integrating. In the case of knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two neighbouring \(m\)-singular knots, but the value of the invariant on either of these \(m\)-singular knots is lost. When integrating, values on these can be chosen freely. Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). The difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). We see that constants of integration are singular knots which are blind to crossing changes, so the only data needed to describe them is the order in which the double points are traversed around the knot.
+The constants of integration comprise the information that is lost when differentiating. In the case of knots, given an invariant $f$ of $m$-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of $f$ on either of these \(m\)-singular knots is lost. When integrating, values on these can be chosen freely.%TODO (Zsuzsi) Not freely, they're tied to each other... you could say there is one degree of freedom in the choice?
+
+Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\mathcal{K}_{m} = \mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). The difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). Thus, we see that constants of integration are singular knots which are blind to crossing changes, so the only data needed to describe them is the order in which the double points are traversed around the knot.
+%TODO (Zsuzsi) This paragraph could do with a picture/ illustration.
 
 \begin{definitions}
 	\label{def:chord-diagram}
 	\begin{enumerate}
-		\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). This is equivalent to an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. Chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\mathcal{K}_{m}\).
+		\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). This is equivalent to 
+        %TODO (Zsuzsi) Consider the phrasing "A combinatorial description of such an element is"
+        an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\mathcal{K}_{m}\).
 		\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\pi(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\pi(K)\).
+        %TODO (Zsuzsi) Would it be simpler to say "the chord diagram formed by pairing the two preimages of each singular point along the circle domain of $K$"?
 	\end{enumerate}
 \end{definitions}
 
@@ -272,6 +278,8 @@ The constants of integration comprise the information that is lost when integrat
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
 	\]
 \end{example}
+
+{\color{red} ZSUZSI READ TO HERE}
 
 \begin{proposition}
 	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
