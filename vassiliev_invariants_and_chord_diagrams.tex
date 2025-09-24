@@ -395,7 +395,7 @@ There is also an interesting algebraic structure on the space of knots, \(\mathc
 	\[
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
 		\quad
-		\overset{\#}{\longmapsto}
+		\overset{\hash}{\longmapsto}
 		\quad
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
@@ -405,11 +405,11 @@ There is also an interesting algebraic structure on the space of knots, \(\mathc
 This in not a-priori well-defined: we have not specified where along either \(K_{1}\) or \(K_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
 
 \begin{proposition}
-	The connected sum \(\#: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
+	The connected sum \(\hash: \mathcal{K}_{0} \otimes \mathcal{K}_{0} \to \mathcal{K}_{0}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
 \end{proposition}
 
 \begin{proof}
-	We exhibit an ambient isotopy starting at \(K_{1} \# K_{2}\) where the small arc is removed from \(K_{1}\) as in the example above. The part of the connected sum coming from \(K_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(K_{1}\).
+	We exhibit an ambient isotopy starting at \(K_{1} \hash K_{2}\) where the small arc is removed from \(K_{1}\) as in the example above. The part of the connected sum coming from \(K_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(K_{1}\).
 	\[
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_1.pdf}
 		\rightsquigarrow
@@ -427,9 +427,11 @@ This in not a-priori well-defined: we have not specified where along either \(K_
 \end{proof}
 
 \begin{proposition}
-	There is a descending filtration on the space \(\mathcal{K}\)
-	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots\]
-	giving \(\mathcal{K}\) with the connected sum as multiplication the structure of a filtered algebra.
+	There is a descending filtration of ideals on the space \(\mathcal{K}_{0}\)
+	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots.\]
+	Furthermore, the connected sum preserves the filtration,
+	\[\hash: \delta^{i}(\mathcal{K}_{i}) \otimes \delta^{j}(\mathcal{K}_{j}) \to \delta^{i + j}(\mathcal{K}_{i + j}),\]
+	giving \(\mathcal{K}\) the structure of a filtered algebra.
 \end{proposition}
 
 \begin{proof}
@@ -437,22 +439,18 @@ This in not a-priori well-defined: we have not specified where along either \(K_
 
 	The connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. It remains to prove that \(\delta^{i}(\mathcal{K})\) are ideals, and that the connected sum respects the filtration.
 
-	For the former, if \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then \(k\) and \(\ell\) are images of singular knots under resolving \(i\) and \(j\) double points respectively.
+	For the former, suppose \(k \in \delta^{i}(\mathcal{K}_{i})\). Then there is \(i\)-singular \(k_{\bullet} \in \mathcal{K}_{i}\) such that \(\delta^{i}(k_{\bullet}) = k\). Let \(a \in \mathcal{K_{0}}\). To show that \(k \hash a \in \delta^{i}(\mathcal{K}_{i})\), it suffices to exhibit an element of \(\mathcal{K}_{i}\) that resolves under \(\delta^{i}\) to \(k \hash a\). The ``connected sum'' \(k_{\bullet} \hash a\) is such a singular knot (see Remark \ref{rem:singular-connected-sum} below).
+
+	For the latter, if \(k \otimes \ell \in \delta^{i}(\mathcal{K}_{i}) \otimes \delta^{j}(\mathcal{K}_{j})\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\mathcal{K}_{i}\) and \(\mathcal{K}_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the ``connected sum'' \(k_{\bullet} \hash \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \hash \ell\), which is therefore in 
+	\(\delta^{i + j}(\mathcal{K}_{i + j})\).
 \end{proof}
 
-\begin{mdframed}
-	Need to add an additional topological move for ambient isotopy on singular knots that allows moving a string link through a double-point (true after resolving). Need to make a remark here that well-definedness of the singular knot connected sum was exactly the point of having this move.
-\end{mdframed}
+\begin{remark}
+	\label{rem:singular-connected-sum}
+	Parts of the proof involve the connected sums of singular knots with regular knots, or singular knots with singular knots. This was not part of Definition \ref{def:connected-sum}, but the definition can easily be extended by ensuring that the small arcs removed from a singular knot do not contain a singular point. Still, this is ill-defined, as the resulting singular knot may depend on from which side of the singular point the arc was removed. However, for the sake of the proof, any choice suffices.
+\end{remark}
 
-\begin{proposition}
-	The operation \(\#: \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) makes \(\mathcal{K}\) into a filtered algebra, with the grading given by the number of singular points.
-\end{proposition}
-
-The connected sum operation makes the space \(\mathcal{K} = \bigoplus_{i = 0}^{\infty} \mathcal{K}_{i}\) into a graded algebra with the grading given by the order of the singular knot.
-
-Via the projection \(\pi\), the algebra structure on singular knots induces an algebra structure on chord diagrams.
-
-From this algebra structure on the space of singular knots, an algebra structure on a space of chord diagrams is induced. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+Via the projection \(\pi\), the algebra structure on singular knots induces an algebra structure on chord diagrams. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
 
 \begin{equation}
 	\label{eq:co4T}
