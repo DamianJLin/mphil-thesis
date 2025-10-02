@@ -264,17 +264,17 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\mathcal
 	\label{def:chord-diagram}
 	\begin{enumerate}
 		\item A \textbf{chord diagram} of order \(m\) is an element of \(\mathcal{K}_{m} / \partial \mathcal{K}_{m + 1}\). This is equivalent to 
-        %TODO (Zsuzsi) Consider the phrasing "A combinatorial description of such an element is"
-        an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\mathcal{K}_{m}\).
-		\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\pi(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\pi(K)\).
-        %TODO (Zsuzsi) Would it be simpler to say "the chord diagram formed by pairing the two preimages of each singular point along the circle domain of $K$"?
+		%TODO (Zsuzsi) Consider the phrasing "A combinatorial description of such an element is"
+		an oriented circle with a distinguished set of \(m\) pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\mathcal{K}_{m}\).
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(K\)}, denoted \(\sigma(K)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(K\). Traversing both \(K\) and the circle, label the points on the circle in the order in which the singular points of \(K\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\sigma(K)\).
+		%TODO (Zsuzsi) Would it be simpler to say "the chord diagram formed by pairing the two preimages of each singular point along the circle domain of $K$"?
 	\end{enumerate}
 \end{definitions}
 
 \begin{example}
 	\[
 		\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
-		\quad \overset{\pi}{\longmapsto} \quad
+		\quad \overset{\sigma}{\longmapsto} \quad
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
 	\]
 \end{example}
@@ -283,7 +283,7 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\mathcal
 
 \begin{proposition}
 	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
-	\[Q_{0}(k) = Q(k) + q(\pi(k))\]
+	\[Q_{0}(k) = Q(k) + q(\sigma(k))\]
 	for \(q \in \mathcal{D}_{m}^{\ast}\)
 	Then \(Q_{0}\) is also an integral of \(P\).
 \end{proposition}
@@ -340,7 +340,7 @@ If we take the relations for a knot invariant to be integrable and project them 
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
-\[Q + q \circ \pi.\]
+\[Q + q \circ \sigma.\]
 Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that \(S\mathcal{K}_{m}\) vanishes. But this is a tautological statement of the general theory --- it doesn't mean much if we don't know what \(S\mathcal{K}_{m}\) is.
 
 \begin{conjecture}
@@ -353,7 +353,7 @@ Since integration is linear, to be integrable again, both terms need to be integ
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-term}\) and \(\ref{eq:topological-one-term}\), which is what \(S\mathcal{K}\) measures.
 		\item Computing \(S\mathcal{K}_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
-		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}. In Chapter \ref{ch:combinatorial-integration_of_weight_systems} we extend this to ``a little more than half''.
+		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
 	\end{enumerate}
 \end{remarks}
 
@@ -427,11 +427,13 @@ This in not a-priori well-defined: we have not specified where along either \(K_
 \end{proof}
 
 \begin{proposition}
+	% TODO: Now that the plan here is slightly changed, the notation is a little far from ideal. Fix this.
 	There is a descending filtration of ideals on the space \(\mathcal{K}_{0}\)
-	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots.\]
+	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots\]
+	with \(i\)th step of the filtration spanned by all resolutions of \(i\)-singular knots.
 	Furthermore, the connected sum preserves the filtration,
 	\[\hash: \delta^{i}(\mathcal{K}_{i}) \otimes \delta^{j}(\mathcal{K}_{j}) \to \delta^{i + j}(\mathcal{K}_{i + j}),\]
-	giving \(\mathcal{K}\) the structure of a filtered algebra.
+	giving \(\mathcal{K}_{0}\) the structure of a filtered algebra.
 \end{proposition}
 
 \begin{proof}
@@ -450,7 +452,7 @@ This in not a-priori well-defined: we have not specified where along either \(K_
 	Parts of the proof involve the connected sums of singular knots with regular knots, or singular knots with singular knots. This was not part of Definition \ref{def:connected-sum}, but the definition can easily be extended by ensuring that the small arcs removed from a singular knot do not contain a singular point. Still, this is ill-defined, as the resulting singular knot may depend on from which side of the singular point the arc was removed. However, for the sake of the proof, any choice suffices.
 \end{remark}
 
-Via the projection \(\pi\), the algebra structure on singular knots induces an algebra structure on chord diagrams. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+The algebra strucutre on knots is heavily related to an algebra of chord diagrams. Recall the \ref{eq:4T} and \ref{eq:1T} relations from the previous section. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
 
 \begin{equation}
 	\label{eq:co4T}
@@ -472,47 +474,36 @@ Via the projection \(\pi\), the algebra structure on singular knots induces an a
 \end{equation}
 
 \begin{definition}
-	We define \(\mathcal{A}\), which is also known as the \textbf{space of chord diagrams} as
+	We define \(\mathcal{A}\), the \textbf{space of chord diagrams} as
 	\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}, \ref{eq:co1T}}.\]
-	Denote the projection from \(\mathcal{D}\) to \(\mathcal{A}\) by \(p\).
 \end{definition}
 
-Recall the projection \(\pi: \mathcal{K} \to \mathcal{D}\) from singular knots to chord diagrams. This can be extended to a projection \(p \circ \pi : \mathcal{K} \to \mathcal{A}\), and this induces a multiplication on \(\mathcal{A}\).
-
-\begin{proposition}
-	The connected sum operation on knots induces a well-defined multiplication on \(\mathcal{A}\).
-\end{proposition}
-
-\begin{proof}
-	proof here
-\end{proof}
-
-\begin{mdframed}
-	(Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.)
-\end{mdframed}
-
-
 \begin{warning}
-	Elements of both \(\mathcal{A}\) and \(\mathcal{C}\) are called chord diagrams. From now, a chord diagram can be assumed to be an element of \(\mathcal{A}\) unless it is otherwise obvious.
+	Both \(\mathcal{A}\) and \(\mathcal{D}\) are known as the space of chord diagrams. From now on when we refer to a chord diagram, we mean an element of \(\mathcal{A}\) unless otherwise specified.
 \end{warning}
 
-\begin{mdframed}
-	The space \(\mathcal{K}\) has an algebra structure which it inherits from the algebra structure on \(\mathcal{K}_{0}\).
-
-	\begin{definition}
-		The \textbf{connected sum} of two knots ...
-	\end{definition}
-
-	Question: Chord diagrams connected sum obviously comes from the knot connected sum. However, chord diagram connected sum is only well-defined up to four-term and one-term. Is it possible to define singular knot connected sum and then make chord diagram connected sum come from that? Do I need to quotient \(\mathcal{K}\) by \ref{eq:co4T} and \ref{eq:co1T} here?
-\end{mdframed}
-
+\begin{definition}
+	The \textbf{connected sum} of two chord diagrams \(A_{1}\) and \(A_{2}\) is the chord diagram obtained by cutting the two circles of \(A_{1}\) and \(A_{2}\) and connecting the two intervals in an orientation-preserving way.
+	\[
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_1.pdf}
+		\quad
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_1.pdf}
+		\quad
+		\overset{\hash}{\longmapsto}
+		\quad
+		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result.pdf}
+		=
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_circular.pdf}
+	\]
+	The definition is extended bilinearly to elements of \(\mathcal{A}\).
+\end{definition}
 
 \section{Chord diagrams and the universal Vassiliev invariant}
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
 % NOTE: Perhaps, "The fundamental theorem and the universal Vassiliev invariant"?
 
 \begin{mdframed}
-	 Either way.
+	Either way.
 
 	Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
 
