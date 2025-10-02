@@ -487,7 +487,7 @@ The algebra strucutre on knots is heavily related to an algebra of chord diagram
 	\[
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_1.pdf}
 		\quad
-		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_1.pdf}
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_2.pdf}
 		\quad
 		\overset{\hash}{\longmapsto}
 		\quad
@@ -497,6 +497,48 @@ The algebra strucutre on knots is heavily related to an algebra of chord diagram
 	\]
 	The definition is extended bilinearly to elements of \(\mathcal{A}\).
 \end{definition}
+
+Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:co4T} relation in \(\mathcal{A}\) takes care of this.
+
+\begin{proposition}
+	The connected sum operation \(\hash: \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
+\end{proposition}
+
+\begin{proof}
+	We will prove that the connected sums, given any two choices of connection locations, are equal modulo \ref{eq:co4T}.
+
+	Let us denote the first chord diagram as \(a_{1}\) and the second as \(a_{2}\). Without loss of generality, it suffices to prove that without change in the connection location of \(a_{1}\), we can change the connection location on \(a_{2}\). Indeed it suffices to prove that we can rotate \(a_{2}\) by one `click', like so:
+
+	\[
+		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result.pdf}
+		\quad
+		\rightsquigarrow
+		\quad
+		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_rotated.pdf}
+	\]
+	This is equivalent to sliding a single chord endpoint on the second diagram all the way through the first diagram, along the path of the grey arrow.
+	\[
+		\includegraphics[width=0.27\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_with_arrow.pdf}
+	\]
+	Which we show can be achieved by a series of \ref{eq:co4T} relations.
+
+	We can rewrite \ref{eq:co4T} as
+	\[
+		\left(
+		\ftnorth
+		\ - \
+		\ftsouth
+		\right)
+		\ + \
+		\left(
+		\fteast
+		\ - \
+		\ftwest
+		\right)
+		\ = \ 0.
+	\]
+	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \hash a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
+\end{proof}
 
 \section{Chord diagrams and the universal Vassiliev invariant}
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
