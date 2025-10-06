@@ -413,6 +413,8 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 	A filtration of vector spaces is uninteresting. The only thing to check is that \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\) if \(i < j\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
 \end{proof}
 
+The algebraic structure on knots comes from the following operation.
+
 \begin{definition}
 	\label{def:connected-sum}
 	The \textbf{connected sum} of two knots \(k_{1}\) and \(k_{2}\) is the knot obtained by removing a small arc from each of \(k_{1}\) and \(k_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
@@ -426,9 +428,10 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 	This definition is extended bilinearly to \(\mathcal{K}\), i.e. linear combinations.
 \end{definition}
 
-This in not a-priori well-defined: we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
+This is not a-priori well-defined. We have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
 
 \begin{proposition}
+	\label{prop:connected-sum-well-defined}
 	The connected sum \(\hash: \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
 \end{proposition}
 
@@ -451,29 +454,91 @@ This in not a-priori well-defined: we have not specified where along either \(k_
 \end{proof}
 
 \begin{proposition}
-	% TODO: Change this to "The connected sum operation makes K into a filtered algebra."
-	There is a descending filtration of ideals on the space \(\mathcal{K}_{0}\)
-	\[\mathcal{K}_{0} \supset \delta^{1}(\mathcal{K}_{1}) \supset \delta^{2}(\mathcal{K}_{2}) \supset \cdots\]
-	with \(i\)th step of the filtration spanned by all resolutions of \(i\)-singular knots.
-	Furthermore, the connected sum preserves the filtration,
-	\[\hash: \delta^{i}(\mathcal{K}_{i}) \otimes \delta^{j}(\mathcal{K}_{j}) \to \delta^{i + j}(\mathcal{K}_{i + j}),\]
-	giving \(\mathcal{K}_{0}\) the structure of a filtered algebra.
+	The connected sum makes \((\mathcal{K}, \hash)\) into a filtered algebra. That is, the connected sum respects the filtration,
+	\[K_{i} \hash K_{j} \subset K_{i + j}.\]
 \end{proposition}
 
 \begin{proof}
-	Indeed the filtration is descending, since if \(k \in \delta^{j}(\mathcal{K}_{j})\), then it is the resolution of \(j\) double points of some singular knot with at least \(j\) double points. For any \(i < j\), by resolving only \(i\) of the double points, it can be seen that \(k \in \delta^{i}(\mathcal{K}_{i})\).
+	Indeed, the connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. The question is whether the connected sum respects the filtration.
 
-	The connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. It remains to prove that \(\delta^{i}(\mathcal{K})\) are ideals, and that the connected sum respects the filtration.
+	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k_{\bullet} \hash \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \hash \ell\), which is therefore in \(\delta^{i + j}(\mathcal{K}_{i + j})\).
 
-	For the former, suppose \(k \in \delta^{i}(\mathcal{K}_{i})\). Then there is \(i\)-singular \(k_{\bullet} \in \mathcal{K}_{i}\) such that \(\delta^{i}(k_{\bullet}) = k\). Let \(a \in \mathcal{K_{0}}\). To show that \(k \hash a \in \delta^{i}(\mathcal{K}_{i})\), it suffices to exhibit an element of \(\mathcal{K}_{i}\) that resolves under \(\delta^{i}\) to \(k \hash a\). The ``connected sum'' \(k_{\bullet} \hash a\) is such a singular knot (see Remark \ref{rem:singular-connected-sum} below).
-
-	For the latter, if \(k \otimes \ell \in \delta^{i}(\mathcal{K}_{i}) \otimes \delta^{j}(\mathcal{K}_{j})\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\mathcal{K}_{i}\) and \(\mathcal{K}_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the ``connected sum'' \(k_{\bullet} \hash \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \hash \ell\), which is therefore in 
-	\(\delta^{i + j}(\mathcal{K}_{i + j})\).
+	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\delta^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k_{\bullet} \hash \ell_{\bullet}\) produce a singular knot which resolves to \(k \hash \ell\).
 \end{proof}
 
+% NOTE: to self --- do I say 'Indeed' too much?
+
+\begin{mdframed}
+	Say something intelligent to introduce this definition.
+
+	I guess it's something like: We assert that knots are (semi)group-like. This must be somehow related to (some?) chord diagrams being like exponentials (primitives?).
+\end{mdframed}
+
+\begin{definition}
+	The coproduct \(\Delta: \mathcal{K} \to \mathcal{K} \otimes \mathcal{K}\) is defined on knots \(k\) as
+	\[\Delta(k) = k \otimes k\]
+	and extended bilinearly to \(\mathcal{K}\).
+\end{definition}
+
+\begin{proposition}
+	The connected sum and coproduct make \((\mathcal{K}, \hash, \Delta)\) into a bialgebra.
+\end{proposition}
+
+\begin{proof}
+	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \hash)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
+	\begin{align*}
+		\Delta(k \hash \ell)
+		& = k \hash \ell \otimes k \hash \ell \\
+		& = (k \otimes k) \hash (\ell \otimes \ell) \\
+		& = \Delta(k) \hash \Delta(\ell)
+	\end{align*}
+	and the rest are trivial.
+\end{proof}
+
+\begin{proposition}
+	\label{prop:singular-knots-filtered-bialebra}
+	With the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra. That is, the coproduct \(\Delta\) also respects the filtration,
+	\[\Delta(\mathcal{K}_{j}) \subset \sum_{i = 0}^{j} \mathcal{K}_{i} \otimes \mathcal{K}_{j - i}.\]
+\end{proposition}
+% TODO: Make comment that the dual of this theorem is analagous to the Leibniz formula, and how this relates to the Vassiliev invariants polynomials analogy.
+
+We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}. The lemma gives a formula for the coproduct of an element of \(\mathcal{K}_{n}\) in terms of a singular knot that resolves to it by looking at the \(2^{n}\) ways of resolving some of singular points in one cofactor and the rest in the other. If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
+\[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
+
+\begin{lemma}[Willerton]
+	\label{lem:co-leibniz-formula-for-knots}
+	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
+	\[
+		\Delta(\delta^{m}(k^{\bullet}))
+		=
+		\sum_{I \subset S} \mu^{\bar{I}}\delta^{I}(k^{\bullet})
+		\otimes
+		\mu^{I}\delta^{\bar{I}}(k^{\bullet})
+	\]
+	where \(\bar{I} = S \smallsetminus I\).
+	% TODO: Problem, didn't we mod out by the diff* relation...
+\end{lemma}
+
+\begin{proof}
+	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a genuine knot, so
+	\begin{align*}
+		\Delta(\delta^{0}(k))
+		& = \Delta(k) \\
+		& = k \otimes k \\
+		& = \sum_{I \subset \emptyset} \mu^{\bar{I}}\delta^{I}(k)
+			\otimes
+			\mu^{I}\delta^{\bar{I}}(k). \\
+	\end{align*}
+
+	The inductive step is as follows:
+\end{proof}
+
+\begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialebra}}
+	The operators \(\delta^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
+\end{proofof}
+
 \begin{remark}
-	\label{rem:singular-connected-sum}
-	Parts of the proof involve the connected sums of singular knots with regular knots, or singular knots with singular knots. This was not part of Definition \ref{def:connected-sum}, but the definition can easily be extended by ensuring that the small arcs removed from a singular knot do not contain a singular point. Still, this is ill-defined, as the resulting singular knot may depend on from which side of the singular point the arc was removed. However, for the sake of the proof, any choice suffices.
+	There is one techincallity. For the above lemma and proof we must forget the \ref{eq:codiff} relation on \(\singularknots_{n}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation.
 \end{remark}
 
 The algebra strucutre on knots is heavily related to an algebra of chord diagrams. Recall the \ref{eq:4T} and \ref{eq:1T} relations from the previous section. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
@@ -496,6 +561,8 @@ The algebra strucutre on knots is heavily related to an algebra of chord diagram
 	\tag{\coot}
 	\otgraphic \ = \ 0
 \end{equation}
+
+% TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
 
 \begin{definition}
 	We define \(\mathcal{A}\), the \textbf{space of chord diagrams} as
