@@ -509,7 +509,7 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 	\label{lem:co-leibniz-formula-for-knots}
 	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
 	\[
-		\Delta(\delta^{m}(k^{\bullet}))
+		\Delta(\delta^{S}(k^{\bullet}))
 		=
 		\sum_{I \subset S} \mu^{\bar{I}}\delta^{I}(k^{\bullet})
 		\otimes
@@ -520,6 +520,7 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 \end{lemma}
 
 \begin{proof}
+	% TODO: "proof-read" (haha)
 	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a genuine knot, so
 	\begin{align*}
 		\Delta(\delta^{0}(k))
@@ -531,9 +532,9 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 			\mu^{I}\delta^{\bar{I}}(k). \\
 	\end{align*}
 
-	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{n + 1}\). Let \(x\) denote a specific singular point of \(k^{\bullet}\), and \(J\) denote all the other singular points of \(K\). So all singular points of \(k^{\bullet}\) are \(S = J \sqcup \{x\}\), and let us examine
+	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\). Let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) denote a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\delta^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We examine
 	\[
-		\sum_{\mathclap{I \subset J \sqcup \{x\}}}
+		\sum_{\mathclap{I \subset J}}
 			\mu^{\bar{I}}\delta^{I}(k^{\bullet})
 			\otimes
 			\mu^{I}\delta^{\bar{I}}(k^{\bullet}).
@@ -600,41 +601,36 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
 				\otimes
 				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
-			\Big) \\
+			\Big)
 	\end{align*}
 	but since \(\{I \mid I \subset J, x \notin I\}\) is in bijection with \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
-	\begin{align*}
-		& \sum_{\mathclap{x \in I \subset J}}
+	\[
+		\sum_{\mathclap{x \in I \subset J}}
 			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
 			\otimes
 			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
 		-
 			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
 			\otimes
-			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}) \\
-	=	&  \sum_{\mathclap{I \subset J \smallsetminus \{x\}}}
+			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}).
+	\]
+	Since neither \(\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}\) or \(\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}\)
+	\[
+		\sum_{\mathclap{I \subset J \smallsetminus \{x\}}}
 			\mu^{\bar{I}}\delta^{I}(k^{\bullet +})
 			\otimes
 			\mu^{I}\delta^{\bar{I}}(k^{\bullet +})
 		-
 			\mu^{\bar{I}}\delta^{I}(k^{\bullet -})
 			\otimes
-			\mu^{I}\delta^{\bar{I}}(k^{\bullet -}) \\
-	\end{align*}
+			\mu^{I}\delta^{\bar{I}}(k^{\bullet -})
+	\]
+	which by the inductive hypothesis is
 	\begin{align*}
-		\Delta(\delta^{n + 1}(k^{\bullet}))
-		& = \Delta(\delta^{n} \delta^{\{x\}}(k^{\bullet}) )\\
-		& = \Delta(\delta^{n} (k^{\bullet +})) - \Delta(\delta^{n}(k^{\bullet -}) )\\
-		& = \sum_{I \subset J}
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet+})
-			\otimes
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet+})
-			-
-			\sum_{I \subset J} \mu^{\bar{I}}\delta^{I}(k^{\bullet-})
-			\otimes
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet-}) \\
+		\Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet +})) - \Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet -}))
+		& = \Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet +}) - \delta^{J \smallsetminus \{x\}}(k^{\bullet -})) \\
+		& = \Delta(\delta^{J}(k^{\bullet})).
 	\end{align*}
-	On the other hand,
 \end{proof}
 
 \begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialebra}}
