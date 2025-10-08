@@ -525,12 +525,116 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 		\Delta(\delta^{0}(k))
 		& = \Delta(k) \\
 		& = k \otimes k \\
-		& = \sum_{I \subset \emptyset} \mu^{\bar{I}}\delta^{I}(k)
+		& = \sum_{I \subset \emptyset}
+			\mu^{\bar{I}}\delta^{I}(k)
 			\otimes
 			\mu^{I}\delta^{\bar{I}}(k). \\
 	\end{align*}
 
-	The inductive step is as follows:
+	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{n + 1}\). Let \(x\) denote a specific singular point of \(k^{\bullet}\), and \(J\) denote all the other singular points of \(K\). So all singular points of \(k^{\bullet}\) are \(S = J \sqcup \{x\}\), and let us examine
+	\[
+		\sum_{\mathclap{I \subset J \sqcup \{x\}}}
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet})
+			\otimes
+			\mu^{I}\delta^{\bar{I}}(k^{\bullet}).
+	\]
+	Decomposing the sum based on whether \(x \in I\) yields
+	\[
+		\sum_{\mathclap{x \in I \subset J}}
+			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet})
+			\otimes
+			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet})
+			+
+			\sum_{\mathclap{x \notin I \subset J}}
+			\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet})
+			\otimes
+			\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet}),
+	\]
+	then resolving either \(\delta\) or \(\mu\) on \(x\),
+	\begin{align*}
+		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
+		\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -})
+		\otimes
+		\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +} + k^{\bullet -}) \\
+		+
+		& \frac{1}{2} \sum_{\mathclap{x \notin I \subset J}}
+		\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +} + k^{\bullet -})
+		\otimes
+		\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -}).
+	\end{align*}
+	Expanding, yields the cumbersome,
+	\begin{align*}
+		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
+			\Big(
+				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+				\otimes
+				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+				+
+				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+				\otimes
+				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}) \\
+				& \qquad \qquad \quad -
+				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+				\otimes
+				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+				-
+				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+				\otimes
+				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -})
+			\Big) \\
+		+
+		& \frac{1}{2} \sum_{\mathclap{x \notin I \subset J}}
+			\Big(
+				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +})
+				\otimes
+				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
+				-
+				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +})
+				\otimes
+				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -}) \\
+				& \qquad \qquad \quad +
+				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
+				\otimes
+				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
+				-
+				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
+				\otimes
+				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
+			\Big) \\
+	\end{align*}
+	but since \(\{I \mid I \subset J, x \notin I\}\) is in bijection with \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
+	\begin{align*}
+		& \sum_{\mathclap{x \in I \subset J}}
+			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+			\otimes
+			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+		-
+			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+			\otimes
+			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}) \\
+	=	&  \sum_{\mathclap{I \subset J \smallsetminus \{x\}}}
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet +})
+			\otimes
+			\mu^{I}\delta^{\bar{I}}(k^{\bullet +})
+		-
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet -})
+			\otimes
+			\mu^{I}\delta^{\bar{I}}(k^{\bullet -}) \\
+	\end{align*}
+	\begin{align*}
+		\Delta(\delta^{n + 1}(k^{\bullet}))
+		& = \Delta(\delta^{n} \delta^{\{x\}}(k^{\bullet}) )\\
+		& = \Delta(\delta^{n} (k^{\bullet +})) - \Delta(\delta^{n}(k^{\bullet -}) )\\
+		& = \sum_{I \subset J}
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet+})
+			\otimes
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet+})
+			-
+			\sum_{I \subset J} \mu^{\bar{I}}\delta^{I}(k^{\bullet-})
+			\otimes
+			\mu^{\bar{I}}\delta^{I}(k^{\bullet-}) \\
+	\end{align*}
+	On the other hand,
 \end{proof}
 
 \begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialebra}}
