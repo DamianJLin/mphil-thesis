@@ -8,7 +8,7 @@
 
 	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:integration-and-the-fundamental-theorem} and throughout this chapter.
 
-	In Section \ref{sec:the-bialgebras-of-knots-and-chord-diagrams}, with the context in mind, we introduce the main players in this theory.
+	In Section \ref{sec:the-bialgebras-of-knots}, with the context in mind, we introduce the main players in this theory.
 \end{mdframed}
 
 \lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
@@ -381,8 +381,8 @@ There are various proofs of the fundamental theorem. They are listed in \cite{th
 
 In Section \ref{sec:chord-diagrams-and-the-universal-Vassiliev-invariant} we will look at equivalent formulation of the fundamental theorem.
 
-\section{The bialgebras of knots and chord diagrams}
-\label{sec:the-bialgebras-of-knots-and-chord-diagrams}
+\section{The bialgebra of knots}
+\label{sec:the-bialgebras-of-knots}
 
 \begin{mdframed}
 	Some planning notes for this chapter:
@@ -496,7 +496,7 @@ This is not a-priori well-defined. We have not specified where along either \(k_
 \end{proof}
 
 \begin{proposition}
-	\label{prop:singular-knots-filtered-bialebra}
+	\label{prop:singular-knots-filtered-bialgebra}
 	With the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra. That is, the coproduct \(\Delta\) also respects the filtration,
 	\[\Delta(\mathcal{K}_{j}) \subset \sum_{i = 0}^{j} \mathcal{K}_{i} \otimes \mathcal{K}_{j - i}.\]
 \end{proposition}
@@ -504,6 +504,10 @@ This is not a-priori well-defined. We have not specified where along either \(k_
 
 We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}. The lemma gives a formula for the coproduct of an element of \(\mathcal{K}_{n}\) in terms of a singular knot that resolves to it by looking at the \(2^{n}\) ways of resolving some of singular points in one cofactor and the rest in the other. If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
+
+\begin{remark}
+	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\delta^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation.
+\end{remark}
 
 \begin{lemma}[Willerton]
 	\label{lem:co-leibniz-formula-for-knots}
@@ -516,7 +520,6 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 		\mu^{I}\delta^{\bar{I}}(k^{\bullet})
 	\]
 	where \(\bar{I} = S \smallsetminus I\).
-	% TODO: Problem, didn't we mod out by the diff* relation...
 \end{lemma}
 
 \begin{proof}
@@ -614,7 +617,7 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 			\otimes
 			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}).
 	\]
-	Since neither \(\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}\) or \(\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}\)
+	Since neither \(\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}\) or \(\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}\) are with respect to \(x\), this can be written
 	\[
 		\sum_{\mathclap{I \subset J \smallsetminus \{x\}}}
 			\mu^{\bar{I}}\delta^{I}(k^{\bullet +})
@@ -633,15 +636,48 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 	\end{align*}
 \end{proof}
 
-\begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialebra}}
+\begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialgebra}}
 	The operators \(\delta^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
 \begin{remark}
-	There is one techincallity. For the above lemma and proof we must forget the \ref{eq:codiff} relation on \(\singularknots_{n}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation.
+	\label{rem:non-vassiliev-invariants}
+	Not all knot invariants respect the singular knot filtration, but the point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration.
 \end{remark}
 
-The algebra strucutre on knots is heavily related to an algebra of chord diagrams. Recall the \ref{eq:4T} and \ref{eq:1T} relations from the previous section. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+To illustrate this point, let's look at the dual filtered bialgebra of \(\mathcal{K}\).
+
+\begin{definition}
+	The \textbf{filtered bialgebra of Vassiliev invariants} is the set of Vassiliev invariants, with the (increasing) filtration given by the degree of the Vassiliev invariant, the product given by multiplication pointwise
+	\[V_{1}V_{2}(k) = V_{1}(k)V_{2}(k),\]
+	and the coproduct \(\eta\) given by
+	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \hash k_{2}).\]
+\end{definition}
+
+\begin{proposition}
+	The dual filtered bialgebra of \(\mathcal{K}\) is the dual filtered algebra of Vassiliev invariants.
+\end{proposition}
+
+\begin{proof}
+	\begin{mdframed}
+		Put a proof here.
+	\end{mdframed}
+\end{proof}
+
+\begin{example}
+	\begin{mdframed}
+		In view of Remark \ref{rem:non-vassiliev-invariants}, let's define a knot invariant. (Define \(f_{3_{1}}\).)
+	\end{mdframed}
+\end{example}
+
+\begin{remark}
+	Let's continue the polynomial analogy with an observation due to Willerton in \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}. Taking the dual statement to Lemma \ref{lem:co-leibniz-formula-for-knots}, we get a theorem analogous to the Leibniz theorem for functions of multiple variables. The statement that Vassiliev invariants are a filtered algebra then follows from the definition of Vassiliev invariants and the lemma. The same argument in multivariable calculus uses the Leibniz theorem to prove that polynomials are a filtered vector space.
+\end{remark}
+
+\section{The Hopf algebra of chord diagrams}
+\label{the-hopf-algebra-of-chord-diagrams}
+
+This bialgebra strucutre on knots is heavily related to a bialgebra structure on chord diagrams. Recall the \ref{eq:4T} and \ref{eq:1T} relations from the previous section. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
 
 \begin{equation}
 	\label{eq:co4T}
@@ -772,6 +808,8 @@ The point of the fundamental theorem of Vassiliev invariants is that it allows u
 	or
 	\[W = \gr\mathcal{V}\]
 \end{corollary}
+
+a picutre of a cat
 
 
 
