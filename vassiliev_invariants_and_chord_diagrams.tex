@@ -376,7 +376,7 @@ If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev inv
 There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections. To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
 
 \begin{remark}
-	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
+	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
 \end{remark}
 
 In Section \ref{sec:chord-diagrams-and-the-universal-Vassiliev-invariant} we will look at equivalent formulation of the fundamental theorem.
@@ -655,7 +655,7 @@ To illustrate this point, let's look at the dual filtered bialgebra of \(\mathca
 \end{definition}
 
 \begin{proposition}
-	The dual filtered bialgebra of \(\mathcal{K}\) is the dual filtered algebra of Vassiliev invariants.
+	The filtered bialgebraic dual of the (descending) filtered bialgebra \(\mathcal{K}\) is the (ascending) filtered bialgebra of Vassiliev invariants.
 \end{proposition}
 
 \begin{proof}
@@ -677,7 +677,11 @@ To illustrate this point, let's look at the dual filtered bialgebra of \(\mathca
 \section{The Hopf algebra of chord diagrams}
 \label{the-hopf-algebra-of-chord-diagrams}
 
-This bialgebra strucutre on knots is heavily related to a bialgebra structure on chord diagrams. Recall the \ref{eq:4T} and \ref{eq:1T} relations from the previous section. Just like with the \ref{eq:diff} and \ref{eq:codiff} relations, instead of studying functions on chord diagrams satisfying \ref{eq:4T} and \ref{eq:1T}, we prefer to study functions on spaces quotiented by relations on the objects.
+% TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
+
+This bialgebra strucutre on knots is heavily related to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
+
+In Section \ref{sec:integration-and-the-fundamental-theorem} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4T}\) and \(\ref{eq:1T}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
 \begin{equation}
 	\label{eq:co4T}
@@ -698,8 +702,6 @@ This bialgebra strucutre on knots is heavily related to a bialgebra structure on
 	\otgraphic \ = \ 0
 \end{equation}
 
-% TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
-
 \begin{definition}
 	We define \(\mathcal{A}\), the \textbf{space of chord diagrams} as
 	\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}, \ref{eq:co1T}}.\]
@@ -708,6 +710,8 @@ This bialgebra strucutre on knots is heavily related to a bialgebra structure on
 \begin{warning}
 	Both \(\mathcal{A}\) and \(\mathcal{D}\) are known as the space of chord diagrams. From now on when we refer to a chord diagram, we mean an element of \(\mathcal{A}\) unless otherwise specified.
 \end{warning}
+
+The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mirror those in \(\mathcal{K}\).
 
 \begin{definition}
 	The \textbf{connected sum} of two chord diagrams \(A_{1}\) and \(A_{2}\) is the chord diagram obtained by cutting the two circles of \(A_{1}\) and \(A_{2}\) and connecting the two intervals in an orientation-preserving way.
@@ -767,6 +771,10 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \hash a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
 \end{proof}
 
+\begin{mdframed}
+	The coproduct on chord diagrams (will this be relevant if we use the other coproduct later anyway?). And the antipode I suppose.
+\end{mdframed}
+
 \section{Chord diagrams and the universal Vassiliev invariant}
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
 % NOTE: Perhaps, "The fundamental theorem and the universal Vassiliev invariant"?
@@ -780,39 +788,6 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{mdframed}
 
 The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between Vassiliev invariants and weight systems. In this section we will reformulate the fundamental theorem in a way that makes this apparent. At the same time we will describe the algebra structure on the spaces at play.
-
-\begin{definitions}
-	\label{def:grading-filtration}
-	\begin{enumerate}
-		\item A \textbf{filtration} on a vector space \(X\) is a descending sequence of nested subspaces
-			\[X = X_{0} \supseteq X_{1} \supseteq X_{2} \supseteq \cdots\]
-			indexed by natural numbers
-	\end{enumerate}
-\end{definitions}
-
-\begin{notation}
-	\label{not:spaces-of-vassiliev-invariants-and-weight-systems}
-	\begin{enumerate}
-		\item Let \(\mathcal{V}_{m}\) be the vector space of Vassiliev invariants of degree \(m\). The space \(\mathcal{V}\) will be the space of all Vassiliev invariants,  and it is filtered by degree.
-		\item Let \(W_{m}\) be the vector space of weight systems of degree \(m\). Define \(W = \displaystyle\bigoplus_{i = 0}^{\infty} W_{m}\).
-	\end{enumerate}
-\end{notation}
-
-
-
-
-\begin{corollary}
-	The space of weight systems is the associated graded space of the space of Vassiliev invariants:
-
-	\[W = \bigoplus_{i = 0}^{\infty}\mathcal{V}_{m} / \mathcal{V}_{m - 1},\]
-	or
-	\[W = \gr\mathcal{V}\]
-\end{corollary}
-
-a picutre of a cat
-
-
-
 
 % NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
 
