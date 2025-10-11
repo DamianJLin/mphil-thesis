@@ -703,12 +703,14 @@ In Section \ref{sec:integration-and-the-fundamental-theorem} we saw how function
 \end{equation}
 
 \begin{definition}
-	We define \(\mathcal{A}\), the \textbf{space of chord diagrams} as
-	\[\mathcal{A} = \mathcal{D} / \textup{\ref{eq:co4T}, \ref{eq:co1T}}.\]
+	We define \(\mathcal{A}_{m}\), the \textbf{space of chord diagrams} of degree \(m\) as
+	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:co4T}, \ref{eq:co1T}},\]
+	and \(\mathcal{A}\), the \textbf{space of chord diagrams} as
+	\[\mathcal{A} = \bigoplus_{m = 0}^{\infty} \mathcal{A}_{m}.\]
 \end{definition}
 
 \begin{warning}
-	Both \(\mathcal{A}\) and \(\mathcal{D}\) are known as the space of chord diagrams. From now on when we refer to a chord diagram, we mean an element of \(\mathcal{A}\) unless otherwise specified.
+	Both elements of \(\mathcal{A}\) and \(\mathcal{D}\) are known as chord diagrams. From now on when we say ``a chord diagram'', we mean an element of \(\mathcal{A}\) unless otherwise specified.
 \end{warning}
 
 The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mirror those in \(\mathcal{K}\).
@@ -771,9 +773,29 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \hash a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
 \end{proof}
 
+\begin{proposition}
+	The connected sum operation makes \(\mathcal{A}\) into a graded algebra.
+\end{proposition}
+
+\begin{proof}
+	\begin{mdframed}
+		The connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
+	\end{mdframed}
+\end{proof}
+
 \begin{mdframed}
 	The coproduct on chord diagrams (will this be relevant if we use the other coproduct later anyway?). And the antipode I suppose.
 \end{mdframed}
+
+\begin{proposition}
+	The graded Hopf-algebraic dual of \(\mathcal{A}\) is the the Hopf algebra \(\mathcal{W}\) of weight systems.
+\end{proposition}
+
+\begin{proof}
+	\begin{mdframed}
+		We have constructued it as so. A map \(f: \mathcal{A} \to \mathbb{F}\) satisfies relations that make it a weight system.
+	\end{mdframed}
+\end{proof}
 
 \section{Chord diagrams and the universal Vassiliev invariant}
 \label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
@@ -787,7 +809,48 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	For knots this is the Knotsevich integral. It comes about roughly as follows.
 \end{mdframed}
 
-The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between Vassiliev invariants and weight systems. In this section we will reformulate the fundamental theorem in a way that makes this apparent. At the same time we will describe the algebra structure on the spaces at play.
+The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. In this section we will reformulate the fundamental theorem in a way that makes this apparent, and prove it, modulo the Kontsevich integral.
+
+\begin{definitions}
+	\begin{enumerate}
+		\item The \textbf{associated graded} algebra of a filtered algebra \(A\) is the algebra
+			\[\gr A = \bigoplus_{m = 0}^{\infty} A_{m} / A_{m + 1}.\]
+		\item There is a category of filtered algebras and filtration-respecting maps, and there is a category of graded algebras and grading-respecting maps. The \textbf{associated graded} map of a filtration-respecting map \(f: A \to B\) is the grading-respecting map \({\gr f : \gr A \to \gr B}\) defined by taking a representative \(a_{m}\) to \(f(a_{m})\) then projecting onto \(B_{m} / B_{m + 1}\),
+			\[\gr f: a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}.\]
+		This makes \(\gr\) a functor between these two categories.
+		% TODO: Try to typeset the gr f: grA \to gr B inline
+		% TODO: Do I want to define (grading-), filtration-respecting maps? No. But should I? unsure.
+	\end{enumerate}
+\end{definitions}
+
+
+\begin{definition}
+	% TODO: Work out the proper way to define completion / degree completion.
+	\begin{mdframed}
+		The \textbf{completion} of a filtered algebra \(A\) is the filtered algebra
+		\[\widehat{A} = \varprojlim_{m \to \infty} A_{m} / A_{m + 1},\]
+		and in the cases we care about, this will be equal to the degree-completion of \(\gr A\), though I am not sure if that is true in general.
+
+		It is only filtered and not graded since infinitely many terms are non-zero and this is a technical restriction on direct sums.
+
+		% TODO: Learn something about the topology induced by the completion. What information does this encode and should anything be said about that. If it's just that things are close when they agree to many terms then perhaps not.
+	\end{mdframed}
+\end{definition}
+
+\begin{definition}
+	\label{def:universal-vassiliev-invariant}
+	A universal Vassiliev invariant is a map
+	\[Z : \mathcal{K} \to \widehat{\mathcal{A}}\]
+\end{definition}
+
+\begin{remark}
+	Definition \ref{def:universal-vassiliev-invariant} is also known to some as a (homomorphic) expansion, for example \cite{finite-type-invariants-of-w-knotted-objects-I}, and related to the concept of a formality map.
+	% TODO: find a reference for formality.
+\end{remark}
+
+\begin{theorem}[Universal Vassiliev Invariant]
+
+\end{theorem}
 
 % NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
 
