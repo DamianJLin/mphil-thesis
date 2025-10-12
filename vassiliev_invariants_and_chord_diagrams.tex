@@ -379,7 +379,7 @@ There are various proofs of the fundamental theorem. They are listed in \cite{th
 	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
 \end{remark}
 
-In Section \ref{sec:chord-diagrams-and-the-universal-Vassiliev-invariant} we will look at equivalent formulation of the fundamental theorem.
+In Section \ref{sec:the-kontsevich-integral} we will look at equivalent formulation of the fundamental theorem.
 
 \section{The bialgebra of knots}
 \label{sec:the-bialgebras-of-knots}
@@ -797,19 +797,9 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	\end{mdframed}
 \end{proof}
 
-\section{Chord diagrams and the universal Vassiliev invariant}
-\label{sec:chord-diagrams-and-the-universal-Vassiliev-invariant}
+\section{The Kontsevich integral}
+\label{sec:the-kontsevich-integral}
 % NOTE: Perhaps, "The fundamental theorem and the universal Vassiliev invariant"?
-
-\begin{mdframed}
-	Either way.
-
-	Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
-
-	For knots this is the Knotsevich integral. It comes about roughly as follows.
-\end{mdframed}
-
-The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. In this section we will reformulate the fundamental theorem in a way that makes this apparent, and prove it, modulo the Kontsevich integral.
 
 \begin{definitions}
 	\begin{enumerate}
@@ -823,6 +813,28 @@ The point of the fundamental theorem of Vassiliev invariants is that it allows u
 	\end{enumerate}
 \end{definitions}
 
+\begin{mdframed}
+	Part about one direction of the f.t. being easy. Talk about why the other isn't (also how in the dual case it makes it hard to define a map knots to chord diagrams).
+\end{mdframed}
+
+The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. Let's look at a theorem which is also sometimes called the fundamental theroem, though it says a little more than Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}.
+
+\begin{theorem}[Strong fundamental theorem]
+	The algebra of weight systems is isomorphic to the associated graded algebra of the algebra of Vassiliev invariants,
+	\[\bigoplus_{m = 0}^{\infty} \mathcal{W}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{V}_{m} / \mathcal{V}_{m + 1}\]
+\end{theorem}
+Which can be easily converted to a theorem in the dual setting.
+\begin{theorem}[Strong fundamental theorem, dual]
+	The algebra of chord diagrams is isomorphic to the associated graded algebra of the algebra of knots,
+	\[\bigoplus_{m = 0}^{\infty} \mathcal{A}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{K}_{m} / \mathcal{K}_{m + 1}\]
+\end{theorem}
+
+\begin{theorem}[Kontsevich Integral]
+	There is an invariant of knots, called the Kontsevich integral \(Z: \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}\) such that \(a \in \mathcal{A} \to [k] \in \mathcal{K}_{m} / \mathcal{K}_{m + 1}\), then
+	\[Z(k) = a + \cdots\]
+\end{theorem}
+
+\[\star\]
 
 \begin{definition}
 	% TODO: Work out the proper way to define completion / degree completion.
@@ -840,8 +852,10 @@ The point of the fundamental theorem of Vassiliev invariants is that it allows u
 \begin{definition}
 	\label{def:universal-vassiliev-invariant}
 	A universal Vassiliev invariant is a map
-	\[Z : \mathcal{K} \to \widehat{\mathcal{A}}\]
+	\[U : \mathcal{K} \to X\]
+	to some space \(X\), such that any Vassiliev invariant can be factored through \(U\). For any Vassiliev invariant \(v\), there is a linear functional \(f\) on \(X\) such that \(v = f \circ U\).
 \end{definition}
+
 
 \begin{remark}
 	Definition \ref{def:universal-vassiliev-invariant} is also known to some as a (homomorphic) expansion, for example \cite{finite-type-invariants-of-w-knotted-objects-I}, and related to the concept of a formality map.
