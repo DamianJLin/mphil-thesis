@@ -817,24 +817,44 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	Part about one direction of the f.t. being easy. Talk about why the other isn't (also how in the dual case it makes it hard to define a map knots to chord diagrams).
 \end{mdframed}
 
-The point of the fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. Let's look at a theorem which is also sometimes called the fundamental theroem, though it says a little more than Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}.
+The fundamental theorem of Vassiliev invariants is that it allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. It's not a-priori obvious how Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} does this, but is apparent in the following equivalent reformulation.
 
-\begin{theorem}[Strong fundamental theorem]
-	The algebra of weight systems is isomorphic to the associated graded algebra of the algebra of Vassiliev invariants,
-	\[\bigoplus_{m = 0}^{\infty} \mathcal{W}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{V}_{m} / \mathcal{V}_{m + 1}\]
-\end{theorem}
-Which can be easily converted to a theorem in the dual setting.
-\begin{theorem}[Strong fundamental theorem, dual]
-	The algebra of chord diagrams is isomorphic to the associated graded algebra of the algebra of knots,
-	\[\bigoplus_{m = 0}^{\infty} \mathcal{A}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{K}_{m} / \mathcal{K}_{m + 1}\]
-\end{theorem}
+\begin{theorem}[Fundamental theorem]
+	\label{thm:fundamental-theorem-restated}
+	The algebra of weight systems is isomorphic to the associated graded algebra of the algebra of Vassiliev invariants, \(\mathcal{W} \cong \gr \mathcal{V}\), or on the level of graded components,
+	\[\bigoplus_{m = 0}^{\infty} \mathcal{W}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{V}_{m} / \mathcal{V}_{m + 1}.\]
 
-\begin{theorem}[Kontsevich Integral]
-	There is an invariant of knots, called the Kontsevich integral \(Z: \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}\) such that \(a \in \mathcal{A} \to [k] \in \mathcal{K}_{m} / \mathcal{K}_{m + 1}\), then
-	\[Z(k) = a + \cdots\]
+	Equivalently, it can be stated in the dual setting as follows. The algebra of chord diagrams is isomorphic to the associated graded algebra of the algebra of knots, \(\mathcal{A} \cong \gr \mathcal{K}\), or on the level of graded components,
+	\[\bigoplus_{m = 0}^{\infty} \mathcal{A}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{K}_{m} / \mathcal{K}_{m + 1}.\]
 \end{theorem}
 
-\[\star\]
+The fundamental theorem consists of two parts.
+
+\begin{center}
+	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
+		\hline
+		\textbf{Vassiliev}
+		& Every Vassiliev invariant modulo Vassiliev invariants of higher order gives a Weight system, so a map \[\mathcal{V}_{m} / \mathcal{V}_{m + 1} \to \mathcal{W}_{m}.\]
+		& Every chord diagram gives an element of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\), so a map \[\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}.\] \\ \hline
+		\textbf{Kontsevich}
+		& Every weight system gives a Vassiliev invariant modulo Vassiliev invariants of higher order, so a map \[\mathcal{W}_{m} \to \mathcal{V}_{m} / \mathcal{V}_{m + 1}\] which is inverse to the above.
+		& Every equivalence class of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\) gives a chord diagram, so a map \[\mathcal{K}_{m} / \mathcal{K}_{m + 1} \to \mathcal{A}_{m}.\] which is inverse to the above. \\ \hline
+	\end{tblr}
+\end{center}
+
+The part due to Vassiliev is the easy part.
+
+\begin{proofof}{Vassiliev's part of Theorem \ref{thm:fundamental-theorem-restated}}
+	\begin{mdframed}
+		We start with the map \(a \in \mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\). The map is given by choosing a singular knot in \(\singularknots_{m}\) whose chord diagram is \(a\), then resolving it to an element of \(\mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+
+		Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:co1T}, \ref{eq:co4T}\), we need to show that the map is well-defined with respect to those relations. Indeed \ref{eq:co1T} is in the kernel, as any singular knot with a \ref{eq:co1T} singular point resolves to a difference of two of the same knots when that singular point is resolved.
+
+		\ref{eq:co4T} is also in the kernel as it comes from a closed singular isotopy in the strata. When resolving such a closed isotopy, things always cancel out.
+	\end{mdframed}
+\end{proofof}
+
+The part due to Kontsevich is very involved. Kontsevich defined a knot invariant called the Kontsevich integral which is an incredibly fascinating object. We skip many of the details.
 
 \begin{definition}
 	% TODO: Work out the proper way to define completion / degree completion.
@@ -848,6 +868,20 @@ Which can be easily converted to a theorem in the dual setting.
 		% TODO: Learn something about the topology induced by the completion. What information does this encode and should anything be said about that. If it's just that things are close when they agree to many terms then perhaps not.
 	\end{mdframed}
 \end{definition}
+
+\begin{theorem}[Kontsevich Integral]
+	There is an invariant of knots, called the Kontsevich integral \(Z: \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}\) such that \(a \in \mathcal{A} \to [k] \in \mathcal{K}_{m} / \mathcal{K}_{m + 1}\), then
+	\[Z(k) = a + \cdots\]
+\end{theorem}
+
+\begin{remark}
+	\begin{mdframed}
+		It is important to note that a-priori, we have no well-defined map \(\mathcal{K} \to \mathcal{A}\) that respects the singular knot filtration. We do have such a map for singular knots \(\singularknots \to \mathcal{A}\), but to extend this to \(\mathcal{K}\), we need to be sure that a linear combination in \(\mathcal{K}\) coming from resolving a singular knot can only be done in one way, or at least by singular knots with only one type of chord diagram. This fact is provided by the Kontsevich integral.
+	\end{mdframed}
+\end{remark}
+
+\[\star\]
+
 
 \begin{definition}
 	\label{def:universal-vassiliev-invariant}
