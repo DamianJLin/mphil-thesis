@@ -6,7 +6,7 @@
 
 	The point of Vassiliev theory is to study the space of knots in the context of the singularities that lie between knots.
 
-	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:integration-and-the-fundamental-theorem} and throughout this chapter.
+	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} and throughout this chapter.
 
 	In Section \ref{sec:the-bialgebras-of-knots}, with the context in mind, we introduce the main players in this theory.
 \end{mdframed}
@@ -102,8 +102,8 @@ The Vassiliev skein relation extends a knot via its derivative, or chooses a val
 	In other words, Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
 \end{remark}
 
-\section{Integration and the fundamental theorem}
-\label{sec:integration-and-the-fundamental-theorem}
+\section{The stratification of the space of knots and integration}
+\label{sec:the-stratification-on-the-space-of-knots-and-integration}
 
 To help see the bird's eye view, and following \cite{integration-of-singular-braid-invariants}, we phrase this in terms of an integration theory.
 %TODO (Zsuzsi) Since this is the first sentence of a section, I would replace "this" with what "this" is referring to.
@@ -175,6 +175,7 @@ It may not be entirely obvious how these definitons provide answers to the quest
 Recall from the picture from the introduction 
 % TODO: (Zsuzsi) If you're referencing a figure, have the figure number (eventually)
 that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
+% TODO: Currently this is not in the introduction. Decide whether to introduce it here instead.
 
 \begin{definition}
 	A \textbf{singular isotopy}, \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)-th and \((m + 1)\)-st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : 1 \leq s \leq r\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = \varepsilon(s): \{s\} \to \{\pm 1\}\) of the singularities give the signs of the corresponding intersection.
@@ -379,7 +380,7 @@ There are various proofs of the fundamental theorem. They are listed in \cite{th
 	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
 \end{remark}
 
-In Section \ref{sec:the-kontsevich-integral} we will look at equivalent formulation of the fundamental theorem.
+In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will look at equivalent formulation of the fundamental theorem.
 
 \section{The bialgebra of knots}
 \label{sec:the-bialgebras-of-knots}
@@ -681,7 +682,7 @@ To illustrate this point, let's look at the dual filtered bialgebra of \(\mathca
 
 This bialgebra strucutre on knots is heavily related to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
 
-In Section \ref{sec:integration-and-the-fundamental-theorem} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4T}\) and \(\ref{eq:1T}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
+In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4T}\) and \(\ref{eq:1T}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
 \begin{equation}
 	\label{eq:co4T}
@@ -797,11 +798,10 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	\end{mdframed}
 \end{proof}
 
-\section{The Kontsevich integral}
-\label{sec:the-kontsevich-integral}
-% NOTE: Perhaps, "The fundamental theorem and the universal Vassiliev invariant"?
+\section{The fundamental theorem of Vassiliev invariants}
+\label{sec:the-fundamental-theorem-of-vassiliev-invariants}
 
-In Section \ref{sec:integration-and-the-fundamental-theorem}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that is establishes a particular relationship between the algebras of the previous two chapters, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). But admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of that theorem that makes the relationship explicit.
+In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that is establishes a particular relationship between the algebras of the previous two chapters, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). But admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of that theorem that makes the relationship explicit.
 
 \begin{definition}
 	The \textbf{associated graded} algebra of a filtered algebra \(A\) is the algebra formed by the direct sum of the succesive quotient by the filtered components of \(A\). For an algebra with a descending filtration,
@@ -835,7 +835,7 @@ We can break the fundamental theorem up into two parts.
 	\end{tblr}
 \end{center}
 
-It is actually only the second part of this theorem, due to Kontesevich that is equivalent to Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}. The first part, due to Vassiliev, is additional (so in reality, this `reformulation' is stronger), but considered ``easy'' relative to the second part. If the goal is to describe \(\mathcal{K}\) by \(\mathcal{A}\), it states that the relations in \(\mathcal{A}\), \ref{eq:co4T} and \ref{eq:co1T} are truly compatible with \(\mathcal{K}_{n}/\mathcal{K}_{n + 1}\). Indeed this was the point of Section \ref{sec:integration-and-the-fundamental-theorem}, so most of the work is already done.
+It is actually only the second part of this theorem, due to Kontesevich that is equivalent to Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}. The first part, due to Vassiliev, is additional (so in reality, this `reformulation' is stronger), but considered ``easy'' relative to the second part. If the goal is to describe \(\mathcal{K}\) by \(\mathcal{A}\), it states that the relations in \(\mathcal{A}\), \ref{eq:co4T} and \ref{eq:co1T} are truly compatible with \(\mathcal{K}_{n}/\mathcal{K}_{n + 1}\). Indeed this was the point of Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, so most of the work is already done.
 % TODO: Find reference for Vassiliev
 % TODO: Rephrase this as not to call Vassiliev's work ``easy''.
 
@@ -873,71 +873,37 @@ Let's turn to the other part of the fundamental theorem, with the following defi
 
 The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevich \cite{vassilievs-knot-invariants} is much more involved. Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, but they abound in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants} in order of increasing level of detail. Rather we will boil the Kontsevich integral down to the following key property.
 
-\begin{theorem}[Kontsevich]
-	\label{thm:kontsevich-integral-degree-property}
-	There is an invariant of knots, \(Z: \mathcal{K} \to \widehat{\mathcal{A}}\), called the Kontsevich integral, with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \delta^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
+\begin{definition}
+	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \delta^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
 	\[Z(k) = a + \text{higher degree terms.}\]
+\end{definition}
+
+\begin{theorem}[Kontsevich Integral]
+	\label{thm:kontsevich-integral-is-universal}
+	There exists a universal Vassiliev invariant, denoted \(Z(k)\), called the Kontsevich integral.
 \end{theorem}
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Kontsevich)}
-	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-degree-property}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
+	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
 
 	\begin{mdframed}
-		Make argument about the dual case, which is taking the kontsevich integral then composing with a weight system gives a Vassiliev invariant.
+		Make argument about the dual case, which is taking the Kontsevich integral then composing with a weight system gives a Vassiliev invariant.
 	\end{mdframed}
 \end{proofof}
 
-\[\star \star \star\] % NOTE: Stuff beyond here is an old version.
-
-\begin{definition}
-	There is a category of filtered algebras and filtration-respecting maps, and there is a category of graded algebras and grading-respecting maps. The \textbf{associated graded} map of a filtration-respecting map \(f: A \to B\) is the grading-respecting map \({\gr f : \gr A \to \gr B}\) defined by taking a representative \(a_{m}\) to \(f(a_{m})\) then projecting onto \(B_{m} / B_{m + 1}\),
-		\[\gr f: a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}.\]
-	This makes \(\gr\) a functor between these two categories.
-	% TODO: Try to typeset the gr f: grA \to gr B inline
-	% TODO: Do I want to define (grading-), filtration-respecting maps? No. But should I? unsure.
-\end{definition}
-
-\begin{mdframed}
-	Part about one direction of the f.t. being easy. Talk about why the other isn't (also how in the dual case it makes it hard to define a map knots to chord diagrams).
-\end{mdframed}
-
-The fundamental theorem of Vassiliev invariants allows us to establish a relationship between knots and chord diagrams, or equivalently, Vassiliev invariants and weight systems. It's not a-priori obvious how Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} does this, but is apparent in the following equivalent reformulation.
-
-
-
-
-The part due to Kontsevich is very involved. Kontsevich defined a knot invariant called the Kontsevich integral which is an incredibly fascinating object. We skip many of the details.
-
-
-
 \begin{remark}
-	\begin{mdframed}
-		It is important to note that a-priori, we have no well-defined map \(\mathcal{K} \to \mathcal{A}\) that respects the singular knot filtration. We do have such a map for singular knots \(\singularknots \to \mathcal{A}\), but to extend this to \(\mathcal{K}\), we need to be sure that a linear combination in \(\mathcal{K}\) coming from resolving a singular knot can only be done in one way, or at least by singular knots with only one type of chord diagram. This fact is provided by the Kontsevich integral.
-	\end{mdframed}
+	Another equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+
+	The Kontsevich integral is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
 \end{remark}
 
-\[\star\]
+The name `universal Vassiliev invariant' is indeed justified.
 
-
-\begin{definition}
-	\label{def:universal-vassiliev-invariant}
-	A universal Vassiliev invariant is a map
-	\[U : \mathcal{K} \to X\]
-	to some space \(X\), such that any Vassiliev invariant can be factored through \(U\). For any Vassiliev invariant \(v\), there is a linear functional \(f\) on \(X\) such that \(v = f \circ U\).
-\end{definition}
-
-
-\begin{remark}
-	Definition \ref{def:universal-vassiliev-invariant} is also known to some as a (homomorphic) expansion, for example \cite{finite-type-invariants-of-w-knotted-objects-I}, and related to the concept of a formality map.
-	% TODO: find a reference for formality.
-\end{remark}
-
-\begin{theorem}[Universal Vassiliev Invariant]
-
+\begin{theorem}
+	If \(Z\) is a universal Vassiliev invariant, than every Vassiliev invariant factors through \(Z\).
 \end{theorem}
 
-% NOTE: We may take dual and end up with relations on chord diagrams instead. This gives us an algebra cal A which we also call chord diagrams. (Are we *free* to choose values on these? It feels like this is the point, but I keep hearing that it's open. What's the correct thing to say? Potentially there's a technical detail here.) Either way.
+\begin{mdframed}
+	Why the reformulation was a reformulation.
+\end{mdframed}
 
-% NOTE: Fundamental theorem is the same as having a universal invariant, which is the same as the space being the associated graded. In full detail.
-
-% NOTE: For knots this is the Knotsevich integral.
