@@ -385,23 +385,13 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will loo
 \section{The bialgebra of knots}
 \label{sec:the-bialgebras-of-knots}
 
-\begin{mdframed}
-	Some planning notes for this chapter:
-
-	\(\cdot\) Begin with the connected sum on plain knots (don't talk about modding by 1T 4T yet).
-	
-	\(\cdot\) This induces a connected sum on singular knots (define via commutative diagram).
-	
-	\(\cdot\) This nearly induces a conntected sum on chord diagrams... except need to mod out by 4T and 1T which we were gonna do anyway.
-\end{mdframed}
-
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using the information of the stratification of knots introduced in the first two sections. Knots and chord diagrams are not just vector spaces; they have some further structure. In this section, we synthesise all of this information into two algebraic structures.
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using the information of the stratification of knots introduced in the first two sections. But the space of knots is not just a vector space; it has some further structure. In this section, we synthesise all of this information into one algebraic structure.
 
 \begin{definitions}
 	\begin{enumerate}
 		\item The \textbf{space of knots}, denoted \(\mathcal{K}\) is the vector space spanned (over \(\mathbb{Q}\)) by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
-			\[\mathcal{K} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
+			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
 			where the \(i\)th filtered component is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\); \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\).
 	\end{enumerate}
 \end{definitions}
@@ -607,7 +597,7 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
 			\Big)
 	\end{align*}
-	but since \(\{I \mid I \subset J, x \notin I\}\) is in bijection with \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
+	but since \(\{I \mid I \subset J, x \notin I\}\) is equal to \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
 	\[
 		\sum_{\mathclap{x \in I \subset J}}
 			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
@@ -641,33 +631,36 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 	The operators \(\delta^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
-\begin{remark}
-	\label{rem:non-vassiliev-invariants}
-	Not all knot invariants respect the singular knot filtration, but the point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration.
-\end{remark}
+Not all knot invariants respect the singular knot filtration, but the point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration.
 
-To illustrate this point, let's look at the dual filtered bialgebra of \(\mathcal{K}\).
+% TODO: Clean this up a little.
+To illustrate this point, we look at a construction called the dual filtered bialgebra of \(\mathcal{K}\). The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). For \(\mathcal{K}\), this coincides with the Vassiliev invariants.
 
 \begin{definition}
-	The \textbf{filtered bialgebra of Vassiliev invariants} is the set of Vassiliev invariants, with the (increasing) filtration given by the degree of the Vassiliev invariant, the product given by multiplication pointwise
-	\[V_{1}V_{2}(k) = V_{1}(k)V_{2}(k),\]
-	and the coproduct \(\eta\) given by
+	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
+	\[0 = \mathcal{V}_{0} \subset \mathcal{V}_{1} \subset \mathcal{V}_{2} \subset \cdots, \qquad \mathcal{V} = \bigcup_{m = 0}^{\infty} \mathcal{V}_{m}.\]
+	The product is given by pointwise multiplication
+	\[V_{1} \cdot V_{2}(k) = V_{1}(k)V_{2}(k),\]
+	and the coproduct, \(\eta\), is given by
 	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \hash k_{2}).\]
 \end{definition}
 
+
 \begin{proposition}
-	The filtered bialgebraic dual of the (descending) filtered bialgebra \(\mathcal{K}\) is the (ascending) filtered bialgebra of Vassiliev invariants.
+	The filtered bialgebraic dual of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
 \end{proposition}
 
 \begin{proof}
 	\begin{mdframed}
-		Put a proof here.
+		Indeed, the Vassiliev invariants are those functionals in \(\mathcal{K}^{\ast}\) that vanish on ... . Furthermore the dual to the coproduct in \(\mathcal{K}\) is the product in \(\mathcal{V}\), and vice versa.
+
+		One we know this, we can use the textbook fact that the dual of a descending filtered bialgebra is an ascending filtered bialgebra \cite{introduction-to-vassiliev-invariants} appendix. Alternatively, *move remark 1.3.14 here*.
 	\end{mdframed}
 \end{proof}
 
 \begin{example}
 	\begin{mdframed}
-		In view of Remark \ref{rem:non-vassiliev-invariants}, let's define a knot invariant. (Define \(f_{3_{1}}\).)
+		In view of Remark above about non-Vassiliev invariants, let's define a knot invariant. (Define \(f_{3_{1}}\).)
 	\end{mdframed}
 \end{example}
 
