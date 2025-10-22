@@ -385,14 +385,14 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will loo
 \section{The bialgebra of knots}
 \label{sec:the-bialgebras-of-knots}
 
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using the information of the stratification of knots introduced in the first two sections. But the space of knots is not just a vector space; it has some further structure. In this section, we synthesise all of this information into one algebraic structure.
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using information from the stratification of knots introduced in the first two sections. But this space is not just a vector space; it has some further structure which we wish to incorporate. In this section, we synthesise all of this information into one algebraic structure.
 
 \begin{definitions}
 	\begin{enumerate}
 		\item The \textbf{space of knots}, denoted \(\mathcal{K}\) is the vector space spanned (over \(\mathbb{Q}\)) by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
 			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
-			where the \(i\)th filtered component is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\); \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\).
+			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\); \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\).
 	\end{enumerate}
 \end{definitions}
 
@@ -401,7 +401,7 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 \end{proposition}
 
 \begin{proof}
-	A filtration of vector spaces is uninteresting. The only thing to check is that \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\) if \(i < j\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
+	A filtration of vector spaces is uninteresting. The only thing to check is that if \(i < j\), then \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
 \end{proof}
 
 The algebraic structure on knots comes from the following operation.
@@ -419,7 +419,7 @@ The algebraic structure on knots comes from the following operation.
 	This definition is extended bilinearly to \(\mathcal{K}\), i.e. linear combinations.
 \end{definition}
 
-This is not a-priori well-defined. We have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
+This is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
@@ -445,8 +445,9 @@ This is not a-priori well-defined. We have not specified where along either \(k_
 \end{proof}
 
 \begin{proposition}
-	The connected sum makes \((\mathcal{K}, \hash)\) into a filtered algebra. That is, the connected sum respects the filtration,
+	The connected sum respects the descending filtration,
 	\[K_{i} \hash K_{j} \subset K_{i + j}.\]
+	That is, the connected sum makes \((\mathcal{K}, \hash)\) into an ascending filtered algebra.
 \end{proposition}
 
 \begin{proof}
@@ -472,7 +473,7 @@ This is not a-priori well-defined. We have not specified where along either \(k_
 \end{definition}
 
 \begin{proposition}
-	The connected sum and coproduct make \((\mathcal{K}, \hash, \Delta)\) into a bialgebra.
+	The connected sum and coproduct are compatible. That is, \((\mathcal{K}, \hash, \Delta)\) forms a bialgebra.
 \end{proposition}
 
 \begin{proof}
@@ -486,14 +487,18 @@ This is not a-priori well-defined. We have not specified where along either \(k_
 	and the rest are trivial.
 \end{proof}
 
+So far, \(\mathcal{K}\) is a bialgebra whose product respects the filtration. The same is true of the coproduct.
+
 \begin{proposition}
 	\label{prop:singular-knots-filtered-bialgebra}
-	With the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra. That is, the coproduct \(\Delta\) also respects the filtration,
+	The coproduct \(\Delta\) also respects the filtration,
 	\[\Delta(\mathcal{K}_{j}) \subset \sum_{i = 0}^{j} \mathcal{K}_{i} \otimes \mathcal{K}_{j - i}.\]
+	That is, with the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra.
 \end{proposition}
-% TODO: Make comment that the dual of this theorem is analagous to the Leibniz formula, and how this relates to the Vassiliev invariants polynomials analogy.
 
-We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}. The lemma gives a formula for the coproduct of an element of \(\mathcal{K}_{n}\) in terms of a singular knot that resolves to it by looking at the \(2^{n}\) ways of resolving some of singular points in one cofactor and the rest in the other. If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
+We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}. The lemma is a formula for the coproduct of an element of \(k \in \mathcal{K}_{n}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is terms of the \(2^{n}\) ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
+
+If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
 
 \begin{remark}
@@ -631,14 +636,15 @@ We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebr
 	The operators \(\delta^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
-Not all knot invariants respect the singular knot filtration, but the point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration.
+% TODO: I am going to try to make the next part of this subsection, about the Vassiliev invariants being the dual filtered, a little less formal and more paragraphy. Why? Because defining the dual filtered bialgebra in generality feels clumsy. The TODO is to check later that it works fine.
 
-% TODO: Clean this up a little.
-To illustrate this point, we look at a construction called the dual filtered bialgebra of \(\mathcal{K}\). The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). For \(\mathcal{K}\), this coincides with the Vassiliev invariants.
+Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained naturally from \(\mathcal{K}\) via the following construction.
+
+The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). The result is the Vassiliev invariants, along with a product transpose to the coproduct in \(\mathcal{K}\) and coproduct transpose to the product in \(\mathcal{K}\).
 
 \begin{definition}
 	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
-	\[0 = \mathcal{V}_{0} \subset \mathcal{V}_{1} \subset \mathcal{V}_{2} \subset \cdots, \qquad \mathcal{V} = \bigcup_{m = 0}^{\infty} \mathcal{V}_{m}.\]
+	\[\mathcal{V}_{0} \subset \mathcal{V}_{1} \subset \mathcal{V}_{2} \subset \cdots, \qquad \mathcal{V} = \bigcup_{m = 0}^{\infty} \mathcal{V}_{m}.\]
 	The product is given by pointwise multiplication
 	\[V_{1} \cdot V_{2}(k) = V_{1}(k)V_{2}(k),\]
 	and the coproduct, \(\eta\), is given by
@@ -650,23 +656,67 @@ To illustrate this point, we look at a construction called the dual filtered bia
 	The filtered bialgebraic dual of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
 \end{proposition}
 
-\begin{proof}
-	\begin{mdframed}
-		Indeed, the Vassiliev invariants are those functionals in \(\mathcal{K}^{\ast}\) that vanish on ... . Furthermore the dual to the coproduct in \(\mathcal{K}\) is the product in \(\mathcal{V}\), and vice versa.
+We don't prove this textbook fact, but us sketch the main points. Indeed, the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{n}\).
 
-		One we know this, we can use the textbook fact that the dual of a descending filtered bialgebra is an ascending filtered bialgebra \cite{introduction-to-vassiliev-invariants} appendix. Alternatively, *move remark 1.3.14 here*.
-	\end{mdframed}
-\end{proof}
+Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
+	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
+recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\hash\) is
+	\[V \circ \hash: k_{1} \otimes k_{2} \mapsto V(k_{1} \hash k_{2})\]
+recovers the formular for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
+
+We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult, say \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).
+
+% TODO: This remark might be better off as like... several paragraphs with multiple remarks interspersed.
+\begin{remark}
+	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\hash\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, recall the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
+
+	The generalised Leibniz theorem of multivariable calculus says that if \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) are differentiable, then (in similar derivative notation to as above)
+	\[
+		\frac{\partial^{|I|}(fg)}{\partial_{x_{I}}}
+		=
+		\sum_{J \subset \{1, \cdots, i\}}
+		\frac{\partial^{|J|} f}{\partial_{x_{J}}}
+		\cdot
+		\frac{\partial^{|\bar{J}|} g}{\partial_{x_{\bar{J}}}}.
+	\]
+
+	This says that the derivative of a product \(f\) and \(g\) with respect to some variables is the sum of every way of taking some of those derivatives with respect to \(f\) and some with respect to \(g\).
+
+	A kind of dual theorem follows from this. For \(c \in \mathbb{R}\), if given that \(c\) comes from some \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) by taking their derivatives with respect to all the variables and evaluating all remaining variables in the result, then we get a cofactorisation for \(c\) in \(\mathbb{R} \otimes \mathbb{R}\): i.e.
+	\[c = \left. \frac{\partial^{|I|}(fg)}{\partial_{x_{I}}} \right|_{\{x_{I} = a_{I}\}} \text{ implies }
+		\left(
+		\sum_{J \subset \{1, \cdots, i\}}
+		\left. \frac{\partial^{|J|} f}{\partial_{x_{J}}} \right|_{\{x_{J} = a_{\bar{J}}\}}
+		\otimes
+		\left. \frac{\partial^{|\bar{J}|} g}{\partial_{x_{\bar{J}}}} \right|_{\{x_{J} = a_{J}\}}
+		\right)
+		\overset{\mu}{\longrightarrow} c,
+	\]
+	where \(\mu: \mathbb{R} \otimes \mathbb{R}\) is multiplication.
+
+	As it turns out, this theorem is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\).
+
+	But this dual theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation.
+
+	Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
+	\[
+		(V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet}))
+		=
+		\sum_{I \subset S}
+		V_{1}(\mu^{\bar{I}}\delta^{I}(k^{\bullet}))
+		\otimes
+		V_{2}(\mu^{I}\delta^{\bar{I}}(k^{\bullet})).
+	\]
+	It follows directly from this that if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + 1}\), then either \(|I| > m\) or \(|\hat{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet})) = 0\).
+
+	The analogy is that the multivariable calculus analogue of this argument is a proof that polynomials are filtered by degree.
+\end{remark}
 
 \begin{example}
 	\begin{mdframed}
 		In view of Remark above about non-Vassiliev invariants, let's define a knot invariant. (Define \(f_{3_{1}}\).)
 	\end{mdframed}
 \end{example}
-
-\begin{remark}
-	Let's continue the polynomial analogy with an observation due to Willerton in \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}. Taking the dual statement to Lemma \ref{lem:co-leibniz-formula-for-knots}, we get a theorem analogous to the Leibniz theorem for functions of multiple variables. The statement that Vassiliev invariants are a filtered algebra then follows from the definition of Vassiliev invariants and the lemma. The same argument in multivariable calculus uses the Leibniz theorem to prove that polynomials are a filtered vector space.
-\end{remark}
 
 \section{The Hopf algebra of chord diagrams}
 \label{the-hopf-algebra-of-chord-diagrams}
