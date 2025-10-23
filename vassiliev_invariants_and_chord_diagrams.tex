@@ -883,18 +883,35 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 % TODO: Rephrase this as not to call Vassiliev's work ``easy''.
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Vassiliev)}
-	We start by defining the map \(a \in \mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\). The map is given by choosing a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\). This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\). So by allowing crossing changes in \(\singularknots_{m}\), \(k^{\bullet}\) and \({k^{\bullet}}'\) may be made equivalent. In the presence of \(n\) singular points, the \(\delta\)-images of singular knots in \(\singularknots_{n}\) are in the \(\delta\)-image of \(\singularknots_{n + 1}\), so equivalent in the quotient.
+	For the map \(a \in \mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following. Given \(a \in \mathcal{A}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+
+	This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\). Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
+
+	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:co1T}, \ref{eq:co4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:co1T} is the kernel, as a \ref{eq:co1T} type chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. When this double point is resolved, it yields a difference of two isotopic knots.
 
 	\begin{mdframed}
-		Insert relevant figures.
+		figure of general case of one-term resolving to two isotopic (singular) knots.
 	\end{mdframed}
 
-	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:co1T}, \ref{eq:co4T}\), we need to show that the map is well-defined with respect to those relations. Indeed \ref{eq:co1T} is in the kernel, as any singular knot with a \ref{eq:co1T} singular point resolves to a difference of two of the same knots when that singular point is resolved.
+	Similarly, \ref{eq:co4T} is also in the kernel. A combination of chord diagrams appearing in a \ref{eq:co4T} relation is sent to a combination of singular knots which by the crossing-change argument can all be chosen to be identical except near a small region, where
+	\[
+		\tftsouth \ - \ \tfteast \ - \ \tftnorth \ + \ \tftwest
+	\]
+	but after resolving around the singular point that they don't have in common this becomes
+	\begin{mdframed}
+		figure of the 8 terms that cancel out.
+	\end{mdframed}
 
-	\ref{eq:co4T} is also in the kernel as it comes from a closed singular isotopy in the strata. When resolving such a closed isotopy, things always cancel out.
+	% TODO: We here use the definition of Vassiliev invariants as dual to knots. But in the first chapter we actually defined them differently. Can we fix this? Perhaps postponing the definition suffices.
 
 	\begin{mdframed}
-		Insert figures and make an argument about the dual case.
+		We also need to show here that \(\gr \mathcal{A} \cong \mathcal{K}\) is true as a bialgebra. The product is easy, the coproduct shouldn't be too hard.
+	\end{mdframed}
+
+	The isomorphism respects the algebra structure as \(a_{1} \hash a_{2}\) is sent to \([k_{a_{1} \hash a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \hash a_{2}}\) with chord diagram \(a_{1} \hash a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \hash k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \hash k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but certainly they have the same chord diagram. As a result, by the crossing-change argument they can be chosen to be the same, hence their resolutions are the same.
+
+	\begin{mdframed}
+		We sketch the argument in the dual case too. A \(v \in \mathcal{V}_{m}\) vanishes on \(\mathcal{K}_{m + 1}\)...
 	\end{mdframed}
 	\phantom{.}
 \end{proofof}
@@ -928,6 +945,8 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Kontsevich)}
 	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
+
+	In the dual case, we wish to prove that
 
 	\begin{mdframed}
 		Make argument about the dual case, which is taking the Kontsevich integral then composing with a weight system gives a Vassiliev invariant.
