@@ -8,7 +8,7 @@
 
 	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} and throughout this chapter.
 
-	In Section \ref{sec:the-bialgebras-of-knots}, with the context in mind, we introduce the main players in this theory.
+	In Section \ref{sec:knots-and-vassiliev-invariants}, with the context in mind, we introduce the main players in this theory.
 \end{mdframed}
 
 \lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
@@ -313,7 +313,7 @@ Since we are trying to integrate more than once, we might wish to know which con
 
 If we take the relations for a knot invariant to be integrable and project them into the space of chord diagrams, we get the following relations.
 
-\begin{definition}
+\begin{definitions}
 	\label{def:ft-ot-relations}
 	\begin{enumerate}
 		\item The \textbf{four-term relation} is the relation
@@ -334,17 +334,14 @@ If we take the relations for a knot invariant to be integrable and project them 
 				q\left( \otgraphic \right) = 0.
 			\end{equation}
 	\end{enumerate}
-\end{definition}
-
-\begin{remark}
-	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. To satisfy them, \(q \in \mathcal{D}_{m}^{\ast}\) needs to satisfy them for all ways additional chords can be placed into the diagram to make a diagram of degree \(m\), so long as they don't go between the close chord-ends.
-\end{remark}
+	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. There's one \ref{eq:4T} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1T} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1T} relation.
+\end{definitions}
 
 \begin{proposition}
 	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4T}} and \textup{\ref{eq:1T}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T}  and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T} and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
@@ -382,8 +379,8 @@ There are various proofs of the fundamental theorem. They are listed in \cite{th
 
 In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will look at equivalent formulation of the fundamental theorem.
 
-\section{The bialgebra of knots}
-\label{sec:the-bialgebras-of-knots}
+\section{Knots and Vassiliev invariants}
+\label{sec:knots-and-vassiliev-invariants}
 
 Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using information from the stratification of knots introduced in the first two sections. But this space is not just a vector space; it has some further structure which we wish to incorporate. In this section, we synthesise all of this information into one algebraic structure.
 
@@ -718,8 +715,8 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 	\end{mdframed}
 \end{example}
 
-\section{The Hopf algebra of chord diagrams}
-\label{the-hopf-algebra-of-chord-diagrams}
+\section{Chord diagrams and weight systems}
+\label{chord-diagrams-and-weight-systems}
 
 % TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
 
@@ -822,9 +819,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{proposition}
 
 \begin{proof}
-	\begin{mdframed}
-		The connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
-	\end{mdframed}
+	No chords are lost during the connected sum: the \ref{eq:co4T} relation is homogenous with respect to degree, and the connected sum of a chord diagram containing a \ref{eq:co1T} chord relation still contains a \ref{eq:co1T} chord. So, the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
 \end{proof}
 
 \begin{mdframed}
@@ -832,7 +827,11 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{mdframed}
 
 \begin{proposition}
-	The graded Hopf-algebraic dual of \(\mathcal{A}\) is the the Hopf algebra \(\mathcal{W}\) of weight systems.
+	\begin{mdframed}
+		THIS SHOULD BECOME A DEFINITION AND A PROPOSITION
+
+		The graded bialgebra dual of \(\mathcal{A}\) is the the graded bialgebra \(\mathcal{W}\) of weight systems.
+	\end{mdframed}
 \end{proposition}
 
 \begin{proof}
@@ -904,19 +903,16 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 
 	% TODO: We here use the definition of Vassiliev invariants as dual to knots. But in the first chapter we actually defined them differently. Can we fix this? Perhaps postponing the definition suffices.
 
-	\begin{mdframed}
-		We also need to show here that \(\gr \mathcal{A} \cong \mathcal{K}\) is true as a bialgebra. The product is easy, the coproduct shouldn't be too hard.
-	\end{mdframed}
+	% TODO: I was tired when I wrote this... check it.
+	The isomorphism respects the algebra structure as \(a_{1} \hash a_{2}\) is sent to \([k_{a_{1} \hash a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \hash a_{2}}\) with chord diagram \(a_{1} \hash a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \hash k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \hash k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but they have the same chord diagram, so by the crossing-change argument they can be chosen to be the same. Hence their resolutions are the same.
 
-	The isomorphism respects the algebra structure as \(a_{1} \hash a_{2}\) is sent to \([k_{a_{1} \hash a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \hash a_{2}}\) with chord diagram \(a_{1} \hash a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \hash k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \hash k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but certainly they have the same chord diagram. As a result, by the crossing-change argument they can be chosen to be the same, hence their resolutions are the same.
+	% TODO: really...?
+	Using similar arguments, from the formula of Willerton's Lemma, the isomorphism can be shown to respect the bialgebra structure.
 
-	\begin{mdframed}
-		We sketch the argument in the dual case too. A \(v \in \mathcal{V}_{m}\) vanishes on \(\mathcal{K}_{m + 1}\)...
-	\end{mdframed}
-	\phantom{.}
+	The dual version of the statement follows from the regular version, but direct proofs are illustrative and we return to them later.
 \end{proofof}
 
-Let's turn to the other part of the fundamental theorem, with the following definition.
+For now, let's turn to the Vassiliev part of the fundamental theorem, with the following definition.
 
 \begin{definition}
 	% TODO: Work out the proper way to define completion / degree completion.
@@ -938,6 +934,12 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 	\[Z(k) = a + \text{higher degree terms.}\]
 \end{definition}
 
+\begin{remark}
+	Another equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+
+	The Kontsevich integral is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
+\end{remark}
+
 \begin{theorem}[Kontsevich Integral]
 	\label{thm:kontsevich-integral-is-universal}
 	There exists a universal Vassiliev invariant, denoted \(Z(k)\), called the Kontsevich integral.
@@ -945,27 +947,95 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Kontsevich)}
 	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
-
-	In the dual case, we wish to prove that
-
-	\begin{mdframed}
-		Make argument about the dual case, which is taking the Kontsevich integral then composing with a weight system gives a Vassiliev invariant.
-	\end{mdframed}
 \end{proofof}
 
-\begin{remark}
-	Another equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+Again, it's worth looking at the proof in the dual setting too.
 
-	The Kontsevich integral is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
-\end{remark}
+\begin{lemma}
+	\label{lem:kontsevich-integral-then-weight-system-is-vassiliev}
+	Post-composing the Kontsevich integral with a weight system of order \(m\),
+	\[k \longmapsto W(Z(k))\]
+	(or more precisely, the following composition)
+	\[\mathcal{K} \overset{Z}{\longrightarrow} \widehat{\mathcal{A}} \overset{\pi_{m}}{\longrightarrow} \mathcal{A}_{m} \overset{W}{\longrightarrow} \mathbb{Q}\]
+	gives a Vassiliev invariant of order \(m\).
+\end{lemma}
 
-The name `universal Vassiliev invariant' is indeed justified.
+\begin{proof}
+	The map \(W \circ Z\) is clearly an invariant, since \(Z\) is an invariant. It's Vassiliev since on linear combinations \(k \in \mathcal{K}_{m + 1}\), \(Z(k)\) has nothing in degree \(m\), so composing with a weight system of degree \(m\) gives zero.
+\end{proof}
+
+\begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (dual)}
+	The map defined by Lemma \ref{lem:kontsevich-integral-then-weight-system-is-vassiliev},  \(\mathcal{W}_{m} \to \mathcal{V}_{m}\) is injective, as only the zero weight system gives the zero invariant.
+
+	However, it is not surjective. We show that the map, written as
+	\[\mathcal{W}_{m} \overset{Z^{\ast}}{\longrightarrow} \mathcal{V}_{m} / \mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1}\]
+	forces a choice of Vassiliev invariant of degree \(m - 1\). Being as explicit as possible, let
+	\[\Omega(k) =
+		\begin{cases}
+			k \in \mathcal{K}_{m}
+			& (W \circ Z)(k)
+			\\
+			k \notin \mathcal{K}_{m}
+			& 0
+			\\
+		\end{cases},
+		\quad \text{and} \quad
+	\Theta(k) =
+		\begin{cases}
+			k \in \mathcal{K}_{m}
+			& 0
+			\\
+			k \notin \mathcal{K}_{m}
+			& (W \circ Z)(k)
+			\\
+		\end{cases},
+	\]
+	then \(W \circ Z = \Omega + \Theta\), where \(\Omega\) recovers the weight system \(W\), when \(k \in \mathcal{K}_{m}\), and \(\Theta\) is some finite type invariant of order \(m - 1\), determined by \(W\).
+
+	In essence, we have found that the cokernel of \(Z^{\ast}\) is \(\mathcal{V}_{m - 1}\), so we get the desired isomorphism \(\mathcal{W}_{m} \cong \mathcal{V}_{m} / \mathcal{V}_{m - 1}\), at least on the level of vector spaces.
+	\end{proofof}
+
+	The natural question arises, what was this summand \(\Theta\)? Fixing \(n < m\) and a knot \(k \in \mathcal{K}_{n}\) with chord diagram \(a_{k}\), it has Kontsevich integral
+	\[Z(k) = a_{k} + \parbox{2.5cm}{\centering terms of \\ order \((n + 1)\)} + \cdots + \parbox{1.8cm}{\centering terms of \\ order \(m\)} + \cdots.\]
+	Applying the projection \(\pi_{m}\), all that remains are some chord diagrams of order \(m\), with some coefficients depending on the intricacies of the Kontsevich integral for that particular knot. Composing with the weight system, this is a \(\mathbb{Q}\)-valued Vassiliev invariant of order \(m - 1\) determined by \(W\).
+
+
+The name `universal Vassiliev invariant' we gave to the Kontsevich integrals and invariants of its kind is indeed justified. Every Vassiliev invariant can be obtained through the Kontsevich integral.
 
 \begin{theorem}
-	If \(Z\) is a universal Vassiliev invariant, than every Vassiliev invariant factors through \(Z\).
+	If \(Z\) is a universal Vassiliev invariant, then every Vassiliev invariant factors through \(Z\).
 \end{theorem}
 
+\begin{proof}
+	Let \(V \in \mathcal{V}_{m}\). Following the proof above, we can project \(V\) to \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\) to get a weight system \(W_{m}\). Subtracting \(W_{m} \circ Z\) leaves a Vassiliev invariant of one less degree. In other words, via the isomorphism
+	\begin{align*}
+		\mathcal{V}_{m}
+		& \cong \mathcal{V}_{m}/\mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1} / \mathcal{V}_{m - 2} \oplus \cdots \oplus \mathcal{V}_{1} / \mathcal{V}_{0} \oplus \mathcal{V}_{0}\\
+		& \cong \mathcal{W}_{m} \oplus \mathcal{W}_{m - 1} \oplus \cdots \oplus \mathcal{W}_{1} \oplus \mathcal{W}_{0},
+	\end{align*}
+	\(V\) can be written as a sequence of weight systems of degree from \(1\) to \(m\) such that \(V\) factors through the Kontsevich integral
+	\[V = \sum_{i = 0}^{m} (W_{m} \circ Z) = \left(\bigoplus_{i = 0}^{m} W_{m}\right) \circ Z.\]
+\end{proof}
+
+\begin{corollary}
+	A universal Vassiliev invariant (in-particular, the Kontsevich integral \(Z\)) is exactly as strong as the set of Vassiliev invariants.
+\end{corollary}
+
+\begin{definition}
+	Taking the projection \(\mathcal{V}_{m} \to \mathcal{V}_{m}/\mathcal{V}_{m + 1} \cong \mathcal{W}_{m}\) yields a weight system. The \textbf{canonical Vassiliev invariants} are those Vassiliev invariants whose weight systems \(W\) recover them completely via \(W \circ Z\).
+\end{definition}
+
+In other words, not all bases of \(\mathcal{V}_{m}\) are created equal. The canonical Vassiliev invariants are those that are homogenous with respect to the splitting of \(\mathcal{V}_{m}\)
+\[\mathcal{V}_{m}/\mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1} / \mathcal{V}_{m - 2} \oplus \cdots \oplus \mathcal{V}_{1} / \mathcal{V}_{0} \oplus \mathcal{V}_{0}\]
+induced by the Kontsevich integral. Canonical Vassiliev invariants were first defined in \cite{on-the-melvin-morton-rozansky-conjecture} and used to prove the Melvin-Morton-Rozansky conjecture relating the coefficients of Alexander polynomial of a knot to those of the coloured Jones polynomials. This is a good example of how the theory of Vassiliev invariants is useful for probing the structure of knots.
+
+\begin{question}[Bar-Natan--Garoufalidis]
+	There are a few known from-the-bottom-up constructions of universal Vassiliev invariants of knots. However they are all equivalent to, or conjecturally equivalent to the Kontsevich integral. Yet the Kontsevich integral is not the only invariant that can satisfy the defining degree property of a universal Vassiliev invariant.
+
+	Is there a reason why the Kontsevich integral, or equivalently, this splitting appears to be canonical?
+\end{question}
+
 \begin{mdframed}
-	Why the reformulation was a reformulation.
+	Why the reformulation was a reformulation. Or: go back and lessen the first formulation to just a related theorem.
 \end{mdframed}
 
