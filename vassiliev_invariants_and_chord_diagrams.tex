@@ -478,10 +478,12 @@ This is not a-priori well-defined, as we have not specified where along either \
 	\begin{align*}
 		\Delta(k \hash \ell)
 		& = k \hash \ell \otimes k \hash \ell \\
-		& = (k \otimes k) \hash (\ell \otimes \ell) \\
-		& = \Delta(k) \hash \Delta(\ell)
+		& = (k \otimes k) \hash^{\otimes 2} (\ell \otimes \ell) \\
+		& = \Delta(k) \hash^{\otimes 2} \Delta(\ell)
 	\end{align*}
-	and the rest are trivial.
+	where \(\hash^{\otimes 2}\) denotes the component-wise tensor product on \(\mathcal{K} \otimes \mathcal{K}\).
+	
+	Checking the unit and counit is trivial.
 \end{proof}
 
 So far, \(\mathcal{K}\) is a bialgebra whose product respects the filtration. The same is true of the coproduct.
@@ -659,7 +661,7 @@ Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
 	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
 recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\hash\) is
 	\[V \circ \hash: k_{1} \otimes k_{2} \mapsto V(k_{1} \hash k_{2})\]
-recovers the formular for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
+recovers the formula for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
 
 We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult, say \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).
 
@@ -757,7 +759,7 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mirror those in \(\mathcal{K}\).
 
 \begin{definition}
-	The \textbf{connected sum} of two chord diagrams \(A_{1}\) and \(A_{2}\) is the chord diagram obtained by cutting the two circles of \(A_{1}\) and \(A_{2}\) and connecting the two intervals in an orientation-preserving way.
+	The \textbf{connected sum of two chord diagrams} \(A_{1}\) and \(A_{2}\) is the chord diagram obtained by cutting the two circles of \(A_{1}\) and \(A_{2}\) and connecting the two intervals in an orientation-preserving way.
 	\[
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_1.pdf}
 		\quad
@@ -822,9 +824,57 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	No chords are lost during the connected sum: the \ref{eq:co4T} relation is homogenous with respect to degree, and the connected sum of a chord diagram containing a \ref{eq:co1T} chord relation still contains a \ref{eq:co1T} chord. So, the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
 \end{proof}
 
-\begin{mdframed}
-	The coproduct on chord diagrams (will this be relevant if we use the other coproduct later anyway?). And the antipode I suppose.
-\end{mdframed}
+Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to that in \(\mathcal{K}\), there is a coproduct too.
+
+\begin{definition}
+	The \textbf{coproduct of a chord diagram} \(A\) is the sum of ways of partitioning its chords between two subdiagrams.
+
+	If \(S\) is the set of chords of \(A\), and \(J \subset S\), let \(\widehat{J} = S \smallsetminus J\). Denote by \(A_{J}\) the chord diagram \(A\) but with only the chords in \(J \subset S\), and the rest deleted. Then
+	\[\Delta(A) = \sum_{J \subset S} A_{J} \otimes A_{\overline{J}}.\]
+\end{definition}
+
+\begin{proposition}
+	The coproduct \(\Delta\) is well-defined in \(\mathcal{A}\), and makes \(\mathcal{A}\) into a graded bialgebra.
+\end{proposition}
+
+\begin{proof}
+	We check those things we need to check: That the coproduct factors through the quoitents, that it's graded, and that the compatibility condition holds.
+
+	That \(\Delta\) factors through \ref{eq:co1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
+	% TODO: Swap the notation so the 4Ts and 1Ts with stars are in the first chapter and not in the rest.
+
+	Also, \(\Delta\) factors through \ref{eq:co4T}. Suppose that \(K = A_{1} - A_{2} + A_{3} - A_{4}\) is some combination of chord diagrams to be killed by \ref{eq:co4T}. This means that \(K\) looks like
+	\[
+		K =
+		\left(
+		\ftnorth
+		\ - \
+		\ftsouth
+		\right)
+		\ + \
+		\left(
+		\fteast
+		\ - \
+		\ftwest
+		\right)
+	\]
+	where there may be other chords \(O\) that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\). Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
+	\begin{itemize}
+		\item \(s\) was also partitioned into the \(C_{i}\)'s, and the relation remains a \ref{eq:co4T}, or
+		\item \(s\) was partitioned into the \(D_{i}\)'s, and so \(C_{1} = C_{2}\) and \(C_{3} = C_{4}\),
+	\end{itemize}
+	but either way that term of the coproduct is killed.
+
+	The coproduct clearly satisfies
+	\[\Delta(\mathcal{A}_{m}) \subset \bigoplus_{i + j = m} \mathcal{A}_{i} \otimes \mathcal{A}_{j} = (\mathcal{A} \otimes \mathcal{A})_{m},\]
+	so it is graded.
+
+	The compatibility condition holds. If \(A\) has chord set \(S\) and \(B\) has chord set \(T\), then
+	\begin{align*}
+		\Delta(A \hash B)
+		& = \sum_{J \subset S \sqcup T} (A \hash B)_{J} \otimes (A \hash B)_{\overline{J}}
+	\end{align*}
+\end{proof}
 
 \begin{proposition}
 	\begin{mdframed}
