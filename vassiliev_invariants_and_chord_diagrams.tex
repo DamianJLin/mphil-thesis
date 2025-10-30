@@ -878,31 +878,10 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\end{align*}
 \end{proof}
 
-\begin{definition}
-	The \textbf{primitive elements}, \(\mathcal{P}(A)\) of a coalgebra \(A\) are the elements satisfying
-	\[\Delta(x) = 1 \otimes x + x \otimes 1.\]
-\end{definition}
+We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. It also satisfies some technical, mild condition connected connectedness. A connected, graded bialgebra of finite type is sometimes called a Hopf algebra. Note that the modern definition of a Hopf algebra is a more general structure, of which \(\mathcal{A}\) is also an example.
 
-% TODO: Define connected.
-The algebra \(\mathcal{A}\) is a connected, graded algebra of finite type. Such a structure is sometimes called a \textbf{Hopf algebra}. Furthermore, it is cocommutative and commutative, and for such algebras there is an important classical theorem about the structures of such objects due to Milnor and Moore \cite{on-the-structure-of-hopf-algebras}.
+This fact leads to important consequences about the structure of \(\mathcal{A}\) and its relation to Lie algebras that will the subject of Chapter \ref{ch:lie-theory-and-jacobi-diagrams}.
 
-\begin{theorem}
-	The bialgebra \(\mathcal{A}\) is canonically isomorphic to the algebra of polynomials in its primitive elements,
-	\[\mathcal{A} \cong S(\mathcal{P}(\mathcal{A})),\]
-	where \(S\) denotes the symmetric algebra.
-\end{theorem}
-
-\begin{proof}
-	\begin{mdframed}
-		The proof in \cite{introduction-to-vassiliev-invariants} is readable, but missing crucial details, and containing a typo. Furthermore I cannot find it anywhere else. If there is time, I want to find out if it works and include it. Perhaps compare to the original source.
-	\end{mdframed}
-\end{proof}
-
-\begin{remark}
-	In modernity, Hopf algebras are defined as not-necessarily-graded bialgebras with an additional operation called the antipode. This definition will not be so useful for our purposes, but note that connected, graded algebras of finite type can always be given an antipode, and so are examples of what are today called Hopf algebras.
-\end{remark}
-
-The primitive elements of \(\mathcal{A}\) will come in handy in Chapter \ref{ch:lie-theory-and-jacobi-diagrams} when we make connections to Lie algebras.
 
 \begin{proposition}
 	\begin{mdframed}
