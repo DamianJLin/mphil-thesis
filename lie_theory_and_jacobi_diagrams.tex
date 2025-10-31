@@ -52,7 +52,66 @@ This side of the story reframes the algebra \(\mathcal{A}\) as a separate algebr
 	The vector space of unitrivalent diagrams is denoted \(\mathcal{T}\).
 \end{definition}
 
-When drawing unitrivalent diagrams, we specify the fixed cyclic order of the univalent edges of a unitrivalent diagram by drawing them connected to a circle.
+When drawing unitrivalent diagrams, we specify the fixed cyclic order of the univalent edges of a unitrivalent diagram by drawing them connected to a circle. In particular all chord diagrams are Jacobi diagrams with only univalent vertices (the chord ends). Further examples of non-chord diagram Jacobi diagrams would be
+\[
+	\includegraphics[width=0.13\textwidth, valign=c]{graphics/unitrivalent_diagram_example_1.pdf} \ ,
+	\quad
+	\includegraphics[width=0.13\textwidth, valign=c]{graphics/unitrivalent_diagram_example_2.pdf}
+	\in \mathcal{T}.
+\]
+
+\begin{definition}
+	The \textbf{STU relation} is the relation
+		\begin{equation}
+			\label{eq:STU}
+			\tag{\stu}
+			\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_relation_s.pdf}
+			\quad
+			=
+			\quad
+			\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_relation_t.pdf}
+			\quad
+			-
+			\quad
+			\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_relation_u.pdf}.
+		\end{equation}
+\end{definition}
+
+As usual, this is not an individual relation but a type of relations, true in any diagrams that are identical except for the subdiagrams being as shown.
+
+Note that the \ref{eq:STU} relations imply the \ref{eq:4T} relations.
+
+\begin{definition}
+	The algebra \(\mathcal{J}\) of Jacobi diagrams is the algebra \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
+\end{definition}
+
+\begin{definitions}
+		\item The \textbf{AS relation} (antisymmetry relation) is the relation
+			\begin{equation}
+				\label{eq:AS}
+				\tag{\as}
+				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_a.pdf}
+				\quad
+				=
+				\quad
+				-
+				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}.
+			\end{equation}
+		\item The \textbf{IHX relation} is the relation
+			\begin{equation}
+				\label{eq:IHX}
+				\tag{\ihx}
+				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_i.pdf}
+				\quad
+				=
+				\quad
+				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_h.pdf}
+				\quad
+				-
+				\quad
+				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_x.pdf}.
+			\end{equation}
+\end{definitions}
 
 \section{Lie algebra weight systems}
 

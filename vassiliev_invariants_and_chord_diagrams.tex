@@ -48,7 +48,7 @@ What are the conditions? For this to be a well-defined operation, it mustn't mat
 	An invariant \(f\) of \(m\)-singular knots is \textbf{differentiable} if
 	\begin{equation}
 		\label{eq:diff}
-		\tag{\diff}
+		\tag{\differentiability}
 		f \left( \poscross \ \double \right) - f\left( \negcross \ \double \right) = f \left( \double \ \poscross \right) - f\left( \double \ \negcross \right).
 	\end{equation}
 \end{definition}
@@ -62,7 +62,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 	Define \(\singularknots_{m}\) as the span of all \(m\)-singular knots, taken over \(\mathbb{Q}\), modulo the following boundary relation (also known as a codifferentiability relation):
 	\begin{equation}
 		\label{eq:codiff}
-		\tag{\codiff}
+		\tag{\differentiabilitystar}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
 	From now on, we will refer to elements \(\singularknots_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicitly assumed.
@@ -202,8 +202,8 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 			\end{center}
 		gives rise to the \textbf{topological four-term relation}
 			\begin{equation}
-				\label{eq:topological-four-term}
-				\tag{\tft}
+				\label{eq:topological-four-coterm}
+				\tag{\topologicalfourtermstar}
 				f\left( \tftsouth \right)
 				-
 				f\left( \tfteast \right)
@@ -220,9 +220,9 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 			\end{center}
 		around a point with a vanishing derivative gives rise to the \textbf{topological one-term relation}
 			\begin{equation}
-				\label{eq:topological-one-term}
-				\tag{\tot}
-				f\left( \totgraphic \right) = 0.
+				\label{eq:topological-one-coterm}
+				\tag{\topologicalonetermstar}
+				f\left( \topologicalonecotermgraphic \right) = 0.
 			\end{equation}
 	\end{enumerate}
 \end{definitions}
@@ -237,7 +237,7 @@ The necessity of the above relations for an invariant of \(m\)-singular knots to
 	\ + \
 	\tftwest
 	\quad \text{and} \quad
-	\totgraphic
+	\topologicalonecotermgraphic
 \]
 are in \(P\singularknots_{m} = \ker \partial_{m}\). Let us denote arbitrary such singular knots \(\tftterm\) and \(\totterm\). 
 %TODO (Zsuzsi) I have trouble parsing the last sentence... The set of all (linear combinations of) such singular knots? Any particular singular knot participating in these relations?
@@ -246,7 +246,7 @@ This raises the question of whether we have found all primary obstructions. Do \
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
-	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}}.
+	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-coterm}} and \textup{\ref{eq:topological-one-coterm}}.
 \end{theorem}
 
 \begin{proof}[sketch]
@@ -279,6 +279,7 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singula
 	\end{enumerate}
 \end{definitions}
 
+% TODO: Example environment not used much elsewhere.
 \begin{example}
 	\[
 		\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
@@ -319,7 +320,7 @@ If we take the relations for a knot invariant to be integrable and project them 
 		\item The \textbf{four-term relation} is the relation
 			\begin{equation}
 				\label{eq:4T}
-				\tag{\ft}
+				\tag{\fourtermstar}
 				q\left(\ftsouth\right)
 				- q\left(\fteast\right)
 				- q\left(\ftnorth\right)
@@ -330,18 +331,18 @@ If we take the relations for a knot invariant to be integrable and project them 
 		\item The \textbf{one-term relation} is the relation
 			\begin{equation}
 				\label{eq:1T}
-				\tag{\ot}
-				q\left( \otgraphic \right) = 0.
+				\tag{\onetermstar}
+				q\left( \isolatedchord \right) = 0.
 			\end{equation}
 	\end{enumerate}
-	Just like \ref{eq:topological-four-term} and \ref{eq:topological-one-term}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. There's one \ref{eq:4T} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1T} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1T} relation.
+	Just like \ref{eq:topological-four-coterm} and \ref{eq:topological-one-coterm}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. There's one \ref{eq:4T} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1T} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1T} relation.
 \end{definitions}
 
 \begin{proposition}
 	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4T}} and \textup{\ref{eq:1T}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T} and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-term} and \ref{eq:topological-one-term} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T} and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-coterm} and \ref{eq:topological-one-coterm} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
@@ -350,12 +351,12 @@ Since integration is linear, to be integrable again, both terms need to be integ
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
-	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-term}} and \textup{\ref{eq:topological-one-term}} integrates \(m\) times into a genuine knot invariant.
+	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-coterm}} and \textup{\ref{eq:topological-one-coterm}} integrates \(m\) times into a genuine knot invariant.
 \end{conjecture}
 
 \begin{remarks}
 	\begin{enumerate}
-		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-term}\) and \(\ref{eq:topological-one-term}\), which is what \(S\singularknots\) measures.
+		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-coterm}\) and \(\ref{eq:topological-one-coterm}\), which is what \(S\singularknots\) measures.
 		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
 		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
@@ -368,7 +369,7 @@ If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev inv
 
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
-	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-term}}, \textup{\ref{eq:topological-one-term}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
+	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-coterm}}, \textup{\ref{eq:topological-one-coterm}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
 \end{theorem}
 
 There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections. To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
@@ -409,7 +410,7 @@ The algebraic structure on knots comes from the following operation.
 	\[
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
 		\quad
-		\overset{\hash}{\longmapsto}
+		\overset{\connect}{\longmapsto}
 		\quad
 		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
@@ -420,11 +421,11 @@ This is not a-priori well-defined, as we have not specified where along either \
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
-	The connected sum \(\hash: \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
+	The connected sum \(\connect \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
 \end{proposition}
 
 \begin{proof}
-	We exhibit an ambient isotopy starting at \(k_{1} \hash k_{2}\) where the small arc is removed from \(k_{1}\) as in the example above. The part of the connected sum coming from \(k_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(k_{1}\).
+	We exhibit an ambient isotopy starting at \(k_{1} \connect k_{2}\) where the small arc is removed from \(k_{1}\) as in the example above. The part of the connected sum coming from \(k_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(k_{1}\).
 	\[
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_1.pdf}
 		\rightsquigarrow
@@ -443,16 +444,16 @@ This is not a-priori well-defined, as we have not specified where along either \
 
 \begin{proposition}
 	The connected sum respects the descending filtration,
-	\[K_{i} \hash K_{j} \subset K_{i + j}.\]
-	That is, the connected sum makes \((\mathcal{K}, \hash)\) into an ascending filtered algebra.
+	\[K_{i} \connect K_{j} \subset K_{i + j}.\]
+	That is, the connected sum makes \((\mathcal{K}, \connect)\) into an ascending filtered algebra.
 \end{proposition}
 
 \begin{proof}
 	Indeed, the connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. The question is whether the connected sum respects the filtration.
 
-	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k_{\bullet} \hash \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \hash \ell\), which is therefore in \(\delta^{i + j}(\mathcal{K}_{i + j})\).
+	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k_{\bullet} \connect \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \connect \ell\), which is therefore in \(\delta^{i + j}(\mathcal{K}_{i + j})\).
 
-	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\delta^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k_{\bullet} \hash \ell_{\bullet}\) produce a singular knot which resolves to \(k \hash \ell\).
+	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\delta^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k_{\bullet} \connect \ell_{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
 \end{proof}
 
 % NOTE: to self --- do I say 'Indeed' too much?
@@ -470,18 +471,18 @@ This is not a-priori well-defined, as we have not specified where along either \
 \end{definition}
 
 \begin{proposition}
-	The connected sum and coproduct are compatible. That is, \((\mathcal{K}, \hash, \Delta)\) forms a bialgebra.
+	The connected sum and coproduct are compatible. That is, \((\mathcal{K}, \connect, \Delta)\) forms a bialgebra.
 \end{proposition}
 
 \begin{proof}
-	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \hash)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
+	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
 	\begin{align*}
-		\Delta(k \hash \ell)
-		& = k \hash \ell \otimes k \hash \ell \\
-		& = (k \otimes k) \hash^{\otimes 2} (\ell \otimes \ell) \\
-		& = \Delta(k) \hash^{\otimes 2} \Delta(\ell)
+		\Delta(k \connect \ell)
+		& = k \connect \ell \otimes k \connect \ell \\
+		& = (k \otimes k) \connect^{\otimes 2} (\ell \otimes \ell) \\
+		& = \Delta(k) \connect^{\otimes 2} \Delta(\ell)
 	\end{align*}
-	where \(\hash^{\otimes 2}\) denotes the component-wise tensor product on \(\mathcal{K} \otimes \mathcal{K}\).
+	where \(\connect^{\otimes 2}\) denotes the component-wise tensor product on \(\mathcal{K} \otimes \mathcal{K}\).
 	
 	Checking the unit and counit is trivial.
 \end{proof}
@@ -647,7 +648,7 @@ The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)t
 	The product is given by pointwise multiplication
 	\[V_{1} \cdot V_{2}(k) = V_{1}(k)V_{2}(k),\]
 	and the coproduct, \(\eta\), is given by
-	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \hash k_{2}).\]
+	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \connect k_{2}).\]
 \end{definition}
 
 
@@ -659,15 +660,15 @@ We don't prove this textbook fact, but let us sketch the main points. Indeed, th
 
 Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
 	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
-recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\hash\) is
-	\[V \circ \hash: k_{1} \otimes k_{2} \mapsto V(k_{1} \hash k_{2})\]
+recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) is
+	\[V \circ \connect k_{1} \otimes k_{2} \mapsto V(k_{1} \connect k_{2})\]
 recovers the formula for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
 
 We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult, say \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).
 
 % TODO: This remark might be better off as like... several paragraphs with multiple remarks interspersed.
 \begin{remark}
-	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\hash\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, recall the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
+	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, recall the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
 
 	The generalised Leibniz theorem of multivariable calculus says that if \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) are differentiable, then (in similar derivative notation to as above)
 	\[
@@ -728,7 +729,7 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 
 \begin{equation}
 	\label{eq:co4T}
-	\tag{\coft}
+	\tag{\oneterm}
 	\ftsouth
 	\ - \ 
 	\fteast
@@ -741,8 +742,8 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 
 \begin{equation}
 	\label{eq:co1T}
-	\tag{\coot}
-	\otgraphic \ = \ 0
+	\tag{\oneterm}
+	\isolatedchord \ = \ 0
 \end{equation}
 
 \begin{definition}
@@ -765,7 +766,7 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 		\quad
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_2.pdf}
 		\quad
-		\overset{\hash}{\longmapsto}
+		\overset{\connect}{\longmapsto}
 		\quad
 		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result.pdf}
 		=
@@ -777,7 +778,7 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:co4T} relation in \(\mathcal{A}\) takes care of this.
 
 \begin{proposition}
-	The connected sum operation \(\hash: \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
+	The connected sum operation \(\connect \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
 \end{proposition}
 
 \begin{proof}
@@ -813,7 +814,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 		\right)
 		\ = \ 0.
 	\]
-	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \hash a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
+	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
 \end{proof}
 
 \begin{proposition}
@@ -871,10 +872,10 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 
 	The compatibility condition holds. If \(A\) has chord set \(S\) and \(B\) has chord set \(T\), then
 	\begin{align*}
-		\Delta(A) \hash^{\otimes 2} \Delta(B)
-		& = \left(\sum_{J' \subset S} A_{J'} \otimes A_{\overline{J'}} \right) \hash^{\otimes 2} \left(\sum_{J'' \subset T} B_{J''} \otimes B_{\overline{J''}} \right) \\
-		& = \sum_{J \subset S \sqcup T} (A \hash B)_{J} \otimes (A \hash B)_{\overline{J}} \\
-		& = \Delta(A \hash B).
+		\Delta(A) \connect^{\otimes 2} \Delta(B)
+		& = \left(\sum_{J' \subset S} A_{J'} \otimes A_{\overline{J'}} \right) \connect^{\otimes 2} \left(\sum_{J'' \subset T} B_{J''} \otimes B_{\overline{J''}} \right) \\
+		& = \sum_{J \subset S \sqcup T} (A \connect B)_{J} \otimes (A \connect B)_{\overline{J}} \\
+		& = \Delta(A \connect B).
 	\end{align*}
 \end{proof}
 
@@ -961,7 +962,7 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 	% TODO: We here use the definition of Vassiliev invariants as dual to knots. But in the first chapter we actually defined them differently. Can we fix this? Perhaps postponing the definition suffices.
 
 	% TODO: I was tired when I wrote this... check it.
-	The isomorphism respects the algebra structure as \(a_{1} \hash a_{2}\) is sent to \([k_{a_{1} \hash a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \hash a_{2}}\) with chord diagram \(a_{1} \hash a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \hash k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \hash k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but they have the same chord diagram, so by the crossing-change argument they can be chosen to be the same. Hence their resolutions are the same.
+	The isomorphism respects the algebra structure as \(a_{1} \connect a_{2}\) is sent to \([k_{a_{1} \connect a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \connect a_{2}}\) with chord diagram \(a_{1} \connect a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \connect k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \connect k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but they have the same chord diagram, so by the crossing-change argument they can be chosen to be the same. Hence their resolutions are the same.
 
 	% TODO: really...?
 	Using similar arguments, from the formula of Willerton's Lemma, the isomorphism can be shown to respect the bialgebra structure.
