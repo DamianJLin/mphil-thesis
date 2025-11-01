@@ -202,7 +202,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 			\end{center}
 		gives rise to the \textbf{topological four-term relation}
 			\begin{equation}
-				\label{eq:topological-four-coterm}
+				\label{eq:T4Tstar}
 				\tag{\topologicalfourtermstar}
 				f\left( \tftsouth \right)
 				-
@@ -220,7 +220,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 			\end{center}
 		around a point with a vanishing derivative gives rise to the \textbf{topological one-term relation}
 			\begin{equation}
-				\label{eq:topological-one-coterm}
+				\label{eq:T1Tstar}
 				\tag{\topologicalonetermstar}
 				f\left( \topologicalonecotermgraphic \right) = 0.
 			\end{equation}
@@ -246,7 +246,7 @@ This raises the question of whether we have found all primary obstructions. Do \
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
-	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:topological-four-coterm}} and \textup{\ref{eq:topological-one-coterm}}.
+	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \(m - 1\)-singular knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.
 \end{theorem}
 
 \begin{proof}[sketch]
@@ -319,7 +319,7 @@ If we take the relations for a knot invariant to be integrable and project them 
 	\begin{enumerate}
 		\item The \textbf{four-term relation} is the relation
 			\begin{equation}
-				\label{eq:4T}
+				\label{eq:4Tstar}
 				\tag{\fourtermstar}
 				q\left(\ftsouth\right)
 				- q\left(\fteast\right)
@@ -330,19 +330,19 @@ If we take the relations for a knot invariant to be integrable and project them 
 
 		\item The \textbf{one-term relation} is the relation
 			\begin{equation}
-				\label{eq:1T}
+				\label{eq:1Tstar}
 				\tag{\onetermstar}
 				q\left( \isolatedchord \right) = 0.
 			\end{equation}
 	\end{enumerate}
-	Just like \ref{eq:topological-four-coterm} and \ref{eq:topological-one-coterm}, \ref{eq:4T} and \ref{eq:1T} are not individual relations, but kinds of relations. There's one \ref{eq:4T} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1T} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1T} relation.
+	Just like \ref{eq:T4Tstar} and \ref{eq:T1Tstar}, \ref{eq:4Tstar} and \ref{eq:1Tstar} are not individual relations, but kinds of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1Tstar} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
 \end{definitions}
 
 \begin{proposition}
-	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4T}} and \textup{\ref{eq:1T}}.
+	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4Tstar}} and \textup{\ref{eq:1Tstar}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4T} and \ref{eq:1T}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:topological-four-coterm} and \ref{eq:topological-one-coterm} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar} and \ref{eq:1Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} and \ref{eq:T1Tstar} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
@@ -351,12 +351,12 @@ Since integration is linear, to be integrable again, both terms need to be integ
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
-	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:topological-four-coterm}} and \textup{\ref{eq:topological-one-coterm}} integrates \(m\) times into a genuine knot invariant.
+	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}} integrates \(m\) times into a genuine knot invariant.
 \end{conjecture}
 
 \begin{remarks}
 	\begin{enumerate}
-		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:topological-four-coterm}\) and \(\ref{eq:topological-one-coterm}\), which is what \(S\singularknots\) measures.
+		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\) and \(\ref{eq:T1Tstar}\), which is what \(S\singularknots\) measures.
 		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
 		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
@@ -369,7 +369,7 @@ If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev inv
 
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
-	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:topological-four-coterm}}, \textup{\ref{eq:topological-one-coterm}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
+	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}}, \textup{\ref{eq:T1Tstar}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
 \end{theorem}
 
 There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections. To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
@@ -725,11 +725,11 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 
 This bialgebra strucutre on knots is heavily related to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
 
-In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4T}\) and \(\ref{eq:1T}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
+In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) and \(\ref{eq:1Tstar}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
 \begin{equation}
-	\label{eq:co4T}
-	\tag{\oneterm}
+	\label{eq:4T}
+	\tag{\fourterm}
 	\ftsouth
 	\ - \ 
 	\fteast
@@ -741,14 +741,14 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 \end{equation}
 
 \begin{equation}
-	\label{eq:co1T}
+	\label{eq:1T}
 	\tag{\oneterm}
 	\isolatedchord \ = \ 0
 \end{equation}
 
 \begin{definition}
 	We define \(\mathcal{A}_{m}\), the \textbf{space of chord diagrams} of degree \(m\) as
-	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:co4T}, \ref{eq:co1T}},\]
+	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:4T}, \ref{eq:1T}},\]
 	and \(\mathcal{A}\), the \textbf{space of chord diagrams} as
 	\[\mathcal{A} = \bigoplus_{m = 0}^{\infty} \mathcal{A}_{m}.\]
 \end{definition}
@@ -775,14 +775,14 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 	The definition is extended bilinearly to elements of \(\mathcal{A}\).
 \end{definition}
 
-Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:co4T} relation in \(\mathcal{A}\) takes care of this.
+Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:4T} relation in \(\mathcal{A}\) takes care of this.
 
 \begin{proposition}
-	The connected sum operation \(\connect \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
+	The connected sum operation \(\connect : \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
 \end{proposition}
 
 \begin{proof}
-	We will prove that the connected sums, given any two choices of connection locations, are equal modulo \ref{eq:co4T}.
+	We will prove that the connected sums, given any two choices of connection locations, are equal modulo \ref{eq:4T}.
 
 	Let us denote the first chord diagram as \(a_{1}\) and the second as \(a_{2}\). Without loss of generality, it suffices to prove that without change in the connection location of \(a_{1}\), we can change the connection location on \(a_{2}\). Indeed it suffices to prove that we can rotate \(a_{2}\) by one `click', like so:
 
@@ -797,9 +797,9 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	\[
 		\includegraphics[width=0.27\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_with_arrow.pdf}
 	\]
-	Which we show can be achieved by a series of \ref{eq:co4T} relations.
+	Which we show can be achieved by a series of \ref{eq:4T} relations.
 
-	We can rewrite \ref{eq:co4T} as
+	We can rewrite \ref{eq:4T} as
 	\[
 		\left(
 		\ftnorth
@@ -814,7 +814,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 		\right)
 		\ = \ 0.
 	\]
-	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:co4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:co4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:co4T} relations, completing the proof.
+	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:4T} relations, completing the proof.
 \end{proof}
 
 \begin{proposition}
@@ -822,7 +822,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{proposition}
 
 \begin{proof}
-	No chords are lost during the connected sum: the \ref{eq:co4T} relation is homogenous with respect to degree, and the connected sum of a chord diagram containing a \ref{eq:co1T} chord relation still contains a \ref{eq:co1T} chord. So, the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
+	No chords are lost during the connected sum: the \ref{eq:4T} relation is homogenous with respect to degree, and the connected sum of a chord diagram containing a \ref{eq:1T} chord relation still contains a \ref{eq:1T} chord. So, the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
 \end{proof}
 
 Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to that in \(\mathcal{K}\), there is a coproduct too.
@@ -841,10 +841,10 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 \begin{proof}
 	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the compatibility condition holds.
 
-	That \(\Delta\) factors through \ref{eq:co1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
+	That \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
 	% TODO: Swap the notation so the 4Ts and 1Ts with stars are in the first chapter and not in the rest.
 
-	Also, \(\Delta\) factors through \ref{eq:co4T}. Suppose that \(K = A_{1} - A_{2} + A_{3} - A_{4}\) is some combination of chord diagrams to be killed by \ref{eq:co4T}. This means that \(K\) looks like
+	Also, \(\Delta\) factors through \ref{eq:4T}. Suppose that \(K = A_{1} - A_{2} + A_{3} - A_{4}\) is some combination of chord diagrams to be killed by \ref{eq:4T}. This means that \(K\) looks like
 	\[
 		K =
 		\left(
@@ -861,7 +861,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\]
 	where there may be other chords \(O\) that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\). Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
 	\begin{itemize}
-		\item \(s\) was also partitioned into the \(C_{i}\)'s, and the relation remains a \ref{eq:co4T}, or
+		\item \(s\) was also partitioned into the \(C_{i}\)'s, and the relation remains a \ref{eq:4T}, or
 		\item \(s\) was partitioned into the \(D_{i}\)'s, and so \(C_{1} = C_{2}\) and \(C_{3} = C_{4}\),
 	\end{itemize}
 	and in either case, that term of the coproduct is killed.
@@ -935,7 +935,7 @@ We can break the fundamental theorem up into two parts.
 	\end{tblr}
 \end{center}
 
-It is actually only the second part of this theorem, due to Kontesevich that is equivalent to Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}. The first part, due to Vassiliev, is additional (so in reality, this `reformulation' is stronger), but considered ``easy'' relative to the second part. If the goal is to describe \(\mathcal{K}\) by \(\mathcal{A}\), it states that the relations in \(\mathcal{A}\), \ref{eq:co4T} and \ref{eq:co1T} are truly compatible with \(\mathcal{K}_{n}/\mathcal{K}_{n + 1}\). Indeed this was the point of Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, so most of the work is already done.
+It is actually only the second part of this theorem, due to Kontesevich that is equivalent to Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}. The first part, due to Vassiliev, is additional (so in reality, this `reformulation' is stronger), but considered ``easy'' relative to the second part. If the goal is to describe \(\mathcal{K}\) by \(\mathcal{A}\), it states that the relations in \(\mathcal{A}\), \ref{eq:4T} and \ref{eq:1T} are truly compatible with \(\mathcal{K}_{n}/\mathcal{K}_{n + 1}\). Indeed this was the point of Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, so most of the work is already done.
 % TODO: Find reference for Vassiliev
 % TODO: Rephrase this as not to call Vassiliev's work ``easy''.
 
@@ -944,13 +944,13 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 
 	This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\). Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
 
-	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:co1T}, \ref{eq:co4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:co1T} is the kernel, as a \ref{eq:co1T} type chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. When this double point is resolved, it yields a difference of two isotopic knots.
+	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:1T} is the kernel, as a \ref{eq:1T} type chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. When this double point is resolved, it yields a difference of two isotopic knots.
 
 	\begin{mdframed}
 		figure of general case of one-term resolving to two isotopic (singular) knots.
 	\end{mdframed}
 
-	Similarly, \ref{eq:co4T} is also in the kernel. A combination of chord diagrams appearing in a \ref{eq:co4T} relation is sent to a combination of singular knots which by the crossing-change argument can all be chosen to be identical except near a small region, where
+	Similarly, \ref{eq:4T} is also in the kernel. A combination of chord diagrams appearing in a \ref{eq:4T} relation is sent to a combination of singular knots which by the crossing-change argument can all be chosen to be identical except near a small region, where
 	\[
 		\tftsouth \ - \ \tfteast \ - \ \tftnorth \ + \ \tftwest
 	\]

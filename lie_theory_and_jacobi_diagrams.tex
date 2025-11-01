@@ -79,14 +79,29 @@ When drawing unitrivalent diagrams, we specify the fixed cyclic order of the uni
 
 As usual, this is not an individual relation but a type of relations, true in any diagrams that are identical except for the subdiagrams being as shown.
 
-Note that the \ref{eq:STU} relations imply the \ref{eq:4T} relations.
+Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the \ref{eq:STU} relations imply the \ref{eq:4T} relations, as
+	\[
+		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_north.pdf}}
+		\ - \
+		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_south.pdf}}
+		\ = \
+		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{four_term_jacobi_diagram.pdf}}
+		\ = \
+		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_west.pdf}}
+		\ - \
+		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_east.pdf}}\ .
+	\]
 
 \begin{definition}
-	The algebra \(\mathcal{J}\) of Jacobi diagrams is the algebra \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
+	The algebra \(\mathcal{J}\) of Jacobi diagrams is the vector space \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
 \end{definition}
 
-\begin{definitions}
-		\item The \textbf{AS relation} (antisymmetry relation) is the relation
+This is well-defined. The proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. From the \ref{eq:STU} relations, we may deduce the following other relations which hold in \(\mathcal{J}\).
+
+\begin{proposition}
+	The following relations are consequences of the \textup{\ref{eq:STU}} relation in \(\mathcal{J}\):
+	\begin{enumerate}
+		\item The \textbf{AS relation} (antisymmetry relation),
 			\begin{equation}
 				\label{eq:AS}
 				\tag{\as}
@@ -97,7 +112,7 @@ Note that the \ref{eq:STU} relations imply the \ref{eq:4T} relations.
 				-
 				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}.
 			\end{equation}
-		\item The \textbf{IHX relation} is the relation
+		\item The \textbf{IHX relation},
 			\begin{equation}
 				\label{eq:IHX}
 				\tag{\ihx}
@@ -111,7 +126,25 @@ Note that the \ref{eq:STU} relations imply the \ref{eq:4T} relations.
 				\quad
 				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_x.pdf}.
 			\end{equation}
-\end{definitions}
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{remark}
+	A note, maybe in remark env. on how these relations highlight the Lie algebraic properties of \(\mathcal{J}\).
+\end{remark}
+
+\begin{mdframed}
+	The coproduct in \(\mathcal{J}\).
+\end{mdframed}
+
+\begin{proposition}
+	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic.
+\end{proposition}
+
 
 \section{Lie algebra weight systems}
 
