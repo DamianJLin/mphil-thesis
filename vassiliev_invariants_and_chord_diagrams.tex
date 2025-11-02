@@ -828,6 +828,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to that in \(\mathcal{K}\), there is a coproduct too.
 
 \begin{definition}
+	\label{def:coproduct-in-chord-diagrams}
 	The \textbf{coproduct of a chord diagram} \(A\) is the sum of ways of partitioning its chords between two subdiagrams.
 
 	If \(S\) is the set of chords of \(A\), and \(J \subset S\), let \(\widehat{J} = S \smallsetminus J\). Denote by \(A_{J}\) the chord diagram \(A\) but with only the chords in \(J \subset S\), and the rest deleted. Then
@@ -927,8 +928,8 @@ We can break the fundamental theorem up into two parts.
 	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
 		\hline
 		\textbf{Vassiliev}
-		& Every Vassiliev invariant modulo Vassiliev invariants of higher order gives a Weight system, so a map \[\mathcal{V}_{m} / \mathcal{V}_{m - 1} \to \mathcal{W}_{m}.\]
-		& Every chord diagram gives an element of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\), so a map \[\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}.\] \\ \hline
+		& Every Vassiliev invariant modulo Vassiliev invariants of higher order gives a Weight system, so a map \[\mathcal{V}_{m} / \mathcal{V}_{m - 1} \to \mathcal{W}_{m}.\] \vspace{-20pt}
+		& Every chord diagram gives an element of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\), so a map \[\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}.\] \vspace{-20pt} \\ \hline
 		\textbf{Kontsevich}
 		& Every weight system gives a Vassiliev invariant modulo Vassiliev invariants of higher order, so a map \[\mathcal{W}_{m} \to \mathcal{V}_{m} / \mathcal{V}_{m - 1}\] which is inverse to the above.
 		& Every equivalence class of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\) gives a chord diagram, so a map \[\mathcal{K}_{m} / \mathcal{K}_{m + 1} \to \mathcal{A}_{m}.\] which is inverse to the above. \\ \hline

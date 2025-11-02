@@ -13,20 +13,6 @@ The fundamental theorem of Vassiliev invariants states that the bialgebra of Vas
 	Page 141 on \cite{introduction-to-vassiliev-invariants} furthermore says that \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} shows \(\mathcal{A}\) (algebra of Jacobi diagrams on the circle) is isomorphic to the center of the universal enveloping algebra of a Casimir Lie algebra in a certain tensor category. Indeed that's my interpretation of HV, but why do if we already know that \(\mathcal{A}\) is already the center (which in this case equals the whole thing) of \(\mathcal{P}(\mathcal{A})\)?!
 \end{mdframed}
 
-\begin{mdframed}
-Scaffold of chapter:
-
-	-- That 4T looks like STU/IHX. Hint at Lie algebra relations.
-
-	-- The isomorphism from Chord diagrams to Jacobi diagrams with proof.
-
-	-- Bar-Natan construction: Lie algebra \(\to\) some weight systems. i.e. you get a quotient(?) of \(\mathcal{A}\) from this?
-
-	-- Some examples of this, and some talking about diagrams not detected by Lie algebras (who?), even Lie Superalgebras (Vogel). Perhaps also some dimensions of spaces.
-
-	-- Go through classical Hinnich-Vaintrob.
-\end{mdframed}
-
 % TODO: Try to fix(?) and include the below CDM proof of Milnor-Moore
 % \begin{theorem}
 % 	The bialgebra \(\mathcal{A}\) is canonically isomorphic to the algebra of polynomials in its primitive elements,
@@ -41,7 +27,7 @@ Scaffold of chapter:
 
 \section{Jacobi diagrams, AS, STU and IHX}
 
-This side of the story reframes the algebra \(\mathcal{A}\) as a separate algebra to make the Lie theory connection more obvious.
+This side of the story reframes the bialgebra \(\mathcal{A}\) as an isomorphic bialgebra known as the algebra of Jacobi diagrams to illuminate the Lie theory connections.
 
 \begin{definition}
 	A \textbf{unitrivalent diagram} is a unitrivalent graph (with loops and multiple edges allowed) with the following additional data:
@@ -85,7 +71,7 @@ Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the 
 		\ - \
 		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_south.pdf}}
 		\ = \
-		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{four_term_jacobi_diagram.pdf}}
+		\adjustbox{valign=c}{\includegraphics[width=0.12\textwidth]{four_term_jacobi_diagram.pdf}}
 		\ = \
 		\adjustbox{valign=c}{\includegraphics[width=0.115\textwidth]{graphics/four_term_from_stu_west.pdf}}
 		\ - \
@@ -130,22 +116,57 @@ This is well-defined. The proof of Proposition \ref{prop:connected-sum-well-defi
 \end{proposition}
 
 \begin{proof}
+	% TODO: Maybe put some images here.
+	\begin{enumerate}
+		\item
+			Take two diagrams which differ only by \ref{eq:AS} at one (trivalent) vertex. If the vertex at which the \ref{eq:AS} relation resides is adjacent to a univalent vertex (i.e. touches the outer circle), then this is immediate from applying \ref{eq:STU} to both diagrams at that vertex.
 
+			If the vertex is not immediately adjacent to a univalent vertex, then it is some \(d\) vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
+
+		\item
+			A similar argument applies. If one of the two vertices of the \ref{eq:IHX} is adjacent to the circle, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices. Otherwise, some \ref{eq:STU}s may be required first.
+\end{enumerate}
 \end{proof}
 
-\begin{remark}
-	A note, maybe in remark env. on how these relations highlight the Lie algebraic properties of \(\mathcal{J}\).
-\end{remark}
+Looking at the relations \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX}, the first solid evidence of Lie-theoretic structure in this story emerges. Explicit connections will be the subject of the next subsection, but for now notice that interpreting the trivalent vertex in \ref{eq:STU} (which has two `input' edges above and one `output' edge below) as a bracket, this bears resembelance to the relation that defines the universal enveloping algebra of a Lie algebra \([x, y] = xy - yx\). Similarly, \ref{eq:AS} looks like the antisymmetry property of the bracket \([x, y] = -[y, x]\). For \ref{eq:IHX} perhaps the relation isn't quite so obvious until the diagrams are rearranged into the form
+\begin{equation*}
+	\tag{\ihx}
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_i.pdf}
+	\quad
+	=
+	\quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_h.pdf}
+	\quad
+	+
+	\quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_x.pdf},
+\end{equation*}
+(here also one application of \ref{eq:AS} was used) whereby the \ref{eq:IHX} looks like the Jacobi identity, in the form \([[x, y], z] = [x, [y, z]] + [y, [x, z]]\).
 
-\begin{mdframed}
-	The coproduct in \(\mathcal{J}\).
-\end{mdframed}
+% TODO: The change of basis assumption here is a liiitle sus.
+We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mathcal{J}\) will be isomorphic as bialgebras. In fact, as algebras, this is clearly true so far, as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
 
 \begin{proposition}
-	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic.
+	The coproduct \(\Delta\) on \(J \in \mathcal{J}\) defined by taking a Jacobi diagram, representing it as a chord diagram via \textup{\ref{eq:STU}}, taking the coproduct in \(\mathcal{A}\), then interpreting the result as a Jacobi diagram via the inclusion of \(\mathcal{A}\) into \(\mathcal{J}\), is also given by the following formula.
+
+	\[\Delta(J) = \sum_{C \subset S} J_{C} \otimes J_{\overline{C}},\]
+	where \(S\) is the set of connected components of \(J\), and \(\overline{C} = S \smallsetminus C\).
 \end{proposition}
 
+\begin{proof}
+	Note that this has the same symbolic form as the coproduct in \(\mathcal{A}\) given in Definition~\ref{def:coproduct-in-chord-diagrams}, but with chords replaced by connected components of Jacobi diagrams. However, when working in \(\mathcal{A} \subset \mathcal{J}\), there are only univalent vertices, so the connected components are exactly the chords. Since \(\mathcal{A}\) forms a basis for \(\mathcal{J}\), and the formula is linear, it extends to all of \(\mathcal{J}\).
+\end{proof}
+
+\begin{corollary}
+	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic.
+\end{corollary}
+
+\begin{warning}
+	From here on, justified by this isomorphism which is just a change of basis, we write \(\mathcal{J} = \mathcal{A}\), and \(\mathcal{A}\) is the preferred choice of notation for both chord diagrams and Jacobi diagrams.
+\end{warning}
 
 \section{Lie algebra weight systems}
+
+\section{Non-Lie algebraic weight systems}
 
 \section{Jacobi diagrams as a universal enveloping algebra}
