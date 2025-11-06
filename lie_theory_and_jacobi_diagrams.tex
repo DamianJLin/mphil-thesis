@@ -158,15 +158,98 @@ We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mat
 \end{proof}
 
 \begin{corollary}
+	The primitive elements \(\mathcal{P}(\mathcal{A})\) are the connected Jacobi diagrams.
+\end{corollary}
+
+\begin{corollary}
 	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic.
 \end{corollary}
 
 \begin{warning}
-	From here on, justified by this isomorphism which is just a change of basis, we write \(\mathcal{J} = \mathcal{A}\), and \(\mathcal{A}\) is the preferred choice of notation for both chord diagrams and Jacobi diagrams.
+	Justified by this isomorphism, we write \(\mathcal{J} = \mathcal{A}\), and \(\mathcal{A}\) is the preferred choice of notation for both chord diagrams and Jacobi diagrams.
 \end{warning}
 
 \section{Lie algebra weight systems}
+Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied by \(\mathcal{A}\) are appear also in the context of a graphical notation for multilinear maps, a fact which we may exploit to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}.
+
+\begin{remark}
+	This diagrammatic calculus is well-known but it goes by many names: Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. A rarely seen but accurate name is `tensor diagrammar'.
+\end{remark}
+
+A tensor, i.e. a multilinear map takes as its input a tensor product of \(m\) various vector spaces, and has as output a a tensor product of \(n\) various vector spaces. Such a map can be represented as a vertex with \(m + n\) unbound edges; \(m\) decorated by the corresponding vector spaces with incoming arrows, and \(n\) decordated by the corresponding vector spaces again with outgoing arrows.
+
+For example, the bracket in a Lie algebra \(\mathfrak{g}\) is a map \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
+\[\text{Lie bracket vertex}\]
+
+Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. Relations can therefore be expressed graphically, for example, the antisymmetry of the bracket \([x, y] = -[y, x]\) becomes
+\[\text{\ref{eq:AS}}\]
+the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
+\[...\ .\]
+
+A representation \(\rho\) of a Lie algebra is a vertex of type
+\[...\]
+and the equation that \(\rho\) be a lie algebra representation is the diagrammatic statement
+\[...\ .\]
+
+If \(\mathfrak{g}\) is a metric Lie algebra (i.e. it has an invariant, nondegenerate bilinear form) then we have an additional vertex with both input edges labelled \(\mathfrak{g}\). Since it's nondegenerate, it can be inverted to achieve a vertex with both output edges labelled \(\mathfrak{g}^{\ast}\). This allows the composition of the bracket vertices with signature \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) into vertices with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\), or vice \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Since they are invertible, they can be inserted anywhere without losing information.
+
+Moreover, the invariance of the form can be written as \(\langle [x, y], z \rangle = \langle [z, x], y \rangle\) which graphically can be represented as cyclic invariance of the composition of these vertices
+\[... = ... = ... \ .\]
+This justifies drawing only vertices of type
+\[composition\]
+which are equal to any of the above.
+
+The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} uses this diagrammatic calculus to take metric Lie algebras and produce weight systems.
+
+% TODO: According to Chmutov-Duzhin-Mostovoy, p164, the weight system is only multiplicative if the representation is irreducible. Question for Zsuzsi: does this mean we only get a quotient of A if we put in an irreducible representation?
+\begin{theorem}
+	The construction below which takes a lie algebra \(\mathfrak{g}\) produces a well-defined weight system \(W_{\mathfrak{g}}\) valued in \(\mathcal{U}(\mathfrak{g})\).
+	% TODO: Should this be Q?
+	Furthermore if a representation, \(\rho\) of \(\mathfrak{g}\) is given, then a \(\mathbb{C}\)-valued weight system is produced.
+\end{theorem}
+
+\begin{construction}
+	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\) with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
+
+	For each edge between the trivalent vertices in the Jacobi diagram, contract the corresponding variables in \(\mathfrak{g}^{\otimes 3 v}\). The result lies in \(\mathfrak{g}^{\otimes 3v - 2e}\) where \(e\) is the number of edges between trivalent vertices.
+
+	The number of univalent vertices matchs the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices. So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into the induced cyclic order. Projecting from the tensor algebra of \(\mathfrak{g}\) into its universal enveloping algebra, we obtain an element \(T_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
+
+	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation to take the trace of \(T_{\mathfrak{g}}(J)\). The result is an element of the ground field \(T_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
+\end{construction}
+
+\begin{proof}
+	well-definedness under stu means this is a map to the universal enveloping algebra.
+\end{proof}
+
+\begin{mdframed}
+	Bar-natan construction. \(-J\) comes from (\(x, y, [x, y]\)) being the clockwise orientation when we chose anti-clockwise as the default.
+\end{mdframed}
+
+\begin{mdframed}
+	proof of bar-natan construction as in roberts-willerton or thurston or roberts.
+\end{mdframed}
+
+\begin{mdframed}
+	Example, sl2. We get something with more relations than \(\mathcal{A}\), but clearly since this is a Lie algebra, all the relations of \(\mathcal{A}\) are satisfied. So we get a quotient.
+\end{mdframed}
+
+\begin{mdframed}
+	literature summary of tables of dimensions from metric Lie algebras.
+\end{mdframed}
 
 \section{Non-Lie algebraic weight systems}
+
+\begin{mdframed}
+	The IHX, STU, AS is slightly more than just the jacobi; the tensor algebra isomorphism can be other than the identity (e.g. superalgebras).
+\end{mdframed}
+
+\begin{mdframed}
+	gl(1, 1) as an example
+\end{mdframed}
+
+\begin{mdframed}
+	Results of Vogel and calculations of Lieberum.
+\end{mdframed}
 
 \section{Jacobi diagrams as a universal enveloping algebra}
