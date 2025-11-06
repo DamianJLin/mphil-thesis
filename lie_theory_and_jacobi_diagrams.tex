@@ -143,6 +143,18 @@ Looking at the relations \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX}, the first s
 \end{equation*}
 (here also one application of \ref{eq:AS} was used) whereby the \ref{eq:IHX} looks like the Jacobi identity, in the form \([[x, y], z] = [x, [y, z]] + [y, [x, z]]\).
 
+\begin{lemma}[Generalised IHX]
+	\begin{mdframed}
+		sum of connections into a box equals sum of connections out.
+
+		In particular, sum of connections into a dead end is zero.
+	\end{mdframed}
+\end{lemma}
+
+\begin{proof}
+	Morsify. There are only 6 types of vertices you encounter... . Sum of connections is the same on either side, and 
+\end{proof}
+
 % TODO: The change of basis assumption here is a liiitle sus.
 We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mathcal{J}\) will be isomorphic as bialgebras. In fact, as algebras, this is clearly true so far, as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
 
@@ -209,30 +221,51 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 \end{theorem}
 
 \begin{construction}
-	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\) with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
+	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\) with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(-T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
 
 	For each edge between the trivalent vertices in the Jacobi diagram, contract the corresponding variables in \(\mathfrak{g}^{\otimes 3 v}\). The result lies in \(\mathfrak{g}^{\otimes 3v - 2e}\) where \(e\) is the number of edges between trivalent vertices.
 
-	The number of univalent vertices matchs the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices. So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into the induced cyclic order. Projecting from the tensor algebra of \(\mathfrak{g}\) into its universal enveloping algebra, we obtain an element \(T_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
+	The number of univalent vertices matches the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices. So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into an order which respects the induced cyclic order (there are many --- choose one). Projecting from the tensor algebra of \(\mathfrak{g}\) into its universal enveloping algebra, we obtain an element \(W_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
 
-	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation to take the trace of \(T_{\mathfrak{g}}(J)\). The result is an element of the ground field \(T_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
+	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation to take the trace of \(W_{\mathfrak{g}}(J)\). The result is an element of the ground field \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
 \end{construction}
 
+Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) and \(W_{\mathfrak{g}, \rho}: \mathcal{A} \to \mathbb{C}\) which we claim are weight systems.
+
 \begin{proof}
-	well-definedness under stu means this is a map to the universal enveloping algebra.
+	First, the map \(W_{\mathfrak{g}}\). It is well-defined, as the map on chord diagrams descends to a map modulo \ref{eq:STU} (recall that \ref{eq:STU} implies \ref{eq:AS} and \ref{eq:IHX}). If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(x\) and \(y\), the construction gives
+	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
+	but this equality is exactly the quotient in the universal enveloping algebra.
+
+	Indeed \ref{eq:AS} and \ref{eq:IHX} follow from \ref{eq:STU} but they are also easy to see directly. \(\ref{eq:AS}\) follows from the skew-symmetry of the vertex \(m\), being built out of the bracket, and \(\ref{eq:IHX}\) follows from the Jacobi identity in \(\mathfrak{g}\).
+
+	Finally, there are many possible orders on the tensor factors that agreed with the cyclic order. This amounts to choosing a dinstinguished univalent vertex as the beginning of the order. The relations in \(\mathcal{A}\) imply that all the choices are equivalent.
+	\begin{mdframed}
+		Commute with STU and then use generalised IHX.
+	\end{mdframed}
+	This completes the proof.
 \end{proof}
 
-\begin{mdframed}
-	Bar-natan construction. \(-J\) comes from (\(x, y, [x, y]\)) being the clockwise orientation when we chose anti-clockwise as the default.
-\end{mdframed}
+\begin{remark}
+	The choice of \(-T_{\mathfrak{g}}(m)\) instead of \(T_{\mathfrak{g}}(m)\) for the tensor product associated to the vertex \(m\), is due to the fact that the cyclic order on \(T_{\mathfrak{g}}(m)\) is \((x, y, [x, y]_{\mathfrak{g}})\).
 
-\begin{mdframed}
-	proof of bar-natan construction as in roberts-willerton or thurston or roberts.
-\end{mdframed}
+	Such a vertex looks like
+	\begin{mdframed}
+		this
+	\end{mdframed}
+	which is the wrong way round to read \([x, y] = xy - yx\) in \(\mathcal{U}(\mathfrak{g})\) when the construction is performed.
+\end{remark}
 
 \begin{mdframed}
 	Example, sl2. We get something with more relations than \(\mathcal{A}\), but clearly since this is a Lie algebra, all the relations of \(\mathcal{A}\) are satisfied. So we get a quotient.
 \end{mdframed}
+
+Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
+\begin{example}[Weight system for \({\mathfrak{sl}_{2}}\)]
+	We choose as our Lie algebra \(\mathfrak{sl}_{2}\), generated by \(h\), \(e\) and \(f\) with commutators
+	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h.\]
+	The unique invariant form up to scalar multiple is \(\langle x, y \rangle = \)
+\end{example}
 
 \begin{mdframed}
 	literature summary of tables of dimensions from metric Lie algebras.
