@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="93.327705pt"
+   height="150.375pt"
+   viewBox="0 0 93.32771 150.375"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="bracket_string_diagram.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/bracket_string_diagram.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <marker
+       style="overflow:visible"
+       id="marker2"
+       refX="15"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1"
+       refX="18"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="18"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="4"
+     inkscape:cx="39.5"
+     inkscape:cy="82.125"
+     inkscape:window-width="2556"
+     inkscape:window-height="1394"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg10"
+     showguides="true">
+    <sodipodi:guide
+       position="47.053118,158.79879"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="47.053118,158.79879"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="37.658848,273.13095"
+       orientation="0,-1"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="13.036537,132.01281"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="81.069699,132.01281"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <inkscape:page
+       x="9.8822466e-07"
+       y="0"
+       width="93.327713"
+       height="150.375"
+       id="page5"
+       margin="0 0 0 0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <rect
+     style="display:none;fill:none;stroke:#d40000;stroke-width:1.84185;stroke-dasharray:none;stroke-opacity:0.550951"
+     id="rect4"
+     width="68.033157"
+     height="33.498558"
+     x="13.036536"
+     y="1.6129036" />
+  <path
+     fill-rule="nonzero"
+     fill="#000000"
+     fill-opacity="1"
+     d="m 51.486809,72.615067 c 3.4121,-5.90994 -5.45451,-11.02908 -8.86661,-5.11914 -3.41407,5.91333 5.45254,11.03247 8.86661,5.11914"
+     id="path10" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2)"
+     d="M 47.053109,70.056587 V 132.69435"
+     id="path3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow)"
+     d="m 81.069689,18.362197 -34.01658,51.69439"
+     id="path3-5"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1)"
+     d="m 13.036536,18.362197 34.016573,51.69439"
+     id="path3-56"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-weight:500;font-size:12px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.749999;-inkscape-stroke:none;stop-color:#000000"
+     x="13.036536"
+     y="4.5"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="stroke-width:0.749999"
+       x="13.03654"
+       y="4.5">\raisebox{-.5\height}{\(\scriptstyle x\)}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-weight:500;font-size:12px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;display:inline;fill:#000000;stroke-width:0.749999;-inkscape-stroke:none;stop-color:#000000"
+     x="81.069702"
+     y="4.5"
+     id="text1-6"><tspan
+       sodipodi:role="line"
+       id="tspan1-7"
+       style="stroke-width:0.749999"
+       x="81.069702"
+       y="4.5">\raisebox{-.5\height}{\(\scriptstyle y\)}</tspan></text>
+  <g
+     id="svg10-5"
+     transform="translate(52.411119,152.4375)">
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:12px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.749999;-inkscape-stroke:none;stop-color:#000000"
+       x="-5.25"
+       y="-8.0625"
+       id="text1-3"><tspan
+         sodipodi:role="line"
+         id="tspan1-5"
+         style="stroke-width:0.749999"
+         x="-5.2499962"
+         y="-8.0625">\raisebox{-.5\height}{\(\scriptstyle [x, y]\)}</tspan></text>
+  </g>
+</svg>

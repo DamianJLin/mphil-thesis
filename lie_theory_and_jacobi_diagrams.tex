@@ -130,21 +130,6 @@ This is well-defined. The proof of Proposition \ref{prop:connected-sum-well-defi
 \end{enumerate}
 \end{proof}
 
-Looking at the relations \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX}, the first solid evidence of Lie-theoretic structure in this story emerges. Explicit connections will be the subject of the next subsection, but for now notice that interpreting the trivalent vertex in \ref{eq:STU} (which has two `input' edges above and one `output' edge below) as a bracket, this bears resembelance to the relation that defines the universal enveloping algebra of a Lie algebra \([x, y] = xy - yx\). Similarly, \ref{eq:AS} looks like the antisymmetry property of the bracket \([x, y] = -[y, x]\). For \ref{eq:IHX} perhaps the relation isn't quite so obvious until the diagrams are rearranged into the form
-\begin{equation*}
-	\tag{\ihx}
-	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_i.pdf}
-	\quad
-	=
-	\quad
-	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_h.pdf}
-	\quad
-	+
-	\quad
-	\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_jacobi_form_x.pdf},
-\end{equation*}
-(here also one application of \ref{eq:AS} was used) whereby the \ref{eq:IHX} looks like the Jacobi identity, in the form \([[x, y], z] = [x, [y, z]] + [y, [x, z]]\).
-
 \begin{lemma}[Generalised \ref{eq:IHX}]
 	The following holds in \(\mathcal{J}\) for any subgraph consisting of trivalent vertices that can be inserted into the grey box.
 	\[
@@ -193,31 +178,66 @@ We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mat
 Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied by \(\mathcal{A}\) are appear also in the context of a graphical notation for multilinear maps, a fact which we may exploit to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}.
 
 \begin{remark}
-	This diagrammatic calculus is well-known but it goes by many names: Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. A rarely seen but accurate name is `tensor diagrammar'.
+	This diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. We call them string diagrams.
 \end{remark}
 
-A tensor, i.e. a multilinear map takes as its input a tensor product of \(m\) various vector spaces, and has as output a a tensor product of \(n\) various vector spaces. Such a map can be represented as a vertex with \(m + n\) unbound edges; \(m\) decorated by the corresponding vector spaces with incoming arrows, and \(n\) decordated by the corresponding vector spaces again with outgoing arrows.
+A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the classical canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\).
 
-For example, the bracket in a Lie algebra \(\mathfrak{g}\) is a map \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
-\[\text{Lie bracket vertex}\]
+A tensor can be represented as a vertex with \(m + n\) unbound directed edges; \(m\) incoming edged decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots\)), and \(n\) outgoing edges decordated by \(Y_{1}, \cdots\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
+\[\def\svgscale{0.3} \input{graphics/bracket_string_diagram.pdf_tex}.\]
+In fact, since the relation if true for any elements \(x, y \in \mathfrak{g}\), the labels on the edges can be dropped.
 
-Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. Relations can therefore be expressed graphically, for example, the antisymmetry of the bracket \([x, y] = -[y, x]\) becomes
-\[\text{\ref{eq:AS}}\]
+Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. Relations can therefore be expressed graphically, for example, the antisymmetry of the bracket \([y, x] = -[x, y]\) becomes
+\[
+	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_swap.pdf}
+	\quad
+	=
+	\quad
+	-
+	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_id.pdf}.
+\]
 the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
-\[...\ .\]
+\[
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_xyz.pdf}
+	\quad
+	+
+	\quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_yzx.pdf}
+	\quad
+	+
+	\quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_zxy.pdf}
+	\quad
+	=
+	\quad
+	0
+\]
 
-A representation \(\rho\) of a Lie algebra is a vertex of type
-\[...\]
-and the equation that \(\rho\) be a lie algebra representation is the diagrammatic statement
-\[...\ .\]
+Looking at the relations these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), the first solid evidence of Lie-theoretic structure in this story emerges. The antisymmetry of the bracket, drawn as a string diagram looks like a directed version of \ref{eq:AS}. Similarly the string diagram Jacobi relation can be arranged into a directed version of \ref{eq:IHX}.
 
-If \(\mathfrak{g}\) is a metric Lie algebra (i.e. it has an invariant, nondegenerate bilinear form) then we have an additional vertex with both input edges labelled \(\mathfrak{g}\). Since it's nondegenerate, it can be inverted to achieve a vertex with both output edges labelled \(\mathfrak{g}^{\ast}\). This allows the composition of the bracket vertices with signature \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) into vertices with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\), or vice \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Since they are invertible, they can be inserted anywhere without losing information.
+% TODO: Decide whether we can be bothered to talk about representations also as vertices. We can also just weight systems into U(g) then take traces wrt a rep after.
 
-Moreover, the invariance of the form can be written as \(\langle [x, y], z \rangle = \langle [z, x], y \rangle\) which graphically can be represented as cyclic invariance of the composition of these vertices
-\[... = ... = ... \ .\]
-This justifies drawing only vertices of type
-\[composition\]
-which are equal to any of the above.
+Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra. Then it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). We have additional bivalent vertices
+\[
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
+	\qquad \text{and} \qquad
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
+\]
+These can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
+
+Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which graphically can be represented as cyclic invariance of the contraction of the bracket and the metric
+\[
+	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketxy.pdf}
+	\quad
+	=
+	\quad
+	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_permute.pdf}
+	\quad
+	=
+	\quad
+	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketyz.pdf}.
+\]
+A similar argument works for the casimir.
 
 The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} uses this diagrammatic calculus to take metric Lie algebras and produce weight systems.
 
@@ -245,26 +265,27 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) and \(W_{\mathfrak{g}, \rho}: \mathcal{A} \to \mathbb{C}\) which we claim are weight systems.
 
 \begin{proof}
+	The contruction creates a string diagram which is well-defined modulo certain diagrammatic relations as seen at the start of this section such as the cyclic invariance of the contraction of the metric and bracket. By \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}, string diagrams modulo these relations are exactly encoded by unitrivalent graphs with a cyclic order on trivalent vertices, and a linear order on univalent vertices.
 
-	The Penrose diagrams constructed out of the vertices of the type listed above are well-defined as planar graphs \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}. Thus since the tensor is constructed only from contractions of the above vertices, it is determined by the information of which components are contracted, and their order in the final tensor. This information is encoded by a uni-trivalent graph with an ordering on its univalent vertices.
+	\begin{mdframed}
+		Explicitly have diagrams for all the relations, involving the symmetry natural transformation, so that we can later say that this could not be the on-the-nose identity.
+	\end{mdframed}
 
-	To prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the Penrose diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
+	Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
 	but this equality is exactly the quotient in the \(\mathcal{U}(\mathfrak{g})\).
 
 	Indeed \ref{eq:AS} and \ref{eq:IHX} follow from \ref{eq:STU} but they are also easy to see directly. \(\ref{eq:AS}\) follows from the skew-symmetry of the vertex \(m\), being built out of the bracket, and \(\ref{eq:IHX}\) follows from the Jacobi identity in \(\mathfrak{g}\).
 
 	Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We should show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. Since it is stronger, let us prove it instead for \(\mathcal{A}\).
+	% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras).
 
 	It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) in the first position and moving it to the last position, reducing by one the positions of all other legs. This generates the cyclic group on the number of univalent vertices, so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. We will show that this cost is zero.
 
-	We split this sum by the connected components of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, this sum is also killed by generalised \ref{eq:IHX}, as it produces a diagram with a loop at the top.
-\end{proof}
+	We split this sum by the connected components of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
 
-\begin{remark}
-	% TODO: Call the Penrose diagrams something consistent throughout.
-	We showed in the proof above that the Penrose diagrams with given vertices obey \ref{eq:STU}. Such an object is starting to look a lot like a Jacobi diagram. We showed that these objects satisfy the \ref{eq:STU} relations, but it's still possible they satisfy more relations than Jacobi diagrams, a statement which we will formalise in Section \ref{sec:non-lie-algebraic-weight-systems}.
-\end{remark}
+	That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
+\end{proof}
 
 \begin{mdframed}
 	Confirm: This obeys all the relations of \(\mathcal{A}\), and more. Does this make it a quotient of \(\mathcal{A}\)?
@@ -274,7 +295,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 \begin{example}[Weight system for \({\mathfrak{sl}_{2}}\)]
 	We choose as our Lie algebra \(\mathfrak{sl}_{2}\), generated by \(h\), \(e\) and \(f\) with commutators
 	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h.\]
-	The unique invariant form up to scalar multiple is
+	The unique invariant bilinear form up to scalar multiple is
 	\[\langle h, h \rangle = 1, \quad \langle e, f \rangle = \frac{1}{2}, \quad \langle f, e \rangle = \frac{1}{2},\]
 	and all other inner products are zero.
 
@@ -314,8 +335,11 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	\end{proof}
 \end{example}
 
+
 \begin{mdframed}
-	literature summary of tables of dimensions from metric Lie algebras.
+	State that this algebra is starting to look a lot like \(\mathcal{A}\). Find a nice way to say that Bar-Natan's conjecture is that they're isomorphic.
+	
+	Literature summary of tables of dimensions from metric Lie algebras. These disprove the conjecture, which leads into the next section.
 \end{mdframed}
 
 \section{Non-Lie algebraic weight systems}
@@ -333,4 +357,6 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	Results of Vogel and calculations of Lieberum.
 \end{mdframed}
 
-\section{Jacobi diagrams as a universal enveloping algebra}
+\begin{mdframed}
+	Hinnich and Vaintrob
+\end{mdframed}
