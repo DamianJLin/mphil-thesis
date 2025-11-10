@@ -249,6 +249,7 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 \end{theorem}
 
 \begin{construction}
+	\label{cons:lie-algebra-weight-system}
 	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\) with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
 
 	For each edge between the trivalent vertices in the Jacobi diagram, contract the corresponding variables in \(\mathfrak{g}^{\otimes 3 v}\). The result lies in \(\mathfrak{g}^{\otimes 3v - 2e}\) where \(e\) is the number of edges between trivalent vertices.
@@ -335,15 +336,29 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	\end{proof}
 \end{example}
 
+Bar-Natan's construction yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether every all the information in \(\mathcal{A}\) can be extracted with some metric Lie algebra.
 
-\begin{mdframed}
-	State that this algebra is starting to look a lot like \(\mathcal{A}\). Find a nice way to say that Bar-Natan's conjecture is that they're isomorphic.
-	
-	Literature summary of tables of dimensions from metric Lie algebras. These disprove the conjecture, which leads into the next section.
-\end{mdframed}
+Computer enumeration of chord diagrams \cite{on-the-vassiliev-knot-invariants} prove this for order \(m \leq 9\), the order to which the dimensions \(\operatorname{dim}\mathcal{A}_{m} = \operatorname{dim}\mathcal{W}_{m}\) were known:
+\[
+	\begin{tblr}{hlines, vlines}
+		m							& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ \hline % & 10  & 11  & 12  \\
+		\operatorname{dim}\mathcal{A}_{m}			& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
+		\operatorname{dim}(\mathcal{A}_{m})_{\text{Lie}}	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
+	\end{tblr}
+\]
+Here \(\operatorname{dim}(\mathcal{A}_{m})_{\text{Lie}}\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Costruction \ref{cons:lie-algebra-weight-system} on representations of classical Lie algebras \(\mathfrak{sl}_{n + 1}\), \(\mathfrak{o}_{2n + 1}\), \(\mathfrak{sp}_{2n + 1}\) and \(\mathfrak{o}_{2n}\).
+
+\begin{conjecture}[Bar-Natan]
+	\label{conj:lie-algebra-weight-systems-span}
+	All weight systems are obtained as Lie algebra weight systems. In other words the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
+\end{conjecture}
+
+Strenthening the above conjecture, maybe even there is some universal Lie algebra, applying the construction to which, recovers exactly \(\mathcal{A}\), losing no information.
 
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
+
+Quite surprisingly, the Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. Results of Vogel \cite{algebraic-structures-on-modules-of-diagrams} use a similar construction for Lie superalgebras, specifically \(D(2, 1, \alpha)\) to construct a weight system which provably doesn't come from a Lie algebra. In fact in the same paper, ...
 
 \begin{mdframed}
 	The IHX, STU, AS is slightly more than just the jacobi; the tensor algebra isomorphism can be other than the identity (e.g. superalgebras).
