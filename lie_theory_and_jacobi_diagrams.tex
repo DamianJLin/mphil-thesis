@@ -3,27 +3,7 @@
 
 The fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into nice combinatiorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\), or equivalently its dual \(\mathcal{A}\). There is a hint that the structure of \(\mathcal{A}\) may relate to Lie algebras.
 
-\begin{mdframed}
-	The hint is that Hopf algebras have a lie algebra as their primitive elements \(\mathcal{P}(H)\). However I clearly am confused here, for the following reason. By the Milnor-Moore theorem, applying this to \(\mathcal{A}\), it should be the symmetric algebra (and therefore the universal enveloping algebra, as it's abelian?) of \(\mathcal{P}(\mathcal{A})\).
-
-	However this clashes with my understanding of the raison d'etre of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. According to them, the point of their convoluted construction is to realise \(\mathcal{A}\) as the universal enveloping algebra of some Lie algerba. And a key point is that that's not technically true, hence the need to move to more general tensor categroies.
-
-	Further evidence in \cite{noncommutative-chern-weil-theory-and-the-combinatorics-of-wheeling}: ``The STU relation is a formal analogue of the relation in a Universal Enveloping Algebra which equates a commutator with the corresponding bracket'' (the word formal implying that this isn't literally true).
-
-	Page 141 on \cite{introduction-to-vassiliev-invariants} furthermore says that \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} shows \(\mathcal{A}\) (algebra of Jacobi diagrams on the circle) is isomorphic to the center of the universal enveloping algebra of a Casimir Lie algebra in a certain tensor category. Indeed that's my interpretation of HV, but why do if we already know that \(\mathcal{A}\) is already the center (which in this case equals the whole thing) of \(\mathcal{P}(\mathcal{A})\)?!
-\end{mdframed}
-
-% TODO: Try to fix(?) and include the below CDM proof of Milnor-Moore
-% \begin{theorem}
-% 	The bialgebra \(\mathcal{A}\) is canonically isomorphic to the algebra of polynomials in its primitive elements,
-% 	\[\mathcal{A} \cong S(\mathcal{P}(\mathcal{A})),\]
-% 	where \(S\) denotes the symmetric algebra.
-% \end{theorem}
-% \begin{proof}
-% 	\begin{mdframed}
-% 		The proof in \cite{introduction-to-vassiliev-invariants} is readable, but missing crucial details, and containing a typo. Furthermore I cannot find it anywhere else. If there is time, I want to find out if it works and include it. Perhaps compare to the original source.
-% 	\end{mdframed}
-% \end{proof}
+% TODO: Try to fix(?) and include the below CDM proof of Milnor-Moore. Update: The (elusive) full proof is in Lescop 2024!
 
 \section{Jacobi diagrams, AS, STU and IHX}
 
@@ -341,24 +321,40 @@ Bar-Natan's construction yields a way of extracting some information from \(\mat
 Computer enumeration of chord diagrams \cite{on-the-vassiliev-knot-invariants} prove this for order \(m \leq 9\), the order to which the dimensions \(\operatorname{dim}\mathcal{A}_{m} = \operatorname{dim}\mathcal{W}_{m}\) were known:
 \[
 	\begin{tblr}{hlines, vlines}
-		m							& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ \hline % & 10  & 11  & 12  \\
-		\operatorname{dim}\mathcal{A}_{m}			& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
-		\operatorname{dim}(\mathcal{A}_{m})_{\text{Lie}}	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
+		m									& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ \hline % & 10  & 11  & 12  \\
+		\operatorname{dim}\mathcal{A}_{m}					& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
+		\operatorname{dim}(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}}))	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
 	\end{tblr}
 \]
-Here \(\operatorname{dim}(\mathcal{A}_{m})_{\text{Lie}}\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Costruction \ref{cons:lie-algebra-weight-system} on representations of classical Lie algebras \(\mathfrak{sl}_{n + 1}\), \(\mathfrak{o}_{2n + 1}\), \(\mathfrak{sp}_{2n + 1}\) and \(\mathfrak{o}_{2n}\).
+Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Costruction \ref{cons:lie-algebra-weight-system} on representations of classical Lie algebras \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\).
 
 \begin{conjecture}[Bar-Natan]
 	\label{conj:lie-algebra-weight-systems-span}
 	All weight systems are obtained as Lie algebra weight systems. In other words the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
 \end{conjecture}
 
-Strenthening the above conjecture, maybe even there is some universal Lie algebra, applying the construction to which, recovers exactly \(\mathcal{A}\), losing no information.
+\begin{remark}
+	\label{rem:chord-diagram-universal-construction}
+	Strenthening the above conjecture, maybe even there is some universal Lie algebra, applying the construction to which, recovers exactly \(\mathcal{A}\), losing no information.
+\end{remark}
 
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
 
-Quite surprisingly, the Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. Results of Vogel \cite{algebraic-structures-on-modules-of-diagrams} use a similar construction for Lie superalgebras, specifically \(D(2, 1, \alpha)\) to construct a weight system which provably doesn't come from a Lie algebra. In fact in the same paper, ...
+Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This is hard to believe, as the \ref{eq:STU} relation and the relation \([x, y] = x y - y x\) in \(\mathcal{U}(\mathfrak{g})\) look like they encode exactly the same thing. First, we give a non-rigorous reframing of the construction of Bar-Natan following \cite{algebraic-structures-on-modules-of-diagrams, vassiliev-knot-invariants-and-lie-s-algebras} to convince the reader that actually \([x, y] = xy - yx\) is a specialisation of \ref{eq:STU}. Later in the section, we will give a rigorous construction of \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides a moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}.
+
+Effectively: We can make the internal part of \(\mathcal{A}\) into a monoidal category. Then the construction is a representation of \(\mathcal{A}\) in the monoidal category of tensor powers of some Lie algebra \(L\). And then, it has to obey the universal enveloping algebra relations too. Effectively, it comes down to a representation of \ref{eq:STU} where the changing an \(xy\) to a \(yx\) is some representation of the symmetric group on some vector space. In the case of Lie-algebras, the representation is the identity. But it doesn't have to be.
+
+\begin{definition}
+	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
+
+	The axioms a Lie superalgebra must satisfy are the following analogues of the usual lie algebra axioms. Let \(x, y, z\) be homogeneous elements, so in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\), and \(\mathfrak{g}_{k}\) respectively, then \textbf{super symmetry} axiom is
+		\[[x, y] = - (-1)^{ij}[y, x],\]
+		and the \textbf{super Jacobi identity} is the axiom
+		\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
+\end{definition}
+
+In fact, barely after Bar-Natan's conjecture was made, did results of Vogel \cite[as a 1997 preprint]{algebraic-structures-on-modules-of-diagrams} prove that there are weight systems that do not come from Lie algebras with a metric in this way. Such a weight system is constructed in \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} by giving an element of \(\mathcal{A}\) of order 21 on which all Lie-algebraic weight systems vanish. Infinitely many such diagrams are proven to exist. Further \cite{algebraic-structures-on-modules-of-diagrams} proves that not even Lie superalgebras suffice to generate the weight systems. This section explores why this is the case which gives a moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction} due to \cite{algebraic-structures-on-modules-of-diagrams}.
 
 \begin{mdframed}
 	The IHX, STU, AS is slightly more than just the jacobi; the tensor algebra isomorphism can be other than the identity (e.g. superalgebras).
@@ -366,10 +362,6 @@ Quite surprisingly, the Conjecture \ref{conj:lie-algebra-weight-systems-span} is
 
 \begin{mdframed}
 	gl(1, 1) as an example
-\end{mdframed}
-
-\begin{mdframed}
-	Results of Vogel and calculations of Lieberum.
 \end{mdframed}
 
 \begin{mdframed}

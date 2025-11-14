@@ -408,11 +408,11 @@ The algebraic structure on knots comes from the following operation.
 	\label{def:connected-sum}
 	The \textbf{connected sum} of two knots \(k_{1}\) and \(k_{2}\) is the knot obtained by removing a small arc from each of \(k_{1}\) and \(k_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
 	\[
-		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
+		\includegraphics[width=0.3\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
 		\quad
 		\overset{\connect}{\longmapsto}
 		\quad
-		\includegraphics[width=0.37\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
+		\includegraphics[width=0.3\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
 	This definition is extended bilinearly to \(\mathcal{K}\), i.e. linear combinations.
 \end{definition}
@@ -421,7 +421,7 @@ This is not a-priori well-defined, as we have not specified where along either \
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
-	The connected sum \(\connect \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
+	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
 \end{proposition}
 
 \begin{proof}
@@ -661,7 +661,7 @@ We don't prove this textbook fact, but let us sketch the main points. Indeed, th
 Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
 	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
 recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) is
-	\[V \circ \connect k_{1} \otimes k_{2} \mapsto V(k_{1} \connect k_{2})\]
+	\[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
 recovers the formula for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
 
 We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult, say \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).
@@ -884,19 +884,21 @@ We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. It also
 
 This fact leads to important consequences about the structure of \(\mathcal{A}\) and its relation to Lie algebras that will the subject of Chapter \ref{ch:lie-theory-and-jacobi-diagrams}.
 
+\begin{definition}
+	The weight systems (Definition \ref{def:weight-system}), denoted \(\mathcal{W}\), form a graded bialgebra, the \textbf{graded bialgebra of weight systems} with grading given by degree \(m\), product given by pointwise multiplication
+	\[W_{1}\cdot W_{2}(a) = W_{1}(a)W_{2}(a),\]
+	and coproduct, \(\eta\) given by
+	\[\eta(W)(a_{1} \otimes a_{2}) = W(a_{1} \connect a_{2}).\]
 
-\begin{proposition}
-	\begin{mdframed}
-		THIS SHOULD BECOME A DEFINITION AND A PROPOSITION
+	The graded bialgebra \(\mathcal{W}\) is the graded bialgebraic dual of the graded bialgebra \(\mathcal{A}\).
+\end{definition}
 
-		The graded bialgebra dual of \(\mathcal{A}\) is the the graded bialgebra \(\mathcal{W}\) of weight systems.
-	\end{mdframed}
-\end{proposition}
+In fact, considering a graded object as a filtered object with the naturally induced filtration, this coincides with the filtered bialgebraic dual.
 
 \begin{proof}
-	\begin{mdframed}
-		We have constructued it as so. A map \(f: \mathcal{A} \to \mathbb{F}\) satisfies relations that make it a weight system.
-	\end{mdframed}
+	Weight systems are linear functionals on chord diagrams, \(\mathcal{D}\) that vanish on \ref{eq:4Tstar} and \ref{eq:1Tstar}. This is the same as linear functionals on \(\mathcal{A} = \mathcal{D}/\ref{eq:4T}, \ref{eq:1T}\).
+
+	The rest of the proof, (i.e. that the product in \(\mathcal{W}\) is dual to the coproduct in \(\mathcal{A}\) and vice versa) follows exactly as in the proof sketch of the duality of bialgebras \(\mathcal{K}\) and \(\mathcal{V}\).
 \end{proof}
 
 \section{The fundamental theorem of Vassiliev invariants}
@@ -905,7 +907,7 @@ This fact leads to important consequences about the structure of \(\mathcal{A}\)
 In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that is establishes a particular relationship between the algebras of the previous two chapters, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). But admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of that theorem that makes the relationship explicit.
 
 \begin{definition}
-	The \textbf{associated graded} algebra of a filtered algebra \(A\) is the algebra formed by the direct sum of the succesive quotient by the filtered components of \(A\). For an algebra with a descending filtration,
+	The \textbf{associated graded} algebra of a filtered algebra \(A\) is the algebra formed by the direct sum of the succesive quotients of the filtered components of \(A\). For an algebra with a descending filtration,
 	\[\gr A = \bigoplus_{m = 0}^{\infty} A_{m} / A_{m + 1},\]
 	and for an algebra with an ascending filtration,
 	\[\gr A = \bigoplus_{m = 0}^{\infty} A_{m} / A_{m - 1},\]
@@ -945,11 +947,22 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 
 	This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\). Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
 
-	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:1T} is the kernel, as a \ref{eq:1T} type chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. When this double point is resolved, it yields a difference of two isotopic knots.
-
-	\begin{mdframed}
-		figure of general case of one-term resolving to two isotopic (singular) knots.
-	\end{mdframed}
+	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:1T} is the kernel: a type \ref{eq:1T} chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. The resolution, by the crossing-change argument, can be chosen to be a difference of two knots that are isotopic except around the \ref{eq:1T} double point:
+	
+	\begin{align*}
+		\delta \left(
+		\includegraphics[width=0.255\textwidth, valign=c]{graphics/one_term_isotopy_singularity.pdf}
+		\right)
+		\,
+		& =
+		\,
+		\includegraphics[width=0.255\textwidth, valign=c]{graphics/one_term_isotopy_positive.pdf}
+		\,
+		-
+		\,
+		\includegraphics[width=0.255\textwidth, valign=c]{graphics/one_term_isotopy_negative.pdf} \\ 
+		& = \, 0.
+	\end{align*}
 
 	Similarly, \ref{eq:4T} is also in the kernel. A combination of chord diagrams appearing in a \ref{eq:4T} relation is sent to a combination of singular knots which by the crossing-change argument can all be chosen to be identical except near a small region, where
 	\[
@@ -973,20 +986,13 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 
 For now, let's turn to the Vassiliev part of the fundamental theorem, with the following definition.
 
+The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevich \cite{vassilievs-knot-invariants} is much more involved. Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, but they abound in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants} in order of increasing level of detail. Rather we will boil the Kontsevich integral down to a single universal property.
+
 \begin{definition}
-	% TODO: Work out the proper way to define completion / degree completion.
-	\begin{mdframed}
-		The \textbf{completion} of a filtered algebra \(A\) is the filtered algebra
-		\[\widehat{A} = \varprojlim_{m \to \infty} A_{m} / A_{m + 1},\]
-		and in the cases we care about, this will be equal to the degree-completion of \(\gr A\), though I am not sure if that is true in general.
-
-		It is only filtered and not graded since infinitely many terms are non-zero and this is a technical restriction on direct sums.
-
-		% TODO: Learn something about the topology induced by the completion. What information does this encode and should anything be said about that. If it's just that things are close when they agree to many terms then perhaps not.
-	\end{mdframed}
+	The \textbf{completion} of a filtered algebra \(A\) is the filtered algebra
+	\[\widehat{A} = \varprojlim_{m \to \infty} A_{m} / A_{m + 1}.\]
+	In other words this is the degree-completion of the graded algebra \(\gr A\). Note that \(\widehat{A}\) is only a filtered algebra, not a graded one, as its elements can have infinitely many terms non-zero, so it doesn't decompose as a direct sum.
 \end{definition}
-
-The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevich \cite{vassilievs-knot-invariants} is much more involved. Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, but they abound in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants} in order of increasing level of detail. Rather we will boil the Kontsevich integral down to the following key property.
 
 \begin{definition}
 	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \delta^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
