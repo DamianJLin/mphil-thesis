@@ -288,21 +288,26 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singula
 	\]
 \end{example}
 
-{\color{red} ZSUZSI READ TO HERE}
 
 \begin{proposition}
-	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
+	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a %TODO(Zsuzsi) linear
+    function on chord diagrams, that is
 	\[Q_{0}(k) = Q(k) + q(\sigma(k))\]
 	for \(q \in \mathcal{D}_{m}^{\ast}\)
 	Then \(Q_{0}\) is also an integral of \(P\).
 \end{proposition}
 
 \begin{proof}
-	The derivative of a function of chord diagrams is zero, as two knots which differ by a crossing change have the same chord diagram. Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
+	The derivative of a %TODO (Zsuzsi) linear
+    function of chord diagrams is zero, as two knots which differ by a crossing change have the same chord diagram. 
+    %TODO (Zsuzsi) This could be more precise. If two m-singular knots differ by a crossing change, then their difference is (m+1)-singular and hence zero in D_m -- or something to this effect but in your language
+    Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
 \end{proof}
 
 \begin{remark}
-	We defined a constant of integration as a set of objects (e.g. \(c \in \mathcal{D}_{m}\)) but perhaps it would have been more accurate to define it as a functional (e.g. \(q \in \mathcal{D}_{m}^{\ast}\)). After all the constant of integration on the real line is ``\(+ \ C\)'' rather than the set \(\{\ast\}\) with one object. There is no real risk of confusion, so let us be slightly loose and use the terminology for either.
+	We defined a constant of integration as a set of objects (e.g. \(c \in \mathcal{D}_{m}\)) %TODO (Zsuzsi) I found this a bit confusing. Integration constants were only defined in the general context, so it would be helpful to explain how that translates. Then again I started reading here after a few weeks' break, so maybe it would be easier in one sitting.
+    but perhaps it would have been more accurate to define it as a functional (e.g. \(q \in \mathcal{D}_{m}^{\ast}\)). After all the constant of integration on the real line is ``\(+ \ C\)'' rather than the set \(\{\ast\}\) with one object. %TODO (Zsuzsi) Why is the analogue a set with one object?
+    There is no real risk of confusion, so let us be slightly loose and use the terminology for either. %TODO (Zsuzsi) I, for one, am confused:).
 \end{remark}
 
 Since we are trying to integrate more than once, we might wish to know which constants of integration are themselves integrable.
@@ -312,7 +317,9 @@ Since we are trying to integrate more than once, we might wish to know which con
 	A \textbf{weight system} is an integrable \(w \in \mathcal{D}_{m}^{\ast}\).
 \end{definition}
 
-If we take the relations for a knot invariant to be integrable and project them into the space of chord diagrams, we get the following relations.
+If we take the relations for a knot invariant to be integrable %TODO (Zsuzsi) I first read this as "If we assume that the relations for a knot invariant are integrable"... Perhaps rephrase, like "the relations that a knot invariant needs to respect in order to be integrable".
+and project %TODO (Zsuzsi) What does 'project' mean here? I would state the specific map you are using.
+them into the space of chord diagrams, we get the following relations.
 
 \begin{definitions}
 	\label{def:ft-ot-relations}
@@ -335,7 +342,15 @@ If we take the relations for a knot invariant to be integrable and project them 
 				q\left( \isolatedchord \right) = 0.
 			\end{equation}
 	\end{enumerate}
-	Just like \ref{eq:T4Tstar} and \ref{eq:T1Tstar}, \ref{eq:4Tstar} and \ref{eq:1Tstar} are not individual relations, but kinds of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, in all of the four diagrams. There's a \ref{eq:1Tstar} relation for all ways of placing chord diagrams between either of the two far-apart chord ends. In other words, any chord with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
+	Just like \ref{eq:T4Tstar} and \ref{eq:T1Tstar}, \ref{eq:4Tstar} and \ref{eq:1Tstar} are not individual relations, but kinds %TODO (Zsuzsi) Classes of relations?
+    of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, 
+    %TODO (ZSuzsi) 'Far apart' can be confusing, there are four chord ends with three larger gaps. The precise way to do this would be to have part of the arcs dotted, and that's where you can place more chord endings.
+    in all of the four diagrams. 
+    %TODO (Zsuzsi) But identically in all four
+    There's a \ref{eq:1Tstar} relation for all ways of placing chord diagrams between either of the 
+    %TODO (Zsuzsi) Here too, I'd say along the long arc, or dotted arc. 
+    two far-apart chord ends. In other words, any chord %TODO (Zsuzsi) diagram 
+    with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
 \end{definitions}
 
 \begin{proposition}
@@ -345,9 +360,15 @@ If we take the relations for a knot invariant to be integrable and project them 
 	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar} and \ref{eq:1Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} and \ref{eq:T1Tstar} into chord diagrams.
 \end{proof}
 
-We return now to the secondary (and higher) obstructions. A general integral of on \(m\)-singular \(P\) is of the form
+We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) %TODO (Zsuzsi) Is $P$ an invariant of m-singular knots?
+is of the form
 \[Q + q \circ \sigma.\]
-Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that \(S\singularknots_{m}\) vanishes. But this is a tautological statement of the general theory --- it doesn't mean much if we don't know what \(S\singularknots_{m}\) is.
+%TODO (Zsuzsi) What is $Q$, $q$, $\sigma$?
+Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system.
+%TODO (Zsuzsi) I understand this sentence but it could be clearer.
+A sufficient condition for the former to be integrable is that \(S\singularknots_{m}\) vanishes. 
+%TODO (Zsuzsi) Is this the secondary obstructions?
+But this is a tautological statement of the general theory --- it doesn't mean much if we don't know what \(S\singularknots_{m}\) is.
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
@@ -359,7 +380,7 @@ Since integration is linear, to be integrable again, both terms need to be integ
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\) and \(\ref{eq:T1Tstar}\), which is what \(S\singularknots\) measures.
 		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
-		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
+		\item This conjecture is proven in certain cases. It holds the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.%TODO (Zsuzsi) Grammar in the last sentence
 	\end{enumerate}
 \end{remarks}
 
@@ -369,19 +390,23 @@ If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev inv
 
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
-	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}}, \textup{\ref{eq:T1Tstar}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant).
+	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}}, \textup{\ref{eq:T1Tstar}} and the additional condition that \(\delta^{k} v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant). %TODO (Zsuzsi) of type m+k?
 \end{theorem}
 
-There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections. To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
+There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections.
+%TODO (Zsuzsi) This purely a style comment: since you're talking about Dror's philosophical stance, it would be nice to do so in active voice and name him.
+To quote their introduction: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''. To summarise their philosophy:
 
 \begin{remark}
-	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.
+	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs.%TODO (ZSuzsi) of the theorem
 \end{remark}
 
-In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will look at equivalent formulation of the fundamental theorem.
+In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will look at equivalent formulation of the fundamental theorem. %TODO (Zsuzsi) Do you want to foreshadow why/ what the advantage of the different formulation is?
 
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
+
+{\color{red} READ FROM HERE}
 
 Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using information from the stratification of knots introduced in the first two sections. But this space is not just a vector space; it has some further structure which we wish to incorporate. In this section, we synthesise all of this information into one algebraic structure.
 
