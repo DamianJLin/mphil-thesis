@@ -406,16 +406,18 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will loo
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
 
-{\color{red} READ FROM HERE}
+
 
 Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using information from the stratification of knots introduced in the first two sections. But this space is not just a vector space; it has some further structure which we wish to incorporate. In this section, we synthesise all of this information into one algebraic structure.
 
+%TODO (Zsuzsi) In this intro paragraph it might be nice to say the words 'associated graded' or at least some euphemism like 'which can be considered an algebraic counterpart of the space of knots'
+
 \begin{definitions}
 	\begin{enumerate}
-		\item The \textbf{space of knots}, denoted \(\mathcal{K}\) is the vector space spanned (over \(\mathbb{Q}\)) by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
+		\item The \textbf{space of knots}, denoted \(\mathcal{K}\), is the vector space spanned (over \(\mathbb{Q}\)) by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\). %TODO (zsuzsi) Do something about the alignment here? No need for paretheses for "over Q".
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
 			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
-			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\); \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\).
+			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\); \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\). %TODO (Zsuzsi) I'd separate adjacent formulas with a couple of word like "that is," rather than semicolon.
 	\end{enumerate}
 \end{definitions}
 
@@ -424,7 +426,8 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 \end{proposition}
 
 \begin{proof}
-	A filtration of vector spaces is uninteresting. The only thing to check is that if \(i < j\), then \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
+	A filtration of vector spaces is uninteresting. %TODO (Zsuzsi) Philosphical remarks don't belong in a Proof environment :)
+    The only thing to check is that if \(i < j\), then \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
 \end{proof}
 
 The algebraic structure on knots comes from the following operation.
@@ -439,14 +442,17 @@ The algebraic structure on knots comes from the following operation.
 		\quad
 		\includegraphics[width=0.3\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
-	This definition is extended bilinearly to \(\mathcal{K}\), i.e. linear combinations.
+	This definition is extended bilinearly to \(\mathcal{K}\), i.e., to linear combinations of knots.
 \end{definition}
 
-This is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. However, by a classical knot-theoretic argument, the result is independent of the choice.
+This %TODO (Zsuzsi) "This" -> "The connected sum of knots"
+is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed. %TODO (ZSuzsi) Or along what path they should be connected.
+However, by a classical knot-theoretic argument, the result is independent of this choice.
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
-	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
+	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) forms %TODO (Zsuzsi) "forms" -> "is"
+    a well-defined operation. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic. %Todo (Zsuzsi) "Up to ambient isotopy, the connected sum of two knots is independent of the choice of where and along what path the connection was performed."
 \end{proposition}
 
 \begin{proof}
@@ -464,13 +470,13 @@ This is not a-priori well-defined, as we have not specified where along either \
 		\rightsquigarrow
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_4.pdf}
 	\]
-	The above argument works for any choice of small arc removed along \(k_{1}\), and the same argument with the roles of \(k_{1}\) and \(k_{2}\) reversed completes the proof.
+	The above argument works for any choice of small arc removed along \(k_{1}\), and the same argument with the roles of \(k_{1}\) and \(k_{2}\) reversed completes the proof. %TODO (Zsuzsi) This also shows that the path along which you connect doesn't matter, because you can "pull" tiny k_2 along it until it's within the tubular nbhd of k_1.
 \end{proof}
 
 \begin{proposition}
-	The connected sum respects the descending filtration,
+	The connected sum respects the descending filtration:
 	\[K_{i} \connect K_{j} \subset K_{i + j}.\]
-	That is, the connected sum makes \((\mathcal{K}, \connect)\) into an ascending filtered algebra.
+	That is, the connected sum makes \((\mathcal{K}, \connect)\) into an ascending filtered algebra. %TODO (Zsuzsi) Descending?
 \end{proposition}
 
 \begin{proof}
@@ -489,6 +495,8 @@ This is not a-priori well-defined, as we have not specified where along either \
 	I guess it's something like: We assert that knots are (semi)group-like. This must be somehow related to (some?) chord diagrams being like exponentials (primitives?).
 \end{mdframed}
 
+%TODO (Zsuzsi) One way to approach this would be to say that the set of knots forms a commutative monoid, and $\mathcal{K}$ is its monoid algebra. Just like the group algebra of a group is made into a bialgbera by a natural coproduct which makes the elements of the group "group-like", the same is true for the monoid algebra of a monoid. /// On chord diagrams: Yes, chord diagrams are also equipped with a coproduct, and for example the Konsevich integral respects the coalgebra structure by sending knots to group-like elements in chord diagrams. Yes, group-like is equivalent to "exponential of a primitive", where primitive means $\Delta(x)=1\otimes x + x\otimes 1$.
+
 \begin{definition}
 	The coproduct \(\Delta: \mathcal{K} \to \mathcal{K} \otimes \mathcal{K}\) is defined on knots \(k\) as
 	\[\Delta(k) = k \otimes k\]
@@ -496,11 +504,14 @@ This is not a-priori well-defined, as we have not specified where along either \
 \end{definition}
 
 \begin{proposition}
-	The connected sum and coproduct are compatible. That is, \((\mathcal{K}, \connect, \Delta)\) forms a bialgebra.
+	The connected sum and coproduct are compatible. %TODO (ZSuzsi) I would either swap these two sentences, or just drop the first one.
+    That is, \((\mathcal{K}, \connect, \Delta)\) forms a bialgebra.
 \end{proposition}
 
 \begin{proof}
-	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
+	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. 
+    %TODO (ZSuzsi) A bialgebra is an algebra which is equipped with a coassociative counital coproduct, which is an algebra map.
+    That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
 	\begin{align*}
 		\Delta(k \connect \ell)
 		& = k \connect \ell \otimes k \connect \ell \\
