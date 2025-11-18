@@ -341,9 +341,67 @@ Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension o
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
 
-Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This is hard to believe, as the \ref{eq:STU} relation and the relation \([x, y] = x y - y x\) in \(\mathcal{U}(\mathfrak{g})\) look like they encode exactly the same thing. First, we give a non-rigorous reframing of the construction of Bar-Natan following \cite{algebraic-structures-on-modules-of-diagrams, vassiliev-knot-invariants-and-lie-s-algebras} to convince the reader that actually \([x, y] = xy - yx\) is a specialisation of \ref{eq:STU}. Later in the section, we will give a rigorous construction of \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides a moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}.
+Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This may be a surprise to the reader: the relation \([x, y] = x y - y x\) in the universal enveloping algebra of a Lie algebra looks like it encodes exactly the \ref{eq:STU} relation in \(\mathcal{A}\). But the Conjecture being false implies that weight systems coming from Lie algebras are just a specific kind.
 
-Effectively: We can make the internal part of \(\mathcal{A}\) into a monoidal category. Then the construction is a representation of \(\mathcal{A}\) in the monoidal category of tensor powers of some Lie algebra \(L\). And then, it has to obey the universal enveloping algebra relations too. Effectively, it comes down to a representation of \ref{eq:STU} where the changing an \(xy\) to a \(yx\) is some representation of the symmetric group on some vector space. In the case of Lie-algebras, the representation is the identity. But it doesn't have to be.
+In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel \cite{algebraic-structures-on-modules-of-diagrams} and Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} to construct weight systems coming from metric Lie super-algebras, and studied further in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. To see this construction in full generality, we will first introduce some category-theoretic notions.
+
+\begin{definition}
+	A (\textbf{weak}) \textbf{monoidal category} is a category \(\mathcal{C}\) equipped with a functor
+	\[
+		\begin{array}{rccc}
+			\otimes:	&\mathcal{C} \times \mathcal{C}		&\longrightarrow	&\mathcal{C}\\
+					&(A, B)					&\longmapsto		&A \otimes B,
+		\end{array}
+	\]
+	an \textbf{unit} object \(k \in \mathcal{C}\), and natural isomorphisms
+	\[
+		 \otimes \circ (\otimes \times \operatorname{id}) \longrightarrow \otimes \circ (\operatorname{id} \times \otimes)  \quad \text{ and }\ \quad  \otimes \longrightarrow \operatorname{id}
+	\]
+	satisfying some relations known as the pentagon and triangle relations. The natural isomorphisms give isomorphisms
+	\[(A \otimes B) \otimes C \cong A \otimes (B \otimes C), \qquad k \otimes A \cong A \cong A \otimes k\]
+	for every tuple of objects \(A, B\) and \(C\) in \(\mathcal{C}\). If these isomorphisms are equalities, then \(\mathcal{C}\) is a \textbf{strict} monoidal category.
+\end{definition}
+
+\begin{remark}
+	\label{rem:coherence-for-monoidal-categories}
+	Omitting the details, we assume that these natural isomorphisms are equalities, for example that \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category, and it's why we omit the pentagon and triangle relations in the definition above. We refer to \cite{higher-operads-higher-categories} for details.
+\end{remark}
+
+\begin{definitions}
+	\begin{enumerate}
+		\item The \textbf{flip functor} is the functor
+			\[
+				\begin{array}{rccc}
+					\sigma:		&\mathcal{C} \times \mathcal{C}		&\longrightarrow	&\mathcal{C} \times \mathcal{C}\\
+						&(A, B)					&\longmapsto		&(B, A).
+				\end{array}
+			\]
+
+		\item A \textbf{symmetric monoidal category} is a monoidal category \(\mathcal{C}\) equipped with a \textbf{symmetry natural isomorphism} \(\tau\)
+			\[\otimes \longrightarrow \otimes \circ \sigma\]
+			satisfying the hexagon relation. The \textbf{hexagon relation} is the relation that the isomorphisms
+			\[
+				\tau_{A, B}: A \otimes B \overset{\cong}{\longrightarrow} B \otimes A
+			\]
+			coming from the natural isomorphism \(\tau\) obey
+			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, A}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
+			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\).
+	\end{enumerate}
+\end{definitions}
+\begin{remark}
+	The hexagon relations have six terms instead of three when the associators omitted due to Remark \ref{rem:coherence-for-monoidal-categories} are reintroduced.
+\end{remark}
+
+\begin{mdframed}
+
+	Define: Lie algebra object in a symmetric tensor category.
+
+	Summarise: a Lie algebra object in a tensor category, a representation of it into the tensor category, and we need it to be rigid for the external circle to be a circle.
+
+	Example: Lie superalgebra
+
+	Then, construct a general thing.
+\end{mdframed}
 
 \begin{definition}
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
@@ -361,6 +419,7 @@ In fact, barely after Bar-Natan's conjecture was made, did results of Vogel \cit
 \end{mdframed}
 
 \begin{mdframed}
+	And further examples citing \cite{algebraic-structures-on-modules-of-diagrams}, \cite{vassiliev-knot-invariants-and-lie-s-algebras}, \cite{on-the-rozansky-witten-weight-systems}, \cite{on-the-rozansky-witten-weight-systems}, \cite{rozansky-witten-theory}, \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}
 	gl(1, 1) as an example
 \end{mdframed}
 
