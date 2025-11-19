@@ -314,7 +314,15 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 		Projecting into \(\mathcal{U}(\mathfrak{g})\) and using one's favourite CAS to express both expressions in the Poincare-Birkhoff-Witt basis, we find both equal to
 		\[64 e \otimes f + 16 h \otimes h - 32 h.\]
 	\end{proof}
+
+	\begin{mdframed}
+		In fact, this skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\), which is related to the Lie algebra \(\mathfrak{sl}_{2}\) \cite{introduction-to-vassiliev-invariants}. It has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system}. There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). However it does not obey the vector triple product rule.
+	\end{mdframed}
 \end{example}
+\begin{question}
+	What skein relation in \(\mathcal{A}\) does the weight system for the exceptional Lie algebra \(\mathfrak{g}_{2}\) obey?
+\end{question}
+% TODO Insert result here.
 
 Bar-Natan's construction yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether every all the information in \(\mathcal{A}\) can be extracted with some metric Lie algebra.
 
@@ -343,7 +351,7 @@ Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension o
 
 Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This may be a surprise to the reader: the relation \([x, y] = x y - y x\) in the universal enveloping algebra of a Lie algebra looks like it encodes exactly the \ref{eq:STU} relation in \(\mathcal{A}\). But the Conjecture being false implies that weight systems coming from Lie algebras are just a specific kind.
 
-In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel \cite{algebraic-structures-on-modules-of-diagrams} and Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} to construct weight systems coming from metric Lie super-algebras, and studied further in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. To see this construction in full generality, we will first introduce some category-theoretic notions.
+In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras. The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category. Vogel \cite{algebraic-structures-on-modules-of-diagrams} constructs a universal Lie \(S\)-algebra, further studied in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. First, we need the following category-theoretic notions.
 
 \begin{definition}
 	A (\textbf{weak}) \textbf{monoidal category} is a category \(\mathcal{C}\) equipped with a functor
@@ -388,20 +396,33 @@ In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Constructio
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\).
 	\end{enumerate}
 \end{definitions}
-\begin{remark}
-	The hexagon relations have six terms instead of three when the associators omitted due to Remark \ref{rem:coherence-for-monoidal-categories} are reintroduced.
-\end{remark}
+The hexagon relations have six terms instead of three when the associators omitted due to Remark \ref{rem:coherence-for-monoidal-categories} are reintroduced.
 
-\begin{mdframed}
+If the tensor category is additionally additive, we can define the following.
 
-	Define: Lie algebra object in a symmetric tensor category.
+\begin{definitions}
+	\begin{enumerate}
+		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta\) such that
+			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
+			Graphically, in terms of the string diagrams of the previous section, this is
+			\begin{mdframed}
+				Insert string diagrams.
+			\end{mdframed}
+		\item A \textbf{representation of a Lie algebra object} in \(\mathcal{C}\) is an map \(\rho\), ...
+		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with the following modules over \(L\)...
+	\end{enumerate}
+\end{definitions}
 
-	Summarise: a Lie algebra object in a tensor category, a representation of it into the tensor category, and we need it to be rigid for the external circle to be a circle.
+We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. But for now, let's show that this data can still be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
-	Example: Lie superalgebra
-
-	Then, construct a general thing.
-\end{mdframed}
+\begin{theorem}[\cite{algebraic-structures-on-modules-of-diagrams, vassiliev-knot-invariants-and-lie-s-algebras}]
+	% TODO: Check that all the ajectives have been defined, or at least thought about.
+	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a dualisable representation \(\eta\). Then, there is a weight system
+	\[W_{L, \eta}: \mathcal{A} \longrightarrow \mathcal{C}(k, k) \cong k.\]
+\end{theorem}
+\begin{proof}
+	Similar to the proof of the construction...
+\end{proof}
 
 \begin{definition}
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
