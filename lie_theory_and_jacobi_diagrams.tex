@@ -219,6 +219,25 @@ Moreover, the invariance of the metric can be written as \(\langle [x, y], z \ra
 \]
 A similar argument works for the casimir.
 
+A representation of \(\mathfrak{g}\) into a finite-dimensional vector space \(V\) takes the form \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input an output, namely a \(v \in V\) which we denote by a thick line at a shallow angle
+\[
+	\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex.pdf}.
+\]
+The identity the action is a Lie action, \[\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\] is graphically
+\[
+	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_s.pdf}
+	\quad
+	=
+	\quad
+	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_t.pdf}
+	\quad
+	-
+	\quad
+	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_u.pdf}.
+\]
+Again, arrows are unnecessary on the thick edges corresponding to inputs and outputs of \(V\), as cup and cap vertices similar to the metric and casimir for \(\mathfrak{g}\) are given by the maps
+\[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}.\]
+
 The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} uses this diagrammatic calculus to take metric Lie algebras and produce weight systems.
 
 % TODO: According to Chmutov-Duzhin-Mostovoy, p164, the weight system is only multiplicative if the representation is irreducible. Question for Zsuzsi: does this mean we only get a quotient of A if we put in an irreducible representation?
@@ -322,7 +341,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 \begin{question}
 	What skein relation in \(\mathcal{A}\) does the weight system for the exceptional Lie algebra \(\mathfrak{g}_{2}\) obey?
 \end{question}
-% TODO Insert result here.
+% TODO: Insert result here.
 
 Bar-Natan's construction yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether every all the information in \(\mathcal{A}\) can be extracted with some metric Lie algebra.
 
@@ -392,6 +411,7 @@ In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Constructio
 				\tau_{A, B}: A \otimes B \overset{\cong}{\longrightarrow} B \otimes A
 			\]
 			coming from the natural isomorphism \(\tau\) obey
+			% TODO: Fix A,A below
 			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, A}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\).
 	\end{enumerate}
@@ -436,7 +456,22 @@ If the tensor category is additionally additive, we can define the following.
 				\quad
 				0.
 			\]
-		\item A \textbf{representation of a Lie algebra object} in \(\mathcal{C}\) is an map \(\rho\), ...
+		\item A \textbf{representation of a Lie algebra object} \(L\) in \(\mathcal{C}\) into an object \(V\) in \(\mathcal{C}\) is a morphism \(\rho: L \otimes V \to V\), such that
+			\[
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_s.pdf_tex}}
+				\quad
+				=
+				\quad
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_t.pdf_tex}}
+				\quad
+				-
+				\quad
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_u.pdf_tex}}
+				.
+			\]
 		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with the following modules over \(L\)...
 	\end{enumerate}
 \end{definitions}
@@ -453,6 +488,8 @@ We will give various concrete examples of Lie algebra objects in different symme
 	Similar to the proof of the construction...
 \end{proof}
 
+The difference between this construction and Bar-Natan's original one is the treatment of the symmetry natural isomorphism \(\tau\). This tells us which isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity, as it was in the original construction, corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However unlike for general monoidal categories, not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. At a down-to-earth level, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
+
 \begin{definition}
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
 
@@ -461,6 +498,9 @@ We will give various concrete examples of Lie algebra objects in different symme
 		and the \textbf{super Jacobi identity} is the axiom
 		\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
 \end{definition}
+\begin{remark}
+	A Lie superalgebra \(\mathfrak{g}\) is a Lie algebra object in the category of supervectorspaces, a symmetric monoidal category with a nontrivial symmetry.
+\end{remark}
 
 In fact, barely after Bar-Natan's conjecture was made, did results of Vogel \cite[as a 1997 preprint]{algebraic-structures-on-modules-of-diagrams} prove that there are weight systems that do not come from Lie algebras with a metric in this way. Such a weight system is constructed in \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} by giving an element of \(\mathcal{A}\) of order 21 on which all Lie-algebraic weight systems vanish. Infinitely many such diagrams are proven to exist. Further \cite{algebraic-structures-on-modules-of-diagrams} proves that not even Lie superalgebras suffice to generate the weight systems. This section explores why this is the case which gives a moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction} due to \cite{algebraic-structures-on-modules-of-diagrams}.
 

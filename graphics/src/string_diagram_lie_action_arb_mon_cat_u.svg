@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="138.1526pt"
+   height="138.83606pt"
+   viewBox="0 0 138.15261 138.83606"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="string_diagram_lie_action_arb_mon_cat_u.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/string_diagram_lie_action_arb_mon_cat_u.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="35.885669"
+     inkscape:cy="107.65701"
+     inkscape:window-width="2556"
+     inkscape:window-height="1394"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg10"
+     showguides="true">
+    <sodipodi:guide
+       position="72.240082,137.46331"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.240082,137.46331"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="62.845813,251.79547"
+       orientation="0,-1"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.240089,58.982931"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="103.24104,64.214514"
+       orientation="0.81182915,-0.58389505"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="79.768997,21.224811"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <rect
+     style="display:none;fill:none;stroke:#d40000;stroke-width:1.84185;stroke-dasharray:none;stroke-opacity:0.550951"
+     id="rect4"
+     width="68.033157"
+     height="33.498558"
+     x="38.223503"
+     y="50.058788" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0.51847769,100.10052 137.63413,136.90443"
+     id="path3-56"
+     sodipodi:nodetypes="cc" />
+  <path
+     fill-rule="nonzero"
+     fill="#000000"
+     fill-opacity="1"
+     d="m 84.202686,123.93103 c 3.41211,-5.90994 -5.4545,-11.02908 -8.8666,-5.11914 -3.414072,5.91333 5.45254,11.03247 8.8666,5.11914"
+     id="path10" />
+  <path
+     fill-rule="nonzero"
+     fill="#000000"
+     fill-opacity="1"
+     d="m 56.786226,116.57204 c 3.4121,-5.90994 -5.45451,-11.02908 -8.86661,-5.11914 -3.41407,5.91333 5.45254,11.03247 8.86661,5.11914"
+     id="path10-6" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 31.936525,0.48940813 C 52.273552,36.727064 70.956496,77.695624 79.768997,121.37255"
+     id="path3-56-6"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 99.969675,0.48940813 C 79.632656,36.727064 60.825533,70.221653 52.352531,114.01356"
+     id="path8"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="m 55.430077,60.855404 19.125008,-10e-7 V 79.980405 H 55.430074 Z"
+     id="path20-7"
+     sodipodi:nodetypes="ccccc" />
+  <text
+     xml:space="preserve"
+     style="font-weight:500;font-size:1.6342px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.102137;-inkscape-stroke:none;stop-color:#000000"
+     x="64.992577"
+     y="70.417908"
+     id="text17-5"><tspan
+       sodipodi:role="line"
+       id="tspan17-9"
+       style="stroke-width:0.102137"
+       x="64.992577"
+       y="70.417908">\raisebox{-.5\height}{\(\scriptstyle\tau\)}</tspan></text>
+</svg>
