@@ -405,13 +405,42 @@ If the tensor category is additionally additive, we can define the following.
 		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
 			Graphically, in terms of the string diagrams of the previous section, this is
-			\begin{mdframed}
-				Insert string diagrams.
-			\end{mdframed}
+			\[
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/jacobi_symmetric_arbitrary_monoidal_cat_xyz.pdf_tex}}
+				\quad
+				+
+				\quad
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/jacobi_symmetric_arbitrary_monoidal_cat_yzx.pdf_tex}}
+				\quad
+				+
+				\quad
+				\def\svgscale{0.31}
+				\adjustbox{valign=c}{\input{graphics/jacobi_symmetric_arbitrary_monoidal_cat_zxy.pdf_tex}}
+				\quad
+				=
+				\quad
+				0,
+			\]
+			\[
+				\def\svgscale{0.35}
+				\adjustbox{valign=c}{\input{graphics/bracket_antisymmetry_arb_mon_cat_id.pdf_tex}}
+				\quad
+				+
+				\quad
+				\def\svgscale{0.35}
+				\adjustbox{valign=c}{\input{graphics/bracket_antisymmetry_arb_mon_cat_swap.pdf_tex}}
+				\quad
+				=
+				\quad
+				0.
+			\]
 		\item A \textbf{representation of a Lie algebra object} in \(\mathcal{C}\) is an map \(\rho\), ...
 		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with the following modules over \(L\)...
 	\end{enumerate}
 \end{definitions}
+
 
 We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. But for now, let's show that this data can still be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
