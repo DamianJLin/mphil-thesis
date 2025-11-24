@@ -370,7 +370,7 @@ Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension o
 
 Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This may be a surprise to the reader: the relation \([x, y] = x y - y x\) in the universal enveloping algebra of a Lie algebra looks like it encodes exactly the \ref{eq:STU} relation in \(\mathcal{A}\). But the Conjecture being false implies that weight systems coming from Lie algebras are just a specific kind.
 
-In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras. The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category. Vogel \cite{algebraic-structures-on-modules-of-diagrams} constructs a universal Lie \(S\)-algebra, further studied in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. First, we need the following category-theoretic notions.
+In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras. The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category. They are related to Vogel's ``Universal Lie algebra'' construction, \cite{vassiliev-theory-and-the-universal-lie-algebra}, and also related to the structures studied in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. First, we need the following category-theoretic notions.
 
 \begin{definition}
 	A (\textbf{weak}) \textbf{monoidal category} is a category \(\mathcal{C}\) equipped with a functor
@@ -479,7 +479,7 @@ If the tensor category is additionally additive, we can define the following.
 
 We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. But for now, let's show that this data can still be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
-\begin{theorem}[\cite{algebraic-structures-on-modules-of-diagrams, vassiliev-knot-invariants-and-lie-s-algebras}]
+\begin{theorem}[\cite{ vassiliev-knot-invariants-and-lie-s-algebras}]
 	% TODO: Check that all the ajectives have been defined, or at least thought about.
 	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a dualisable representation \(\eta\). Then, there is a weight system
 	\[W_{L, \eta}: \mathcal{A} \longrightarrow \mathcal{C}(k, k) \cong k.\]
@@ -490,29 +490,38 @@ We will give various concrete examples of Lie algebra objects in different symme
 
 The difference between this construction and Bar-Natan's original one is the treatment of the symmetry natural isomorphism \(\tau\). This tells us which isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity, as it was in the original construction, corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However unlike for general monoidal categories, not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. At a down-to-earth level, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
 
-\begin{definition}
+\begin{example}
+	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, the Lie algebra objects are the following.
+
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
 
 	The axioms a Lie superalgebra must satisfy are the following analogues of the usual lie algebra axioms. Let \(x, y, z\) be homogeneous elements, so in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\), and \(\mathfrak{g}_{k}\) respectively, then \textbf{super symmetry} axiom is
 		\[[x, y] = - (-1)^{ij}[y, x],\]
 		and the \textbf{super Jacobi identity} is the axiom
 		\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
-\end{definition}
-\begin{remark}
-	A Lie superalgebra \(\mathfrak{g}\) is a Lie algebra object in the category of supervectorspaces, a symmetric monoidal category with a nontrivial symmetry.
-\end{remark}
+\end{example}
 
-In fact, barely after Bar-Natan's conjecture was made, did results of Vogel \cite[as a 1997 preprint]{algebraic-structures-on-modules-of-diagrams} prove that there are weight systems that do not come from Lie algebras with a metric in this way. Such a weight system is constructed in \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} by giving an element of \(\mathcal{A}\) of order 21 on which all Lie-algebraic weight systems vanish. Infinitely many such diagrams are proven to exist. Further \cite{algebraic-structures-on-modules-of-diagrams} proves that not even Lie superalgebras suffice to generate the weight systems. This section explores why this is the case which gives a moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction} due to \cite{algebraic-structures-on-modules-of-diagrams}.
+Shortly after Conjecture \ref{conj:lie-algebra-weight-systems-span} was made, the following results were achieved based on constructions with the exceptional Lie superalgebra \(\mathfrak{D}(2, 1; \alpha)\).
 
-\begin{mdframed}
-	The IHX, STU, AS is slightly more than just the jacobi; the tensor algebra isomorphism can be other than the identity (e.g. superalgebras).
-\end{mdframed}
+\begin{theorem}
+	There are primitive Jacobi diagrams of order at least 17 \cite{algebraic-structures-on-modules-of-diagrams-preprint} and at least 15 \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} which vanish on all Lie algebra weight systems. 
+\end{theorem}
 
-\begin{mdframed}
-	And further examples citing \cite{algebraic-structures-on-modules-of-diagrams}, \cite{vassiliev-knot-invariants-and-lie-s-algebras}, \cite{on-the-rozansky-witten-weight-systems}, \cite{on-the-rozansky-witten-weight-systems}, \cite{rozansky-witten-theory}, \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}
-	gl(1, 1) as an example
-\end{mdframed}
+Furthermore, as was known about shortly after but not published until significantly later,
+\begin{theorem}
+Vogel's diagram of order 17 vanishes also on all Lie superalgebra weight systems \cite{algebraic-structures-on-modules-of-diagrams}.
+\end{theorem}
 
-\begin{mdframed}
-	Hinnich and Vaintrob
-\end{mdframed}
+\begin{corollary}
+	The set of Lie (super-) algebra weight systems does not span \(\mathcal{W}\).
+\end{corollary}
+
+In general, it is still unknown to what exact level of generality one needs to go (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems.
+
+Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
+
+More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon-\)Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. Their example lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
+
+\section{A universal metric Lie algebra object}
+
+There is however a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides the moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}. They construct a Lie algebra object in a symmetric tensor category whose weight system (in a certain sense) is isomorphic to \(\mathcal{A}\). Note, however that the objects in this category are not sets, but simply objects, so the result is theoretically rather than computationally useful.
