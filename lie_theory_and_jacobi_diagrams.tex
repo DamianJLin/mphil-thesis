@@ -513,15 +513,91 @@ Vogel's diagram of order 17 vanishes also on all Lie superalgebra weight systems
 \end{theorem}
 
 \begin{corollary}
-	The set of Lie (super-) algebra weight systems does not span \(\mathcal{W}\).
+	The set of Lie (super)algebra weight systems does not span \(\mathcal{W}\).
 \end{corollary}
 
 In general, it is still unknown to what exact level of generality one needs to go (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems.
 
 Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
 
-More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon-\)Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. Their example lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
+More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. The example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
 \section{A universal metric Lie algebra object}
 
-There is however a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides the moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}. They construct a Lie algebra object in a symmetric tensor category whose weight system (in a certain sense) is isomorphic to \(\mathcal{A}\). Note, however that the objects in this category are not sets, but simply objects, so the result is theoretically rather than computationally useful.
+There is, however,  a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides the moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}. They construct a Lie algebra object in a symmetric tensor category with  a ``weight system'' (in a certain sense) which is isomorphic to \(\mathcal{A}\). In Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will examine an object, analagous to the space of welded knots, rather than knots.
+
+Note, however that the objects in this category are not sets, but simply objects, so the result is useful theoretically rather than computationally.
+
+Their construction uses the language of operads and props, which we review. For all of the below, we assume categories are linear.
+
+Some operations on a set can always be composed by taking as input the output of another operation. These compositions alyways obey certain rules. If the set is a vector space, the operations too form a vector space. An operad captures this concept of operations on some object on a category abstractly.
+
+\begin{definition}
+	An \textbf{operad} \(\mathcal{O}\) in monoidal category \(\mathcal{C}\) consists of:
+
+	\begin{itemize}
+		\item a collection of objects in \(\mathcal{C}\), \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations}
+		\item an element \(\id \in \mathcal{O}(1)\).
+		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
+		\item a series of composition morphisms: for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
+			% TODO: Convert to array like above
+			\begin{align*}
+				\circ_{n}: \mathcal{O}(n) \otimes \mathcal{O}(k_{1}) \otimes \mathcal{O}(k_{2}) \otimes \cdots \otimes \mathcal{O}(k_{n}) &\longrightarrow \mathcal{O}(k_{1} + k_{2} + \cdots + k_{n}) \\
+				\theta \otimes \theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n} &\longmapsto \theta \circ (\theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n})
+			\end{align*}
+	\end{itemize}
+	satisfying the following axioms: [Do I want all of these??]
+	\begin{itemize}
+		\item Associativity --- but not of the operations, of composition of the operations
+		\item Equivariance --- permuting the inputs of \(\theta\), permuting the morphisms input to \(\theta\), and inversely block-permuting their inputs does nothing.
+		\item The action of the symmetric group agrees with its action in \(\mathcal{C}\).
+	\end{itemize}
+\end{definition}
+
+\begin{example}
+	\begin{mdframed}
+		Nobody has ever showed me a definition of the Lie operad. I suppose it's just a quotient of the rooted binary trees operad. Also add an example of at least one other operad (maybe associative or commutative).
+	\end{mdframed}
+\end{example}
+
+Composition in operads is something like contraction in a symmetric monoidal category, but with restictions on what can be contracted: only outputs and inputs. From two operations, one can take their tensor product, but this doesn't fit into the notion of an operad, as it has two outputs.
+
+A step towards allowing general contractions is to allow multiple outputs, thereby considering not just operations but, for example in \(\mathcal{C} = \mathbf{Vect}\), general multilinear functions. Operads were abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Props will be abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
+
+\begin{definition}
+	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(A^{\otimes n}\) for some object \(A\).
+\end{definition}
+
+\begin{definition}
+	There is an adjunction \(\mathsf{Prop} \to \mathsf{Oper}\). The operad to prop direction looks at all the morphisms \((n \to 1)\) in the prop, the other direction takes arbitrary tensor products of things in the operad.
+\end{definition}
+
+\begin{mdframed}
+	The notion of algebras over operads and props, and their equivalence.
+\end{mdframed}
+
+Now the only difference between contraction and what is governed by our prop is the inputs vs outputs. Remember the action of the symmetric group comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs and outputs among themselves. We want a way to permute inputs with outputs.
+
+For an operad we can ask that it be extended to an action of \(S_{n + 1}\). But then the \(S_{n + 1}\)-action determines that one of the old inputs becomes the new output.
+
+\begin{definition}
+	An operad is \textbf{cyclic} if the symmetric group action coming from \(\mathcal{C}\) satisfies ...
+
+	We denote an arbitrary cyclic operad \(\mathcal{O}_{\tau}\) to reflect that whether an operad is cyclic depends both on it and the action of the symmetry \(\tau\) of \(\mathcal{C}\) on \(\mathcal{O}\).
+\end{definition}
+
+The definition of a metric Lie algebra involved axioms on both the bracker (2-ary operations), but also about the symmetry on the bracket and the form. Indeed now that we can talk about the symmetry operadically, if an operad is cyclic we a special type of algebra over the operad, and have these algebras be the metric Lie algebras.
+
+\begin{definition}
+	For a cyclic operad \(\mathcal{O}_{\tau}\), a \textbf{metric algebra} over \(\mathcal{O}_{\tau}\) is a ...
+\end{definition}
+
+This definition is most naturally phrased in terms of props.
+
+\begin{definition}
+	The \textbf{prop for metric algebras over a cyclic operad} is ... For a cyclic operad \(\mathcal{O}_{\tau}\), let \(\mathbf{P}_{m}(\mathcal{O}_{\tau})\) be the prop generated by ...
+\end{definition}
+
+\begin{definition}
+	The \textbf{prop for casimir algebras over a cyclic operad} is ... For a cyclic operad \(\mathcal{O}_{\tau}\), let \(\mathbf{P}_{c}(\mathcal{O}_{\tau})\) be the prop generated by ...
+\end{definition}
