@@ -532,13 +532,18 @@ So far, \(\mathcal{K}\) is a bialgebra whose product respects the filtration. Th
 	That is, with the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra.
 \end{proposition}
 
-We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}. The lemma is a formula for the coproduct of an element of \(k \in \mathcal{K}_{n}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is terms of the \(2^{n}\) ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
+We give a proof, due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} which follows directly from his Lemma \ref{lem:co-leibniz-formula-for-knots}.  
+%TODO (ZSuzsi) It's no clear (except for the link) whether you're referring to 1.3.10 in your thesis or in his paper. Maybe better phrasing: "From Lemma XX below, from the same paper".
+The lemma is a formula for the coproduct of an element of \(k \in \mathcal{K}_{n}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is terms of the \(2^{n}\)
+ %TODO (ZSuzsi) I'm confused about $n$ vs $m$ here
+ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
 
 If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
 
 \begin{remark}
-	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\delta^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation.
+	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\delta^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation. 
+     %TODO (ZSuzsi) By "not contain the quotient" you mean you are not quotienting out? It might be worth calling this a lift or cover. "This causes no mathematical difficulty" is a bit hand-wavy, you could instead say that 1. - the bialgebra structure is well defined on the lift, and 2. - if a formula is true in a lift, then its image in a quotient is also true.
 \end{remark}
 
 \begin{lemma}[Willerton]
@@ -598,7 +603,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 		\otimes
 		\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -}).
 	\end{align*}
-	Expanding, yields the cumbersome,
+	Expanding, yields the cumbersome formula
 	\begin{align*}
 		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
 			\Big(
@@ -636,9 +641,9 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
 				\otimes
 				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
-			\Big)
+			\Big).
 	\end{align*}
-	but since \(\{I \mid I \subset J, x \notin I\}\) is equal to \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
+	Since \(\{I \mid I \subset J, x \notin I\}\) is equal to \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
 	\[
 		\sum_{\mathclap{x \in I \subset J}}
 			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
@@ -674,9 +679,14 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 
 % TODO: I am going to try to make the next part of this subsection, about the Vassiliev invariants being the dual filtered, a little less formal and more paragraphy. Why? Because defining the dual filtered bialgebra in generality feels clumsy. The TODO is to check later that it works fine.
 
-Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained naturally from \(\mathcal{K}\) via the following construction.
+Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural 
+ %TODO (ZSuzsi) natural is a loaded word... well behaved?
+with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained naturally from \(\mathcal{K}\) via the following construction.
 
-The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). The result is the Vassiliev invariants, along with a product transpose to the coproduct in \(\mathcal{K}\) and coproduct transpose to the product in \(\mathcal{K}\).
+The dual filtered bialgebra construction 
+ %TODO (ZSuzsi) A mouthful. I think this would be better stated as a claim: a decreasing filtration on a bialgebra $\mathcal{K}$ induces an ascending filtration on the dual bialgbera, whose...
+makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). The result is the Vassiliev invariants, along with a product transpose to the coproduct in \(\mathcal{K}\) and coproduct transpose to the product in \(\mathcal{K}\).
+ %TODO (ZSuzsi) By transpose do you mean adjoint? Maybe explain in either case.
 
 \begin{definition}
 	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
@@ -689,22 +699,33 @@ The dual filtered bialgebra construction makes a filtered bialgebra whose \(m\)t
 
 
 \begin{proposition}
-	The filtered bialgebraic dual of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
+	The filtered bialgebraic dual
+     %TODO (ZSuzsi) Filtered dual bialgebra
+    of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
 \end{proposition}
 
 We don't prove this textbook fact, but let us sketch the main points. Indeed, the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{n}\).
+ %TODO (ZSuzsi) $m$ vs $n$
 
 Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
 	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
+ %TODO (ZSuzsi) $\mapsto$ or $=$
+    
 recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) is
 	\[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
-recovers the formula for the coproduct, \(\eta\). Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
+recovers the formula for the coproduct, \(\eta\).
+ %TODO (ZSuzsi) This sentence has two verbs
 
-We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult, say \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).
+Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
+ %TODO (ZSuzsi) I don't think that's true, it needs to be stated for just the Vassiliev part, which is a bit more cumbersome to write.
+
+We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).  %TODO (ZSuzsi) I would state this above where you introduce the dual filtration, so you can just use it here.
 
 % TODO: This remark might be better off as like... several paragraphs with multiple remarks interspersed.
+ %TODO (ZSuzsi) I think it reads fine as one long remark. It's cohesive.
+
 \begin{remark}
-	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, recall the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
+	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
 
 	The generalised Leibniz theorem of multivariable calculus says that if \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) are differentiable, then (in similar derivative notation to as above)
 	\[
@@ -716,9 +737,11 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 		\frac{\partial^{|\bar{J}|} g}{\partial_{x_{\bar{J}}}}.
 	\]
 
-	This says that the derivative of a product \(f\) and \(g\) with respect to some variables is the sum of every way of taking some of those derivatives with respect to \(f\) and some with respect to \(g\).
+	This says that the derivative of a product of \(f\) and \(g\) with respect to some variables is the sum of every way of taking some of those derivatives with respect to \(f\) and some with respect to \(g\).
 
-	A kind of dual theorem follows from this. For \(c \in \mathbb{R}\), if given that \(c\) comes from some \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) by taking their derivatives with respect to all the variables and evaluating all remaining variables in the result, then we get a cofactorisation for \(c\) in \(\mathbb{R} \otimes \mathbb{R}\): i.e.
+	A kind of dual theorem follows from this. For \(c \in \mathbb{R}\), if given that
+     %TODO (ZSuzsi) Try to make this sentence easier to parse
+    \(c\) comes from some \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) by taking their derivatives with respect to all the variables and evaluating all remaining variables in the result, then we get a cofactorisation for \(c\) in \(\mathbb{R} \otimes \mathbb{R}\): i.e.
 	\[c = \left. \frac{\partial^{|I|}(fg)}{\partial_{x_{I}}} \right|_{\{x_{I} = a_{I}\}} \text{ implies }
 		\left(
 		\sum_{J \subset \{1, \cdots, i\}}
@@ -728,13 +751,14 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 		\right)
 		\overset{\mu}{\longrightarrow} c,
 	\]
-	where \(\mu: \mathbb{R} \otimes \mathbb{R} \to \mathbb{R}\) is multiplication.
+	where \(\mu: \mathbb{R} \otimes \mathbb{R} \to \mathbb{R}\) is multiplication.  %TODO (ZSuzsi) Could you write $\mu(...)=c$, rather than put $\mu$ on an arrow?
 
-	As it turns out, this theorem is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\).
+	As it turns out, this theorem
+     %TODO (ZSuzsi) The generalised Leibnitz theorem?
+    is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\).
 
-	But this dual theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation.
-
-	Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
+	But the dual theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation.
+    Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
 	\[
 		(V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet}))
 		=
@@ -743,9 +767,11 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 		\otimes
 		V_{2}(\mu^{I}\delta^{\bar{I}}(k^{\bullet})).
 	\]
-	It follows directly from this that if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + 1}\), then either \(|I| > m\) or \(|\hat{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet})) = 0\).
+	It follows directly from this that if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + 1}\),
+     %TODO (ZSuzsi) $m+n+1$?
+    then either \(|I| > m\) or \(|\hat{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet})) = 0\).
 
-	The analogy is that the multivariable calculus analogue of this argument is a proof that polynomials are filtered by degree.
+	The analogy is that the multivariable calculus analogue of this argument is a proof that polynomials are filtered by degree.  %TODO (ZSuzsi) This sentence is insightful but near impossible to parse:).
 \end{remark}
 
 \begin{example}
@@ -759,7 +785,9 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 
 % TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
 
-This bialgebra strucutre on knots is heavily related to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
+This bialgebra strucutre on knots is heavily related 
+ %TODO (ZSuzsi) closely? or some more specific phrasing?
+to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
 
 In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) and \(\ref{eq:1Tstar}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
@@ -809,6 +837,7 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_circular.pdf}
 	\]
 	The definition is extended bilinearly to elements of \(\mathcal{A}\).
+     %TODO (ZSuzsi) Sum or direct product? Do you want to allow infinite series?
 \end{definition}
 
 Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:4T} relation in \(\mathcal{A}\) takes care of this.
@@ -818,7 +847,9 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{proposition}
 
 \begin{proof}
-	We will prove that the connected sums, given any two choices of connection locations, are equal modulo \ref{eq:4T}.
+	We will prove that the connected sums,
+     %TODO (ZSuzsi) of two given chord diagrams
+    given any two choices of connection locations, are equal modulo \ref{eq:4T}.
 
 	Let us denote the first chord diagram as \(a_{1}\) and the second as \(a_{2}\). Without loss of generality, it suffices to prove that without change in the connection location of \(a_{1}\), we can change the connection location on \(a_{2}\). Indeed it suffices to prove that we can rotate \(a_{2}\) by one `click', like so:
 
@@ -851,6 +882,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 		\ = \ 0.
 	\]
 	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:4T} relations, completing the proof.
+     %TODO (ZSuzsi) Given infinite time, a worked example where $a_1$ has one or two chords would be nice
 \end{proof}
 
 \begin{proposition}
@@ -865,10 +897,9 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 
 \begin{definition}
 	\label{def:coproduct-in-chord-diagrams}
-	The \textbf{coproduct of a chord diagram} \(A\) is the sum of ways of partitioning its chords between two subdiagrams.
-
-	If \(S\) is the set of chords of \(A\), and \(J \subset S\), let \(\widehat{J} = S \smallsetminus J\). Denote by \(A_{J}\) the chord diagram \(A\) but with only the chords in \(J \subset S\), and the rest deleted. Then
-	\[\Delta(A) = \sum_{J \subset S} A_{J} \otimes A_{\overline{J}}.\]
+	The \textbf{coproduct of a chord diagram} \(A\) is the sum of ways of partitioning its chords between two subdiagrams.  
+    Specifically, if \(S\) is the set of chords of \(A\), and \(J \subset S\), let \(\widehat{J} = S \smallsetminus J\). Denote by \(A_{J}\) the chord diagram \(A\) but with only the chords in \(J \subset S\), and the rest deleted. Then
+	\[\Delta(A) = \sum_{J \subset S} A_{J} \otimes A_{\overline{J}}.\] %Zsuzsi: I united the two paragraphs here because the second helps the reader not get stuck on the first. (Separate if you don't like)
 \end{definition}
 
 \begin{proposition}
@@ -876,7 +907,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 \end{proposition}
 
 \begin{proof}
-	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the compatibility condition holds.
+	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the compatibility condition holds.  %TODO (ZSuzsi) That the coproduct is an algebra morphism (a precise way to say compatibility)
 
 	That \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
 	% TODO: Swap the notation so the 4Ts and 1Ts with stars are in the first chapter and not in the rest.
@@ -916,9 +947,11 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\end{align*}
 \end{proof}
 
-We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. It also satisfies some technical, mild condition connected connectedness. A connected, graded bialgebra of finite type is sometimes called a Hopf algebra. Note that the modern definition of a Hopf algebra is a more general structure, of which \(\mathcal{A}\) is also an example.
+We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. It also satisfies some technical, mild condition called connectedness. 
+ %TODO (ZSuzsi) you could just say what it means
+A connected, graded bialgebra of finite type is sometimes called a Hopf algebra. Note that the modern definition of a Hopf algebra is a more general structure, of which \(\mathcal{A}\) is also an example.  %TODO (ZSuzsi) You can say has an antipode
 
-This fact leads to important consequences about the structure of \(\mathcal{A}\) and its relation to Lie algebras that will the subject of Chapter \ref{ch:lie-theory-and-jacobi-diagrams}.
+This fact leads to important consequences about the structure of \(\mathcal{A}\) and its relation to Lie algebras, which will the subject of Chapter \ref{ch:lie-theory-and-jacobi-diagrams}.
 
 \begin{definition}
 	The weight systems (Definition \ref{def:weight-system}), denoted \(\mathcal{W}\), form a graded bialgebra, the \textbf{graded bialgebra of weight systems} with grading given by degree \(m\), product given by pointwise multiplication
@@ -926,12 +959,15 @@ This fact leads to important consequences about the structure of \(\mathcal{A}\)
 	and coproduct, \(\eta\) given by
 	\[\eta(W)(a_{1} \otimes a_{2}) = W(a_{1} \connect a_{2}).\]
 
-	The graded bialgebra \(\mathcal{W}\) is the graded bialgebraic dual of the graded bialgebra \(\mathcal{A}\).
+	The graded bialgebra \(\mathcal{W}\) is the graded bialgebraic dual 
+     %TODO (ZSuzsi) Dual bialgebra
+    of the graded bialgebra \(\mathcal{A}\).
 \end{definition}
 
 In fact, considering a graded object as a filtered object with the naturally induced filtration, this coincides with the filtered bialgebraic dual.
 
 \begin{proof}
+ %TODO (ZSuzsi) Proof of what?
 	Weight systems are linear functionals on chord diagrams, \(\mathcal{D}\) that vanish on \ref{eq:4Tstar} and \ref{eq:1Tstar}. This is the same as linear functionals on \(\mathcal{A} = \mathcal{D}/\ref{eq:4T}, \ref{eq:1T}\).
 
 	The rest of the proof, (i.e. that the product in \(\mathcal{W}\) is dual to the coproduct in \(\mathcal{A}\) and vice versa) follows exactly as in the proof sketch of the duality of bialgebras \(\mathcal{K}\) and \(\mathcal{V}\).
