@@ -78,8 +78,6 @@
 }
 
 
-
-
 % MATHS SYMBOLS
 
 \usepackage{amsmath, amssymb}
@@ -107,16 +105,19 @@
 \usepackage[lines=2, nindent=0pt]{lettrine}
 
 \usepackage[dvipsnames]{xcolor}
+\usepackage{color}
 
-\usepackage{xcolor}
 \usepackage[framemethod=latex]{mdframed}
 \mdfsetup{backgroundcolor=Apricot, middlelinecolor=gray}
+
+% Custom colour for citations
+\definecolor{CeruleanRef}{RGB}{12,127,172}
 
 \usepackage[hidelinks, ocgcolorlinks]{hyperref}
 \hypersetup{
         colorlinks,
         linkcolor={black},
-        citecolor={blue!60!black},
+        citecolor={CeruleanRef},
         urlcolor={blue!80!black}
 }
 
@@ -176,8 +177,6 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{definitions}[theorem]{Definitions}
 \newtheorem{notation}[theorem]{Notation}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{examples}[theorem]{Examples}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{remarks}[theorem]{Remarks}
 \newtheorem{construction}[theorem]{Construction}
@@ -185,6 +184,10 @@
 \newtheorem{warning}[theorem]{Warning}
 \newtheorem{question}[theorem]{Question}
 \newtheorem{questions}[theorem]{Questions}
+
+\theoremsymbol{\enskip\ensuremath{\Diamond}}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
 
 % Environments for proofs
 \theoremstyle{nonumberplain}
@@ -210,6 +213,18 @@
 % BIBLIOGRAPHY
 \emergencystretch=1em
 % TODO: Choose a bibstyle that makes titles rather than journal titles italicised.
-\usepackage[citestyle=alphabetic, bibstyle=alphabetic]{biblatex}
+\usepackage[citestyle=alphabetic, bibstyle=ext-alphabetic]{biblatex}
+
+%TODO: Fix problem below
+% This code to change the colour of brackets in citations doesn't work. It also colours surounding punctuation sometimes.
+% Modified from ext-alphabetic.cbx
+\DeclareCiteCommand{\cite}[{\color{CeruleanRef}\mkbibbrackets}]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
 \renewcommand*{\bibfont}{\normalfont\small}
+
 \bibliography{references}

@@ -300,25 +300,24 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	and all other inner products are zero.
 
 	In \cite{remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}, the following skein relation is derived:
+	% NOTE: We are using the trace in the fundamental representation as our invariant bilinear form. If instead, we used the trace in the adjoint representation, we would get coefficients 1 instead of 4.
 	\[
 		W_{\mathfrak{sl}_{2}}
-		\left(
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/sl2_skein_relation_h.pdf}
-		\right)
 		=
 		4 W_{\mathfrak{sl}_{2}}
-		\left(
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/sl2_skein_relation_uu.pdf}
-		\right)
 		-
 		4 W_{\mathfrak{sl}_{2}}
-		\left(
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/sl2_skein_relation_x.pdf}
-		\right)
 	\]
 
 	\begin{proof}
 		Associated to the Penrose diagram for each side of the above equation (it is not advisable to compute by hand) we find the tensors
+
+		\begin{mdframed}
+			this is wrong -- fix it
+		\end{mdframed}
 		\begin{align*}
 			{}- 8 h\otimes e\otimes h\otimes f && {}+ 8 & h\otimes e\otimes f\otimes h & {}- \phantom{1}8  & h\otimes f\otimes h\otimes e & {}+ \phantom{1}8  & h\otimes f\otimes e\otimes h \\
 			{}+ 8 e\otimes h\otimes h\otimes f && {}- 8 & e\otimes h\otimes f\otimes h & {}+            16 & e\otimes f\otimes e\otimes f & {}-            16 & e\otimes f\otimes f\otimes e \\
@@ -341,7 +340,6 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 \begin{question}
 	What skein relation in \(\mathcal{A}\) does the weight system for the exceptional Lie algebra \(\mathfrak{g}_{2}\) obey?
 \end{question}
-% TODO: Insert result here.
 
 Bar-Natan's construction yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether every all the information in \(\mathcal{A}\) can be extracted with some metric Lie algebra.
 
@@ -350,7 +348,7 @@ Computer enumeration of chord diagrams \cite{on-the-vassiliev-knot-invariants} p
 	\begin{tblr}{hlines, vlines}
 		m									& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ \hline % & 10  & 11  & 12  \\
 		\operatorname{dim}\mathcal{A}_{m}					& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
-		\operatorname{dim}(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}}))	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
+		\operatorname{dim}(\operatorname{span}(W_{\mathfrak{sl}_{n}, \mathfrak{gl}_{n}}))	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
 	\end{tblr}
 \]
 Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Costruction \ref{cons:lie-algebra-weight-system} on representations of classical Lie algebras \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\).
@@ -360,17 +358,22 @@ Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) denotes the dimension o
 	All weight systems are obtained as Lie algebra weight systems. In other words the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
 \end{conjecture}
 
-\begin{remark}
-	\label{rem:chord-diagram-universal-construction}
-	Strenthening the above conjecture, maybe even there is some universal Lie algebra, applying the construction to which, recovers exactly \(\mathcal{A}\), losing no information.
-\end{remark}
+Indeed the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) as it was drawn graphically looks exactly like the \ref{eq:STU} relation in \(\mathcal{A}\). However, looks can be decieving and quite surprisingly this conjecture is false. The counterexample was found by Pierre Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint} in an attempt to answer the following related question:
+\begin{question}[Vogel]
+	\label{ques:vogel-universal-lie-algebra}
+	Is there some single universal Lie algebra object whose weight system spans \(W_{\text{Lie}}\), the span of all Lie-algebraic weight systems?
+\end{question}
+
+We will look at examples of more general weight systems in Section~\ref{sec:non-lie-algebraic-weight-systems}.
+
 
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
 
-Quite surprisingly, Conjecture \ref{conj:lie-algebra-weight-systems-span} is false. This may be a surprise to the reader: the relation \([x, y] = x y - y x\) in the universal enveloping algebra of a Lie algebra looks like it encodes exactly the \ref{eq:STU} relation in \(\mathcal{A}\). But the Conjecture being false implies that weight systems coming from Lie algebras are just a specific kind.
+Conjecture \ref{conj:lie-algebra-weight-systems-span} being false implies that \ref{eq:STU} is more general than \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\). The same is true for \ref{eq:IHX} and \ref{eq:AS} compared to their strictly Lie-theoretic counterparts.
+In fact, Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras.
 
-In fact, \ref{eq:STU} is more general than \([x, y] = xy - yx\), and Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras. The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category. They are related to Vogel's ``Universal Lie algebra'' construction, \cite{vassiliev-theory-and-the-universal-lie-algebra}, and also related to the structures studied in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. First, we need the following category-theoretic notions.
+The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category.
 
 \begin{definition}
 	A (\textbf{weak}) \textbf{monoidal category} is a category \(\mathcal{C}\) equipped with a functor
@@ -516,15 +519,79 @@ Vogel's diagram of order 17 vanishes also on all Lie superalgebra weight systems
 	The set of Lie (super)algebra weight systems does not span \(\mathcal{W}\).
 \end{corollary}
 
-In general, it is still unknown to what exact level of generality one needs to go (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems.
+In general, it is still unknown to what exact level of generality one needs to go (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems. We hereby provide a succinct review the current state of the literature on the subject.
 
 Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
 
 More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. The example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
-\section{A universal metric Lie algebra object}
 
-There is, however,  a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} which provides the moral version of the statement in Remark \ref{rem:chord-diagram-universal-construction}. They construct a Lie algebra object in a symmetric tensor category with  a ``weight system'' (in a certain sense) which is isomorphic to \(\mathcal{A}\). In Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will examine an object, analagous to the space of welded knots, rather than knots.
+\section{Computing some local \(W_{\mathfrak{g}}\) relations}
+
+The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.}
+
+The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'. To the knowledge of the author, only the local relations for the Lie algebras \(\mathfrak{sl}_{2}\), \(\mathfrak{gl}_{n}\) and \(\mathfrak{so}_{n}\) appear in the literature \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2} (there is also one for the Lie superalgebra \(\mathfrak{gl}_{1|1}\) \cite{the-universal-vassiliev-invariant-for-the-lie-superalgebra-gl1-1}).
+
+Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
+
+From Vogel's relations, we can determine which diagrams participate in a relation, then by computer find the corresponding tensors in \(W_{\mathfrak{g}}\), and find the relation between them in the tensor algebra of \(\mathfrak{g}\).
+
+\begin{example}[Weight system for \(\mathfrak{g}_{2}\)]
+Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
+\[
+	\begin{array}{lll}
+		c_{0}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+		+
+		c_{1}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+		+
+		c_{2}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_tw4.pdf} \\
+		\quad
+		{}+c_{3}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_tth.pdf}
+		+
+		c_{4}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+		+
+		c_{5}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+		& =
+		\,\,\,
+		0
+	\end{array}
+\]
+However, by some well-known identies internal to Jabobi diagrams, these diagrams can be simplified.
+\begin{lemma}
+	% Internal to \(\mathcal{A}\) (following from \textup{\ref{eq:IHX}} and \textup{\ref{eq:AS}}) is the relation
+	\[
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
+		=
+		\frac{1}{2}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle_bubbled.pdf}
+	\]
+	(Here the bubble may be on any of the three half-edges.)
+\end{lemma}
+\begin{proof}
+	Apply \ref{eq:IHX} to any pair of vertices. (Treat this carefullt with \ref{eq:AS} --- don't assume that \(\tau\) is strict, as this should hold outside Lie-algebra specific weight systems.)
+\end{proof}
+\begin{lemma}
+	For a Lie algebra \(\mathfrak{g}\), the bubble is proportional to line.
+\end{lemma}
+.
+\end{example}
+
+\section{A universal metric Lie algebra object}
+\label{sec:a-universal-metric-lie-algebra-object}
+
+There is, however,  a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. They construct a Lie algebra object in a symmetric tensor category with  a ``weight system'' (in a certain sense) which is isomorphic to \(\mathcal{A}\). In Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will examine an object, analagous to the space of welded knots, rather than knots.
 
 Note, however that the objects in this category are not sets, but simply objects, so the result is useful theoretically rather than computationally.
 
