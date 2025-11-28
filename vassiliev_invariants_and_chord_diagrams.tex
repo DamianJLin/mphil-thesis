@@ -1,7 +1,7 @@
 \chapter{Vassiliev invariants and chord diagrams}
 \label{ch:vassiliev-invariants-and-chord-diagrams}
 
-\begin{mdframed}
+\begin{shaded}
 	Something to maybe include somewhere:
 
 	The point of Vassiliev theory is to study the space of knots in the context of the singularities that lie between knots.
@@ -9,7 +9,7 @@
 	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} and throughout this chapter.
 
 	In Section \ref{sec:knots-and-vassiliev-invariants}, with the context in mind, we introduce the main players in this theory.
-\end{mdframed}
+\end{shaded}
 
 \lettrine{\libertineInitialGlyph{V}}{assiliev} invariants are sophisticated to define in terms of the space of knots from the introduction, but the axiomatic definition of Birman-Lin \cite{knot-polynomials-and-vassilievs-invariants} is much simpler. The definition also illustrates an analogy made by Bar-Natan \cite{on-the-vassiliev-knot-invariants} in which Vassiliev invariants are ``polynomial invariants''. This is not meant in the sense that Vassiliev invariants take values in a polynomial ring (like say, the Jones polynomial), but rather that Vassiliev invariants have special properties not shared by all invariants, just as polynomial functions have special properties not shared by all functions.
 
@@ -252,11 +252,11 @@ This raises the question of whether we have found all primary obstructions. Do \
 \begin{proof}[sketch]
 	% TODO: Fill out Stanford's integration homotopy proof -- (Zsuzsi) Be minful of clearly distinguishing between intuition and precise maths. If this proof only exists as a sketch in the literature, it can be a nice contribution to fill in the details, and if you do, you should say so.
     
-	\begin{mdframed}
+	\begin{shaded}
 		Let \(\gamma = \Psi(t)\) be a singular isotopy and let \(\Phi(\gamma)\) be the path integral along it. Construct a homotopy from \(\gamma\) to the constant singular isotopy in the stratification of knots with at least \(m - 1\) double points, and additional worse singularities. The only events to consider are codimension \(m + 2\) (why \(m + 2\)? is it to do with homotopy being "2"-dimensional?) events. They all change the \(\Phi(\gamma)\) by \(f(\tftterm)\) or \(f(\totterm)\) (or similar with \ref{eq:diff} relations, which we've said are implicit).
 
 		Once the homotopy is complete, we are done as \(\Phi(\gamma_{\text{const}}) = 0\). On a down-to-earth level, why does this imply \(f\) can be integrated?
-	\end{mdframed}
+	\end{shaded}
 \end{proof}
 
 In the order of Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, we ought to talk next about the secondary and further obstructions to integration. However, let us postpone this until after we have discussed constants of integration, which will be a more natural place.
@@ -489,11 +489,11 @@ However, by a classical knot-theoretic argument, the result is independent of th
 
 % NOTE: to self --- do I say 'Indeed' too much?
 
-\begin{mdframed}
+\begin{shaded}
 	Say something intelligent to introduce this definition.
 
 	I guess it's something like: We assert that knots are (semi)group-like. This must be somehow related to (some?) chord diagrams being like exponentials (primitives?).
-\end{mdframed}
+\end{shaded}
 
 %TODO (Zsuzsi) One way to approach this would be to say that the set of knots forms a commutative monoid, and $\mathcal{K}$ is its monoid algebra. Just like the group algebra of a group is made into a bialgbera by a natural coproduct which makes the elements of the group "group-like", the same is true for the monoid algebra of a monoid. /// On chord diagrams: Yes, chord diagrams are also equipped with a coproduct, and for example the Konsevich integral respects the coalgebra structure by sending knots to group-like elements in chord diagrams. Yes, group-like is equivalent to "exponential of a primitive", where primitive means $\Delta(x)=1\otimes x + x\otimes 1$.
 
@@ -775,9 +775,9 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 \end{remark}
 
 \begin{example}
-	\begin{mdframed}
+	\begin{shaded}
 		In view of Remark above about non-Vassiliev invariants, let's define a knot invariant. (Define \(f_{3_{1}}\).)
-	\end{mdframed}
+	\end{shaded}
 \end{example}
 
 \section{Chord diagrams and weight systems}
@@ -1041,9 +1041,9 @@ It is actually only the second part of this theorem, due to Kontesevich that is 
 		\tftsouth \ - \ \tfteast \ - \ \tftnorth \ + \ \tftwest
 	\]
 	but after resolving around the singular point that they don't have in common this becomes
-	\begin{mdframed}
+	\begin{shaded}
 		figure of the 8 terms that cancel out.
-	\end{mdframed}
+	\end{shaded}
 
 	% TODO: We here use the definition of Vassiliev invariants as dual to knots. But in the first chapter we actually defined them differently. Can we fix this? Perhaps postponing the definition suffices.
 
@@ -1172,7 +1172,7 @@ induced by the Kontsevich integral. Canonical Vassiliev invariants were first de
 	Is there a reason why the Kontsevich integral, or equivalently, this splitting appears to be canonical?
 \end{question}
 
-\begin{mdframed}
+\begin{shaded}
 	Why the reformulation was a reformulation. Or: go back and lessen the first formulation to just a related theorem.
-\end{mdframed}
+\end{shaded}
 

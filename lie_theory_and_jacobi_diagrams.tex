@@ -267,9 +267,9 @@ Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\ma
 \begin{proof}
 	The contruction creates a string diagram which is well-defined modulo certain diagrammatic relations as seen at the start of this section such as the cyclic invariance of the contraction of the metric and bracket. By \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}, string diagrams modulo these relations are exactly encoded by unitrivalent graphs with a cyclic order on trivalent vertices, and a linear order on univalent vertices.
 
-	\begin{mdframed}
+	\begin{shaded}
 		Explicitly have diagrams for all the relations, involving the symmetry natural transformation, so that we can later say that this could not be the on-the-nose identity.
-	\end{mdframed}
+	\end{shaded}
 
 	Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
@@ -287,9 +287,9 @@ Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\ma
 	That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
 \end{proof}
 
-\begin{mdframed}
+\begin{shaded}
 	Confirm: This obeys all the relations of \(\mathcal{A}\), and more. Does this make it a quotient of \(\mathcal{A}\)?
-\end{mdframed}
+\end{shaded}
 
 Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
 \begin{example}[Weight system for \({\mathfrak{sl}_{2}}\)]
@@ -315,9 +315,9 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	\begin{proof}
 		Associated to the Penrose diagram for each side of the above equation (it is not advisable to compute by hand) we find the tensors
 
-		\begin{mdframed}
+		\begin{shaded}
 			this is wrong -- fix it
-		\end{mdframed}
+		\end{shaded}
 		\begin{align*}
 			{}- 8 h\otimes e\otimes h\otimes f && {}+ 8 & h\otimes e\otimes f\otimes h & {}- \phantom{1}8  & h\otimes f\otimes h\otimes e & {}+ \phantom{1}8  & h\otimes f\otimes e\otimes h \\
 			{}+ 8 e\otimes h\otimes h\otimes f && {}- 8 & e\otimes h\otimes f\otimes h & {}+            16 & e\otimes f\otimes e\otimes f & {}-            16 & e\otimes f\otimes f\otimes e \\
@@ -333,9 +333,9 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 		\[64 e \otimes f + 16 h \otimes h - 32 h.\]
 	\end{proof}
 
-	\begin{mdframed}
+	\begin{shaded}
 		In fact, this skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\), which is related to the Lie algebra \(\mathfrak{sl}_{2}\) \cite{introduction-to-vassiliev-invariants}. It has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system}. There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). However it does not obey the vector triple product rule.
-	\end{mdframed}
+	\end{shaded}
 \end{example}
 \begin{question}
 	What skein relation in \(\mathcal{A}\) does the weight system for the exceptional Lie algebra \(\mathfrak{g}_{2}\) obey?
@@ -534,8 +534,6 @@ The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to t
 
 Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
 
-From Vogel's relations, we can determine which diagrams participate in a relation, then by computer find the corresponding tensors in \(W_{\mathfrak{g}}\), and find the relation between them in the tensor algebra of \(\mathfrak{g}\).
-
 \begin{example}[Weight system for \(\mathfrak{g}_{2}\)]
 Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
 \[
@@ -570,22 +568,109 @@ Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a rel
 \]
 However, by some well-known identies internal to Jabobi diagrams, these diagrams can be simplified.
 \begin{lemma}
-	% Internal to \(\mathcal{A}\) (following from \textup{\ref{eq:IHX}} and \textup{\ref{eq:AS}}) is the relation
+	In \(\mathcal{A}\) the `trivalent-bubble' vertex is proprtional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
 	\[
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
 		=
 		\frac{1}{2}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle_bubbled.pdf}
 	\]
-	(Here the bubble may be on any of the three half-edges.)
 \end{lemma}
 \begin{proof}
-	Apply \ref{eq:IHX} to any pair of vertices. (Treat this carefullt with \ref{eq:AS} --- don't assume that \(\tau\) is strict, as this should hold outside Lie-algebra specific weight systems.)
+	Apply \ref{eq:IHX} to any pair of vertices, then three applications of \ref{eq:AS}.
+	\[
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
+		=
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle_is_bubble_h.pdf}
+		+
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle_is_bubble_x.pdf}
+		=
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle_bubbled.pdf}
+		-
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
+	\]
 \end{proof}
 \begin{lemma}
-	For a Lie algebra \(\mathfrak{g}\), the bubble is proportional to line.
+	In Lie algebraic weight systems, the bubble is proportional to the line.
+	\[
+		W_{\mathfrak{g}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_bivalent_bubble.pdf}
+		=
+		\lambda
+		W_{\mathfrak{g}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_line.pdf}
+	\]
 \end{lemma}
-.
+\begin{proof}
+	\begin{shaded}
+		It's in CDM but it's unsatisfying. If it can be proved for Lie algebras it should be able to be proved in a way where it's obvious it doesn't work for Lie superalgebras, with without referring to the dual basis and its properties.
+	\end{shaded}
+\end{proof}
+
+So, the relation simplifies to 
+\[
+	\begin{array}{lll}
+		c_{0}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+		+
+		c_{1}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+		+
+		c_{2}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
+		\quad
+		{}+c_{3}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+		+
+		c_{4}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+		+
+		c_{5}
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+		& =
+		\,\,\,
+		0.
+	\end{array}
+\]
+
+Contracting the tensors corresponding to these diagrams then solving for a linear relation between them yields coefficients
+\[
+	\begin{array}{lll}
+		-6
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+		-
+		12
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+		+
+		36
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
+		\quad \quad
+		{}+
+		7
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+		+
+		20
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+		-
+		20
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+		& =
+		\,\,\,
+		0.
+	\end{array}
+\]
 \end{example}
 
 \section{A universal metric Lie algebra object}
@@ -622,9 +707,9 @@ Some operations on a set can always be composed by taking as input the output of
 \end{definition}
 
 \begin{example}
-	\begin{mdframed}
+	\begin{shaded}
 		Nobody has ever showed me a definition of the Lie operad. I suppose it's just a quotient of the rooted binary trees operad. Also add an example of at least one other operad (maybe associative or commutative).
-	\end{mdframed}
+	\end{shaded}
 \end{example}
 
 Composition in operads is something like contraction in a symmetric monoidal category, but with restictions on what can be contracted: only outputs and inputs. From two operations, one can take their tensor product, but this doesn't fit into the notion of an operad, as it has two outputs.
@@ -639,9 +724,9 @@ A step towards allowing general contractions is to allow multiple outputs, there
 	There is an adjunction \(\mathsf{Prop} \to \mathsf{Oper}\). The operad to prop direction looks at all the morphisms \((n \to 1)\) in the prop, the other direction takes arbitrary tensor products of things in the operad.
 \end{definition}
 
-\begin{mdframed}
+\begin{shaded}
 	The notion of algebras over operads and props, and their equivalence.
-\end{mdframed}
+\end{shaded}
 
 Now the only difference between contraction and what is governed by our prop is the inputs vs outputs. Remember the action of the symmetric group comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs and outputs among themselves. We want a way to permute inputs with outputs.
 
