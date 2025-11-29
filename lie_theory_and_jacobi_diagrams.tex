@@ -526,7 +526,8 @@ Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky
 More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. The example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
 
-\section{Computing some local \(W_{\mathfrak{g}}\) relations}
+\section{Computing some local relations in \(W_{\mathfrak{g}}\)}
+\label{sec:computing-some-local-relations-in-Wg}
 
 The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.}
 
@@ -607,39 +608,7 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 	\end{shaded}
 \end{proof}
 
-So, the relation simplifies to 
-\[
-	\begin{array}{lll}
-		c_{0}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
-		+
-		c_{1}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
-		+
-		c_{2}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
-		\quad
-		{}+c_{3}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
-		+
-		c_{4}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
-		+
-		c_{5}
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
-		& =
-		\,\,\,
-		0.
-	\end{array}
-\]
-
-Contracting the tensors corresponding to these diagrams then solving for a linear relation between them yields coefficients
+Simplifying Vogel's relation via these lemmas, we proceed by computer to contract the tensors corresponding to these diagrams then solve for a linear relation.
 \[
 	\begin{array}{lll}
 		-6
@@ -668,10 +637,45 @@ Contracting the tensors corresponding to these diagrams then solving for a linea
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
 		& =
 		\,\,\,
-		0.
+		0
 	\end{array}
 \]
 \end{example}
+
+We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). \[
+	\begin{array}{lll}
+		-12
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+		-
+		24
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+		+
+		54
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
+		\quad \quad
+		{}-
+		4
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+		+
+		5
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+		-
+		5
+		W_{\mathfrak{f}_{4}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+		& =
+		\,\,\,
+		0.
+	\end{array}
+\]
+
+The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath takes about ten seconds on a [computer specs]. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on [computer specs escona].
+
 
 \section{A universal metric Lie algebra object}
 \label{sec:a-universal-metric-lie-algebra-object}
