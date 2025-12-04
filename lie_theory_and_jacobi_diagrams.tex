@@ -519,40 +519,39 @@ Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky
 More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. The example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
 
-\section{Computing some local relations in \(W_{\mathfrak{g}}\)}
-\label{sec:computing-some-local-relations-in-Wg}
+\section{Some weight systems at the exceptional Lie algebras}
+\label{sec:some-weight-systems-at-the-exceptional-lie-algebras}
 
 The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.}
 
-The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'. To the knowledge of the author, only the local relations for the Lie algebras \(\mathfrak{sl}_{2}\), \(\mathfrak{gl}_{n}\) and \(\mathfrak{so}_{n}\) appear in the literature \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2} (there is also one for the Lie superalgebra \(\mathfrak{gl}_{1|1}\) \cite{the-universal-vassiliev-invariant-for-the-lie-superalgebra-gl1-1}).
+The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'.
 
 Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
 
-\begin{example}[Weight system for \(\mathfrak{g}_{2}\)]
 Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
 \[
-	\begin{array}{lll}
-		c_{0}
+	\begin{array}{ll}
+		-6
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
-		+
-		c_{1}
+		-
+		12
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
 		+
-		c_{2}
+		18
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_tw4.pdf} \\
 		\quad
-		{}+c_{3}
+		{}+\displaystyle\frac{7}{4}
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_tth.pdf}
 		+
-		c_{4}
+		20
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
 		+
-		c_{5}
+		20
 		W_{\mathfrak{g}_{2}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
 		& =
@@ -562,6 +561,7 @@ Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a rel
 \]
 However, by some well-known identies internal to Jabobi diagrams, these diagrams can be simplified.
 \begin{lemma}
+	\label{lem:tribubble-is-half-bibubble}
 	In \(\mathcal{A}\) the `trivalent-bubble' vertex is proprtional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
 	\[
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
@@ -585,6 +585,7 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 	\]
 \end{proof}
 \begin{lemma}
+	\label{lem:bibubble-proportional-to-line}
 	In Lie algebraic weight systems, the bubble is proportional to the line.
 	\[
 		W_{\mathfrak{g}}
@@ -601,42 +602,229 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 	\end{shaded}
 \end{proof}
 
-Simplifying Vogel's relation via these lemmas, we proceed by computer to contract the tensors corresponding to these diagrams then solve for a linear relation.
-\[
-	\begin{array}{lll}
-		-6
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
-		-
-		12
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
-		+
-		36
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
-		\quad \quad
-		{}+
-		7
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
-		+
-		20
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
-		-
-		20
-		W_{\mathfrak{g}_{2}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lambda = 1/4\)), gives the following relation.
+\begin{proposition}
+	\[
+		\begin{array}{ll}
+			-6
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+			-
+			12
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+			+
+			36
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
+			\quad \quad
+			{}+
+			7
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+			+
+			20
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+			-
+			20
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
 		& =
 		\,\,\,
 		0
-	\end{array}
-\]
-\end{example}
+		\end{array}
+	\]
+\end{proposition}
+
+This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However it's not obvious that this is true, and various other relations have to be applied to turn the rotated version into the original relation. This suggests that perhaps the relation is a consequence of a similar relation.
+
+\begin{theorem}
+	\label{thm:g2-unboxing-relation}
+	In the algebra \(\mathfrak{g}_{2}\), the weight systems obey
+	\[
+		\begin{array}{lll}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
+			& = &
+			\displaystyle\frac{2}{3}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+			+
+			\displaystyle\frac{2}{3}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_i.pdf}
+			\\
+			&& \quad +
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+			+
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth_vert.pdf}
+			+
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}.
+		\end{array}
+	\]
+\end{theorem}
+
+\begin{proof}
+	Compute the tensors corresponding to both sides.
+\end{proof}
+
+This is an analogue of a relation for \(\mathfrak{sl}_{3}\) found by Yoshizumi and Kuga in \cite{some-formulas-in-sl3-weight-systems}. This was used recently by Yang in \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite} to compute the value of the \(\mathfrak{sl}_{3}\) weight systems on the following infinite sequence of chord diagrams.
+
+\begin{definition}
+	The \(i\)th \textbf{bookshelf diagram}, \(B_{i}\), is the Jacobi diagram
+	\[
+		\def\svgscale{0.25}
+		\raisebox{-20pt}{\input{graphics/jacobi_bookshelf.pdf_tex}}
+	\]
+\end{definition}
+
+In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite}, a third-order recursion relation for the values of the \(\mathfrak{sl}_{3}\) weight system on the bookshelf diagrams is found. We use the same idea with the new relation of Theorem \ref{thm:g2-unboxing-relation} to compute their values under the \(\mathfrak{g}_{2}\) weight system.
+
+\begin{theorem}
+	% TODO: Define the casimir element somewhere, probably above.
+	The values of the bookshelf diagram \(B_{i}\) are at most quadratic in the (quadratic) casimir element \(c\) of \(\mathfrak{g}_{2}\). In particular,
+	\[W_{\mathfrak{g}_{2}}(B_{i}) = c^{2} \left( \frac{1}{14} 4^{n} + \frac{27}{112} (5/3)^{n} + \frac{11}{16} (-1)^{n} \right) + c\left( 2^{n} + \frac{8}{3} (5/3)^{n} -\frac{11}{8}(-1)^{n} \right).\]
+\end{theorem}
+
+\begin{proof}
+	Apply Theorem \ref{thm:g2-unboxing-relation}, to the rightmost box on a bookshelf diagram.
+	\[
+		\begin{array}{lll}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf.pdf_tex}}
+			& = &
+			\displaystyle\frac{2}{3}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_h.pdf_tex}}
+			+
+			\displaystyle\frac{2}{3}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_i.pdf_tex}} \\
+			&& +
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_horisontalsmoothing.pdf_tex}}
+			+
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_verticalsmoothing.pdf_tex}}
+			+
+			\displaystyle\frac{5}{6}
+			W_{\mathfrak{g}_{2}}
+			\def\svgscale{0.25}
+			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_diagonalsmoothing.pdf_tex}}
+		\end{array}
+	\]
+
+	Applying \ref{eq:STU} to the final term gives
+	\[
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_diagonalsmoothing.pdf_tex}}
+		=
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_h.pdf_tex}}
+		+
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_horisontalsmoothing.pdf_tex}}
+	\]
+	By Lemma \ref{lem:tribubble-is-half-bibubble}, we have
+	\[
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_h.pdf_tex}}
+		=
+		2^{i - 2}
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_h_popped.pdf_tex}}
+		=
+		2^{i - 2} 4 c^{2}
+	\]
+	This calculation of the \(\mathfrak{g}_{2}\) weight system on this diagram first appears in the literature in the PhD thesis of A. Kaishev which we have been unable to source, however it also appears in \cite[p. 181]{introduction-to-vassiliev-invariants}. Our computer program also verifies it. By Lemma \ref{lem:bibubble-proportional-to-line},
+	\[
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_verticalsmoothing.pdf_tex}}
+		=
+		4^{i - 2}
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_verticalsmoothing_popped.pdf_tex}}
+		=
+		4^{i - 2}c^{2}
+	\]
+
+	All in all,
+	\[
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf.pdf_tex}}
+		=
+		\displaystyle\frac{2}{3}
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_i.pdf_tex}}
+		+
+		\displaystyle\frac{5}{3}
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_horisontalsmoothing.pdf_tex}}
+		+
+		\frac{5}{6} 4^{i - 2} c^{2}
+		+
+		\frac{11}{6} 2^{i - 2} c
+	\]
+	so setting
+	\[
+		g_{i} =
+		W_{\mathfrak{g}_{2}}
+		\def\svgscale{0.25}
+		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf.pdf_tex}}
+	\]
+	we have the second-order non-homogeneous recursion relation for \(g_{i}\)
+	\[g_{i + 2} = \frac{2}{3} g_{i + 1} + \frac{5}{3} g_{i} + \frac{5}{6} 4^{i} c^{2} + \frac{11}{6} 2^{i} c.\]
+	Its fourth-order homogeneous form is
+	\[g_{i + 4} - \frac{20}{3} g_{i + 3} + \frac{31}{3}g_{i + 2} + \frac{14}{3} g_{i + 1} - \frac{40}{3} g_{i} = 0.\]
+	
+	To solve this we need the inital conditions \(g_{1}, g_{2}\) and \(g_{3}\). The first two come from the same computations of Kaishev \cite[p. 181]{introduction-to-vassiliev-invariants}, whereas the third we have to compute ourselves.
+
+	Computing in sagemath the tensor corresponding to the diagram
+	\[
+	\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
+	\]
+	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives values. We have
+	\begin{align*}
+		\rho_{\text{tr.}}(c) &= 0	& \rho_{\text{tr.}}(g_{3}) &= 0 \\
+		\rho_{\text{st.}}(c) &= 2	& \rho_{\text{st.}}(g_{3}) &= \frac{380}{9} \\
+		\rho_{\text{ad.}}(c) &= 4	& \rho_{\text{ad.}}(g_{3}) &= \frac{1120}{9},
+	\end{align*}
+	so by the Lagrange interpolation formula,
+	\[g_{3} = 5c^{2} + \frac{100}{9}c.\]
+	Solving the recurrence relation yields the formula
+	\[
+	g_{i}
+	=
+	c^{2} \left( \frac{1}{14} 4^{i} + \frac{27}{112} (5/3)^{i} + \frac{11}{16} (-1)^{i} \right) + c\left( 2^{i} + \frac{8}{3} (5/3)^{i} -\frac{11}{8}(-1)^{i} \right).
+	\]
+\end{proof}
 
 We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). \[
-	\begin{array}{lll}
+	\begin{array}{ll}
 		-12
 		W_{\mathfrak{f}_{4}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
@@ -668,6 +856,27 @@ We use the same method to compute the a relation in the weight system \(W_{\math
 \]
 
 The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath takes about ten seconds on a [computer specs]. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on [computer specs escona].
+
+
+Finally, we not that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
+
+\begin{theorem}
+	In the weight system corresponding to the Lie algebra \(\mathfrak{sl}_{4}\), there is no linear relation between the diagrams
+	\[
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf},
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf},
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_i.pdf},
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf},
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth_vert.pdf}
+		\;\text{and}\;
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}.
+	\]
+\end{theorem}
+
+\begin{proof}
+	By computer verification with sagemath, the span of the corresponding tensors in \((\mathfrak{sl}_{4})^{\otimes 4}\) is six-dimensional.
+\end{proof}
+
 
 
 \section{A universal metric Lie algebra object}
