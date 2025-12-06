@@ -807,15 +807,15 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 	\[
 	\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
 	\]
-	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives values. We have
+	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives the following values.
 	\begin{align*}
 		\rho_{\text{tr.}}(c) &= 0	& \rho_{\text{tr.}}(g_{3}) &= 0 \\
 		\rho_{\text{st.}}(c) &= 2	& \rho_{\text{st.}}(g_{3}) &= \frac{380}{9} \\
-		\rho_{\text{ad.}}(c) &= 4	& \rho_{\text{ad.}}(g_{3}) &= \frac{1120}{9},
+		\rho_{\text{ad.}}(c) &= 4	& \rho_{\text{ad.}}(g_{3}) &= \frac{1120}{9}
 	\end{align*}
-	so by the Lagrange interpolation formula,
+	So by the Lagrange interpolation formula,
 	\[g_{3} = 5c^{2} + \frac{100}{9}c.\]
-	Solving the recurrence relation yields the formula
+	Solving the recurrence relation with these inital conditions yields the formula
 	\[
 	g_{i}
 	=
@@ -1005,6 +1005,16 @@ The conditions above can alternatively and more naturally be phrased in terms of
 \end{definition}
 In other words, in \(\mathbf{P}_{m}(\mathcal{O}, \tau_{+})\), the action of \(\tau_{+}\) corresponds to the cyclic permutation of inputs and outputs by means of the metric and the casimir.
 
+\begin{proposition}
+	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{P}_{m}(Lie, \tau_{+})\) are exactly the metric Lie algebra objects in the category \(\mathcal{C}\).
+\end{proposition}
+
+\begin{proof}
+	\begin{shaded}
+		Kind of by definition
+	\end{shaded}
+\end{proof}
+
 This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. But furthermore, this permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
 
 \begin{definition}
@@ -1028,7 +1038,17 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 	\end{itemize}
 \end{definition}
 
-This generalises the notion of an algebra with a casimir element (but not necessarily with a metric). We call such algebras casimr Lie algebras.
+\begin{proposition}
+	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{P}_{c}(Lie, \tau_{+})\) are exactly the casimir Lie algebra objects in the category \(\mathcal{C}\).
+\end{proposition}
+
+\begin{proof}
+	\begin{shaded}
+		Kind of by definition
+	\end{shaded}
+\end{proof}
+
+This generalises the notion of a Lie algebra (object) with a casimir element (but not necessarily with a metric). We call such algebra (object) a casimr Lie algebra (object).
 
 The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any finite-dimensional casimir Lie algebra (superalgebra, etc.) is a metric one.
 
@@ -1038,4 +1058,23 @@ The reason we did not see an analagous definition earlier in this chapter is the
 	Consider the tensor category of a specific finite-dimensional (casimir) hence metric Lie algebra object in a specific symmetric tensor category. In \(\mathcal{C}(k, k)\) we have the object formed by the contraction of the tensor with the metric. Since this is finite-dimensional, this is just the trace, therefore the dimension of the algebra. So, in the tensor category we have the relation \(m \circ c = \operatorname{dim} \mathfrak{g}\). If we are trying to find an algebra which contains all the relations true in the tensor category of any metric Lie algebra object, then we arrive at a problem. All the relations of this form are contradictory.
 
 	Two obvious choices present themselves. Removing all relations, therefore allowing symbolic objects of the form \(circle\), we construct an algebra bigger that \(\mathcal{A}\). The other option is to not allow any circles by instead generalising the notion of casimir Lie algebra objects, (or something -- this could use some thought)
+
+	\begin{definition}
+		The object \(\mathbb{L}_{m} \in \mathbf{P}(Lie)\)
+		Hard question: what do I put as the symmetry action here? Usually the symmetry is determined by the category. But here we defined the category as generated by the prop \(\mathbf{P}(\mathcal{O})\) with an additional element. Does this all go round in circles?
+	\end{definition}
+
+	\begin{theorem}[Hinnich-Vaintrob]
+		Under [certain mild conditions] on \(\mathcal{O}\), \(\mathcal{C}\) and \(A\), there exists an algebra \(U(\mathcal{O}, A)\), the quotient of the external tensor algebra, obeying some important relation analogous to the defining property of the external enveloping algebra of a Lie algebra, but general to any operad.
+	\end{theorem}
+
+	\begin{theorem}[Hinnich-Vaintrob]
+		\(U(\mathcal{O} = Lie, A = 1 = \mathbb{L}_{c} \in \mathbf{P}_{c}(Lie))\) is isomorphic as a Hopf algebra to \(\mathcal{A}\).
+	\end{theorem}
+
+	\begin{proof}
+		We appeal to Hinnich and Vaintob a lot.
+	\end{proof}
 \end{shaded}
+
+In the next chapter we look at a generalisation of this statement in the context of welded knots.
