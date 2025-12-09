@@ -779,7 +779,7 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 
 % TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
 
-This bialgebra strucutre on knots is closely related to a Hopf algebra structure on chord diagrams. The general idea is to study the former via the latter.
+This bialgebra strucutre on knots is closely related to a similar bialgebra structure on chord diagrams. Knots are complicated and chord diagrams are much simpler, and the general idea is to study the former via the latter.
 
 In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) and \(\ref{eq:1Tstar}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
@@ -939,9 +939,49 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\end{align*}
 \end{proof}
 
-We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. It also satisfies some technical, mild condition called connectedness. 
- %TODO (ZSuzsi) you could just say what it means
-A connected, graded bialgebra of finite type is sometimes called a Hopf algebra. Note that the modern definition of a Hopf algebra is a more general structure, of which \(\mathcal{A}\) is also an example.  %TODO (ZSuzsi) You can say has an antipode
+We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. In fact \(\mathcal{A}\) is an even more specific structure.
+
+\begin{definition}
+	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra, \(A\), of finite type for which
+	\begin{itemize}
+		\item The unit \(k \to A_{0}\) is an isomorphism (\textbf{connectedness})
+		\item The product is commutative, \(m \circ \tau = m\)
+		\item The coproduct is cocommutative, \(\tau \circ \Delta = \Delta\)
+	\end{itemize}
+	% TODO: Define the swap map or check it has been defined before this.
+\end{definition}
+
+\begin{proposition}
+	The bialgebra \(\mathcal{A}\) is a connected, commutative, cocommutative graded bialgebra of finite type.
+\end{proposition}
+
+\begin{shaded}
+	\begin{proof}
+		The connetedness isomorphism is given by ...
+
+		We have already shown it is commutative.
+
+		The coproduct is clearly cocommutative.
+	\end{proof}
+\end{shaded}
+
+Connected, commutative, cocommutative graded bialgebras of finite type are very rigid structures. In-particular, a classical strucutral theorem applies, and the Hopf algebra can be understood in terms of its primitive elements.
+
+\begin{definition}
+	An element \(x\) is \textbf{primitive} in a coalgebra (so in-particular in a bialgebra) with coproduct \(\Delta\) if it satisfies
+	\[\Delta(x) = 1 \otimes x + x \otimes 1.\]
+	The set of primitive elements of a bialgebra \(A\) is denoted \(\mathcal{P}(A)\), and if \(A\) is graded, then let \(\mathcal{P}_{n}(A)\) denote the set of primitive elements of degree \(n\).
+\end{definition}
+
+\begin{theorem}[Milnor-Moore]
+	Let \(A\) be a connected, commutative, cocommutative bialgebra of finite type, over a field of characteristic zero. Then, as an algebra, \(A\) is isomorphic to the symmetric algebra of \(\mathcal{P}(A)\). In other words, \(A\) is a polynomial algebra in \(\mathcal{P}(A)\).
+\end{theorem}
+
+We give a proof due to Christine Lescop in \cite{invariants-of-links-and-3-manifolds-from-graph-configurations}.
+
+\begin{proof}
+	The 
+\end{proof}
 
 This fact leads to important consequences about the structure of \(\mathcal{A}\) and its relation to Lie algebras, which will the subject of Chapter \ref{ch:lie-theory-and-jacobi-diagrams}.
 
