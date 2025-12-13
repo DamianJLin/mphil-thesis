@@ -1015,6 +1015,8 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, w
 	\[\bigoplus_{m = 0}^{\infty} \mathcal{A}_{m} \cong \bigoplus_{m = 0}^{\infty} \mathcal{K}_{m} / \mathcal{K}_{m + 1}.\]
 \end{theorem}
 
+The equivalence of this version of the theorem with the version (Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}) given in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} will be proven at the end of this section.
+
 We can break the fundamental theorem up into two parts.
 
 \begin{center}
@@ -1029,24 +1031,22 @@ We can break the fundamental theorem up into two parts.
 	\end{tblr}
 \end{center}
 
-The equivalence of this version of the theorem with the version (Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants})given in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} will be proven at the end of this section.
-
-The point of the part of this theorem due to Vassiliev is that the relations in \(\mathcal{A}\) are compatible with the relations of \(\mathcal{K}_{n} / \mathcal{K}_{n + 1}\). Indeed, \(\mathcal{A}\) was constructed in this way, and much of that work was already done in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
+The point of the part of this theorem due to Vassiliev is that the relations in \(\mathcal{A}\) are compatible with the relations of \(\mathcal{K}_{n} / \mathcal{K}_{n + 1}\). Indeed, \(\mathcal{A}\) was constructed in this way, and much of that work was already done in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, and the following proof involves nothing new.
 % TODO: Find reference for Vassiliev
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Vassiliev)}
-	For the map \(a \in \mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following. 
-    %TODO (Zsuzsi) I would rephrase this sentence, $a$ is not a map. Also, perhaos you should first define the map ton $D_m$, and then descend to $A_m$ (which is what you practically do). 
-    Given \(a \in \mathcal{A}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then
-    %TODO (Zsuzsi) switched from present tense to infinitive
-    resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+	For the map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following. 
+	%TODO (Zsuzsi) I would rephrase this sentence. Perhaos you should first define the map ton $D_m$, and then descend to $A_m$ (which is what you practically do).
+	Given \(a \in \mathcal{A}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then
+	%TODO (Zsuzsi) switched from present tense to infinitive
+	resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
 
 	This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\).
-    %TODO (Zsuzsi) Any other \({k^{\bullet}}'\) coming from where?
-    Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
+	%TODO (Zsuzsi) Any other \({k^{\bullet}}'\) coming from where?
+	Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
 
 	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:1T} is in the kernel: a type \ref{eq:1T} chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. The resolution, by the crossing-change argument, can be chosen to be a difference of two knots that are isotopic except around the \ref{eq:1T} double point:
-    %TODO (Zsuzsi) Make the 1T double point a different colour?
+	%TODO (Zsuzsi) Make the 1T double point a different colour?
 	
 	\begin{align*}
 		\delta \left(
