@@ -1206,17 +1206,21 @@ induced by the Kontsevich integral. Canonical Vassiliev invariants were first de
 Finally, we return to the equivalence of the two fundamental theorems.
 
 \begin{proof}[Equivalence of Theorems \ref{thm:fundamental-theorem-of-vassiliev-invariants} and \ref{thm:fundamental-theorem-restated}]
-	For the forward direction, suppose Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} holds. This states that every invariant \(v\) of \(m\)-singular knots satisfying \ref{eq:T4Tstar} and \ref{eq:T1Tstar} and further that \(\delta v = 0\), then \(v\) integrates to an invariant of \(0\)-singular knots.
+	For the forward direction, suppose Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} holds. This states that every invariant \(v^{\bullet}\) of \(m\)-singular knots satisfying \ref{eq:T4Tstar} and \ref{eq:T1Tstar} and further that \(\delta v^{\bullet} = 0\), then \(v^{\bullet}\) integrates to an invariant \(v\) of \(0\)-singular knots.
 
-	First we prove that the Kontsevich part of the fundamental theorem holds. Let \(W\) be a weight system of order \(m\). Then \(W\) defines an invariant \(W'\) of \(m\)-singular knots by \(W'(k) = W(\sigma(k))\). The derivative of \(W'\) is zero. Indeed, 
-	\[\delta W'(k) = W(\sigma(k^{+})) - W(\sigma(k^{-}))\]
+	First we prove that the Kontsevich part of the fundamental theorem holds. Let \(W\) be a weight system of order \(m\). Then \(W\) defines an invariant \(v_{W}^{\bullet}\) of \(m\)-singular knots by \(v_{W}^{\bullet}(k) = W(\sigma(k))\). The derivative of \(v_{W}^{\bullet}\) is zero. Indeed, 
+	\[\delta v_{W}^{\bullet}(k) = W(\sigma(k^{+})) - W(\sigma(k^{-}))\]
 	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar} and \ref{eq:1Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar} and \ref{eq:T1Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant.
 
-	The Vassiliev part of the theorem is independent of the original version and was the section of Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
+	The Vassiliev part of the theorem is independent of the original version and was proven separately in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
 
-	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v\) satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}, and that \(\delta v = 0\). This defines a weight system \(W_{v}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an element of \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\).
+	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v^{\bullet}\) satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}, and that \(\delta v^{\bullet} = 0\). This defines a weight system \(W_{v^{\bullet}}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an invariant class in \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\). Explicitly, this invariant is \(W_{v^{\bullet}} \circ Z\). But by definition of the derivative of an \(m\)-singular invariant,
+		\[
+			\delta^{m} (W_{v^{\bullet}} \circ Z)(k^{\bullet})
+			=
+			(W_{v^{\bullet}} \circ Z)(\delta^{m} k^{\bullet})
+		\]
+	which by the definition of a universal Vassiliev invariant is just \(v^{\bullet}\).
 
-	\begin{shaded}
-		Check that this is an integral.
-	\end{shaded}
+	Thus, \(W_{v^{\bullet}} \circ Z\) is the \(m\)th derivative of \(v^{\bullet}\), so \(v^{\bullet}\) integrates into a Vassiliev invariant of order \(m\), completing the proof.
 \end{proof}
