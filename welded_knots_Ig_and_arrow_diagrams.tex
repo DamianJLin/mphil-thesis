@@ -1,8 +1,45 @@
 \chapter{Welded knots, isometry Lie algebras and arrow diagrams}
 \label{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}
 
+Welded knots, or \(w\)-knots are a generalisation of knots first introduced by [who?].
+
+On one hand, topologically, welded knots are more complicated objects, relating to ribbon embeddings of tori in four dimensions. On the other hand, their finite type invariant theory is much more manageable than the classical case, so studying the simpler, welded version of \(\mathcal{A}\) may shed light on how to study the algebra \(\mathcal{A}\).
+
 \section{Welded knots}
+
+A good and thorough exposition of the theory of welded knots is \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial, finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}. Their presentation is in terms of virtual knots and circuit algebras.
+
+With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves.
+
+On the contrary, with welded knots we proceed the other way and define them diagramatically. We stress that this is not because welded knots lack a suitable topological interpretation. On the contrary, it is known that welded knots surject onto ribbon-knotted tori in \(\mathbb{R}^{4}\) via the tube map \cite{virtual-knot-presentation-of-ribbon-torus-knots}. It is known that there is some global reversal operation contained it its kernel, but it is unknown if that is all \cite{on-the-welded-tube-map}. However, it is widely believed that welded knots modulo this global reversal move are isomorphic to ribbon-knotted tori, or if not then the same is true modulo some additional datum of welded knots (similar to global reversal or framing).
+
+We do not dwell on this topological interpretation, as it is well exposited in \cite{on-the-welded-tube-map} and Chapter 2 of \cite{finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem} and the reader is encouraged to consult the latter before continuing.
+
+\begin{definition}
+	A \textbf{welded knot} is an equivalence class of four-valent planar diagram, where each four-valent planar vertex is decorated by a vertex of one of the following types, or rotated versions thereof.
+	\[\poscross\;, \quad \negcross\;, \quad \virtcross\]
+	(these are known as) such that at along each edge of the diagram, the orientations given by the adjacent vertices agree, and such that when opposite planar vertices are considered connected, there is a single connected component.
+
+	The equivalence relations are planar isotopy and the following moves.
+	\begin{shaded}
+		\begin{itemize}
+			\item Reidemeister moves
+			\item Virtual reidemeister moves
+			\item Overcrossings commute
+		\end{itemize}
+	\end{shaded}
+\end{definition}
+
+\begin{shaded}
+	\begin{remark}
+		Note that we do not allow moves of the form undercrossings commute. Allowing such moves would trivialise welded knots.
+	\end{remark}
+\end{shaded}
 
 \section{Arrow diagrams}
 
+The finite type theory of welded knots is similar to the theory 
+
 \section{A universal welded weight system}
+
+section here

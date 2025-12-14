@@ -1098,8 +1098,11 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 \end{definition}
 
 \begin{definition}
-	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \delta^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
+	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \partial^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
 	\[Z(k) = a + \text{higher degree terms.}\]
+
+	Phrased in terms of \(\sigma\) and \(\partial\) this reads
+	\[Z(\partial^{m}(k^{\bullet})) = \sigma(k^{\bullet}) + \text{higher degree terms.}\]
 \end{definition}
 
 \begin{remark}
@@ -1214,11 +1217,11 @@ Finally, we return to the equivalence of the two fundamental theorems.
 
 	The Vassiliev part of the theorem is independent of the original version and was proven separately in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
 
-	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v^{\bullet}\) satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}, and that \(\delta v^{\bullet} = 0\). This defines a weight system \(W_{v^{\bullet}}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an invariant class in \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\). Explicitly, this invariant is \(W_{v^{\bullet}} \circ Z\). But by definition of the derivative of an \(m\)-singular invariant,
+	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v^{\bullet}\) satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}, and that \(\delta v^{\bullet} = 0\). This defines a weight system \(W_{v^{\bullet}}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an invariant class in \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\). Explicitly, this invariant is \(W_{v^{\bullet}} \circ Z\). But by definition of \(\delta\),
 		\[
 			\delta^{m} (W_{v^{\bullet}} \circ Z)(k^{\bullet})
 			=
-			(W_{v^{\bullet}} \circ Z)(\delta^{m} k^{\bullet})
+			(W_{v^{\bullet}} \circ Z)(\partial^{m} k^{\bullet})
 		\]
 	which by the definition of a universal Vassiliev invariant is just \(v^{\bullet}\).
 
