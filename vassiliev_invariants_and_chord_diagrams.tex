@@ -542,11 +542,11 @@ So far, \(\mathcal{K}\) is a bialgebra whose product respects the filtration. Th
 
 We give a proof, due to Willerton which follows directly from Lemma of \ref{lem:co-leibniz-formula-for-knots} of \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}. The lemma is a formula for the coproduct of an element of \(k \in \mathcal{K}_{m}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is terms of the \(2^{m}\) ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
 
-If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
+If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
 
 \begin{remark}
-	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\delta^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation.
+	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\partial^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation.
 	% NOTE: (Zsuzsi) By "not contain the quotient" you mean you are not quotienting out? It might be worth calling this a lift or cover. "This causes no mathematical difficulty" is a bit hand-wavy, you could instead say that 1. - the bialgebra structure is well defined on the lift, and 2. - if a formula is true in a lift, then its image in a quotient is also true.
 \end{remark}
 
@@ -555,11 +555,11 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 	\label{lem:co-leibniz-formula-for-knots}
 	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
 	\[
-		\Delta(\delta^{S}(k^{\bullet}))
+		\Delta(\partial^{S}(k^{\bullet}))
 		=
-		\sum_{I \subset S} \mu^{\bar{I}}\delta^{I}(k^{\bullet})
+		\sum_{I \subset S} \mu^{\bar{I}}\partial^{I}(k^{\bullet})
 		\otimes
-		\mu^{I}\delta^{\bar{I}}(k^{\bullet})
+		\mu^{I}\partial^{\bar{I}}(k^{\bullet})
 	\]
 	where \(\bar{I} = S \smallsetminus I\).
 \end{lemma}
@@ -568,118 +568,118 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 	% TODO: "proof-read" (haha)
 	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a genuine knot, so
 	\begin{align*}
-		\Delta(\delta^{0}(k))
+		\Delta(\partial^{0}(k))
 		& = \Delta(k) \\
 		& = k \otimes k \\
 		& = \sum_{I \subset \emptyset}
-			\mu^{\bar{I}}\delta^{I}(k)
+			\mu^{\bar{I}}\partial^{I}(k)
 			\otimes
-			\mu^{I}\delta^{\bar{I}}(k). \\
+			\mu^{I}\partial^{\bar{I}}(k). \\
 	\end{align*}
 
-	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\). Let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) denote a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\delta^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We examine
+	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\). Let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) denote a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\partial^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We examine
 	\[
 		\sum_{\mathclap{I \subset J}}
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet})
+			\mu^{\bar{I}}\partial^{I}(k^{\bullet})
 			\otimes
-			\mu^{I}\delta^{\bar{I}}(k^{\bullet}).
+			\mu^{I}\partial^{\bar{I}}(k^{\bullet}).
 	\]
 	Decomposing the sum based on whether \(x \in I\) yields
 	\[
 		\sum_{\mathclap{x \in I \subset J}}
-			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet})
+			\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet})
 			\otimes
-			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet})
+			\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet})
 			+
 			\sum_{\mathclap{x \notin I \subset J}}
-			\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet})
+			\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet})
 			\otimes
-			\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet}),
+			\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet}),
 	\]
-	then resolving either \(\delta\) or \(\mu\) on \(x\),
+	then resolving either \(\partial\) or \(\mu\) on \(x\),
 	\begin{align*}
 		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
-		\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -})
+		\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -})
 		\otimes
-		\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +} + k^{\bullet -}) \\
+		\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet +} + k^{\bullet -}) \\
 		+
 		& \frac{1}{2} \sum_{\mathclap{x \notin I \subset J}}
-		\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +} + k^{\bullet -})
+		\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet +} + k^{\bullet -})
 		\otimes
-		\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -}).
+		\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -}).
 	\end{align*}
 	Expanding, yields the cumbersome formula
 	\begin{align*}
 		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
 			\Big(
-				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+				\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet +})
 				\otimes
-				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+				\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet +})
 				+
-				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+				\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet +})
 				\otimes
-				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}) \\
+				\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet -}) \\
 				& \qquad \qquad \quad -
-				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+				\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet -})
 				\otimes
-				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+				\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet +})
 				-
-				\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+				\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet -})
 				\otimes
-				\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -})
+				\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet -})
 			\Big) \\
 		+
 		& \frac{1}{2} \sum_{\mathclap{x \notin I \subset J}}
 			\Big(
-				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +})
+				\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet +})
 				\otimes
-				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
+				\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
 				-
-				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet +})
+				\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet +})
 				\otimes
-				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -}) \\
+				\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -}) \\
 				& \qquad \qquad \quad +
-				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
+				\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet -})
 				\otimes
-				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
+				\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet +})
 				-
-				\mu^{\bar{I} \smallsetminus \{x\}}\delta^{I}(k^{\bullet -})
+				\mu^{\bar{I} \smallsetminus \{x\}}\partial^{I}(k^{\bullet -})
 				\otimes
-				\mu^{I}\delta^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
+				\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet -})
 			\Big).
 	\end{align*}
 	Since \(\{I \mid I \subset J, x \notin I\}\) is equal to \(\{I \smallsetminus \{x\} \mid I \subset J, x \in I\}\), in each of the above sums, the corresponding terms have the same indices. Hence, the first and last terms in each sum combine, and the second and third terms cancel out to give
 	\[
 		\sum_{\mathclap{x \in I \subset J}}
-			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet +})
+			\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet +})
 			\otimes
-			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet +})
+			\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet +})
 		-
-			\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}(k^{\bullet -})
+			\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet -})
 			\otimes
-			\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}(k^{\bullet -}).
+			\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}(k^{\bullet -}).
 	\]
-	Since neither \(\mu^{\bar{I}}\delta^{I \smallsetminus \{x\}}\) or \(\mu^{I \smallsetminus \{x\}}\delta^{\bar{I}}\) are with respect to \(x\), this can be written
+	Since neither \(\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}\) or \(\mu^{I \smallsetminus \{x\}}\partial^{\bar{I}}\) are with respect to \(x\), this can be written
 	\[
 		\sum_{\mathclap{I \subset J \smallsetminus \{x\}}}
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet +})
+			\mu^{\bar{I}}\partial^{I}(k^{\bullet +})
 			\otimes
-			\mu^{I}\delta^{\bar{I}}(k^{\bullet +})
+			\mu^{I}\partial^{\bar{I}}(k^{\bullet +})
 		-
-			\mu^{\bar{I}}\delta^{I}(k^{\bullet -})
+			\mu^{\bar{I}}\partial^{I}(k^{\bullet -})
 			\otimes
-			\mu^{I}\delta^{\bar{I}}(k^{\bullet -})
+			\mu^{I}\partial^{\bar{I}}(k^{\bullet -})
 	\]
 	which by the inductive hypothesis is
 	\begin{align*}
-		\Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet +})) - \Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet -}))
-		& = \Delta(\delta^{J \smallsetminus \{x\}}(k^{\bullet +}) - \delta^{J \smallsetminus \{x\}}(k^{\bullet -})) \\
-		& = \Delta(\delta^{J}(k^{\bullet})).
+		\Delta(\partial^{J \smallsetminus \{x\}}(k^{\bullet +})) - \Delta(\partial^{J \smallsetminus \{x\}}(k^{\bullet -}))
+		& = \Delta(\partial^{J \smallsetminus \{x\}}(k^{\bullet +}) - \partial^{J \smallsetminus \{x\}}(k^{\bullet -})) \\
+		& = \Delta(\partial^{J}(k^{\bullet})).
 	\end{align*}
 \end{proof}
 
 \begin{proofof}{Proposition \ref{prop:singular-knots-filtered-bialgebra}}
-	The operators \(\delta^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
+	The operators \(\partial^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
 % TODO: I am going to try to make the next part of this subsection, about the Vassiliev invariants being the dual filtered, a little less formal and more paragraphy. Why? Because defining the dual filtered bialgebra in generality feels clumsy. The TODO is to check later that it works fine.
@@ -1244,5 +1244,5 @@ Finally, we return to the equivalence of the two fundamental theorems.
 
 	Thus, \(W_{v^{\bullet}} \circ Z\) is the \(m\)th derivative of \(v^{\bullet}\), so \(v^{\bullet}\) integrates into a Vassiliev invariant of order \(m\), completing the proof.
 
-	Without loss of generality, the proceeds works also in the unframed case.
+	Without loss of generality, the proof works also in the unframed case.
 \end{proof}

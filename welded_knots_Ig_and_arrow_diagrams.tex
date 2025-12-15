@@ -16,6 +16,8 @@ With classical knots, the definition is first and foremost topological; they are
 \end{shaded}
 To avoid this trouble, we choose to work instead with welded long knots. In the classical case, a long knot is the same as a knot, but instead of being \(S^{1} \hookrightarrow \mathbb{R}^{3}\), the embedding is \(k: \mathbb{R} \hookrightarrow \mathbb{R}^{3}\), with the condition that \(k(t) = (t, 0, 0)\) for all large \(|t|\).
 
+For the finite type theory, the algebra \(\mathcal{A}\) of Jacobi diagrams (and chord diagrams), is replaced with \(\mathcal{A}(|)\). The relations are the exact same (either \ref{eq:IHX} or \ref{eq:4T}), but instead of the univalent vertices having a cyclic order (and being drawn on a circle, they have a linear order and are drawn on a line.
+
 Secondly, the relation between welded long knots and long ribbon-knotted tori in \(\mathbb{R}^{4}\) is only conjectural. There is a tube map from welded long knots to long ribbon-knotted tori in \(\mathbb{R}^{4}\) that is known to be surjective but its kernel remains unknown.
 
 The result is a definition of welded knots via diagrams, though it is widely believed that either that welded knots correspond either to long ribbon-knotted tori, or to some small quotient thereof by something akin to framing or rotation number.
@@ -23,7 +25,7 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 \begin{definition}
 	A \textbf{welded knot} is an equivalence class of four-valent planar diagram, where each four-valent planar vertex is decorated by a vertex of one of the following types, or rotated versions thereof.
 	\[\poscross\;, \quad \negcross\;, \quad \virtcross\]
-	(these are known as) such that at along each edge of the diagram, the orientations given by the adjacent vertices agree, and such that when opposite planar vertices are considered connected, there is a single connected component.
+	The third crossing type is called a \textbf{virtual crossing}. Along each edge of the diagram, the orientations given by the adjacent vertices agree, and such that when opposite planar vertices are considered connected, there is a single connected component.
 
 	The equivalence relations are planar isotopy and the following moves.
 	\begin{shaded}
@@ -32,6 +34,9 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 			\item Virtual reidemeister moves
 			\item Overcrossings commute
 		\end{itemize}
+		\begin{remark}
+			Note that we do not allow moves of the form undercrossings commute. Allowing such moves would trivialise welded knots.
+		\end{remark}
 	\end{shaded}
 \end{definition}
 
@@ -39,12 +44,6 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 	\begin{definition}
 		A \textbf{welded long knot} is ...
 	\end{definition}
-\end{shaded}
-
-\begin{shaded}
-	\begin{remark}
-		Note that we do not allow moves of the form undercrossings commute. Allowing such moves would trivialise welded knots.
-	\end{remark}
 \end{shaded}
 
 \section{Arrow diagrams}
