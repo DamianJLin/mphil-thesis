@@ -423,7 +423,7 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 		% TODO: (zsuzsi) Do something about the alignment here? No need for paretheses for "over Q".
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
 			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
-			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\delta^{i}\), that is, \(\mathcal{K}_{i} = \delta^{i}(\singularknots_{i})\).
+			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\partial^{i}\), that is, \(\mathcal{K}_{i} = \partial^{i}(\singularknots_{i})\).
 	\end{enumerate}
 \end{definitions}
 
@@ -432,7 +432,7 @@ Speaking broadly, the aim of Vassiliev theory is to study the space of knots via
 \end{proposition}
 
 \begin{proof}
-	This being a filtration of vector spaces, the only thing to check is that if \(i < j\), then \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\). If \(k \in \mathcal{K}_{j}\), then \(k = \delta^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \delta^{j}(k^{\bullet}) = \delta^{i}\delta^{j - i}(k^{\bullet})\), so \(k \in \delta^{i}(\singularknots_{i})\).
+	This being a filtration of vector spaces, the only thing to check is that if \(i < j\), then \(\mathcal{K}_{i} \supset \mathcal{K}_{j}\). If \(k \in \mathcal{K}_{j}\), then \(k = \partial^{j}(k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}_{j}\). But then \(k = \partial^{j}(k^{\bullet}) = \partial^{i}\partial^{j - i}(k^{\bullet})\), so \(k \in \partial^{i}(\singularknots_{i})\).
 \end{proof}
 
 The algebraic structure on knots comes from the following operation.
@@ -549,6 +549,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\delta^{I}
 	% NOTE: (Zsuzsi) By "not contain the quotient" you mean you are not quotienting out? It might be worth calling this a lift or cover. "This causes no mathematical difficulty" is a bit hand-wavy, you could instead say that 1. - the bialgebra structure is well defined on the lift, and 2. - if a formula is true in a lift, then its image in a quotient is also true.
 \end{remark}
 
+% TODO: The partials below should be deltas
 \begin{lemma}[Willerton]
 	\label{lem:co-leibniz-formula-for-knots}
 	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
