@@ -9,11 +9,16 @@ On one hand, topologically, welded knots are more complicated objects, relating 
 
 A good and thorough exposition of the theory of welded knots is \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial, finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}. Their presentation is in terms of virtual knots and circuit algebras.
 
-With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves.
+With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves. With welded knots, there is a similar topological interpretation, thought its details remain unclear. Welded knot diagrams relate to ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{3}\). However, there are two problems with this classical approach of defining the knot as the ambient isotopy class of the relevant topological objects.
 
-On the contrary, with welded knots we proceed the other way and define them diagramatically. We stress that this is not because welded knots lack a suitable topological interpretation. On the contrary, it is known that welded knots surject onto ribbon-knotted tori in \(\mathbb{R}^{4}\) via the tube map \cite{virtual-knot-presentation-of-ribbon-torus-knots}. It is known that there is some global reversal operation contained it its kernel, but it is unknown if that is all \cite{on-the-welded-tube-map}. However, it is widely believed that welded knots modulo this global reversal move are isomorphic to ribbon-knotted tori, or if not then the same is true modulo some additional datum of welded knots (similar to global reversal or framing).
+\begin{shaded}
+	Firstly, for welded knots, there is a global orientation reversal contianed in the map from the diagrammatic object to the topological object.
+\end{shaded}
+To avoid this trouble, we choose to work instead with welded long knots. In the classical case, a long knot is the same as a knot, but instead of being \(S^{1} \hookrightarrow \mathbb{R}^{3}\), the embedding is \(k: \mathbb{R} \hookrightarrow \mathbb{R}^{3}\), with the condition that \(k(t) = (t, 0, 0)\) for all large \(|t|\).
 
-We do not dwell on this topological interpretation, as it is well exposited in \cite{on-the-welded-tube-map} and Chapter 2 of \cite{finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem} and the reader is encouraged to consult the latter before continuing.
+Secondly, the relation between welded long knots and long ribbon-knotted tori in \(\mathbb{R}^{4}\) is only conjectural. There is a tube map from welded long knots to long ribbon-knotted tori in \(\mathbb{R}^{4}\) that is known to be surjective but its kernel remains unknown.
+
+The result is a definition of welded knots via diagrams, though it is widely believed that either that welded knots correspond either to long ribbon-knotted tori, or to some small quotient thereof by something akin to framing or rotation number.
 
 \begin{definition}
 	A \textbf{welded knot} is an equivalence class of four-valent planar diagram, where each four-valent planar vertex is decorated by a vertex of one of the following types, or rotated versions thereof.
@@ -31,6 +36,12 @@ We do not dwell on this topological interpretation, as it is well exposited in \
 \end{definition}
 
 \begin{shaded}
+	\begin{definition}
+		A \textbf{welded long knot} is ...
+	\end{definition}
+\end{shaded}
+
+\begin{shaded}
 	\begin{remark}
 		Note that we do not allow moves of the form undercrossings commute. Allowing such moves would trivialise welded knots.
 	\end{remark}
@@ -38,7 +49,7 @@ We do not dwell on this topological interpretation, as it is well exposited in \
 
 \section{Arrow diagrams}
 
-The finite type theory of welded knots is similar to the theory 
+The finite type theory of welded knots is similar to the theory
 
 \section{A universal welded weight system}
 

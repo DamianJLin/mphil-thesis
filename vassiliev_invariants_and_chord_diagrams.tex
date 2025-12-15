@@ -13,7 +13,7 @@
 
 \lettrine{\libertineInitialGlyph{P}}{olynomial} functions are a special type of function. They are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
 
-In the same way, the Vassiliev invairants are a special type of functions. And this analogy, first made by Dror Barn-Natan in \cite{on-the-vassiliev-knot-invariants} is by no means superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above, and conjeturally also the third.
+In the same way, the Vassiliev knot invairants are a special type of knot invariant. And this analogy, first made by Dror Barn-Natan in \cite{on-the-vassiliev-knot-invariants} is by no means superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above, and conjeturally also the third.
 
 In this chapter we give a version of the introductory theory of Vassiliev invariants in which the analogy above is made as explicitly as possible. This also leads a natural interpretation of the defining relations of the algebra \(\mathcal{A}\) which is the fundamental object of study in the field.
 
@@ -193,9 +193,12 @@ Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knot
 \[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} P(\Psi_{s}),\]
 in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that triple points and points with vanishing derivative are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate:
 
-\begin{definitions}
+\begin{definition}
+	\label{def:topological-singular-relations}
 	\begin{enumerate}
-		\item The following closed singular isotopy around a triple point:
+		\item
+			\label{subdef:T4Tstar}
+			The following closed singular isotopy around a triple point:
 			\begin{center}
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/triple_point_singular_isotopy.pdf_tex}
@@ -213,7 +216,9 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				f\left( \tftwest \right)
 				= 0.
 			\end{equation}
-		\item The closed singular isotopy
+		\item
+			\label{subdef:T1Tstar}
+			The singular isotopy
 			\begin{center}
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/vanishing_derivative_singular_isotopy.pdf_tex}
@@ -225,7 +230,13 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				f\left( \topologicalonecotermgraphic \right) = 0.
 			\end{equation}
 	\end{enumerate}
-\end{definitions}
+\end{definition}
+
+\begin{remark}
+	Note that for framed knots, only the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T4Tstar} is closed, whereas the singular isotopy Definition~\ref{def:topological-singular-relations}~\ref{subdef:T1Tstar} is not. So only \ref{eq:T4Tstar} holds. When considering unframed knots, the theory is the same as what we present below, but \ref{eq:T1Tstar} plays the same role as \ref{eq:T4Tstar}.
+
+	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams, etc. there is a corresponding theorem for the unframed weight systems, etc. in which for every hypothesis involving a \ref{eq:T4Tstar} (or variant thereof), a similar one involving \ref{eq:T1Tstar} (or variant thereof) must also hold.
+\end{remark}
 
 So, combinations of \(m\)-singular knots of the form
 \[
@@ -236,15 +247,15 @@ So, combinations of \(m\)-singular knots of the form
 	\tftnorth
 	\ + \
 	\tftwest
-	\quad \text{and} \quad
-	\topologicalonecotermgraphic
 \]
 are in \(P\singularknots_{m} = \ker \partial_{m}\). Any nonvanishing functionals on them can't integrate. But do combinations of these forms span the primary obstructions? Are they the only possible reasons that that \(f\) doesn't integrate?
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
-	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \((m - 1)\)-singular knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.
+	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \((m - 1)\)-singular knots if and only if it satisfies \textup{\ref{eq:T4Tstar}}.
 \end{theorem}
+
+For example, in this case corresponding unframed version of Stanford's theorem reads: \textit{An invariant \(f\) of \(m\)-singular unframed knots integrates to an invariant of \((m - 1)\)-singular unframed knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.}
 
 \begin{proof}[sketch]
 	% TODO: Fill out Stanford's integration homotopy proof
@@ -330,27 +341,27 @@ and project them into the space of chord diagrams, we get the following relation
 				= 0.
 			\end{equation}
 
-		\item The \textbf{one-term relation} is the relation
+		\item The \textbf{one-term relation} (only relevant in the unframed case) is the relation
 			\begin{equation}
 				\label{eq:1Tstar}
 				\tag{\onetermstar}
 				q\left( \isolatedchord \right) = 0.
 			\end{equation}
 	\end{enumerate}
-	Just like \ref{eq:T4Tstar} and \ref{eq:T1Tstar}, \ref{eq:4Tstar} and \ref{eq:1Tstar} are not individual relations, but classes of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, 
+	Just like \ref{eq:T4Tstar}, \ref{eq:4Tstar} is not an individual relation, but a class of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, 
     % TODO: [Zsuzsi] 'Far apart' can be confusing, there are four chord ends with three larger gaps. The precise way to do this would be to have part of the arcs dotted, and that's where you can place more chord endings.
     in all of the four diagrams. 
     % (Zsuzsi) But identically in all four
     There's a \ref{eq:1Tstar} relation for all ways of placing chord diagrams between either of the
     %TODO: [Zsuzsi] Here too.
-    two far-apart chord ends. In other words, any chord diagram with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
+    two far-apart chord ends. In the unframed case, any chord diagram with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
 \end{definitions}
 
 \begin{proposition}
-	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4Tstar}} and \textup{\ref{eq:1Tstar}}.
+	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4Tstar}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar} and \ref{eq:1Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} and \ref{eq:T1Tstar} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\)
@@ -368,12 +379,12 @@ But this is a tautological statement of the general theory --- it doesn't mean m
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
-	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}} integrates \(m\) times into a genuine knot invariant.
+	An invariant of \(m\)-singular knots satisfying \textup{\ref{eq:T4Tstar}} integrates \(m\) times into a genuine knot invariant.
 \end{conjecture}
 
 \begin{remarks}
 	\begin{enumerate}
-		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\) and \(\ref{eq:T1Tstar}\), which is what \(S\singularknots\) measures.
+		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\), which is what \(S\singularknots\) measures.
 		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
 		% TODO: Expand this out into a little interlude on graph cohomology?
 		\item This conjecture is proven in certain cases. It holds in the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
@@ -386,7 +397,7 @@ If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev inv
 
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
-	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}}, \textup{\ref{eq:T1Tstar}} and the additional condition that \(\delta v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant of order \(m\)).
+	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}} and the additional condition that \(\delta v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant of order \(m\)).
 \end{theorem}
 
 There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections.
@@ -779,7 +790,7 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 
 This bialgebra strucutre on knots is closely related to a similar bialgebra structure on chord diagrams. Knots are complicated and chord diagrams are much simpler, and the general idea is to study the former via the latter.
 
-In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) and \(\ref{eq:1Tstar}\). We can instead encode this directly into the algebra of chord diagrams by the following relations.
+In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) (and unframed Vassiliev invariants if they further satisfy \(\ref{eq:1Tstar}\)). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
 \begin{equation}
 	\label{eq:4T}
@@ -802,9 +813,10 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 
 \begin{definition}
 	We define \(\mathcal{A}_{m}\), the \textbf{space of chord diagrams} of degree \(m\) as
-	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:4T}, \ref{eq:1T}},\]
+	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:4T}}\]
 	and \(\mathcal{A}\), the \textbf{space of chord diagrams} as
 	\[\mathcal{A} = \bigoplus_{m = 0}^{\infty} \mathcal{A}_{m}.\]
+	(The \textbf{space of unframed chord diagrams}, \(\mathcal{A}'\) is defined similarly from \(\mathcal{A}_{m}' = \mathcal{D}_{m} / \textup{\ref{eq:4T}}, \textup{\ref{eq:1T}}\).)
 \end{definition}
 
 \begin{warning}
@@ -880,7 +892,13 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{proposition}
 
 \begin{proof}
-	No chords are lost during the connected sum: the \ref{eq:4T} relation is homogenous with respect to degree, and the connected sum of a chord diagram containing a \ref{eq:1T} chord relation still contains a \ref{eq:1T} chord. So, the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
+	No chords are lost during the connected sum: the \ref{eq:4T} relation is homogenous with respect to degree, so the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
+	
+	\begin{shaded}
+		For the unframed case note that the connected sum of a chord diagram containing a \ref{eq:1T} chord relation still contains a \ref{eq:1T} chord.
+
+		[Shouldn't the grading be \(-\infty\) then?]
+	\end{shaded}
 \end{proof}
 
 Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to that in \(\mathcal{K}\), there is a coproduct too.
@@ -899,8 +917,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 \begin{proof}
 	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the compatibility condition holds.  %TODO (ZSuzsi) That the coproduct is an algebra morphism (a precise way to say compatibility)
 
-	That \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
-	% TODO: Swap the notation so the 4Ts and 1Ts with stars are in the first chapter and not in the rest.
+	That in the unframed case, \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
 
 	Also, \(\Delta\) factors through \ref{eq:4T}. Suppose that \(K = A_{1} - A_{2} + A_{3} - A_{4}\) is some combination of chord diagrams to be killed by \ref{eq:4T}. This means that \(K\) looks like
 	\[
@@ -1041,12 +1058,10 @@ The point of the part of this theorem due to Vassiliev is that the relations in 
 	%TODO (Zsuzsi) switched from present tense to infinitive
 	resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
 
-	This is well-defined since any other \({k^{\bullet}}'\) also has chord diagram \(a\).
-	%TODO (Zsuzsi) Any other \({k^{\bullet}}'\) coming from where?
-	Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({k^{\bullet}}'\). But if \(k^{\bullet}\) and \({k^{\bullet}}'\) differ by a crossing change, then \(\delta^{m}(k^{\bullet})\) and \(\delta^{m}({k^{\bullet}}')\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\delta^{m}(k^{\bullet})] = [\delta^{m}({k^{\bullet}}')]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\delta^{m}(k^{\bullet})]\)as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
+	This is well-defined since any other \({\ell^{\bullet}}\) that resolves to \(k\) also has chord diagram \(a\).
+	Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({\ell^{\bullet}}\). But if \(k^{\bullet}\) and \({\ell^{\bullet}}\) differ by a crossing change, then \(\partial^{m}(k^{\bullet})\) and \(\partial^{m}({\ell^{\bullet}})\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\partial^{m}(k^{\bullet})] = [\partial^{m}({\ell^{\bullet}})]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\partial^{m}(k^{\bullet})]\) as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
 
-	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\), we need to show that the map factors through the quotient. Indeed \ref{eq:1T} is in the kernel: a type \ref{eq:1T} chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. The resolution, by the crossing-change argument, can be chosen to be a difference of two knots that are isotopic except around the \ref{eq:1T} double point:
-	%TODO (Zsuzsi) Make the 1T double point a different colour?
+	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:4T}\) (and \(\mathcal{A}'_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\)), we need to show that the map factors through the quotient. Indeed in the unframed case, \ref{eq:1T} is in the kernel: a type \ref{eq:1T} chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. The resolution of that singular point, by the crossing-change argument, can be chosen to be a difference of two \((m - 1)\)-singular unframed knots that are singular isotopic:
 	
 	\begin{align*}
 		\delta \left(
@@ -1209,15 +1224,15 @@ induced by the Kontsevich integral. Canonical Vassiliev invariants were first de
 Finally, we return to the equivalence of the two fundamental theorems.
 
 \begin{proof}[Equivalence of Theorems \ref{thm:fundamental-theorem-of-vassiliev-invariants} and \ref{thm:fundamental-theorem-restated}]
-	For the forward direction, suppose Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} holds. This states that every invariant \(v^{\bullet}\) of \(m\)-singular knots satisfying \ref{eq:T4Tstar} and \ref{eq:T1Tstar} and further that \(\delta v^{\bullet} = 0\), then \(v^{\bullet}\) integrates to an invariant \(v\) of \(0\)-singular knots.
+	For the forward direction, suppose Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} holds. This states that every invariant \(v^{\bullet}\) of \(m\)-singular knots satisfying \ref{eq:T4Tstar} and further that \(\delta v^{\bullet} = 0\), then \(v^{\bullet}\) integrates to an invariant \(v\) of \(0\)-singular knots.
 
 	First we prove that the Kontsevich part of the fundamental theorem holds. Let \(W\) be a weight system of order \(m\). Then \(W\) defines an invariant \(v_{W}^{\bullet}\) of \(m\)-singular knots by \(v_{W}^{\bullet}(k) = W(\sigma(k))\). The derivative of \(v_{W}^{\bullet}\) is zero. Indeed, 
 	\[\delta v_{W}^{\bullet}(k) = W(\sigma(k^{+})) - W(\sigma(k^{-}))\]
-	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar} and \ref{eq:1Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar} and \ref{eq:T1Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant.
+	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant.
 
 	The Vassiliev part of the theorem is independent of the original version and was proven separately in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
 
-	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v^{\bullet}\) satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}, and that \(\delta v^{\bullet} = 0\). This defines a weight system \(W_{v^{\bullet}}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an invariant class in \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\). Explicitly, this invariant is \(W_{v^{\bullet}} \circ Z\). But by definition of \(\delta\),
+	Now for the reverse direction, suppose Theorem \ref{thm:fundamental-theorem-restated} holds. Take a \(m\)-singular knot invariant \(v^{\bullet}\) satisfying \ref{eq:4Tstar} and that \(\delta v^{\bullet} = 0\). This defines a weight system \(W_{v^{\bullet}}\), which by the Kontsevich part of Theorem \ref{thm:fundamental-theorem-restated} gives an invariant class in \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\). Explicitly, this invariant is \(W_{v^{\bullet}} \circ Z\). But by definition of \(\delta\),
 		\[
 			\delta^{m} (W_{v^{\bullet}} \circ Z)(k^{\bullet})
 			=
@@ -1226,4 +1241,6 @@ Finally, we return to the equivalence of the two fundamental theorems.
 	which by the definition of a universal Vassiliev invariant is just \(v^{\bullet}\).
 
 	Thus, \(W_{v^{\bullet}} \circ Z\) is the \(m\)th derivative of \(v^{\bullet}\), so \(v^{\bullet}\) integrates into a Vassiliev invariant of order \(m\), completing the proof.
+
+	Without loss of generality, the proceeds works also in the unframed case.
 \end{proof}
