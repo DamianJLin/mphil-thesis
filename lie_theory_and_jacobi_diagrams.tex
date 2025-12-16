@@ -5,7 +5,7 @@ The fundamental theorem of Vassiliev invariants states that the bialgebra of Vas
 
 % TODO: Try to fix(?) and include the below CDM proof of Milnor-Moore. Update: The (elusive) full proof is in Lescop 2024!
 
-\section{Jacobi diagrams, AS, STU and IHX}
+\section{Jacobi diagrams, AS, STU and IHX} %TODO (Zsuzsi) This is a section title in the Dror tradition -- I'd consider just "Jacobi diagrams"
 
 This side of the story reframes the bialgebra \(\mathcal{A}\) as an isomorphic bialgebra known as the algebra of Jacobi diagrams to illuminate the Lie theory connections.
 
@@ -18,7 +18,7 @@ This side of the story reframes the bialgebra \(\mathcal{A}\) as an isomorphic b
 	The vector space of unitrivalent diagrams is denoted \(\mathcal{T}\).
 \end{definition}
 
-When drawing unitrivalent diagrams, there are two notation conventions. Firstly, the fixed cyclic order of the univalent edges of is specified by drawing them connected to a circle (the cyclic order is induced by traversing the circle anticlockwise).  Secondly, all the trivalent vertices are taken with the anticlockwise cyclic ordering unless an arrow around that vertex indicates otherwise.
+When drawing unitrivalent diagrams, there are two notation conventions. Firstly, the fixed cyclic order of the univalent edges is specified by drawing them connected to a circle (the cyclic order is induced by traversing the circle anticlockwise).  Secondly, all the trivalent vertices are taken with the anticlockwise cyclic ordering unless an arrow around that vertex indicates otherwise.
 
 In particular, from the first point, all chord diagrams are unitrivalent diagrams with only univalent vertices (the chord ends). Further examples of unitrivalent diagrams would be
 \[
@@ -45,7 +45,7 @@ In particular, from the first point, all chord diagrams are unitrivalent diagram
 		\end{equation}
 \end{definition}
 
-As usual, this is not an individual relation but a type of relations, true in any diagrams that are identical except for the subdiagrams being as shown.
+As usual, this is not an individual relation but a class of relations, true in any diagrams that are identical except for the subdiagrams being as shown.
 
 Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the \ref{eq:STU} relations imply the \ref{eq:4T} relations, as
 	\[
@@ -64,7 +64,7 @@ Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the 
 	The algebra \(\mathcal{J}\) of Jacobi diagrams is the vector space \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
 \end{definition}
 
-This is well-defined. The proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. From the \ref{eq:STU} relations, we may deduce the following other relations which hold in \(\mathcal{J}\).
+This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. From the \ref{eq:STU} relations, we may deduce the following other relations which hold in \(\mathcal{J}\).
 
 \begin{proposition}
 	The following relations are consequences of the \textup{\ref{eq:STU}} relation in \(\mathcal{J}\):
@@ -103,10 +103,13 @@ This is well-defined. The proof of Proposition \ref{prop:connected-sum-well-defi
 		\item
 			Take two diagrams which differ only by \ref{eq:AS} at one (trivalent) vertex. If the vertex at which the \ref{eq:AS} relation resides is adjacent to a univalent vertex (i.e. touches the outer circle), then this is immediate from applying \ref{eq:STU} to both diagrams at that vertex.
 
-			If the vertex is not immediately adjacent to a univalent vertex, then it is some \(d\) vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
+			If the vertex is not immediately adjacent to a univalent vertex, then it is some \(d\) vertices `in the way'.  %Todo (Zsuzsi) grammar
+            By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
 
 		\item
 			A similar argument applies. If one of the two vertices of the \ref{eq:IHX} is adjacent to the circle, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices. Otherwise, some \ref{eq:STU}s may be required first.
+
+        %TODO (Zsuzsi) This proof is essentially a verbal description of pictures. It would be nicer to include and refer to the picture.
 \end{enumerate}
 \end{proof}
 
@@ -147,7 +150,7 @@ We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mat
 \end{corollary}
 
 \begin{corollary}
-	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic.
+	The bialgebras \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic. %TODO (Zsuzsi) This might just be me but I wouldn't write $J=A$, because the equal sign is loaded... I'd just say from here on we denote by A both chord diagrams and Jacobi diagrams.
 \end{corollary}
 
 \begin{warning}
@@ -155,17 +158,17 @@ We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mat
 \end{warning}
 
 \section{Lie algebra weight systems}
-Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied by \(\mathcal{A}\) are appear also in the context of a graphical notation for multilinear maps, a fact which we may exploit to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}.
+Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied in \(\mathcal{A}\) are appear also in the context of a graphical notation for multilinear maps, a fact which we may exploit to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}.
 
 \begin{remark}
-	This diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. We call them string diagrams.
+	This diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. We call them string diagrams. %TODO (Zsuzsi) I wouldn't necessarily put this in a remark environment, it could be part of your intro paragraph
 \end{remark}
 
-A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the classical canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\).
+A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\).
 
-A tensor can be represented as a vertex with \(m + n\) unbound directed edges; \(m\) incoming edged decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots\)), and \(n\) outgoing edges decordated by \(Y_{1}, \cdots\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
+A tensor can be represented as a vertex with \(m + n\) unbound directed edges: \(m\) incoming edges decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots\)), and \(n\) outgoing edges decordated by \(Y_{1}, \cdots\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
 \[\def\svgscale{0.3} \input{graphics/bracket_string_diagram.pdf_tex}.\]
-In fact, since the relation if true for any elements \(x, y \in \mathfrak{g}\), the labels on the edges can be dropped.
+In fact, since the relation if true for any elements \(x, y \in \mathfrak{g}\), the labels on the edges can be dropped. %TODO (Zsuzsi) Clarify this sentence
 
 Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. Relations can therefore be expressed graphically, for example, the antisymmetry of the bracket \([y, x] = -[x, y]\) becomes
 \[
@@ -197,13 +200,13 @@ Looking at the relations these relations in the tensor algebra \(\mathcal{T}(\ma
 
 % TODO: Decide whether we can be bothered to talk about representations also as vertices. We can also just weight systems into U(g) then take traces wrt a rep after.
 
-Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra. Then it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). We have additional bivalent vertices
+Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra. Then it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). We have additional bivalent vertices %TODO (Zsuzsi) "These elements can be diagrammatically represented as additional bivalent vertices"
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
 	\qquad \text{and} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
 \]
-These can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
+These can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation. %TODO (Zsuzsi) I would add that one way to view this is that the bilinear form induces an isomorphism of g-modules between g and g^*, hence you no longer need to keep track of which is which, hence no need for arrows
 
 Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which graphically can be represented as cyclic invariance of the contraction of the bracket and the metric
 \[
@@ -217,13 +220,16 @@ Moreover, the invariance of the metric can be written as \(\langle [x, y], z \ra
 	\quad
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketyz.pdf}.
 \]
-A similar argument works for the casimir.
+A similar argument works for the casimir. %TODO (Zsuzsi) I think this is the first time you use the word casimir, perhaps introduce it earlier where you first talk about it
 
-A representation of \(\mathfrak{g}\) into a finite-dimensional vector space \(V\) takes the form \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input an output, namely a \(v \in V\) which we denote by a thick line at a shallow angle
+A representation of \(\mathfrak{g}\) into %TODO I think a representation is "on" not "into" V
+a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input an output, namely a \(v \in V\) which we denote by a thick line at a shallow angle
 \[
 	\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex.pdf}.
 \]
-The identity the action is a Lie action, \[\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\] is graphically
+The identity the action is a Lie action, 
+%TODO (Zsuzsi) grammar
+\[\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\] is graphically
 \[
 	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_s.pdf}
 	\quad
@@ -235,6 +241,8 @@ The identity the action is a Lie action, \[\rho([x, y]) = \rho(x)\rho(y) - \rho(
 	\quad
 	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_u.pdf}.
 \]
+
+%TODO (Zsuzsi) I was missing this sentence below where you first introduced the graphical notation for a representation
 Again, arrows are unnecessary on the thick edges corresponding to inputs and outputs of \(V\), as cup and cap vertices similar to the metric and casimir for \(\mathfrak{g}\) are given by the maps
 \[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}.\]
 
@@ -246,6 +254,8 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 	% TODO: Should this be Q?
 	Furthermore if a representation, \(\rho\) of \(\mathfrak{g}\) is given, then a \(\mathbb{C}\)-valued weight system is produced.
 \end{theorem}
+
+{\color{red} READ FROM HERE AND DISCUSS IRREPS}
 
 \begin{construction}
 	\label{cons:lie-algebra-weight-system}

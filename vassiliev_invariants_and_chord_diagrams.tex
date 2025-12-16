@@ -1134,7 +1134,7 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 \end{theorem}
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Kontsevich)}
-	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
+	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses. %TODO (Zsuzsi) I think this easy to see is essentially the universal property of the Kontsevich Integral, which might be good to pint out.
 \end{proofof}
 
 Again, it's worth looking at the proof in the dual setting too.
@@ -1146,10 +1146,12 @@ Again, it's worth looking at the proof in the dual setting too.
 	(or more precisely, the following composition)
 	\[\mathcal{K} \overset{Z}{\longrightarrow} \widehat{\mathcal{A}} \overset{\pi_{m}}{\longrightarrow} \mathcal{A}_{m} \overset{W}{\longrightarrow} \mathbb{Q}\]
 	gives a Vassiliev invariant of order \(m\).
-\end{lemma}
+\end{lemma} %TODO (Zsuzsi) I would state this only precisely, and then note that you'll drop the projection in formulas and write $W(Z(k))$.
 
 \begin{proof}
-	The map \(W \circ Z\) is clearly an invariant, since \(Z\) is an invariant. It's Vassiliev since on linear combinations \(k \in \mathcal{K}_{m + 1}\), \(Z(k)\) has nothing in degree \(m\), so composing with a weight system of degree \(m\) gives zero.
+	The map \(W \circ Z\) is clearly an invariant, since \(Z\) is an invariant. It's Vassiliev since on linear combinations \(k \in \mathcal{K}_{m + 1}\), \(Z(k)\) has nothing in degree \(m\), 
+    %TODO "$Z(k)$ is zero in derees up to m due to the universal property, so projecting to $\mathcal{A}_m$ gives zero"
+    so composing with a weight system of degree \(m\) gives zero. 
 \end{proof}
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (dual)}
@@ -1177,7 +1179,7 @@ Again, it's worth looking at the proof in the dual setting too.
 			& (W \circ Z)(k)
 			\\
 		\end{cases},
-	\]
+	\]%TODO (Zsuzsi) These cases use the opposite notation from usual: usually we write the value first, folowed by "if [condition]". It reads a bit confusing, though it became cleare once I realised how to read it. 
 	then \(W \circ Z = \Omega + \Theta\), where \(\Omega\) recovers the weight system \(W\), when \(k \in \mathcal{K}_{m}\), and \(\Theta\) is some finite type invariant of order \(m - 1\), determined by \(W\).
 
 	In essence, we have found that the cokernel of \(Z^{\ast}\) is \(\mathcal{V}_{m - 1}\), so we get the desired isomorphism \(\mathcal{W}_{m} \cong \mathcal{V}_{m} / \mathcal{V}_{m - 1}\), at least on the level of vector spaces.
@@ -1185,7 +1187,7 @@ Again, it's worth looking at the proof in the dual setting too.
 
 	The natural question arises, what was this summand \(\Theta\)? Fixing \(n < m\) and a knot \(k \in \mathcal{K}_{n}\) with chord diagram \(a_{k}\), it has Kontsevich integral
 	\[Z(k) = a_{k} + \parbox{2.5cm}{\centering terms of \\ order \((n + 1)\)} + \cdots + \parbox{1.8cm}{\centering terms of \\ order \(m\)} + \cdots.\]
-	Applying the projection \(\pi_{m}\), all that remains are some chord diagrams of order \(m\), with some coefficients depending on the intricacies of the Kontsevich integral for that particular knot. Composing with the weight system, this is a \(\mathbb{Q}\)-valued Vassiliev invariant of order \(m - 1\) determined by \(W\).
+	Applying the projection \(\pi_{m}\), all that remains are some chord diagrams of order \(m\), with coefficients depending on the intricacies of the Kontsevich integral for that particular knot. Composing with the weight system, this is a \(\mathbb{Q}\)-valued Vassiliev invariant of order \(m - 1\) determined by \(W\).
 
 
 The name `universal Vassiliev invariant' we gave to the Kontsevich integrals and invariants of its kind is indeed justified. Every Vassiliev invariant can be obtained through the Kontsevich integral.
@@ -1195,7 +1197,7 @@ The name `universal Vassiliev invariant' we gave to the Kontsevich integrals and
 \end{theorem}
 
 \begin{proof}
-	Let \(V \in \mathcal{V}_{m}\). Following the proof above, we can project \(V\) to \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\) to get a weight system \(W_{m}\). Subtracting \(W_{m} \circ Z\) leaves a Vassiliev invariant of one less degree. In other words, via the isomorphism
+	Let \(V \in \mathcal{V}_{m}\). Following the proof above, we can project \(V\) to \(\mathcal{V}_{m} / \mathcal{V}_{m - 1}\) to get a weight system \(W_{m}\). Subtracting \(W_{m} \circ Z\) leaves a Vassiliev invariant of lesser degree. In other words, via the isomorphism
 	\begin{align*}
 		\mathcal{V}_{m}
 		& \cong \mathcal{V}_{m}/\mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1} / \mathcal{V}_{m - 2} \oplus \cdots \oplus \mathcal{V}_{1} / \mathcal{V}_{0} \oplus \mathcal{V}_{0}\\
@@ -1230,7 +1232,7 @@ Finally, we return to the equivalence of the two fundamental theorems.
 
 	First we prove that the Kontsevich part of the fundamental theorem holds. Let \(W\) be a weight system of order \(m\). Then \(W\) defines an invariant \(v_{W}^{\bullet}\) of \(m\)-singular knots by \(v_{W}^{\bullet}(k) = W(\sigma(k))\). The derivative of \(v_{W}^{\bullet}\) is zero. Indeed, 
 	\[\delta v_{W}^{\bullet}(k) = W(\sigma(k^{+})) - W(\sigma(k^{-}))\]
-	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant.
+	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant. %TODO (Zsuzsi) grammar of last sentence 
 
 	The Vassiliev part of the theorem is independent of the original version and was proven separately in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
 
