@@ -51,9 +51,14 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 The finite type theory of welded long knots is similar to that of classical long knots.
 
 \begin{definition}
-	A \textbf{singular welded long knot} is a welded knot whose crossings can also be of the following types
+	A \textbf{singular welded long knot} is a welded long knot whose crossings can also be of the following types
 	\[\semivirtposcross \;, \quad \semivirtnegcross.\]
 	They are known as \textbf{positive semi-virtual crossings} and \textbf{negative semi-virtual crossings}, and they correspond to topological singularities of ribbon-knotted tori.
+
+	% FIX: There's probably better notation.
+	The set of \(m\)-singular welded long knots forms an algebra with the product given by connected sum given by concatenation and coproduct \(\Delta(k) = k \otimes k\). This is called the \textbf{algebra of \(m\)-singular welded long knots}, \(\mathcal{K}_{w, m}^{\bullet}(|)\).
+
+	The algebra of \(0\)-singular welded long knots, or just the algebra of welded long knots \(\mathcal{K}^{\bullet}_{w, 0}(|) = \mathcal{K}_{w}(|)\) is filtered by the images of succesive powers of \(\partial\), just like in the classical case, and the filtration is compatible with the bialgebra structure.
 \end{definition}
 
 Just as in the classical case, the notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer over the the welded case. Here, the derivative and boundary depend on the type of singularity.
@@ -118,10 +123,23 @@ The main difference between \(\mathcal{J}_{w}(|)\) and \(\mathcal{J}(|)\) is the
 Resultingly, only two versions of \ref{eq:STU}, one of \ref{eq:AS} and one of \ref{eq:IHX} remain nontrivial relations in \(\mathcal{J}_{w}(|)\).
 
 \begin{warning}
-	\begin{shaded}
-		Notation: we omit ``long''
-	\end{shaded}
+	From this point it is clear when talking about welded objects we mean long welded objects. So, we write \(\mathcal{A}_{w}(|)\) as \(\mathcal{A}_{w}\), and don't necessarily specify that they are long.
 \end{warning}
+
+The existence of a finite type invariant \(Z\) for welded knots establishes a welded version of the fundamental theorem.
+
+\begin{theorem}
+	There exists a universal Vassiliev invariant \(Z_{w} : \mathcal{K}_{w} \to \mathcal{A}_{w}\).
+\end{theorem}
+
+Unlike the incredible involved construction for \(Z\), the construction of \(Z_{w}\) is relatively simple. The \ref{eq:TC} relation does all of the heavy lifting. A proof can be found in \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}.
+
+\begin{corollary}
+	We have
+	\[\mathcal{A}_{w} \cong \gr \mathcal{A}_{w}.\]
+	Equivalently,
+	\[\mathcal{V}_{w} \cong \gr \mathcal{W}_{w}.\]
+\end{corollary}
 \section{A universal welded weight system}
 
 section here
