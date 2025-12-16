@@ -48,8 +48,80 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 
 \section{Arrow diagrams}
 
-The finite type theory of welded knots is similar to the theory
+The finite type theory of welded long knots is similar to that of classical long knots.
 
+\begin{definition}
+	A \textbf{singular welded long knot} is a welded knot whose crossings can also be of the following types
+	\[\semivirtposcross \;, \quad \semivirtnegcross.\]
+	They are known as \textbf{positive semi-virtual crossings} and \textbf{negative semi-virtual crossings}, and they correspond to topological singularities of ribbon-knotted tori.
+\end{definition}
+
+Just as in the classical case, the notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer over the the welded case. Here, the derivative and boundary depend on the type of singularity.
+
+\begin{align*}
+	\partial \left( \semivirtposcross \right) &= \poscross  -  \virtcross \\
+	\partial \left( \semivirtnegcross \right) &= \virtcross - \negcross
+\end{align*}
+
+And correspondingly for \(m\)-singular invariants and the operator \(\delta\). As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals:
+\[\partial \left( \semivirtposcross + \semivirtnegcross \right) = \poscross - \negcross.\]
+
+\begin{definitions}
+	\begin{enumerate}
+		\item A \textbf{long arrow diagram} of order \(m\) is an oriented line with a distinguished set of \(m\) (ordered) pairs of points, considered up to orientation-preserving diffeomorphism of the line. The set of all long arrow diagrams forms an algebra \(\mathcal{D}_{w}(|)\). The product is induced by the natural connected sum operation on long knots, and the coproduct is given by the same formula as in the classical case. This is called the \textbf{bialgebra of long arrow diagrams}, and it is also graded by degree.
+		\item The \textbf{long arrow diagram of an \(m\)-singular welded long knot}, denoted \(\sigma(k)\) is the arrow diagram formed as follows. Traverse the welded long knot, and whenever a singularity is encountered, place a point on the oriented line. If the hollow part of the singularity is traversed, place a tail, and if the filled part is traversed place a head. Points corresponding to the same singularity are paired, and the order of the pair is tail first, then head.
+	\end{enumerate}
+\end{definitions}
+
+\begin{example}
+	\begin{shaded}
+		Example of arrow diagram and \(\sigma\).
+	\end{shaded}
+\end{example}
+
+Just as in the classical case, there are natural relations to consider on arrow diagrams. The operations and maps defined above factor through the quotient, and we obtain the algebra \(\mathcal{A}_{w}(|)\). We also refer to arrow diagrams as elements of this algebra. However, we are more interested in the algebra \(\mathcal{J}_{w}(|)\).
+
+\begin{definition}
+	A \textbf{long arrow Jacobi diagram} is an oriented unitrivalent graph where every trivalent vertex has at least one vertex oriented inward, and at least one oriented outwards, with the following additional data:
+	\begin{itemize}
+		\item at each trivalent vertex, a cyclic order of the incident edges,
+		\item a fixed linear order on the univalent vertices.
+	\end{itemize}
+	modulo the following relations:
+	\begin{enumerate}
+		\begin{shaded}
+			\item any directed \textbf{STU} relations
+			\item any directed \textbf{AS} relations
+			\item any directed \textbf{IHX} relations
+			\item the \textbf{TC relation} (tails commute relation)
+				\begin{equation}
+					\label{eq:TC}
+					\tag{\tc}
+					\text{tails commuting}
+				\end{equation}
+		\end{shaded}
+	\end{enumerate}
+\end{definition}
+
+The main difference between \(\mathcal{J}_{w}(|)\) and \(\mathcal{J}(|)\) is the tails commute relation. This relation is a consequence of the overcrossings commute relation (in a sense it's the shadow of that relation on the associated graded side). This new relation is very important and dramatically reduces the complexity of the algebra.
+
+\begin{proposition}[Two-in-one-out rule]
+	In \(\mathcal{J}_{w}(|)\), any diagram with one vertex oriented inwards and two vertices oriented outward vanishes.
+\end{proposition}
+
+\begin{shaded}
+	\begin{proof}
+		Follow the path argument of the classical case. Then apply \ref{eq:TC}.
+	\end{proof}
+\end{shaded}
+
+Resultingly, only two versions of \ref{eq:STU}, one of \ref{eq:AS} and one of \ref{eq:IHX} remain nontrivial relations in \(\mathcal{J}_{w}(|)\).
+
+\begin{warning}
+	\begin{shaded}
+		Notation: we omit ``long''
+	\end{shaded}
+\end{warning}
 \section{A universal welded weight system}
 
 section here
