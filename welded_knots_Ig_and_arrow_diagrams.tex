@@ -140,6 +140,32 @@ Unlike the incredible involved construction for \(Z\), the construction of \(Z_{
 	Equivalently,
 	\[\mathcal{V}_{w} \cong \gr \mathcal{W}_{w}.\]
 \end{corollary}
-\section{A universal welded weight system}
+\section{Weight systems and Lie algebras}
 
-section here
+There is a variant of Construction \ref{cons:lie-algebra-weight-system} for welded knots taking a Lie algebra and constructing a weight system. The difference is that vertices in string diagrams now have incoming edges (``heads'') and outgoing edges (``tails''), and diagramatically, only edges of the opposite orientation can be contracted. This was not true in the classical case, and the need to fix this is what made us restrict to metric Lie algebras. Hence, in the welded case we can consider any finite-dimensional Lie algebra.
+
+Note an imporant difference to the classical case. There are now two types of univalent vertices that can connect to the external line: heads and tails. Heads correspond to elements of \(\mathfrak{g}\) and tails to elements of \(\mathfrak{g}^{\ast}\). Therefore, the role of \(\mathcal{U}(\mathfrak{g})\) in the classical case must be played here by some other associative algebra whose basis elements are words in \(\mathfrak{g} \sqcup \mathfrak{g}^{\ast}\).
+
+Analysing the relations involving the external line should tell us what kind of object replaces \(\mathcal{U}(\mathfrak{g})\).
+
+There are four diagrams of the type
+\begin{shaded}
+	\[\text{bracket style vertex from } a \otimes b \to c\]
+\end{shaded}
+Recall that since \ref{eq:STU}s come from \ref{eq:4T}s, that at most two edges may be heads and at most two may be tails around each vertex. Thus there are four cases. In each of the four cases, we have
+\begin{shaded}
+	\[\text{bracket style vertex from \(a \otimes b \to c\)} = \lambda (a b - b a).\]
+\end{shaded}
+Of course, in the \ref{eq:TC} case, this is only true becasue \(\lambda = 0\).)
+
+So, the correct associative algebra target for the weight system is still the Universal enveloping algebra of some Lie bialgebra. From the relations above we can determine the structure of this Lie algebra.
+
+\begin{shaded}
+	By the regular \ref{eq:STU}, it should have the bracket of \(\mathfrak{g}\) on the \(\mathfrak{g}\) part. By \ref{eq:TC} it should have the zero bracket on the \(\mathfrak{g}^{\ast}\) part. By the other two brackets, it should have the coadjoint action (which needs to be defined).
+\end{shaded}
+
+\begin{definition}
+	Let \(\mathfrak{g}\) be a finite dimensional Lie algebra.
+
+	The \textbf{cocommutative double} of a finite-dimensional Lie algebra \(\mathfrak{g}\), denoted \(I\mathfrak{g}\), is the Lie algebra 
+\end{definition}
