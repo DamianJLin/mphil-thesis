@@ -297,18 +297,36 @@ Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\ma
 		Explicitly have diagrams for all the relations, involving the symmetry natural transformation, so that we can later say that this could not be the on-the-nose identity.
 	\end{shaded}
 
-	Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
+	Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). 
+    %TODO (Zsuzsi) And the cyclic symmetry?
+    If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
-	but this equality is exactly the quotient in the \(\mathcal{U}(\mathfrak{g})\).
+	but this equality is exactly the defining relation of \(\mathcal{U}(\mathfrak{g})\).
 
 	Indeed \ref{eq:AS} and \ref{eq:IHX} follow from \ref{eq:STU} but they are also easy to see directly. \(\ref{eq:AS}\) follows from the skew-symmetry of the vertex \(m\), being built out of the bracket, and \(\ref{eq:IHX}\) follows from the Jacobi identity in \(\mathfrak{g}\).
 
-	Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We should show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. Since it is stronger, let us prove it instead for \(\mathcal{A}\).
-	% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras).
+	Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We need to show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. 
+    %TODO (Zsuzsi) I find this phrasing confusing because the tensor lives in the codomain, while "anything satisfying STU" lives in the domain. Maybe you just want to say that the required property follows from the fact that chord diagrams on a line are cyclically symmetric.
+    Since it is stronger, let us prove it instead for \(\mathcal{A}\).
+	% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras). 
+    %TODO (Zsuzsi) I think that's a good idea, so here in the proof you can just say this is a direct consequence of Lemma XX.
 
-	It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) in the first position and moving it to the last position, reducing by one the positions of all other legs. This generates the cyclic group on the number of univalent vertices, so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. We will show that this cost is zero.
+	It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) 
+    %TODO (Zsuzsi) Singular vs plural
+    in the first position and moving it to the last position, reducing by one the positions of all other legs. 
+    %TODO (Zsuzsi) I think saying you're reducing the positions of the legs is unnecessary (it's about as confusing as it is helpful)
+    This generates the cyclic group on the number of univalent vertices, 
+    %TODO (Zsuzsi) Maybe better: "This operation generates all cyclic permutations of the legs"?
+    so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost
+    %TODO (Zsuzsi) Cost is a word you and I and Dror use in conversation, but it isn't mathematically precise, nor universally understood
+    of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. 
+    %TODO (Zsuzsi) Grammar
+    We will show that this cost is zero.
 
-	We split this sum by the connected components of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
+	We split this sum by the connected components
+    %TODO (Zsuzsi) Component? (singular)
+    of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
+    %TODO (Zsuzsi) This is near impossible to decode without a picture
 
 	That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
 \end{proof}
