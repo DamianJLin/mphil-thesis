@@ -254,28 +254,44 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 	% TODO: Should this be Q?
 	Furthermore if a representation, \(\rho\) of \(\mathfrak{g}\) is given, then a \(\mathbb{C}\)-valued weight system is produced.
 \end{theorem}
-
-{\color{red} READ FROM HERE AND DISCUSS IRREPS}
+%TODO (Zsuzsi) I would have an informal intro paragraph describing what the construction will do, and state the theorem after, when we can understand what it states. (My principle, which is mainstream but not universal, is that Theorem, Lemma and Definition environments should always include precise statements that the reader has enough information to understand.)
 
 \begin{construction}
 	\label{cons:lie-algebra-weight-system}
-	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\) with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
+    %TODO Zsuzsi: Start with the input: a lie algebra and a chord diagram with this many trivalent vertices, this many univalent vertices, etc. Set the notation at the beginning. Say what output you're aiming for: an element of U(g)
+	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\)
+    %TODO (Zsuzsi) Are we supposed to know what $m$ is? I think above you called in $[,]$.
+    with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine 
+    %TODO (Zsuzsi) what does genuine mean here?
+    element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. 
+    %TODO (ZSuzsi) Streamline the sentence above
+    There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
 
 	For each edge between the trivalent vertices in the Jacobi diagram, contract the corresponding variables in \(\mathfrak{g}^{\otimes 3 v}\). The result lies in \(\mathfrak{g}^{\otimes 3v - 2e}\) where \(e\) is the number of edges between trivalent vertices.
 
-	The number of univalent vertices matches the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices. So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into an order which respects the induced cyclic order (there are many --- choose one). Projecting from the tensor algebra of \(\mathfrak{g}\) into its universal enveloping algebra, we obtain an element \(W_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
+	The number of univalent vertices matches the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices.
+    %TODO (Zsuzsi) This is a bit unclear. The tensor factors were associated to the "ends" of the edges coming out of a trivalent vertex, not to the vertices. So, what do you mean by "remaining" or "uncontracted" trivalent vertices? In my opinion this is not needed: the remaining tensor factors correspond to the univalent vertices, period. And these are cyclically ordered. 
+    So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into an order which respects the induced cyclic order (there are many --- choose one).
+    %TODO (Zsuzsi) There are exactly $u$ choices?
+    Projecting from the tensor algebra of \(\mathfrak{g}\) into the universal enveloping algebra \(\mathcal{U}(\mathfrak{g})\), we obtain an element \(W_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
 
-	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation to take the trace of \(W_{\mathfrak{g}}(J)\). The result is an element of the ground field \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
+	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation and take the trace of \(W_{\mathfrak{g}}(J)\). The result is an element of the ground field: \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
 \end{construction}
 
+%TODO (Zsuzsi) A picture to illustrate this construction is depreately needed. I understand what you're saying, but only because I know it.
+
 \begin{warning}
-	When constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y, x, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU}.
+	When constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y, x, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU}. 
+    %TODO (Zsuzsi) This warning should be stated within the construction, rather than as a separate environment?
 \end{warning}
 
 Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) and \(W_{\mathfrak{g}, \rho}: \mathcal{A} \to \mathbb{C}\) which we claim are weight systems.
 
 \begin{proof}
-	The contruction creates a string diagram which is well-defined modulo certain diagrammatic relations as seen at the start of this section such as the cyclic invariance of the contraction of the metric and bracket. By \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}, string diagrams modulo these relations are exactly encoded by unitrivalent graphs with a cyclic order on trivalent vertices, and a linear order on univalent vertices.
+%TODO (Zsuzsi) Proof of what?
+	The contruction creates a string diagram which is well-defined modulo certain diagrammatic relations as seen at the start of this section such as the cyclic invariance of the contraction of the metric and bracket. 
+    %TODO (Zsuzsi) Instead of "relations seen at the beginning of the sections such as ..." have the relations as numbered equations, and reference them specifically.
+    By \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}, string diagrams modulo these relations are exactly encoded by unitrivalent graphs with a cyclic order on trivalent vertices, and a linear order on univalent vertices.
 
 	\begin{shaded}
 		Explicitly have diagrams for all the relations, involving the symmetry natural transformation, so that we can later say that this could not be the on-the-nose identity.
