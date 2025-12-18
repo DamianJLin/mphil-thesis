@@ -9,7 +9,7 @@ On one hand, topologically, welded knots are more complicated objects, relating 
 
 A good and thorough exposition of the theory of welded knots is \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial, finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}. Their presentation is in terms of virtual knots and circuit algebras.
 
-With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves. With welded knots, there is a similar topological interpretation, thought its details remain unclear. Welded knot diagrams relate to ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{3}\). However, there are two problems with this classical approach of defining the knot as the ambient isotopy class of the relevant topological objects.
+With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves. With welded knots, there is a similar topological interpretation from \cite{virtual-knot-presentation-of-ribbon-torus-knots}, thought its details remain unclear. Welded knot diagrams relate to ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{3}\). However, there are two problems with this classical approach of defining the knot as the ambient isotopy class of the relevant topological objects.
 
 \begin{shaded}
 	Firstly, for welded knots, there is a global orientation reversal contianed in the map from the diagrammatic object to the topological object.
@@ -18,7 +18,7 @@ To avoid this trouble, we choose to work instead with welded long knots. In the 
 
 For the finite type theory, the algebra \(\mathcal{A}\) of Jacobi diagrams (and chord diagrams), is replaced with \(\mathcal{A}(|)\). The relations are the exact same (either \ref{eq:IHX} or \ref{eq:4T}), but instead of the univalent vertices having a cyclic order (and being drawn on a circle, they have a linear order and are drawn on a line.
 
-Secondly, the relation between welded long knots and long ribbon-knotted tori in \(\mathbb{R}^{4}\) is only conjectural. There is a tube map from welded long knots to long ribbon-knotted tori in \(\mathbb{R}^{4}\) that is known to be surjective but its kernel remains unknown.
+Secondly, the relation between welded long knots and long ribbon-knotted tori in \(\mathbb{R}^{4}\) is only conjectural. There is a tube map from welded long knots to long ribbon-knotted tori in \(\mathbb{R}^{4}\) that is known to be surjective but its kernel remains unknown. A good exposition is \cite{on-the-welded-tube-map}.
 
 The result is a definition of welded knots via diagrams, though it is widely believed that either that welded knots correspond either to long ribbon-knotted tori, or to some small quotient thereof by something akin to framing or rotation number.
 
@@ -156,16 +156,34 @@ Recall that since \ref{eq:STU}s come from \ref{eq:4T}s, that at most two edges m
 \begin{shaded}
 	\[\text{bracket style vertex from \(a \otimes b \to c\)} = \lambda (a b - b a).\]
 \end{shaded}
-Of course, in the \ref{eq:TC} case, this is only true becasue \(\lambda = 0\).)
+Of course, in the \ref{eq:TC} case, this is only true becasue \(\lambda = 0\). So, the correct associative algebra target for the weight system is still the Universal enveloping algebra of some Lie algebra, and the Lie algebra as a vector space is \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\). From the relations above we can determine the structure of this Lie algebra.
 
-So, the correct associative algebra target for the weight system is still the Universal enveloping algebra of some Lie bialgebra. From the relations above we can determine the structure of this Lie algebra.
-
+The \ref{eq:STU} with two heads on the external line implies that the bracket on \(\mathfrak{g} \oplus 0\) should be inherited from the bracket on \(\mathfrak{g}\).
 \begin{shaded}
-	By the regular \ref{eq:STU}, it should have the bracket of \(\mathfrak{g}\) on the \(\mathfrak{g}\) part. By \ref{eq:TC} it should have the zero bracket on the \(\mathfrak{g}^{\ast}\) part. By the other two brackets, it should have the coadjoint action (which needs to be defined).
+	Diagram of the regular \ref{eq:STU} with tails marked \(x^{\ast}, y^{\ast}\), and heads on the external line marked \(x, y\), then \([x, y]\).
 \end{shaded}
 
-\begin{definition}
-	Let \(\mathfrak{g}\) be a finite dimensional Lie algebra.
+The \ref{eq:TC} relation implies that the bracket on \(0 \oplus \mathfrak{g}\) should be the zero-bracket.
+\begin{shaded}
+	Diagram of the regular \ref{eq:STU} with tails marked \(x^{\ast}, y^{\ast}\), and heads on the external line marked \(x, y\), then \([x, y]\).
+\end{shaded}
 
-	The \textbf{cocommutative double} of a finite-dimensional Lie algebra \(\mathfrak{g}\), denoted \(I\mathfrak{g}\), is the Lie algebra 
+Th bracket structure is known on the \(0 \oplus \mathfrak{g}\) and \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\) direct summands, so the total Lie algebra structure will be a semidirect product \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\), and what remains is to specify an action of \(\mathfrak{g}\) on \(\mathfrak{g}^{\ast}\). The remaining `mixed' \ref{eq:STU} relations determine this.
+\begin{shaded}
+	Diagram of the mixed \ref{eq:STU} with TU external line markings \(x, \phi\) and \(\phi, x\), and markings above \(x^{\ast}\) and \(\phi^{\ast}\). In the S diagram, the external line marking should be the variable \(\theta\).
+\end{shaded}
+This is to say, if \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), then \(\theta\) satisfies the equation \([\cdot, \cdot] = x^{\ast} \otimes \theta \otimes \phi^{\ast}\), whereby
+\[[x, \theta^{\ast}] = \phi^{\ast} \quad \text{ so } \quad \phi([x, \theta^{\ast}]) = 1.\]
+So, \(\theta \in \mathfrak{g}^{\ast}\) is the functional
+\[\theta: t \longmapsto \phi([x, t]).\]
+This is also known as the \textbf{coadjoint action}, \(\theta = \operatorname{ad}^{\ast}_{x}(\phi)\).
+The corresponding calculation for the mixed \ref{eq:STU} relation yields \([\psi \oplus 0, 0 \oplus y] = -\operatorname{ad}^{\ast}_{y}(\psi)\).
+
+\begin{definition}
+	Let \(\mathfrak{g}\) be a finite-dimensional Lie algebra. Then let \(I\mathfrak{g}\) denote the Lie algebra \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\) where \(\mathfrak{g}^{\ast}\) is the abelian Lie algebra on the vector space \(\mathfrak{g}^{\ast}\). The bracket on \(I\mathfrak{g}\) is given by
+	\[[\phi \oplus x, \psi \oplus y] = \operatorname{ad}_{x}(\phi) - \operatorname{ad}_{y}(\psi) \oplus [x, y].\]
 \end{definition}
+\begin{remark}
+	This construction coincedes with the Drinfeld double of the Lie bialgebra \(\mathfrak{g}\), in the case where \(\mathfrak{g}\) is co-commutative \cite{quantum-groups}.
+\end{remark}
+
