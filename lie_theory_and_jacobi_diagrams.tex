@@ -580,11 +580,13 @@ More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-gr
 \section{Some weight systems at the exceptional Lie algebras}
 \label{sec:some-weight-systems-at-the-exceptional-lie-algebras}
 
-The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.}
+The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.} %TODO (Zsuzsi) Don't forget...
 
 The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'.
 
-Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
+Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) 
+%TODO (Zsuzsi) What are paramenters?
+in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
 
 Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
 \[
@@ -660,7 +662,9 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 	\end{shaded}
 \end{proof}
 
-Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lambda = 1/4\)), gives the following relation.
+Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lambda = 1/4\)), gives the following relation. 
+%TODO (Zsuzsi) Explain above that $\lambda$ depends on the metric?
+
 \begin{proposition}
 	\[
 		\begin{array}{ll}
@@ -695,7 +699,9 @@ Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lam
 	\]
 \end{proposition}
 
-This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However it's not obvious that this is true, and various other relations have to be applied to turn the rotated version into the original relation. This suggests that perhaps the relation is a consequence of a similar relation.
+This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However it's not obvious that this is true,
+%TODO (Zsuzsi) It *is* obvious though that this is true... I guess it's just not obvious how to use relations to equate the two?
+ and various other relations have to be applied to turn the rotated version into the original relation. This suggests that perhaps the relation is a consequence of a similar relation.
 
 \begin{theorem}
 	\label{thm:g2-unboxing-relation}
@@ -865,7 +871,9 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 	\[
 	\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
 	\]
-	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives the following values.
+	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). 
+    %Maybe talk about $g_3$ first, rather than the other one?
+    The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives the following values.
 	\begin{align*}
 		\rho_{\text{tr.}}(c) &= 0	& \rho_{\text{tr.}}(g_{3}) &= 0 \\
 		\rho_{\text{st.}}(c) &= 2	& \rho_{\text{st.}}(g_{3}) &= \frac{380}{9} \\
@@ -881,7 +889,9 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 	\]
 \end{proof}
 
-We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). \[
+We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). 
+%TODO (Zsuzsi) State as Theorem?
+\[
 	\begin{array}{ll}
 		-12
 		W_{\mathfrak{f}_{4}}
@@ -913,7 +923,7 @@ We use the same method to compute the a relation in the weight system \(W_{\math
 	\end{array}
 \]
 
-The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath takes about ten seconds on a [computer specs]. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on [computer specs escona].
+The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath takes about ten seconds on a [computer specs]. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on [computer specs escona].%TODO(Zsuzsi) Don't forget to fill these in
 
 
 Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
