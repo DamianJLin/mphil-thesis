@@ -323,10 +323,7 @@ Since we are trying to integrate more than once, we might wish to know which con
 	A \textbf{weight system} is an integrable \(w \in \mathcal{D}_{m}^{\ast}\).
 \end{definition}
 
-If we take the relations for a knot invariant to be integrable
-% NOTE: [Zsuzsi] I first read this as "If we assume that the relations for a knot invariant are integrable"... Perhaps rephrase, like "the relations that a knot invariant needs to respect in order to be integrable".
-% NOTE: [Zsuzsi] What does 'project' mean here? I would state the specific map you are using.
-and project them into the space of chord diagrams, we get the following relations.
+The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot invariants must satisfy to be integrable. If we take their images under \(\sigma\), we get the following relations in the space of chord diagrams.
 
 \begin{definitions}
 	\label{def:ft-ot-relations}
@@ -408,20 +405,16 @@ In the words of Bar-Natan: ``Always the method is indirect and very complicated,
 	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs of the theorem.
 \end{remark}
 
-In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will look at equivalent formulation of the fundamental theorem.
-% TODO: (Zsuzsi) Do you want to foreshadow why/ what the advantage of the different formulation is?
+In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will prove an equivalent formulation of the fundamental theorem.
 
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
 
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots via the space of chord diagrams, using information from the stratification of knots introduced in the first two sections. But this space is not just a vector space; it has some further structure which we wish to incorporate. In this section, we synthesise all of this information into one algebraic structure.
-
-%TODO (Zsuzsi) In this intro paragraph it might be nice to say the words 'associated graded' or at least some euphemism like 'which can be considered an algebraic counterpart of the space of knots'
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections. This is done via the space of chord diagrams, which can be considered its linearisation or projectivisation. But these spaces are not just vector spaces. There is some further structure which we wish to incorporate.
 
 \begin{definitions}
 	\begin{enumerate}
-		\item The \textbf{space of knots}, denoted \(\mathcal{K}\), is the vector space spanned, over \(\mathbb{Q}\), by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
-		% TODO: (zsuzsi) Do something about the alignment here? No need for paretheses for "over Q".
+	\item The \textbf{space of knots}, denoted \(\mathcal{K}\), is the vector space spanned, over~\(\mathbb{Q}\), by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
 			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
 			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\partial^{i}\), that is, \(\mathcal{K}_{i} = \partial^{i}(\singularknots_{i})\).
@@ -451,15 +444,11 @@ The algebraic structure on knots comes from the following operation.
 	This definition is extended bilinearly to \(\mathcal{K}\), i.e., to linear combinations of knots.
 \end{definition}
 
-The connected sum of knots is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed.
-% NOTE: (Zsuzsi) Suggention: Or along what path they should be connected.
-% TODO: Think about this
-However, by a classical knot-theoretic argument, the result is independent of this choice.
+The connected sum of knots is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed or along which path they should be connected. However, by a classical knot-theoretic argument, the result is independent of either choice.
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
-	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) operations is well-defined. It does not matter where along either knot the small arc was removed, the results are ambient-isotopic.
-	% NOTE: (Zsuzsi) Suggestion: "Up to ambient isotopy, the connected sum of two knots is independent of the choice of where and along what path the connection was performed."
+	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) operations is well-defined: up to ambient isotopy, it does not matter where and along what path the connection was performed.
 \end{proposition}
 
 \begin{proof}
@@ -478,13 +467,14 @@ However, by a classical knot-theoretic argument, the result is independent of th
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_4.pdf}
 	\]
 	The above argument works for any choice of small arc removed along \(k_{1}\), and the same argument with the roles of \(k_{1}\) and \(k_{2}\) reversed completes the proof.
-	% NOTE: (Zsuzsi) Suggestion: This also shows that the path along which you connect doesn't matter, because you can "pull" tiny k_2 along it until it's within the tubular nbhd of k_1.
+
+	A similar agument also shows that the path along which the two knots are connected doesn't matter, as \(k_{2}\) can always be shrunk to within a small tubular neighbourhood of \(k_{1}\).
 \end{proof}
 
 \begin{proposition}
 	The connected sum respects the descending filtration:
 	\[K_{i} \connect K_{j} \subset K_{i + j}.\]
-	That is, the connected sum makes \((\mathcal{K}, \connect)\) into an ascending filtered algebra. % TODO: (Zsuzsi) Check: should be Descending?
+	That is, the connected sum makes \((\mathcal{K}, \connect)\) into a descending filtered algebra.
 \end{proposition}
 
 \begin{proof}
@@ -495,15 +485,16 @@ However, by a classical knot-theoretic argument, the result is independent of th
 	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\delta^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k_{\bullet} \connect \ell_{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
 \end{proof}
 
-% NOTE: to self --- do I say 'Indeed' too much?
-
 \begin{shaded}
 	Say something intelligent to introduce this definition.
 
 	I guess it's something like: We assert that knots are (semi)group-like. This must be somehow related to (some?) chord diagrams being like exponentials (primitives?).
 \end{shaded}
 
-%TODO (Zsuzsi) One way to approach this would be to say that the set of knots forms a commutative monoid, and $\mathcal{K}$ is its monoid algebra. Just like the group algebra of a group is made into a bialgbera by a natural coproduct which makes the elements of the group "group-like", the same is true for the monoid algebra of a monoid. /// On chord diagrams: Yes, chord diagrams are also equipped with a coproduct, and for example the Konsevich integral respects the coalgebra structure by sending knots to group-like elements in chord diagrams. Yes, group-like is equivalent to "exponential of a primitive", where primitive means $\Delta(x)=1\otimes x + x\otimes 1$.
+% TODO: (Zsuzsi) One way to approach this would be to say that the set of knots forms a commutative monoid, and $\mathcal{K}$ is its monoid algebra.
+% Just like the group algebra of a group is made into a bialgbera by a natural coproduct which makes the elements of the group "group-like", the same is true for the monoid algebra of a monoid.
+% On chord diagrams: Yes, chord diagrams are also equipped with a coproduct, and for example the Konsevich integral respects the coalgebra structure by sending knots to group-like elements in chord diagrams. Yes, group-like is equivalent to "exponential of a primitive", where primitive means $\Delta(x)=1\otimes x + x\otimes 1$.
+% TODO: (Damian) Let's talk about this.
 
 \begin{definition}
 	The coproduct \(\Delta: \mathcal{K} \to \mathcal{K} \otimes \mathcal{K}\) is defined on knots \(k\) as
@@ -512,14 +503,12 @@ However, by a classical knot-theoretic argument, the result is independent of th
 \end{definition}
 
 \begin{proposition}
-	The connected sum and coproduct are compatible. %TODO (ZSuzsi) I would either swap these two sentences, or just drop the first one.
-    That is, \((\mathcal{K}, \connect, \Delta)\) forms a bialgebra.
+    The triple \((\mathcal{K}, \connect, \Delta)\) forms a bialgebra. In other words, the connected sum and coproduct are compatible.
 \end{proposition}
 
 \begin{proof}
-	A bialgeba is a coalgebra that is also an algebra with compatible product and coproduct. 
-    %TODO (ZSuzsi) A bialgebra is an algebra which is equipped with a coassociative counital coproduct, which is an algebra map.
-    That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
+	A bialgeba is a vector space which is both a coalgebra and an algebra algebra with compatible product and coproduct.
+	That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
 	\begin{align*}
 		\Delta(k \connect \ell)
 		& = k \connect \ell \otimes k \connect \ell \\
@@ -565,7 +554,6 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 \end{lemma}
 
 \begin{proof}
-	% TODO: "proof-read" (haha)
 	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a genuine knot, so
 	\begin{align*}
 		\Delta(\partial^{0}(k))
