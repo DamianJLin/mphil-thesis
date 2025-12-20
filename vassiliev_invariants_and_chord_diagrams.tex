@@ -36,7 +36,6 @@ In this chapter we give a version of the introductory theory of Vassiliev invari
 
 A singular knot with one double point is very close to two other knots. In one, the double point is replaced by a positive crosing, and in the other a negative crossing.
 
-% TODO: Does this suffice for a definition?
 Just as we have notions of ambient isotopy for knots, and knot invairants, we can have \(m\)-singular isotopy and \(m\)-singular knot invariants.
 
 \begin{definition}
@@ -121,12 +120,12 @@ To help see the bird's eye view we phrase the analogy between Vassiliev invarian
 		\arrow["\partial", from=1-4, to=1-5]
 		\arrow["\partial", from=1-5, to=1-6]
 	\end{tikzcd}\]
-	of abelian groups. In case we need to refer to a specific map, let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
+	of objects in some category, for example they could be vector spaces, algebras, free abelian groups, modules, etc. Here we call them spaces, because we wish to use the word object for elements of the spaces. In case we need to refer to a specific map, let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
 
-The group \(\mathcal{O}_{0}\) is typically free abelian, and in our case this is the primary object we want to study. The groups \(\mathcal{O}_{m}\) are also typically free abelian groups, and can often be thought of as \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
+The space \(\mathcal{O}_{0}\) is the primary space we want to study. The spaces \(\mathcal{O}_{m}\) can often be thought of as containing \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
 
-By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, G)\), we get the sequence
+By fixing another space \(X\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, X)\), we get the sequence
 % https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219XntcXGFzdH0iXSxbMCwwLCJcXGNkb3RzIl0sWzIsMCwiXFxtYXRoY2Fse099X3ttIC0gMX1ee1xcYXN0fSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJcXG1hdGhjYWx7T31fezF9XntcXGFzdH0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9XntcXGFzdH0iXSxbMCwxLCJcXGRlbHRhIiwyXSxbMiwwLCJcXGRlbHRhIiwyXSxbMywyLCJcXGRlbHRhIiwyXSxbNCwzLCJcXGRlbHRhIiwyXSxbNSw0LCJcXGRlbHRhIiwyXV0=
 \[\begin{tikzcd}
 	\cdots & {\mathcal{O}_{m}^{\ast}} & {\mathcal{O}_{m - 1}^{\ast}} & \cdots & {\mathcal{O}_{1}^{\ast}} & {\mathcal{O}_{0}^{\ast}}
@@ -136,7 +135,7 @@ By fixing an abelian group \(G\) and setting \(\mathcal{O}_{m}^{\ast} = \operato
 	\arrow["\delta"', from=1-5, to=1-4]
 	\arrow["\delta"', from=1-6, to=1-5]
 \end{tikzcd}\]
-where \(\delta_{m}\) is the transpose of \(\partial_{m}\). The maps \(\delta\) behave like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular objects.
+where \(\delta_{m}\) is the transpose (adjoint) of \(\partial_{m}\). The maps \(\delta\) behave like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular elements.
 
 \begin{questions}
 	\label{qu:integration-theory}
@@ -149,22 +148,21 @@ where \(\delta_{m}\) is the transpose of \(\partial_{m}\). The maps \(\delta\) b
 		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
 	\end{enumerate}
 \end{questions}
-The answers to the above questions are given precisely by the following modules
-% TODO: [Zsuzsi]: I would explain in what sense these are modules (under what action).
+The answers to the above questions are given precisely by the following spaces1
 \begin{definitions}
 	\label{def:integration-theory-modules}
 	\begin{enumerate}
-		\item The \textbf{primary obstructions to integration} are the module
+		\item The \textbf{primary obstructions to integration} are the space
 			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
-		\item The \textbf{constants of integration} are the module
+		\item The \textbf{constants of integration} are the space
 			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
-		\item The \textbf{secondary obstructions to integration} are the module
+		\item The \textbf{secondary obstructions to integration} are the space
 			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m},\]
 			and likewise the \textbf{order \(k\) obstructions to integration} are defined analagously.
-		\item The \textbf{weights of integration} are the module
+		\item The \textbf{weights of integration} are the space
 			\[W\mathcal{O}_{m} = C\mathcal{O}_{m} / \pi(P\mathcal{O}_{m})\]
 			where \(\pi: \mathcal{O}_{m} \to C\mathcal{O}_{m}\) is the projection.
-		\item The \textbf{finite type invariants} of order \(m\) are the module
+		\item The \textbf{finite type invariants} of order \(m\) are the space
 			\[FT\mathcal{O}_{m} = \ker \delta^{m + 1},\]
 			where \(\delta^{m + 1}\) denotes \(m + 1\) applications of \(\delta\) with appropriate indices, ending with \(\delta_{m}\).
 
@@ -204,7 +202,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/triple_point_singular_isotopy.pdf_tex}
 			\end{center}
-		gives rise to the \textbf{topological four-term relation}
+		gives rise to a \textbf{topological four-term relation}
 			\begin{equation}
 				\label{eq:T4Tstar}
 				\tag{\topologicalfourtermstar}
@@ -224,7 +222,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/vanishing_derivative_singular_isotopy.pdf_tex}
 			\end{center}
-		around a point with a vanishing derivative gives rise to the \textbf{topological one-term relation}
+		around a point with a vanishing derivative gives rise to a \textbf{topological one-term relation}
 			\begin{equation}
 				\label{eq:T1Tstar}
 				\tag{\topologicalonetermstar}
@@ -268,19 +266,17 @@ For example, the corresponding unframed version of Stanford's theorem reads: \te
 	\end{shaded}
 \end{proof}
 
-Continuing with Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, the constants of integration comprise the information that is lost when differentiating. In the case of knots, given an invariant $f$ of $m$-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of $f$ on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
+Continuing with Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, the constants of integration comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
 
-Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). What do the classes of this quotient look like? Well since the difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). Thus, we see that the data describing the constants of integration are singular knots which are blind to crossing changes, so the only data needed to describe them is the order in which the double points are traversed around the knot.
-% TODO: [Zsuzsi] This paragraph could do with a picture/ illustration.
+Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). What do the classes of this quotient look like? Well since
+\[\partial \left( \double \right) = \poscross - \negcross,\]
+the difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). Thus, the objects of this quotient are \(m\)-singular knots modulo crossing changes. So, the only data needed to describe them is the order in which the \(m\) double points are traversed around the \(m\)-singular knot.
 
 \begin{definitions}
 	\label{def:chord-diagram}
 	\begin{enumerate}
-		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). This is equivalent to 
-		% TODO: [Zsuzsi] Consider the phrasing "A combinatorial description of such an element is"
-		an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\).
+		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\).
 		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on an oriented circle, two for each singular point of \(k\). Traversing both \(k\) and the circle, label the points on the circle in the order in which the singular points of \(k\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\sigma(k)\).
-		% TODO: [Zsuzsi] Would it be simpler to say "the chord diagram formed by pairing the two preimages of each singular point along the circle domain of $K$"?
 	\end{enumerate}
 \end{definitions}
 
@@ -292,7 +288,6 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singula
 	\]
 \end{example}
 
-
 \begin{proposition}
 	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
 	\[Q_{0}(k) = Q(k) + q(\sigma(k))\]
@@ -301,9 +296,7 @@ Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singula
 \end{proposition}
 
 \begin{proof}
-	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change.
-	% NOTE: [Reply to earlier comment to make more precise and add the word linear in proposition and proof] The linear condition is not necessary here (or above). The argument is that if a function factors through the maps sing knots -> chord diagrams, then its derivative is zero. That's the great thing about thinking like this!!!
-    Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
+	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change. Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
 \end{proof}
 
 \begin{remark}
@@ -328,7 +321,7 @@ The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot
 \begin{definitions}
 	\label{def:ft-ot-relations}
 	\begin{enumerate}
-		\item The \textbf{four-term relation} is the relation
+		\item A \textbf{four-term relation} is a relation of the kind
 			\begin{equation}
 				\label{eq:4Tstar}
 				\tag{\fourtermstar}
@@ -339,20 +332,15 @@ The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot
 				= 0.
 			\end{equation}
 
-		\item The \textbf{one-term relation} (only relevant in the unframed case) is the relation
+		\item A \textbf{one-term relation} (relevant in the unframed case) is a relation of the kind
 			\begin{equation}
 				\label{eq:1Tstar}
 				\tag{\onetermstar}
 				q\left( \isolatedchord \right) = 0.
 			\end{equation}
+			where the chord shown is \textbf{isolated}, meaning no other chord intersects it (when suitably isotoped).
 	\end{enumerate}
-	Just like \ref{eq:T4Tstar}, \ref{eq:4Tstar} is not an individual relation, but a class of relations. There's one \ref{eq:4Tstar} relation for all ways of placing other chords in-between the three far-apart chord ends, 
-    % TODO: [Zsuzsi] 'Far apart' can be confusing, there are four chord ends with three larger gaps. The precise way to do this would be to have part of the arcs dotted, and that's where you can place more chord endings.
-    in all of the four diagrams. 
-    % (Zsuzsi) But identically in all four
-    There's a \ref{eq:1Tstar} relation for all ways of placing chord diagrams between either of the
-    %TODO: [Zsuzsi] Here too.
-    two far-apart chord ends. In the unframed case, any chord diagram with an `isolated chord' that doesn't cross any other chords in the diagram is killed by a \ref{eq:1Tstar} relation.
+	Just like \ref{eq:T4Tstar}, \ref{eq:4Tstar} is not an individual relation, but a class of relations. For example, there's one \ref{eq:4Tstar} relation for all ways of placing other chords on the dotted parts of the diagrams above, identically in all four diagrams.
 \end{definitions}
 
 \begin{proposition}
@@ -362,18 +350,9 @@ The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot
 	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} into chord diagrams.
 \end{proof}
 
-We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\)
-% TODO: (Zsuzsi) Is $P$ an invariant of m-singular knots?
-% NOTE: [Reply]: Yes
-is of the form
+We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) is only defined up to constants of integration, so is of the form
 \[Q + q \circ \sigma.\]
-% TODO: (Zsuzsi) What is $Q$, $q$, $\sigma$?
-% NOTE: [Reply]: Like above with the same notation
-Since integration is linear, to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system.
-% TODO: (Zsuzsi) I understand this sentence but it could be clearer.
-A sufficient condition for the former to be integrable is that \(S\singularknots_{m}\) vanishes.
-% TODO: (Zsuzsi) Is this the secondary obstructions?
-But this is a tautological statement of the general theory --- it doesn't mean much if we don't know what \(S\singularknots_{m}\) is.
+Since integration is linear, for this to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. But this is in terms of the general integration theory -- what does this mean concretely in this special case? It remains open but it's conjectured that the secondary obstructions always vanish.
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
@@ -384,7 +363,6 @@ But this is a tautological statement of the general theory --- it doesn't mean m
 	\begin{enumerate}
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\), which is what \(S\singularknots\) measures.
 		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
-		% TODO: Expand this out into a little interlude on graph cohomology?
 		\item This conjecture is proven in certain cases. It holds in the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
 	\end{enumerate}
 \end{remarks}
@@ -535,11 +513,9 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
 
 \begin{remark}
-	There is one technicality. To make the above definitions of \(\mu^{I}\) and \(\partial^{I}\), we must forget the \ref{eq:codiff} relation on \(\singularknots_{m}\) (or work in the appropriate lift) as we wish to resolve with respect to specific double points. This provides no mathematical difficulty, so we chose not to do the reader the disservice of altering the notation. But for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, let \(\singularknots_{m}\) not contain the quotient by the \ref{eq:codiff} relation.
-	% NOTE: (Zsuzsi) By "not contain the quotient" you mean you are not quotienting out? It might be worth calling this a lift or cover. "This causes no mathematical difficulty" is a bit hand-wavy, you could instead say that 1. - the bialgebra structure is well defined on the lift, and 2. - if a formula is true in a lift, then its image in a quotient is also true.
+	There is one technicality. The operations \(\delta\) and \(\partial\) were defined without the need to specify a specific double point (this was the point of the \ref{eq:diff} and \ref{eq:codiff} relations). But the definitions of \(\mu^{I}\) and \(\partial^{I}\) are specific about double points. So for this Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, we write \(\mathcal{K}_{m}^{\bullet}\) even though we mean the lift of the \(\mathcal{K}_{m}^{\bullet}\)'s, without the \ref{eq:diff} and \ref{eq:codiff} relations. We choose not to alter the notation as projecting the formulas back down to the quotient properly proves that \(\Delta\) respects the filtration, as intended.
 \end{remark}
 
-% TODO: The partials below should be deltas
 \begin{lemma}[Willerton]
 	\label{lem:co-leibniz-formula-for-knots}
 	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
@@ -670,16 +646,9 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 	The operators \(\partial^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
-% TODO: I am going to try to make the next part of this subsection, about the Vassiliev invariants being the dual filtered, a little less formal and more paragraphy. Why? Because defining the dual filtered bialgebra in generality feels clumsy. The TODO is to check later that it works fine.
+Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
 
-Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural 
- %TODO (ZSuzsi) natural is a loaded word... well behaved?
-with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained naturally from \(\mathcal{K}\) via the following construction.
-
-The dual filtered bialgebra construction 
- %TODO (ZSuzsi) A mouthful. I think this would be better stated as a claim: a decreasing filtration on a bialgebra $\mathcal{K}$ induces an ascending filtration on the dual bialgbera, whose...
-makes a filtered bialgebra whose \(m\)th filtered component is the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\). The result is the Vassiliev invariants, along with a product transpose to the coproduct in \(\mathcal{K}\) and coproduct transpose to the product in \(\mathcal{K}\).
- %TODO (ZSuzsi) By transpose do you mean adjoint? Maybe explain in either case.
+A decreasing filtration on a bialgebra induces an ascending filtration on its dual bialgebra. The dual bialgebra's \(m\)th filtered component is the space of functionals on the original bialgebra that vanish on the \(m + 1\)st filtered component. In the case of \(\mathcal{K}\), this is the set of knot invriants that vanish on \(\mathcal{K}_{m + 1}\): exactly the Vassiliev invariants of order \(m\). The product/coproduct in the dual bialgebra are those operations adjoint to the coproduct/product in the original bialgebra. The construction is standard and the details can be found in \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}.
 
 \begin{definition}
 	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
@@ -690,32 +659,22 @@ makes a filtered bialgebra whose \(m\)th filtered component is the set of functi
 	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \connect k_{2}).\]
 \end{definition}
 
-
 \begin{proposition}
-	The filtered bialgebraic dual
-     %TODO (ZSuzsi) Filtered dual bialgebra
-    of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
+	\label{prop:vassiliev-invariants-dual-to-singular-knots}
+	The filtered bialgebraic dual of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
 \end{proposition}
 
-We don't prove this textbook fact, but let us sketch the main points. Indeed, the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{n}\).
- %TODO (ZSuzsi) $m$ vs $n$
+We don't prove this textbook fact, but let us sketch the main points. Indeed, by definition the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{m}\).
 
-Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\),
-	\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
- %TODO (ZSuzsi) $\mapsto$ or $=$
-    
-recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) is
-	\[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
-recovers the formula for the coproduct, \(\eta\).
- %TODO (ZSuzsi) This sentence has two verbs
+Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\) gives,
+\[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
+which recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) yields
+\[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
+which recovers the formula for the coproduct, \(\eta\).
 
 Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
- %TODO (ZSuzsi) I don't think that's true, it needs to be stated for just the Vassiliev part, which is a bit more cumbersome to write.
-
-We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the ascending filtration. However the filtered algebra dual of a decreasing filtered bialgebra is always an increasing filtered bialgebra (for the proof, as well as the full details of the dual filtered bialgebra construction, the reader is invited to consult \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}).  %TODO (ZSuzsi) I would state this above where you introduce the dual filtration, so you can just use it here.
-
-% TODO: This remark might be better off as like... several paragraphs with multiple remarks interspersed.
- %TODO (ZSuzsi) I think it reads fine as one long remark. It's cohesive.
+% NOTE: (ZSuzsi) I don't think that's true, it needs to be stated for just the Vassiliev part, which is a bit more cumbersome to write.
+% TODO: Ask Zsuzsi the above.
 
 \begin{remark}
 	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
@@ -732,39 +691,36 @@ We didn't prove that the product and coproduct in \(\mathcal{V}\) respect the as
 
 	This says that the derivative of a product of \(f\) and \(g\) with respect to some variables is the sum of every way of taking some of those derivatives with respect to \(f\) and some with respect to \(g\).
 
-	A kind of dual theorem follows from this. For \(c \in \mathbb{R}\), if given that
-     %TODO (ZSuzsi) Try to make this sentence easier to parse
-    \(c\) comes from some \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) by taking their derivatives with respect to all the variables and evaluating all remaining variables in the result, then we get a cofactorisation for \(c\) in \(\mathbb{R} \otimes \mathbb{R}\): i.e.
-	\[c = \left. \frac{\partial^{|I|}(fg)}{\partial_{x_{I}}} \right|_{\{x_{I} = a_{I}\}} \text{ implies }
+	A kind of dual theorem follows from this. Let \(c \in \mathbb{R}\), and suppose that \(c\) comes from some pair of functions \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) by taking their derivatives with respect to some of the variables and evaluating all remaining variables in the result. Then, we get a cofactorisation for \(c\) in \(\mathbb{R} \otimes \mathbb{R}\): i.e. if
+	\[c = \left. \frac{\partial^{|I|}(fg)}{\partial_{x_{I}}} \right|_{\{x_{I} = a_{I}\}}\]
+	then
+	\[
+		\mu
 		\left(
 		\sum_{J \subset \{1, \cdots, i\}}
 		\left. \frac{\partial^{|J|} f}{\partial_{x_{J}}} \right|_{\{x_{J} = a_{\bar{J}}\}}
 		\otimes
 		\left. \frac{\partial^{|\bar{J}|} g}{\partial_{x_{\bar{J}}}} \right|_{\{x_{J} = a_{J}\}}
 		\right)
-		\overset{\mu}{\longrightarrow} c,
+		=
+		c,
 	\]
-	where \(\mu: \mathbb{R} \otimes \mathbb{R} \to \mathbb{R}\) is multiplication.  %TODO (ZSuzsi) Could you write $\mu(...)=c$, rather than put $\mu$ on an arrow?
+	where \(\mu: \mathbb{R} \otimes \mathbb{R} \to \mathbb{R}\) is multiplication.
 
-	As it turns out, this theorem
-     %TODO (ZSuzsi) The generalised Leibnitz theorem?
-    is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\).
+	As it turns out, this generalised ``co-Leibniz theorem'' is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\). But the co-Leibniz theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation. Recall that this was used to show that the coproduct respects the filtration.
 
-	But the dual theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation.
-    Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
+	Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
 	\[
-		(V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet}))
+		(V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet}))
 		=
 		\sum_{I \subset S}
-		V_{1}(\mu^{\bar{I}}\delta^{I}(k^{\bullet}))
+		V_{1}(\mu^{\bar{I}}\partial^{I}(k^{\bullet}))
 		\otimes
-		V_{2}(\mu^{I}\delta^{\bar{I}}(k^{\bullet})).
+		V_{2}(\mu^{I}\partial^{\bar{I}}(k^{\bullet})).
 	\]
-	It follows directly from this that if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + 1}\),
-     %TODO (ZSuzsi) $m+n+1$?
-    then either \(|I| > m\) or \(|\hat{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\delta^{S}(k^{\bullet})) = 0\).
+	It follows directly from this that the product of two Vassiliev invariants respects the filtration: if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + n + 1}\), then either \(|I| > m\) or \(|\hat{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet})) = 0\).
 
-	The analogy is that the multivariable calculus analogue of this argument is a proof that polynomials are filtered by degree.  %TODO (ZSuzsi) This sentence is insightful but near impossible to parse:).
+	How is this argument in analogy with some property of polynomials? Translating it from the knot-theoreic setting back into the original setting of multivariable calculus, it becomes a proof that polynomials are filtered by degree. So, in summary the cumbersome proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) is a dual-version in a knot-theoretic setting of the fact that polynomials are filtered by degree.
 \end{remark}
 
 \begin{example}
@@ -839,9 +795,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 \end{proposition}
 
 \begin{proof}
-	We will prove that the connected sums,
-     %TODO (ZSuzsi) of two given chord diagrams
-    given any two choices of connection locations, are equal modulo \ref{eq:4T}.
+	We will prove that the connected sums of two chord diagrams, given any two choices of connection locations, are equal modulo \ref{eq:4T}.
 
 	Let us denote the first chord diagram as \(a_{1}\) and the second as \(a_{2}\). Without loss of generality, it suffices to prove that without change in the connection location of \(a_{1}\), we can change the connection location on \(a_{2}\). Indeed it suffices to prove that we can rotate \(a_{2}\) by one `click', like so:
 
@@ -874,7 +828,6 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 		\ = \ 0.
 	\]
 	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:4T} relations, completing the proof.
-     %TODO (ZSuzsi) Given infinite time, a worked example where $a_1$ has one or two chords would be nice
 \end{proof}
 
 \begin{proposition}
@@ -905,7 +858,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 \end{proposition}
 
 \begin{proof}
-	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the compatibility condition holds.  %TODO (ZSuzsi) That the coproduct is an algebra morphism (a precise way to say compatibility)
+	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the coproduct is an algebra morphism (one way of writing the compatibility condition).
 
 	That in the unframed case, \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
 
@@ -949,26 +902,22 @@ We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. In fact
 \begin{definition}
 	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra, \(A\), of finite type for which
 	\begin{itemize}
-		\item The unit \(k \to A_{0}\) is an isomorphism (\textbf{connectedness})
+		\item The unit map \(\mathcal{Q} \to A_{0}\) is an isomorphism (\textbf{connectedness})
 		\item The product is commutative, \(m \circ \tau = m\)
 		\item The coproduct is cocommutative, \(\tau \circ \Delta = \Delta\)
 	\end{itemize}
-	% TODO: Define the swap map or check it has been defined before this.
+	where \(\tau : A \otimes A \to A \otimes A\) sends \(x \otimes y \mapsto y \otimes x\).
 \end{definition}
 
 \begin{proposition}
 	The bialgebra \(\mathcal{A}\) is a connected, commutative, cocommutative graded bialgebra of finite type.
 \end{proposition}
 
-\begin{shaded}
-	\begin{proof}
-		The connetedness isomorphism is given by ...
+\begin{proof}
+	The connetedness isomorphism is given by associating a scalar \(k\) to \(k\) times the empty chord diagram.
 
-		We have already shown it is commutative.
-
-		The coproduct is clearly cocommutative.
-	\end{proof}
-\end{shaded}
+	We have already shown the connected sum to be commutative, and the coproduct can clearly be seen to be cocommutative from the symmetry of Definition \ref{def:coproduct-in-chord-diagrams}.
+\end{proof}
 
 Connected, commutative, cocommutative graded bialgebras of finite type are very rigid structures. In-particular, a classical strucutral theorem applies, and such a bialgebra can be understood in terms of its primitive elements.
 
@@ -998,19 +947,36 @@ In fact, every graded object is a filtered object with the naturally induced fil
 	The graded bialgebra \(\mathcal{W}\) is the dual graded bialgebra of the graded bialgebra \(\mathcal{A}\).
 \end{proposition}
 
+\begin{proof}
+	That \(\mathcal{W} = \mathcal{A}^{\ast}\) as sets follows from Definition \ref{def:weight-system}. A weight system is a functionals on chord diagrams that is integrable. So a functional satisfying \ref{eq:4Tstar} and \ref{eq:1Tstar}. That is exactly an element of \(\mathcal{A}^{\ast}\). The rest of the proof uses the same arguments as Proposition \ref{prop:vassiliev-invariants-dual-to-singular-knots}.
+\end{proof}
+
 \section{The fundamental theorem of Vassiliev invariants}
 \label{sec:the-fundamental-theorem-of-vassiliev-invariants}
 
 In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that is establishes a particular relationship between the algebras of the previous two chapters, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). But admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of that theorem that makes the relationship explicit.
 
 \begin{definition}
-	The \textbf{associated graded} algebra of a filtered algebra \(A\) is the algebra formed by the direct sum of the succesive quotients of the filtered components of \(A\). For an algebra with a descending filtration,
+	The \textbf{associated graded} bialgebra of a filtered bialgebra \(A\) is the bialgebra formed by the direct sum of the succesive quotients of the filtered components of \(A\). For a bialgebra with a descending filtration,
 	\[\gr A = \bigoplus_{m = 0}^{\infty} A_{m} / A_{m + 1},\]
-	and for an algebra with an ascending filtration,
+	and for a bialgebra with an ascending filtration,
 	\[\gr A = \bigoplus_{m = 0}^{\infty} A_{m} / A_{m - 1},\]
 	where \(A_{-1} = \{0\}\).
-	% TODO: Make bialgebra? Maybe?
-    %TODO (Zsuzsi): Yes, you need to explain 1) the algebra structure on grA, and 2) the coalgebra structure. This is especially important becasuse the direct sum is only true as vector spaces, not as algebras.
+
+	The operations on \(\gr A\) are those induced from the operations on \(A\). For example, on a bialgebra with a descending filtration, if multiplication \(\mu: A_{m} \otimes A_{n} \to A_{m + n}\) sends \(a \otimes b \mapsto ab\), then the induced operation is
+	\[
+		\begin{array}{rccc}
+			\gr \mu:	&A_{m}/A_{m + 1} \otimes A_{n}/A_{n + 1}	&\longrightarrow	& A_{m + n}/A_{m + n + 1}\\
+					& a + A_{m + 1} \otimes b + A_{n + 1}		&\longmapsto		& ab + A_{m + n + 1}.
+		\end{array}
+	\]
+	For the comultiplication \(\Delta\) that sends \(a \mapsto \displaystyle\bigoplus_{i + j = m} a_{i}' \otimes a_{i}'' \) the induced operation is
+	\[
+		\begin{array}{rccc}
+			\gr \Delta:	&A_{m}/A_{m + 1}	&\longrightarrow	& \displaystyle\bigoplus_{i + j = m} A_{i}/A_{i + 1} \otimes A_{j}/A_{j + 1}\\
+					& a + A_{m + 1}		&\longmapsto		& \displaystyle\bigoplus_{i + j = m} a_{i}' + A_{i + 1} \otimes a_{i}'' + A_{j + 1}.
+		\end{array}
+	\]
 \end{definition}
 
 \begin{theorem}[Fundamental theorem]
@@ -1027,6 +993,7 @@ The equivalence of this version of the theorem with the version (Theorem \ref{th
 We can break the fundamental theorem up into two parts.
 
 \begin{center}
+	% TODO: Play with table formatting. Decide whether to add `axis labels' at top.
 	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
 		\hline
 		\textbf{Vassiliev}
@@ -1038,11 +1005,11 @@ We can break the fundamental theorem up into two parts.
 	\end{tblr}
 \end{center}
 
-The point of the part of this theorem due to Vassiliev is that the relations in \(\mathcal{A}\) are compatible with the relations of \(\mathcal{K}_{n} / \mathcal{K}_{n + 1}\). Indeed, \(\mathcal{A}\) was constructed in this way, and much of that work was already done in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, and the following proof involves nothing new.
-% TODO: Find reference for Vassiliev
+The point of the part of this theorem due to Vassiliev \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications} is that the relations in \(\mathcal{A}\) are compatible with the relations of \(\mathcal{K}_{n} / \mathcal{K}_{n + 1}\). Indeed, \(\mathcal{A}\) was constructed in this way, and much of that work was already done in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, and the following proof involves nothing new.
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Vassiliev)}
-	For the map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following. 
+	% Possibly use: The aim is to define a map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\). Let us start with a map \(\mathcal{D}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+	For the map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following.
 	%TODO (Zsuzsi) I would rephrase this sentence. Perhaos you should first define the map ton $D_m$, and then descend to $A_m$ (which is what you practically do).
 	Given \(a \in \mathcal{A}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then
 	%TODO (Zsuzsi) switched from present tense to infinitive
@@ -1150,27 +1117,27 @@ Again, it's worth looking at the proof in the dual setting too.
 	forces a choice of Vassiliev invariant of degree \(m - 1\). Being as explicit as possible, let
 	\[\Omega(k) =
 		\begin{cases}
-			k \in \mathcal{K}_{m}
-			& (W \circ Z)(k)
+			(W \circ Z)(k)
+			& k \in \mathcal{K}_{m}
 			\\
-			k \notin \mathcal{K}_{m}
-			& 0
+			0
+			& k \notin \mathcal{K}_{m}
 			\\
 		\end{cases},
 		\quad \text{and} \quad
 	\Theta(k) =
 		\begin{cases}
-			k \in \mathcal{K}_{m}
-			& 0
+			0
+			& k \in \mathcal{K}_{m}
 			\\
-			k \notin \mathcal{K}_{m}
-			& (W \circ Z)(k)
+			(W \circ Z)(k)
+			& k \notin \mathcal{K}_{m}
 			\\
 		\end{cases},
-	\]%TODO (Zsuzsi) These cases use the opposite notation from usual: usually we write the value first, folowed by "if [condition]". It reads a bit confusing, though it became cleare once I realised how to read it. 
+	\]
 	then \(W \circ Z = \Omega + \Theta\), where \(\Omega\) recovers the weight system \(W\), when \(k \in \mathcal{K}_{m}\), and \(\Theta\) is some finite type invariant of order \(m - 1\), determined by \(W\).
 
-	In essence, we have found that the cokernel of \(Z^{\ast}\) is \(\mathcal{V}_{m - 1}\), so we get the desired isomorphism \(\mathcal{W}_{m} \cong \mathcal{V}_{m} / \mathcal{V}_{m - 1}\), at least on the level of vector spaces.
+	In essence, we have found that the cokernel of \(Z^{\ast}\) is \(\mathcal{V}_{m - 1}\), so we get the desired isomorphism \(\mathcal{W}_{m} \cong \mathcal{V}_{m} / \mathcal{V}_{m - 1}\).
 	\end{proofof}
 
 	The natural question arises, what was this summand \(\Theta\)? Fixing \(n < m\) and a knot \(k \in \mathcal{K}_{n}\) with chord diagram \(a_{k}\), it has Kontsevich integral

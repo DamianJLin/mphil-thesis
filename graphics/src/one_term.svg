@@ -8,8 +8,8 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="one-term.svg"
-   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/one-term.pdf"
+   sodipodi:docname="one_term.svg"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/one_term.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,14 +26,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.1433922"
-     inkscape:cx="83.512481"
-     inkscape:cy="212.04705"
-     inkscape:window-width="2560"
-     inkscape:window-height="1412"
+     inkscape:zoom="1.5156072"
+     inkscape:cx="57.732638"
+     inkscape:cy="144.82645"
+     inkscape:window-width="2556"
+     inkscape:window-height="1394"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="true">
     <sodipodi:guide
@@ -47,9 +47,39 @@
        id="guide2"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="68.176006,40.998591"
+       position="63.892542,75.12548"
        orientation="1,0"
        id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.764307,81.928706"
+       orientation="1,0"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="41.326117,41.308125"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="52.123017,9.2591273"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="41.326117,41.317066"
+       orientation="-0.96407176,0.26564193"
+       id="guide7"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="52.123017,2.1274232"
+       orientation="-0.96408108,-0.26560811"
+       id="guide8"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="45.908168,24.68554"
+       orientation="1,0"
+       id="guide9"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
@@ -60,32 +90,22 @@
      id="layer1"
      transform="translate(-64.364688,-107.15624)">
     <path
-       fill="none"
-       stroke-width="1.35467"
-       stroke-linecap="butt"
-       stroke-linejoin="miter"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-miterlimit="10"
-       d="m 146.32148,148.47331 c 0,22.44547 -18.19426,40.63973 -40.63973,40.63973 -22.445471,0 -40.639727,-18.19426 -40.639727,-40.63973 0,-22.44547 18.194256,-40.63973 40.639727,-40.63973 22.44547,0 40.63973,18.19426 40.63973,40.63973"
-       id="path1-3" />
-    <path
        fill-rule="nonzero"
        fill="#000000"
        fill-opacity="1"
-       d="m 146.51335,137.09267 c 0,2.40881 -3.61322,2.40881 -3.61322,0 0,-2.40743 3.61322,-2.40743 3.61322,0"
+       d="m 118.29432,109.29697 c 0,2.40881 -3.61322,2.40881 -3.61322,0 0,-2.40743 3.61322,-2.40743 3.61322,0"
        id="path6-6-2"
        style="stroke-width:0.352778" />
     <path
        fill-rule="nonzero"
        fill="#000000"
        fill-opacity="1"
-       d="m 146.51335,159.85291 c 0,2.40881 -3.61322,2.40881 -3.61322,0 0,-2.40743 3.61322,-2.40743 3.61322,0"
+       d="m 118.29432,187.66244 c 0,2.40881 -3.61322,2.40881 -3.61322,0 0,-2.40743 3.61322,-2.40743 3.61322,0"
        id="path6-5-2-61"
        style="stroke-width:0.352778" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.903111;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 144.70674,159.85343 c -12.16605,-2.79353 -12.16605,-19.96668 0,-22.76024"
+       d="m 116.48771,187.66296 c -6.21485,-22.55813 -6.21485,-55.81891 1.2e-4,-78.37432"
        id="path16-14"
        sodipodi:nodetypes="cc" />
     <rect
@@ -95,5 +115,46 @@
        height="17.173147"
        x="128.0891"
        y="139.88675" />
+    <g
+       id="g6"
+       transform="translate(0.02015682,-0.00210044)">
+      <path
+         fill="none"
+         stroke-width="3.84"
+         stroke-linecap="butt"
+         stroke-linejoin="miter"
+         stroke="#000000"
+         stroke-opacity="1"
+         stroke-miterlimit="10"
+         d="m 144.3234,135.92607 c -6.93603,-21.34691 -29.86213,-33.02834 -51.209035,-26.09231 -21.34691,6.93603 -33.02835,29.86213 -26.09231,51.20904 6.93603,21.34691 29.86213,33.02835 51.209035,26.09231 21.34691,-6.93603 33.02834,-29.86213 26.09231,-51.20904"
+         id="path1"
+         style="display:inline;stroke:#b3b3b3;stroke-width:0.903111;stroke-linecap:butt;stroke-dasharray:7.22489, 1.80622;stroke-dashoffset:0" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.35;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         id="path2"
+         sodipodi:type="arc"
+         sodipodi:cx="105.68176"
+         sodipodi:cy="148.47331"
+         sodipodi:rx="40.639999"
+         sodipodi:ry="40.639999"
+         sodipodi:start="0.99048778"
+         sodipodi:end="1.6105348"
+         sodipodi:arc-type="arc"
+         d="m 127.96394,182.46028 a 40.639999,40.639999 0 0 1 -23.89672,6.62095"
+         sodipodi:open="true" />
+      <path
+         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.35;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         id="path3"
+         sodipodi:type="arc"
+         sodipodi:cx="105.68176"
+         sodipodi:cy="148.47331"
+         sodipodi:rx="40.639999"
+         sodipodi:ry="40.639999"
+         sodipodi:start="4.6736755"
+         sodipodi:end="5.3007553"
+         sodipodi:arc-type="arc"
+         d="m 104.10884,107.86376 a 40.639999,40.639999 0 0 1 24.12824,6.80323"
+         sodipodi:open="true" />
+    </g>
   </g>
 </svg>
