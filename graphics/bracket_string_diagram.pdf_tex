@@ -54,8 +54,8 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{bracket_string_diagram.pdf}}%
-    \put(0.13968564,1.56304068){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle x\)}}\end{tabular}}}}%
-    \put(0.86865637,1.56304068){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle y\)}}\end{tabular}}}}%
+    \put(0.17183032,1.56304068){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle x^{\ast}\)}}\end{tabular}}}}%
+    \put(0.90080104,1.56304068){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle y^{\ast}\)}}\end{tabular}}}}%
     \put(0.50532822,0.06428959){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle [x, y]\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
