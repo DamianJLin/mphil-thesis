@@ -299,16 +299,6 @@ the difference of an \(m\)-singular knot and the same \(m\)-singular knot with o
 	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change. Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
 \end{proof}
 
-\begin{remark}
-	We defined a constant of integration as a set of objects (e.g. \(c \in \mathcal{D}_{m}\))
-	% NOTE: [Zsuzsi] I found this a bit confusing. Integration constants were only defined in the general context, so it would be helpful to explain how that translates. Then again I started reading here after a few weeks' break, so maybe it would be easier in one sitting.
-	but perhaps it would have been more accurate to define it as a functional (e.g. \(q \in \mathcal{D}_{m}^{\ast}\)). After all the constant of integration on the real line is ``\(+ \ C\)'' rather than the set \(\{\ast\}\) with one object.
-	% NOTE: [Zsuzsi] Why is the analogue a set with one object?
-	There is no real risk of confusion, so let us be slightly loose and use the terminology for either.
-	% NOTE: [Zsuzsi] I, for one, am confused:).
-	% NOTE: [Reply] Let me talk you through what I mean in person then you can tell me if I achieve that meaning :)
-\end{remark}
-
 Since we are trying to integrate more than once, we might wish to know which constants of integration are themselves integrable.
 
 \begin{definition}
@@ -458,21 +448,13 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 \begin{proof}
 	Indeed, the connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. The question is whether the connected sum respects the filtration.
 
-	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k_{\bullet}\) and \(\ell_{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k_{\bullet} \connect \ell_{\bullet}\) resolves by \(\delta^{i + j}\) to \(k \connect \ell\), which is therefore in \(\delta^{i + j}(\mathcal{K}_{i + j})\).
+	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k^{\bullet}\) and \(\ell^{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k^{\bullet} \connect \ell^{\bullet}\) resolves by \(\partial^{i + j}\) to \(k \connect \ell\), which is therefore in \(\partial^{i + j}(\mathcal{K}_{i + j})\).
 
-	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\delta^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k_{\bullet} \connect \ell_{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
+	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\partial^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k^{\bullet} \connect \ell^{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
 \end{proof}
 
-\begin{shaded}
-	Say something intelligent to introduce this definition.
-
-	I guess it's something like: We assert that knots are (semi)group-like. This must be somehow related to (some?) chord diagrams being like exponentials (primitives?).
-\end{shaded}
-
-% TODO: (Zsuzsi) One way to approach this would be to say that the set of knots forms a commutative monoid, and $\mathcal{K}$ is its monoid algebra.
-% Just like the group algebra of a group is made into a bialgbera by a natural coproduct which makes the elements of the group "group-like", the same is true for the monoid algebra of a monoid.
-% On chord diagrams: Yes, chord diagrams are also equipped with a coproduct, and for example the Konsevich integral respects the coalgebra structure by sending knots to group-like elements in chord diagrams. Yes, group-like is equivalent to "exponential of a primitive", where primitive means $\Delta(x)=1\otimes x + x\otimes 1$.
-% TODO: (Damian) Let's talk about this.
+% NOTE: In my mind, this is next definition is missing motivation. Proper motivation woould probably make reference to Lie (semi)group exponential map-logarithm stuff.
+% i.e. Why is this the good definition to make if we want to study knots via chord diagrams.
 
 \begin{definition}
 	The coproduct \(\Delta: \mathcal{K} \to \mathcal{K} \otimes \mathcal{K}\) is defined on knots \(k\) as
@@ -648,7 +630,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 
 Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
 
-A decreasing filtration on a bialgebra induces an ascending filtration on its dual bialgebra. The dual bialgebra's \(m\)th filtered component is the space of functionals on the original bialgebra that vanish on the \(m + 1\)st filtered component. In the case of \(\mathcal{K}\), this is the set of knot invriants that vanish on \(\mathcal{K}_{m + 1}\): exactly the Vassiliev invariants of order \(m\). The product/coproduct in the dual bialgebra are those operations adjoint to the coproduct/product in the original bialgebra. The construction is standard and the details can be found in \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}.
+A decreasing filtration on a bialgebra induces an ascending filtration on its dual bialgebra. The dual bialgebra's \(m\)th filtered component is the space of functionals on the original bialgebra that vanish on the \((m + 1)\)st filtered component. In the case of \(\mathcal{K}\), this is the set of knot invriants that vanish on \(\mathcal{K}_{m + 1}\): exactly the Vassiliev invariants of order \(m\). The product/coproduct in the dual bialgebra are those operations adjoint to the coproduct/product in the original bialgebra. The construction is standard and the details can be found in \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}.
 
 \begin{definition}
 	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
@@ -672,9 +654,7 @@ which recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V
 \[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
 which recovers the formula for the coproduct, \(\eta\).
 
-Here we rely on the fact that \((\mathcal{K} \otimes \mathcal{K})^{\ast}\) is canoncially isomorphic to \(\mathcal{K}^{\ast} \otimes \mathcal{K}^{\ast}\), which follows from \(\mathcal{K}\) being finite type (finite-dimensional in each filtered component).
-% NOTE: (ZSuzsi) I don't think that's true, it needs to be stated for just the Vassiliev part, which is a bit more cumbersome to write.
-% TODO: Ask Zsuzsi the above.
+Here we rely on the fact that \(\mathcal{K}\) is of finite type (finite-dimensional in each filtered component).
 
 \begin{remark}
 	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
@@ -785,7 +765,6 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_circular.pdf}
 	\]
 	The definition is extended bilinearly to elements of \(\mathcal{A}\).
-     %TODO (ZSuzsi) Sum or direct product? Do you want to allow infinite series?
 \end{definition}
 
 Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:4T} relation in \(\mathcal{A}\) takes care of this.
@@ -836,12 +815,6 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 
 \begin{proof}
 	No chords are lost during the connected sum: the \ref{eq:4T} relation is homogenous with respect to degree, so the connected sum of a chord diagram of order \(i\) and a chord diagram of order \(j\) is a chord diagram of order \(i + j\).
-	
-	\begin{shaded}
-		For the unframed case note that the connected sum of a chord diagram containing a \ref{eq:1T} chord relation still contains a \ref{eq:1T} chord.
-
-		[Shouldn't the grading be \(-\infty\) then?]
-	\end{shaded}
 \end{proof}
 
 Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to that in \(\mathcal{K}\), there is a coproduct too.
@@ -850,7 +823,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\label{def:coproduct-in-chord-diagrams}
 	The \textbf{coproduct of a chord diagram} \(A\) is the sum of ways of partitioning its chords between two subdiagrams.  
     Specifically, if \(S\) is the set of chords of \(A\), and \(J \subset S\), let \(\widehat{J} = S \smallsetminus J\). Denote by \(A_{J}\) the chord diagram \(A\) but with only the chords in \(J \subset S\), and the rest deleted. Then
-	\[\Delta(A) = \sum_{J \subset S} A_{J} \otimes A_{\overline{J}}.\] %Zsuzsi: I united the two paragraphs here because the second helps the reader not get stuck on the first. (Separate if you don't like)
+	\[\Delta(A) = \sum_{J \subset S} A_{J} \otimes A_{\overline{J}}.\]
 \end{definition}
 
 \begin{proposition}
@@ -1008,15 +981,10 @@ We can break the fundamental theorem up into two parts.
 The point of the part of this theorem due to Vassiliev \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications} is that the relations in \(\mathcal{A}\) are compatible with the relations of \(\mathcal{K}_{n} / \mathcal{K}_{n + 1}\). Indeed, \(\mathcal{A}\) was constructed in this way, and much of that work was already done in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, and the following proof involves nothing new.
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Vassiliev)}
-	% Possibly use: The aim is to define a map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\). Let us start with a map \(\mathcal{D}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
-	For the map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\) we take the following.
-	%TODO (Zsuzsi) I would rephrase this sentence. Perhaos you should first define the map ton $D_m$, and then descend to $A_m$ (which is what you practically do).
-	Given \(a \in \mathcal{A}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(a\), then
-	%TODO (Zsuzsi) switched from present tense to infinitive
-	resolving it to an element of \(k \in \mathcal{K}_{m}\), and projecting that into the quotient \(\mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+	The aim is to define a map \(\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\). Let us start with a map \(\mathcal{D}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
+	Given \(d \in \mathcal{D}_{m}\), take a singular knot \(k^{\bullet} \in \singularknots_{m}\) whose chord diagram is \(d\). Then, \(d\) is sent to \([\partial^{m}(k^{\bullet})] \in \mathcal{K}_{m} / \mathcal{K}_{m + 1}\).
 
-	This is well-defined since any other \({\ell^{\bullet}}\) that resolves to \(k\) also has chord diagram \(a\).
-	Any two \(m\)-singular knots with the same chord diagram differ by some crossing changes, in particular this applies to \(k^{\bullet}\) and \({\ell^{\bullet}}\). But if \(k^{\bullet}\) and \({\ell^{\bullet}}\) differ by a crossing change, then \(\partial^{m}(k^{\bullet})\) and \(\partial^{m}({\ell^{\bullet}})\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\partial^{m}(k^{\bullet})] = [\partial^{m}({\ell^{\bullet}})]\). This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\partial^{m}(k^{\bullet})]\) as long as it has chord diagram \(a\) will be used again below, and we refer to it as the crossing-change argument.
+	This is well-defined: any other \({\ell^{\bullet}}\) with chord diagram \(d\) also resolves to \([\partial^{m}(k^{\bullet})]\). Indeed, any two \(m\)-singular knots with the same chord diagram differ by some crossing changes. But if \(k^{\bullet}\) and \({\ell^{\bullet}}\) differ by a crossing change, then \(\partial^{m}(k^{\bullet})\) and \(\partial^{m}({\ell^{\bullet}})\) differ by an element of \(\mathcal{K}_{m + 1}\), so \([\partial^{m}(k^{\bullet})] = [\partial^{m}({\ell^{\bullet}})]\) in the quotient. This argument that any \(k^{\bullet} \in \singularknots_{m}\) can be chosen to represent \([\partial^{m}(k^{\bullet})]\) as long as it has chord diagram \(d\) will be used again below, and we refer to it as the crossing-change argument.
 
 	Recalling that \(\mathcal{A}_{m} = \mathcal{D}_{m} / \ref{eq:4T}\) (and \(\mathcal{A}'_{m} = \mathcal{D}_{m} / \ref{eq:1T}, \ref{eq:4T}\)), we need to show that the map factors through the quotient. Indeed in the unframed case, \ref{eq:1T} is in the kernel: a type \ref{eq:1T} chord diagram is sent to a singular knot with a singular point that is passed through twice in a row when the knot is traversed. The resolution of that singular point, by the crossing-change argument, can be chosen to be a difference of two \((m - 1)\)-singular unframed knots that are singular isotopic:
 	
@@ -1037,37 +1005,36 @@ The point of the part of this theorem due to Vassiliev \cite{cohomology-of-knot-
 
 	Similarly, \ref{eq:4T} is also in the kernel. A combination of chord diagrams appearing in a \ref{eq:4T} relation is sent to a combination of singular knots which by the crossing-change argument can all be chosen to be identical except near a small region, where
 	\[
-		\tftsouth \ - \ \tfteast \ - \ \tftnorth \ + \ \tftwest
+		\tftsouth \ - \ \tfteast \ - \ \tftnorth \ + \ \tftwest.
 	\]
-	but after resolving around the singular point that they don't have in common this becomes 
-    %TODO (Zsuzsi) This should not be a single long sentence with a diagrammatic formula in the middle
-	\begin{shaded}
-		figure of the 8 terms that cancel out.
-	\end{shaded}
+	Resolving around these four terms about the singular point that they don't have in common yields eight terms which cancel out in pairs.
 
-	% TODO: We here use the definition of Vassiliev invariants as dual to knots. But in the first chapter we actually defined them differently. Can we fix this? Perhaps postponing the definition suffices.
+	The isomorphism respects the algebra structure as \(a_{1} \connect a_{2}\) is sent to \([k_{a_{1} \connect a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of some singular knot we shall denote \(k^{\bullet}_{a_{1} \connect a_{2}}\) with chord diagram \(a_{1} \connect a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \connect k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \connect k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but they have the same chord diagram, so by the crossing-change argument they can be chosen to be the same. Hence resolving then projecting into \(\mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) gives the same equivalence class.
 
-	% TODO: I was tired when I wrote this... I should check it.
-	The isomorphism respects the algebra structure as \(a_{1} \connect a_{2}\) is sent to \([k_{a_{1} \connect a_{2}}] \in \mathcal{K}_{m + n} / \mathcal{K}_{m + n + 1}\) that comes from the resolution of a singular knot \(k^{\bullet}_{a_{1} \connect a_{2}}\) with chord diagram \(a_{1} \connect a_{2}\). But likewise \(a_{1}\) and \(a_{2}\) map to \([k_{a_{1}}]\) and \([k_{a_{2}}]\) which are resolutions of singular knots \(k^{\bullet}_{a_{1}}\) and \(k^{\bullet}_{a_{2}}\). The induced operation from the connect sum \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \otimes \mathcal{K}_{n}/\mathcal{K}_{n + 1} \to \mathcal{K}_{m + n}/\mathcal{K}_{m + n + 1}\) takes these to \([k_{a_{1}} \connect k_{a_{2}}]\), which comes from the resolution of \(k^{\bullet}_{a_{1}} \connect k^{\bullet}_{a_{2}}\). These singular knots may not a-priori be the same, but they have the same chord diagram, so by the crossing-change argument they can be chosen to be the same. Hence their resolutions are the same.
-
-	% TODO: really...?
 	Using similar arguments, from the formula of Willerton's Lemma, the isomorphism can be shown to respect the bialgebra structure.
 
-	The dual version of the statement follows from the regular version, but direct proofs are illustrative and we return to them later. %TODO (Zsuzsi) Do you mean you'll show the direct proof of the dual version later?
+	The dual version of the statement follows from the regular version. We also give a more illustrative direct proof of the dual theorem later.
 \end{proofof}
 
-For now, let's turn to the Vassiliev part of the fundamental theorem, with the following definition. %TODO (Zsuzsi) Didn't you just prove the Vassiliev part? When you say "the following definition", a definition should follow.
-
-The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevich \cite{vassilievs-knot-invariants} is much more involved. Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, but they abound in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants} in order of increasing level of detail. Rather we will boil the Kontsevich integral down to a single universal property.
+For now, let's turn to the other part of the fundamental theorem, due to Maxim Kontsevich which is much more involved. In \cite{vassilievs-knot-invariants}, Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, but they abound in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants} in order of increasing level of detail. Rather we will boil the Kontsevich integral down to a single universal property.
 
 \begin{definition}
-	The \textbf{completion} of a filtered algebra \(A\) is the filtered algebra
-	\[\widehat{A} = \varprojlim_{m \to \infty} A_{m} / A_{m + 1}.\]
-    %TODO (Zsuzsi) This sdhould ne $A/A_{m+1}$ (otherwise the inverse limit is not defined)
-	In other words this is the degree-completion of the graded algebra \(\gr A\). 
-    %TODO (Zsuzsi) This is not true! see notes in email 9th of December
-    Note that \(\widehat{A}\) is only a filtered algebra, not a graded one, as its elements can have infinitely many terms non-zero, so it doesn't decompose as a direct sum.
+	The \textbf{completion} of a descending-filtered algebra \(A\) is the descending-filtered algebra
+	\[\widehat{A} = \varprojlim_{m \to \infty} A / A_{m + 1}.\]
+	This is the inverse system
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCIwID0gQS9BX3swfSJdLFsxLDAsIkEvQV97MX0iXSxbMiwwLCJBL0FfezJ9Il0sWzMsMCwiXFxjZG90cyJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDEsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+	\[\begin{tikzcd}
+		{0 = A/A_{0}} & {A/A_{1}} & {A/A_{2}} & \cdots
+		\arrow[two heads, from=1-2, to=1-1]
+		\arrow[two heads, from=1-3, to=1-2]
+		\arrow[two heads, from=1-4, to=1-3]
+	\end{tikzcd}\]
+	whose \(m\)th filtered component is the set of sequences that vanish in \(A/A_{m + 1}\) (and by the properties of inverse systems, all terms thereafter).
 \end{definition}
+
+If \(A\) is graded, then it is also filtered with the natural descending filtration
+\[\bigoplus_{i = 0}^{\infty} A_{i} \supseteq \bigoplus_{i = 1}^{\infty} A_{i} \supseteq \cdots.\]
+The degree completion of a graded algebra \(A\) if a descending-filtered algebra that coincides with the completion \(\widehat{A}\) taken with respect to the natural descending filtration on \(A\).
 
 \begin{definition}
 	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \partial^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
@@ -1080,7 +1047,7 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 \begin{remark}
 	Another equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
 
-	The Kontsevich integral is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
+	A universal Vassiliev invariant is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
 \end{remark}
 
 \begin{theorem}[Kontsevich Integral]
@@ -1089,7 +1056,7 @@ The part of Theorem \ref{thm:fundamental-theorem-restated} due to Maxim Kontsevi
 \end{theorem}
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (Kontsevich)}
-	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses. %TODO (Zsuzsi) I think this easy to see is essentially the universal property of the Kontsevich Integral, which might be good to pint out.
+	Take the map \(k \in \mathcal{K}_{m} \to \mathcal{A}_{m}\) coming from killing the higher degree terms in the Kontsevich integral, and taking the lowest order non-zero chord diagram. This factors through the quotient to a map \(\mathcal{K}_{m}/\mathcal{K}_{m + 1} \to \mathcal{A}_{m}\) since by Theorem \ref{thm:kontsevich-integral-is-universal}, any additional \(k' \in \mathcal{K}_{m + 1}\) contributes only higher degree terms, which get killed. It is easy to see that the two maps are inverses.
 \end{proofof}
 
 Again, it's worth looking at the proof in the dual setting too.
@@ -1097,16 +1064,20 @@ Again, it's worth looking at the proof in the dual setting too.
 \begin{lemma}
 	\label{lem:kontsevich-integral-then-weight-system-is-vassiliev}
 	Post-composing the Kontsevich integral with a weight system of order \(m\),
-	\[k \longmapsto W(Z(k))\]
-	(or more precisely, the following composition)
-	\[\mathcal{K} \overset{Z}{\longrightarrow} \widehat{\mathcal{A}} \overset{\pi_{m}}{\longrightarrow} \mathcal{A}_{m} \overset{W}{\longrightarrow} \mathbb{Q}\]
+	\[k \longmapsto W \circ Z(k)\]
 	gives a Vassiliev invariant of order \(m\).
-\end{lemma} %TODO (Zsuzsi) I would state this only precisely, and then note that you'll drop the projection in formulas and write $W(Z(k))$.
+\end{lemma}
+
+\begin{warning}
+	More precisely, this is the following composition
+	\[\mathcal{K} \overset{Z}{\longrightarrow} \widehat{\mathcal{A}} \overset{\pi_{m}}{\longrightarrow} \mathcal{A}_{m} \overset{W}{\longrightarrow} \mathbb{Q}\]
+	but we will drop the map \(\pi_{m}\) from the notation. This is equivalent to asserting that a weight system of order \(m\) is zero on chord diagrams of order other than \(m\).
+\end{warning}
 
 \begin{proof}
-	The map \(W \circ Z\) is clearly an invariant, since \(Z\) is an invariant. It's Vassiliev since on linear combinations \(k \in \mathcal{K}_{m + 1}\), \(Z(k)\) has nothing in degree \(m\), 
-    %TODO "$Z(k)$ is zero in derees up to m due to the universal property, so projecting to $\mathcal{A}_m$ gives zero"
-    so composing with a weight system of degree \(m\) gives zero. 
+	The map \(W \circ Z\) is clearly an invariant, since \(Z\) is an invariant. By the universal property of \(Z\), if \(k \in \mathcal{K}_{m + 1}\), so then \(k = \partial (k^{\bullet})\) for some \(k^{\bullet}\) in \(\mathcal{K}^{\bullet}_{m + 1}\),
+	\[Z(k) = \sigma(k^{\bullet}) + \parbox{2.5cm}{\centering terms of \\ order \((m + 2)\)}\]
+	\(Z(k)\) is zero in degrees up to and including \(m\), so composing so composing with a weight system of degree \(m\) gives zero. 
 \end{proof}
 
 \begin{proofof}{Theorem \ref{thm:fundamental-theorem-restated} (dual)}
@@ -1187,7 +1158,7 @@ Finally, we return to the equivalence of the two fundamental theorems.
 
 	First we prove that the Kontsevich part of the fundamental theorem holds. Let \(W\) be a weight system of order \(m\). Then \(W\) defines an invariant \(v_{W}^{\bullet}\) of \(m\)-singular knots by \(v_{W}^{\bullet}(k) = W(\sigma(k))\). The derivative of \(v_{W}^{\bullet}\) is zero. Indeed, 
 	\[\delta v_{W}^{\bullet}(k) = W(\sigma(k^{+})) - W(\sigma(k^{-}))\]
-	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar}. Therefore the conditions of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} and integrates into a Vassiliev invariant. %TODO (Zsuzsi) grammar of last sentence 
+	for some knots \(k^{+}\) and \(k^{-}\) that differ by crossing changes, but \(\sigma\) is invariant under crossing changes. Also, since \(W\) is a weight system it satisfies \ref{eq:4Tstar}, and so \(W'\) satisfies \ref{eq:T4Tstar}. Therefore the hypotheses of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} hold and integrates into a Vassiliev invariant.
 
 	The Vassiliev part of the theorem is independent of the original version and was proven separately in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}.
 
