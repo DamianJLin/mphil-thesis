@@ -124,7 +124,8 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 \end{enumerate}
 \end{proof}
 
-\begin{lemma}[Generalised \ref{eq:IHX}]
+\begin{proposition}[Generalised \ref{eq:IHX}]
+	\label{lem:generalised-ihx}
 	The following holds in \(\mathcal{J}\) for any subgraph consisting of trivalent vertices that can be inserted into the grey box.
 	\[
 		\sum_{i = 0}^{m}\
@@ -137,9 +138,58 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 		\def\svgscale{0.3}
 		\raisebox{-34pt}{\input{graphics/generalised_ihx_right.pdf_tex}}
 	\]
-\end{lemma}
+\end{proposition}
 
-The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof.
+The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof. A corollory is the following result, which will be important later.
+
+\begin{proposition}
+	\label{prop:linear-jacobi-diagrams-cyclically-invariant}
+	If the univalent vertices of a Jacobi diagram are ordered linearly rather than cyclically, all linear orders that respect a given cyclic order are equivalent.
+\end{proposition}
+
+\begin{proof}
+	Let us draw the linearly ordered Jacobi diagrams on a line rather than a circle and let the univalent edge ordering be given by the order on the line. It suffices to prove that we can move the univalent vertex in the first place to the last place via the relations in \(\mathcal{A}\). Let us call this first univalent vertex of the original diagram the marked vertex, as its position will later change when relations are applied.
+
+	By \ref{eq:STU}, the original diagram is equal to the diagram with the marked vertex moved into the second place, plus a diagram in which the marked vertex is now a trivalent vertex and attached above what was the second (but is now the first) univalent vertex.
+	\[
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example.pdf}
+		\quad
+		=
+		\quad
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_t.pdf}
+		\quad
+		+
+		\quad
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_u.pdf}
+	\]
+	Repeatedly applying \ref{eq:STU} to move the the marked vertex until reaches the last place, we get
+	\[
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example.pdf}
+		\quad
+		=
+		\quad
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_final.pdf}
+		\quad
+		+
+		\quad
+		\Theta
+	\]
+	where \(\Theta\) is a sum of terms with the marked vertex now a trivalent vertex attached above each of the other univalent vertices. It suffices to show that \(\Theta\) vanishes.
+
+	We can split \(\Theta\) up based on which connected component the marked vertex now connects to. For connected components other than the connected component of the marked vertex, apply a vertical version of the the generalised \ref{eq:IHX}, where the the whole connected component is inside the grey box except for where the univalent vertices connect to the bottom line. This is the case of the generalised \ref{eq:IHX} where \(n = 0\) and no vertices leave. Hence, the sum vanishes for that connected component.
+
+	This leaves only the terms where the marked vertex connects back to its own connected component. By a generalised \ref{eq:IHX} of the form
+	\[
+		\sum \includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_same_cc.pdf}\; ,
+		\quad
+		\text{this is equal to the diagram}
+		\quad
+		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_lollipop.pdf}.
+	\]
+	But any diagram with a ``balloon'' vanishes, as applying the \ref{eq:AS} relation to the vertex on the balloon, it is equal to its negative.
+
+	Hence \(\Theta = 0\), completing the proof.
+\end{proof}
 
 We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mathcal{J}\) will be isomorphic as bialgebras. In fact, as algebras, this is clearly true so far, as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
 
@@ -254,9 +304,9 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 	\label{cons:lie-algebra-weight-system}
 	The construction takes a metric Lie algebra \(\mathfrak{g}\), and produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) which is a \(\mathcal{U}(\mathfrak{g})\)-valued weight system. Given further a representation \(\rho\) of \(\mathfrak{g}\) it produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to k\) which is a \(k\)-valued weight system. That is, given \(\mathfrak{g}\) a metric Lie algebra, \(J \in \mathcal{A}\) it produces an element of \(\mathcal{U}(\mathfrak{g})\), and if also given a representation \(\rho\) it produces a scalar. We write \(v\) and \(u\) for the number of trivalent and univalent vertices of \(J\).
 
-	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (both components are covariant, i.e. inputs or both are contravariant, i.e. outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant). We denote this tensor \(T_{\mathfrak{g}}(J)\).
+	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (both components are covariant, i.e. inputs or both are contravariant, i.e. outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant). 
 
-	Contract this tensor with a copy of the casimir along all remaining covariant components. The result is a tensor in \(\mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\),
+	Contract this tensor with a copy of the casimir along all remaining covariant components. We define the result to be the tensor \(T_{\mathfrak{g}}(J) \in \mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\),
 	\[W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g}).\]
 
 	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of a Lie algebra extends uniquely to a representation of its universal enveloping algebra \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\). Define \(W_{\mathfrak{g}, \rho}\) as the trace of \(W_{\mathfrak{g}}(J)\) with respect to this representation,
@@ -269,7 +319,57 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 \end{warning}
 
 \begin{example}
+	\label{ex:simple-sl2-computation}
+	Take the metric Lie algebra \((\mathfrak{sl}_{2}, \langle \cdot, \cdot \rangle)\) where \(\mathfrak{sl}_{2}\) is defined by
+	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h,\]
+	and the metric is
+	\[\langle h, h \rangle = 2, \quad \langle e, f \rangle = 1, \quad \langle f, e \rangle = 1.\]
+	Here we have chosen the normalisation of the metric that agrees with the trace in the adjoint representation.
+	So,
+	\[
+		[\cdot, \cdot]
+		=
+		2 e^{\ast} \otimes h^{\ast} \otimes e - 2 f^{\ast} \otimes h^{\ast} \otimes f + f^{\ast} \otimes e^{\ast} \otimes h.
+	\]
 
+	We do the computations for
+	\[	
+		J = \includegraphics[width=0.1\textwidth, valign=c]{graphics/jacobi_bivalent_bubble.pdf}.
+	\]
+	Taking another copy \([\cdot, \cdot]'\) of the bracket tensor, one way to compute \(W_{\mathfrak{sl}_{2}} \left( J \right)\) is to let \([\cdot,\cdot]\) take the left trivalent vertex, and associate the upward facing half-edge to the first component. Let \([\cdot,\cdot]'\) take the right trivalent vertex and associate the downward facing half-edge to the first component. The cyclic orders determine the rest. Then the computation is to take the contraction of \([\cdot,\cdot]\) along components 1 and 3 with \([\cdot,\cdot]'\) along components 3 and 1. This gives
+	\[2 h^{\ast} \otimes h^{\ast} + e^{\ast} \otimes f^{\ast} + f^{\ast} \otimes e^{\ast},\]
+	and contracting along each component with a casimir to make them contravariant,
+	\[
+		T_{\mathfrak{sl}_{2}}
+		\left(
+		J
+		\right)
+		=
+		\frac{1}{2} h \otimes h + e \otimes f + f \otimes e.
+	\]
+	Projecting this into \(\mathcal{U}(\mathfrak{g})\) and writing it in the PBW-basis,
+	\[W_{\mathfrak{sl}_{2}}(J) = \frac{1}{2} h \otimes h - h + 2 e \otimes f.\]
+
+	Finally, if we use the adjoint representation \(\operatorname{ad}\),
+	\[
+		\operatorname{ad}(h) =
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & -1
+		\end{bmatrix}\;,\quad
+		\operatorname{ad}(e) =
+		\begin{bmatrix}
+			0 & 1 \\
+			0 & 0
+		\end{bmatrix}\;,\quad
+		\operatorname{ad}(f) =
+		\begin{bmatrix}
+			0 & 0 \\
+			1 & 0
+		\end{bmatrix}\;,\quad
+	\]
+	we get
+	\[W_{\mathfrak{sl}_{2}, \operatorname{ad}}(J) = 3.\]
 \end{example}
 
 \begin{theorem}
@@ -278,61 +378,19 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 %TODO (Zsuzsi) A picture to illustrate this construction is depreately needed. I understand what you're saying, but only because I know it.
 
 \begin{proof}[\cite{on-the-vassiliev-knot-invariants}]
-
-	To prove that \(W_{\mathfrak{g}, \rho}\) is well-defined, there are two points to prove. Jacobi diagrams are defined up to certain internal relations, namely \ref{eq:IHX} and \ref{eq:AS}, so the first point is that \(T_{\mathfrak{g}}(J)\) is invariant under \ref{eq:IHX} and \ref{eq:AS}. For \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation.
+	To prove that \(W_{\mathfrak{g}, \rho}\) is well-defined, there are two points to prove. Jacobi diagrams are defined up to certain internal relations, namely \ref{eq:IHX} and \ref{eq:AS}, so the first point is that \(T_{\mathfrak{g}}(J)\) is invariant under \ref{eq:IHX} and \ref{eq:AS}. For \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation. Alternatively, it follows from the second point as \ref{eq:IHX} and \ref{eq:AS} are consequences of \ref{eq:STU}.
 
 	The second thing to prove is that \(W_{\mathfrak{g}}(J)\) is invariant under \ref{eq:STU}.
 	If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
 	but this equality is exactly the defining relation of \(\mathcal{U}(\mathfrak{g})\).
 
-	There was one other arbitrary choice we made: choosing \(T_{\mathfrak{g}} \in \mathfrak{g}^{\otimes u}\) specifies a linear order of the components of this tensor that agrees with the cyclic order induced by the cyclic order on the univalent vertices of \(J\). We must show that any choice of such linear order produces the same result. This is no problem for the well-definition of \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J)))\), as the trace is invariant under cyclic permutation. However for \(W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g})\) it remains to prove cyclic permutation invariance.
-
-	\begin{shaded}
-		prove it
-	\end{shaded}
-
-	\begin{shaded}
-		Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). 
-		%TODO (Zsuzsi) And the cyclic symmetry?
-		
-		Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We need to show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. 
-		%TODO (Zsuzsi) I find this phrasing confusing because the tensor lives in the codomain, while "anything satisfying STU" lives in the domain. Maybe you just want to say that the required property follows from the fact that chord diagrams on a line are cyclically symmetric.
-		Since it is stronger, let us prove it instead for \(\mathcal{A}\).
-		% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras). 
-		%TODO (Zsuzsi) I think that's a good idea, so here in the proof you can just say this is a direct consequence of Lemma XX.
-
-		It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) 
-		%TODO (Zsuzsi) Singular vs plural
-		in the first position and moving it to the last position, reducing by one the positions of all other legs. 
-		%TODO (Zsuzsi) I think saying you're reducing the positions of the legs is unnecessary (it's about as confusing as it is helpful)
-		This generates the cyclic group on the number of univalent vertices, 
-		%TODO (Zsuzsi) Maybe better: "This operation generates all cyclic permutations of the legs"?
-		so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost
-		%TODO (Zsuzsi) Cost is a word you and I and Dror use in conversation, but it isn't mathematically precise, nor universally understood
-		of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. 
-		%TODO (Zsuzsi) Grammar
-		We will show that this cost is zero.
-
-		We split this sum by the connected components
-		%TODO (Zsuzsi) Component? (singular)
-		of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
-		%TODO (Zsuzsi) This is near impossible to decode without a picture
-
-		That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
-	\end{shaded}
+	We come to the third point. There was one other arbitrary choice we made. The cyclic order of the univalent vertices of \(J\) induce a cyclic order on the components of the components of the tensor \(T_{\mathfrak{g}} \in \mathfrak{g}^{\otimes u}\). However, in the construction, a linear order which respects that cyclic order was chosen. We must show that any choice of linear order respecting the cyclic order produces the same result. This is no problem for the well-definition of \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J)))\), as the trace is invariant under cyclic permutation. However for \(W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g})\) it remains to prove cyclic permutation invariance. In fact a stronger statement is true. The diagram \(J\) itself is invariant under a cyclic permutation by Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, so of course this is true for \(W_{\mathfrak{g}}(J)\).
 \end{proof}
 
 Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
 \begin{example}[Weight system for \({\mathfrak{sl}_{2}}\)]
-	We choose as our Lie algebra \(\mathfrak{sl}_{2}\), generated by \(h\), \(e\) and \(f\) with commutators
-	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h.\]
-	The unique invariant bilinear form up to a scalar factor is
-	\[\langle h, h \rangle = 2, \quad \langle e, f \rangle = 1, \quad \langle f, e \rangle = 1,\]
-	(those pairings not displayed are zero).
-    Here we have chosen the normalisation of the metric that agrees with the trace in the adjoint representation.
-
-In \cite{remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}, the following skein relation is derived:
+	We use the metric Lie algebra from Example \ref{ex:simple-sl2-computation}. In \cite{remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}, the following skein relation is derived:
 	% NOTE: We are using the trace in the fundamental representation as our invariant bilinear form. If instead, we used the trace in the adjoint representation, we would get coefficients 1 instead of 4.
 	\[
 		W_{\mathfrak{sl}_{2}}
