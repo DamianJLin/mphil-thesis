@@ -209,7 +209,7 @@ Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra. Then it has an in
 	\qquad \text{and} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
 \]
-The bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation. An \(n\)
+The bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
 
 Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which graphically can be represented as cyclic invariance of the contraction of the bracket and the metric
 \[
@@ -250,87 +250,77 @@ Again, arrows are unnecessary on the thick edges corresponding to inputs and out
 
 The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} uses this diagrammatic calculus to take metric Lie algebras and produce weight systems.
 
-% TODO: According to Chmutov-Duzhin-Mostovoy, p164, the weight system is only multiplicative if the representation is irreducible. Question for Zsuzsi: does this mean we only get a quotient of A if we put in an irreducible representation?
-\begin{theorem}
-	The construction below which takes a lie algebra \(\mathfrak{g}\) produces a well-defined weight system \(W_{\mathfrak{g}}\) valued in \(\mathcal{U}(\mathfrak{g})\).
-	% TODO: Should this be Q?
-	Furthermore if a representation, \(\rho\) of \(\mathfrak{g}\) is given, then a \(\mathbb{C}\)-valued weight system is produced.
-\end{theorem}
-%TODO (Zsuzsi) I would have an informal intro paragraph describing what the construction will do, and state the theorem after, when we can understand what it states. (My principle, which is mainstream but not universal, is that Theorem, Lemma and Definition environments should always include precise statements that the reader has enough information to understand.)
-
 \begin{construction}
 	\label{cons:lie-algebra-weight-system}
-    %TODO Zsuzsi: Start with the input: a lie algebra and a chord diagram with this many trivalent vertices, this many univalent vertices, etc. Set the notation at the beginning. Say what output you're aiming for: an element of U(g)
-	Given a Lie algebra \(\mathfrak{g}\), the vertex \(m\)
-    %TODO (Zsuzsi) Are we supposed to know what $m$ is? I think above you called in $[,]$.
-    with signature \(\mathfrak{g} \otimes \mathfrak{g} \otimes \mathfrak{g}\) is associated to a genuine 
-    %TODO (Zsuzsi) what does genuine mean here?
-    element of the tensor algebra \(T_{\mathfrak{g}}(m) \in \mathfrak{g}^{\otimes 3}\). For each trivalent vertex of the Jacobi diagram \(J \in \mathcal{A}\), take \(T_{\mathfrak{g}}(m)\), and take all of their tensor products, in arbitrary order. 
-    %TODO (ZSuzsi) Streamline the sentence above
-    There being \(v\) trivalent vertices, this lies in \(\mathfrak{g}^{\otimes 3v}\).
+	The construction takes a metric Lie algebra \(\mathfrak{g}\), and produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) which is a \(\mathcal{U}(\mathfrak{g})\)-valued weight system. Given further a representation \(\rho\) of \(\mathfrak{g}\) it produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to k\) which is a \(k\)-valued weight system. That is, given \(\mathfrak{g}\) a metric Lie algebra, \(J \in \mathcal{A}\) it produces an element of \(\mathcal{U}(\mathfrak{g})\), and if also given a representation \(\rho\) it produces a scalar. We write \(v\) and \(u\) for the number of trivalent and univalent vertices of \(J\).
 
-	For each edge between the trivalent vertices in the Jacobi diagram, contract the corresponding variables in \(\mathfrak{g}^{\otimes 3 v}\). The result lies in \(\mathfrak{g}^{\otimes 3v - 2e}\) where \(e\) is the number of edges between trivalent vertices.
+	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (both components are covariant, i.e. inputs or both are contravariant, i.e. outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant). We denote this tensor \(T_{\mathfrak{g}}(J)\).
 
-	The number of univalent vertices matches the number of remaining uncontracted trivalent vertices, \(u = 3v - 2e\). In-particular the edges between univalent and trivalent vertices, along with the cyclic order on univalent vertices determines a cyclic order on the remaining trivalent vertices.
-    %TODO (Zsuzsi) This is a bit unclear. The tensor factors were associated to the "ends" of the edges coming out of a trivalent vertex, not to the vertices. So, what do you mean by "remaining" or "uncontracted" trivalent vertices? In my opinion this is not needed: the remaining tensor factors correspond to the univalent vertices, period. And these are cyclically ordered. 
-    So, a cyclic order on the factors of \(\mathfrak{g}^{\otimes 3v - 2e} = \mathfrak{g}^{\otimes u}\). Permute the factors into an order which respects the induced cyclic order (there are many --- choose one).
-    %TODO (Zsuzsi) There are exactly $u$ choices?
-    Projecting from the tensor algebra of \(\mathfrak{g}\) into the universal enveloping algebra \(\mathcal{U}(\mathfrak{g})\), we obtain an element \(W_{\mathfrak{g}}(J) \in \mathcal{U}(\mathfrak{g})\).
+	Contract this tensor with a copy of the casimir along all remaining covariant components. The result is a tensor in \(\mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\),
+	\[W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g}).\]
 
-	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of \(\mathfrak{g}\) extends uniquely to a representation \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\) of \(\mathcal{U}(\mathfrak{g})\). Use this representation and take the trace of \(W_{\mathfrak{g}}(J)\). The result is an element of the ground field: \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(T_{\mathfrak{g}}(J))) \in \mathbb{C}\).
+	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of a Lie algebra extends uniquely to a representation of its universal enveloping algebra \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\). Define \(W_{\mathfrak{g}, \rho}\) as the trace of \(W_{\mathfrak{g}}(J)\) with respect to this representation,
+	\[W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J))) \in \mathbb{Q}.\]
 \end{construction}
 
-%TODO (Zsuzsi) A picture to illustrate this construction is depreately needed. I understand what you're saying, but only because I know it.
-
 \begin{warning}
-	When constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y, x, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU}. 
-    %TODO (Zsuzsi) This warning should be stated within the construction, rather than as a separate environment?
+	\label{warn:cyclic-order-of-bracket}
+	In Construction \ref{cons:lie-algebra-weight-system} when constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y^{\ast}, x^{\ast}, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU} (this will become evident in the proof that this construction works).
 \end{warning}
 
-Hence, we have the functions \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) and \(W_{\mathfrak{g}, \rho}: \mathcal{A} \to \mathbb{C}\) which we claim are weight systems.
+\begin{example}
 
-\begin{proof}
-%TODO (Zsuzsi) Proof of what?
-	The contruction creates a string diagram which is well-defined modulo certain diagrammatic relations as seen at the start of this section such as the cyclic invariance of the contraction of the metric and bracket. 
-    %TODO (Zsuzsi) Instead of "relations seen at the beginning of the sections such as ..." have the relations as numbered equations, and reference them specifically.
-    By \cite[Proposition 3.1.1]{vassiliev-knot-invariants-and-lie-s-algebras}, string diagrams modulo these relations are exactly encoded by unitrivalent graphs with a cyclic order on trivalent vertices, and a linear order on univalent vertices.
+\end{example}
 
-	\begin{shaded}
-		Explicitly have diagrams for all the relations, involving the symmetry natural transformation, so that we can later say that this could not be the on-the-nose identity.
-	\end{shaded}
+\begin{theorem}
+	In Construction \ref{cons:lie-algebra-weight-system}, \(W_{\mathfrak{g}}\) is a well-defined \(\mathcal{U}(\mathfrak{g})\)-valued weight system, and \(W_{\mathfrak{g}, \rho}\) is a well-defined \(\mathbb{Q}\)-valued weight system.
+\end{theorem}
+%TODO (Zsuzsi) A picture to illustrate this construction is depreately needed. I understand what you're saying, but only because I know it.
 
-	Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). 
-    %TODO (Zsuzsi) And the cyclic symmetry?
-    If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
+\begin{proof}[\cite{on-the-vassiliev-knot-invariants}]
+
+	To prove that \(W_{\mathfrak{g}, \rho}\) is well-defined, there are two points to prove. Jacobi diagrams are defined up to certain internal relations, namely \ref{eq:IHX} and \ref{eq:AS}, so the first point is that \(T_{\mathfrak{g}}(J)\) is invariant under \ref{eq:IHX} and \ref{eq:AS}. For \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation.
+
+	The second thing to prove is that \(W_{\mathfrak{g}}(J)\) is invariant under \ref{eq:STU}.
+	If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
 	but this equality is exactly the defining relation of \(\mathcal{U}(\mathfrak{g})\).
 
-	Indeed \ref{eq:AS} and \ref{eq:IHX} follow from \ref{eq:STU} but they are also easy to see directly. \(\ref{eq:AS}\) follows from the skew-symmetry of the vertex \(m\), being built out of the bracket, and \(\ref{eq:IHX}\) follows from the Jacobi identity in \(\mathfrak{g}\).
+	There was one other arbitrary choice we made: choosing \(T_{\mathfrak{g}} \in \mathfrak{g}^{\otimes u}\) specifies a linear order of the components of this tensor that agrees with the cyclic order induced by the cyclic order on the univalent vertices of \(J\). We must show that any choice of such linear order produces the same result. This is no problem for the well-definition of \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J)))\), as the trace is invariant under cyclic permutation. However for \(W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g})\) it remains to prove cyclic permutation invariance.
 
-	Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We need to show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. 
-    %TODO (Zsuzsi) I find this phrasing confusing because the tensor lives in the codomain, while "anything satisfying STU" lives in the domain. Maybe you just want to say that the required property follows from the fact that chord diagrams on a line are cyclically symmetric.
-    Since it is stronger, let us prove it instead for \(\mathcal{A}\).
-	% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras). 
-    %TODO (Zsuzsi) I think that's a good idea, so here in the proof you can just say this is a direct consequence of Lemma XX.
+	\begin{shaded}
+		prove it
+	\end{shaded}
 
-	It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) 
-    %TODO (Zsuzsi) Singular vs plural
-    in the first position and moving it to the last position, reducing by one the positions of all other legs. 
-    %TODO (Zsuzsi) I think saying you're reducing the positions of the legs is unnecessary (it's about as confusing as it is helpful)
-    This generates the cyclic group on the number of univalent vertices, 
-    %TODO (Zsuzsi) Maybe better: "This operation generates all cyclic permutations of the legs"?
-    so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost
-    %TODO (Zsuzsi) Cost is a word you and I and Dror use in conversation, but it isn't mathematically precise, nor universally understood
-    of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. 
-    %TODO (Zsuzsi) Grammar
-    We will show that this cost is zero.
+	\begin{shaded}
+		Thus, to prove that the map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) is well-defined it suffices to show that the string diagrams obey the \(\ref{eq:STU}\) relations when interpreted as elements of \(\mathcal{U}(\mathfrak{g})\). 
+		%TODO (Zsuzsi) And the cyclic symmetry?
+		
+		Finally, a Jacobi diagram's univalent vertices only have a cyclic order. But in the construction a true order respecting that cyclic order was chosen. We need to show that any order respecting the cyclic order leads to the same result. It suffices to show that the tensor is cyclically symmetric. Indeed, a stronger statement is true: anything satisfying the \ref{eq:STU} relation is cyclically symmetric. 
+		%TODO (Zsuzsi) I find this phrasing confusing because the tensor lives in the codomain, while "anything satisfying STU" lives in the domain. Maybe you just want to say that the required property follows from the fact that chord diagrams on a line are cyclically symmetric.
+		Since it is stronger, let us prove it instead for \(\mathcal{A}\).
+		% TODO: Perhaps this could be moved above, to a corollary of the generalised IHX lemma. After all it is a structural theorem on A (and similar algebras). 
+		%TODO (Zsuzsi) I think that's a good idea, so here in the proof you can just say this is a direct consequence of Lemma XX.
 
-	We split this sum by the connected components
-    %TODO (Zsuzsi) Component? (singular)
-    of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
-    %TODO (Zsuzsi) This is near impossible to decode without a picture
+		It is equivalent to prove that any Jacobi diagram on a long line is cyclically symmetric. Examine the operation of taking the univalent vertex (which we will here call legs) 
+		%TODO (Zsuzsi) Singular vs plural
+		in the first position and moving it to the last position, reducing by one the positions of all other legs. 
+		%TODO (Zsuzsi) I think saying you're reducing the positions of the legs is unnecessary (it's about as confusing as it is helpful)
+		This generates the cyclic group on the number of univalent vertices, 
+		%TODO (Zsuzsi) Maybe better: "This operation generates all cyclic permutations of the legs"?
+		so it is enough to show this operation preserves the Jacobi diagram. The \ref{eq:STU} relation gives the cost
+		%TODO (Zsuzsi) Cost is a word you and I and Dror use in conversation, but it isn't mathematically precise, nor universally understood
+		of commuting the first leg past the \(i\)th leg: the same diagram with the first leg attached to the \(i\)th leg. Thus cost commuting the first leg to the very last place is the sum over the other legs of attaching it to those legs. 
+		%TODO (Zsuzsi) Grammar
+		We will show that this cost is zero.
 
-	That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
+		We split this sum by the connected components
+		%TODO (Zsuzsi) Component? (singular)
+		of the \(i\)th leg. On components that don't contain the first leg, this is the sum, over legs, of the same diagram, with the first leg attached to the \(i\)th leg. This vanishes by the generalised \ref{eq:IHX}. On the component that contains the first leg, generalised \ref{eq:IHX} produces a diagram with a loop at the top, which is killed by \ref{eq:AS}.
+		%TODO (Zsuzsi) This is near impossible to decode without a picture
+
+		That \(W_{\mathfrak{g}, \rho}\) is a genuine weight system into \(\mathbb{C}\) follows from that a representation on \(\mathfrak{g}\) extends uniquely to \(\mathcal{U}(\mathfrak{g})\).
+	\end{shaded}
 \end{proof}
 
 Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
