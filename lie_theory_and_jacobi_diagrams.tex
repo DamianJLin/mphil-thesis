@@ -375,7 +375,6 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 \begin{theorem}
 	In Construction \ref{cons:lie-algebra-weight-system}, \(W_{\mathfrak{g}}\) is a well-defined \(\mathcal{U}(\mathfrak{g})\)-valued weight system, and \(W_{\mathfrak{g}, \rho}\) is a well-defined \(\mathbb{Q}\)-valued weight system.
 \end{theorem}
-%TODO (Zsuzsi) A picture to illustrate this construction is depreately needed. I understand what you're saying, but only because I know it.
 
 \begin{proof}[\cite{on-the-vassiliev-knot-invariants}]
 	To prove that \(W_{\mathfrak{g}, \rho}\) is well-defined, there are two points to prove. Jacobi diagrams are defined up to certain internal relations, namely \ref{eq:IHX} and \ref{eq:AS}, so the first point is that \(T_{\mathfrak{g}}(J)\) is invariant under \ref{eq:IHX} and \ref{eq:AS}. For \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation. Alternatively, it follows from the second point as \ref{eq:IHX} and \ref{eq:AS} are consequences of \ref{eq:STU}.
@@ -412,40 +411,40 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 		\end{align*}
 	\end{proof}
 
-	\begin{shaded}
-		In fact, this skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\), which is related to the Lie algebra \(\mathfrak{sl}_{2}\) \cite{introduction-to-vassiliev-invariants}. It has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system}. There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). However it does not obey the vector triple product rule.
-	\end{shaded}
-
 	\begin{remark}
-		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension, so for \(\mathfrak{sl}_{2}\), the factor \(3\).
-		% TODO: Name drop the casimir above so they know what it is. (Zsuzsi) - Agreed.
-        %TODO (Zsuzsi) An example picture?
+		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension, so for \(\mathfrak{sl}_{2}\), the factor \(3\). For example
+		\[
+			W_{\mathfrak{sl}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble.pdf}
+			\quad
+			=
+			\quad
+			3 W_{\mathfrak{sl}_{2}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble_removed.pdf}
+		\]
 	\end{remark}
 \end{example}
 \begin{question}
-	Are there similar skein relations that the weight systems for the exceptional Lie algebras obey?
+	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). It also obeys a variant of the vector triple product rule. Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
 \end{question}
 
-Bar-Natan's construction yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether every all
-%TODO (Zsuzsi) grammar
-the information in \(\mathcal{A}\) can be extracted with some metric Lie algebra.
+Construction \ref{cons:lie-algebra-weight-system} yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether all of the information in \(\mathcal{A}\) can be extracted by metric Lie algebras in this way.
 
-Computer enumeration of chord diagrams \cite{on-the-vassiliev-knot-invariants} prove this for order \(m \leq 9\), the order to which the dimensions \(\operatorname{dim}\mathcal{A}_{m} = \operatorname{dim}\mathcal{W}_{m}\) were known:
+A Computer enumeration of \cite{on-the-vassiliev-knot-invariants} proves this for order \(m \leq 9\):
 \[
-	% TODO: Check that these are definitely the unframed numbers.
-	\begin{tblr}{hlines, vlines}
-		m									& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ \hline % & 10  & 11  & 12  \\
-		\operatorname{dim}\mathcal{A}_{m}					& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
-		\operatorname{dim}(\operatorname{span}(W_{\mathfrak{sl}_{n}, \mathfrak{gl}_{n}}))	& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
+	\begin{tblr}{hlines, vlines, colspec={lcccccccccc}}
+		m									& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ % & 10  & 11  & 12  \\
+		\operatorname{dim} \mathcal{W}_{m}					& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\ % & 184 & 316 & 548 \\
+		\operatorname{dim} (\mathcal{W}_{\text{Lie}})_{m}			& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
 	\end{tblr}
 \]
-Here \(\operatorname{span}(W_{\{\mathfrak{g}, \rho\}})\) %but this is not the notation in the table, there you have $W$ with two lie algebras in the subscript, no reps
-denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Costruction \ref{cons:lie-algebra-weight-system} on representations of classical Lie algebras \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\).
+Here \(\mathcal{W}_{\text{Lie}}\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Construction \ref{cons:lie-algebra-weight-system}. In other words
+\[\mathcal{W}_{\text{Lie}} = \operatorname{span} \{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}.\]
+In \cite{on-the-vassiliev-knot-invariants}, this is computed up to degree \(9\) only using the span of \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\) Lie algebras, providing a lower bound on \(\operatorname{dim} (\mathcal{W}_{\text{Lie}})_{m}\). The upper bound comes from \(\operatorname{dim} \mathcal{A}_{m}\). So in fact, up to degree \(9\), \(\mathcal{W}_{m}\) is spanned even by only the \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\) weight systems.
 
 \begin{conjecture}[Bar-Natan]
 	\label{conj:lie-algebra-weight-systems-span}
 	All weight systems are obtained as Lie algebra weight systems. In other words the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
-    %TODO (Zsuzsi) Now we have a rep, but no curly brackets
 \end{conjecture}
 
 Indeed the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) as it was drawn graphically looks exactly like the \ref{eq:STU} relation in \(\mathcal{A}\). However, looks can be decieving and quite surprisingly this conjecture is false. The counterexample was found by Pierre Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint} in an attempt to answer the following related question:
@@ -453,9 +452,6 @@ Indeed the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\
 	\label{ques:vogel-universal-lie-algebra}
 	Is there some single universal Lie algebra object whose weight system spans \(W_{\text{Lie}}\), the span of all Lie-algebraic weight systems?
 \end{question}
-
-We will look at examples of more general weight systems in Section~\ref{sec:non-lie-algebraic-weight-systems}. %TODO (ZSuzsi) I think this sentence is not needed: the title of 2.3 flows on beautifully from the Vogel question
-
 
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
@@ -477,16 +473,14 @@ The most general type of objects these constructions apply to are called by Vain
 	\[
 		 \otimes \circ (\otimes \times \operatorname{id}) \longrightarrow \otimes \circ (\operatorname{id} \times \otimes)  \quad \text{ and }\ \quad  \otimes \longrightarrow \operatorname{id}
 	\]
-	satisfying some relations known as the pentagon and triangle relations.
-    %TODO (Zsuzsi) state the relations, or at the very least, reference them
-    The natural isomorphisms give isomorphisms
+	satisfying some relations known as the pentagon and triangle relations \cite[Sec. 1.2]{higher-operads-higher-categories}. The natural isomorphisms give isomorphisms
 	\[(A \otimes B) \otimes C \cong A \otimes (B \otimes C), \qquad k \otimes A \cong A \cong A \otimes k\]
 	for every tuple of objects \(A, B\) and \(C\) in \(\mathcal{C}\). If these isomorphisms are equalities, then \(\mathcal{C}\) is a \textbf{strict} monoidal category.
 \end{definition}
 
 \begin{remark}
 	\label{rem:coherence-for-monoidal-categories}
-	Omitting the details, we assume that these natural isomorphisms are equalities, for example that \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category, and it's why we omit the pentagon and triangle relations in the definition above. We refer to \cite{higher-operads-higher-categories} for details. %TODO (Zsuzsi) This is a big black box, which is justified but the reference should be more specific than a whole book.
+	Omitting the details, we assume that these natural isomorphisms are equalities, for example that \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category, and it's why we omit the pentagon and triangle relations in the definition above. We refer to \cite[Sec. 1.2]{higher-operads-higher-categories} for details.
 \end{remark}
 
 \begin{definitions}
@@ -510,15 +504,13 @@ The most general type of objects these constructions apply to are called by Vain
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
 \end{definitions}
-The hexagon relations have six terms instead of three when the associators omitted due to Remark \ref{rem:coherence-for-monoidal-categories} are reintroduced. %TODO (Zsuzsi) You hadn't used the word associator before, someone who doesn't already know this wouldn't understand
+The hexagon relations have look like they only have three terms instead of the six one might expect from the name. This is because we have ommited the reassociation natural isomorphisms that we can assume are identites by Remark \ref{rem:coherence-for-monoidal-categories}.
 
-If the tensor %TODO (zsuzsi) monoidal?
-category \(\mathcal{C}\) is additionally additive, we can define the following. %TODO (Zsuzsi) "we define lie algebra objects in \(\mathcal{C}\) "
+If a monoidal category \(\mathcal{C}\) is additionally additive, we can define Lie algebra objects internal to \(\mathcal{C}\).
 
 \begin{definitions}
 	\begin{enumerate}
-		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta\) 
-        %TODO (Zsuzsi) Domain and codomain of $\beta$?
+		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) 
         such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
 			Graphically, in terms of the string diagrams of the previous section, this is
@@ -579,9 +571,9 @@ category \(\mathcal{C}\) is additionally additive, we can define the following. 
 
 We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. But for now, let's show that this data can still be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
-\begin{theorem}[\cite{ vassiliev-knot-invariants-and-lie-s-algebras}]
+\begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
 	% TODO: Check that all the ajectives have been defined, or at least thought about.
-	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a dualisable representation \(\eta\). 
+	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(\eta\) a dualisable representation.
     %TODO (Zsuzsi) is $M$ the representation, or $\eta$?
     Then, there is a weight system
 	\[W_{L, \eta}: \mathcal{A} \longrightarrow \mathcal{C}(k, k) \cong k.\]
@@ -630,13 +622,11 @@ More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-gr
 \section{Some weight systems at the exceptional Lie algebras}
 \label{sec:some-weight-systems-at-the-exceptional-lie-algebras}
 
-The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\). \textbf{Insert a summary of the Vogel universality story.} %TODO (Zsuzsi) Don't forget...
+The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\).
 
 The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'.
 
-Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of its parameters \(\alpha, \beta\) and \(\gamma\), and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters \(\alpha, \beta\) and \(\gamma\) 
-%TODO (Zsuzsi) What are paramenters?
-in these two sources makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
+Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of three parameters, and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
 
 Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
 \[
@@ -706,14 +696,9 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_line.pdf}
 	\]
 \end{lemma}
-\begin{proof}
-	\begin{shaded}
-		It's in CDM but it's unsatisfying. If it can be proved for Lie algebras it should be able to be proved in a way where it's obvious it doesn't work for Lie superalgebras, with without referring to the dual basis and its properties.
-	\end{shaded}
-\end{proof}
+This is proven in \cite[Lem. 6.15]{introduction-to-vassiliev-invariants}. It would be interesting to have a purely categotical proof that doesn't refer to any specific representation, and uses the fact that Lie algebras are Lie algebra objects in the category \(\mathbf{Vect}\).
 
-Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lambda = 1/4\)), gives the following relation. 
-%TODO (Zsuzsi) Explain above that $\lambda$ depends on the metric?
+Simplifying Vogel's relation via these lemmas , gives the following relation. (We use the metric in which \(\lambda = 1/4\), i.e. our metric is \(4\) times \(\langle\cdot, \cdot\rangle_{K}\), the Killing form.)
 
 \begin{proposition}
 	\[
@@ -749,13 +734,11 @@ Simplifying Vogel's relation via these lemmas (we use the metric in which \(\lam
 	\]
 \end{proposition}
 
-This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However it's not obvious that this is true,
-%TODO (Zsuzsi) It *is* obvious though that this is true... I guess it's just not obvious how to use relations to equate the two?
- and various other relations have to be applied to turn the rotated version into the original relation. This suggests that perhaps the relation is a consequence of a similar relation.
+This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However this symmetry is not obvious in the formula. This suggests that perhaps the relation is a consequence of a similar, simpler relation.
 
 \begin{theorem}
 	\label{thm:g2-unboxing-relation}
-	In the algebra \(\mathfrak{g}_{2}\), the weight systems obey
+	For the Lie algebra \(\mathfrak{g}_{2}\), the weight systems obey
 	\[
 		\begin{array}{lll}
 			W_{\mathfrak{g}_{2}}
@@ -940,41 +923,43 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 \end{proof}
 
 We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). 
-%TODO (Zsuzsi) State as Theorem?
-\[
-	\begin{array}{ll}
-		-12
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
-		-
-		24
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
-		+
-		54
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
-		\quad \quad
-		{}-
-		4
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
-		+
-		5
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
-		-
-		5
-		W_{\mathfrak{f}_{4}}
-		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
-		& =
-		\,\,\,
-		0.
-	\end{array}
-\]
+\begin{theorem}
+	\label{thm:f4-unboxing-relation}
+	For the Lie algebra \(\mathfrak{f}_{4}\), the weight systems obey
+	\[
+		\begin{array}{lll}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
+			& = &
+			\displaystyle\frac{1}{2}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+			+
+			\displaystyle\frac{1}{2}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_i.pdf}
+			\\
+			&& \quad +
+			\displaystyle\frac{5}{36}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+			+
+			\displaystyle\frac{5}{36}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth_vert.pdf}
+			+
+			\displaystyle\frac{5}{36}
+			W_{\mathfrak{f}_{4}}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}.
+		\end{array}
+	\]
+\end{theorem}
 
-The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath takes about ten seconds on a [computer specs]. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on [computer specs escona].%TODO(Zsuzsi) Don't forget to fill these in
+\begin{proof}
+	Direct computation with sagemath.
+\end{proof}
 
+The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath is computable on a laptop in a few seconds. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on a server with two Intel Xeon E5-2667v3 CPUs. The main bottleneck is tensor contraction, and indeed for \(\mathfrak{e}_{6}\) (\(\operatorname{dim} \mathfrak{e}_{6} = 78\)), the computation cannot complete even in several days. There is some hope that this can be done by using more efficient tensor contraction algorithms than are offered by sagemath, but this has not yet been explored.
 
 Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
 
@@ -1006,7 +991,7 @@ Note, however that the objects in this category are not sets, but simply objects
 
 Their construction uses the language of operads and props, which we review. For all of the below, we assume categories are linear.
 
-Some operations on a set can always be composed by taking as input the output of another operation. These compositions alyways obey certain rules. If the set is a vector space, the operations too form a vector space. An operad captures this concept of operations on some object on a category abstractly.
+Some operations on a set can always be composed by taking as input the output of another operation. These compositions alyways obey certain rules. If the set is a vector space, the operations too form a vector space. An operad captures this concept of operations on some object of a category abstractly.
 
 \begin{definition}
 	An \textbf{operad} \(\mathcal{O}\) in monoidal category \(\mathcal{C}\) consists of:
@@ -1017,17 +1002,26 @@ Some operations on a set can always be composed by taking as input the output of
 		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
 		\item a series of composition morphisms: for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
 			% TODO: Convert to array like above
-			\begin{align*}
-				\circ_{n}: \mathcal{O}(n) \otimes \mathcal{O}(k_{1}) \otimes \mathcal{O}(k_{2}) \otimes \cdots \otimes \mathcal{O}(k_{n}) &\longrightarrow \mathcal{O}(k_{1} + k_{2} + \cdots + k_{n}) \\
-				\theta \otimes \theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n} &\longmapsto \theta \circ (\theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n})
-			\end{align*}
+			\[
+				\begin{array}{rccc}
+					\circ_{n}:
+					&\mathcal{O}(n) \otimes \mathcal{O}(k_{1}) \otimes \mathcal{O}(k_{2}) \otimes \cdots \otimes \mathcal{O}(k_{n})
+					&\longrightarrow
+					&\mathcal{O}(k_{1} + k_{2} + \cdots + k_{n})\\
+					&\theta \otimes \theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n}
+					&\longmapsto
+					&\theta \circ (\theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n})
+				\end{array}
+			\]
 	\end{itemize}
-	satisfying the following axioms: [Do I want all of these??]
-	\begin{itemize}
-		\item Associativity --- but not of the operations, of composition of the operations
-		\item Equivariance --- permuting the inputs of \(\theta\), permuting the morphisms input to \(\theta\), and inversely block-permuting their inputs does nothing.
-		\item The action of the symmetric group agrees with its action in \(\mathcal{C}\).
-	\end{itemize}
+	satisfying the following axioms:
+	\begin{shaded}
+		\begin{itemize}
+			\item Associativity --- but not of the operations, of composition of the operations
+			\item Equivariance --- permuting the inputs of \(\theta\), permuting the morphisms input to \(\theta\), and inversely block-permuting their inputs does nothing.
+			\item The action of the symmetric group agrees with its action in \(\mathcal{C}\).
+		\end{itemize}
+	\end{shaded}
 \end{definition}
 
 \begin{definition}
@@ -1047,10 +1041,12 @@ Composition in operads is something like contraction in a symmetric monoidal cat
 A step towards allowing general contractions is to allow multiple outputs, thereby considering not just operations but, for example in \(\mathcal{C} = \mathbf{Vect}\), general multilinear functions. Operads were abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Props will be abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
 
 \begin{definition}
-	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(A^{\otimes n}\) for some object \(A\).
+	\label{def:prop}
+	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(A^{\otimes n}\) for some object \(A\). Equivalently, it's a symmetric monoidal category generated by a single object.
 \end{definition}
 
 \begin{definition}
+	\label{def:algebra-over-prop}
 	An \textbf{algebra \(A\) over the prop \(\mathbf{P}\) (in \(\mathcal{C}\))} is tensor functor \(\alpha: \mathbf{P} \to \mathcal{C}\).
 \end{definition}
 
