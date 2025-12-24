@@ -146,49 +146,78 @@ There is a variant of Construction \ref{cons:lie-algebra-weight-system} for weld
 
 Note an imporant difference to the classical case. There are now two types of univalent vertices that can connect to the external line: heads and tails. Heads correspond to elements of \(\mathfrak{g}\) and tails to elements of \(\mathfrak{g}^{\ast}\). Therefore, the role of \(\mathcal{U}(\mathfrak{g})\) in the classical case must be played here by some other associative algebra whose basis elements are words in \(\mathfrak{g} \sqcup \mathfrak{g}^{\ast}\).
 
-Analysing the relations involving the external line should tell us what kind of object replaces \(\mathcal{U}(\mathfrak{g})\).
+Analysing the relations involving the external line should tell us what kind of object replaces \(\mathcal{U}(\mathfrak{g})\). From the two-in-one-out rule, there are three non-trivial cases to examine:
+\[
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_welded_head_head_s.pdf} \; , \quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_welded_head_tail_s.pdf} \quad \text{and} \quad
+	\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_welded_tail_head_s.pdf} \; .
+\]
+In all three cases, they obey commutator-like relations (the versions of \ref{eq:STU}), so the correct associative algebra target for the weight system is still the universal enveloping algebra of some Lie algebra. However since the connections to the external line can now be either heads or tails, representing elements of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\), the Lie algebra as a vector space is \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\).
 
-There are four diagrams of the type
-\begin{shaded}
-	\[\text{bracket style vertex from } a \otimes b \to c\]
-\end{shaded}
-Recall that since \ref{eq:STU}s come from \ref{eq:4T}s, that at most two edges may be heads and at most two may be tails around each vertex. Thus there are four cases. In each of the four cases, we have
-\begin{shaded}
-	\[\text{bracket style vertex from \(a \otimes b \to c\)} = \lambda (a b - b a).\]
-\end{shaded}
-Of course, in the \ref{eq:TC} case, this is only true becasue \(\lambda = 0\). So, the correct associative algebra target for the weight system is still the Universal enveloping algebra of some Lie algebra, and the Lie algebra as a vector space is \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\). From the relations above we can determine the structure of this Lie algebra.
+Interpreting tails and heads in these \ref{eq:STU} relations as elements of \(\mathfrak{g}^{\ast} \oplus 0\) or \(0 \oplus \mathfrak{g}\) rather than \(\mathfrak{g}^{\ast}\) or \(\mathfrak{g}\) determines the bracket on \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\). For example, the \ref{eq:STU} with two heads on the external line implies that the bracket on \(0 \oplus \mathfrak{g}\) should be inherited from the bracket on \(\mathfrak{g}\).
+\[
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_head_s.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_head_t.pdf_tex}}
+	\quad
+	-
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_head_u.pdf_tex}}
+\]
+So, \([0 \oplus x, 0 \oplus y] = 0 \oplus [x, y]_{\mathfrak{g}}\).
 
-The \ref{eq:STU} with two heads on the external line implies that the bracket on \(\mathfrak{g} \oplus 0\) should be inherited from the bracket on \(\mathfrak{g}\).
-\begin{shaded}
-	Diagram of the regular \ref{eq:STU} with tails marked \(x^{\ast}, y^{\ast}\), and heads on the external line marked \(x, y\), then \([x, y]\).
-\end{shaded}
+To determine the bracket on \(\mathfrak{g}^{\ast} \oplus 0\), we need to examine one of the trivial cases not shown above. Indeed, the two-in-one-out rule neccecitates that the bracket on \(\mathfrak{g}^{\ast} \oplus 0\) be the zero-bracket. (Recall this rule was a consequence of the \ref{eq:TC} relation, and that \ref{eq:TC} stands for tails commute.)
+\[
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_tail_tail_s.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_tail_tail_t.pdf_tex}}
+	\quad
+	-
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_tail_tail_u.pdf_tex}}
+	\quad
+	=
+	\quad
+	0
+\]
+This gives \([\phi \oplus 0, \psi \oplus 0] = 0 \oplus 0\).
 
-The \ref{eq:TC} relation implies that the bracket on \(0 \oplus \mathfrak{g}\) should be the zero-bracket.
-\begin{shaded}
-	Diagram of the regular \ref{eq:STU} with tails marked \(x^{\ast}, y^{\ast}\), and heads on the external line marked \(x, y\), then \([x, y]\).
-\end{shaded}
+The bracket structure is known on the \(0 \oplus \mathfrak{g}\) and \(\mathfrak{g}^{\ast} \oplus 0\) direct summands, so the total Lie algebra structure will be a semidirect product \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\), and what remains is to specify an action of \(\mathfrak{g}\) on \(\mathfrak{g}^{\ast}\). With a bit of work, the remaining `mixed' \ref{eq:STU} relations determine this. One such relation is
+\[
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_tail_s.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_tail_t.pdf_tex}}
+	\quad
+	-
+	\quad
+	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_tail_u.pdf_tex}}.
+\]
+Let us determine the functional \(\xi\) in terms of \(x\) and \(\psi\). There is only one type of nonzero trivalent vertex in \(\mathcal{A}_{w}\), so this is just a rotated version and it is represented by the same tensor, just viewed from a different component. That tensor is \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), so \(\xi\) satisfies the equation \([\cdot, \cdot] = x^{\ast} \otimes \xi \otimes \phi^{\ast}\), whereby
+\[[x, \xi^{\ast}] = \phi^{\ast} \quad \text{ so } \quad \phi([x, \xi^{\ast}]) = 1.\]
+So, \(\xi \in \mathfrak{g}^{\ast}\) is the functional
+\[\xi : t \longmapsto \phi([x, t]).\]
+This is also known as the \textbf{coadjoint action}, \(\xi = \operatorname{ad}^{\ast}_{x}(\phi)\), the functional adjoint to \(\operatorname{ad}_{x}(\phi)\). Writing this in terms of the bracket on \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}\),
+\[[0 \oplus x, \psi \oplus 0] = \operatorname{ad}^{\ast}_{x}(\psi) \oplus 0.\]
+The \ref{eq:AS} relation gives \([\psi \oplus 0, 0 \oplus y] = -\operatorname{ad}^{\ast}_{y}(\psi) \oplus 0\).
 
-Th bracket structure is known on the \(0 \oplus \mathfrak{g}\) and \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\) direct summands, so the total Lie algebra structure will be a semidirect product \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\), and what remains is to specify an action of \(\mathfrak{g}\) on \(\mathfrak{g}^{\ast}\). The remaining `mixed' \ref{eq:STU} relations determine this.
-\begin{shaded}
-	Diagram of the mixed \ref{eq:STU} with TU external line markings \(x, \phi\) and \(\phi, x\), and markings above \(x^{\ast}\) and \(\phi^{\ast}\). In the S diagram, the external line marking should be the variable \(\theta\).
-\end{shaded}
-This is to say, if \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), then \(\theta\) satisfies the equation \([\cdot, \cdot] = x^{\ast} \otimes \theta \otimes \phi^{\ast}\), whereby
-\[[x, \theta^{\ast}] = \phi^{\ast} \quad \text{ so } \quad \phi([x, \theta^{\ast}]) = 1.\]
-So, \(\theta \in \mathfrak{g}^{\ast}\) is the functional
-\[\theta: t \longmapsto \phi([x, t]).\]
-This is also known as the \textbf{coadjoint action}, \(\theta = \operatorname{ad}^{\ast}_{x}(\phi)\).
-The corresponding calculation for the mixed \ref{eq:STU} relation yields \([\psi \oplus 0, 0 \oplus y] = -\operatorname{ad}^{\ast}_{y}(\psi)\).
+The total Lie algebra structure on \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\) is given by the following definition.
 
 \begin{definition}
 	Let \(\mathfrak{g}\) be a finite-dimensional Lie algebra. Then let \(I\mathfrak{g}\) denote the Lie algebra \(\mathfrak{g}^{\ast} \rtimes \mathfrak{g}\) where \(\mathfrak{g}^{\ast}\) is the abelian Lie algebra on the vector space \(\mathfrak{g}^{\ast}\). The bracket on \(I\mathfrak{g}\) is given by
 	\[[\phi \oplus x, \psi \oplus y] = \operatorname{ad}_{x}(\phi) - \operatorname{ad}_{y}(\psi) \oplus [x, y].\]
 \end{definition}
 \begin{remark}
-	This construction coincides with the Drinfeld double of the Lie bialgebra \(\mathfrak{g}\), in the case where \(\mathfrak{g}\) is co-commutative \cite{quantum-groups}.
+	This construction coincides with the Drinfeld double \cite{quantum-groups} of the Lie bialgebra \(\mathfrak{g}\), in the case where \(\mathfrak{g}\) is co-commutative.
 \end{remark}
 
 \begin{proposition}
-	There is a well-defined algebra homomorphism \(\mathcal{A}_{w} \to \mathcal{U}(I\mathfrak{g})\) given by the variant of Construction \ref{cons:lie-algebra-weight-system}.
+	There is a well-defined algebra homomorphism \(\mathcal{A}_{w} \to \mathcal{U}(I\mathfrak{g})\) given by a variant of Construction \ref{cons:lie-algebra-weight-system}.
 \end{proposition}
 
 \begin{proof}
@@ -206,7 +235,6 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
 
 \begin{definition}
-	% TODO: Choose better notation for A ast (it it not necessarily the dual yet).
 	The \(2\)-coloured prop \(I\) is the prop generated by the objects \(X\) and \(Y\), and the morphisms \(c\), the formal relations from the bracket in \(\mathfrak{g}\), the formal relations from the other bracket.
 \end{definition}
 
