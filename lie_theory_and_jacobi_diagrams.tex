@@ -115,7 +115,6 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 				-
 				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}.
 			\]
-
 			If the vertex is not immediately adjacent to a univalent vertex, then it has some \(d\) vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
 
 		\item
@@ -389,6 +388,7 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 
 Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
 \begin{example}[Weight system for \({\mathfrak{sl}_{2}}\)]
+	\label{ex:sl2-cv-relation}
 	We use the metric Lie algebra from Example \ref{ex:simple-sl2-computation}. In \cite{remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}, the following skein relation is derived:
 	% NOTE: We are using the trace in the fundamental representation as our invariant bilinear form. If instead, we used the trace in the adjoint representation, we would get coefficients 1 instead of 4.
 	\[
@@ -401,6 +401,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 		2 W_{\mathfrak{sl}_{2}}
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/sl2_skein_relation_x.pdf}
 	\]
+\end{example}
 
 	\begin{proof}
 		Compute both sides by contracting and permuting tensors for the bracket, and casimir/metric in \(\mathfrak{sl}_{2}\). Both give
@@ -420,10 +421,9 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 			=
 			\quad
 			3 W_{\mathfrak{sl}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble_removed.pdf}
+			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble_removed.pdf}.
 		\]
 	\end{remark}
-\end{example}
 \begin{question}
 	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). It also obeys a variant of the vector triple product rule. Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
 \end{question}
@@ -622,11 +622,9 @@ More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-gr
 \section{Some weight systems at the exceptional Lie algebras}
 \label{sec:some-weight-systems-at-the-exceptional-lie-algebras}
 
-The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} and written more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra} was to construct a universal object generalising all simple Lie algebras, whose weight systems span \(\mathcal{W}\).
+The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} (and it can be seen more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra}) was to construct a universal object generalising all simple Lie algebras. Such an object would parametrise the relations in tensor powers of the adjoint representation of all simple Lie algebras, and its weight systems would span \(\mathcal{W}\). For example, the relation for \(W_{\mathfrak{sl}_{2}}\) given in Example \ref{ex:sl2-cv-relation} is entirely internal to the Lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation (since the adjoint representation is natural).
 
-The relation for \(W_{\mathfrak{sl}_{2}}\) given above is entirely internal to the lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation. In terms of Vogel universality, this is known as `lying in the adjoint sector'.
-
-Present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine, local relations internal to any simple lie algebra in terms of three parameters, and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the recent preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Furthermore, the relations are general enough to hold for any Lie superalgebra, but can be simplified in the specific case of a Lie algebra.
+There seems to be a recent renewed interest in Vogel's methods \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra, on-refined-vogels-universality, can-yang-baxter-imply-lie-algebra}. In-particular, present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine local relations internal to any simple Lie algebra in terms of two independent so-called Vogel parameters, and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the Vogel parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Furthermore, in Vogel's original work, the relations are general enough to hold for any Lie superalgebra. However when restricting to Lie algebras, the diagrammatic formulae can be simplified.
 
 Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
 \[
@@ -980,18 +978,18 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not
 	By computer verification with sagemath, the span of the corresponding tensors in \((\mathfrak{sl}_{4})^{\otimes 4}\) is six-dimensional.
 \end{proof}
 
-
-
 \section{A universal metric Lie algebra object}
 \label{sec:a-universal-metric-lie-algebra-object}
 
-There is, however,  a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. They construct a Lie algebra object in a symmetric tensor category with  a ``weight system'' (in a certain sense) which is isomorphic to \(\mathcal{A}\). In Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will examine an object, analagous to the space of welded knots, rather than knots.
+We return to the universal Lie algebra of Vaintrob which was discussed in the previous section. It is yet uncertain to what degree such an algebra exists. The obstruction are the zero divisors in Vogel's algebra \(\Lambda\), \cite{can-yang-baxter-imply-lie-algebra, on-refined-vogels-universality, construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra} give more details.
 
-Note, however that the objects in this category are not sets, but simply objects, so the result is useful theoretically rather than computationally.
+There is, however, a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}. They construct a Lie algebra object in a symmetric monoidal category with a weight system which is isomorphic to \(\mathcal{A}\). By constructing an algebra isomorphic to \(\mathcal{A}\), this guarantees that every Vassiliev invariant can be constructed from appling Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, it doesn't give any hints as to which symmetric monoidal category one needs to work with to construct a particular Vassiliev invariant. Thus it is useful theoretically, but not computationally. We review this construction of Hinich and Vaintrob. The purpose is that in Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will generalise this construction from Vassiliev invariants of classical knots to those of welded long knots.
 
-Their construction uses the language of operads and props, which we review. For all of the below, we assume categories are linear.
+The operations on a set can always be composed by taking as input the output of another operation. These compositions alyways obey certain rules. If the set is a vector space, the operations too form a vector space. An operad captures this concept of operations on some object of a category abstractly.
 
-Some operations on a set can always be composed by taking as input the output of another operation. These compositions alyways obey certain rules. If the set is a vector space, the operations too form a vector space. An operad captures this concept of operations on some object of a category abstractly.
+\begin{warning}
+	For all of the below, we assume categories are \(k\)-linear, \(k\) a field of characteristic zero.
+\end{warning}
 
 \begin{definition}
 	An \textbf{operad} \(\mathcal{O}\) in monoidal category \(\mathcal{C}\) consists of:
@@ -1014,14 +1012,21 @@ Some operations on a set can always be composed by taking as input the output of
 				\end{array}
 			\]
 	\end{itemize}
-	satisfying the following axioms:
-	\begin{shaded}
-		\begin{itemize}
-			\item Associativity --- but not of the operations, of composition of the operations
-			\item Equivariance --- permuting the inputs of \(\theta\), permuting the morphisms input to \(\theta\), and inversely block-permuting their inputs does nothing.
-			\item The action of the symmetric group agrees with its action in \(\mathcal{C}\).
-		\end{itemize}
-	\end{shaded}
+	satisfying the following axioms. (Note: the axioms are listed for completeness, but won't be used heavily below.)
+		\begin{enumerate}
+			\item That for any \(\theta \in \mathcal{O}(n)\), \(\theta \circ_{n} (\id, \dots, \id) = \theta = \id \circ_{1} \theta\). (The \textbf{identity} axiom.)
+			\item \textbf{Associativity of composition}, that for \(\theta \in \mathcal{O}(n)\), and \(\theta_{1}\in \mathcal{O}(k_{1})\), \(\theta_{2} \in \mathcal{O}(k_{2})\), up to \(\theta_{n} \in \mathcal{O}(k_{n})\), that the two ways of forming the composition of the \(\theta_{i, j}\) into \(\theta_{i}\) into \(\theta\) are the same:
+				\[\theta \circ_{n} \Big( \theta_{1} \circ_{k_{1}} (\theta_{1, 1}, \dots, \theta_{1, k_{1}}), \dots, \theta_{n} \circ_{k_{n}} (\theta_{n, 1}, \dots, \theta_{n, k_{n}}) \Big)\]
+				is equal to
+				\[\big( \theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) \circ_{k_{1} + \cdots + k_{n}} (\theta_{1, 1}, \dots, \theta_{1, k_{n}}, \dots, \theta_{n, 1}, \dots, \theta_{n, k_{n}}).\]
+			\item An \textbf{equivariance} axiom, that for \(\sigma \in S_{n}\), and all \(\theta \in \mathcal{O}(n)\), and all \(\theta_{1}, \dots, \theta_{n}\),
+				\[(\theta \sigma) \circ_{n} (\theta_{1}, \dots, \theta_{n}) = \big( \theta \circ_{n} (\theta_{\sigma^{-1}(1)}, \dots, \theta_{\sigma^{-1}(n)}) \big)\sigma_{\text{block}}\]
+				where \(\sigma_{\text{block}} \in S_{k_{1} + \cdots + k_{n}}\) is the permutation that block-permutes blocks of size \(k_{1}\) through to \(k_{n}\).
+			\item A further \textbf{equivariance} axiom, that for permutations \(\sigma_{i} \in S_{k_{i}}\), and all \(\theta \in \mathcal{O}(n)\), and all \(\theta_{1}, \dots, \theta_{n}\),
+				\[\theta \circ_{n} (\theta_{1}\sigma_{1}, \dots, \theta_{n} \sigma_{n}) = \big(\theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) (\sigma_{1} \connect \cdots \connect \sigma_{n})\]
+				where \((\sigma_{1} \connect \cdots \connect \sigma_{n}) \in S_{k_{1} + \cdots + k_{n}}\) is the block-wise permutation of block \(i\) by \(\sigma_{i}\).
+			\item That the action of the symmetric group agrees with its action in the symmetric monoidal category \(\mathcal{C}\).
+		\end{enumerate}
 \end{definition}
 
 \begin{definition}
@@ -1031,14 +1036,61 @@ Some operations on a set can always be composed by taking as input the output of
 In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
 
 \begin{example}
-	\begin{shaded}
-		Nobody has ever showed me a definition of the Lie operad. I suppose it's just a quotient of the rooted binary trees operad. Also add an example of at least one other operad (maybe associative or commutative).
-	\end{shaded}
+	\label{ex:lie-operad}
+	Let \(\Gamma\) denote the free operad functor (for details we refer the reader to \cite{operads-and-props}). Let
+	\[
+		\alpha
+		=
+		\def\svgscale{0.2}
+		\raisebox{-9pt}{\input{graphics/binary_operation.pdf_tex}}
+	\]
+	denote a generator operation with two inputs.
+
+	The \textbf{Lie operad}, \(\mathcal{O}_{\text{Lie}}\) then has the following presentation
+	\[
+		\mathcal{O}_{\text{Lie}}
+		\quad
+		=
+		\quad
+		\Gamma(\alpha)
+		\quad
+		/
+		\quad
+		\def\svgscale{0.2}
+		\raisebox{-9pt}{\input{graphics/binary_operation.pdf_tex}}
+		\,
+		=
+		\,
+		-
+		\def\svgscale{0.2}
+		\raisebox{-9pt}{\input{graphics/binary_operation_reversed.pdf_tex}}
+		\;,
+		\quad
+		\def\svgscale{0.2}
+		\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
+		\,
+		+
+		\,
+		\def\svgscale{0.2}
+		\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary_sigma.pdf_tex}}
+		\,
+		+
+		\,
+		\def\svgscale{0.2}
+		\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary_sigma_squared.pdf_tex}}
+		\,
+		=
+		\,
+		0
+		.
+	\]
 \end{example}
 
-Composition in operads is something like contraction in a symmetric monoidal category, but with restictions on what can be contracted: only outputs and inputs. From two operations, one can take their tensor product, but this doesn't fit into the notion of an operad, as it has two outputs.
+Recall that the goal is an algebra isomorphic to \(\mathcal{A}\). The first step is to create an object that encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
 
-A step towards allowing general contractions is to allow multiple outputs, thereby considering not just operations but, for example in \(\mathcal{C} = \mathbf{Vect}\), general multilinear functions. Operads were abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Props will be abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
+Composition in operads is something like contraction in a symmetric monoidal category, but with restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, no object has two outputs, for example there is no natural notion of tensor product in an operad.
+
+A step towards describing the internal structure of \(\mathcal{A}\) without specifying a Lie algebra is to allow multiple outputs, thereby considering not just operations but, for example in \(\mathcal{C} = \mathbf{Vect}\), general multilinear functions. Operads were abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Props will be abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
 
 \begin{definition}
 	\label{def:prop}
@@ -1047,25 +1099,37 @@ A step towards allowing general contractions is to allow multiple outputs, there
 
 \begin{definition}
 	\label{def:algebra-over-prop}
-	An \textbf{algebra \(A\) over the prop \(\mathbf{P}\) (in \(\mathcal{C}\))} is tensor functor \(\alpha: \mathbf{P} \to \mathcal{C}\).
+	An \textbf{algebra \(A\) (in \(\mathcal{C}\)) over the prop \(\mathbf{P}\)} is tensor functor \(\alpha: \mathbf{P} \to \mathcal{C}\).
 \end{definition}
 
-\begin{shaded}
-	Since this is a tensor-functor from a tensor category generated by a single object, this is equivalent to a choice of object in \(\mathcal{C}\) such that [...figure out what...].
+\begin{remark}
+	Under suitable definitions of morphisms of props and operads, there are the categories \(\mathbf{Prop}\) and \(\mathbf{Oper}\), and a pair of adjoint functors.
+	% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhiZntPcGVyfSJdLFswLDEsIlxcbWF0aGJme1Byb3B9Il0sWzEsMCwiXFxtYXRoYmZ7Rn0iLDAseyJvZmZzZXQiOi0zfV0sWzAsMSwiXFxtYXRoYmZ7UH0iLDAseyJvZmZzZXQiOi0zfV0sWzIsMywiIiwwLHsibGV2ZWwiOjEsInN0eWxlIjp7Im5hbWUiOiJhZGp1bmN0aW9uIn19XV0=
+	\[
+		\begin{tikzcd}
+			{\mathbf{Oper}} \\
+			{\mathbf{Prop}}
+			\arrow[""{name=0, anchor=center, inner sep=0}, "{U}", shift left=3, from=1-1, to=2-1]
+			\arrow[""{name=1, anchor=center, inner sep=0}, "{F}", shift left=3, from=2-1, to=1-1]
+			\arrow["\dashv"{anchor=center}, draw=none, from=1, to=0]
+		\end{tikzcd}
+	\]
 
-	\begin{remark}
-		There is an adjunction \(\mathsf{Prop} \to \mathsf{Oper}\). The operad to prop direction looks at all the morphisms \((n \to 1)\) in the prop, the other direction takes arbitrary tensor products of things in the operad.
-	\end{remark}
-\end{shaded}
+	The forgetful functor \(F\) takes a prop \(\mathbf{P}\) to the operad whose operations are the \(m, 1\)-ary elements of the prop (i.e. have one output):
+	\[F(\mathbf{P})(m) = \mathbf{P}(m, 1).\]
+	The free functor \(U\) takes an operad to the prop whose \(m, n\)-ary morphisms are tensor products of operations from the operad:
+	\[U(\mathcal{O})(m, n) = \bigoplus_{f: [m] \to [n]} \bigotimes_{i = 1}^{n} \mathcal{O}(|f^{-1}(i)|).\]
+\end{remark}
 
 \begin{proposition}
 	The notions of algebra over a prop and algebra over an operad are equivalent. \(A \in \mathcal{C}\) is an algebra over the operad \(\mathcal{O}\) if and only if it is an algebra over the prop \(\mathbf{P}(\mathcal{O})\).
 \end{proposition}
 
-Now the only difference between contraction and what is governed by our prop is the inputs vs outputs. Remember the action of the symmetric group comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs and outputs among themselves. We want a way to permute inputs with outputs. This cannot actually be done in an operad, but if the operad is of a certain kind, the same effect can be achieved in terms of how the operad behaves within the the prop it generates.
+Now the main difference between contraction and partial composition in a prop is the marking of inputs and outputs. With metric Lie algebras, co- and contravariant indices could be contracted with the metric or casimir to invert their variance, but in a general prop there's no way to turn an input into an output.
+
+Recall that the action of the symmetric group comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs amongst themselves, rather than permuting inputs with outputs. In a certain kind of operad, this can be achieved.
 
 \begin{definition}
-	% TODO: Why is the action a right action? (change it to a left action maybe?)
 	A \textbf{cyclic operad} in \(\mathcal{C}\) is a pair \((\mathcal{O}, \tau_{+})\) where \(\tau_{+}\) is an action of each symmetric group \(S_{n + 1}\) on \(\mathcal{O}(n)\), extending the action coming from the symmetry \(\tau\) of \(\mathcal{C}\), and satisfying the axiom
 	\[(a \circ_{1} b) \tau_{+} = (b\tau_{+}) \circ_{n} (a\tau_{+})\]
 	for any \(a \in \mathcal{O}(m)\), \(b \in \mathcal{O}(n)\). Here to specify the action of \(S_{n + 1}\), the action of \(S_{n} \subset S_{n + 1}\) is predetermined by the action of the symmetry \(\tau\).
