@@ -27,17 +27,62 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 	\[\poscross\;, \quad \negcross\;, \quad \virtcross\]
 	The third crossing type is called a \textbf{virtual crossing}. Along each edge of the diagram, the orientations given by the adjacent vertices agree, and such that when opposite planar vertices are considered connected, there is a single connected component.
 
-	The equivalence relations are planar isotopy and the following moves.
-	\begin{shaded}
-		\begin{itemize}
-			\item Reidemeister moves
-			\item Virtual reidemeister moves
-			\item Overcrossings commute
-		\end{itemize}
-		\begin{remark}
-			Note that we do not allow moves of the form undercrossings commute. Allowing such moves would trivialise welded knots.
-		\end{remark}
-	\end{shaded}
+	The equivalence relations are planar isotopy and:
+	\begin{enumerate}
+		\item The \textbf{(framed) Reidemeister moves}
+			\begin{equation}
+				\tag{\ronef, \rtwo, \rthree}
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_1_framed.pdf_tex}}
+				\; \;
+				,
+				\qquad
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_2.pdf_tex}}
+				\; \;
+				,
+				\qquad
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_3.pdf_tex}}
+			\end{equation}
+		\item The \textbf{virtual Reidemeister moves}
+			\begin{equation}
+				\tag{\vrone, \vrtwo, \vrthree}
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_virtual_1_framed.pdf_tex}}
+				\; \;
+				,
+				\qquad
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_virtual_2.pdf_tex}}
+				\; \;
+				,
+				\qquad
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_virtual_3.pdf_tex}}
+				\; \;
+				,
+			\end{equation}
+			\begin{equation}
+				\tag{\vrfour}
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_virtual_4.pdf_tex}}
+			\end{equation}
+		\item The \textbf{overcrossings commute} relation
+			\begin{equation}
+				\label{eq:OC}
+				\tag{\oc}
+				\def\svgscale{0.34}
+				\adjustbox{valign=c}{\input{graphics/reidemeister_overcrossings_commute.pdf_tex}}
+			\end{equation}
+	\end{enumerate}
+	\begin{remarks}
+		\begin{enumerate}
+			\item There should technically be two variants of \(\ronef\), another in which all crossings are changed, and the same is true for \(\vrfour\). This is even before orientation is taken into account: all of the moves are true for each choice of orientation of each strand.
+			\item The moves \(\vrone\), \(\vrtwo\) and \(\vrthree\) govern how virtual crossings interact with each other. The move \(\vrfour\) governs how virtual crossings interact with classical crossings. It implies that strands consisting of only virtual crossings may be freely rerouted around classical crossings. The interpretation of this fact can be found in \cite{virtual-knot-theory}.
+			\item In the \ref{eq:OC} relation, the order of the two overcrossings along the middle strand changes, hence the name. The version of \ref{eq:OC} in which the crossings are changed is called \textbf{undercrossings commute} and is \textit{not} an imposed relation: undercrossings do \textit{not} commute for welded knots. Indeed, allowing undercrossings to commute would trivialise welded knots. This lack of symmetry comes from the lack of symmetry of spinning a path around a line in \(\mathbb{R}^{4}\) to create a surface, as happens in the tube map. It also has an interpretation in terms of homotopies of flying rings, see \cite[Sec. 2.2]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}.
+		\end{enumerate}
+	\end{remarks}
 \end{definition}
 
 \begin{shaded}
