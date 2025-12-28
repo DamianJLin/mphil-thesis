@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{231.57376099bp}%
+    \setlength{\unitlength}{265.46203613bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,18 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.25692874)%
+  \begin{picture}(1,1.09586534)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{cyclic_operad_condition_rhs.pdf}}%
-    \put(0.36386488,0.25007284){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(a\)}}\end{tabular}}}}%
-    \put(0.70871111,0.93507022){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(b\)}}\end{tabular}}}}%
-    \put(0.43601221,1.07109603){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg(\)}}\end{tabular}}}}%
-    \put(0.35165054,0.97393476){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\tau\)}}\end{tabular}}}}%
-    \put(0.09110246,0.38609862){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg(\)}}\end{tabular}}}}%
-    \put(0.0067408,0.28893735){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\tau\)}}\end{tabular}}}}%
-    \put(0.98141011,1.07109603){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg)\)}}\end{tabular}}}}%
+    \put(0.2838818,0.21607748){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(a\)}}\end{tabular}}}}%
+    \put(0.58470575,0.81362966){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(b\)}}\end{tabular}}}}%
+    \put(0.34681896,0.93229072){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg(\)}}\end{tabular}}}}%
+    \put(0.94692861,0.84753287){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\sigma_{c}\)}}\end{tabular}}}}%
+    \put(0.04593961,0.33473851){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg(\)}}\end{tabular}}}}%
+    \put(0.64616016,0.24998063){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\sigma_{c}\)}}\end{tabular}}}}%
+    \put(0.82259262,0.93229072){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg)\)}}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{cyclic_operad_condition_rhs.pdf}}%
-    \put(0.63656385,0.38609862){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg)\)}}\end{tabular}}}}%
+    \put(0.52176864,0.33473851){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\Bigg)\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
