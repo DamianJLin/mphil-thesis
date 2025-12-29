@@ -1258,20 +1258,153 @@ The reason to consider casimir Lie algebra objects as opposed to just metric Lie
 		\quad
 		\mu
 	\]
-for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\), this is the superdimension. This relation is just one example of a relation between diagrams with only trivalent vertices and no univalent vertices to scalars.
+for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\) it is the superdimension. This relation is just one example of a relation between diagrams with only trivalent vertices and no univalent vertices to scalars.
 
 In \(\mathcal{A}\) there are no such relations. In fact, there are not even any objects that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
 
 \begin{definition}
-	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\)
+	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
 \end{definition}
 
-\begin{theorem}[Hinnich-Vaintrob]
-	Under [certain mild conditions] on \(\mathcal{O}\), \(\mathcal{C}\) and \(A\), there exists an algebra \(U(\mathcal{O}, A)\), the quotient of the external tensor algebra, obeying some important relation analogous to the defining property of the external enveloping algebra of a Lie algebra, but general to any operad.
-\end{theorem}
+\begin{definitions}
+		The \textbf{global section} is the functor
+		\[
+			\begin{array}{rccc}
+				\Gamma:		&\mathcal{C}		&\longrightarrow	&\mathbf{Vect}\\
+						&X			&\longmapsto		&\mathcal{C}(k, X).
+			\end{array}
+		\]
+\end{definitions}
+\begin{definitions}
+	\label{def:external-tensor-algebra}
+	The \textbf{external tensor algebra of the algebra \(A\) over the operad \(\mathcal{O}\)} is the algebra
+		\[T(\mathcal{O}, A) = \bigoplus_{n \in \mathbb{N}} \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n}).\]
+		Let \(o_{a} \otimes_{S_{n}} \alpha \in \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n})\), and \(o_{b} \otimes_{S_{n}} \beta \in \mathcal{O}(m + 1) \otimes_{S_{n}} \Gamma(A^{\otimes m})\). Their product is given by the composition
+		\[
+			\def\svgscale{0.35}
+			\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_a.pdf_tex}}
+			\quad
+			\cdot
+			\quad
+			\def\svgscale{0.35}
+			\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_b.pdf_tex}}
+			\quad
+			=
+			\quad
+			\def\svgscale{0.35}
+			\raisebox{-40pt}{\input{graphics/external_tensor_algebra_product.pdf_tex}}
+		\]
+		so by the formula
+		\[
+			(o_{a} \otimes_{S_{n}} \alpha) \cdot (o_{b} \otimes_{S_{n}} \beta) = (o_{a} \circ_{1} o_{b}) \otimes_{S_{n}} (\alpha \otimes \beta).
+		\]
+\end{definitions}
+
+Recall that since \(A\) is an \(\mathcal{O}\)-algebra it comes equipped with maps
+\[\mathcal{O}(k) \otimes A^{\otimes k} \longrightarrow A.\]
+For example, in \(\mathcal{O}_{\text{Lie}}\), setting \(o \in \mathcal{O}(k)\), induces the map \(A^{k} \to A\) implementing iterated composition of the bracket \([\cdot, \cdot]_{A}\) according to the binary tree \(o\).
+Taking tensor powers of these maps induces the maps
+\[\mathcal{O}(m_{1}) \otimes \cdots \otimes \mathcal{O}(m_{n}) \otimes A^{\otimes \sum_{i} m_{i}} \longrightarrow A^{\otimes n}\]
+and applying the functor global section functor, we have maps
+\[\eta_{(m_{1}, \dots, m_{n})} : \mathcal{O}(m_{1}) \otimes \cdots \otimes \mathcal{O}(m_{n}) \otimes \Gamma(A^{\otimes \sum_{i} m_{i}}) \longrightarrow \Gamma(A^{\otimes n}).\]
+
+\begin{definitions}
+	\label{def:external-enveloping-algebra}
+	The \textbf{external enveloping algebra \(U(\mathcal{O}, A)\) of the algebra \(A\) over the operad \(\mathcal{O}\)},  is the quotient of \(T(\mathcal{O}, A)\) by the weakest equivalence relation making the following diagram commute for all \(n, m_{1}, \dots, m_{n} \in \mathbb{N}\).
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhjYWx7T30oMSArIG4pIFxcb3RpbWVzIFxcZGlzcGxheXN0eWxlXFxiaWdvdGltZXNfe2kgPSAxfV57bn1cXG1hdGhjYWx7T30obV97aX0pXFxvdGltZXMgXFxHYW1tYShBXntcXG90aW1lc1xcc3VtX3tpfW1fe2l9fSkiXSxbMCwyLCJcXG1hdGhjYWx7T30oMSArIChcXHN1bV97aX1tX3tpfSkpIFxcb3RpbWVzIFxcR2FtbWEoQV57XFxvdGltZXMgXFxzdW1fe2l9bV97aX19KSJdLFsyLDAsIlxcbWF0aGNhbHtPfSgxICsgbikgXFxvdGltZXMgXFxHYW1tYShBXntcXG90aW1lcyBufSkiXSxbMiwyLCJUKFxcbWF0aGNhbHtPfSwgQSkiXSxbMCwxLCJcXGNpcmNfezJ9IFxcb3RpbWVzIFxcY2RvdHNcXG90aW1lc1xcY2lyY197bisxfSIsMl0sWzAsMiwiXFxpZCBcXG90aW1lcyBcXG11X3sobV97MX0sIFxcZG90cywgbV97bn0pfSJdLFsxLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzIsMywiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XV0=
+	\[\begin{tikzcd}
+		{\mathcal{O}(1 + n) \otimes \displaystyle\bigotimes_{i = 1}^{n}\mathcal{O}(m_{i}) \otimes \Gamma(A^{\otimes\sum_{i}m_{i}})} && {\mathcal{O}(1 + n) \otimes \Gamma(A^{\otimes n})} \\
+		\\
+		{\mathcal{O}(1 + (\sum_{i}m_{i})) \otimes \Gamma(A^{\otimes \sum_{i}m_{i}})} && {T(\mathcal{O}, A)}
+		\arrow["{\id \otimes \eta_{(m_{1}, \dots, m_{n})}}", from=1-1, to=1-3]
+		\arrow["{\circ_{2} \otimes \cdots\otimes\circ_{n+1}}"', from=1-1, to=3-1]
+		\arrow[hook', from=1-3, to=3-3]
+		\arrow[hook, from=3-1, to=3-3]
+	\end{tikzcd}\]
+\end{definitions}
+It is easy to get lost in notation here. Let us represent an element
+\[
+	o_{n + 1} \otimes \bigotimes_{i = 1}^{n}o(m_{i}) \otimes \xi
+	\in
+	\mathcal{O}(1 + n) \otimes \bigotimes_{i = 1}^{n}\mathcal{O}(m_{i}) \otimes \Gamma(A^{\otimes\sum_{i}m_{i}})
+\]
+pictorially as
+\[
+	\def\svgscale{0.42}
+	\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_element_example.pdf_tex}}
+	\quad
+	\in
+	\quad
+	\mathcal{O}(1 + n) \otimes \displaystyle\bigotimes_{i = 1}^{n}\mathcal{O}(m_{i}) \otimes \Gamma(A^{\otimes\sum_{i}m_{i}}).
+\]
+There are two ways to produce an element of the external tensor algeba \(T(\mathcal{O}, A)\) here.
+
+The first is to use the \(\mathcal{O}\) algebra structure of \(A\) to apply the map
+\[
+	\eta_{(m_{1}, \dots, m_{n})}:
+	\mathcal{O}(m_{1}) \otimes \cdots \otimes \mathcal{O}(m_{n}) \otimes \Gamma(A^{\otimes \sum_{i} m_{i}})
+	\longrightarrow
+	\Gamma(A^{\otimes n})
+\]
+to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to compose the operations \(o_{m_{i}}\) into the \((i + 1)\)st components of the operation \(o_{n + 1}\). The definition asserts that these are equal in \(U(\mathcal{O}, A)\). Pictorially,
+\[
+	\def\svgscale{0.42}
+	\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_algebra_first.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.42}
+	\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_operad_first.pdf_tex}}
+	.
+\]
+
+\begin{example}
+	Let \(\mathfrak{g}\) be a Lie algebra (in \(\mathbf{Vect}\)). We examine the relation in the external enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\) coming from making the diagram of Definition \ref{def:external-enveloping-algebra} commute in the case \(n = 1, m_{1} = 2\) on the object \([\cdot,\cdot] \otimes [\cdot,\cdot] \otimes \xi\). Let us write \(\xi = \xi(1) = \xi_{1} \otimes \xi_{2}\).
+
+	Applying the Lie action map first gives
+	\[[\cdot,\cdot] \otimes_{S_{n}} [\xi_{1}, \xi_{2}],\]
+	whereas applying the operadic composition first gives
+	\[\left( [\cdot,\cdot] \circ_{2} [\cdot, \cdot] \right) \otimes_{S_{n}} (\xi_{1} \otimes \xi_{2}).\]
+	In order to easily work the the relations in the operad \(\mathcal{O}_{\text{Lie}}\), let us represent \([\cdot,\cdot] \circ_{2} [\cdot, \cdot] \in \mathcal{O}_{\text{Lie}}(3)\) as
+	\[
+		[\cdot,\cdot] \circ_{2} [\cdot, \cdot]
+		=
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_commutator.pdf_tex}}
+		.
+	\]
+	by the relations in from Example \ref{ex:lie-operad}, we have
+	\[
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_commutator.pdf_tex}}
+		=
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
+		-
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_product_reversed.pdf_tex}}
+		.
+	\]
+	But, in view of the multiplication in \(T(\mathcal{O}, A)\) from Definition \ref{def:external-tensor-algebra}, this is equal to
+	\[
+		([\cdot,\cdot] \otimes_{S_{n}} \xi_{1}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{2})
+		-
+		([\cdot,\cdot] \otimes_{S_{n}} \xi_{2}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{1})
+		.
+	\]
+	In total
+	\[
+		[\cdot,\cdot] \otimes_{S_{n}} [\xi_{1}, \xi_{2}]
+		=
+		([\cdot,\cdot] \otimes_{S_{n}} \xi_{1}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{2})
+		-
+		([\cdot,\cdot] \otimes_{S_{n}} \xi_{2}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{1})
+	\]
+	and this starts to look like a universal enveloping algebra.
+\end{example}
 
 \begin{theorem}[Hinnich-Vaintrob]
-	\(U(\mathcal{O} = Lie, A = 1 = \mathbb{L}_{c} \in \mathbf{P}_{c}(Lie))\) is isomorphic as a Hopf algebra to \(\mathcal{A}\).
+	\(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
 \end{theorem}
 
 \begin{shaded}
