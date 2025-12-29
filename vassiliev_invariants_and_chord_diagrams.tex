@@ -1,21 +1,11 @@
 \chapter{Vassiliev invariants and chord diagrams}
 \label{ch:vassiliev-invariants-and-chord-diagrams}
 
-\begin{shaded}
-	Something to maybe include somewhere:
+\lettrine{\libertineInitialGlyph{P}}{olynomial}s are a special type of function: they are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
 
-	The point of Vassiliev theory is to study the space of knots in the context of the singularities that lie between knots.
+In a similar way, the Vassiliev knot invariants are a special type of knot invariant. This analogy, first made by Dror Bar-Natan in \cite{on-the-vassiliev-knot-invariants} is in no way superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above. They are also conjectured to enjoy the third, at the very least being able to approximate many well-known invariants, for example the Conway and Jones polynomials.
 
-	In view of this point, we spend Section \ref{sec:singular-knots} looking at a the stratification of the space of knots. This leads to a beautiful (and fruitful) classical analogy which we will explored in Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} and throughout this chapter.
-
-	In Section \ref{sec:knots-and-vassiliev-invariants}, with the context in mind, we introduce the main players in this theory.
-\end{shaded}
-
-\lettrine{\libertineInitialGlyph{P}}{olynomial} functions are a special type of function. They are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
-
-In the same way, the Vassiliev knot invairants are a special type of knot invariant. And this analogy, first made by Dror Bar-Natan in \cite{on-the-vassiliev-knot-invariants} is by no means superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above, and conjeturally also the third.
-
-In this chapter we give a version of the introductory theory of Vassiliev invariants in which the analogy above is made as explicitly as possible. This also leads a natural interpretation of the defining relations of the algebra \(\mathcal{A}\) which is the fundamental object of study in the field.
+In this chapter we present the introductory theory of Vassiliev invariants with the aim of making the analogy above as explicit as possible. This also leads a natural interpretation of the defining relations of the algebra \(\mathcal{A}\) of chord diagrams, which is the fundamental object of study in the field.
 
 \section{Singular knots}
 \label{sec:singular-knots}
@@ -26,17 +16,17 @@ In this chapter we give a version of the introductory theory of Vassiliev invari
 
 \begin{remark}
 	\label{rem:other-singularities}
-	Immersions with other types of singularities, are excluded from this definition, so the word ``singular'' in ``singular knot'' refers specifically to double point singularities. In particular immersions with
+	Immersions with other types of singularities are excluded from this definition, so the word ``singular'' in ``singular knot'' refers specifically to double point singularities. In particular, immersions with
 	\begin{enumerate}
-		\item triple points
+		\item triple points, and
 		\item points with vanishing derivative
 	\end{enumerate}
 	are excluded from the definition.
 \end{remark}
 
-A singular knot with one double point is very close to two other knots. In one, the double point is replaced by a positive crosing, and in the other a negative crossing.
+A singular knot with one double point is very close to two other knots: the knot in which the singular point is replaced by a positive crossing, and the knot in which it is replaced by a negative crossing.
 
-Just as we have notions of ambient isotopy for knots, and knot invairants, we can have \(m\)-singular isotopy and \(m\)-singular knot invariants.
+Just as we have notions of ambient isotopy for knots and knot invariants, we can have \(m\)-singular isotopy and \(m\)-singular knot invariants.
 
 \begin{definition}
 	\label{def:differentiable-invariant}
@@ -56,7 +46,7 @@ If an \(m\)-singular knot invariant is differentiable, we can extend it to an in
 	\[\delta f \left( \double \right) = f \left( \poscross \right) - f\left( \negcross \right).\]
 \end{definition}
 
-A regular knot invariant (which is an invariant of \(0\)-singular knots) satisfies this condition vaccuously so is differentiable and its derivative is an invariant of \(1\)-singular knots. Furthermore, if an invariant of \(m\)-singular knots is differentiable, so is its derivative, so it can be extended to any number of double points. In-particular, regular knot invariants have derivatives of any order.
+A regular knot invariant (which is an invariant of \(0\)-singular knots) is vaccuously differentiable and its derivative is an invariant of \(1\)-singular knots. Furthermore, if an invariant of \(m\)-singular knots is differentiable then so is its derivative, so it can be extended to any number of double points. In particular, regular knot invariants have derivatives of any order.
 
 Rather than thinking about functions on knots satisfying certain relations, the modern view of this subject takes the philosophy of imposing relations on the objects directly.
 
@@ -68,7 +58,7 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 		\tag{\differentiabilitystar}
 		\poscross \ \double - \negcross \ \double = \double \ \poscross - \double \ \negcross.
 	\end{equation}
-	From now on, we will refer to elements \(\singularknots_{m}\) as \(m\)\textbf{-singular knots}, i.e. the \ref{eq:codiff} relation will be implicitly assumed.
+	From now on, we will refer to elements of \(\singularknots_{m}\) as \(m\)\textbf{-singular knots}, that is the \ref{eq:codiff} relation will be implicitly assumed.
 \end{definition}
 
 \begin{definition}
@@ -79,29 +69,28 @@ Rather than thinking about functions on knots satisfying certain relations, the 
 \end{definition}
 
 \begin{remark}
-	The derivative operation and the \ref{eq:diff} relation are dual to the boundary operation and the \ref{eq:codiff} relation. For example, a differentiable invariant of knots is the same as an invariant of knots in \(\singularknots_{m}\).
+	The derivative \(\delta\) and the boundary \(\partial\) are adjoint,
+	\[\delta f\left(\double\right) = f\left( \partial \left( \double \right) \right).\]
 \end{remark}
 
-Any knot invariant, \(f\) can be extended to an invariant \(f^{(m)}\) of \(m\)-singular knots by the Vassiliev skein relation 
-\[f^{(0)} = f\]
+From Definition \ref{def:derivative}, any knot invariant \(f\) can be extended to an invariant \(\delta^{m} f\) of \(m\)-singular knots
+\[\delta^{0}f = f\]
 and
-\[f^{(m + 1)}\left(\double\right) = f^{(m)}\left(\poscross\right) - f^{(m)}\left(\negcross\right).\]
-Often, we omit the superscript and write
-\[f\left(\double\right) = f\left(\poscross\right) - f\left(\negcross\right).\]
+\[\delta^{m + 1} f \left(\double\right) = \delta^{m} f \left(\poscross\right) - \delta^{m} f \left(\negcross\right).\]
 
 The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary.
 
 \begin{definitions}
 	\label{def:vassiliev-invariant}
 	\begin{enumerate}
-		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to singular knots via the Vassiliev skein relation,
-		\[V\biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
-	\item The \textbf{order} of a Vassiliev invariant \(V\) is the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the most double points a knot \(K\) can have without \(V(K)\) having to vanish).
+		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to \((m + 1)\)-singular knots via its \((m + 1)\)st derivative, it vanishes
+			\[\delta^{m + 1} V \biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
+		\item The \textbf{order} of a Vassiliev invariant \(V\) is the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the greatest number of double points a knot \(K\) can have without \(V(K)\) having to vanish).
 	\end{enumerate}
 \end{definitions}
 
 \begin{remark}
-	In other words, Vassiliev invariants of order \(m\) are those that vanish after \(m + 1\) derivatives, just like degree \(m\) polynomials.
+	The \((m + 1)\)st derivative of a degree \(m\) polynomial also vanishes.
 \end{remark}
 
 \section{The stratification of the space of knots and integration}
@@ -120,10 +109,10 @@ To help see the bird's eye view we phrase the analogy between Vassiliev invarian
 		\arrow["\partial", from=1-4, to=1-5]
 		\arrow["\partial", from=1-5, to=1-6]
 	\end{tikzcd}\]
-	of objects in some category, for example they could be vector spaces, algebras, free abelian groups, modules, etc. Here we call them spaces, because we wish to use the word object for elements of the spaces. In case we need to refer to a specific map, let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
+	of objects and morphisms in some category. For example, they could be vector spaces, algebras, bialgebras, free abelian groups or modules. Here we call them spaces, because we wish to use the word object for elements of the spaces. In case we need to refer to a specific map, let \(\partial_{m}\) denote the map \(\partial\) whose domain is \(\mathcal{O}_{m}\). Note that we do not assume \(\partial^{2} = 0\).
 \end{definition}
 
-The space \(\mathcal{O}_{0}\) is the primary space we want to study. The spaces \(\mathcal{O}_{m}\) can often be thought of as containing \(m\)-singular objects of some kind. The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
+The primary interest is often the space \(\mathcal{O}_{0}\), which contains the objects we want to understand. The spaces \(\mathcal{O}_{m}\) can often be thought of as containing \(m\)-singular versions of the same kind of objects as \(\mathcal{O}_{0}\). The map \(\partial\) takes an \(m\)-singular object \(x\) to some combination of \((m - 1)\)-singular objects near \(x\).
 
 By fixing another space \(X\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorname{Hom}(\mathcal{O}_{m}, X)\), we get the sequence
 % https://q.uiver.app/#q=WzAsNixbMSwwLCJcXG1hdGhjYWx7T31fe219XntcXGFzdH0iXSxbMCwwLCJcXGNkb3RzIl0sWzIsMCwiXFxtYXRoY2Fse099X3ttIC0gMX1ee1xcYXN0fSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJcXG1hdGhjYWx7T31fezF9XntcXGFzdH0iXSxbNSwwLCJcXG1hdGhjYWx7T31fezB9XntcXGFzdH0iXSxbMCwxLCJcXGRlbHRhIiwyXSxbMiwwLCJcXGRlbHRhIiwyXSxbMywyLCJcXGRlbHRhIiwyXSxbNCwzLCJcXGRlbHRhIiwyXSxbNSw0LCJcXGRlbHRhIiwyXV0=
@@ -135,20 +124,20 @@ By fixing another space \(X\) and setting \(\mathcal{O}_{m}^{\ast} = \operatorna
 	\arrow["\delta"', from=1-5, to=1-4]
 	\arrow["\delta"', from=1-6, to=1-5]
 \end{tikzcd}\]
-where \(\delta_{m}\) is the transpose (adjoint) of \(\partial_{m}\). The maps \(\delta\) behave like derivatives: \(\delta(f)\) for \(f \in \mathcal{O}_{m}^{\ast}\) defines \(f\) on \(\mathcal{O}_{m + 1}^{\ast}\) as some combination of its values on ``close'' \(m\)-singular elements.
+where \(\delta_{m}\) is adjoint to \(\partial_{m}\). The maps \(\delta\) behave like derivatives: if \(f \in \mathcal{O}_{m}^{\ast}\), then \(\delta f \in \mathcal{O}_{m + 1}^{\ast}\) is equal to some combination of values of \(f\) on ``close'' \(m\)-singular elements.
 
 \begin{questions}
 	\label{qu:integration-theory}
 	We wish to understand how to invert this process, namely:
 	\begin{enumerate}
 		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' to a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
-		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there choices to be made?
-		\item When does such a functional integrate multiple times, in-particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
-		\item If there are choices to be made in integration, do they affect whether the new functional is integrable again?
+		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there multiple solutions when integrating (akin to the constant of integration ``\({}+C\)'' on the real line)?
+		\item When does such a functional integrate multiple times, in particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
+		\item If there are multiple solutions when integrating, does this choice affect whether the new functional is integrable again?
 		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
 	\end{enumerate}
 \end{questions}
-The answers to the above questions are given precisely by the following spaces:
+The answers to the above questions are given precisely by the following spaces.
 \begin{definitions}
 	\label{def:integration-theory-modules}
 	\begin{enumerate}
@@ -158,24 +147,24 @@ The answers to the above questions are given precisely by the following spaces:
 			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
 		\item The \textbf{secondary obstructions to integration} are the space
 			\[S\mathcal{O}_{m} = \ker{(\partial_{m + 1}\partial_{m})} / P\mathcal{O}_{m},\]
-			and likewise the \textbf{order \(k\) obstructions to integration} are defined analagously.
+			and the \textbf{order \(k\) obstructions to integration} are defined analogously.
 		\item The \textbf{weights of integration} are the space
 			\[W\mathcal{O}_{m} = C\mathcal{O}_{m} / \pi(P\mathcal{O}_{m})\]
-			where \(\pi: \mathcal{O}_{m} \to C\mathcal{O}_{m}\) is the projection.
+			where \(\pi: \mathcal{O}_{m} \to C\mathcal{O}_{m}\) is the natural projection.
 		\item The \textbf{finite type invariants} of order \(m\) are the space
 			\[FT\mathcal{O}_{m} = \ker \delta^{m + 1},\]
 			where \(\delta^{m + 1}\) denotes \(m + 1\) applications of \(\delta\) with appropriate indices, ending with \(\delta_{m}\).
 
 	\end{enumerate}
 \end{definitions}
-It may not be entirely obvious how these definitons provide answers to the questions above. In the rest of this section we will see the truth of this in the case \(\mathcal{O}_{\star} = \singularknots_{\star}\).
+It may not be entirely obvious how these definitons provide answers to the questions above, but in the rest of this section we will illustrate this for the case \(\mathcal{O}_{\star} = \singularknots_{\star}\).
 
 % TODO: [Zsuzsi]: If you're referencing a figure, have the figure number (eventually)
-Recall from the picture from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
+Recall from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
 % TODO: Currently this is not in the introduction. Decide whether to introduce it here instead.
 
 \begin{definition}
-	A \textbf{singular isotopy}, \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)-th and \((m + 1)\)-st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : 1 \leq s \leq r\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = \varepsilon(s): \{s\} \to \{\pm 1\}\) of the singularities give the signs of the corresponding intersection.
+	A \textbf{singular isotopy} \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularities give the signs of the corresponding intersection.
 	% TODO: There is currently a notion of singular isotopy in the first paragraphs of this chapter. Perhaps say something like "We provide a proper definition in x.x.x"
 \end{definition}
 
@@ -183,13 +172,12 @@ Recall from the picture from the introduction that \(m\)-singular knots are comp
 	Figure: singular isotopy.
 \end{shaded}
 
-To rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}_{\star} = \singularknots_{\star}\), 
-differentiation constructs from an invariant \(Q\) of \(m\)-singular knots, an invariant \(Q'\) of \((m + 1)\)-singular knots such that along singular isotopies from \(k_{0}\) to \(k_{1}\),
-\[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} Q'(\Psi_{s}).\]
-Due to the boundary relation this is always well-defined.
+Let us rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}_{\star} = \singularknots_{\star}\). Differentiation takes an invariant \(Q\) of \(m\)-singular knots and defines an invariant \(Q'\) of \((m + 1)\)-singular knots. The values of \(Q'\) on the \((m + 1)\)-singular knot \(k^{\bullet}\) is the difference of values of \(Q\) on the combination of \(m\)-singular knots \(\partial k^{\bullet}\). Therefore if \(\Psi(t)\) is a singular isotopy of \(m\)-singular knots from \(k^{\bullet}_{0}\) to \(k^{\bullet}_{1}\), with singularity set \(\{\Psi_{s} : s \in I\}\), we have
+\[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} Q'(\Psi_{s}).\]
+Note that due to the \ref{eq:codiff} relation this is always well-defined.
 
 Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
-\[Q(k_{0}) - Q(k_{1}) = \sum_{s = 1}^{r}\varepsilon_{s} P(\Psi_{s}),\]
+\[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} P(\Psi_{s}),\]
 in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate:
 
 \begin{definition}
