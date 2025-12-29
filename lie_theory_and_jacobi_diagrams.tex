@@ -413,6 +413,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	\end{proof}
 
 	\begin{remark}
+		\label{rem:metric-casimir-bubble-is-dimension}
 		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension, so for \(\mathfrak{sl}_{2}\), the factor \(3\). For example
 		\[
 			W_{\mathfrak{sl}_{2}}
@@ -1240,30 +1241,41 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 
 This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimr Lie algebra object.
 
-The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. This applies to finite-dimensional casimir Lie algebras, superalgebras, etc.
+The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
+
+
+The reason to consider casimir Lie algebra objects as opposed to just metric Lie algebra objects to make the universal construction is the following. Consider specifying a metric Lie algebra object \(\mathfrak{g}\) in some symmetric monoidal category \(\mathcal{C}\). Then the weight system \(\mathcal{W}_{\mathfrak{g}}\) has a relation of the form
+	\[
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/jacobi_diagram_with_only_bubble.pdf}
+		\quad
+		=
+		\quad
+		\mu
+		\;\;
+		\includegraphics[width=0.13\textwidth, valign=c]{graphics/jacobi_diagram_empty.pdf}
+		\quad
+		=
+		\quad
+		\mu
+	\]
+for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\), this is the superdimension. This relation is just one example of a relation between diagrams with only trivalent vertices and no univalent vertices to scalars.
+
+In \(\mathcal{A}\) there are no such relations. In fact, there are not even any objects that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
+
+\begin{definition}
+	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\)
+\end{definition}
+
+\begin{theorem}[Hinnich-Vaintrob]
+	Under [certain mild conditions] on \(\mathcal{O}\), \(\mathcal{C}\) and \(A\), there exists an algebra \(U(\mathcal{O}, A)\), the quotient of the external tensor algebra, obeying some important relation analogous to the defining property of the external enveloping algebra of a Lie algebra, but general to any operad.
+\end{theorem}
+
+\begin{theorem}[Hinnich-Vaintrob]
+	\(U(\mathcal{O} = Lie, A = 1 = \mathbb{L}_{c} \in \mathbf{P}_{c}(Lie))\) is isomorphic as a Hopf algebra to \(\mathcal{A}\).
+\end{theorem}
 
 \begin{shaded}
-	The reason we need to consider casimir Lie algebra objects as opposed to just metric Lie algebra objects to make the universal construction is the following.
-
-	Consider the tensor category of a specific finite-dimensional (casimir) hence metric Lie algebra object in a specific symmetric tensor category. In \(\mathcal{C}(k, k)\) we have the object formed by the contraction of the tensor with the metric. Since this is finite-dimensional, this is just the trace, therefore the dimension of the algebra. So, in the tensor category we have the relation \(m \circ c = \operatorname{dim} \mathfrak{g}\). If we are trying to find an algebra which contains all the relations true in the tensor category of any metric Lie algebra object, then we arrive at a problem. All the relations of this form are contradictory.
-
-	Two obvious choices present themselves. Removing all relations, therefore allowing symbolic objects of the form \(circle\), we construct an algebra bigger that \(\mathcal{A}\). The other option is to not allow any circles by instead generalising the notion of casimir Lie algebra objects, (or something -- this could use some thought)
-
-	\begin{definition}
-		The object \(\mathbb{L}_{m} \in \mathbf{P}(Lie)\)
-		Hard question: what do I put as the symmetry action here? Usually the symmetry is determined by the category. But here we defined the category as generated by the prop \(\mathbf{P}(\mathcal{O})\) with an additional element. Does this all go round in circles?
-	\end{definition}
-
-	\begin{theorem}[Hinnich-Vaintrob]
-		Under [certain mild conditions] on \(\mathcal{O}\), \(\mathcal{C}\) and \(A\), there exists an algebra \(U(\mathcal{O}, A)\), the quotient of the external tensor algebra, obeying some important relation analogous to the defining property of the external enveloping algebra of a Lie algebra, but general to any operad.
-	\end{theorem}
-
-	\begin{theorem}[Hinnich-Vaintrob]
-		\(U(\mathcal{O} = Lie, A = 1 = \mathbb{L}_{c} \in \mathbf{P}_{c}(Lie))\) is isomorphic as a Hopf algebra to \(\mathcal{A}\).
-	\end{theorem}
-
 	\begin{proof}
-		We appeal to Hinnich and Vaintob a lot.
 	\end{proof}
 \end{shaded}
 
