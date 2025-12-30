@@ -5,9 +5,9 @@
    viewBox="0 0 91.361318 157.53672"
    version="1.1"
    id="svg16"
-   sodipodi:docname="external_enveloping_algebra_element_b.svg"
+   sodipodi:docname="external_tensor_algebra_element_b.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/external_enveloping_algebra_element_b.pdf"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/external_tensor_algebra_element_b.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -35,9 +35,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="11.313709"
-     inkscape:cx="77.914328"
-     inkscape:cy="35.57631"
+     inkscape:zoom="2.8284273"
+     inkscape:cx="16.793785"
+     inkscape:cy="88.56512"
      inkscape:window-width="2556"
      inkscape:window-height="1394"
      inkscape:window-x="0"
@@ -83,6 +83,11 @@
        orientation="0,-1"
        id="guide5"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="1.0000002,131.9684"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <path
      fill="none"
@@ -119,7 +124,7 @@
        y="13.27428">\raisebox{-.5\height}{\(\scriptstyle \beta\)}</tspan></text>
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 26.793672,75.921038 -4.56921,3.37786 c 0,0 -21.2244618,-34.024557 -21.2244618,-53.730572"
+     d="m 26.793672,75.921038 -4.56921,3.37786 c 0,0 -21.2244618,-59.592883 -21.2244618,-79.298898"
      id="path12-7"
      sodipodi:nodetypes="ccc" />
   <path

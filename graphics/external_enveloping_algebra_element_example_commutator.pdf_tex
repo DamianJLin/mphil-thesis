@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'external_tensor_algebra_product.pdf' (pdf, eps, ps)
+%% Accompanies image file 'external_enveloping_algebra_element_example_commutator.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{177.97320557bp}%
+    \setlength{\unitlength}{229.84132385bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.60052872)%
+  \begin{picture}(1,1.13128558)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{external_tensor_algebra_product.pdf}}%
-    \put(0.24696791,1.03585669){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(o_{a}\)}}\end{tabular}}}}%
-    \put(0.59195928,1.52775037){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \alpha \otimes \beta\)}}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{external_tensor_algebra_product.pdf}}%
-    \put(0.71523778,0.32052868){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(o_{b}\)}}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{external_tensor_algebra_product.pdf}}%
+    \put(0.75462548,1.09443618){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle [\xi_{1}, \xi_{2}]\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{external_enveloping_algebra_element_example_commutator.pdf}}%
+    \put(0.5351293,0.24819528){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle [\cdot,\cdot]\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{external_enveloping_algebra_element_example_commutator.pdf}}%
   \end{picture}%
 \endgroup%

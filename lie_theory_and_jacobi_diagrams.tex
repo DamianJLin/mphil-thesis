@@ -65,6 +65,7 @@ Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the 
 This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. From the \ref{eq:STU} relations, we may deduce the following other relations which hold in \(\mathcal{J}\).
 
 \begin{proposition}
+	\label{prop:stu-implies-as-ihx}
 	The following relations are consequences of the \textup{\ref{eq:STU}} relation in \(\mathcal{J}\):
 	\begin{enumerate}
 		\item The \textbf{AS relation} (antisymmetry relation),
@@ -979,8 +980,8 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not
 	By computer verification with sagemath, the span of the corresponding tensors in \((\mathfrak{sl}_{4})^{\otimes 4}\) is six-dimensional.
 \end{proof}
 
-\section{A universal metric Lie algebra object}
-\label{sec:a-universal-metric-lie-algebra-object}
+\section{A universal casimir Lie algebra object}
+\label{sec:a-universal-casimir-lie-algebra-object}
 
 We return to the universal Lie algebra of Vaintrob which was discussed in the previous section. It is yet uncertain to what degree such an algebra exists. The obstruction are the zero divisors in Vogel's algebra \(\Lambda\), \cite{can-yang-baxter-imply-lie-algebra, on-refined-vogels-universality, construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra} give more details.
 
@@ -1038,7 +1039,7 @@ In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose oper
 
 \begin{example}
 	\label{ex:lie-operad}
-	Let \(\Gamma\) denote the free operad functor (for details we refer the reader to \cite{operads-and-props}). Let
+	Let \(\Lambda\) denote the free operad functor (for details we refer the reader to \cite{operads-and-props}). Let
 	\[
 		\alpha
 		=
@@ -1053,7 +1054,7 @@ In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose oper
 		\quad
 		=
 		\quad
-		\Gamma(\alpha)
+		\Lambda(\alpha)
 		\quad
 		/
 		\quad
@@ -1202,12 +1203,6 @@ In other words, in \(\mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})\), the action of \
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the metric Lie algebra objects in the category \(\mathcal{C}\).
 \end{proposition}
 
-\begin{proof}
-	\begin{shaded}
-		Kind of by definition.
-	\end{shaded}
-\end{proof}
-
 This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. But furthermore, this permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
 
 \begin{definition}
@@ -1232,12 +1227,6 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 \begin{proposition}
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the casimir Lie algebra objects in the category \(\mathcal{C}\).
 \end{proposition}
-
-\begin{proof}
-	\begin{shaded}
-		Kind of by definition
-	\end{shaded}
-\end{proof}
 
 This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimr Lie algebra object.
 
@@ -1359,21 +1348,36 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 \]
 
 \begin{example}
-	Let \(\mathfrak{g}\) be a Lie algebra (in \(\mathbf{Vect}\)). We examine the relation in the external enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\) coming from making the diagram of Definition \ref{def:external-enveloping-algebra} commute in the case \(n = 1, m_{1} = 2\) on the object \([\cdot,\cdot] \otimes [\cdot,\cdot] \otimes \xi\). Let us write \(\xi = \xi(1) = \xi_{1} \otimes \xi_{2}\).
-
-	Applying the Lie action map first gives
-	\[[\cdot,\cdot] \otimes_{S_{n}} [\xi_{1}, \xi_{2}],\]
-	whereas applying the operadic composition first gives
-	\[\left( [\cdot,\cdot] \circ_{2} [\cdot, \cdot] \right) \otimes_{S_{n}} (\xi_{1} \otimes \xi_{2}).\]
-	In order to easily work the the relations in the operad \(\mathcal{O}_{\text{Lie}}\), let us represent \([\cdot,\cdot] \circ_{2} [\cdot, \cdot] \in \mathcal{O}_{\text{Lie}}(3)\) as
+	\label{ex:stu_in_external_enveloping_algebra}
+	Let \(\mathfrak{g}\) be a Lie algebra (in \(\mathbf{Vect}\)). We examine the relation in the external enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\) coming from making the diagram of Definition \ref{def:external-enveloping-algebra} commute in the case \(n = 1, m_{1} = 2\) on the object
 	\[
-		[\cdot,\cdot] \circ_{2} [\cdot, \cdot]
-		=
-		\def\svgscale{0.2}
-		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_commutator.pdf_tex}}
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example.pdf_tex}}
+		\quad
+		\in
+		\quad
+		\mathcal{O}_{\text{Lie}}(2) \otimes \mathcal{O}_{\text{Lie}}(2) \otimes \Gamma(\mathfrak{g}^{\otimes 2})
+	\]
+	Let us write \(\xi = \xi(1) = \xi_{1} \otimes \xi_{2}\). Applying the Lie action map first gives
+	\[
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_element_lie_example_commutator.pdf_tex}}
+		\quad
+		\in
+		\quad
+		\mathcal{O}_{\text{Lie}}(2) \otimes \Gamma(\mathfrak{g})
 		.
 	\]
-	by the relations in from Example \ref{ex:lie-operad}, we have
+	On the other hand, applying the operadic composition first gives
+	\[
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_composition.pdf_tex}}
+		\quad
+		\in
+		\quad
+		\mathcal{O}_{\text{Lie}}(3) \otimes \Gamma(\mathfrak{g}^{\otimes 2})
+	\]
+	and by the relations in \(\mathcal{O}_{\text{Lie}}\) from Example \ref{ex:lie-operad},
 	\[
 		\def\svgscale{0.2}
 		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_commutator.pdf_tex}}
@@ -1383,33 +1387,153 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 		-
 		\def\svgscale{0.2}
 		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_product_reversed.pdf_tex}}
-		.
 	\]
-	But, in view of the multiplication in \(T(\mathcal{O}, A)\) from Definition \ref{def:external-tensor-algebra}, this is equal to
+	this is equal to
 	\[
-		([\cdot,\cdot] \otimes_{S_{n}} \xi_{1}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{2})
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_product_12.pdf_tex}}
+		\quad
 		-
-		([\cdot,\cdot] \otimes_{S_{n}} \xi_{2}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{1})
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_product_21.pdf_tex}}
+		\quad
+		\in
+		\quad
+		\mathcal{O}_{\text{Lie}}(3) \otimes \Gamma(\mathfrak{g}^{\otimes 2})
 		.
 	\]
-	In total
+	Recalling the definition of the multiplication in Definition \ref{def:external-tensor-algebra}, each of these terms is a product in \(T(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\), so we have
 	\[
-		[\cdot,\cdot] \otimes_{S_{n}} [\xi_{1}, \xi_{2}]
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_1.pdf_tex}}
+		\quad
+		\cdot
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_2.pdf_tex}}
+		\quad
+		-
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_2.pdf_tex}}
+		\quad
+		\cdot
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_1.pdf_tex}}
+		\quad
+		\in
+		\quad
+		\mathcal{O}_{\text{Lie}}(3) \otimes \Gamma(\mathfrak{g}^{\otimes 2})
+	\]
+
+	So, in total, we have the relation
+	\[
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_element_lie_example_commutator.pdf_tex}}
+		\quad
 		=
-		([\cdot,\cdot] \otimes_{S_{n}} \xi_{1}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{2})
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_1.pdf_tex}}
+		\quad
+		\cdot
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_2.pdf_tex}}
+		\quad
 		-
-		([\cdot,\cdot] \otimes_{S_{n}} \xi_{2}) \cdot ([\cdot, \cdot] \otimes_{S_{n}} \xi_{1})
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_2.pdf_tex}}
+		\quad
+		\cdot
+		\quad
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_1.pdf_tex}}
 	\]
-	and this starts to look like a universal enveloping algebra.
+	in \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\).
 \end{example}
 
-\begin{theorem}[Hinnich-Vaintrob]
-	\(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
+\begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
+	\label{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}
+	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
 \end{theorem}
 
-\begin{shaded}
-	\begin{proof}
-	\end{proof}
-\end{shaded}
+We fill out some details left out of the proof in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.
+
+\begin{lemma}
+	\label{lem:lie-operad-left-skewed-tree-normal-form}
+	Every element of \(\mathcal{O}_{\text{Lie}}(n)\), can be written in the form \(L \pi\) where \(L \in \mathcal{O}_{\text{Lie}}(n)\) is the left-skewed binary tree
+	\[L = [\cdot, \cdot] \circ_{1} \cdots \circ_{1} [\cdot, \cdot] \circ_{1} [\cdot, \cdot] \]
+	and \(\pi \in kS_{n}\).
+\end{lemma}
+
+\begin{proof}
+	Recall from the definition of an operad, there is a \(kS_{n}\)-action on \(\mathcal{O}_{\text{Lie}}(n)\).
+
+	Firstly, the claim is true in \(\mathcal{O}_{\text{Lie}}(2)\), as a single bracket is left-skewed. The claim is also true in \(\mathcal{O}_{\text{Lie}}(3)\) because of the relations in \(\mathcal{O}_{\text{Lie}}\)
+	\[
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_commutator.pdf_tex}}
+		=
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
+		-
+		\def\svgscale{0.2}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_product_reversed.pdf_tex}}
+	\]
+	or where \(\sigma = (1 \mapsto 1, 2 \mapsto 3, 3 \mapsto 2) \in S_{3}\)
+	\[[\cdot, \cdot] \circ_{2} [\cdot, \cdot] = ([\cdot, \cdot] \circ_{1} [\cdot, \cdot])(1 - \sigma).\]
+
+	Recall from Example \ref{ex:lie-operad} the definition of the Lie operad as the free operad \(\Lambda([\cdot, \cdot])\) on a single generating binary operation \([\cdot, \cdot]\) modulo some relations. Let \(O \in \Lambda([\cdot, \cdot])\). From the equivariance axioms of the operad, if there is some composition into the second component in \(O\), then \((1 - \sigma) \in kS_{3}\) determines some \(\tau \in kS_{n}\) such that in \(\mathcal{O}_{\text{Lie}}\), \(O = O' \tau\) and the composition in \(O'\) is into the first component. Iterated application of this fact completes the proof.
+\end{proof}
+
+\begin{proofof}{Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} (sketch)}
+	Let \(\mathbf{n}_{c}\) denote \((\mathbf{1}_{c})^{\otimes n}\). The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is an associative algebra in \(\mathbf{Vect}\) whose objects are elements of
+	\begin{align*}
+		T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \Gamma(\mathbf{n}_{c}) \\
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})
+	\end{align*}
+
+	Lemma \ref{lem:lie-operad-left-skewed-tree-normal-form} induces (vector space) isomorphisms for \(n \in \mathbb{N}\)
+	\[
+		\mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})
+		\cong
+		\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})
+	\]
+	and therefore an isomorphism
+	\[
+		T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})
+		\cong
+		\bigoplus_{n \in \mathbb{N}} \mathbf{E}_{c}(\mathbf{0}, \mathbf{n}).
+	\]
+	Explicitly, \(L \pi \otimes_{S_{n}} E_{0} \cong L \otimes_{S_{n}} E_{0} \pi \mapsto E_{0} \pi\), and write \(E = E_{0} \pi\). In words, a homogeneous element of \(T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) in degree \(n\) can be written as composition of left-skewed brackets tensored with a unique morphism \(E\) of \(\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\).
+	\[
+		\def\svgscale{0.34}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_as_chord_diagram.pdf_tex}}
+	\]
+	A morphism \(E \in \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\) is associated to a diagram in \(\mathcal{A}\); choose a presentation for \(E\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\), this determines a unitrivalent graph with a cyclic order on the internal vertices, and a linear order on the univalent vertices induced by the order \(\mathbf{1} < \mathbf{2} < \cdots < \mathbf{n}\). But by Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, this map factors through the natural projection from linear orders on univalent vertices to cyclic orders. This therefore defines a map \(f: T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}) \to \mathcal{A}\).
+
+	Informally, \(f\) is the map which takes an element of the tensor algebra, and interprets it as a linear Jacobi diagram where the skeleton is the path from the leftmost leaf to the root.
+	\[
+		f
+		:
+		\def\svgscale{0.34}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_as_chord_diagram.pdf_tex}}
+		\longmapsto
+		\def\svgscale{0.34}
+		\adjustbox{valign=c}{\input{graphics/long_jacobi_diagram_from_external_tensor_algebra.pdf_tex}}
+	\]
+
+	We need to show that \(f\) factors through the projection to \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). All of the relations of Definition \ref{def:external-enveloping-algebra} follow from the relation in Example \ref{ex:stu_in_external_enveloping_algebra}, so it suffices to prove that the map factors through that relation. This is just the \ref{eq:STU} in \(\mathcal{A}\).
+
+	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the the relation in Example \ref{ex:stu_in_external_enveloping_algebra}.
+
+	This proves the algebra isomorphism. The proof of the bialgebra isomorphism involves modular operads and we refer the reader to \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.
+\end{proofof}
+
 
 In the next chapter we look at a generalisation of this statement in the context of welded knots.

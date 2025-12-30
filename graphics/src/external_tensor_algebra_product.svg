@@ -5,9 +5,9 @@
    viewBox="0 0 177.97829 284.6828"
    version="1.1"
    id="svg16"
-   sodipodi:docname="external_enveloping_algebra_product.svg"
+   sodipodi:docname="external_tensor_algebra_product.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/external_enveloping_algebra_product.pdf"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/external_tensor_algebra_product.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,16 +26,27 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="1.9286615"
-     inkscape:cx="51.071689"
-     inkscape:cy="183.80623"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="161.5739"
+     inkscape:cy="96.520075"
      inkscape:window-width="2556"
      inkscape:window-height="1394"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg16"
-     showguides="true" />
+     showguides="true">
+    <sodipodi:guide
+       position="176.76245,259.19605"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="1.0001657,259.19605"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <path
      fill="none"
      stroke-width="3.84"
@@ -61,17 +72,17 @@
   <text
      xml:space="preserve"
      style="font-weight:500;font-size:1.6342px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.102137;-inkscape-stroke:none;stop-color:#000000"
-     x="65.408699"
-     y="12.78416"
+     x="105.35306"
+     y="12.784161"
      id="text17-3-2-5"><tspan
        sodipodi:role="line"
        id="tspan17-5-9-3"
        style="stroke-width:0.102137"
-       x="65.408699"
-       y="12.78416">\raisebox{-.5\height}{\(\scriptstyle \alpha\)}</tspan></text>
+       x="105.35306"
+       y="12.784161">\raisebox{-.5\height}{\(\scriptstyle \alpha \otimes \beta\)}</tspan></text>
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 30.071162,75.757899 v 0 C 30.071162,75.757899 1,45.111199 1,25.405184"
+     d="m 30.071162,75.757899 v 0 c 0,0 -29.0709963,-56.051884 -29.0709963,-75.757899"
      id="path12-7"
      sodipodi:nodetypes="ccc" />
   <path
@@ -80,14 +91,14 @@
      id="path13-5" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 57.811802,75.749789 c 0,0 29.06647,-30.615735 29.06647,-50.344605"
+     d="m 57.811802,75.749789 c 0,0 16.877621,-30.534163 16.877621,-50.263033"
      id="path14-3"
      sodipodi:nodetypes="cc" />
   <rect
      style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
      id="rect1"
-     width="64.851944"
-     height="25.40519"
+     width="144.74065"
+     height="25.405191"
      x="32.982735"
      y="0.081564501" />
   <path
@@ -112,17 +123,6 @@
        style="stroke-width:0.102137"
        x="127.29333"
        y="227.63727">\raisebox{-.5\height}{\(o_{b}\)}</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-weight:500;font-size:1.6342px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.102137;-inkscape-stroke:none;stop-color:#000000"
-     x="140.55461"
-     y="140.42036"
-     id="text17-3-2-5-9"><tspan
-       sodipodi:role="line"
-       id="tspan17-5-9-3-7"
-       style="stroke-width:0.102137"
-       x="140.55461"
-       y="140.42036">\raisebox{-.5\height}{\(\scriptstyle \beta\)}</tspan></text>
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
      d="m 113.41065,203.06711 -4.56921,3.37786 C 88.807643,167.31159 43.947608,172.8815 43.947608,128.42791"
@@ -130,17 +130,17 @@
      sodipodi:nodetypes="ccc" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 120.63784,200.34353 c 0,0 -6.57976,-28.03545 -6.57976,-47.62913"
+     d="M 120.63784,200.34353 C 113.60659,183.93728 105.4397,45.080436 105.4397,25.486756"
      id="path13-5-6"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 133.91939,200.34353 c 0,0 6.57979,-28.03545 6.57979,-47.62913"
+     d="m 133.91939,200.34353 c 6.9375,-27 2.27059,-155.263094 2.27059,-174.856774"
      id="path13-5-7"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 145.72351,206.42999 c 0,0 21.21677,-33.98672 21.21677,-53.71559"
+     d="m 145.72351,206.42999 c 17.4375,-21.75 21.21677,-161.214364 21.21677,-180.943234"
      id="path14-3-1"
      sodipodi:nodetypes="cc" />
   <path
@@ -148,11 +148,4 @@
      d="M 127.29334,284.6828 V 255.73712"
      id="path13-2-2"
      sodipodi:nodetypes="cc" />
-  <rect
-     style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
-     id="rect1-9"
-     width="74.713654"
-     height="25.568333"
-     x="103.18307"
-     y="127.22766" />
 </svg>
