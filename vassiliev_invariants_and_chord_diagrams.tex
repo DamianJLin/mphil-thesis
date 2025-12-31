@@ -805,7 +805,7 @@ More examples of non-Vassiliev invariants are unknotting number, crossing number
 
 % TODO: See CDM Proposition A.24 and the associated exercise; check that this doesn't imply something extra needs to be included somewhere.
 
-This bialgebra strucutre on knots is closely related to a similar bialgebra structure on chord diagrams. Knots are complicated and chord diagrams are much simpler, and the general idea is to study the former via the latter.
+This bialgebra structure on knots is closely related to a similar bialgebra structure on chord diagrams. Knots are complicated and chord diagrams are much simpler, and the general idea is to study the former via the latter.
 
 In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we saw how functions on chord diagrams specify Vassiliev invariants, so long as the functions satisfy \(\ref{eq:4Tstar}\) (and unframed Vassiliev invariants if they further satisfy \(\ref{eq:1Tstar}\)). We can instead encode this directly into the algebra of chord diagrams by the following relations.
 
@@ -833,7 +833,7 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration} we
 	\[\mathcal{A}_{m} = \mathcal{D}_{m} / \textup{\ref{eq:4T}}\]
 	and \(\mathcal{A}\), the \textbf{space of chord diagrams} as
 	\[\mathcal{A} = \bigoplus_{m = 0}^{\infty} \mathcal{A}_{m}.\]
-	(The \textbf{space of unframed chord diagrams}, \(\mathcal{A}'\) is defined similarly from \(\mathcal{A}_{m}' = \mathcal{D}_{m} / \textup{\ref{eq:4T}}, \textup{\ref{eq:1T}}\).)
+	The \textbf{space of unframed chord diagrams}, \(\mathcal{A}'\) is defined similarly from \(\mathcal{A}_{m}' = \mathcal{D}_{m} / \textup{\ref{eq:4T}}, \textup{\ref{eq:1T}}\).
 \end{definition}
 
 \begin{warning}
@@ -858,7 +858,7 @@ The algebra \(\mathcal{A}\) has multiplication and coproduct operations that mir
 	The definition is extended bilinearly to elements of \(\mathcal{A}\).
 \end{definition}
 
-Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed in the algebra \(\mathcal{D}\) this is ill-defined. However the \ref{eq:4T} relation in \(\mathcal{A}\) takes care of this.
+Again, this is not, a-priori, a well-defined operation, as the location of the cut on each circle was not specified. Indeed this is ill-defined in \(\mathcal{D}\). However the \ref{eq:4T} relation in \(\mathcal{A}\) rectifies this issue.
 
 \begin{proposition}
 	The connected sum operation \(\connect : \mathcal{A} \otimes \mathcal{A} \to \mathcal{A}\) is well-defined.
@@ -868,21 +868,21 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 	We will prove that the connected sums of two chord diagrams, given any two choices of connection locations, are equal modulo \ref{eq:4T}.
 
 	Let us denote the first chord diagram as \(a_{1}\) and the second as \(a_{2}\). Without loss of generality, it suffices to prove that without change in the connection location of \(a_{1}\), we can change the connection location on \(a_{2}\). Indeed it suffices to prove that we can rotate \(a_{2}\) by one `click', like so:
-
 	\[
 		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result.pdf}
 		\quad
 		\rightsquigarrow
 		\quad
 		\includegraphics[width=0.26\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_rotated.pdf}
+		.
 	\]
-	This is equivalent to sliding a single chord endpoint on the second diagram all the way through the first diagram, along the path of the grey arrow.
+	This is equivalent to sliding a single chord endpoint on the second diagram all the way through the first diagram, along the path of the grey arrow
 	\[
-		\includegraphics[width=0.27\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_with_arrow.pdf}
+		\includegraphics[width=0.27\textwidth, valign=c]{graphics/chord_diagram_connected_sum_result_with_arrow.pdf},
 	\]
-	Which we show can be achieved by a series of \ref{eq:4T} relations.
+	which we show can be achieved by a series of \ref{eq:4T} relations.
 
-	We can rewrite \ref{eq:4T} as
+	Note that we can rewrite \ref{eq:4T} as
 	\[
 		\left(
 		\ftnorth
@@ -922,7 +922,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 \end{proposition}
 
 \begin{proof}
-	We need to check: that the coproduct factors through the quoitents, that the coproduct respects the grading, and that the coproduct is an algebra morphism (one way of writing the compatibility condition).
+	We need to check: that the coproduct factors through the quotients, that the coproduct respects the grading, and that the coproduct is an algebra morphism (one way of writing the compatibility condition).
 
 	That in the unframed case, \(\Delta\) factors through \ref{eq:1T} is easy: an isolated chord in \(A\) remains isolated and appears in one cofactor of every term of \(\Delta(A)\).
 
@@ -941,18 +941,17 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 		\ftwest
 		\right)
 	\]
-	where there may be other chords \(O\) that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\). Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
+	where there may be other chords \(O\) that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\) respectively. Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
 	\begin{itemize}
-		\item \(s\) was also partitioned into the \(C_{i}\)'s, and the relation remains a \ref{eq:4T}, or
-		\item \(s\) was partitioned into the \(D_{i}\)'s, and so \(C_{1} = C_{2}\) and \(C_{3} = C_{4}\),
+		\item \(s\) was also partitioned into the \(C_{i}\)'s and the relation remains a \ref{eq:4T}, or
+		\item \(s\) was partitioned into the \(D_{i}\)'s, and so \(C_{1} = C_{2}\) and \(C_{3} = C_{4}\).
 	\end{itemize}
-	and in either case, that term of the coproduct is killed.
+	In either case, that term of the coproduct is killed.
 
-	The coproduct clearly satisfies
-	\[\Delta(\mathcal{A}_{m}) \subset \bigoplus_{i + j = m} \mathcal{A}_{i} \otimes \mathcal{A}_{j} = (\mathcal{A} \otimes \mathcal{A})_{m},\]
-	so it is graded.
+	The coproduct is clearly graded, as
+	\[\Delta(\mathcal{A}_{m}) \subset \bigoplus_{i + j = m} \mathcal{A}_{i} \otimes \mathcal{A}_{j} = (\mathcal{A} \otimes \mathcal{A})_{m}.\]
 
-	The compatibility condition holds. If \(A\) has chord set \(S\) and \(B\) has chord set \(T\), then
+	Finally, we check the compatibility condition. If \(A\) has chord set \(S\) and \(B\) has chord set \(T\), then
 	\begin{align*}
 		\Delta(A) \connect^{\otimes 2} \Delta(B)
 		& = \left(\sum_{J' \subset S} A_{J'} \otimes A_{\overline{J'}} \right) \connect^{\otimes 2} \left(\sum_{J'' \subset T} B_{J''} \otimes B_{\overline{J''}} \right) \\
@@ -964,11 +963,11 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. In fact \(\mathcal{A}\) is an even more specific structure.
 
 \begin{definition}
-	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra, \(A\), of finite type for which
+	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra \(A\) of finite type for which
 	\begin{itemize}
 		\item The unit map \(\mathcal{Q} \to A_{0}\) is an isomorphism (\textbf{connectedness})
-		\item The product is commutative, \(m \circ \tau = m\)
-		\item The coproduct is cocommutative, \(\tau \circ \Delta = \Delta\)
+		\item The product is commutative, that is \(m \circ \tau = m\)
+		\item The coproduct is cocommutative, that is \(\tau \circ \Delta = \Delta\)
 	\end{itemize}
 	where \(\tau : A \otimes A \to A \otimes A\) sends \(x \otimes y \mapsto y \otimes x\).
 \end{definition}
