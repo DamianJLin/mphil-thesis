@@ -139,7 +139,7 @@ where \(\delta_{m}\) is adjoint to \(\partial_{m}\). The maps \(\delta\) behave 
 \end{questions}
 The answers to the above questions are given precisely by the following spaces.
 \begin{definitions}
-	\label{def:integration-theory-modules}
+	\label{def:integration-theory-spaces}
 	\begin{enumerate}
 		\item The \textbf{primary obstructions to integration} are the space
 			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
@@ -178,14 +178,14 @@ Note that due to the \ref{eq:codiff} relation this is always well-defined.
 
 Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} P(\Psi_{s}),\]
-in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate:
+in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate.
 
 \begin{definition}
 	\label{def:topological-singular-relations}
 	\begin{enumerate}
 		\item
 			\label{subdef:T4Tstar}
-			The following closed singular isotopy around a triple point:
+			The closed singular isotopy around a triple point given by
 			\begin{center}
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/triple_point_singular_isotopy.pdf_tex}
@@ -220,12 +220,12 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 \end{definition}
 
 \begin{remark}
-	Note that for framed knots, only the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T4Tstar} is closed, whereas the singular isotopy Definition~\ref{def:topological-singular-relations}~\ref{subdef:T1Tstar} is not. So only \ref{eq:T4Tstar} holds. When considering unframed knots, the theory is the same as what we present below, but \ref{eq:T1Tstar} plays the same role as \ref{eq:T4Tstar}.
+	Since we are considering framed knots, only the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T4Tstar} is closed, whereas the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T1Tstar} is not; so only \ref{eq:T4Tstar} holds. When considering unframed knots, the theory is the same as what we present below, but \ref{eq:T1Tstar} plays the same role as \ref{eq:T4Tstar}.
 
-	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams, etc. there is a corresponding theorem for the unframed weight systems, etc. in which for every hypothesis involving a \ref{eq:T4Tstar} (or variant thereof), a similar one involving \ref{eq:T1Tstar} (or variant thereof) must also hold.
+	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams, indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the unframed version of the statement, hypothesis involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the unframed version. We give a few examples of the unframed statements. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
 \end{remark}
 
-So, combinations of \(m\)-singular knots of the form
+Indeed, the definition of the primary obstructions to integration as \(P\mathcal{O}_{m} = \ker{\partial_{m}}\) is justified, as a cycle in \(\ker{\partial_{m}}\) is a combination of \((m + 1)\)-singular knots with signs through which a singular isotopy could pass. From Definition \ref{def:topological-singular-relations}, we have a cycle of the kind
 \[
 	\tftsouth
 	\ - \
@@ -235,36 +235,28 @@ So, combinations of \(m\)-singular knots of the form
 	\ + \
 	\tftwest
 \]
-are in \(P\singularknots_{m} = \ker \partial_{m}\). Any nonvanishing functionals on them can't integrate. But do combinations of these forms span the primary obstructions? Are they the only possible reasons that that \(f\) doesn't integrate?
+in \(P\singularknots_{m} = \ker \partial_{m}\). However, we it is not clear whether combinations of this form span \(P\mathcal{O}\), that is whether obstructions of this kind are the only type of obstruction.
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
 	An invariant \(f\) of \(m\)-singular knots integrates to an invariant of \((m - 1)\)-singular knots if and only if it satisfies \textup{\ref{eq:T4Tstar}}.
 \end{theorem}
 
-For example, the corresponding unframed version of Stanford's theorem reads: \textit{An invariant \(f\) of \(m\)-singular unframed knots integrates to an invariant of \((m - 1)\)-singular unframed knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.}
+\begin{remark}
+	The corresponding unframed version of Stanford's theorem reads: \textit{An invariant \(f\) of \(m\)-singular unframed knots integrates to an invariant of \((m - 1)\)-singular unframed knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.}
+\end{remark}
 
-\begin{proof}[sketch]
-	% TODO: Fill out Stanford's integration homotopy proof
-	% NOTE: [Zsuzsi] Be minful of clearly distinguishing between intuition and precise maths. If this proof only exists as a sketch in the literature, it can be a nice contribution to fill in the details, and if you do, you should say so.
-	\begin{shaded}
-		Let \(\gamma = \Psi(t)\) be a singular isotopy and let \(\Phi(\gamma)\) be the path integral along it. Construct a homotopy from \(\gamma\) to the constant singular isotopy in the stratification of knots with at least \(m - 1\) double points, and additional worse singularities. The only events to consider are codimension \(m + 2\) (why \(m + 2\)? is it to do with homotopy being "2"-dimensional?) events. They all change the \(\Phi(\gamma)\) by \(f(\tftterm)\) or \(f(\totterm)\) (or similar with \ref{eq:diff} relations, which we've said are implicit).
+To answer our question about whether the primary obstructions are the only obstructions, it's helpful to define the constants of integration, which comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
 
-		Once the homotopy is complete, we are done as \(\Phi(\gamma_{\text{const}}) = 0\). On a down-to-earth level, why does this imply \(f\) can be integrated?
-	\end{shaded}
-\end{proof}
-
-Continuing with Questions \ref{qu:integration-theory} and Definitions \ref{def:integration-theory-modules}, the constants of integration comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
-
-Recall from Definition \ref{def:integration-theory-modules} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). What do the classes of this quotient look like? Well since
-\[\partial \left( \double \right) = \poscross - \negcross,\]
-the difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). Thus, the objects of this quotient are \(m\)-singular knots modulo crossing changes. So, the only data needed to describe them is the order in which the \(m\) double points are traversed around the \(m\)-singular knot.
+Recall from Definition \ref{def:integration-theory-spaces} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). Let us examine the classes of this quotient space. From the defintion of the derivative,
+\[\partial \left( \double \right) = \poscross - \negcross\]
+so the difference of an \(m\)-singular knot and the same \(m\)-singular knot with one crossing changed is the image of some \((m + 1)\)-singular knot under \(\partial\). The classes of this quotient are therefore \(m\)-singular knots modulo crossing changes. The only data needed to describe such an equivalence class is the order in which the \(m\) double points are traversed around the \(m\)-singular knot.
 
 \begin{definitions}
 	\label{def:chord-diagram}
 	\begin{enumerate}
-		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphism of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\). The oriented circle is called the \textbf{skeleton} of the chord diagram.
-		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the circle, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, pairing up the \(2m\) points, forming \(\sigma(k)\).
+		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphisms of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\). The oriented circle is called the \textbf{skeleton} of the chord diagram.
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the circle, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, and points with the same label are paired, forming \(\sigma(k)\).
 	\end{enumerate}
 \end{definitions}
 
@@ -284,7 +276,7 @@ the difference of an \(m\)-singular knot and the same \(m\)-singular knot with o
 \end{proposition}
 
 \begin{proof}
-	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change. Hence \(Q\) and \(Q_{0}\) have the same derivative: \(P\).
+	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change. Hence \(Q\) and \(Q_{0}\) have the same derivative \(P\).
 \end{proof}
 
 Since we are trying to integrate more than once, we might wish to know which constants of integration are themselves integrable.
@@ -294,7 +286,7 @@ Since we are trying to integrate more than once, we might wish to know which con
 	A \textbf{weight system} is an integrable \(w \in \mathcal{D}_{m}^{\ast}\).
 \end{definition}
 
-The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot invariants must satisfy to be integrable. If we take their images under \(\sigma\), we get the following relations in the space of chord diagrams.
+The \ref{eq:T4Tstar} relations are what knot invariants must satisfy to be integrable (also \ref{eq:T1Tstar} for unframed invariants). If we take their images under \(\sigma\), we get the following relations in the space of chord diagrams.
 
 \begin{definitions}
 	\label{def:ft-ot-relations}
@@ -322,15 +314,15 @@ The \ref{eq:T4Tstar} (and \ref{eq:T1Tstar} for unframed) relations are what knot
 \end{definitions}
 
 \begin{proposition}
-	A weight system is characterised as a constant of integration that satisfies \textup{\ref{eq:4Tstar}}.
+	Weight systems are exactly constants of integration that satisfy \textup{\ref{eq:4Tstar}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To integrate it must satisfy \ref{eq:4Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} into chord diagrams.
+	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To be integrable, it must satisfy \ref{eq:4Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} into chord diagrams.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) is only defined up to constants of integration, so is of the form
 \[Q + q \circ \sigma.\]
-Since integration is linear, for this to be integrable again, both terms need to be integrable. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. But this is in terms of the general integration theory -- what does this mean concretely in this special case? It remains open but it's conjectured that the secondary obstructions always vanish.
+For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be integrable since integration is linear. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. In our current case of \(\mathcal{O} = \mathcal{K}\), the secondary obstructions are conjectures to vanish.
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
@@ -340,25 +332,24 @@ Since integration is linear, for this to be integrable again, both terms need to
 \begin{remarks}
 	\begin{enumerate}
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\), which is what \(S\singularknots\) measures.
-		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- it's not too hard to find some elements, but whether they form a spanning set is open.
-		\item This conjecture is proven in certain cases. It holds in the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
+		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- some elements of this space are found in \cite{integration-of-singular-braid-invariants}, but whether they generate the kernel remains open.
+		\item This conjecture is known in certain cases. It holds in the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
 	\end{enumerate}
 \end{remarks}
 
-The finite type invariants in \(\singularknots_{\star}\) are simply the Vassiliev invariants, as checked by a simple comparison between Definitions \ref{def:vassiliev-invariant} and \ref{def:integration-theory-modules}. In other words, Vassiliev invariants of order \(m\) are those which vanish on parts of the strata at and above some depth \(m + 1\).
+The finite type invariants in \(\singularknots_{\star}\) are simply the Vassiliev invariants, as checked by a simple comparison between Definitions \ref{def:vassiliev-invariant} and \ref{def:integration-theory-spaces}. In other words, Vassiliev invariants of order \(m\) are those which vanish on parts of the strata at and above some depth \(m + 1\).
 
-If we restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev invariants, then we get the following.
-
+Restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev invariants, yields the following.
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
 	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}} and the additional condition that \(\delta v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant of order \(m\)).
 \end{theorem}
 
-There are various proofs of the fundamental theorem. They are listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}, and each proof is accompanied by a series of moral objections.
-In the words of Bar-Natan: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''.
 
 \begin{remark}
-	We have the implication Conjecture \ref{conj:strong-fundamental-theorem} \(\implies\) Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, and this is actually realised in the theory of braids. It is mysterious that the fate of the slightly stronger conjecture which comes from taking the natural topological approach to the fundamental theorem still remains unknown, and that there are grievances to be had with all known proofs of the theorem.
+	There are various proofs of the fundamental theorem, listed in \cite{the-fundamental-theorem-of-vassiliev-invariants}. Unfortunately none of them are fully understood. In the words of Bar-Natan: ``Always the method is indirect and very complicated, and/or some a-priori unnatural choices have to be made''.
+
+	In particular, it is mysterious that the natural topological approach of computing \(S\mathcal{K}^{\bullet}_{m}\) works for braids but remains intractable for knots.
 \end{remark}
 
 In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will prove an equivalent formulation of the fundamental theorem.
@@ -366,14 +357,14 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will pro
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
 
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections. This is done via the space of chord diagrams, which can be considered its linearisation or projectivisation. But these spaces are not just vector spaces. There is some further structure which we wish to incorporate.
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections. This is done via the space of chord diagrams, which can be considered its linearisation or projectivisation. But these spaces are not just vector spaces --- there is further multiplicative structure which we wish to incorporate.
 
 \begin{definitions}
 	\begin{enumerate}
-	\item The \textbf{space of knots}, denoted \(\mathcal{K}\), is the vector space spanned, over~\(\mathbb{Q}\), by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
+	\item The \textbf{space of knots} denoted \(\mathcal{K}\) is the vector space spanned over~\(\mathbb{Q}\) by non-singular knots. Equivalently, \(\mathcal{K} = \singularknots_{0}\).
 		\item The space of knots is equipped with the \textbf{singular knot filtration}
 			\[\mathcal{K} = \mathcal{K}_{0} \supset \mathcal{K}_{1} \supset \mathcal{K}_{2} \supset \cdots\]
-			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points, equivalently the image of \(\partial^{i}\), that is, \(\mathcal{K}_{i} = \partial^{i}(\singularknots_{i})\).
+			where the \(i\)th filtered component \(\mathcal{K}_{i}\) is the span of resolutions of singular knots with \(i\) double points. Equivalently \(\mathcal{K}_{i} = \partial^{i}(\singularknots_{i})\).
 	\end{enumerate}
 \end{definitions}
 
@@ -389,7 +380,7 @@ The algebraic structure on knots comes from the following operation.
 
 \begin{definition}
 	\label{def:connected-sum}
-	The \textbf{connected sum} of two knots \(k_{1}\) and \(k_{2}\) is the knot obtained by removing a small arc from each of \(k_{1}\) and \(k_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
+	The \textbf{connected sum} of two knots \(k_{1}\) and \(k_{2}\) is the knot \(k_{1} \connect k_{2}\) obtained by removing a small arc from each of \(k_{1}\) and \(k_{2}\), then connecting the two embedded intervals into a single knot in an orientation-preserving way.
 	\[
 		\includegraphics[width=0.3\textwidth, valign=c]{graphics/connected_sum_example_before.pdf}
 		\quad
@@ -397,14 +388,14 @@ The algebraic structure on knots comes from the following operation.
 		\quad
 		\includegraphics[width=0.3\textwidth, valign=c]{graphics/connected_sum_example_after.pdf}
 	\]
-	This definition is extended bilinearly to \(\mathcal{K}\), i.e., to linear combinations of knots.
+	This definition is extended bilinearly to \(\mathcal{K}\).
 \end{definition}
 
-The connected sum of knots is not a-priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed or along which path they should be connected. However, by a classical knot-theoretic argument, the result is independent of either choice.
+The connected sum of knots is not a priori well-defined, as we have not specified where along either \(k_{1}\) or \(k_{2}\) the small arc is to be removed or along which path they should be connected. However, by a classical knot-theoretic argument, the result is independent of either choice.
 
 \begin{proposition}
 	\label{prop:connected-sum-well-defined}
-	The connected sum \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) operations is well-defined: up to ambient isotopy, it does not matter where and along what path the connection was performed.
+	The connected sum operation \(\connect : \mathcal{K} \otimes \mathcal{K} \to \mathcal{K}\) is well-defined --- up to ambient isotopy, it does not matter where and along what path the connection was performed.
 \end{proposition}
 
 \begin{proof}
@@ -414,7 +405,7 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 		\rightsquigarrow
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_2.pdf}
 	\]
-	Then, \(k_{2}\) is then isotoped along \(k_{1}\), reenlarged and isotoped back to its original position.
+	Then, \(k_{2}\) is isotoped along \(k_{1}\), reenlarged and isotoped back to its original position.
 	\[
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_2.pdf}
 		\rightsquigarrow
@@ -428,8 +419,8 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 \end{proof}
 
 \begin{proposition}
-	The connected sum respects the descending filtration:
-	\[K_{i} \connect K_{j} \subset K_{i + j}.\]
+	The connected sum respects the descending filtration, so that
+	\[K_{i} \connect K_{j} \subset K_{i + j} \quad \text{for all i, j \(\geq\) 0.}\]
 	That is, the connected sum makes \((\mathcal{K}, \connect)\) into a descending filtered algebra.
 \end{proposition}
 
@@ -438,7 +429,7 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 
 	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k^{\bullet}\) and \(\ell^{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k^{\bullet} \connect \ell^{\bullet}\) resolves by \(\partial^{i + j}\) to \(k \connect \ell\), which is therefore in \(\partial^{i + j}(\mathcal{K}_{i + j})\).
 
-	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, still, this is ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\partial^{i + j}\) however, the repositioning argument now works again, so any of the choices of connected sum in \(k^{\bullet} \connect \ell^{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
+	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, this is still ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed, i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\partial^{i + j}\) the repositioning argument now works again, so any of the choices of connected sum in \(k^{\bullet} \connect \ell^{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
 \end{proof}
 
 % NOTE: In my mind, this is next definition is missing motivation. Proper motivation woould probably make reference to Lie (semi)group exponential map-logarithm stuff.
@@ -455,8 +446,8 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 \end{proposition}
 
 \begin{proof}
-	A bialgeba is a vector space which is both a coalgebra and an algebra algebra with compatible product and coproduct.
-	That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)). And we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. We check that the product and coproduct are compatible:
+	A bialgeba is a vector space which is both an algebra and a coalgebra with compatible product and coproduct.
+	That \((\mathcal{K}, \Delta)\) forms a coalgebra is trivial (the counit is the augmentation map denoted \(\varepsilon\)), and we have already seen that \((\mathcal{K}, \connect)\) is an algebra. So it remains only to check the compatibility conditions. Indeed, we have
 	\begin{align*}
 		\Delta(k \connect \ell)
 		& = k \connect \ell \otimes k \connect \ell \\
@@ -468,27 +459,25 @@ The connected sum of knots is not a-priori well-defined, as we have not specifie
 	Checking the unit and counit is trivial.
 \end{proof}
 
-So far, \(\mathcal{K}\) is a bialgebra whose product respects the filtration. The same is true of the coproduct.
-
 \begin{proposition}
 	\label{prop:singular-knots-filtered-bialgebra}
 	The coproduct \(\Delta\) also respects the filtration,
 	\[\Delta(\mathcal{K}_{j}) \subset \sum_{i = 0}^{j} \mathcal{K}_{i} \otimes \mathcal{K}_{j - i}.\]
-	That is, with the singular knot filtration, \(\mathcal{K}\) is a filtered bialgebra.
+	That is, \(\mathcal{K}\) is a filtered bialgebra with the singular knot filtration.
 \end{proposition}
 
-We give a proof, due to Willerton which follows directly from Lemma of \ref{lem:co-leibniz-formula-for-knots} of \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}. The lemma is a formula for the coproduct of an element of \(k \in \mathcal{K}_{m}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is terms of the \(2^{m}\) ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
+We give a proof due to Willerton which follows directly from Lemma of \ref{lem:co-leibniz-formula-for-knots} of \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}. The lemma is a formula for the coproduct of an element \(k \in \mathcal{K}_{m}\) that comes from some \(k^{\bullet} \in \singularknots_{m}\). The formula is in terms of the \(2^{m}\) ways of resolving some of singular points in one cofactor and the rest in the other, but first we need some notation.
 
-If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point is sending
+If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{I}\) be the operator that resolves the singular points \(I\). Let \(\mu^{I}\) be the operator that averages singular points in \(I\), where averaging a singular point defined by the map
 \[ \double \longmapsto \frac{1}{2} \left( \poscross + \negcross \right).\]
 
 \begin{remark}
-	There is one technicality. The operations \(\delta\) and \(\partial\) were defined without the need to specify a specific double point (this was the point of the \ref{eq:diff} and \ref{eq:codiff} relations). But the definitions of \(\mu^{I}\) and \(\partial^{I}\) are specific about double points. So for this Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, we write \(\mathcal{K}_{m}^{\bullet}\) even though we mean the lift of the \(\mathcal{K}_{m}^{\bullet}\)'s, without the \ref{eq:diff} and \ref{eq:codiff} relations. We choose not to alter the notation as projecting the formulas back down to the quotient properly proves that \(\Delta\) respects the filtration, as intended.
+	There is one technicality. The operations \(\delta\) and \(\partial\) were defined without the need to specify a specific double point (this was the point of the \ref{eq:diff} and \ref{eq:codiff} relations), but the definitions of \(\mu^{I}\) and \(\partial^{I}\) are specific about double points. So for Lemma \ref{lem:co-leibniz-formula-for-knots}, its proof and the proof of Proposition \ref{prop:singular-knots-filtered-bialgebra}, we write \(\mathcal{K}_{m}^{\bullet}\) even though we mean the lift of the \(\mathcal{K}_{m}^{\bullet}\)'s, without the \ref{eq:diff} and \ref{eq:codiff} relations. We choose not to alter the notation as projecting the formulas back down to the quotient properly proves that \(\Delta\) respects the filtration as intended.
 \end{remark}
 
 \begin{lemma}[Willerton]
 	\label{lem:co-leibniz-formula-for-knots}
-	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\).
+	Suppose \(k^{\bullet} \in \mathcal{K}^{\bullet}_{m}\), and let \(S\) denote the set of singular points of \(k^{\bullet}\). Then we have
 	\[
 		\Delta(\partial^{S}(k^{\bullet}))
 		=
@@ -511,7 +500,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 			\mu^{I}\partial^{\bar{I}}(k). \\
 	\end{align*}
 
-	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\). Let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) denote a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\partial^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We examine
+	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\), let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) be a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\partial^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We proceed by examining
 	\[
 		\sum_{\mathclap{I \subset J}}
 			\mu^{\bar{I}}\partial^{I}(k^{\bullet})
@@ -530,7 +519,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 			\otimes
 			\mu^{I}\partial^{\bar{I} \smallsetminus \{x\}}(k^{\bullet}),
 	\]
-	then resolving either \(\partial\) or \(\mu\) on \(x\),
+	after which resolving either \(\partial\) or \(\mu\) on \(x\),
 	\begin{align*}
 		& \frac{1}{2} \sum_{\mathclap{x \in I \subset J}}
 		\mu^{\bar{I}}\partial^{I \smallsetminus \{x\}}(k^{\bullet +} - k^{\bullet -})
@@ -616,16 +605,16 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 	The operators \(\partial^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
-Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they're the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
+Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they are the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
 
 A decreasing filtration on a bialgebra induces an ascending filtration on its dual bialgebra. The dual bialgebra's \(m\)th filtered component is the space of functionals on the original bialgebra that vanish on the \((m + 1)\)st filtered component. In the case of \(\mathcal{K}\), this is the set of knot invriants that vanish on \(\mathcal{K}_{m + 1}\): exactly the Vassiliev invariants of order \(m\). The product/coproduct in the dual bialgebra are those operations adjoint to the coproduct/product in the original bialgebra. The construction is standard and the details can be found in \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}.
 
 \begin{definition}
 	The \textbf{filtered bialgebra of Vassiliev invariants}, denoted \(\mathcal{V}\), is the vector space of Vassiliev invariants with an ascending filtration by degree
-	\[\mathcal{V}_{0} \subset \mathcal{V}_{1} \subset \mathcal{V}_{2} \subset \cdots, \qquad \mathcal{V} = \bigcup_{m = 0}^{\infty} \mathcal{V}_{m}.\]
+	\[\mathcal{V}_{0} \subset \mathcal{V}_{1} \subset \mathcal{V}_{2} \subset \cdots \quad \text{and} \quad \mathcal{V} = \bigcup_{m = 0}^{\infty} \mathcal{V}_{m}.\]
 	The product is given by pointwise multiplication
-	\[V_{1} \cdot V_{2}(k) = V_{1}(k)V_{2}(k),\]
-	and the coproduct, \(\eta\), is given by
+	\[V_{1} \cdot V_{2}(k) = V_{1}(k)V_{2}(k)\]
+	and the coproduct \(\eta\) is given by
 	\[\eta(V)(k_{1} \otimes k_{2}) = V(k_{1} \connect k_{2}).\]
 \end{definition}
 
@@ -634,9 +623,9 @@ A decreasing filtration on a bialgebra induces an ascending filtration on its du
 	The filtered bialgebraic dual of the descending filtered bialgebra of singular knots \(\mathcal{K}\) is the ascending filtered bialgebra of Vassiliev invariants \(\mathcal{V}\).
 \end{proposition}
 
-We don't prove this textbook fact, but let us sketch the main points. Indeed, by definition the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{m}\).
+We will not prove this standard fact, but let us sketch the main points. Firstly, by definition the set of functionals in \(\mathcal{K}^{\ast}\) that vanish on \(\mathcal{K}_{m + 1}\) is \(\mathcal{V}_{m}\).
 
-Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\) gives,
+Pulling \(V_{1} \otimes V_{2}\) back along \(\Delta\) gives
 \[(V_{1} \otimes V_{2}) \circ \Delta: k \mapsto V_{1}(k)V_{2}(k),\]
 which recovers the formula for the product \(V_{1} \cdot V_{2}\) in \(\mathcal{V}\). Similarly, pulling \(V\) back along \(\connect\) yields
 \[V \circ \connect (k_{1} \otimes k_{2}) \mapsto V(k_{1} \connect k_{2})\]
@@ -645,7 +634,7 @@ which recovers the formula for the coproduct, \(\eta\).
 Here we rely on the fact that \(\mathcal{K}\) is of finite type (finite-dimensional in each filtered component).
 
 \begin{remark}
-	Alternatively, this can be proved directly in \(\mathcal{V}\). Proving that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
+	Alternatively, this can be proved directly in \(\mathcal{V}\). Showing that \(\connect\) respects the filtration on \(\mathcal{K}\) was easy, and is just as easy in the dual case. However, the proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) was cumbersome, and so is taht of its dual. But it is worth looking into how it can be understood by a continuation of the polynomial analogy due to Willerton \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams}.
 
 	The generalised Leibniz theorem of multivariable calculus says that if \(f\) and \(g: \mathbb{R}^{m} \to \mathbb{R}\) are differentiable, then (in similar derivative notation to as above)
 	\[
@@ -671,13 +660,13 @@ Here we rely on the fact that \(\mathcal{K}\) is of finite type (finite-dimensio
 		\left. \frac{\partial^{|\bar{J}|} g}{\partial_{x_{\bar{J}}}} \right|_{\{x_{J} = a_{J}\}}
 		\right)
 		=
-		c,
+		c
 	\]
 	where \(\mu: \mathbb{R} \otimes \mathbb{R} \to \mathbb{R}\) is multiplication.
 
 	As it turns out, this generalised ``co-Leibniz theorem'' is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\). But the co-Leibniz theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation. Recall that this was used to show that the coproduct respects the filtration.
 
-	Furthermore, the knot version of the generealised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
+	Furthermore, the knot version of the generalised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
 	\[
 		(V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet}))
 		=
@@ -686,16 +675,130 @@ Here we rely on the fact that \(\mathcal{K}\) is of finite type (finite-dimensio
 		\otimes
 		V_{2}(\mu^{I}\partial^{\bar{I}}(k^{\bullet})).
 	\]
-	It follows directly from this that the product of two Vassiliev invariants respects the filtration: if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): for if \(k^{\bullet} \in \singularknots_{m + n + 1}\), then either \(|I| > m\) or \(|\bar{I}| > n\), so in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet})) = 0\).
+	It follows directly from this that the product of two Vassiliev invariants respects the filtration. Indeed if \(V_{1}\) is of type \(m\) and \(V_{2}\) of type \(n\), then \(V_{1} \cdot V_{2}\) is of type \(m + n\): if \(k^{\bullet} \in \singularknots_{m + n + 1}\), then either \(|I| > m\) or \(|\bar{I}| > n\). Therefore in each summand, one of the cofactors is a Vassiliev invariant being evaluated above its order, so zero. Hence \((V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet})) = 0\).
 
-	How is this argument in analogy with some property of polynomials? Translating it from the knot-theoreic setting back into the original setting of multivariable calculus, it becomes a proof that polynomials are filtered by degree. So, in summary the cumbersome proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) is a dual-version in a knot-theoretic setting of the fact that polynomials are filtered by degree.
+	How is this argument in analogy with some property of polynomials? Translating it from the knot-theoreic setting back into the original setting of multivariable calculus, it becomes a proof that polynomials are filtered by degree. In summary the cumbersome proof that \(\Delta\) respects the filtration on \(\mathcal{K}\) is a dual-version (in a knot-theoretic setting) of the fact that polynomials are filtered by degree.
 \end{remark}
 
+We have not yet given any examples of non-Vassiliev invariants.
+
 \begin{example}
-	\begin{shaded}
-		In view of Remark above about non-Vassiliev invariants, let's define a knot invariant. (Define \(f_{3_{1}}\).)
-	\end{shaded}
+	The \textbf{Conway polynomial} \(C(k)\) is an invariant \(C:\mathcal{K} \to Z[t]\) defined by the skein relation
+	\[
+		C
+		\left(
+		\poscross
+		\right)
+		-
+		C
+		\left(
+		\negcross
+		\right)
+		=
+		tC
+		\left(
+		\uncross
+		\right)
+	\]
+	and the relation
+	\[
+		C
+		\left(
+		\unknot
+		\right)
+		=
+		1
+		.
+	\]
+
+	This is not a Vassiliev invariant because its extension to singular knots is
+	\[
+		\delta C
+		\left(
+		\double
+		\right)
+		=
+		tC
+		\left(
+		\uncross
+		\right)
+		.
+	\]
+	Therefore
+	\[
+		\delta^{n} C
+		\left(
+		\double
+		\cdots
+		\double
+		\right)
+		=
+		t^{n} C
+		\left(
+		\uncross
+		\cdots
+		\uncross
+		\right)
+	\]
+	and evaluating this on for example the sequence of singular knots
+	\[
+		\{k_{i}\}_{i \in \mathbb{N}}
+		\quad
+		\text{where}
+		\quad
+		k_{i}
+		\;
+		=
+		\;
+		\def\svgscale{0.3}
+		\adjustbox{valign=c}{\input{graphics/twist_sequence_conway_not_vassiliev.pdf_tex}}
+		\quad
+		\text{has \(i\) double points}
+	\]
+	showcases that for all \(n \in \mathbb{N}\), \(\delta^{n}C \neq 0\).
+
+	However fix \(\ell \in \mathbb{N}\). An argument of \cite{on-the-vassiliev-knot-invariants} shows that the coefficient \(c_{\ell}\) of \(t^{\ell}\) in \(C\) is a Vassiliev invariant. Indeed, by the iterated skein relation, \(t^{\ell + 1}\) is a factor of \(\delta^{\ell + 1} C\), so \(c_{\ell} = 0\), so the coefficient of \(t^{\ell}\) vanishes. As such, while \(C(k)\) is not a Vassiliev invariant, it is approximated by Vassiliev invariants, specifically it is a power series Vassiliev invariant which we now define.
 \end{example}
+
+\begin{definition}
+	A \textbf{power series Vassiliev invariant} is an element of the space
+	\[\bigoplus_{n = 0}^{\infty} \mathcal{V}_{n}.\]
+\end{definition}
+
+The Jones polynomial and all quantum invariants \cite{knot-polynomials-and-vassilievs-invariants} are also power series Vassiliev invariants.
+
+Let us examine an invariant which does not seem natural to consider from a topological standpoint.
+\begin{example}
+	Let \(3_{1}\) denote the right-handed trefoil knot. The invariant \(f_{3_{1}}\) is defined
+	\[
+		f_{3_{1}}(k)
+		=
+		\begin{cases}
+			1
+			& k = 3_{1} \\
+			0
+			& \text{otherwise}
+		\end{cases}
+		.
+	\]
+
+	Consider the sequence of singular knots
+	\[
+		\{k_{i}\}_{i \in \mathbb{N}}
+		\quad
+		\text{where}
+		\quad
+		k_{i}
+		\;
+		=
+		\;
+		\def\svgscale{0.3}
+		\adjustbox{valign=c}{\input{graphics/twist_sequence_trefoil_detector_not_vassiliev.pdf_tex}}
+	\]
+	For \(i \in \mathbb{N}\), \(\partial^{i}(k_{i})\) is a sum of \(2^{i}\) terms, exactly one of which is \(3_{1}\), with a coefficient of \(1\). So \(\delta^{i}(k_{i}) = 1 \neq 0\) for all \(i \in \mathbb{N}\). Hence \(f_{3_{1}}\) is not Vassiliev.
+\end{example}
+
+More examples of non-Vassiliev invariants are unknotting number, crossing number, signature, genus and bridge number \cite{many-classical-knot-invariants-are-not-vassiliev-invariants, twist-sequnces-and-vassiliev-invariants}. The proofs of touch on yet another dimension of the polynomial analogy, reviewed in \cite{vassiliev-invariants-as-polynomials}. It is unknown whether these invariants are power series Vassiliev invariants. In particular some of these invariants are defined as invariants tautologically, as the minimum of some property of a knot diagram across all diagrams of a knot. Knowing whether those invariants are power series Vassiliev invariants or not would be insightful as to whether they have some topologically interesting meaning like the Conway and Jones polynomial or are more arbitrary like \(f_{3_{1}}\).
 
 \section{Chord diagrams and weight systems}
 \label{chord-diagrams-and-weight-systems}

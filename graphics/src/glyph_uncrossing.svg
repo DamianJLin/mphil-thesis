@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55.1534mm"
+   height="53.540245mm"
+   viewBox="0 0 55.1534 53.540245"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="glyph_uncrossing.svg"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/src/glyph_uncrossing.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="2.9329458"
+     inkscape:cx="92.228094"
+     inkscape:cy="59.155543"
+     inkscape:window-width="2556"
+     inkscape:window-height="1394"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="76.950065,415.57754"
+       orientation="1,0"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="102.46553,391.593"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="127.47068,386.48991"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2.6949127,244.16516"
+       orientation="0,1"
+       id="guide7"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="2.6949127,269.16516"
+       orientation="0,1"
+       id="guide8"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="-202.18911,294.16516"
+       orientation="0,1"
+       id="guide9"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="90.194913,269.16516"
+       orientation="-1,0"
+       id="guide11"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="252.69491,571.3856"
+       orientation="-1,0"
+       id="guide13"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="210.19491,413.87756"
+       orientation="-1,0"
+       id="guide14"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="52.455221,-0.26930337"
+       orientation="0,-1"
+       id="guide19"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.594928,37.869177"
+       orientation="0.70965168,-0.70455269"
+       id="guide12"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="33.110086,20.147005"
+       orientation="0.70880371,0.70540577"
+       id="guide15"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2.698178,0.70540507"
+       orientation="0,-1"
+       id="guide16"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="23.333691,45.158516"
+       orientation="0,-1"
+       id="guide17"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.048815,12.138182"
+       orientation="1,0"
+       id="guide18"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="19.716288,33.605321"
+       orientation="1,0"
+       id="guide20"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="knot"
+       id="path-effect16"
+       is_visible="true"
+       lpeversion="1"
+       switcher_size="15"
+       interruption_width="5"
+       prop_to_stroke_width="true"
+       add_stroke_width="inkscape_1.0_and_up"
+       both="false"
+       inverse_width="false"
+       add_other_stroke_width="inkscape_1.0_and_up"
+       crossing_points_vector="" />
+    <inkscape:path-effect
+       effect="knot"
+       id="path-effect15"
+       is_visible="true"
+       lpeversion="1"
+       switcher_size="15"
+       interruption_width="5"
+       prop_to_stroke_width="true"
+       add_stroke_width="inkscape_1.0_and_up"
+       both="false"
+       inverse_width="false"
+       add_other_stroke_width="inkscape_1.0_and_up"
+       crossing_points_vector="174.68585 | 224.96993 | 0 | 1 | 0 | 0 | 0.49939862 | 0.50060138 | -1" />
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="4"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1.7"
+       markerHeight="1.7"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="userSpaceOnUse">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-7"
+       refX="4"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1.7"
+       markerHeight="1.7"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="userSpaceOnUse">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-22.305086,-197.16516)">
+    <g
+       id="g1"
+       transform="matrix(-1,0,0,1,99.763571,0)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#DartArrow)"
+         d="m 74.7603,250 c -17.018103,-17.14127 -17.018103,-32.89992 8e-6,-50"
+         id="path8"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g1-6"
+       transform="translate(0.00327021)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#DartArrow-7)"
+         d="m 74.7603,250 c -17.018103,-17.14127 -17.018103,-32.89992 8e-6,-50"
+         id="path8-2"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+</svg>
