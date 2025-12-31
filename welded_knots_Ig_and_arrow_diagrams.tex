@@ -317,32 +317,24 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
 
 \begin{definition}
-	Let \(X = (X, \beta)\) be a Lie algebra object in the \(k\)-linear symmetric monoidal category \(\mathcal{C}\). We define a \(2\)-coloured prop \(\mathbf{T}(X, \beta)\), or just \(\mathbf{T}(X)\).
+	Let \(X = (X, \beta)\) be a Lie algebra object in the \(k\)-linear symmetric monoidal category \(\mathcal{C}\). We define a \(2\)-coloured prop \(\mathbf{T}(X, \beta)\), or just \(\mathbf{T}_{X}\).
 
 	Its generating objects are \(X\) which we write as \(\mathbf{1}\), and another object \(\mathbf{1}^{\vee}\). Define
-	\[\mathbf{I} = \mathbf{1} \otimes \mathbf{1}^{\vee} \in \mathbf{T}(X)\]
+	\[\mathbf{I} = \mathbf{1} \otimes \mathbf{1}^{\vee} \in \mathbf{T}_{X}\]
 	and we denote \(\mathbf{I}^{\otimes n}\) as \(\mathbf{nI}\).
 
 	For its generating morphisms, we have
 	\[\beta: \mathbf{1} \otimes \mathbf{1} \longrightarrow \mathbf{1}\]
+	and
+	\[\alpha: \mathbf{1}^{\vee} \otimes \mathbf{1} \longrightarrow \mathbf{1}^{\vee}\]
 	and one further generating morphism
 	\[\gamma: \mathbf{0} \longrightarrow \mathbf{I} \otimes \mathbf{I}\]
 	satisfying some following conditions.
 
 	\begin{enumerate}
 		\item The morphism \(\beta\) satisfies the relations satisfied by \(\beta\) in \(\mathcal{C}\).
-		\item Let \(\zeta \in \mathbf{T}(\mathbf{1}^{\vee} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\) be the zero-morphism, and \(\gamma = \beta \otimes \zeta\). Therefore \(\mathbf{I} = (\mathbf{I}, \gamma)\) is a Lie algebra object in \(\mathbf{T}(X)\), so the following makes sense. For each \(f \in \mathcal{O}_{\text{Lie}}(n)\), the diagram
-		% https://q.uiver.app/#q=WzAsNCxbMCwwLCIoXFxtYXRoYmZ7biAtIDF9KVxcbWF0aGJme0l9Il0sWzIsMCwiKFxcbWF0aGJme24gKyAxfSlcXG1hdGhiZntJfSJdLFswLDIsIihcXG1hdGhiZntuICsgMX0pXFxtYXRoYmZ7SX0iXSxbMiwyLCJcXG1hdGhiZnsySX0iXSxbMCwxLCJcXGdhbW1hIFxcb3RpbWVzIFxcaWQiXSxbMCwyLCJcXGlkIFxcb3RpbWVzIFxcZ2FtbWEiLDJdLFsxLDMsIlxcaWQgXFxvdGltZXMgZiJdLFsyLDMsImZcXHNpZ21hX3tjfSBcXG90aW1lcyBcXGlkIiwyXV0=
-		\[\begin{tikzcd}
-			{(\mathbf{n - 1})\mathbf{I}} && {(\mathbf{n + 1})\mathbf{I}} \\
-			\\
-			{(\mathbf{n + 1})\mathbf{I}} && {\mathbf{2I}}
-			\arrow["{\gamma \otimes \id}", from=1-1, to=1-3]
-			\arrow["{\id \otimes \gamma}"', from=1-1, to=3-1]
-			\arrow["{\id \otimes f}", from=1-3, to=3-3]
-			\arrow["{f\sigma_{c} \otimes \id}"', from=3-1, to=3-3]
-		\end{tikzcd}\]
-		commutes. Here \(\sigma_{c}\) is the cyclic permutation in \(S_{2(n + 1)}\) sending \(0 \mapsto 2\). It acts blockwise cyclically on blocks of size \(2\) by the extension of the action of \(S_{n}\) on \(\mathbf{nI}\) to \(S_{n + 1}\).
+		\item Let \(\sigma'\) be the extension of the action of the permutation \(\sigma \in S_{2}\) to \(S_{3}\).
+			\[\sigma'(\beta_{13}) = \alpha_{23}, \sigma'(\alpha_{23}) = -\alpha_{14}, \sigma(-\alpha_{14}) = \beta_{13}\]
 \end{enumerate}
 \end{definition}
 
@@ -350,6 +342,22 @@ The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}
 	The bialgebra \(\mathcal{A}_{w}\) of arrow diagrams is naturally isomorphic as a bialgebra to the external enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\).
 \end{theorem}
 
+\begin{shaded}
+	\textbf{Problem}: Unless we connect the bracket to the coadjoint somehow there's no way we can get an isomorphism (same diagram will have multiple correspoding tensor elements). However it seems without working in the metric envelope, that's not possible.
+
+	One possible way to fix it: have 3 morphisms and assert that the extension of the \(S_{n}\) action permutes them... But then this feels like we should be working in a 1-coloured prop.
+\end{shaded}
+
+\begin{shaded}
 \begin{proof}
-	Similar to Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}.
+	We have
+	\begin{align*}
+		T(\mathcal{O}_{\text{Lie}}, \mathbf{I})
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \Gamma(\mathbf{nI}) \\
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \mathbf{T}_{X}(\mathbf{0}, \mathbf{nI}) \\
+		& \cong \bigoplus_{n \in \mathbb{N}} \mathbf{T}_{X}(\mathbf{0}, \mathbf{nI})
+	\end{align*}
+	where the isomorphism is from Lemma \ref{lem:lie-operad-left-skewed-tree-normal-form}.
 \end{proof}
+\end{shaded}
+
