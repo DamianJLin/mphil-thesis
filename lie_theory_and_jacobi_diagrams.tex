@@ -1,24 +1,25 @@
 \chapter{Lie theory and Jacobi diagrams}
 \label{ch:lie-theory-and-jacobi-diagrams}
 
-The fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into nice combinatiorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\), or equivalently its dual \(\mathcal{A}\). There is a hint that the structure of \(\mathcal{A}\) may relate to Lie algebras.
+The fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)). As we will see in this chapter, the structure of \(\mathcal{A}\) is related to Lie theory.
 
 \section{Jacobi diagrams}
-
-This side of the story reframes the bialgebra \(\mathcal{A}\) as an isomorphic bialgebra known as the algebra of Jacobi diagrams to illuminate the Lie theory connections.
+To see the Lie theory connections, we see that \(\mathcal{A}\) is isomorphic as a bialgebra of Jacobi diagrams, whose elements are represented by graphs with one- and three-valent vertices.
 
 \begin{definition}
 	A \textbf{unitrivalent diagram} is a unitrivalent graph (with loops and multiple edges allowed) with the following additional data:
-	\begin{itemize}
+	\begin{itemize}[topsep=0.3em, itemsep=-1pt]
 		\item each trivalent vertex has a fixed cyclic order of incident edge-connections,
 		\item the set of univalent vertices has a fixed cyclic order.
 	\end{itemize}
 	The vector space of unitrivalent diagrams is denoted \(\mathcal{T}\).
 \end{definition}
 
-When drawing unitrivalent diagrams, there are two notation conventions. Firstly, the fixed cyclic order of the univalent edges is specified by drawing them connected to a circle (the cyclic order is induced by traversing the circle anticlockwise).  Secondly, all the trivalent vertices are taken with the anticlockwise cyclic ordering unless an arrow around that vertex indicates otherwise.
+\begin{warning}
+	When drawing unitrivalent diagrams, there are two notational conventions we use. Firstly, the fixed cyclic order of the univalent edges is specified by drawing them connected to a circle (where the cyclic order corresponds to traversing the circle anticlockwise). Like for chord diagrams, this circle is called the \textbf{skeleton}. Secondly, the trivalent vertices are assumed to have the cyclic order corresponding to traversing anticlockwise around the vertex. It is always possible to draw them this way because planarity is not a concern of abstract graphs.
+\end{warning}
 
-In particular, from the first point, all chord diagrams are unitrivalent diagrams with only univalent vertices (the chord ends). Further examples of unitrivalent diagrams would be
+In particular, all chord diagrams are unitrivalent diagrams with only univalent vertices (the chord ends). Further examples of unitrivalent diagrams would be
 \[
 	\includegraphics[width=0.13\textwidth, valign=c]{graphics/unitrivalent_diagram_example_1.pdf} \ ,
 	\quad
@@ -27,7 +28,7 @@ In particular, from the first point, all chord diagrams are unitrivalent diagram
 \]
 
 \begin{definition}
-	The \textbf{STU relation} is the relation
+	An \textbf{STU relation} is a relation of the form
 		\begin{equation}
 			\label{eq:STU}
 			\tag{\stu}
@@ -41,6 +42,7 @@ In particular, from the first point, all chord diagrams are unitrivalent diagram
 			\quad
 			\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_relation_u.pdf}.
 		\end{equation}
+	Here the bottom line, drawn thicker and curved must be a part of the skeleton.
 \end{definition}
 
 As usual, this is not an individual relation but a class of relations, true in any diagrams that are identical except for the parts shown.
@@ -62,13 +64,13 @@ Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the 
 	The algebra \(\mathcal{J}\) of Jacobi diagrams is the vector space \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
 \end{definition}
 
-This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. From the \ref{eq:STU} relations, we may deduce the following other relations which hold in \(\mathcal{J}\).
+This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. As such the \ref{eq:STU} relations suffice to determined the structure of \(\mathcal{J}\), but the following auxilliary relations which can be deduced from \ref{eq:STU} make the relations to Lie algebras more apparent.
 
 \begin{proposition}
 	\label{prop:stu-implies-as-ihx}
 	The following relations are consequences of the \textup{\ref{eq:STU}} relation in \(\mathcal{J}\):
 	\begin{enumerate}
-		\item The \textbf{AS relation} (antisymmetry relation),
+		\item The \textbf{AS relation} (antisymmetry relation)
 			\begin{equation}
 				\label{eq:AS}
 				\tag{\as}
@@ -77,9 +79,9 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 				=
 				\quad
 				-
-				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}.
+				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}
 			\end{equation}
-		\item The \textbf{IHX relation},
+		\item The \textbf{IHX relation}
 			\begin{equation}
 				\label{eq:IHX}
 				\tag{\ihx}
@@ -91,7 +93,7 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 				\quad
 				-
 				\quad
-				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_x.pdf}.
+				\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_relation_x.pdf}
 			\end{equation}
 	\end{enumerate}
 \end{proposition}
@@ -99,7 +101,7 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 \begin{proof}
 	\begin{enumerate}
 		\item
-			Take two diagrams which differ only by \ref{eq:AS} at one (trivalent) vertex. If the vertex at which the \ref{eq:AS} relation resides is adjacent to a univalent vertex (i.e. touches the outer circle), then this is immediate from applying \ref{eq:STU} to both diagrams at that vertex.
+			Take two diagrams which differ only by \ref{eq:AS} at one (trivalent) vertex. If the vertex at which the \ref{eq:AS} relation resides is adjacent to a univalent vertex (i.e. is adjacent to the skeleon), then this is immediate from applying \ref{eq:STU} to both diagrams at that vertex:
 			\[
 				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_a.pdf}
 				\quad
@@ -116,10 +118,10 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 				-
 				\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_relation_s.pdf}.
 			\]
-			If the vertex is not immediately adjacent to a univalent vertex, then it has some \(d\) vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
+			If the vertex is not immediately adjacent to a univalent vertex, then it has some \(d\) trivalent vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
 
 		\item
-			A similar argument applies. If one of the two vertices of the \ref{eq:IHX} is adjacent to the circle, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices, then some applications of \ref{eq:AS}. Otherwise, some \ref{eq:STU}s are required first.
+			A similar argument applies. We give a sketch. If one of the two vertices of the \ref{eq:IHX} is adjacent to the skeleton, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices in each of the diagrams in the \ref{eq:IHX}, followed by a few applications of \ref{eq:AS}. Otherwise, there is a path of trivalent vertices in the way, and some \ref{eq:STU}s yield a sum of \(2^{d}\) diagrams in which at least one of the two vertices involved in the \ref{eq:IHX} is adjacent to the skeleton.
 			% TODO: (time permitting) figures.
 \end{enumerate}
 \end{proof}
@@ -140,7 +142,7 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 	\]
 \end{proposition}
 
-The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof. A corollory is the following result, which will be important later.
+The result is standard --- see Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof. A corollary is the following result, which will be important later.
 
 \begin{proposition}
 	\label{prop:linear-jacobi-diagrams-cyclically-invariant}
@@ -148,9 +150,9 @@ The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invar
 \end{proposition}
 
 \begin{proof}
-	Let us draw the linearly ordered Jacobi diagrams on a line rather than a circle and let the univalent edge ordering be given by the order on the line. It suffices to prove that we can move the univalent vertex in the first place to the last place via the relations in \(\mathcal{A}\). Let us call this first univalent vertex of the original diagram the marked vertex, as its position will later change when relations are applied.
+	Let us draw the linearly ordered Jacobi diagrams on a line rather than a circle and let the univalent edge ordering be given by the order on the line. It suffices to prove that we can move the univalent vertex in the first place to the last place via the relations in \(\mathcal{A}\). Let us call this first univalent vertex of the original diagram the marked vertex, as its position will later change when relations are applied. We will mark it with a star.
 
-	By \ref{eq:STU}, the original diagram is equal to the diagram with the marked vertex moved into the second place, plus a diagram in which the marked vertex is now a trivalent vertex and attached above what was the second (but is now the first) univalent vertex.
+	By \ref{eq:STU}, the original diagram is equal to the diagram with the marked vertex moved into the second place, plus a diagram in which the marked vertex is now a trivalent vertex and attached above what was the second (but is now the first) univalent vertex:
 	\[
 		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example.pdf}
 		\quad
@@ -161,6 +163,7 @@ The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invar
 		+
 		\quad
 		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_u.pdf}
+		.
 	\]
 	Repeatedly applying \ref{eq:STU} to move the the marked vertex until reaches the last place, we get
 	\[
@@ -191,17 +194,16 @@ The result is standard, see Chapter 5.2 of \cite{introduction-to-vassiliev-invar
 	Hence \(\Theta = 0\), completing the proof.
 \end{proof}
 
-We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mathcal{J}\) will be isomorphic as bialgebras. In fact, as algebras, this is clearly true so far, as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
+We have already spoiled the surprise that \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic as bialgebras. This is clearly true as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
 
 \begin{proposition}
-	The coproduct \(\Delta\) on \(J \in \mathcal{J}\) defined by taking a Jacobi diagram, representing it as a chord diagram via \textup{\ref{eq:STU}}, taking the coproduct in \(\mathcal{A}\), then interpreting the result as a Jacobi diagram via the inclusion of \(\mathcal{A}\) into \(\mathcal{J}\), is also given by the following formula.
-
-	\[\Delta(J) = \sum_{C \subset S} J_{C} \otimes J_{\overline{C}},\]
+	The coproduct \(\Delta\) on \(J \in \mathcal{J}\) defined by taking a Jacobi diagram, representing it as a chord diagram via \textup{\ref{eq:STU}}, taking the coproduct in \(\mathcal{A}\), then interpreting the result as a Jacobi diagram via the inclusion of \(\mathcal{A}\) into \(\mathcal{J}\) is given by the formula
+	\[\Delta(J) = \sum_{C \subset S} J_{C} \otimes J_{\overline{C}}\]
 	where \(S\) is the set of connected components of \(J\), and \(\overline{C} = S \smallsetminus C\).
 \end{proposition}
 
 \begin{proof}
-	Note that this has the same symbolic form as the coproduct in \(\mathcal{A}\) given in Definition~\ref{def:coproduct-in-chord-diagrams}, but with chords replaced by connected components of Jacobi diagrams. However, when working in \(\mathcal{A} \subset \mathcal{J}\), there are only univalent vertices, so the connected components are exactly the chords. Since \(\mathcal{A}\) forms a basis for \(\mathcal{J}\), and the formula is linear, it extends to all of \(\mathcal{J}\).
+	Note that this has the same symbolic form as the coproduct in \(\mathcal{A}\) given in Definition~\ref{def:coproduct-in-chord-diagrams}, but with chords replaced by connected components of Jacobi diagrams. However, when working in \(\mathcal{A} \subset \mathcal{J}\) there are only univalent vertices, so the connected components are exactly the chords. Since \(\mathcal{A}\) forms a basis for \(\mathcal{J}\) and the formula is linear, it extends to all of \(\mathcal{J}\).
 \end{proof}
 
 \begin{corollary}
@@ -213,26 +215,26 @@ We have already spoiled the surprise that in the end, \(\mathcal{A}\) and \(\mat
 \end{corollary}
 
 \begin{warning}
-	Justified by this isomorphism, we henceforth write \(\mathcal{A}\), for both chord diagrams and Jacobi diagrams.
+	Justified by this isomorphism, we henceforth write \(\mathcal{A}\) for both chord diagrams and Jacobi diagrams.
 \end{warning}
 
 \section{Lie algebra weight systems}
-Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied in \(\mathcal{A}\) are appear also in the context of a graphical notation for multilinear maps, a fact which we may exploit to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}. This diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors, etc. We call them string diagrams.
+Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied in \(\mathcal{A}\) appear also in the context of a graphical notation for multilinear maps, a fact which can be exploited to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}. The diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors to name a few. We call them string diagrams.
 
-A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\). Such a tensor can be represented as a vertex with \(m + n\) unbound directed edges: \(m\) incoming edges decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots\)), and \(n\) outgoing edges decordated by \(Y_{1}, \cdots\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), expressed as
+A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\). Such a tensor can be represented as a vertex with \(m + n\) unbound directed edges: \(m\) incoming edges decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots X_{m}\)), and \(n\) outgoing edges decorated by \(Y_{1}, \cdots Y_{n}\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) expressed as
 \[\def\svgscale{0.3} \input{graphics/bracket_string_diagram.pdf_tex}.\]
-It will be obvious from each string diagram what tensor it represents so we can drop the edge labels.
+It will be obvious from each string diagram what tensor it represents, so we drop the edge labels.
 
-Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. Relations can therefore be expressed graphically, for example, the antisymmetry of the bracket \([y, x] = -[x, y]\) becomes
+Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. In particular relations can therefore be expressed graphically. For example, the antisymmetry of the bracket \([y, x] = -[x, y]\) becomes
 \[
 	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_swap.pdf}
 	\quad
 	=
 	\quad
 	-
-	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_id.pdf}.
+	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_id.pdf},
 \]
-the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
+and the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 \[
 	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_xyz.pdf}
 	\quad
@@ -247,21 +249,22 @@ the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 	=
 	\quad
 	0
+	.
 \]
 
-Looking at the relations these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), the first solid evidence of Lie-theoretic structure in this story emerges. The antisymmetry of the bracket, drawn as a string diagram looks like a directed version of \ref{eq:AS}. Similarly the string diagram Jacobi relation can be arranged into a directed version of \ref{eq:IHX}.
+Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), a hint at the Lie-theoretic structure emerges. The antisymmetry of the bracket, (drawn as a string diagram) looks like a directed version of \ref{eq:AS}. Similarly the string diagrammmatic Jacobi relation can be arranged into a directed version of \ref{eq:IHX}.
 
 % TODO: Decide whether we can be bothered to talk about representations also as vertices. We can also just weight systems into U(g) then take traces wrt a rep after.
 
-Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra. Then it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). This element is known as the casimir. These tensors can be diagrammatically represented as additional bivalent vertices.
+Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra so that it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\) --- this element is known as the Casimir element associated to \(\mathfrak{g}\). These tensors can be diagrammatically represented as additional bivalent vertices
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
 	\qquad \text{and} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
 \]
-The bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
+Recall that the bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
 
-Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which graphically can be represented as cyclic invariance of the contraction of the bracket and the metric
+Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which can be represented graphically as cyclic invariance of the contraction of the bracket and the metric:
 \[
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketxy.pdf}
 	\quad

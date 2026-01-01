@@ -54,7 +54,7 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{generalised_ihx_right.pdf}}%
-    \put(0.9027198,0.50879446){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptscriptstyle 1\)}}\end{tabular}}}}%
+    \put(0.9027198,0.50879446){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptscriptstyle 0\)}}\end{tabular}}}}%
     \put(0.90237517,0.41642261){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptscriptstyle i\)}}\end{tabular}}}}%
     \put(0.90237517,0.26096532){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptscriptstyle n\)}}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{generalised_ihx_right.pdf}}%
