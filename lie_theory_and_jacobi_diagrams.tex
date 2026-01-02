@@ -225,7 +225,7 @@ A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n}
 \[\def\svgscale{0.3} \input{graphics/bracket_string_diagram.pdf_tex}.\]
 It will be obvious from each string diagram what tensor it represents, so we drop the edge labels.
 
-Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. In particular relations can therefore be expressed graphically. For example, the antisymmetry of the bracket \([y, x] = -[x, y]\) becomes
+Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. In particular relations can therefore be expressed graphically. For example, the antisymmetry of the bracket \({[y, x] = -[x, y]}\) becomes
 \[
 	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_swap.pdf}
 	\quad
@@ -233,8 +233,10 @@ Such a notation is useful because composition of tensors can be expressed graphi
 	\quad
 	-
 	\includegraphics[width=0.05\textwidth, valign=c]{graphics/bracket_antisymmetry_id.pdf},
+	\quad
+	\text{and}
 \]
-and the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
+the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 \[
 	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_xyz.pdf}
 	\quad
@@ -256,13 +258,18 @@ Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), 
 
 % TODO: Decide whether we can be bothered to talk about representations also as vertices. We can also just weight systems into U(g) then take traces wrt a rep after.
 
-Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra so that it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\) --- this element is known as the Casimir element associated to \(\mathfrak{g}\). These tensors can be diagrammatically represented as additional bivalent vertices
+Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra so that it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\) --- this element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These tensors can be diagrammatically represented as additional bivalent vertices
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
 	\qquad \text{and} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
 \]
-Recall that the bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation.
+Recall that the bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation. Further, we also drop the dots in the metric and Casimir diagrams, so they look like
+\[
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric_no_dot.pdf}
+	\qquad \text{and} \qquad
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir_no_dot.pdf}\ .
+\]
 
 Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which can be represented graphically as cyclic invariance of the contraction of the bracket and the metric:
 \[
@@ -276,15 +283,36 @@ Moreover, the invariance of the metric can be written as \(\langle [x, y], z \ra
 	\quad
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketyz.pdf}.
 \]
-A similar argument works for the casimir.
-
-A representation of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input an output, namely a \(v \in V\) which we denote by a thick line at a shallow angle
+A similar relation holds for the Casimir in a metric Lie algebra, namely if the Casimir is \({c = \sum_{i} e_{i} \otimes f_{i}}\), then for \(x \in \mathfrak{g}\), \(\sum_{i} e_{i} \otimes [f_{i}, x] = \sum_{i} [x, e_{i}] \otimes f_{i}\).
+% NOTE: I actually don't know how to prove this only using properties of the metric (and therefore Casimir) and bracket.
+Diagramatically, we have
 \[
-	\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex.pdf}.
+	\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_left.pdf}
+	\quad
+	=
+	\quad
+	\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_right.pdf}
+	\;
+	.
 \]
-That this action be a Lie action,
+Just like the antisymmetry of the bracket and the Jacobi relation, these relations make sense when the diagrams are interpreted as parts of Jacobi diagrams. There is only one type of trivalent vertex in a Jaocbi diagram, and since the edges around a vertex are only considered up to cyclic order, cyclic permutation of the order is ``unseen on the level of Jacobi diagrams''.
+
+From the discussion above, we see that the internal structure of Jacobi diagrams (internal meaning not near the skeleton) is reflected in a metric Lie algebra. Let us try to find a similar reflection of the structure near the skeleton. A representation \(\rho\) of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input and output, namely a \(v \in V\) which we denote by a thicker line, like the skeleton of a Jacobi diagram.
+\[
+	\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex.pdf}
+\]
+We omit the arrows because they're unneccesary again --- corresponding to the maps
+\[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}\]
+are vertices
+\[
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_eval.pdf}
+	\qquad \text{and} \qquad
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_coeval.pdf}\ .
+\]
+
+That the action of \(\rho\) on \(V\) be a Lie action is the equation
 \[\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\]
-is graphically
+which diagramatically corresponds to
 \[
 	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_s.pdf}
 	\quad
@@ -297,28 +325,24 @@ is graphically
 	\includegraphics[width=0.1\textwidth, valign=c]{graphics/string_diagram_lie_action_u.pdf}.
 \]
 
-%TODO (Zsuzsi) I was missing this sentence below where you first introduced the graphical notation for a representation
-Again, arrows are unnecessary on the thick edges corresponding to inputs and outputs of \(V\), as cup and cap vertices similar to the metric and casimir for \(\mathfrak{g}\) are given by the maps
-\[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}.\]
-
-The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} uses this diagrammatic calculus to take metric Lie algebras and produce weight systems.
+The following construction of Bar-Natan is the focus of his seminal article \cite{on-the-vassiliev-knot-invariants}. It uses this diagrammatic calculus to produce weight systems from metric Lie algebras.
 
 \begin{construction}
 	\label{cons:lie-algebra-weight-system}
-	The construction takes a metric Lie algebra \(\mathfrak{g}\), and produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})\) which is a \(\mathcal{U}(\mathfrak{g})\)-valued weight system. Given further a representation \(\rho\) of \(\mathfrak{g}\) it produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to k\) which is a \(k\)-valued weight system. That is, given \(\mathfrak{g}\) a metric Lie algebra, \(J \in \mathcal{A}\) it produces an element of \(\mathcal{U}(\mathfrak{g})\), and if also given a representation \(\rho\) it produces a scalar. We write \(v\) and \(u\) for the number of trivalent and univalent vertices of \(J\).
+	The construction takes a metric Lie algebra \(\mathfrak{g}\), and produces a map \({W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})}\) which is a \(\mathcal{U}(\mathfrak{g})\)-valued weight system. Given further a representation \(\rho\) of \(\mathfrak{g}\) it produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to k\) which is a \(k\)-valued weight system. That is, given \(\mathfrak{g}\) a metric Lie algebra and \(J \in \mathcal{A}\), it produces an element of \(\mathcal{U}(\mathfrak{g})\), and if also given a representation \(\rho\) it produces a scalar. We write \(v\) and \(u\) for the number of trivalent and univalent vertices respectively of \(J\).
 
-	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (both components are covariant, i.e. inputs or both are contravariant, i.e. outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant). 
+	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (when both components are covariant or both are contravariant, i.e. when there are two inputs or two outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant).
 
-	Contract this tensor with a copy of the casimir along all remaining covariant components. We define the result to be the tensor \(T_{\mathfrak{g}}(J) \in \mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\),
+	Contract this tensor with a copy of the casimir along all remaining covariant components. We define the result to be the tensor \(T_{\mathfrak{g}}(J) \in \mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\), namely
 	\[W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g}).\]
 
-	A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of a Lie algebra extends uniquely to a representation of its universal enveloping algebra \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\). Define \(W_{\mathfrak{g}, \rho}\) as the trace of \(W_{\mathfrak{g}}(J)\) with respect to this representation,
+	Constructing the \(k\)-valued weight system from the representation is as follows. A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of a Lie algebra extends uniquely to a representation of its universal enveloping algebra \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\). Define \(W_{\mathfrak{g}, \rho}\) as the trace of \(W_{\mathfrak{g}}(J)\) with respect to this representation,
 	\[W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J))) \in \mathbb{Q}.\]
 \end{construction}
 
 \begin{warning}
 	\label{warn:cyclic-order-of-bracket}
-	In Construction \ref{cons:lie-algebra-weight-system} when constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y^{\ast}, x^{\ast}, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU} (this will become evident in the proof that this construction works).
+	In Construction \ref{cons:lie-algebra-weight-system} when constructing \(T_{\mathfrak{g}}(m)\), the tensor factors in the tensor corresponding to the bracket need to have the unusual cyclic order \((y^{\ast}, x^{\ast}, [x, y]_{\mathfrak{g}})\). This is because its projection into \(\mathcal{U}(\mathfrak{g})\) should obey \ref{eq:STU}, and this is the cyclic order of the trivalent vertex in \ref{eq:STU} (it will become evident in the proof why we need this convention).
 \end{warning}
 
 \begin{example}
@@ -327,8 +351,7 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h,\]
 	and the metric is
 	\[\langle h, h \rangle = 2, \quad \langle e, f \rangle = 1, \quad \langle f, e \rangle = 1.\]
-	Here we have chosen the normalisation of the metric that agrees with the trace in the adjoint representation.
-	So,
+	Here we have chosen the normalisation of the metric that agrees with the trace in the adjoint representation, so
 	\[
 		[\cdot, \cdot]
 		=
@@ -339,9 +362,9 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 	\[	
 		J = \includegraphics[width=0.1\textwidth, valign=c]{graphics/jacobi_bivalent_bubble.pdf}.
 	\]
-	Taking another copy \([\cdot, \cdot]'\) of the bracket tensor, one way to compute \(W_{\mathfrak{sl}_{2}} \left( J \right)\) is to let \([\cdot,\cdot]\) take the left trivalent vertex, and associate the upward facing half-edge to the first component. Let \([\cdot,\cdot]'\) take the right trivalent vertex and associate the downward facing half-edge to the first component. The cyclic orders determine the rest. Then the computation is to take the contraction of \([\cdot,\cdot]\) along components 1 and 3 with \([\cdot,\cdot]'\) along components 3 and 1. This gives
+	Taking another copy \([\cdot, \cdot]'\) of the bracket tensor, one way to compute \(W_{\mathfrak{sl}_{2}} \left( J \right)\) is to let \([\cdot,\cdot]\) take the left trivalent vertex, and associate the upward facing half-edge to the first component. Let \([\cdot,\cdot]'\) take the right trivalent vertex and associate the downward facing half-edge to the first component --- the cyclic orders determine the rest. Then the computation is to take the contraction of \([\cdot,\cdot]\) along components 1 and 3 with \([\cdot,\cdot]'\) along components 3 and 1. This gives
 	\[2 h^{\ast} \otimes h^{\ast} + e^{\ast} \otimes f^{\ast} + f^{\ast} \otimes e^{\ast},\]
-	and contracting along each component with a casimir to make them contravariant,
+	and contracting along each component with a casimir to make them contravariant yields
 	\[
 		T_{\mathfrak{sl}_{2}}
 		\left(
@@ -350,10 +373,10 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 		=
 		\frac{1}{2} h \otimes h + e \otimes f + f \otimes e.
 	\]
-	Projecting this into \(\mathcal{U}(\mathfrak{g})\) and writing it in the PBW-basis,
+	Projecting this into \(\mathcal{U}(\mathfrak{g})\) and writing it in the PBW-basis, we have
 	\[W_{\mathfrak{sl}_{2}}(J) = \frac{1}{2} h \otimes h - h + 2 e \otimes f.\]
 
-	Finally, if we use the adjoint representation \(\operatorname{ad}\),
+	Finally, if we use the adjoint representation \(\operatorname{ad}\), defined by
 	\[
 		\operatorname{ad}(h) =
 		\begin{bmatrix}
@@ -376,18 +399,19 @@ The famous construction of Bar-Natan \cite{on-the-vassiliev-knot-invariants} use
 \end{example}
 
 \begin{theorem}
-	In Construction \ref{cons:lie-algebra-weight-system}, \(W_{\mathfrak{g}}\) is a well-defined \(\mathcal{U}(\mathfrak{g})\)-valued weight system, and \(W_{\mathfrak{g}, \rho}\) is a well-defined \(\mathbb{Q}\)-valued weight system.
+	In Construction \ref{cons:lie-algebra-weight-system}, \(W_{\mathfrak{g}}\) is a well-defined \(\mathcal{U}(\mathfrak{g})\)-valued weight system, and \(W_{\mathfrak{g}, \rho}\) is a well-defined \(k\)-valued weight system.
 \end{theorem}
 
 \begin{proof}[\cite{on-the-vassiliev-knot-invariants}]
-	To prove that \(W_{\mathfrak{g}, \rho}\) is well-defined, there are two points to prove. Jacobi diagrams are defined up to certain internal relations, namely \ref{eq:IHX} and \ref{eq:AS}, so the first point is that \(T_{\mathfrak{g}}(J)\) is invariant under \ref{eq:IHX} and \ref{eq:AS}. For \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation. Alternatively, it follows from the second point as \ref{eq:IHX} and \ref{eq:AS} are consequences of \ref{eq:STU}.
+	First we prove that the map \(W_{\mathfrak{g}}: \mathcal{D} \to \mathcal{U}(\mathfrak{g})\) descends to a map from \(\mathcal{A}\).
 
-	The second thing to prove is that \(W_{\mathfrak{g}}(J)\) is invariant under \ref{eq:STU}.
-	If two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the construction gives
+	The map \(T_{\mathfrak{g}}: \mathcal{D} \to \mathfrak{g}^{\otimes u}\) is invariant under \ref{eq:IHX} and \ref{eq:AS}: for \ref{eq:AS}, it follows from the antisymmetry of \([\cdot, \cdot]\), and for \ref{eq:IHX} it follows from the Jacobi relation.
+
+	Furthermore, the map \(\mathfrak{g}^{\otimes u} \to \mathcal{U}(\mathfrak{g})\) is invariant under \ref{eq:STU}. For if two chord diagrams differ by \ref{eq:STU}, on some univalent vertices associated with adjacent tensor factors \(y\) and \(x\), the two sides of an \ref{eq:STU} map to
 	\[\cdots \otimes [x, y]_{\mathfrak{g}} \otimes \cdots \qquad \text{and} \qquad (\cdots \otimes x \otimes y \otimes \cdots) - (\cdots \otimes y \otimes x \otimes \cdots),\]
-	but this equality is exactly the defining relation of \(\mathcal{U}(\mathfrak{g})\).
+	but the equality of these expressions is exactly the defining relation of \(\mathcal{U}(\mathfrak{g})\). (Alternatively the well-definiedness of \(W_{\mathfrak{g}}\) under \ref{eq:AS} and \ref{eq:IHX} also follows from this, because those relations are implied by \ref{eq:STU}.)
 
-	We come to the third point. There was one other arbitrary choice we made. The cyclic order of the univalent vertices of \(J\) induce a cyclic order on the components of the components of the tensor \(T_{\mathfrak{g}} \in \mathfrak{g}^{\otimes u}\). However, in the construction, a linear order which respects that cyclic order was chosen. We must show that any choice of linear order respecting the cyclic order produces the same result. This is no problem for the well-definition of \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J)))\), as the trace is invariant under cyclic permutation. However for \(W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g})\) it remains to prove cyclic permutation invariance. In fact a stronger statement is true. The diagram \(J\) itself is invariant under a cyclic permutation by Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, so of course this is true for \(W_{\mathfrak{g}}(J)\).
+	There is one other arbitrary choice that was made in the construction. The cyclic order of the univalent vertices of \(J\) induces a cyclic order on the components of the components of the tensor \(T_{\mathfrak{g}} \in \mathfrak{g}^{\otimes u}\). However, in the construction, a linear order which respects that cyclic order was chosen. We must show that any choice of linear order respecting the cyclic order produces the same result. This is no problem for the well-definedness of \(W_{\mathfrak{g}, \rho}(J) = \operatorname{tr}(\rho(W_{\mathfrak{g}}(J)))\), as the trace is invariant under cyclic permutation. However for \(W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g})\) it remains to prove cyclic permutation invariance. In fact, a stronger statement is true. The diagram \(J\) itself is invariant under a cyclic permutation by Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, so of course this is true for \(W_{\mathfrak{g}}(J)\).
 \end{proof}
 
 Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\) \cite{on-the-vassiliev-knot-invariants, remarks-on-the-vassiliev-knot-invariants-coming-from-sl2}.
@@ -408,7 +432,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 \end{example}
 
 	\begin{proof}
-		Compute both sides by contracting and permuting tensors for the bracket, and casimir/metric in \(\mathfrak{sl}_{2}\). Both give
+		Compute both sides like in Construction \ref{cons:lie-algebra-weight-system}, but without projecting into \(\mathcal{U}(\mathfrak{g})\), leaving the result in \(\mathfrak{sl}_{2}^{\otimes 4}\). Both give
 		\begin{align*}
 			{}-h\otimes e\otimes h\otimes f+h\otimes e\otimes f\otimes h-h\otimes f\otimes h\otimes e+h\otimes f\otimes e\otimes h \\
 			{}+e\otimes h\otimes h\otimes f-e\otimes h\otimes f\otimes h + 2 e\otimes f\otimes e\otimes f -2 e\otimes f\otimes f\otimes e \\
@@ -418,7 +442,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 
 	\begin{remark}
 		\label{rem:metric-casimir-bubble-is-dimension}
-		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension, so for \(\mathfrak{sl}_{2}\), the factor \(3\). For example
+		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension (so for \(\mathfrak{sl}_{2}\), the factor \(3\)). For example,
 		\[
 			W_{\mathfrak{sl}_{2}}
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble.pdf}
@@ -430,12 +454,12 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 		\]
 	\end{remark}
 \begin{question}
-	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\). It also obeys a variant of the vector triple product rule. Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
+	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\) --- it also obeys a variant of the vector triple product rule. Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
 \end{question}
 
-Construction \ref{cons:lie-algebra-weight-system} yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This naturally begs the question whether all of the information in \(\mathcal{A}\) can be extracted by metric Lie algebras in this way.
+Construction \ref{cons:lie-algebra-weight-system} yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This leads to the natural question of whether all of the information in \(\mathcal{A}\) can be extracted by metric Lie algebras in the manner of the construction.
 
-A Computer enumeration of \cite{on-the-vassiliev-knot-invariants} proves this for order \(m \leq 9\):
+A computer enumeration of \cite{on-the-vassiliev-knot-invariants} proves this for order \(m \leq 9\):
 \[
 	\begin{tblr}{hlines, vlines, colspec={lcccccccccc}}
 		m									& 0 & 1 & 2 & 3 & 4 & 5  & 6  & 7  & 8  & 9   \\ % & 10  & 11  & 12  \\
@@ -443,16 +467,16 @@ A Computer enumeration of \cite{on-the-vassiliev-knot-invariants} proves this fo
 		\operatorname{dim} (\mathcal{W}_{\text{Lie}})_{m}			& 1 & 1 & 2 & 3 & 6 & 10 & 19 & 33 & 60 & 104 \\
 	\end{tblr}
 \]
-Here \(\mathcal{W}_{\text{Lie}}\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Construction \ref{cons:lie-algebra-weight-system}. In other words
+(here \(\mathcal{W}_{\text{Lie}}\) denotes the dimension of the subspace of \(\mathcal{W}_{m}\) spanned by weight systems coming from Construction \ref{cons:lie-algebra-weight-system}). In other words
 \[\mathcal{W}_{\text{Lie}} = \operatorname{span} \{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}.\]
 In \cite{on-the-vassiliev-knot-invariants}, this is computed up to degree \(9\) only using the span of \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\) Lie algebras, providing a lower bound on \(\operatorname{dim} (\mathcal{W}_{\text{Lie}})_{m}\). The upper bound comes from \(\operatorname{dim} \mathcal{A}_{m}\). So in fact, up to degree \(9\), \(\mathcal{W}_{m}\) is spanned even by only the \(\mathfrak{sl}_{n}\) and \(\mathfrak{gl}_{n}\) weight systems.
 
 \begin{conjecture}[Bar-Natan]
 	\label{conj:lie-algebra-weight-systems-span}
-	All weight systems are obtained as Lie algebra weight systems. In other words the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
+	All weight systems are obtained as Lie algebra weight systems. In other words, the set \(\{W_{\mathfrak{g}, \rho} \,|\, \text{\(\mathfrak{g}\) a Lie algebra}, \text{\(\rho\) a representation of \(\mathfrak{g}\)}\}\) spans \(\mathcal{W}\).
 \end{conjecture}
 
-Indeed the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) as it was drawn graphically looks exactly like the \ref{eq:STU} relation in \(\mathcal{A}\). However, looks can be decieving and quite surprisingly this conjecture is false. The counterexample was found by Pierre Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint} in an attempt to answer the following related question:
+Indeed, the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) as it was drawn graphically looks exactly like the \ref{eq:STU} relation in \(\mathcal{A}\). However, looks turn out to be decieving and quite surprisingly this conjecture is false. The counterexample was found by Pierre Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint} in an attempt to answer the following related question:
 \begin{question}[Vogel]
 	\label{ques:vogel-universal-lie-algebra}
 	Is there some single universal Lie algebra object whose weight system spans \(W_{\text{Lie}}\), the span of all Lie-algebraic weight systems?
@@ -461,10 +485,9 @@ Indeed the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
 
-Conjecture \ref{conj:lie-algebra-weight-systems-span} being false implies that \ref{eq:STU} is more general than \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\). The same is true for \ref{eq:IHX} and \ref{eq:AS} compared to their strictly Lie-theoretic counterparts.
-In fact, Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob to construct weight systems coming from metric Lie super-algebras.
+Conjecture \ref{conj:lie-algebra-weight-systems-span} being false means that the \ref{eq:STU} relation describes more than the relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) for a representation \(\rho\) of a metric Lie algebra. In fact, Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob with the purpose of constructing weight systems coming from metric Lie super-algebras, and further generalisations of Lie algebras.
 
-The most general type of objects these constructions apply to are called by Vaintrob \cite{vassiliev-knot-invariants-and-lie-s-algebras} `Lie \(S\)-algebras', but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and they will be known as Lie algebra objects in a symmetric monoidal category.
+The most general type of objects these constructions apply to are `Lie \(S\)-algebras' as coined by Vaintrob in \cite{vassiliev-knot-invariants-and-lie-s-algebras}, but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and will refer to them as Lie algebra objects in a symmetric monoidal category.
 
 \begin{definition}
 	A (\textbf{weak}) \textbf{monoidal category} is a category \(\mathcal{C}\) equipped with a functor
@@ -485,7 +508,7 @@ The most general type of objects these constructions apply to are called by Vain
 
 \begin{remark}
 	\label{rem:coherence-for-monoidal-categories}
-	Omitting the details, we assume that these natural isomorphisms are equalities, for example that \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category, and it's why we omit the pentagon and triangle relations in the definition above. We refer to \cite[Sec. 1.2]{higher-operads-higher-categories} for details.
+	While we omit the details, we henceforth assume that these natural isomorphisms are equalities: \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category. This also justifies why we omit the pentagon and triangle relations in the definition above. We refer the reader to \cite[Sec. 1.2]{higher-operads-higher-categories} for details.
 \end{remark}
 
 \begin{definitions}
@@ -498,27 +521,27 @@ The most general type of objects these constructions apply to are called by Vain
 				\end{array}
 			\]
 
-		\item A \textbf{symmetric monoidal category} is a monoidal category \(\mathcal{C}\) equipped with a \textbf{symmetry natural isomorphism} \(\tau\)
-			\[\otimes \longrightarrow \otimes \circ \sigma\]
+		\item A \textbf{symmetric monoidal category} is a monoidal category \(\mathcal{C}\) equipped with a \textbf{symmetry natural isomorphism}
+			\[\tau : \otimes \longrightarrow \otimes \circ \sigma\]
 			satisfying the hexagon relation. The \textbf{hexagon relation} is the relation that the isomorphisms
 			\[
 				\tau_{A, B}: A \otimes B \overset{\cong}{\longrightarrow} B \otimes A
 			\]
+			and
 			coming from the natural isomorphism \(\tau\) obey
 			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
 \end{definitions}
-The hexagon relations have look like they only have three terms instead of the six one might expect from the name. This is because we have omited the reassociation natural isomorphisms that we can assume are identites by Remark \ref{rem:coherence-for-monoidal-categories}.
+One might notice that the hexagon relation involves only three terms, rather than the six that the name might suggest. This is because we have omited the reassociation natural isomorphisms that we can assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
 
 If a monoidal category \(\mathcal{C}\) is additionally additive, we can define Lie algebra objects internal to \(\mathcal{C}\).
 
 \begin{definitions}
 	\begin{enumerate}
-		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) 
-        such that
+		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
-			Graphically, in terms of the string diagrams of the previous section, this is
+			Graphically (in terms of the string diagrams of the previous section), this corresponds to
 			\[
 				\def\svgscale{0.31}
 				\adjustbox{valign=c}{\input{graphics/jacobi_symmetric_arbitrary_monoidal_cat_xyz.pdf_tex}}
@@ -536,6 +559,8 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				=
 				\quad
 				0,
+				\quad
+				\text{and}
 			\]
 			\[
 				\def\svgscale{0.35}
@@ -573,65 +598,62 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 	\end{enumerate}
 \end{definitions}
 
-
-We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. But for now, let's show that this data can still be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
+We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
 	% TODO: Check that all the ajectives have been defined, or at least thought about.
 	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(\eta\) a dualisable representation.
-    %TODO (Zsuzsi) is $M$ the representation, or $\eta$?
-    Then, there is a weight system
+	Then there is a weight system
 	\[W_{L, \eta}: \mathcal{A} \longrightarrow \mathcal{C}(k, k) \cong k.\]
 \end{theorem}
 \begin{proof}
 	Similar to the proof of the construction... %TODO (Zsuzsi) Incomplete?
 \end{proof}
 
-The difference between this construction and Bar-Natan's original one is the treatment of the symmetry natural isomorphism \(\tau\). This tells us which isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity, as it was in the original construction, corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However unlike for general monoidal categories, not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. 
-%TODO (Zsuzsi) So maybe pentagon, triangle and true hexagon should be stated above?
-At a down-to-earth level, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
+The difference between this construction and Construction \ref{cons:lie-algebra-weight-system} is the treatment of the symmetry natural isomorphism \(\tau\) which tells us what isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity (as it was in the original construction) corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. In other words, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
 
 \begin{example}
-	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, the Lie algebra objects are the following.
+	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, the Lie algebra objects are exactly the Lie superalgebras which we now define.
 
-	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying some axioms to follow. The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
+	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying two axions. The \textbf{super symmetry} axiom is that for \(x, y\) homogeneous elements of \(\mathfrak{g}_{i}\) and \(\mathfrak{g}_{j}\) respectively,
+	\[[x, y] = - (-1)^{ij}[y, x]\]
+	and the \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
+	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
 
-	The axioms a Lie superalgebra must satisfy are the following analogues of the usual lie algebra axioms. Let \(x, y, z\) be homogeneous elements, so in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\), and \(\mathfrak{g}_{k}\) respectively, then \textbf{super symmetry} axiom is
-		\[[x, y] = - (-1)^{ij}[y, x],\]
-		and the \textbf{super Jacobi identity} is the axiom
-		\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
+	The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
 \end{example}
 
-Shortly after Conjecture \ref{conj:lie-algebra-weight-systems-span} was made, the following results were achieved based on constructions with the exceptional Lie superalgebra \(\mathfrak{D}(2, 1; \alpha)\).
+Shortly after Conjecture \ref{conj:lie-algebra-weight-systems-span} was made, the following results were achieved based on constructions with the exceptional Lie superalgebra \(\mathfrak{D}(2, 1; \alpha)\) proving that metric Lie algebras alone do not see all the structure of \(\mathcal{A}\).
 
 \begin{theorem}
-	There are primitive Jacobi diagrams of order at least 17 \cite{algebraic-structures-on-modules-of-diagrams-preprint} and at least 15 \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} which vanish under all Lie algebra weight systems. 
+	There are primitive Jacobi diagrams of order 17 \cite{algebraic-structures-on-modules-of-diagrams-preprint} and 15 \cite{on-vassiliev-invariants-not-coming-from-semisimple-lie-algebras} which vanish under all Lie algebra weight systems.
 \end{theorem}
 
-Furthermore, as was known about shortly after but not published until significantly later,
+Indeed (and this was known about shortly after but not published until significantly later) not even metric Lie superalgebras suffice.
+
 \begin{theorem}
-Vogel's diagram of order 17 vanishes also on all Lie superalgebra weight systems \cite{algebraic-structures-on-modules-of-diagrams}.
+	Vogel's diagram of order 17 vanishes also on all Lie superalgebra weight systems \cite{algebraic-structures-on-modules-of-diagrams}.
 \end{theorem}
 
 \begin{corollary}
 	The set of Lie (super)algebra weight systems does not span \(\mathcal{W}\).
 \end{corollary}
 
-In general, it is still unknown to what exact level of generality one needs to go (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems. We hereby provide a succinct review the current state of the literature on the subject.
+In general, it is still unknown what exact level of generality one needs (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems. We hereby provide a succinct review of the current state of the literature on the subject.
 
 Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
 
-More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra}, have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general type of group and sign rule. The example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
+More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra} have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general group. However, the example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
 
 \section{Some weight systems at the exceptional Lie algebras}
 \label{sec:some-weight-systems-at-the-exceptional-lie-algebras}
 
-The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} (and it can be seen more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra}) was to construct a universal object generalising all simple Lie algebras. Such an object would parametrise the relations in tensor powers of the adjoint representation of all simple Lie algebras, and its weight systems would span \(\mathcal{W}\). For example, the relation for \(W_{\mathfrak{sl}_{2}}\) given in Example \ref{ex:sl2-cv-relation} is entirely internal to the Lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation (since the adjoint representation is natural).
+The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} (seen more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra}) was to construct a universal object generalising all simple Lie algebras. Such an object would parametrise the relations in tensor powers of the adjoint representation of all simple Lie algebras, and its weight systems would span \(\mathcal{W}\). For example, the relation for \(W_{\mathfrak{sl}_{2}}\) given in Example \ref{ex:sl2-cv-relation} is entirely internal to the Lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation (since the adjoint representation is canonical).
 
-There seems to be a recent renewed interest in Vogel's methods \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra, on-refined-vogels-universality, can-yang-baxter-imply-lie-algebra}. In-particular, present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine local relations internal to any simple Lie algebra in terms of two independent so-called Vogel parameters, and some complicated `marked' elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the preprint \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}. The use of different normalisations of the Vogel parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Furthermore, in Vogel's original work, the relations are general enough to hold for any Lie superalgebra. However when restricting to Lie algebras, the diagrammatic formulae can be simplified.
+Recently, it seems there is renewed interest in Vogel's methods \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra, on-refined-vogels-universality, can-yang-baxter-imply-lie-algebra}. In-particular, present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine local relations internal to any simple Lie algebra in terms of two independent ``Vogel parameters'', and some complicated marked elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}, but the use of different normalisations of the Vogel parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Moreover, the relations in Vogel's original work, are general enough to hold for any Lie superalgebra but when restricting to Lie algebras, the diagrammatic formulae can be simplified.
 
-Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a relation in \(W_{\mathfrak{g}_{2}}\).
+For example, \cite[Theorem 6.3(2)]{algebraic-structures-on-modules-of-diagrams} gives the relation
 \[
 	\begin{array}{ll}
 		-6
@@ -662,10 +684,10 @@ Theorem 6.3(2) of \cite{algebraic-structures-on-modules-of-diagrams} gives a rel
 		0
 	\end{array}
 \]
-However, by some well-known identies internal to Jabobi diagrams, these diagrams can be simplified.
+in \(\mathcal{W}_{\mathfrak{g}_{2}}\). By some well-known identites internal to Jacobi diagrams, this relation can be simplified.
 \begin{lemma}
 	\label{lem:tribubble-is-half-bibubble}
-	In \(\mathcal{A}\) the `trivalent-bubble' vertex is proprtional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
+	In \(\mathcal{A}\), the `trivalent-bubble' vertex is proportional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
 	\[
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
 		=
@@ -674,7 +696,7 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 	\]
 \end{lemma}
 \begin{proof}
-	Apply \ref{eq:IHX} to any pair of vertices, then three applications of \ref{eq:AS}.
+	Apply \ref{eq:IHX} to any pair of vertices, followed by three applications of \ref{eq:AS}.
 	\[
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_triangle.pdf}
 		=
@@ -698,46 +720,48 @@ However, by some well-known identies internal to Jabobi diagrams, these diagrams
 		W_{\mathfrak{g}}
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_line.pdf}
 	\]
+	where \(\lambda \in k\) is determined by the choice of metric.
 \end{lemma}
-This is proven in \cite[Lem. 6.15]{introduction-to-vassiliev-invariants}. It would be interesting to have a purely categotical proof that doesn't refer to any specific representation, and uses the fact that Lie algebras are Lie algebra objects in the category \(\mathbf{Vect}\).
+This is proven in \cite[Lem. 6.15]{introduction-to-vassiliev-invariants} by analysing the bracket tensor.
 
-Simplifying Vogel's relation via these lemmas , gives the following relation. (We use the metric in which \(\lambda = 1/4\), i.e. our metric is \(4\) times \(\langle\cdot, \cdot\rangle_{K}\), the Killing form.)
+\begin{remark}
+	It would be interesting to have a purely categotical proof that doesn't refer to any specific representation, and uses the fact that Lie algebras are Lie algebra objects in the category \(\mathbf{Vect}\).
+\end{remark}
 
-\begin{proposition}
-	\[
-		\begin{array}{ll}
-			-6
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
-			-
-			12
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
-			+
-			36
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
-			\quad \quad
-			{}+
-			7
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
-			+
-			20
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
-			-
-			20
-			W_{\mathfrak{g}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
-		& =
-		\,\,\,
-		0
-		\end{array}
-	\]
-\end{proposition}
+Simplifying Vogel's relation via these lemmas , gives the following relation. (We have used the metric in which \(\lambda = 1/4\), i.e. our metric is \(4\) times \(\langle\cdot, \cdot\rangle_{K}\), the Killing form.)
+\[
+	\begin{array}{ll}
+		-6
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_column.pdf}
+		-
+		12
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4_crossbeam.pdf}
+		+
+		36
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf} \\
+		\quad \quad
+		{}+
+		7
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_h.pdf}
+		+
+		20
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_smooth.pdf}
+		-
+		20
+		W_{\mathfrak{g}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_cross.pdf}
+	& =
+	\,\,\,
+	0
+	\end{array}
+\]
 
-This relation is true for any diagram into which each term is inserted. In-particular, it remains true after rotating all terms a quarter rotation clockwise. However this symmetry is not obvious in the formula. This suggests that perhaps the relation is a consequence of a similar, simpler relation.
+This relation is true on a local level (like \ref{eq:IHX} and \ref{eq:AS} rather than \ref{eq:STU}). In-particular, it remains true after rotating all terms a quarter rotation clockwise. This symmetry is not obvious in the formula which suggests that perhaps the relation is a consequence of a similar, simpler relation.
 
 \begin{theorem}
 	\label{thm:g2-unboxing-relation}
@@ -775,7 +799,7 @@ This relation is true for any diagram into which each term is inserted. In-parti
 	Compute the tensors corresponding to both sides.
 \end{proof}
 
-This is an analogue of a relation for \(\mathfrak{sl}_{3}\) found by Yoshizumi and Kuga in \cite{some-formulas-in-sl3-weight-systems}. This was used recently by Yang in \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite} to compute the value of the \(\mathfrak{sl}_{3}\) weight systems on the following infinite sequence of chord diagrams.
+This is an analogue of a relation for \(\mathfrak{sl}_{3}\) found by Yoshizumi and Kuga in \cite{some-formulas-in-sl3-weight-systems} which was used recently by Yang in \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite} to compute the value of the \(\mathfrak{sl}_{3}\) weight systems on the following infinite sequence of chord diagrams.
 
 \begin{definition}
 	The \(i\)th \textbf{bookshelf diagram}, \(B_{i}\), is the Jacobi diagram
@@ -788,14 +812,16 @@ This is an analogue of a relation for \(\mathfrak{sl}_{3}\) found by Yoshizumi a
 In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite}, a third-order recursion relation for the values of the \(\mathfrak{sl}_{3}\) weight system on the bookshelf diagrams is found. We use the same idea with the new relation of Theorem \ref{thm:g2-unboxing-relation} to compute their values under the \(\mathfrak{g}_{2}\) weight system.
 
 \begin{theorem}
-	% TODO: Define the casimir element somewhere, probably above.
-	The values of the bookshelf diagram \(B_{i}\) are at most quadratic in the (quadratic) casimir element \(c\) of \(\mathfrak{g}_{2}\). In particular,
+	\label{thm:bookshelf_g2_formula}
+	The values of the bookshelf diagram \(B_{n}\) are at most quadratic in the (quadratic) casimir element \(c\) of \(\mathfrak{g}_{2}\). In particular,
 	\[W_{\mathfrak{g}_{2}}(B_{i}) = c^{2} \left( \frac{1}{14} 4^{n} + \frac{27}{112} (5/3)^{n} + \frac{11}{16} (-1)^{n} \right) + c\left( 2^{n} + \frac{8}{3} (5/3)^{n} -\frac{11}{8}(-1)^{n} \right).\]
 \end{theorem}
 
 \begin{proof}
-	Apply Theorem \ref{thm:g2-unboxing-relation}, to the rightmost box on a bookshelf diagram.
-	\[
+	Applying Theorem \ref{thm:g2-unboxing-relation} to the rightmost box on a bookshelf diagram gives
+	\begin{equation}
+		\tag{\ref{thm:bookshelf_g2_formula}a}
+		\label{eq:unboxed_bookshelf}
 		\begin{array}{lll}
 			W_{\mathfrak{g}_{2}}
 			\def\svgscale{0.25}
@@ -825,10 +851,11 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 			W_{\mathfrak{g}_{2}}
 			\def\svgscale{0.25}
 			\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_diagonalsmoothing.pdf_tex}}
+			.
 		\end{array}
-	\]
+	\end{equation}
 
-	Applying \ref{eq:STU} to the final term gives
+	Restricting ourselves to the final term of Equation \ref{eq:unboxed_bookshelf}, an \ref{eq:STU} relation gives
 	\[
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
@@ -841,8 +868,9 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
 		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_horisontalsmoothing.pdf_tex}}
+		.
 	\]
-	By Lemma \ref{lem:tribubble-is-half-bibubble}, we have
+	Present here is a booskhelf diagram of order \(i - 2\) (the second term), and an additional term containing a bubble (the first term). Applying Lemma \ref{lem:tribubble-is-half-bibubble}, we can remove the bubble from the first term, but doing so leaves a diagram with another bubble. After \(i - 2\) applications of the lemma we have
 	\[
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
@@ -854,8 +882,11 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_h_popped.pdf_tex}}
 		=
 		2^{i - 2} 4 c^{2}
+		.
 	\]
-	This calculation of the \(\mathfrak{g}_{2}\) weight system on this diagram first appears in the literature in the PhD thesis of A. Kaishev which we have been unable to source, however it also appears in \cite[p. 181]{introduction-to-vassiliev-invariants}. Our computer program also verifies it. By Lemma \ref{lem:bibubble-proportional-to-line},
+	where the final equality comes a tabulation of low order chord diagrams in some Lie algebra representations in \cite[p. 181]{introduction-to-vassiliev-invariants}.
+
+	Now for the second-last term of Equation \ref{eq:unboxed_bookshelf}. We apply Lemma \ref{lem:bibubble-proportional-to-line} \(i - 2\) times, giving
 	\[
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
@@ -867,9 +898,10 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf_verticalsmoothing_popped.pdf_tex}}
 		=
 		4^{i - 2}c^{2}
+		.
 	\]
 
-	All in all,
+	All in all, Equation \ref{eq:unboxed_bookshelf} simplifies to
 	\[
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
@@ -889,33 +921,32 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 		+
 		\frac{11}{6} 2^{i - 2} c
 	\]
-	so setting
+	so that setting
 	\[
 		g_{i} =
 		W_{\mathfrak{g}_{2}}
 		\def\svgscale{0.25}
 		\raisebox{-29pt}{\input{graphics/jacobi_bookshelf.pdf_tex}}
 	\]
-	we have the second-order non-homogeneous recursion relation for \(g_{i}\)
-	\[g_{i + 2} = \frac{2}{3} g_{i + 1} + \frac{5}{3} g_{i} + \frac{5}{6} 4^{i} c^{2} + \frac{11}{6} 2^{i} c.\]
-	Its fourth-order homogeneous form is
+	yields the second-order non-homogeneous recursion relation
+	\[g_{i + 2} = \frac{2}{3} g_{i + 1} + \frac{5}{3} g_{i} + \frac{5}{6} 4^{i} c^{2} + \frac{11}{6} 2^{i} c\]
+	for \(g_{i}\) which was fourth-order homogeneous form
 	\[g_{i + 4} - \frac{20}{3} g_{i + 3} + \frac{31}{3}g_{i + 2} + \frac{14}{3} g_{i + 1} - \frac{40}{3} g_{i} = 0.\]
 	
-	To solve this we need the inital conditions \(g_{1}, g_{2}\) and \(g_{3}\). The first two come from the same computations of Kaishev \cite[p. 181]{introduction-to-vassiliev-invariants}, whereas the third we have to compute ourselves.
+	To solve this we need the inital conditions \(g_{1}, g_{2}\) and \(g_{3}\). The first two come from the same tabulation in \cite[p. 181]{introduction-to-vassiliev-invariants}, whereas the third we must compute ourselves.
 
 	Computing in sagemath the tensor corresponding to the diagram
 	\[
-	\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf}
 	\]
-	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the casimir. There are two generating casimirs of \(\mathfrak{g}_{2}\). 
-    %Maybe talk about $g_3$ first, rather than the other one?
-    The other is of degree \(6\), but \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation gives the following values.
+	then projecting it to \(\mathcal{U}(\mathfrak{g}_{2})\) gives the value, but expressed in the PBW basis rather than as a polynomial in the Casimir, like the expressions we have for \(g_{1}\) and \(g_{2}\). By \cite[Theorem 6.1(3)]{introduction-to-vassiliev-invariants}, the value of any chord diagram under a Lie algebra weight system is a polynomial in the Casimir element and the higher order Casimirs elements of \(\mathfrak{g}_{2}\). Since \(\operatorname{rank}(\mathfrak{g}_{2}) = 2\), there is only one higher order Casimir to consider, and it is of degree \(6\). Therefore since \(g_{3}\) is a degree \(4\) element of \(Z(\mathfrak{g}_{2})\), so it will be a polynomial in \(c\) of degree two or less, and the higher order Casimir element doesn't come into play. Evaluating \(\rho(g_{3})\) with \(\rho\) being the trivial representation, the seven-dimensional standard representation, and the fourteen-dimensional adjoint representation respectively gives the values
 	\begin{align*}
 		\rho_{\text{tr.}}(c) &= 0	& \rho_{\text{tr.}}(g_{3}) &= 0 \\
 		\rho_{\text{st.}}(c) &= 2	& \rho_{\text{st.}}(g_{3}) &= \frac{380}{9} \\
 		\rho_{\text{ad.}}(c) &= 4	& \rho_{\text{ad.}}(g_{3}) &= \frac{1120}{9}
+		.
 	\end{align*}
-	So by the Lagrange interpolation formula,
+	So by the Lagrange interpolation formula, we find that
 	\[g_{3} = 5c^{2} + \frac{100}{9}c.\]
 	Solving the recurrence relation with these inital conditions yields the formula
 	\[
@@ -925,7 +956,12 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 	\]
 \end{proof}
 
-We use the same method to compute the a relation in the weight system \(W_{\mathfrak{g}}\) for the exceptional Lie algebra \(\mathfrak{g} = {\mathfrak{f}_{4}}\). 
+\begin{remark}
+	The result we used in the above proof from \cite[p. 181]{introduction-to-vassiliev-invariants} first appears in the literature in the PhD thesis of A. Kaishev which we have been unable to source. Our computer program also verifies it.
+\end{remark}
+
+The same computational method as in \ref{thm:g2-unboxing-relation} can be used to find a relation in the \(\mathfrak{f}_{4}\) weight system.
+
 \begin{theorem}
 	\label{thm:f4-unboxing-relation}
 	For the Lie algebra \(\mathfrak{f}_{4}\), the weight systems obey
@@ -962,7 +998,7 @@ We use the same method to compute the a relation in the weight system \(W_{\math
 	Direct computation with sagemath.
 \end{proof}
 
-The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath is computable on a laptop in a few seconds. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on a server with two Intel Xeon E5-2667v3 CPUs. The main bottleneck is tensor contraction, and indeed for \(\mathfrak{e}_{6}\) (\(\operatorname{dim} \mathfrak{e}_{6} = 78\)), the computation cannot complete even in several days. There is some hope that this can be done by using more efficient tensor contraction algorithms than are offered by sagemath, but this has not yet been explored.
+The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath is computable on the author's ThinkPad T14s with processor AMD Ryzen 7 PRO 5850U in a few seconds. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on a server with two Intel Xeon E5-2667v3 CPUs. The main bottleneck is tensor contraction, and indeed for \(\mathfrak{e}_{6}\) (which has dimension 78), the computation is not feasible on this hardware, at least not with the current algorithm. There is some hope that this can be done using more efficient tensor contraction algorithms than those offered by sagemath, but this has not yet been explored.
 
 Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
 
@@ -1004,7 +1040,6 @@ The operations on a set can always be composed by taking as input the output of 
 		\item an element \(\id \in \mathcal{O}(1)\).
 		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
 		\item a series of composition morphisms: for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
-			% TODO: Convert to array like above
 			\[
 				\begin{array}{rccc}
 					\circ_{n}:

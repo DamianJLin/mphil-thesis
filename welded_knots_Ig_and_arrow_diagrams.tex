@@ -1,31 +1,22 @@
 \chapter{Welded knots, isometry Lie algebras and arrow diagrams}
 \label{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}
 
-Welded knots, or \(w\)-knots are a generalisation of knots first introduced by [who?].
+Welded knots, or \(w\)-knots are a diagrammatic generalisation of knots that relate to codimension two knotted objects in \(\mathbb{R}^{4}\), rather than \(\mathbb{R}^{3}\).
 
-On one hand, topologically, welded knots are more complicated objects, relating to ribbon embeddings of tori in four dimensions. On the other hand, their finite type invariant theory is much more manageable than the classical case, so studying the simpler, welded version of \(\mathcal{A}\) may shed light on how to study the algebra \(\mathcal{A}\).
+Generalisations of the Vassiliev invariants to objects other than knotted circles in \(\mathbb{R}^{3}\) take the name \textbf{finite type invariants}. On one hand, welded knots are more complicated topological objects, relating to ribbon embeddings of tori in four dimensions. On the other hand however their finite type invariant theory is much more manageable than the classical case, so studying the simpler, welded version of \(\mathcal{A}\) may shed light on how to study the algebra \(\mathcal{A}\).
 
 \section{Welded knots}
 
 A good and thorough exposition of the theory of welded knots is \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial, finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}. Their presentation is in terms of virtual knots and circuit algebras.
 
-With classical knots, the definition is first and foremost topological; they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). It is due to the Reidemeister theorem that we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves. With welded knots, there is a similar topological interpretation from \cite{virtual-knot-presentation-of-ribbon-torus-knots}, thought its details remain unclear. Welded knot diagrams relate to ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{3}\). However, there are two problems with this classical approach of defining the knot as the ambient isotopy class of the relevant topological objects.
+The definition of classical knots is first and foremost topological: they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). Due to the Reidemeister theorem, we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves.
 
-\begin{shaded}
-	Firstly, for welded knots, there is a global orientation reversal contianed in the map from the diagrammatic object to the topological object.
-\end{shaded}
-To avoid this trouble, we choose to work instead with welded long knots. In the classical case, a long knot is the same as a knot, but instead of being \(S^{1} \hookrightarrow \mathbb{R}^{3}\), the embedding is \(k: \mathbb{R} \hookrightarrow \mathbb{R}^{3}\), with the condition that \(k(t) = (t, 0, 0)\) for all large \(|t|\).
-
-For the finite type theory, the algebra \(\mathcal{A}\) of Jacobi diagrams (and chord diagrams), is replaced with \(\mathcal{A}(|)\). The relations are the exact same (either \ref{eq:IHX} or \ref{eq:4T}), but instead of the univalent vertices having a cyclic order (and being drawn on a circle, they have a linear order and are drawn on a line.
-
-Secondly, the relation between welded long knots and long ribbon-knotted tori in \(\mathbb{R}^{4}\) is only conjectural. There is a tube map from welded long knots to long ribbon-knotted tori in \(\mathbb{R}^{4}\) that is known to be surjective but its kernel remains unknown. A good exposition is \cite{on-the-welded-tube-map}.
-
-The result is a definition of welded knots via diagrams, though it is widely believed that either that welded knots correspond either to long ribbon-knotted tori, or to some small quotient thereof by something akin to framing or rotation number.
+With welded knots, the definition is the other way around. We will define them diagrammatically as equivalence classes of planar knot diagrams under an extended set of Reidemeister moves.
 
 \begin{definition}
-	A \textbf{welded knot} is an equivalence class of four-valent planar diagram, where each four-valent planar vertex is decorated by a vertex of one of the following types.
+	A \textbf{welded knot} is an immersed curve in \(\mathbb{R}^{3}\), where each four-valent planar vertex is decorated by a vertex of one of the following types, respecting the orientation of the planar curve.
 	\[\poscross\;, \quad \negcross\;, \quad \virtcross\]
-	The third crossing type is called a \textbf{virtual crossing}. Along each edge of the diagram, the orientations given by the adjacent vertices agree, and such that when opposite planar vertices are considered connected, there is a single connected component.
+	The third crossing type is called a \textbf{virtual crossing}.
 
 	The equivalence relations are planar isotopy and:
 	\begin{enumerate}
@@ -80,16 +71,28 @@ The result is a definition of welded knots via diagrams, though it is widely bel
 		\begin{enumerate}
 			\item There should technically be two variants of \(\ronef\), another in which all crossings are changed, and the same is true for \(\vrfour\). This is even before orientation is taken into account: all of the moves are true for each choice of orientation of each strand.
 			\item The moves \(\vrone\), \(\vrtwo\) and \(\vrthree\) govern how virtual crossings interact with each other. The move \(\vrfour\) governs how virtual crossings interact with classical crossings. It implies that strands consisting of only virtual crossings may be freely rerouted around classical crossings. The interpretation of this fact can be found in \cite{virtual-knot-theory}.
-			\item In the \ref{eq:OC} relation, the order of the two overcrossings along the middle strand changes, hence the name. The version of \ref{eq:OC} in which the crossings are changed is called \textbf{undercrossings commute} and is \textit{not} an imposed relation: undercrossings do \textit{not} commute for welded knots. Indeed, allowing undercrossings to commute would trivialise welded knots. This lack of symmetry comes from the lack of symmetry of spinning a path around a line in \(\mathbb{R}^{4}\) to create a surface, as happens in the tube map. It also has an interpretation in terms of homotopies of flying rings, see \cite[Sec. 2.2]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}.
+			\item In the \ref{eq:OC} relation, the order of the two overcrossings along the middle strand changes, hence the name. The version of \ref{eq:OC} in which the crossings are changed is called \textbf{undercrossings commute} and is \textit{not} an imposed relation: undercrossings do \textit{not} commute for welded knots. Indeed, allowing undercrossings to commute would trivialise welded knots. For an explanation of why this lack of symmetry is to be expected in terms of the tube map which we are about to define, the curious reader is referred to \cite[Sec. 2.2]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}.
 		\end{enumerate}
 	\end{remarks}
 \end{definition}
 
-\begin{shaded}
-	\begin{definition}
-		A \textbf{welded long knot} is ...
-	\end{definition}
-\end{shaded}
+There is also a topological interpretation of welded knots, but it is not known exactly how well the topological object represents the diagrammatic one: welded knots are ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{4}\), up to some global orientation reversal move, and potentially some further moves \cite{virtual-knot-presentation-of-ribbon-torus-knots}. The map from welded knots to ribbon embedded tori is known as the tube map. We do not discuss the details here, instead referring the reader to \cite{on-the-welded-tube-map}. However this doesn't particularly matter: we define finite type invariants of welded knots from their diagrammatic definition, remaining confident that welded knots topologically correspond to something close to ribbon-knotted tori modulo a global orientation reversal move in \(\mathbb{R}^{4}\).
+
+In fact, we can even avoid the trouble of the global orientation reversal move by passing to welded long knots.
+
+\begin{definition}
+	A (classical) \textbf{long knot} is the same as a knot, but instead of being an embedding of the circle \(S^{1} \hookrightarrow \mathbb{R}^{3}\), it's an embedding of the line \(k: \mathbb{R} \hookrightarrow \mathbb{R}^{3}\), with the condition that \(k(t) = (t, 0, 0)\) for all large \(|t|\).
+\end{definition}
+
+Similarly, we define welded long knots.
+
+\begin{definition}
+	A \textbf{welded long knot} is a welded knot, but instead of a planar curve it is a planar immersion \(\ell: \mathbb{R} \to \mathbb{R}^{2}\) such that \(\ell(t) = (t, 0)\) for all large \(|t|\).
+\end{definition}
+
+For why this stops the global orientation reversal we refer the reader again to \cite{virtual-knot-presentation-of-ribbon-torus-knots} and also \cite[Corrigendum]{finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}.
+
+For the finite type theory, the algebra \(\mathcal{A}\) of Jacobi diagrams (and chord diagrams), is replaced with \(\mathcal{A}(|)\). The relations are the exact same (either \ref{eq:IHX} or \ref{eq:4T}), but instead of the univalent vertices having a cyclic order (and and the skeleton being a circle) they have a linear order (and the skeleton is a line).
 
 \section{Arrow diagrams}
 
@@ -103,18 +106,20 @@ The finite type theory of welded long knots is similar to that of classical long
 	% FIX: There's probably better notation.
 	The set of \(m\)-singular welded long knots forms an algebra with the product given by connected sum given by concatenation and coproduct \(\Delta(k) = k \otimes k\). This is called the \textbf{algebra of \(m\)-singular welded long knots}, \(\mathcal{K}_{w, m}^{\bullet}(|)\).
 
-	The algebra of \(0\)-singular welded long knots, or just the algebra of welded long knots \(\mathcal{K}^{\bullet}_{w, 0}(|) = \mathcal{K}_{w}(|)\) is filtered by the images of succesive powers of \(\partial\), just like in the classical case, and the filtration is compatible with the bialgebra structure.
+	The algebra of \(0\)-singular welded long knots, or just the algebra of welded long knots \(\mathcal{K}^{\bullet}_{w, 0}(|) = \mathcal{K}_{w}(|)\) is filtered by the images of succesive powers of \(\partial\), and the filtration is compatible with the bialgebra structure.
 \end{definition}
 
-Just as in the classical case, the notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer over the the welded case. Here, the derivative and boundary depend on the type of singularity.
+Just like in the classical case, the notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer over the the welded case. However now the derivative and boundary depend on the type of singularity.
 
 \begin{align*}
 	\partial \left( \semivirtposcross \right) &= \poscross  - \virtcross \\
 	\partial \left( \semivirtnegcross \right) &= \virtcross - \negcross
 \end{align*}
 
-And correspondingly for \(m\)-singular invariants and the operator \(\delta\). As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals:
+Again, the derivative \(\delta\) is defined on \(m\)-singular invariants of welded long knots as the adjoint to \(\partial\). As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals
 \[\partial \left( \semivirtposcross + \semivirtnegcross \right) = \poscross - \negcross.\]
+
+Long arrow diagrams are defined from singular welded knots just as chord diagrams are defined from singular knots.
 
 \begin{definitions}
 	\begin{enumerate}
@@ -131,7 +136,7 @@ And correspondingly for \(m\)-singular invariants and the operator \(\delta\). A
 	\]
 \end{example}
 
-Just as in the classical case, there are natural relations to consider on arrow diagrams. The operations and maps defined above factor through the quotient, and we obtain the algebra \(\mathcal{A}_{w}(|)\). We also refer to arrow diagrams as elements of this algebra. However, we are more interested in the algebra \(\mathcal{J}_{w}(|)\).
+Just as in the classical case, there are natural relations to consider on arrow diagrams.
 
 \begin{definition}
 	A \textbf{long arrow Jacobi diagram} is an oriented unitrivalent graph where every trivalent vertex has at least one vertex oriented inward, and at least one oriented outwards, with the following additional data:
@@ -194,7 +199,7 @@ Just as in the classical case, there are natural relations to consider on arrow 
 	\end{enumerate}
 \end{definition}
 
-The main difference between \(\mathcal{J}_{w}(|)\) and \(\mathcal{J}(|)\) is the tails commute relation. This relation is a consequence of the overcrossings commute relation (in a sense it's the shadow of that relation on the associated graded side). This new relation is very important and dramatically reduces the complexity of the algebra.
+The main difference between \(\mathcal{J}_{w}(|)\) and \(\mathcal{J}(|)\) is the tails commute relation which drastically reduces the complexity of the algebra.
 
 \begin{proposition}[Two-in-one-out rule]
 	In \(\mathcal{J}_{w}(|)\), any diagram containing a trivalent vertex with one vertex oriented inwards and two vertices oriented outward vanishes.
@@ -212,13 +217,13 @@ Resultingly, only two versions of \ref{eq:STU}, one of \ref{eq:AS} and one of \r
 
 The existence of a finite type invariant \(Z\) for welded knots establishes a welded version of the fundamental theorem.
 
-\begin{theorem}
+\begin{theorem}[\cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}]
 	There exists a universal Vassiliev invariant \(Z_{w} : \mathcal{K}_{w} \to \mathcal{A}_{w}\).
 \end{theorem}
 
 Unlike the incredible involved construction for \(Z\), the construction of \(Z_{w}\) is relatively simple. The \ref{eq:TC} relation does all of the heavy lifting. A proof can be found in \cite{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial}.
 
-\begin{corollary}
+\begin{corollary}[Fundamental theorem of Vassiliev invariants of welded knots]
 	We have
 	\[\mathcal{A}_{w} \cong \gr \mathcal{A}_{w}.\]
 	Equivalently,

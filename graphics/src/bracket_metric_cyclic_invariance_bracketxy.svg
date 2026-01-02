@@ -5,9 +5,9 @@
    viewBox="0 0 123.22695 139.24504"
    version="1.1"
    id="svg10"
-   sodipodi:docname="bracket_metric_cyclic_invariance.svg"
+   sodipodi:docname="bracket_metric_cyclic_invariance_bracketxy.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   inkscape:export-filename="../as_relation_s.pdf"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/bracket_metric_cyclic_invariance_bracketxy.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -95,12 +95,6 @@
      d="M 0.8353643,0.54969673 34.851945,52.244087"
      id="path3-56"
      sodipodi:nodetypes="cc" />
-  <path
-     fill-rule="nonzero"
-     fill="#000000"
-     fill-opacity="1"
-     d="m 82.973144,136.62098 c 3.4121,-5.90994 -5.45451,-11.02908 -8.86661,-5.11914 -3.41407,5.91333 5.45254,11.03247 8.86661,5.11914"
-     id="path10-2" />
   <path
      style="font-variation-settings:normal;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
      id="path1"
