@@ -1,7 +1,7 @@
 \chapter{Lie theory and Jacobi diagrams}
 \label{ch:lie-theory-and-jacobi-diagrams}
 
-The fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)). As we will see in this chapter, the structure of \(\mathcal{A}\) is related to Lie theory.
+\lettrine{\libertineInitialGlyph{T}}{he} fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)). As we will see in this chapter, the structure of \(\mathcal{A}\) is related to Lie theory.
 
 \section{Jacobi diagrams}
 To see the Lie theory connections, we see that \(\mathcal{A}\) is isomorphic as a bialgebra of Jacobi diagrams, whose elements are represented by graphs with one- and three-valent vertices.
@@ -575,8 +575,14 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\quad
 				0.
 			\]
-    %TODO (Zsuzsi) Declare that the dot is beta?
-		\item A \textbf{representation of a Lie algebra object} \(L\) in \(\mathcal{C}\) into an object \(V\) in \(\mathcal{C}\) is a morphism \(\rho: L \otimes V \to V\), such that
+			Here the trivalent vertex corresponds to the \(\beta\) the generalised bracket morphism.
+		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with a morphism \(\rho: M \otimes L \to M\), diagramatically denoted
+			\[
+				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
+			\]
+			such that
+			\[\rho \circ (\id \otimes \beta) = \rho \circ (\rho \otimes \id ) \circ (\id \otimes \tau).\]
+			Here the thick line denotes \(M\) and this type of trivalent vertex denotes \(\rho\). As a string diagram this becomes
 			\[
 				\def\svgscale{0.31}
 				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_s.pdf_tex}}
@@ -592,23 +598,98 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_u.pdf_tex}}
 				.
 			\]
-            %TODO (Zsuzsi) Again, explain the notation that $V$ is the thick line and $\rho$ is the trivalent vertex with two thick and one thin edges
-		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with the following modules over \(L\)...
-        %TODO (Zsuzsi) Incomplete?
+
+			Note that any right module \(M\) can be given a natural left-module structure by
+			\[\bar{\rho} = - \rho \circ \tau\]
+			justifying the diagrammatic rule
+			\[
+				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
+				\quad
+				=
+				\quad
+				-
+				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable_flipped.pdf}
+				\;
+				.
+			\]
+
+		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with a metric morphism \(m: L \otimes L \to k\) and Casimir morphism \(c: k \to L \otimes L\) which abstract the metric and Casimir of Lie algebras in \(\mathbf{Vect}\) by satisfying
+			\[(\id \otimes c) \circ (m \otimes \id) = \id = (c \otimes \id) \circ (\id \otimes m)\]
+			and
+			\[m = \tau \circ m \quad \text{and} \quad c = c \circ \tau.\]
+			Diagramatically, these are
+			\[
+				\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric_no_dot.pdf}
+				\qquad \text{and} \qquad
+				\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir_no_dot.pdf}\ .
+			\]
+			(like before these morphisms allow us to drop arrows on the thin lines) satisfying
+			\[
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_relation_left.pdf}
+				\quad
+				=
+				\quad
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_relation_middle.pdf}
+				\quad
+				=
+				\quad
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_relation_right.pdf}
+				\quad
+			\]
+			and the second and third relations assert that the diagrams are symmetric.
+		\item A monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A^{\vee} \otimes A\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
+			\[(\id_{A} \circ \epsilon) \circ (\iota_{A} \circ \id_{A}) = \id_{A}\]
+			and
+			\[(\epsilon \circ \id_{A}) \circ (\id_{A} \circ \iota_{A}) = \id_{A^{\vee}}\]
+			Diagramatically, these are
+			\[
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_snake.pdf}
+				\quad
+				=
+				\quad
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_id.pdf}
+				\qquad
+				\text{and}
+				\qquad
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_dual_snake.pdf}
+				\quad
+				=
+				\quad
+				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_dual_id.pdf}
+				\;.
+			\]
+			
+			An object in a monoidal category \(\mathcal{C}\) is \textbf{rigid} if axioms above are satisfied just for that object without the whole category needing to be rigid.
 	\end{enumerate}
 \end{definitions}
 
-We will give various concrete examples of Lie algebra objects in different symmetric tensor categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
+For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may be turned into a (right) module by asserting that the module action commutes with the evaluation and coevaluation (that is evaluation and coevaluation are module maps). Diagramatically,
+\[
+	\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_module_dual.pdf}
+	\quad
+	=
+	\quad
+	-
+	\quad
+	\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_eval_coeval_module_maps.pdf}
+	.
+\]
+\begin{shaded}
+	Question: How do I explain the minus sign here? I imagine it's to do wth the minus sign in left/right module statement above.
+\end{shaded}
+
+We will give various concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
 	% TODO: Check that all the ajectives have been defined, or at least thought about.
-	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(\eta\) a dualisable representation.
+	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of modules over \(L\)).
 	Then there is a weight system
-	\[W_{L, \eta}: \mathcal{A} \longrightarrow \mathcal{C}(k, k) \cong k.\]
+	\[W_{L, M}: \mathcal{A} \longrightarrow \mathcal{C}(k, k).\]
+	If \(\mathcal{C}\) is \(k\)-linear, then this is a \(k\)-valued weight system
+	\[W_{L, M}: \mathcal{A} \longrightarrow k.\]
 \end{theorem}
-\begin{proof}
-	Similar to the proof of the construction... %TODO (Zsuzsi) Incomplete?
-\end{proof}
+
+The proof of this theorem is exactly the same as the proof of construction \ref{cons:lie-algebra-weight-system}, but considering everything in the generality of \(\mathcal{C}\) rather than \(\mathbf{Vect}\). It is proved in \cite{on-the-rozansky-witten-weight-systems}.
 
 The difference between this construction and Construction \ref{cons:lie-algebra-weight-system} is the treatment of the symmetry natural isomorphism \(\tau\) which tells us what isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity (as it was in the original construction) corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. In other words, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
 

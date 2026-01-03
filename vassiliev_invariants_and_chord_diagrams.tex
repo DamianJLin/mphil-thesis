@@ -1,7 +1,7 @@
 \chapter{Vassiliev invariants and chord diagrams}
 \label{ch:vassiliev-invariants-and-chord-diagrams}
 
-\lettrine{\libertineInitialGlyph{P}}{olynomial}s are a special type of function: they are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
+\lettrine{\libertineInitialGlyph{P}}{olynomials} are a special type of function: they are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
 
 In a similar way, the Vassiliev knot invariants are a special type of knot invariant. This analogy, first made by Dror Bar-Natan in \cite{on-the-vassiliev-knot-invariants} is in no way superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above. They are also conjectured to enjoy the third, at the very least being able to approximate many well-known invariants, for example the Conway and Jones polynomials.
 
@@ -164,13 +164,17 @@ Recall from the introduction that \(m\)-singular knots are components of the str
 % TODO: Currently this is not in the introduction. Decide whether to introduce it here instead.
 
 \begin{definition}
-	A \textbf{singular isotopy} \(\Psi(t)\) of \(m\)-singular knots is a path in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularities give the signs of the corresponding intersection.
-	% TODO: There is currently a notion of singular isotopy in the first paragraphs of this chapter. Perhaps say something like "We provide a proper definition in x.x.x"
+	A \textbf{singular isotopy} \(\Psi\) of \(m\)-singular knots is a path \(\Psi(t), t \in [0, 1]\) in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularities give the signs of the corresponding intersection.
+
+	A singular isotopy is \textbf{closed} if \(\Psi(0) = \Psi(1)\).
 \end{definition}
 
-\begin{shaded}
-	Figure: singular isotopy.
-\end{shaded}
+For example in terms of our pictorial representation of the strata from the introduction a singular isotopy might look like the following.
+\[
+	\def\svgscale{0.25}
+	\adjustbox{valign=c}{\input{graphics/singular_isotopy_example.pdf_tex}}
+\]
+
 
 Let us rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}_{\star} = \singularknots_{\star}\). Differentiation takes an invariant \(Q\) of \(m\)-singular knots and defines an invariant \(Q'\) of \((m + 1)\)-singular knots. The values of \(Q'\) on the \((m + 1)\)-singular knot \(k^{\bullet}\) is the difference of values of \(Q\) on the combination of \(m\)-singular knots \(\partial k^{\bullet}\). Therefore if \(\Psi(t)\) is a singular isotopy of \(m\)-singular knots from \(k^{\bullet}_{0}\) to \(k^{\bullet}_{1}\), with singularity set \(\{\Psi_{s} : s \in I\}\), we have
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} Q'(\Psi_{s}).\]
