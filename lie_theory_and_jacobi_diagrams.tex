@@ -638,9 +638,9 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 			\]
 			and the second and third relations assert that the diagrams are symmetric.
 		\item A monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A^{\vee} \otimes A\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
-			\[(\id_{A} \circ \epsilon) \circ (\iota_{A} \circ \id_{A}) = \id_{A}\]
+			\[(\id_{A} \otimes \epsilon) \circ (\iota \otimes \id_{A}) = \id_{A}\]
 			and
-			\[(\epsilon \circ \id_{A}) \circ (\id_{A} \circ \iota_{A}) = \id_{A^{\vee}}\]
+			\[(\epsilon \otimes \id_{A^{\vee}}) \circ (\id_{A^{\vee}} \otimes \iota) = \id_{A^{\vee}}\]
 			Diagramatically, these are
 			\[
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_snake.pdf}
@@ -1386,26 +1386,26 @@ In \(\mathcal{A}\) there are no such relations. In fact, there are not even any 
 \begin{definitions}
 	\label{def:external-tensor-algebra}
 	The \textbf{external tensor algebra of the algebra \(A\) over the operad \(\mathcal{O}\)} is the algebra
-		\[T(\mathcal{O}, A) = \bigoplus_{n \in \mathbb{N}} \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n}).\]
-		Let \(o_{a} \otimes_{S_{n}} \alpha \in \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n})\), and \(o_{b} \otimes_{S_{n}} \beta \in \mathcal{O}(m + 1) \otimes_{S_{n}} \Gamma(A^{\otimes m})\). Their product is given by the composition
-		\[
-			\def\svgscale{0.35}
-			\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_a.pdf_tex}}
-			\quad
-			\cdot
-			\quad
-			\def\svgscale{0.35}
-			\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_b.pdf_tex}}
-			\quad
-			=
-			\quad
-			\def\svgscale{0.35}
-			\raisebox{-40pt}{\input{graphics/external_tensor_algebra_product.pdf_tex}}
-		\]
-		so by the formula
-		\[
-			(o_{a} \otimes_{S_{n}} \alpha) \cdot (o_{b} \otimes_{S_{n}} \beta) = (o_{a} \circ_{1} o_{b}) \otimes_{S_{n}} (\alpha \otimes \beta).
-		\]
+	\[T(\mathcal{O}, A) = \bigoplus_{n \in \mathbb{N}} \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n}).\]
+	Let \(o_{a} \otimes_{S_{n}} \alpha \in \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n})\), and \(o_{b} \otimes_{S_{n}} \beta \in \mathcal{O}(m + 1) \otimes_{S_{n}} \Gamma(A^{\otimes m})\). Their product is given by the composition
+	\[
+		\def\svgscale{0.35}
+		\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_a.pdf_tex}}
+		\quad
+		\cdot
+		\quad
+		\def\svgscale{0.35}
+		\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_b.pdf_tex}}
+		\quad
+		=
+		\quad
+		\def\svgscale{0.35}
+		\raisebox{-40pt}{\input{graphics/external_tensor_algebra_product.pdf_tex}}
+	\]
+	so by the formula
+	\[
+		(o_{a} \otimes_{S_{n}} \alpha) \cdot (o_{b} \otimes_{S_{n}} \beta) = (o_{a} \circ_{1} o_{b}) \otimes_{S_{n}} (\alpha \otimes \beta).
+	\]
 \end{definitions}
 
 Recall that since \(A\) is an \(\mathcal{O}\)-algebra it comes equipped with maps
@@ -1418,7 +1418,7 @@ and applying the functor global section functor, we have maps
 
 \begin{definitions}
 	\label{def:external-enveloping-algebra}
-	The \textbf{external enveloping algebra \(U(\mathcal{O}, A)\) of the algebra \(A\) over the operad \(\mathcal{O}\)},  is the quotient of \(T(\mathcal{O}, A)\) by the weakest equivalence relation making the following diagram commute for all \(n, m_{1}, \dots, m_{n} \in \mathbb{N}\).
+	The \textbf{external enveloping algebra \(U(\mathcal{O}, A)\) of the algebra \(A\) over the operad \(\mathcal{O}\)} is the quotient of \(T(\mathcal{O}, A)\) by the weakest equivalence relation making the following diagram commute for all \(n, m_{1}, \dots, m_{n} \in \mathbb{N}\).
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXG1hdGhjYWx7T30oMSArIG4pIFxcb3RpbWVzIFxcZGlzcGxheXN0eWxlXFxiaWdvdGltZXNfe2kgPSAxfV57bn1cXG1hdGhjYWx7T30obV97aX0pXFxvdGltZXMgXFxHYW1tYShBXntcXG90aW1lc1xcc3VtX3tpfW1fe2l9fSkiXSxbMCwyLCJcXG1hdGhjYWx7T30oMSArIChcXHN1bV97aX1tX3tpfSkpIFxcb3RpbWVzIFxcR2FtbWEoQV57XFxvdGltZXMgXFxzdW1fe2l9bV97aX19KSJdLFsyLDAsIlxcbWF0aGNhbHtPfSgxICsgbikgXFxvdGltZXMgXFxHYW1tYShBXntcXG90aW1lcyBufSkiXSxbMiwyLCJUKFxcbWF0aGNhbHtPfSwgQSkiXSxbMCwxLCJcXGNpcmNfezJ9IFxcb3RpbWVzIFxcY2RvdHNcXG90aW1lc1xcY2lyY197bisxfSIsMl0sWzAsMiwiXFxpZCBcXG90aW1lcyBcXG11X3sobV97MX0sIFxcZG90cywgbV97bn0pfSJdLFsxLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzIsMywiIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJib3R0b20ifX19XV0=
 	\[\begin{tikzcd}
 		{\mathcal{O}(1 + n) \otimes \displaystyle\bigotimes_{i = 1}^{n}\mathcal{O}(m_{i}) \otimes \Gamma(A^{\otimes\sum_{i}m_{i}})} && {\mathcal{O}(1 + n) \otimes \Gamma(A^{\otimes n})} \\

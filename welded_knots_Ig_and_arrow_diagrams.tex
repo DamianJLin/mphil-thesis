@@ -322,36 +322,43 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
 
 \begin{definition}
-	Let \(X = (X, \beta)\) be a Lie algebra object in the \(k\)-linear symmetric monoidal category \(\mathcal{C}\). We define a \(2\)-coloured prop \(\mathbf{T}(X, \beta)\), or just \(\mathbf{T}_{X}\).
+	We define a two-coloured prop \(\mathbf{T}_{m}\). Its generating objects are \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
 
-	Its generating objects are \(X\) which we write as \(\mathbf{1}\), and another object \(\mathbf{1}^{\vee}\). Define
-	\[\mathbf{I} = \mathbf{1} \otimes \mathbf{1}^{\vee} \in \mathbf{T}_{X}\]
-	and we denote \(\mathbf{I}^{\otimes n}\) as \(\mathbf{nI}\).
-
-	For its generating morphisms, we have
-	\[\beta: \mathbf{1} \otimes \mathbf{1} \longrightarrow \mathbf{1}\]
+	The symmetric monoidal category \(\mathbf{T}_{m}\) generating morphisms
+	\[
+		\mathbf{T}_{m}(\mathbf{k}, \mathbf{n})
+		=
+		\bigoplus_{f: [k] \to [n]}
+		\bigotimes_{i = 1}^{n}
+		\mathcal{O}_{\text{Lie}}(|f^{-1}(i)|)
+		,
+	\]
+	as well as \(c \in \mathbf{T}_{m}(\mathbf{0}, \mathbf{1}^{\vee} + \mathbf{1})\) and \(m \in \mathbf{T}_{m}(\mathbf{1}^{\vee} + \mathbf{1}, \mathbf{0})\)
+	satisfying the relations induced by \(\mathcal{O}_{\text{Lie}}\) and the relations
+	\[(\id_{\mathbf{1}} \otimes c) \circ (m \otimes \id_{\mathbf{1}}) = \id_{\mathbf{1}}\]
 	and
-	\[\alpha: \mathbf{1}^{\vee} \otimes \mathbf{1} \longrightarrow \mathbf{1}^{\vee}\]
-	and one further generating morphism
-	\[\gamma: \mathbf{0} \longrightarrow \mathbf{I} \otimes \mathbf{I}\]
-	satisfying some following conditions.
-
-	\begin{enumerate}
-		\item The morphism \(\beta\) satisfies the relations satisfied by \(\beta\) in \(\mathcal{C}\).
-		\item Let \(\sigma'\) be the extension of the action of the permutation \(\sigma \in S_{2}\) to \(S_{3}\).
-			\[\sigma'(\beta_{13}) = \alpha_{23}, \sigma'(\alpha_{23}) = -\alpha_{14}, \sigma(-\alpha_{14}) = \beta_{13}\]
-\end{enumerate}
+	\[(c \otimes \id_{\mathbf{1}^{\vee}}) \circ (\id_{\mathbf{1}^{\vee}} \otimes m) = \id_{\mathbf{1}^{\vee}}\]
+	(that is, \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\) are rigid with coevaluation and evaluation maps \(c\) and \(m\) respectively).
 \end{definition}
 
-\begin{theorem}
-	The bialgebra \(\mathcal{A}_{w}\) of arrow diagrams is naturally isomorphic as a bialgebra to the external enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\).
-\end{theorem}
+The theorem of Hinich-Vaintrob in the classical case is the isomorphism between \(\mathcal{A}\) and the generalisation \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) of a universal enveloping algebra. It is important to note the implicit dependence of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) (and also \(T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\), from which it is defined) on the category \(\mathbf{E}_{c} \ni \mathbf{1}_{c}\). In Definition \ref{def:external-tensor-algebra}, this is hidden in the notation \(\Gamma(\mathbf{n}_{c}) = \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\).
 
-\begin{shaded}
-	\textbf{Problem}: Unless we connect the bracket to the coadjoint somehow there's no way we can get an isomorphism (same diagram will have multiple correspoding tensor elements). However it seems without working in the metric envelope, that's not possible.
+For a welded version of this statement, the corresponding associative algebra should generalise \(\mathcal{U}(I\mathfrak{g})\) and therefore must contain associative products of elements of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). This nececcitates the definition of a categorical generalisation of \(\mathcal{U}(I\mathfrak{g})\).
 
-	One possible way to fix it: have 3 morphisms and assert that the extension of the \(S_{n}\) action permutes them... But then this feels like we should be working in a 1-coloured prop.
-\end{shaded}
+\begin{definition}
+	\label{def:external-bivariant-tensor-algebra}
+	The \textbf{external bivariant tensor algebra \(T_{\ast}(\mathcal{O}, A)\) of the rigid algebra \(A\) over the operad \(\mathcal{O}\)} is the algebra
+	\[T_{\ast}(\mathcal{O}, A) = \bigoplus_{n \in \mathbb{N}} \left( \mathcal{O}(n + 1) \otimes_{S_{n}} \bigoplus_{w \in \{A, A^{\vee}\}^{\otimes n}}\Gamma(w) \right).\]
+
+	Note that since \(A\) is rigid, it has a unique dual, so this is well-defined.
+\end{definition}
+
+Similarly, we generalise the external universal enveloping algebra to allow associative products of elements of an algebra or its dual.
+
+\begin{definition}
+	\label{def:external-bivariant-enveloping-algebra}
+	The \textbf{external bivariant tensor algebra \(U_{\ast}(\mathcal{O}, A)\) of the rigid algebra \(A\) over the operad \(\mathcal{O}\)} is the quotient of \(T_{\ast}(\mathcal{O}, A)\) by the weakest equivalence relation making the following diagram commute for all \(n, m_{1}, \dots, m_{n} \in \mathbb{N}\).
+\end{definition}
 
 \begin{shaded}
 \begin{proof}
