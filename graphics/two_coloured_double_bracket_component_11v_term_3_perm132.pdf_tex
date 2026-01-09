@@ -1,0 +1,101 @@
+%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'two_coloured_double_bracket_component_11v_term_3_perm132.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{403.51483154bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.70061382)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{two_coloured_double_bracket_component_11v_term_3_perm132.pdf}}%
+    \put(0.28926658,0.93988606){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.37357059,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.12066522,0.93988606){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.28926992,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.71078499,1.32820695){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.62648436,1.32820695){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.62647283,0.93928125){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.54217215,0.93928125){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.20496919,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.45787133,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.45787133,1.51350079){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.62642934,1.51350068){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.03636771,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.12066847,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.20496588,0.93988606){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.37357062,0.93928125){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.37357059,1.51350079){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{two_coloured_double_bracket_component_11v_term_3_perm132.pdf}}%
+    \put(0.71071557,1.51350578){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.45787137,0.93928125){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.54217204,1.32820698){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.54217204,1.51350075){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{two_coloured_double_bracket_component_11v_term_3_perm132.pdf}}%
+    \put(0.7107769,0.18425825){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.6264729,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.87937832,0.18425829){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.71077357,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.79507432,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.54217212,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.96367581,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.87937507,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.79507765,0.18425829){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.6264729,0.18365356){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.87940002,0.00060473){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.54217208,0.18365356){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.45787141,0.5725791){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{two_coloured_double_bracket_component_11v_term_3_perm132.pdf}}%
+    \put(0.62641493,1.69879961){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.54211419,1.69879961){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.45782418,1.69879961){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.37352343,1.69879961){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.71071556,1.69879957){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{two_coloured_double_bracket_component_11v_term_3_perm132.pdf}}%
+  \end{picture}%
+\endgroup%

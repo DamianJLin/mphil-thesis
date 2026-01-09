@@ -368,24 +368,217 @@ Again however, there is the problem that \(\mathbf{T}_{m}\) also describes arrow
 	\]
 	which in terms of string diagrams are
 	\[
-		\def\svgscale{0.52}
+		{\scriptsize
+		\def\svgscale{0.38}
 		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left.pdf_tex}}
+		}
 		\qquad
 		\text{and}
 		\qquad
-		\def\svgscale{0.52}
+		{\scriptsize
+		\def\svgscale{0.38}
 		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right.pdf_tex}}
+		}
 	\]
 	respectively.
 \end{definition}
 
+Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). We will define a morphism \(y: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) that makes \(\mathbf{I}\) into a Lie algebra object in \(\mathbf{T}_{c}\). Note that by the \(k\)-linearity of \(\mathbf{T}_{c}\), a map of sigature \(\mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) is determined by eight maps of similar signature between objects \(\mathbf{1}^{\vee}\) or \(\mathbf{1}\). Indeed expanding \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1}\), we get that
+\[
+	y
+	:
+	(\mathbf{1}^{\vee} \otimes \mathbf{1}^{\vee})
+	\oplus
+	(\mathbf{1}^{\vee} \otimes \mathbf{1})
+	\oplus
+	(\mathbf{1} \otimes \mathbf{1}^{\vee})
+	\oplus
+	(\mathbf{1} \otimes \mathbf{1})
+	\longrightarrow
+	\mathbf{1}^{\vee} \oplus \mathbf{1}
+	.
+\]
+
 \begin{proposition}
-	Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\), and let \(\beta_{\mathbf{I}}: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) be given by
+	Let \(y: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) be the morphism whose only nonzero components in the above decomposition are in components \({\mathbf{1} \otimes \mathbf{1} \to \mathbf{1}}\), \({\mathbf{1} \otimes \mathbf{1}^{\vee} \to \mathbf{1}^{\vee}}\) and \({\mathbf{1}^{\vee} \otimes \mathbf{1} \to \mathbf{1}^{\vee}}\) and let it be given by
 	\[
-	\beta_{\mathbf{I}} = \beta \oplus a_{\ell} \oplus a_{r}.
+		y = \beta \oplus a_{\ell} \oplus a_{r}.
 	\]
 	Then \(\mathbf{I}\) is a Lie algebra object of \(\mathbf{T}_{c}\) with morphism \(\beta_{\mathbf{I}}\).
 \end{proposition}
+
+\begin{proof}
+	% TODO: Don't forget antisymmetry too.
+	We need that \((y \circ (y \otimes \id_{\mathbf{I}})) \circ (1 + \tau_{123} + \tau_{132}) = 0\).
+
+	We have
+	\[
+		y
+		\quad
+		=
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket.pdf_tex}}
+		}
+		\quad
+		+
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left.pdf_tex}}
+		}
+		\quad
+		+
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right.pdf_tex}}
+		}
+		\quad
+		.
+	\]
+
+	We first compute \(y \circ (y \otimes \id_{\mathbf{I}})\). There are nine terms to consider, but some vanish due to being in different components of the direct sum --- only those terms where the output object of the first morphism matches the input morphism of the second morphism are non-zero. Take for example \(a_{r} \circ (\beta \otimes \id_{\mathbf{I}}) = 0\). Of the nine terms, only four fail to vanish for this reason. Namely,
+	\[
+		y \circ (y \otimes \id_{\mathbf{I}})
+		=
+		\beta \circ (\beta \otimes \id_{\mathbf{I}})
+		+
+		\beta \circ (a_{\ell} \otimes \id_{\mathbf{I}})
+		+
+		a_{\ell} \circ (a_{r} \otimes \id_{\mathbf{I}})
+		+
+		a_{r} \circ (a_{r} \otimes \id_{\mathbf{I}})
+		.
+	\]
+	The string-diagrammatic version of this expression is
+	\[
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_term_1.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_term_2.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_term_3.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_term_4.pdf_tex}}
+		}
+		\mspace{9mu}
+		.
+	\]
+	It remains to show precomposing this expression with \((1 + \tau_{123} + \tau_{132})\) gives the zero morphism from \(\mathbf{I} \otimes \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\).
+
+	Indeed, for the first term we have
+	\[\beta \circ (\beta \otimes \id_{\mathbf{I}}) \circ (1 + \tau_{123} + \tau_{132})  = 0\]
+	from the fact that \(\mathbf{1}\) is a Lie algebra object with morphism \(\beta\).
+
+	Note here that if \(\mathbf{x}, \mathbf{y}, \mathbf{z} \in \{\mathbf{1}, \mathbf{1}^{\vee}\}\) and \(f: \mathbf{x} \otimes \mathbf{y} \otimes \mathbf{z} \to \mathbf{1}^{\vee}\) then \(f \circ (1 + \tau_{123} + \tau_{132})\) has components in \(\mathbf{x} \otimes \mathbf{y} \otimes \mathbf{z} \to \mathbf{1}^{\vee}\), \(\mathbf{y} \otimes \mathbf{z} \otimes \mathbf{x} \to \mathbf{1}^{\vee}\) and \(\mathbf{z} \otimes \mathbf{x} \otimes \mathbf{y} \to \mathbf{1}^{\vee}\). Therefore, the analysis with the remaining three terms is not as simple, as the domains are not cyclically invariant tensor products in \(\{\mathbf{1}, \mathbf{1}^{\vee}\}\).
+
+	It remains to show that
+	\[(\beta \circ (a_{\ell} \otimes \id_{\mathbf{I}}) + a_{\ell} \circ (a_{r} \otimes \id_{\mathbf{I}}) + a_{r} \circ (a_{r} \otimes \id_{\mathbf{I}})) \circ (1 + \tau_{123} + \tau_{132})\]
+	vanishes. This morphism in \(\mathbf{T}_{c}(\mathbf{I} \otimes \mathbf{I} \otimes \mathbf{I}, \mathbf{I})\) only has components in \(\mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\), \(\mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee} \otimes \mathbf{1}, \mathbf{1}^{\vee})\) and \(\mathbf{T}_{c}(\mathbf{1}^{\vee} \otimes \mathbf{1} \otimes \mathbf{1}, \mathbf{1}^{\vee})\) so it suffices to check these components.
+
+	We provide the calculation in the \(\mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\) component --- the proof that the other components follow from similar arguments. Indeed in \(\mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\) we have the contributions
+	\[
+		\beta \circ (a_{\ell} \otimes \id_{\mathbf{I}}) \circ 1
+		+
+		a_{\ell} \circ (a_{r} \otimes \id_{\mathbf{I}}) \circ \tau_{132}
+		+
+		a_{r} \circ (a_{r} \otimes \id_{\mathbf{I}}) \circ \tau_{123}
+		.
+	\]
+	Diagramatically, that is
+	\[
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_2_id.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_3_perm132.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_4_perm123.pdf_tex}}
+		}
+		\mspace{9mu}
+		.
+	\]
+	Simplifying these terms via the rigidity relations of Definiton \ref{def:internal-to-additive-monoidal-category} \ref{def:rigid-category-and-object} as well as the antisymmetry of the bracket \(\beta\), we arrive at
+	\[
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_2_id_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_3_perm132_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+	\]
+	(specifically, the first and third terms are simplified only by the rigidity relations, while the second term is simplified by the rigidity relations and two applications of the antisymmetry of \(\beta\)). Finally, \(\beta\) is a Lie algebra object in \(\mathbf{T}_{c}\), and since the three terms in this expression factor through the generalised Jacobi identity for \(\beta\), we have
+	\[
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_2_id_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_3_perm132_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+		+
+		\mspace{9mu}
+		{\tiny
+		\def\svgscale{0.30}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf_tex}}
+		}
+		\mspace{9mu}
+		=
+		\mspace{9mu}
+		0
+	\]
+	completing the proof.
+\end{proof}
 
 \begin{shaded}
 \begin{proof}

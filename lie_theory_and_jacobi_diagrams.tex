@@ -538,6 +538,7 @@ One might notice that the hexagon relation involves only three terms, rather tha
 If a monoidal category \(\mathcal{C}\) is additionally additive, we can define Lie algebra objects internal to \(\mathcal{C}\).
 
 \begin{definitions}
+	\label{def:internal-to-additive-monoidal-category}
 	\begin{enumerate}
 		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
@@ -637,7 +638,9 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\quad
 			\]
 			and the second and third relations assert that the diagrams are symmetric.
-		\item A monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
+		\item
+			\label{def:rigid-category-and-object}
+			A monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
 			\[(\id_{A} \otimes \epsilon) \circ (\iota \otimes \id_{A}) = \id_{A}\]
 			and
 			\[(\epsilon \otimes \id_{A^{\vee}}) \circ (\id_{A^{\vee}} \otimes \iota) = \id_{A^{\vee}}\]

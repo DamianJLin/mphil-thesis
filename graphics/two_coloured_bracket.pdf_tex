@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{231.71089172bp}%
+    \setlength{\unitlength}{93.92375183bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,19 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.68045719)%
+  \begin{picture}(1,1.6786951)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{two_coloured_bracket.pdf}}%
-    \put(0.35694511,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
-    \put(0.65055734,0.00105307){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
-    \put(0.6505573,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
-    \put(0.06333285,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
-    \put(0.21013901,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
-    \put(0.94416962,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
-    \put(0.35694511,0.00105312){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
-    \put(0.5037512,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
-    \put(0.79736352,0.67729781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
-    \put(0.5037512,0.00105312){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.50007934,0.00259814){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.86226585,1.67090089){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.50009366,1.67090089){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.13792122,1.67090081){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%

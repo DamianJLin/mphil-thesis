@@ -1,0 +1,113 @@
+%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{299.74118042bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,2.04676785)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.50290468,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.61639564,1.29578655){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.27595013,0.25025142){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.38944108,0.7730133){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.2759546,0.7730133){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.16246811,0.7730132){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.50292769,0.7730133){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.38944111,0.2494372){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.61642974,0.2494372){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.50292774,0.2494372){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.61641422,0.7730133){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.72988206,1.29578655){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.84335464,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.61639558,1.54523113){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.84338636,1.54523088){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.72988206,1.54523108){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.50290478,2.04432553){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.72986781,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.50284608,1.79467554){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.16244513,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.27593167,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.38941828,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.38935966,1.54523103){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.27599266,1.54523088){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.16240094,1.54523103){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.0489144,1.54523103){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.84335444,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.27599266,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.04886941,1.79466879){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.27597838,2.04395964){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.0488551,2.04395282){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.16246811,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.38942693,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.38889127,2.04395964){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0.16246811,2.0439595){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\otimes\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{two_coloured_double_bracket_component_11v_term_4_perm123_simplified.pdf}}%
+    \put(0.95684112,1.54523088){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.95684112,1.79467561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.50290483,1.54523088){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.04888371,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\vphantom{^{\vee}}\mathbf{1}\)}}\end{tabular}}}}%
+    \put(0.95684112,1.2957865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.84338636,0.7730132){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.72986781,0.25026515){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+    \put(0.72986781,0.0008141){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\hphantom{^{\vee}}\mathbf{1}^{\vee}\)}}\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
