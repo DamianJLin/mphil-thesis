@@ -322,6 +322,7 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
 
 \begin{definition}
+	\label{def:2-coloured-casimir-prop}
 	We define a two-coloured prop \(\mathbf{T}_{m}\). Its generating objects are \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
 
 	The symmetric monoidal category \(\mathbf{T}_{m}\) generating morphisms
@@ -404,13 +405,10 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 	\[
 		y = \beta \oplus a_{\ell} \oplus a_{r}.
 	\]
-	Then \(\mathbf{I}\) is a Lie algebra object of \(\mathbf{T}_{c}\) with morphism \(\beta_{\mathbf{I}}\).
+	Then \(\mathbf{I}\) is a Lie algebra object of \(\mathbf{T}_{c}\) with morphism \(y\).
 \end{proposition}
 
 \begin{proof}
-	% TODO: Don't forget antisymmetry too.
-	We need that \((y \circ (y \otimes \id_{\mathbf{I}})) \circ (1 + \tau_{123} + \tau_{132}) = 0\).
-
 	We have
 	\[
 		y
@@ -436,10 +434,122 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right.pdf_tex}}
 		}
 		\quad
+	\]
+	(where here the trivalent vertex is \(\beta\)). There are two statements to prove:
+	\begin{enumerate}
+		\item
+			\label{prf:generalised-antisymmetry-y}
+			The generalised antisymmetry of \((\mathbf{I}, y)\), namely
+			\[y + y \circ \tau = 0\]
+		\item
+			\label{prf:generalised-jacobi-y}
+			The generalised Jacobi identity of \((\mathbf{I}, y)\), namely
+			\[(y \circ (y \otimes \id_{\mathbf{I}})) \circ (1 + \tau_{123} + \tau_{132}) = 0.\]
+	\end{enumerate}
+
+	For the proof of \ref{prf:generalised-antisymmetry-y}, observe that \(t + y \circ \tau\) contains six terms:
+	\(\beta + \beta \circ \tau \in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}, \mathbf{1})\),
+	\(a_{\ell} + a_{r} \circ \tau \in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\) and
+	\(a_{r} + a_{\ell} \circ \tau \in \mathbf{T}_{c}(\mathbf{1}^{\vee} \otimes \mathbf{1}, \mathbf{1})\).
+	It suffices to check that each of these components are zero.
+
+	In the component \(\mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}, \mathbf{1})\), we have \(\beta + \beta \circ \tau = 0\). This relation is simply the antisymmetry of the bracket \(\beta\) (with which \(\mathbf{1}\) is a Lie algebra object in \(\mathbf{T}_{c}\)) --- in terms of string diagrams this is
+	\[
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket.pdf_tex}}
+		}
+		\quad
+		+
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket_braided.pdf_tex}}
+		}
+		\quad
+		=
+		\quad
+		0
 		.
 	\]
 
-	We first compute \(y \circ (y \otimes \id_{\mathbf{I}})\). There are nine terms to consider, but some vanish due to being in different components of the direct sum --- only those terms where the output object of the first morphism matches the input morphism of the second morphism are non-zero. Take for example \(a_{r} \circ (\beta \otimes \id_{\mathbf{I}}) = 0\). Of the nine terms, only four fail to vanish for this reason. Namely,
+	We also have \(a_{\ell} + a_{r} \circ \tau \in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\). Diagramatically this is
+	\[
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left.pdf_tex}}
+		}
+		\quad
+		+
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right_braided.pdf_tex}}
+		}
+		\quad
+		\in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})
+		.
+	\]
+	Substituting
+	\[
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket.pdf_tex}}
+		}
+		\quad
+		=
+		\quad
+		-
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket_braided.pdf_tex}}
+		}
+	\]
+	into the first term, we get
+	\[
+		-
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left_with_twist_inserted.pdf_tex}}
+		}
+		\quad
+		=
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right_braided.pdf_tex}}
+		}
+		\quad
+		\in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})
+		.
+	\]
+	Indeed, the two diagrams are equal and therefore their difference is zero. This follows from the relation
+	\[
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket_equivariance.pdf_tex}}
+		}
+		\quad
+		=
+		\quad
+		-
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket_equivariance_simplified.pdf_tex}}
+		}
+	\]
+	which is a consequence of the fact that morphisms in \(\mathbf{T}_{c}\) are direct sums of elements of \(\mathcal{O}_{\text{Lie}}\) (Definition \ref{def:2-coloured-casimir-prop}), and the equivariance axioms of the Lie operad in Definition \ref{def:operad}.
+
+	Without loss of generality, the same argument proves that \(a_{r} + a_{\ell} \circ \tau = 0 \in \mathbf{T}_{c}(\mathbf{1}^{\vee} \otimes \mathbf{1}, \mathbf{1})\), completing the proof of \ref{prf:generalised-antisymmetry-y}.
+
+	Continuing on to the proof of \ref{prf:generalised-jacobi-y}, we first compute \(y \circ (y \otimes \id_{\mathbf{I}})\). There are nine terms to consider, but some vanish due to being in different components of the direct sum --- only those terms where the output object of the first morphism matches the input morphism of the second morphism are non-zero. Take for example \(a_{r} \circ (\beta \otimes \id_{\mathbf{I}}) = 0\). Of the nine terms, only four fail to vanish for this reason. Namely,
 	\[
 		y \circ (y \otimes \id_{\mathbf{I}})
 		=
@@ -580,16 +690,21 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 	completing the proof.
 \end{proof}
 
-\begin{shaded}
-\begin{proof}
-	We have
-	\begin{align*}
-		T(\mathcal{O}_{\text{Lie}}, \mathbf{I})
-		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \Gamma(\mathbf{nI}) \\
-		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \mathbf{T}_{X}(\mathbf{0}, \mathbf{nI}) \\
-		& \cong \bigoplus_{n \in \mathbb{N}} \mathbf{T}_{X}(\mathbf{0}, \mathbf{nI})
-	\end{align*}
-	where the isomorphism is from Lemma \ref{lem:lie-operad-left-skewed-tree-normal-form}.
-\end{proof}
-\end{shaded}
+\begin{corollary}
+	\label{cor:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism}
+	Let \(\mathbf{I}\) denote the Lie algebra object \(\mathbf{1} \oplus \mathbf{1}^{\vee}\) (with the morphism \(y\)) in the two-coloured prop \(\mathbf{T}_{c}\). The bialgerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered bialgebra.
+\end{corollary}
 
+\begin{proof}
+	The proof proceeds verbatim to the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}, but with \(\mathcal{A}\) replaced by \(\mathcal{A}_{w}\) and with \(\mathbf{1}\) replaced by \(\mathbf{I}\).
+\end{proof}
+
+A philosophical interepretation of this theorem is that the algebra \(\mathcal{A}_{w}\) behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\).
+
+Furthermore, for classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. For welded weight systems, this already follows from \cite[Theorem 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots contains exactly the same information as the Alexander polynomial, and recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\). Since every welded weight system factors through \(Z_{w}\), they all constructible via Construction \ref{cons:lie-algebra-weight-system} applied to the Lie superalgebra \(\mathfrak{gl}_{1|1}\). Corollary \ref{cor:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
+
+\begin{shaded}
+	Actually \cite[Theorem 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} says that the \(Z\) for welded knots is Alexander polynomial plus self-linking numbers (so I guess, Milnor invariants?) (arrow diagrams that are trees).
+
+	The Alexander polynomial factors through \(\mathfrak{gl}_{1|1}\), but what about Milnor invariants. My intuition tells me that trees should come from Lie algebras in which case the triviality still holds. Zsuzsi --- do you know if this is true?
+\end{shaded}
