@@ -42,7 +42,7 @@ If an \(m\)-singular knot invariant is differentiable, we can extend it to an in
 
 \begin{definition}
 	\label{def:derivative}
-	The \textbf{derivative} \(\delta\) of a differentiable \(m\)-singular knot invariant \(f\) is an \((m + 1)\)-singular knot invariant
+	The \textbf{derivative} \(\delta\) of a differentiable \(m\)-singular knot invariant \(f\) is an \({(m + 1)}\)-singular knot invariant
 	\[\delta f \left( \double \right) = f \left( \poscross \right) - f\left( \negcross \right).\]
 \end{definition}
 
@@ -158,9 +158,7 @@ The answers to the above questions are given precisely by the following spaces.
 \end{definitions}
 It may not be entirely obvious how these definitons provide answers to the questions above, but in the rest of this section we will illustrate this for the case \(\mathcal{O}_{\star} = \singularknots_{\star}\).
 
-% TODO: [Zsuzsi]: If you're referencing a figure, have the figure number (eventually)
-Recall from the introduction that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
-% TODO: Currently this is not in the introduction. Decide whether to introduce it here instead.
+Recall that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
 
 \begin{definition}
 	A \textbf{singular isotopy} \(\Psi\) of \(m\)-singular knots is a path \(\Psi(t), t \in [0, 1]\) in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularities give the signs of the corresponding intersection.
@@ -168,7 +166,7 @@ Recall from the introduction that \(m\)-singular knots are components of the str
 	A singular isotopy is \textbf{closed} if \(\Psi(0) = \Psi(1)\).
 \end{definition}
 
-For example in terms of our pictorial representation of the strata from the introduction a singular isotopy might look like the following.
+For example in terms of our pictorial representation of the strata from the introduction, a singular isotopy might look like the following.
 \[
 	\def\svgscale{0.25}
 	\adjustbox{valign=c}{\input{graphics/singular_isotopy_example.pdf_tex}}
@@ -1061,7 +1059,6 @@ The equivalence of Theorem \ref{thm:fundamental-theorem-restated} with Theorem \
 We can break the fundamental theorem up into two parts based on the direction of the map in \ref{thm:fundamental-theorem-restated}. The two maps being inverses gives the isomorphism. Historically one of the directions was shown first, by Vassiliev \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications}, and then later the direction due to Kontsevich \cite{vassilievs-knot-invariants}.
 
 \begin{center}
-	% TODO: Play with table formatting. Decide whether to add `axis labels' at top.
 	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
 		\hline
 		\textbf{Vassiliev}

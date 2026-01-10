@@ -400,13 +400,13 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 	.
 \]
 
-\begin{proposition}
+\begin{theorem}
 	Let \(y: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) be the morphism whose only nonzero components in the above decomposition are in components \({\mathbf{1} \otimes \mathbf{1} \to \mathbf{1}}\), \({\mathbf{1} \otimes \mathbf{1}^{\vee} \to \mathbf{1}^{\vee}}\) and \({\mathbf{1}^{\vee} \otimes \mathbf{1} \to \mathbf{1}^{\vee}}\) and let it be given by
 	\[
 		y = \beta \oplus a_{\ell} \oplus a_{r}.
 	\]
 	Then \(\mathbf{I}\) is a Lie algebra object of \(\mathbf{T}_{c}\) with morphism \(y\).
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
 	We have
@@ -690,21 +690,25 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 	completing the proof.
 \end{proof}
 
-\begin{corollary}
-	\label{cor:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism}
+We obtain as a corollary the following description of \(\mathcal{A}_{w}\).
+
+\begin{theorem}
+	\label{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism}
 	Let \(\mathbf{I}\) denote the Lie algebra object \(\mathbf{1} \oplus \mathbf{1}^{\vee}\) (with the morphism \(y\)) in the two-coloured prop \(\mathbf{T}_{c}\). The bialgerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered bialgebra.
-\end{corollary}
+\end{theorem}
 
 \begin{proof}
 	The proof proceeds verbatim to the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}, but with \(\mathcal{A}\) replaced by \(\mathcal{A}_{w}\) and with \(\mathbf{1}\) replaced by \(\mathbf{I}\).
 \end{proof}
 
-A philosophical interepretation of this theorem is that the algebra \(\mathcal{A}_{w}\) behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\).
+Recall that the raison d'etre of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} was to formalise the informal statement that ``the algebra \(\mathcal{A}\) of chord diagrams behaves like the universal enveloping algebra of a Lie algebra''. Interpreting Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} in the same manner, its statement becomes that ``the algebra \(\mathcal{A}_{w}\) or arrow diagrams behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\) of a Lie algebra \(\mathfrak{g}\)''.
 
-Furthermore, for classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. For welded weight systems, this already follows from \cite[Theorem 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots contains exactly the same information as the Alexander polynomial, and recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\). Since every welded weight system factors through \(Z_{w}\), they all constructible via Construction \ref{cons:lie-algebra-weight-system} applied to the Lie superalgebra \(\mathfrak{gl}_{1|1}\). Corollary \ref{cor:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
+\begin{remark}
+	For classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, for welded weight systems, this is already achieved as a corollary of \cite[Thm. 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots \(Z_{w}\) contains exactly the same information as the Alexander polynomial. Indeed, recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\), and since every welded weight system factors through \(Z_{w}\), they all factor through \(W_{\mathfrak{gl}_{1|1}}\). As such, all welded weight systems arise via Construction \ref{cons:lie-algebra-weight-system} from Lie superalgebras, specifically \(\mathfrak{gl}_{1|1}\). Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
+\end{remark}
 
 \begin{shaded}
-	Actually \cite[Theorem 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} says that the \(Z\) for welded knots is Alexander polynomial plus self-linking numbers (so I guess, Milnor invariants?) (arrow diagrams that are trees).
+	Actually \cite[Thm 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} says that the \(Z\) for welded knots is Alexander polynomial plus self-linking numbers (so I guess, Milnor invariants?) (arrow diagrams that are trees).
 
 	The Alexander polynomial factors through \(\mathfrak{gl}_{1|1}\), but what about Milnor invariants. My intuition tells me that trees should come from Lie algebras in which case the triviality still holds. Zsuzsi --- do you know if this is true?
 \end{shaded}

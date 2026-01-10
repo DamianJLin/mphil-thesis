@@ -121,8 +121,7 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 			If the vertex is not immediately adjacent to a univalent vertex, then it has some \(d\) trivalent vertices `in the way'. By applying \ref{eq:STU} to those vertices yields a sum of \(2^{d}\) diagrams, all identical except for differing by \ref{eq:AS}, now on a vertex adjacent to a univalent vertex.
 
 		\item
-			A similar argument applies. We give a sketch. If one of the two vertices of the \ref{eq:IHX} is adjacent to the skeleton, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices in each of the diagrams in the \ref{eq:IHX}, followed by a few applications of \ref{eq:AS}. Otherwise, there is a path of trivalent vertices in the way, and some \ref{eq:STU}s yield a sum of \(2^{d}\) diagrams in which at least one of the two vertices involved in the \ref{eq:IHX} is adjacent to the skeleton.
-			% TODO: (time permitting) figures.
+			A similar argument applies. We give a sketch. If one of the two vertices of the \ref{eq:IHX} is adjacent to the skeleton, then the result is a direct consequence of an \ref{eq:STU} on each of the vertices in each of the diagrams in the \ref{eq:IHX}, followed by a few applications of \ref{eq:AS} (computing the twelve diagrams from applying two \ref{eq:STU}s to the three diagrams in an \ref{eq:IHX} verifies this; the computation is given in \cite[Lem. 5.2.6]{introduction-to-vassiliev-invariants}). Otherwise, there is a path of trivalent vertices in the way, and some \ref{eq:STU}s yield a sum of \(2^{d}\) diagrams in which at least one of the two vertices involved in the \ref{eq:IHX} is adjacent to the skeleton, and so the argument above applies.
 \end{enumerate}
 \end{proof}
 
@@ -255,8 +254,6 @@ the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 \]
 
 Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), a hint at the Lie-theoretic structure emerges. The antisymmetry of the bracket, (drawn as a string diagram) looks like a directed version of \ref{eq:AS}. Similarly the string diagrammmatic Jacobi relation can be arranged into a directed version of \ref{eq:IHX}.
-
-% TODO: Decide whether we can be bothered to talk about representations also as vertices. We can also just weight systems into U(g) then take traces wrt a rep after.
 
 Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra so that it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\) --- this element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These tensors can be diagrammatically represented as additional bivalent vertices
 \[
@@ -684,7 +681,6 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 We will give various concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
-	% TODO: Check that all the ajectives have been defined, or at least thought about.
 	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of modules over \(L\)).
 	Then there is a weight system
 	\[W_{L, M}: \mathcal{A} \longrightarrow \mathcal{C}(k, k).\]
@@ -1661,5 +1657,4 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 	This proves the algebra isomorphism. The proof of the bialgebra isomorphism involves modular operads and we refer the reader to \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.
 \end{proofof}
 
-
-In the next chapter we look at a generalisation of this statement in the context of welded knots.
+Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} is a formalisation of the statement that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.

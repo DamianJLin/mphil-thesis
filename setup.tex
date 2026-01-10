@@ -20,7 +20,6 @@
 \usepackage{titling}
 \usepackage{titlesec}
 
-% TODO: Ensure starred and non-starred chapter titles are aligned or otherwise satisfying result
 \titlespacing*{\chapter}{0pt}{0pt plus -15pt}{0pt}
 
 \titleformat{\chapter}[display]
@@ -215,10 +214,9 @@
 
 % BIBLIOGRAPHY
 \emergencystretch=1em
-% TODO: Choose a bibstyle that makes titles rather than journal titles italicised.
 \usepackage[citestyle=alphabetic, bibstyle=ext-alphabetic]{biblatex}
 
-%TODO: Fix problem below
+% TODO: Fix punctuation surrounding citations also changing colour
 % This code to change the colour of brackets in citations doesn't work. It also colours surounding punctuation sometimes.
 % Modified from ext-alphabetic.cbx
 \DeclareCiteCommand{\cite}[{\color{CeruleanRef}\mkbibbrackets}]
