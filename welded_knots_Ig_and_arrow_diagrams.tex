@@ -538,8 +538,6 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 		\quad
 		=
 		\quad
-		-
-		\quad
 		{\scriptsize
 		\def\svgscale{0.38}
 		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket_equivariance_simplified.pdf_tex}}
@@ -697,8 +695,71 @@ We obtain as a corollary the following description of \(\mathcal{A}_{w}\).
 	Let \(\mathbf{I}\) denote the Lie algebra object \(\mathbf{1} \oplus \mathbf{1}^{\vee}\) (with the morphism \(y\)) in the two-coloured prop \(\mathbf{T}_{c}\). The bialgerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered bialgebra.
 \end{theorem}
 
+The proof follows the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}, but with \(\mathcal{A}\) replaced by \(\mathcal{A}_{w}\) and with \(\mathbf{1}\) replaced by \(\mathbf{I}\).
+
 \begin{proof}
-	The proof proceeds verbatim to the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}, but with \(\mathcal{A}\) replaced by \(\mathcal{A}_{w}\) and with \(\mathbf{1}\) replaced by \(\mathbf{I}\).
+	We denote objects \(\mathbf{I}^{\otimes n}\) in \(\mathbf{T}_{c}\) as \(\mathbf{nI}\). Recall the definition of \(T(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) as
+	\begin{align*}
+		T(\mathcal{O}_{\text{Lie}}, \mathbf{I})
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \Gamma(\mathbf{nI}) \\
+		& = \bigoplus_{n \in \mathbb{N}} \mathcal{O}_{\text{Lie}}(n + 1) \otimes_{S_{n}} \mathbf{T}_{c}(\mathbf{0}, \mathbf{nI}).
+	\end{align*}
+	Just as in the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}, by Lemma \ref{lem:lie-operad-left-skewed-tree-normal-form}, the \(kS_{n}\)-action on \(\mathcal{O}_{\text{Lie}}\), any element \(t \in T(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) may be uniquely written as
+	\[
+		t
+		=
+		\bigoplus_{n \in \mathbb{N}} L_{n + 1} \otimes_{S_{n}} A_{n}
+	\]
+	with \(L_{n + 1}\) the left-skewed bracket in \(\mathcal{O}_{\text{Lie}}(n + 1)\) and \(A_{n} \in \mathbf{T}_{c}(\mathbf{0}, \mathbf{nI})\). This defines a vector space isomorphism
+	\[
+		\begin{array}{rccc}
+			& T(\mathcal{O}_{\text{Lie}}, \mathbf{I})
+			& \longrightarrow
+			& \displaystyle \bigoplus_{n \in \mathbb{N}} \mathbf{T}_{c}(\mathbf{0}, \mathbf{nI})\\
+			& t
+			& \longmapsto
+			& \displaystyle \bigoplus_{n \in \mathbb{N}} A_{n}.
+		\end{array}
+	\]
+
+	We define the map \(f: T(\mathcal{O}_{\text{Lie}}, \mathbf{I}) \to \mathcal{A}_{w}\) as the above isomorphism composed with sending each \(A_{n}\) to the arrow diagram in \(\mathcal{A}_{w}\) that it presents.
+
+	Recall that by Definition \ref{def:external-enveloping-algebra}, the associative algebra \(U(\mathcal{O}, \mathbf{I})\) is a quotient of \(T(\mathcal{O}, \mathbf{I})\) by the weakest relations that assert the following diagram commutes for all \(n, m_{1}, \dots, m_{n} \in \mathbb{N}\).
+	\[\begin{tikzcd}
+		{\mathcal{O}_{\text{Lie}}(1 + n) \otimes \displaystyle\bigotimes_{i = 1}^{n}\mathcal{O}_{\text{Lie}}(m_{i}) \otimes \mathbf{T}_{c}(\mathbf{0}, \textstyle\sum_{i}\mathbf{m}_{i})} && {\mathcal{O}_{\text{Lie}}(1 + n) \otimes \mathbf{T}_{c}(\mathbf{0}, \mathbf{n})}\\
+		\\
+		{\mathcal{O}_{\text{Lie}}(1 + (\sum_{i}m_{i})) \otimes \mathbf{T}_{c}(\mathbf{0}, \textstyle\sum_{i}\mathbf{m}_{i})} && {T(\mathcal{O}_{\text{Lie}}, A)}
+		\arrow["{\id \otimes \eta_{(m_{1}, \dots, m_{n})}}", from=1-1, to=1-3]
+		\arrow["{\circ_{2} \otimes \cdots\otimes\circ_{n+1}}"', from=1-1, to=3-1]
+		\arrow[hook', from=1-3, to=3-3]
+		\arrow[hook, from=3-1, to=3-3]
+	\end{tikzcd}\]
+	Note that in the case \(n = 1, m_{1} = 2\) on the object \(y \otimes y \otimes X\) for arbitrary \(X \in \mathbf{T}_{c}(\mathbf{0}, \mathbf{2I})\), this enforces the regular \ref{eq:STU} of Example \ref{ex:stu-in-external-enveloping-algebra} as well as two variants, (corresponding to the three variants of \ref{eq:STU} in \(\mathcal{A}_{w}\)) and also the \ref{eq:TC} relation. The map \(f\) therefore factors through the quotient to \(U(\mathcal{O}, \mathbf{I})\).
+
+	The map \(f\) is clearly surjective --- every arrow diagram has an underlying chord diagram, which can be presented by a graph whose edges do not have local minima. The arrow diagram can therefore be presented with only directed Casimirs (caps), and trivalent two-in-one-out vertices. A morphism in \(\mathbf{T}_{c}(\mathbf{0}, \mathbf{n})\) is built by presenting the two-in-one-out vertices by morphisms
+	\[
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_bracket.pdf_tex}}
+		}
+		\quad
+		,
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left.pdf_tex}}
+		}
+		\quad
+		\text{and}
+		\quad
+		{\scriptsize
+		\def\svgscale{0.38}
+		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_right.pdf_tex}}
+		}
+	\]
+	and cups by the morphism \(c: \mathbf{0} \to \mathbf{I} \otimes \mathbf{I}\).
+
+	The map is injective because we have shown that \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) has the directed \ref{eq:STU} relations and the \ref{eq:TC} relation. Just like in the classical case, the \ref{eq:AS} and \ref{eq:IHX} relations follow from \ref{eq:STU}, so any equalities in \(\mathcal{A}\) are also observed in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\).
 \end{proof}
 
 Recall that the raison d'etre of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} was to formalise the informal statement that ``the algebra \(\mathcal{A}\) of chord diagrams behaves like the universal enveloping algebra of a Lie algebra''. Interpreting Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} in the same manner, its statement becomes that ``the algebra \(\mathcal{A}_{w}\) or arrow diagrams behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\) of a Lie algebra \(\mathfrak{g}\)''.
