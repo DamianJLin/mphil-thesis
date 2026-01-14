@@ -141,7 +141,7 @@ This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defi
 	\]
 \end{proposition}
 
-The result is standard --- see Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof. A corollary is the following result, which will be important later.
+The result is standard --- see for example Chapter 5.2 of \cite{introduction-to-vassiliev-invariants} for a proof. A corollary is the following result, which will be important later.
 
 \begin{proposition}
 	\label{prop:linear-jacobi-diagrams-cyclically-invariant}
@@ -151,7 +151,7 @@ The result is standard --- see Chapter 5.2 of \cite{introduction-to-vassiliev-in
 \begin{proof}
 	Let us draw the linearly ordered Jacobi diagrams on a line rather than a circle and let the univalent edge ordering be given by the order on the line. It suffices to prove that we can move the univalent vertex in the first place to the last place via the relations in \(\mathcal{A}\). Let us call this first univalent vertex of the original diagram the marked vertex, as its position will later change when relations are applied. We will mark it with a star.
 
-	By \ref{eq:STU}, the original diagram is equal to the diagram with the marked vertex moved into the second place, plus a diagram in which the marked vertex is now a trivalent vertex and attached above what was the second (but is now the first) univalent vertex:
+	By \ref{eq:STU}, the original diagram is equal to the diagram with the marked vertex moved into the second place, plus a diagram in which the marked vertex is now a trivalent vertex and attached above what was the second (but is now the first) univalent vertex: 
 	\[
 		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example.pdf}
 		\quad
@@ -178,7 +178,12 @@ The result is standard --- see Chapter 5.2 of \cite{introduction-to-vassiliev-in
 	\]
 	where \(\Theta\) is a sum of terms with the marked vertex now a trivalent vertex attached above each of the other univalent vertices. It suffices to show that \(\Theta\) vanishes.
 
-	We can split \(\Theta\) up based on which connected component the marked vertex now connects to. For connected components other than the connected component of the marked vertex, apply a vertical version of the the generalised \ref{eq:IHX}, where the the whole connected component is inside the grey box except for where the univalent vertices connect to the bottom line. This is the case of the generalised \ref{eq:IHX} where \(n = 0\) and no vertices leave. Hence, the sum vanishes for that connected component.
+	We can split \(\Theta\) up based on which connected component the marked vertex now connects to. For connected components other than the connected component of the marked vertex, apply a vertical version of the generalised \ref{eq:IHX} relation, 
+    %TODO (Zsuzsi) Reference Proposition 2.1.6 rather than (or in addition to) the original IHX
+    where the the whole connected component is inside the grey box
+    %TODO (Zsuzsi) I was looking for a grey box and found this very confusing because there was no picture corresponding to this paragraph. Then I realised you're referring to the grey box in Prop 2.1.6. A picture would help.
+    except for where the univalent vertices connect to the bottom line. This is the case of the generalised \ref{eq:IHX} where \(n = 0\) and no vertices leave. Hence, the sum vanishes for that connected component.
+    %TODO (Zsuzsi) I can sort of figure out what this means because I use the Generalised IHX daily. But it's not super clear.
 
 	This leaves only the terms where the marked vertex connects back to its own connected component. By a generalised \ref{eq:IHX} of the form
 	\[
@@ -188,7 +193,9 @@ The result is standard --- see Chapter 5.2 of \cite{introduction-to-vassiliev-in
 		\quad
 		\includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_lollipop.pdf}.
 	\]
+    %TODO (Zsuzsi) The last sentence is not a sentence. Also, where does the dotted end go? What are you summing over? Why is it equal to the other one? 
 	But any diagram with a ``balloon'' vanishes, as applying the \ref{eq:AS} relation to the vertex on the balloon, it is equal to its negative.
+    %TODO (Zsuzsi) You haven't defined balloon but I get it. It would be more precise to show the "balloon = 0" relation here.
 
 	Hence \(\Theta = 0\), completing the proof.
 \end{proof}
@@ -482,7 +489,9 @@ Indeed, the Lie action relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)
 \section{Non-Lie algebraic weight systems}
 \label{sec:non-lie-algebraic-weight-systems}
 
-Conjecture \ref{conj:lie-algebra-weight-systems-span} being false means that the \ref{eq:STU} relation describes more than the relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) for a representation \(\rho\) of a metric Lie algebra. In fact, Construction \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob with the purpose of constructing weight systems coming from metric Lie super-algebras, and further generalisations of Lie algebras.
+Conjecture \ref{conj:lie-algebra-weight-systems-span} being false means that the \ref{eq:STU} relation describes more than the relation \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) for a representation \(\rho\) of a metric Lie algebra. In fact, Construction \ref{cons:lie-algebra-weight-system} 
+%TODO (Zsuzsi) "of Lie algebra weight systems"
+is just one example of a more general construction introduced by Vogel and Vaintrob with the purpose of constructing weight systems coming from metric Lie super-algebras, and further generalisations of Lie algebras.
 
 The most general type of objects these constructions apply to are `Lie \(S\)-algebras' as coined by Vaintrob in \cite{vassiliev-knot-invariants-and-lie-s-algebras}, but we will follow the more modern approach of \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory} and will refer to them as Lie algebra objects in a symmetric monoidal category.
 
@@ -498,6 +507,7 @@ The most general type of objects these constructions apply to are `Lie \(S\)-alg
 	\[
 		 \otimes \circ (\otimes \times \operatorname{id}) \longrightarrow \otimes \circ (\operatorname{id} \times \otimes)  \quad \text{ and }\ \quad  \otimes \longrightarrow \operatorname{id}
 	\]
+    %TODO (Zsuzsi) The second of these can't be right
 	satisfying some relations known as the pentagon and triangle relations \cite[Sec. 1.2]{higher-operads-higher-categories}. The natural isomorphisms give isomorphisms
 	\[(A \otimes B) \otimes C \cong A \otimes (B \otimes C), \qquad k \otimes A \cong A \cong A \otimes k\]
 	for every tuple of objects \(A, B\) and \(C\) in \(\mathcal{C}\). If these isomorphisms are equalities, then \(\mathcal{C}\) is a \textbf{strict} monoidal category.
@@ -529,17 +539,19 @@ The most general type of objects these constructions apply to are `Lie \(S\)-alg
 			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
+%TODO (Zsuzsi) The last sentence (with several formulas embedded in it) is not a grammatical sentence 
 \end{definitions}
-One might notice that the hexagon relation involves only three terms, rather than the six that the name might suggest. This is because we have omited the reassociation natural isomorphisms that we can assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
+One might notice that the hexagon relation involves only three terms, rather than the six that the name suggests. This is because we have omited the reassociation natural isomorphisms that we assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
 
-If a monoidal category \(\mathcal{C}\) is additionally additive, we can define Lie algebra objects internal to \(\mathcal{C}\).
+If a monoidal category \(\mathcal{C}\) is additionally additive, we define Lie algebra objects internal to \(\mathcal{C}\).
 
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
 	\begin{enumerate}
 		\item A \textbf{Lie algebra object} in an additive symmetric monoidal category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
-			Graphically (in terms of the string diagrams of the previous section), this corresponds to
+			%TODO (Zsuzsi) You could call these the Jacobi and Antisymmetry relations (help the reader out a little)
+            Graphically (in terms of the string diagrams of the previous section), this corresponds to
 			\[
 				\def\svgscale{0.31}
 				\adjustbox{valign=c}{\input{graphics/jacobi_symmetric_arbitrary_monoidal_cat_xyz.pdf_tex}}
@@ -574,13 +586,16 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				0.
 			\]
 			Here the trivalent vertex corresponds to the generalised bracket morphism \(\beta\).
-		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with a morphism \(\rho: M \otimes L \to M\), diagramatically denoted
+            %TODO (Zsuzsi) Why generalised? (above you called it just bracket)
+		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with a morphism \(\rho: M \otimes L \to M\), 
+        %TODO (Zsuzsi) Call $\rho$ the action morphism
+        diagramatically denoted
 			\[
 				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 			\]
 			such that
 			\[\rho \circ (\id \otimes \beta) = \rho \circ (\rho \otimes \id) - \rho \circ (\rho \otimes \id ) \circ (\id \otimes \tau).\]
-			Here the thick line denotes \(M\) and this type of trivalent vertex denotes \(\rho\). As a string diagram this becomes
+			Here the thick line denotes \(M\) and this type of trivalent vertex denotes \(\rho\). As a string diagram the equation becomes
 			\[
 				\def\svgscale{0.31}
 				\adjustbox{valign=c}{\input{graphics/string_diagram_lie_action_arb_mon_cat_s.pdf_tex}}
@@ -610,8 +625,11 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\;
 				.
 			\]
+            %TODO (Zsuzsi) One of these pictures whould have a cross (swap of L and M) on top: in order for two pictures to be equal, the endpoints must be in the same positions. This should also help sort out your later question about the minus sign.
 
-		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with a metric morphism \(m: L \otimes L \to k\) and Casimir morphism \(c: k \to L \otimes L\) which abstract the metric and Casimir of Lie algebras in \(\mathbf{Vect}\) by satisfying
+		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with a metric morphism \(m: L \otimes L \to k\) and Casimir morphism \(c: k \to L \otimes L\) which abstract the metric and Casimir of Lie algebras in \(\mathbf{Vect}\) 
+        %TODO (Zsuzsi) somewhere before this you should say that Lie algebra objects in Vect are the actual Lie algebras
+        by satisfying
 			\[(\id \otimes c) \circ (m \otimes \id) = \id = (c \otimes \id) \circ (\id \otimes m)\]
 			and
 			\[m = \tau \circ m \quad \text{and} \quad c = c \circ \tau.\]
@@ -621,7 +639,9 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\qquad \text{and} \qquad
 				\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir_no_dot.pdf}\ .
 			\]
-			(like before these morphisms allow us to drop arrows on the thin lines) satisfying
+			(like before these morphisms allow us to drop arrows on the thin lines) 
+            %TODO I don't know, there haven't been any duals here and the arrows have been always going top to bottom... so, was there a need for arrows in the first place?
+            satisfying
 			\[
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_relation_left.pdf}
 				\quad
@@ -635,6 +655,7 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\quad
 			\]
 			and the second and third relations assert that the diagrams are symmetric.
+            %TODO (Zsuzsi) Draw?
 		\item
 			\label{def:rigid-category-and-object}
 			A symmetric monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
@@ -658,7 +679,7 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_dual_id.pdf}
 				\;.
 			\]
-			
+			%TODO (Zsuzsi) Now would be a good time to explain the arrows. An outgoing arrow at the top means the opposite as an outgoing arrow at the bottom. This is different from weight systems and needs to be said.
 			An object in a monoidal category \(\mathcal{C}\) is \textbf{rigid} if axioms above are satisfied just for that object without the whole category needing to be rigid.
 	\end{enumerate}
 \end{definitions}
@@ -674,14 +695,19 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 	\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_eval_coeval_module_maps.pdf}
 	.
 \]
+%TODO (Zsuzsi) Why did these get flipped upside down compared to the definition of a right module? In this picture, I don't understand the action: what acts on what?
 \begin{shaded}
 	Question: How do I explain the minus sign here? I imagine it's to do wth the minus sign in left/right module statement above.
 \end{shaded}
+%TODO (Zsuzsi) Yes, and I suspect it will be easier once you clarify whether you are acting on the object or its dual, and what does it mean to act on the dual. Are you turning a right action on $M$ into a left action on $M^\vee%? Or on $M$? Morphisms should always go top to bottom, and here that doesn't seem to be the case. (Or always bottom to top, but there should be one convention.)
 
-We will give various concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
+We will give concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
+
+%TODO (Zsuzsi) I don't want to give you too much editing work, but the sequence of definitions above would really benefit from some grounding examples. Maybe you could do some minimal rearranging and introduce the examples of even just Vect and SVect sooner, sort of as a running example that could illustrate everything.
 
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
 	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of modules over \(L\)).
+    %TODO (Zsuzsi) You haven't said that modules over $L$ form a monoidal category, and how.
 	Then there is a weight system
 	\[W_{L, M}: \mathcal{A} \longrightarrow \mathcal{C}(k, k).\]
 	If \(\mathcal{C}\) is \(k\)-linear, then this is a \(k\)-valued weight system
@@ -693,14 +719,16 @@ The proof of this theorem is exactly the same as the proof of construction \ref{
 The difference between this construction and Construction \ref{cons:lie-algebra-weight-system} is the treatment of the symmetry natural isomorphism \(\tau\) which tells us what isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity (as it was in the original construction) corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. In other words, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
 
 \begin{example}
-	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, the Lie algebra objects are exactly the Lie superalgebras which we now define.
+	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, then the Lie algebra objects are exactly the Lie superalgebras which we now define.
 
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying two axioms. The \textbf{super symmetry} axiom is that for \(x, y\) homogeneous elements of \(\mathfrak{g}_{i}\) and \(\mathfrak{g}_{j}\) respectively,
 	\[[x, y] = - (-1)^{ij}[y, x]\]
-	and the \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
+	%TODO (Zsuzsi) Start a new sentence
+    and the \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
 	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
 
 	The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
+    %TODO (Zsuzsi) Explain why these are the Lie algebra objects in SVect.
 \end{example}
 
 Shortly after Conjecture \ref{conj:lie-algebra-weight-systems-span} was made, the following results were achieved based on constructions with the exceptional Lie superalgebra \(\mathfrak{D}(2, 1; \alpha)\) proving that metric Lie algebras alone do not see all the structure of \(\mathcal{A}\).
@@ -765,6 +793,7 @@ For example, \cite[Theorem 6.3(2)]{algebraic-structures-on-modules-of-diagrams} 
 	\end{array}
 \]
 in \(\mathcal{W}_{\mathfrak{g}_{2}}\). By some well-known identites internal to Jacobi diagrams, this relation can be simplified.
+%TODO (Zsuzsi) Add "as follows"
 \begin{lemma}
 	\label{lem:tribubble-is-half-bibubble}
 	In \(\mathcal{A}\), the `trivalent-bubble' vertex is proportional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
