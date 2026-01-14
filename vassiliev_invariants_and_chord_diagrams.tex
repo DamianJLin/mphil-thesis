@@ -685,6 +685,7 @@ We have not yet given any examples of non-Vassiliev invariants.
 
 \begin{example}
 	The \textbf{Conway polynomial} \(C(k)\) is an invariant \(C:\mathcal{K} \to Z[t]\) defined by the skein relation
+    %TODO (Zsuzsi) spacing between t and C
 	\[
 		C
 		\left(
@@ -757,6 +758,8 @@ We have not yet given any examples of non-Vassiliev invariants.
 		\text{has \(i\) double points}
 	\]
 	showcases that for all \(n \in \mathbb{N}\), \(\delta^{n}C \neq 0\).
+%TODO (Zsuzsi) This is a good explanation, but the way it's broken into sentences, with pictures in the middle of sentences, is tricky to parse as a reader. Also, $k_i$ has $i$ double points and how many crossings?
+
 
 	However fix \(\ell \in \mathbb{N}\). An argument of \cite{on-the-vassiliev-knot-invariants} shows that the coefficient \(c_{\ell}\) of \(t^{\ell}\) in \(C\) is a Vassiliev invariant. Indeed, by the iterated skein relation, \(t^{\ell + 1}\) is a factor of \(\delta^{\ell + 1} C\), so \(c_{\ell} = 0\), so the coefficient of \(t^{\ell}\) vanishes. As such, while \(C(k)\) is not a Vassiliev invariant, it is approximated by Vassiliev invariants, specifically it is a power series Vassiliev invariant which we now define.
 \end{example}
@@ -765,12 +768,14 @@ We have not yet given any examples of non-Vassiliev invariants.
 	A \textbf{power series Vassiliev invariant} is an element of the space
 	\[\bigoplus_{n = 0}^{\infty} \mathcal{V}_{n}.\]
 \end{definition}
+%TODO (Zsuzsi) Should be direct product, not direct sum? In an infinite direct sum, only finite sums are allowed.
 
-The Jones polynomial and all quantum invariants \cite{knot-polynomials-and-vassilievs-invariants} are also power series Vassiliev invariants.
-
-Let us examine an invariant which does not seem natural to consider from a topological standpoint.
+%TODO (Zsuzsi) I merged the next two paragraphs, to get rid of one-sentence paragraphs:
+The Jones polynomial and all quantum invariants \cite{knot-polynomials-and-vassilievs-invariants} are also power series Vassiliev invariants. Let us now examine an invariant which does not seem natural to consider from a topological standpoint.
 \begin{example}
-	Let \(3_{1}\) denote the right-handed trefoil knot. The invariant \(f_{3_{1}}\) is defined
+	Let \(3_{1}\) denote the right-handed trefoil knot. 
+    %TODO (Zsuzsi) You could call it the "trefoil indicator invariant"?
+    The invariant \(f_{3_{1}}\) is defined
 	\[
 		f_{3_{1}}(k)
 		=
@@ -796,10 +801,16 @@ Let us examine an invariant which does not seem natural to consider from a topol
 		\def\svgscale{0.3}
 		\adjustbox{valign=c}{\input{graphics/twist_sequence_trefoil_detector_not_vassiliev.pdf_tex}}
 	\]
-	For \(i \in \mathbb{N}\), \(\partial^{i}(k_{i})\) is a sum of \(2^{i}\) terms, exactly one of which is \(3_{1}\), with a coefficient of \(1\). So \(\delta^{i}(k_{i}) = 1 \neq 0\) for all \(i \in \mathbb{N}\). Hence \(f_{3_{1}}\) is not Vassiliev.
+	For \(i \in \mathbb{N}\), \(\partial^{i}(k_{i})\) is a sum of \(2^{i}\) terms by resolving each double point, exactly one of which is \(3_{1}\), with a coefficient of \(1\). So \(\delta^{i}(k_{i}) = 1 \neq 0\) for all \(i \in \mathbb{N}\). Hence \(f_{3_{1}}\) is not Vassiliev.
+    %TODO (Zsuzsi) Do we know whether it is power series vassiliev?
 \end{example}
 
-More examples of non-Vassiliev invariants are unknotting number, crossing number, signature, genus and bridge number \cite{many-classical-knot-invariants-are-not-vassiliev-invariants, twist-sequnces-and-vassiliev-invariants}. The proofs of touch on yet another dimension of the polynomial analogy, reviewed in \cite{vassiliev-invariants-as-polynomials}. It is unknown whether these invariants are power series Vassiliev invariants. In particular some of these invariants are defined as invariants tautologically, as the minimum of some property of a knot diagram across all diagrams of a knot. Knowing whether those invariants are power series Vassiliev invariants or not would be insightful as to whether they have some topologically interesting meaning like the Conway and Jones polynomial or are more arbitrary like \(f_{3_{1}}\).
+More examples of non-Vassiliev invariants are the unknotting number, crossing number, signature, genus and bridge number \cite{many-classical-knot-invariants-are-not-vassiliev-invariants, twist-sequnces-and-vassiliev-invariants}. The proofs of
+%TODO (Zsuzsi) grammar
+touch on yet another dimension of the polynomial analogy, reviewed in \cite{vassiliev-invariants-as-polynomials}. It is unknown whether these invariants are power series Vassiliev invariants. 
+%TODO (Zsuzsi) including the trefoil indicator?
+In particular some of these invariants are defined as invariants tautologically, as the minimum of some property of a knot diagram across all diagrams of a knot. Knowing whether those invariants are power series Vassiliev invariants or not would be insightful as to whether they have some topologically interesting meaning like the Conway and Jones polynomials, or are more arbitrary like \(f_{3_{1}}\).
+%TODO (Zsuzsi) If vassiliev invariants detect the trefoil that $f_(3_1)$ is a power series Vassiliev invariant... so I'm not sure I guy this sistinction. Or possibly I'm misunderstanding what you're saying here.
 
 \section{Chord diagrams and weight systems}
 \label{chord-diagrams-and-weight-systems}
