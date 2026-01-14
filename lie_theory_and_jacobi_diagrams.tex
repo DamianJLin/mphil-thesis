@@ -292,7 +292,7 @@ Diagramatically, we have
 	\;
 	.
 \]
-Just like the antisymmetry of the bracket and the Jacobi relation, these relations make sense when the diagrams are interpreted as parts of Jacobi diagrams. There is only one type of trivalent vertex in a Jaocbi diagram, and since the edges around a vertex are only considered up to cyclic order, cyclic permutation of the order is ``unseen on the level of Jacobi diagrams''.
+Just like the antisymmetry of the bracket and the Jacobi relation, these relations make sense when the diagrams are interpreted as parts of Jacobi diagrams. There is only one type of trivalent vertex in a Jacobi diagram, and since the edges around a vertex are only considered up to cyclic order, cyclic permutation of the order is ``unseen on the level of Jacobi diagrams''.
 
 From the discussion above, we see that the internal structure of Jacobi diagrams (internal meaning not near the skeleton) is reflected in a metric Lie algebra. Let us try to find a similar reflection of the structure near the skeleton. A representation \(\rho\) of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input and output, namely a \(v \in V\) which we denote by a thicker line, like the skeleton of a Jacobi diagram.
 \[
@@ -505,7 +505,7 @@ The most general type of objects these constructions apply to are `Lie \(S\)-alg
 
 \begin{remark}
 	\label{rem:coherence-for-monoidal-categories}
-	While we omit the details, we henceforth assume that these natural isomorphisms are equalities: \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category. This also justifies why we omit the pentagon and triangle relations in the definition above. We refer the reader to \cite[Sec. 1.2]{higher-operads-higher-categories} for details.
+	While we omit the details, we henceforth assume that these natural isomorphisms are equalities: \((A \otimes B) \otimes C = A \otimes (B \otimes C)\). This is acceptable by the MacLane coherence theorem for monoidal categories which says that every monoidal category is equivalent to a strict monoidal category. This also justifies why we omit the pentagon and triangle relations in the definition above. We refer the reader to \cite[Sec. 1.2]{higher-operads-higher-categories} for details.
 \end{remark}
 
 \begin{definitions}
@@ -537,7 +537,7 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
 	\begin{enumerate}
-		\item A \textbf{Lie algebra object} in an additive symmetric tensor category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
+		\item A \textbf{Lie algebra object} in an additive symmetric monoidal category \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
 			Graphically (in terms of the string diagrams of the previous section), this corresponds to
 			\[
@@ -573,13 +573,13 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 				\quad
 				0.
 			\]
-			Here the trivalent vertex corresponds to the \(\beta\) the generalised bracket morphism.
+			Here the trivalent vertex corresponds to the generalised bracket morphism \(\beta\).
 		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with a morphism \(\rho: M \otimes L \to M\), diagramatically denoted
 			\[
 				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 			\]
 			such that
-			\[\rho \circ (\id \otimes \beta) = \rho \circ (\rho \otimes \id ) \circ (\id \otimes \tau).\]
+			\[\rho \circ (\id \otimes \beta) = \rho \circ (\rho \otimes \id) - \rho \circ (\rho \otimes \id ) \circ (\id \otimes \tau).\]
 			Here the thick line denotes \(M\) and this type of trivalent vertex denotes \(\rho\). As a string diagram this becomes
 			\[
 				\def\svgscale{0.31}
@@ -637,7 +637,7 @@ If a monoidal category \(\mathcal{C}\) is additionally additive, we can define L
 			and the second and third relations assert that the diagrams are symmetric.
 		\item
 			\label{def:rigid-category-and-object}
-			A monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
+			A symmetric monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
 			\[(\id_{A} \otimes \epsilon) \circ (\iota \otimes \id_{A}) = \id_{A}\]
 			and
 			\[(\epsilon \otimes \id_{A^{\vee}}) \circ (\id_{A^{\vee}} \otimes \iota) = \id_{A^{\vee}}\]
@@ -695,7 +695,7 @@ The difference between this construction and Construction \ref{cons:lie-algebra-
 \begin{example}
 	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, the Lie algebra objects are exactly the Lie superalgebras which we now define.
 
-	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying two axions. The \textbf{super symmetry} axiom is that for \(x, y\) homogeneous elements of \(\mathfrak{g}_{i}\) and \(\mathfrak{g}_{j}\) respectively,
+	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying two axioms. The \textbf{super symmetry} axiom is that for \(x, y\) homogeneous elements of \(\mathfrak{g}_{i}\) and \(\mathfrak{g}_{j}\) respectively,
 	\[[x, y] = - (-1)^{ij}[y, x]\]
 	and the \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
 	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
@@ -721,7 +721,7 @@ Indeed (and this was known about shortly after but not published until significa
 
 In general, it is still unknown what exact level of generality one needs (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems. We hereby provide a succinct review of the current state of the literature on the subject.
 
-Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
+Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
 
 More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-graded-lie-algebra} have conducted some preliminary investigations into the class of colour Lie algebras (also known as \(\epsilon\)-Lie algebras). This class generalises the \(\mathbb{Z}/2\mathbb{Z}\) grading on Lie superalgebras to a more general group. However, the example they present lies within the span of the \(\mathfrak{sl}_{2}\) and \(\mathfrak{gl}_{1 | 1}\) weight systems.
 
