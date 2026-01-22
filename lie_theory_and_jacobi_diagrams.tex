@@ -534,23 +534,45 @@ The most general type of objects these constructions apply to are `Lie \(S\)-alg
 			\[
 				\tau_{A, B}: A \otimes B \overset{\cong}{\longrightarrow} B \otimes A
 			\]
-			and
 			coming from the natural isomorphism \(\tau\) obey
 			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
-%TODO (Zsuzsi) The last sentence (with several formulas embedded in it) is not a grammatical sentence 
 \end{definitions}
 One might notice that the hexagon relation involves only three terms, rather than the six that the name suggests. This is because we have omited the reassociation natural isomorphisms that we assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
 
-Furthermore, if the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined.
+\begin{examples}
+	\begin{enumerate}
+		\item Let \(\mathbf{Vect}\) be the category of vector spaces and linear transformations. The symmetry natural isomorphism
+			\[
+				\begin{array}{rccc}
+					\tau:	& X \times Y		&\longrightarrow	& Y \times X\\
+						& x \otimes y		&\longmapsto		& y \otimes x.
+				\end{array}
+			\]
+			gives \(\mathbf{Vect}\) the structure of a symmetric monoidal category.
+		\item A \textbf{super vector space} is a \(\mathbb{Z}/2\mathbb{Z}\)-graded vector space \(V\) with the decomposition
+			\[V = V_{0} \oplus V_{1}.\]
+			The degree, \(|x|\) of a homogeneous element \(x \in V = V_{0} \oplus V_{1}\) is \(|x| = i \in \mathbb{Z}/2\mathbb{Z}\) where \(x \in V_{i}\).
+
+			Let \(\mathbf{sVect}\) denote the category of super vector spaces and degree preserving linear transformations. Defining the symmetry natural isomorphism on homogeneous elements \(x, y \in V\) as
+			\[
+				\begin{array}{rccc}
+					\tau:	& X \times Y		&\longrightarrow	& Y \times X\\
+						& x \otimes y		&\longmapsto		& (-1)^{|x||y|} y \otimes x.
+				\end{array}
+			\]
+			gives \(\mathbf{sVect}\) the structure of a symmetric monoidal category.
+	\end{enumerate}
+\end{examples}
+
+If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined. These generalise Lie algebras in that they satisfy analogues of the Jacobi and antisymmetry identities involving the symmetry natural isomorphism \(\tau\). Of course, in the case \(\mathcal{C} = \mathbf{Vect}\), \(\tau\) is the trivial swap isomorphism, so the Lie algebra objects satisfy exactly the Jacobi and antisymmetry relations and are exactly the Lie algebras.
 
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
 	\begin{enumerate}
 		\item A \textbf{Lie algebra object} in \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
-			%TODO (Zsuzsi) You could call these the Jacobi and Antisymmetry relations (help the reader out a little)
             Graphically (in terms of the string diagrams of the previous section), this corresponds to
 			\[
 				\def\svgscale{0.31}
@@ -585,13 +607,10 @@ Furthermore, if the monoidal category \(\mathcal{C}\) is additive and the functo
 				\quad
 				0.
 			\]
-			Here the trivalent vertex corresponds to the generalised bracket morphism \(\beta\).
-            %TODO (Zsuzsi) Why generalised? (above you called it just bracket)
-		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with a morphism \(\rho: M \otimes L \to M\), 
-        %TODO (Zsuzsi) Call $\rho$ the action morphism
-        diagramatically denoted
+			Here the trivalent vertex corresponds to the bracket morphism \(\beta\).
+		\item A (right) \textbf{module \(\rho\) over a Lie algebra object \(L\) in \(\mathcal{C}\)} is an object \(M\) with an action morphism \(\rho: M \otimes L \to M\), diagramatically denoted
 			\[
-				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
+				\includegraphics[width=0.06\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 			\]
 			such that
 			\[\rho \circ (\id \otimes \beta) = \rho \circ (\rho \otimes \id) - \rho \circ (\rho \otimes \id ) \circ (\id \otimes \tau).\]
@@ -616,20 +635,18 @@ Furthermore, if the monoidal category \(\mathcal{C}\) is additive and the functo
 			\[\bar{\rho} = - \rho \circ \tau\]
 			justifying the diagrammatic rule
 			\[
-				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
+				\includegraphics[width=0.06\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 				\quad
 				=
 				\quad
 				-
-				\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex_before_dualisable_flipped.pdf}
+				\;
+				\includegraphics[width=0.06\textwidth, valign=c]{graphics/representation_vertex_before_dualisable_flipped.pdf}
 				\;
 				.
 			\]
-            %TODO (Zsuzsi) One of these pictures whould have a cross (swap of L and M) on top: in order for two pictures to be equal, the endpoints must be in the same positions. This should also help sort out your later question about the minus sign.
-
 		\item A \textbf{metric Lie algebra object} \(L\) in \(\mathcal{C}\) is a Lie algebra object in \(\mathcal{C}\), further equipped with a metric morphism \(m: L \otimes L \to k\) and Casimir morphism \(c: k \to L \otimes L\) which abstract the metric and Casimir of Lie algebras in \(\mathbf{Vect}\) 
-        %TODO (Zsuzsi) somewhere before this you should say that Lie algebra objects in Vect are the actual Lie algebras
-        by satisfying
+		by satisfying
 			\[(\id \otimes c) \circ (m \otimes \id) = \id = (c \otimes \id) \circ (\id \otimes m)\]
 			and
 			\[m = \tau \circ m \quad \text{and} \quad c = c \circ \tau.\]
@@ -639,9 +656,7 @@ Furthermore, if the monoidal category \(\mathcal{C}\) is additive and the functo
 				\qquad \text{and} \qquad
 				\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir_no_dot.pdf}\ .
 			\]
-			(like before these morphisms allow us to drop arrows on the thin lines) 
-            %TODO I don't know, there haven't been any duals here and the arrows have been always going top to bottom... so, was there a need for arrows in the first place?
-            satisfying
+			(like before these morphisms allow us to drop arrows on the thin lines) satisfying
 			\[
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_relation_left.pdf}
 				\quad
@@ -695,11 +710,6 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 	\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_eval_coeval_module_maps.pdf}
 	.
 \]
-%TODO (Zsuzsi) Why did these get flipped upside down compared to the definition of a right module? In this picture, I don't understand the action: what acts on what?
-\begin{shaded}
-	Question: How do I explain the minus sign here? I imagine it's to do wth the minus sign in left/right module statement above.
-\end{shaded}
-%TODO (Zsuzsi) Yes, and I suspect it will be easier once you clarify whether you are acting on the object or its dual, and what does it mean to act on the dual. Are you turning a right action on $M$ into a left action on $M^\vee%? Or on $M$? Morphisms should always go top to bottom, and here that doesn't seem to be the case. (Or always bottom to top, but there should be one convention.)
 
 We will give concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
@@ -722,9 +732,8 @@ The difference between this construction and Construction \ref{cons:lie-algebra-
 	If we take \(\mathcal{C} = \mathbf{sVect}\), the symmetric monoidal category of super vector spaces, then the Lie algebra objects are exactly the Lie superalgebras which we now define.
 
 	A \textbf{Lie superalgebra} \(\mathfrak{g}\) is a vector space with a \(\mathbb{Z} / 2\mathbb{Z}\) grading, equipped with a bracket \([\cdot,\cdot]: \mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g}\) satisfying two axioms. The \textbf{super symmetry} axiom is that for \(x, y\) homogeneous elements of \(\mathfrak{g}_{i}\) and \(\mathfrak{g}_{j}\) respectively,
-	\[[x, y] = - (-1)^{ij}[y, x]\]
-	%TODO (Zsuzsi) Start a new sentence
-    and the \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
+	\[[x, y] = - (-1)^{ij}[y, x].\]
+	The \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
 	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
 
 	The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
@@ -1131,21 +1140,15 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not
 \section{A universal casimir Lie algebra object}
 \label{sec:a-universal-casimir-lie-algebra-object}
 
-We return to the universal Lie algebra of Vaintrob which was discussed in the previous section. 
-%TODO (Zsuzsi) Did you discuss this in the previous section? I recommend inserting a specific reference, like "Remark X.Y", or a reminder of what the goal is.
-It is yet uncertain 
-%TODO (Zsuzsi) "Yet uncertain" = "at this point in your thesis", or "at this point ion the history of mathematics"
-to what degree such an algebra exists. The obstruction are the zero divisors in Vogel's algebra \(\Lambda\), \cite{can-yang-baxter-imply-lie-algebra, on-refined-vogels-universality, construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra} give more details.
-%TODO (Zsuzsi) As far as I can tell, you never mentioned $\Lambda$ before, so we don't know what it is or what it does. I think this sentence gives an unhelpful amount of detail: the reader thinks they're missing something, and starts flipping back to see where they missed it.
+We return to the universal Lie algebra of Vogel which was discussed in Section \ref{sec:non-lie-algebraic-weight-systems}. For a long period, Vogel endevoured \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams, vassiliev-theory-and-the-universal-lie-algebra} to construct this univeral Lie algebra, however attempts at its construction have so far failed \cite{can-yang-baxter-imply-lie-algebra, on-refined-vogels-universality, construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}.
 
-There is, however, a theoretical construction of 
-Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}: they construct a Lie algebra object in a symmetric monoidal category with a weight system which is isomorphic to \(\mathcal{A}\). This guarantees that every Vassiliev invariant can be constructed from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, it doesn't give any hints as to which symmetric monoidal category one needs to work in to construct a particular Vassiliev invariant. Thus, it is useful theoretically, but not computationally. In this section we review the Hinic--Vaintrob construction, and in Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will generalise it from Vassiliev invariants of classical knots to those of welded long knots.
+There is, however, a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}: they construct a Lie algebra object in a symmetric monoidal category with a weight system which is isomorphic to \(\mathcal{A}\). This guarantees that every Vassiliev invariant can be constructed from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, it doesn't give any hints as to which symmetric monoidal category one needs to work in to construct a particular Vassiliev invariant. In this sense it is useful theoretically, but not computationally.
 
-%TODO (Zsuzsi) This paragraph needs a stransition sentence at the beginning, something like: "An essetntial concept to the HV construction is that of an operad, which formally captures the general behaviour of associative operations in a range of abstract algebraic contexts."
-The operations on a set can always be composed by taking as input the output of another operation. These compositions always obey certain rules. If the set is a vector space, the operations too form a vector space. 
-%TODO (Zsuzsi) Any operations? I suggest: "For example, if the set is a vector space $V$, then linear maps on $V$ also form a vector space."
-An operad captures this concept of operations on some object of a category abstractly. 
-%TODO (Zsuzsi) Associative only. I would also avoid saying "on some object of a category" to avoid confusion, because below the objects in your category are sets of operations. You could instead say on an "algebraic stucture" or just "structure".
+Furthermore, the this algebra is constructed as a generalised notion of a universal enveloping algebra, applied to a Lie algebra object is some symmetric monoidal category, giving  credence to the statement hinted at by Construction \ref{cons:lie-algebra-weight-system} that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''.
+
+In this section we review the Hinich--Vaintrob construction, and in Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will generalise it from Vassiliev invariants of classical knots to those of welded long knots.
+
+An concept that is essential to the construction of Hinich--Vaintrob is that of an operad, which captures abstractly the general behaviour of associative operations and their iterated composition. Indeed, when operations on a set are composed by taking as one of their inputs the output of another operation, these compositions always obey certain rules. For example, if the set is a vector space, the operations too form a vector space, and there is an action of \(S_{n}\) coming from the permutation of the inputs of the operation. An operad captures this concept of operations on some object of a category abstractly. 
 
 \begin{warning}
 	For all of the below, we assume the monoidal categories are \(k\)-linear, \(k\) a field of characteristic zero and the tensor product is bilinear (also known as tensor categories).
@@ -1155,14 +1158,13 @@ An operad captures this concept of operations on some object of a category abstr
 
 \begin{definition}
 	\label{def:operad}
-	An \textbf{operad} \(\mathcal{O}\) in a monoidal category \(\mathcal{C}\) consists of:
+	An \textbf{operad} \(\mathcal{O}\) in a symmetric monoidal category \(\mathcal{C}\) consists of:
 
 	\begin{itemize}
 		\item a collection of objects in \(\mathcal{C}\), \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations}
 		\item an element \(\id \in \mathcal{O}(1)\).
 		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
-		\item a series of composition morphisms:
-        %TODO (Zsuzsi) bold "composition morphims"?
+		\item a series of \textbf{composition morphisms}:
         for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
 			\[
 				\begin{array}{rccc}
@@ -1179,9 +1181,7 @@ An operad captures this concept of operations on some object of a category abstr
 	satisfying the following axioms. (Note: the axioms are listed for completeness, but won't be used heavily below.)
 		\begin{enumerate}
 			\item That for any \(\theta \in \mathcal{O}(n)\), \(\theta \circ_{n} (\id, \dots, \id) = \theta = \id \circ_{1} \theta\). (The \textbf{identity} axiom.)
-			\item \textbf{Associativity of composition}, that for \(\theta \in \mathcal{O}(n)\), and \(\theta_{1}\in \mathcal{O}(k_{1})\), \(\theta_{2} \in \mathcal{O}(k_{2})\), up to \(\theta_{n} \in \mathcal{O}(k_{n})\), the two ways of forming the composition of the \(\theta_{i, j}\) into \(\theta_{i}\) into \(\theta\) 
-            %TODO (Zsuzsi) Confusing: you didn't introduce double indices above, but tehre are double indices here and in the formulas below. Switched from tensor to commas: tensor product or direct sum? If it's a tensor product, write $\otimes$ rather than $(,,,)$. (Or maybe I'd write it as a product if it must be shortened.)
-            are the same:
+			\item \textbf{Associativity of composition}. Let \(\theta \in \mathcal{O}(n)\), and \(\theta_{1}\in \mathcal{O}(k_{1})\), \(\theta_{2} \in \mathcal{O}(k_{2})\), up to \(\theta_{n} \in \mathcal{O}(k_{n})\), and finally let \(\theta_{1, 1} \in \mathcal{O}(k_{1, 1})\), \(\theta_{1, 2} \in \mathcal{O}(k_{1, 2})\) through to \(\theta_{k_{n}, 1} \in \mathcal{O}(k_{k_{n}, 1})\). The two ways of forming the composition of the three layers of operations: \(\theta_{i, j}\) into \(\theta_{i}\) into \(\theta\) are the same. In notation,
 				\[\theta \circ_{n} \Big( \theta_{1} \circ_{k_{1}} (\theta_{1, 1}, \dots, \theta_{1, k_{1}}), \dots, \theta_{n} \circ_{k_{n}} (\theta_{n, 1}, \dots, \theta_{n, k_{n}}) \Big)\]
 				is equal to
 				\[\big( \theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) \circ_{k_{1} + \cdots + k_{n}} (\theta_{1, 1}, \dots, \theta_{1, k_{n}}, \dots, \theta_{n, 1}, \dots, \theta_{n, k_{n}}).\]
@@ -1192,24 +1192,20 @@ An operad captures this concept of operations on some object of a category abstr
 				\[\theta \circ_{n} (\theta_{1}\sigma_{1}, \dots, \theta_{n} \sigma_{n}) = \big(\theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) (\sigma_{1} \connect \cdots \connect \sigma_{n})\]
 				where \((\sigma_{1} \connect \cdots \connect \sigma_{n}) \in S_{k_{1} + \cdots + k_{n}}\) is the block-wise permutation of block \(i\) by \(\sigma_{i}\).
 			\item That the action of the symmetric group agrees with its action in the symmetric monoidal category \(\mathcal{C}\).
-            %TODO (Zsuzsi) you didn't say above that $\mathcal{C}$ was symmetric
 		\end{enumerate}
 \end{definition}
 
-\begin{definition}
-	An \textbf{algebra \(A\) over the operad \(\mathcal{O}\) (in \(\mathcal{C}\))} is an object of \(\mathcal{C}\) satisfying certain natural compatibility conditions.
-    %TODO (Zsuzsi) This is not a definition: if it's in a definition environment, it should be defined. Otherwise, it should be just exposition (not in an environment). On the math: it's not $A$ that satisfies compatibility conditions, but the operations on $A$. At the very least one should write down these operations on $A$ (as maps $A\otimes A \otimes ...\otimes A \to A$), and then if you want to be informal, say that they behave as the "operations" in $\mathcal{O}$.
-\end{definition}
-
-In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\). 
-%TODO (Zsuzsi) This sentence could come before the formal definition.
+An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
 
 \begin{example}
 	\label{ex:lie-operad}
-	Let \(\Lambda\) denote the free operad functor (for details we refer the reader to \cite{operads-and-props}). 
-    %TODO (Zsuzsi) You can refer for details, but you should say something about what this is. From what category to what category? Intuitively, what is it?
-    %TODO (Zsuzsi) On further thought: Basically you're using generators and relations, which, if you want to be precise and technical, depends on three things: the Free functor, generation within an operad, and taking a quotient. You don't explain any of the three, and I agree that someone who knows some algebra can kindof imagine. I think it would be more reader friendly to own this and say that one can use generators and relations for operads, which work pretty much how one would expect, and then write it as generators and relations, like $\langle gens | rels\rangle$. Or, one can be precise, but then one should define the things.
-    Let
+	Recall that an operad is a special type of collection of vector space (or other object of symmetric monoidal \(\mathcal{C}\)) \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). Such an object is called an \(S\)-module, and there is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
+
+	There is also a category \(\mathbf{Oper}\) of operads. The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
+
+	As such, there is a natural forgetful functor \(\square: \mathbf{Oper} \to S\text{-}\mathbf{mod}\). It has a left-adjoint free operad functor \(\Lambda: S\text{-}\mathbf{mod} \to \mathbf{Oper}\). For details of this construction we refer the reader to \cite{operads-and-props}. 
+
+	We can build an \(S\)-module from a single generating operation. For example, let 
 	\[
 		\alpha
 		=
@@ -1218,7 +1214,15 @@ In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose oper
 	\]
 	denote a generator operation with two inputs.
 
-	The \textbf{Lie operad}, \(\mathcal{O}_{\text{Lie}}\) then has the following presentation
+	By abuse of notation we denote by \(\alpha\) the \(S\)-module in which each \(\mathcal{O}(n)\) is the set of iterated compositions of \(\alpha\). For example
+	\[
+		\def\svgscale{0.2}
+		\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
+		\in
+		\alpha(3).
+	\]
+
+	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presenation in terms of generators and relations:
 	\[
 		\mathcal{O}_{\text{Lie}}
 		\quad
@@ -1258,32 +1262,20 @@ In essence, an algebra over an operad is an object in \(\mathcal{C}\) whose oper
 	\]
 \end{example}
 
+The Hinich--Vaintrob construction is a Lie algebra object in a symmetric monoidal category whose universal enveloping algebra 
 
+Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category.
 
-Recall that the goal is an algebra isomorphic to \(\mathcal{A}\). 
-%TODO (Zsuzsi) The goal is more than that, like, an easier algebra isomorphic to $\mathcal{A}$ is $\mathcal{A}$... Really, the goal is a Lie algebra object in a monoidal category, whose universal enveloping algebra (in the appropriate sense) is isomorphic to $\mathcal A$.
-The first step is to create an object that encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
+The first step is to create an category whose morphisms encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
 
-Composition in operads is something like contraction in a symmetric monoidal category, but with restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, and as a result there is no natural notion of tensor product in an operad.
+Indeed, composition in operads is reminiscent of contraction in a symmetric monoidal category, with the caveat that there are restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, and as a result there is no natural notion of tensor product in an operad.
 
-A step towards describing the internal structure of \(\mathcal{A}\) without specifying a Lie algebra is to allow multiple outputs, thereby considering not just operations but, for example in \(\mathcal{C} = \mathbf{Vect}\), general multilinear functions.
-%TODO (Zsuzsi) Multilinear functions have only one output?
-Operads were abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Slightly more generally, props are abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
+A step towards describing the internal structure of \(\mathcal{A}\) without specifying a Lie algebra is to allow multiple outputs, thereby considering not just operations with a single output, but with multiple outputs. Operads are abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Slightly more generally, props are abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
 
 \begin{definition}
 	\label{def:prop}
-<<<<<<< Updated upstream
-	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(A^{\otimes n}\) for some object \(A\). 
-    %TODO (Zsuzsi) could you not denote this by $A$, but use boldface 1 right away? In the next definition you denote by $A$ an algebra over a prop, and you send $!$ to $A$, which makes $A$ quite loaded.
-    Equivalently, it's a symmetric monoidal category generated by a single object.
-    Since props are categories, we use a boldface capital letter to denote them. In a prop, we denote the field \(k\) by \(\mathbf{0}\), 
-    %TODO (Zsuzsi) there is no field in a general PROP, it's just the tensor unit
-    the generating object \(A\) by \(\mathbf{1}\), and the object \(A^{\otimes n}\) by \(\mathbf{n}\).
-=======
-	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(A^{\otimes n}\) for some object \(A\). Equivalently, it's a symmetric monoidal category generated by a single object.
-
-	Since props are categories, we will use a boldface capital letter to denote them. In a prop, we denote the monoidal unit \(k\) by \(\mathbf{0}\), the generating object \(A\) by \(\mathbf{1}\), and the object \(A^{\otimes n}\) by \(\mathbf{n}\).
->>>>>>> Stashed changes
+	A \textbf{prop} is a symmetric monoidal category where every object is of the form \(\mathbf{1}^{\otimes n}\) for some object \(\mathbf{1}\). Equivalently, it's a symmetric monoidal category generated by a single object.
+	Since props are categories, we use a boldface capital letter to denote them. We denote the monoidal unit by \(\mathbf{0}\), the generating object by \(\mathbf{1}\), and the object \(\mathbf{1}^{\otimes n}\) by \(\mathbf{n}\).
 \end{definition}
 
 \begin{definition}
@@ -1307,8 +1299,8 @@ Operads were abstractions of the operations on some object (say, \(A\)), i.e. mo
 	The forgetful functor \(\mathcal{F}\) takes a prop \(\mathbf{P}\) to the operad whose operations are the \((\mathbf{m}, \mathbf{1})\)-ary elements of the prop (i.e. morphisms with \(m\) inputs and one output):
 	\[\mathcal{F}(\mathbf{P})(m) = \mathbf{P}(\mathbf{m}, \mathbf{1}).\]
 	The free functor \(\mathbf{E}\) maps an operad \(\mathcal{O}\) to the prop whose \((\mathbf{m}, \mathbf{n})\)-ary morphisms are tensor products of operations from the operad:
-	\[\mathbf{E}(\mathcal{O})(\mathbf{m}, \mathbf{n}) = \bigoplus_{f: [m] \to [n]} \bigotimes_{i = 1}^{n} \mathcal{O}(|f^{-1}(i)|).\]
-    %TODO (Zsuzsi) What is $f$?
+	\[\mathbf{E}(\mathcal{O})(\mathbf{m}, \mathbf{n}) = \bigoplus_{f: [m] \to [n]} \bigotimes_{i = 1}^{n} \mathcal{O}(|f^{-1}(i)|)\]
+	(here the outermost direct sum is over all functions \(f\) from \(\{1, \dots, m\} \to \{1, \dots, n\}\)).
 	The prop \(\mathbf{E}(\mathcal{O})\) is also referred to as the \textbf{envelope of the operad \(\mathcal{O}\)}.
 \end{remark}
 
@@ -1318,19 +1310,15 @@ Operads were abstractions of the operations on some object (say, \(A\)), i.e. mo
 
 Now the main difference between contraction and partial composition in a prop is the marking of inputs and outputs. With metric Lie algebras, co- and contravariant indices could be contracted with the metric or casimir to invert their variance, but in a general prop there is no way to turn an input into an output.
 
-Recall that the action of the symmetric  
-group 
-%TODO (Zsuzsi): In an operad?
-comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs amongst themselves, rather than permuting inputs with outputs. In a certain kind of operad, called a cyclic operad, permutations of inputs with outputs can be achieved.
-%TODO (Zsuzsi): I would add something like: "effectively identifying inputs and outputs", or "erasing the differemce between inputs and outputs". Then add some motivation: "This is achieved, for example, by the metric in a Lie algebra, which allows it to be identified with its dual, or, equivalently, allows it to be contracted with itself."
+Recall that the action of the symmetric groups \(S_{n}\) on an operad come from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But this only permutes inputs amongst themselves, rather than permuting inputs with outputs. In a certain kind of operad, called a cyclic operad, permutations of inputs with outputs can be effectively achieved, and the distinction between inputs and outputs is lost. This is achieved, for example by the metric in a metric Lie algebra which allows it to be identified with its dual and therefore the distinction between co- and contra- variant elements of the tensor algebra is lost.
 
 \begin{definition}
 	\label{def:cyclic-operad}
 	A \textbf{cyclic operad} in \(\mathcal{C}\) is an operad equipped with a cyclic structure. A \textbf{cyclic structure} is an action of each symmetric group \(S_{n + 1}\) on \(\mathcal{O}(n)\) which extends the \(S_{n}\) action on \(\mathcal{O}(n)\) and satisfies the identity below.
 
-	Firs we define what we mean by an extension of the \(S_{n}\) action. Formally, let \(S_{n}\) be the group of permutations of the set \(\{1, \cdots, n\}\). The operad already has an action of \(S_{n}\) on each \(\mathcal{O}(n)\) which agrees with the action of the symmetry \(\tau\). 
-    %TODO (Zsuzsi) What is $\tau$?
-    Let \(S_{n}^{+} \cong S_{n + 1}\) be the group of permutations of \(\{0, \cdots n\})\), and note that the subgroup of \(S_{n}^{+}\) that fixes \(0\) is isomorphic to \(S_{n}\). We say an action of \(S_{n}^{+}\) extends the action of \(S_{n}\) if the restriction of the action to \(S_{n} \subseteq S_{n}^{+}\) agrees with the action of \(S_{n}\) on \(\mathcal{O}(n)\).
+	First we define what we mean by an extension of the \(S_{n}\) action. Formally, let \(S_{n}\) be the group of permutations of the set \(\{1, \cdots, n\}\). The operad already has an action of \(S_{n}\) on each \(\mathcal{O}(n)\) which agrees with the action of the symmetry \(\tau\) of \(\mathcal{C}\).
+
+	Let \(S_{n}^{+} \cong S_{n + 1}\) be the group of permutations of \(\{0, \cdots n\})\), and note that the subgroup of \(S_{n}^{+}\) that fixes \(0\) is isomorphic to \(S_{n}\). We say an action of \(S_{n}^{+}\) extends the action of \(S_{n}\) if the restriction of the action to \(S_{n} \subseteq S_{n}^{+}\) agrees with the action of \(S_{n}\) on \(\mathcal{O}(n)\).
 
 	Let \(\sigma_{c} \in S_{n + 1}\) denote the cyclic permutation sending \(0 \mapsto 1, 1 \mapsto 2, \cdots, n \mapsto 0\). To be a cyclic operad, the action of \(S_{n + 1}\) must satisfy the identity
 	\[(a \circ_{1} b) \sigma_{c} = (b\sigma_{c}) \circ_{n} (a\sigma_{c})\]
@@ -1349,11 +1337,13 @@ comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But 
 		\def\svgscale{0.3}
 		\raisebox{-37pt}{\input{graphics/cyclic_operad_condition_rhs.pdf_tex}}
 	\]
-    %TODO (Zsuzsi) This might be more illuminating if instead of writing $\sigma_c$ you drew its action.
+	% TODO: (Zsuzsi) This might be more illuminating if instead of writing $\sigma_c$ you drew its action.
+	% Reply: Yes but I think that's actually too strong of a statement. That's only necessarily what the action looks like if the cyclic structure comes from a metric --- but nothing in the definition of a cyclic structure says it should look like that.
 	We denote a cyclic operad with underlying operad \(\mathcal{O}\) by \(\mathcal{O}^{\text{cyc}}\). This suffices because we do not consider operads with multiple cyclic structures.
 \end{definition}
 
-%TODO (Zsuzsi) Insert motivating sentence here, reiterating the inspiration from metric Lie algebras.
+The following definition generalises the definition of a metric Lie algebra (which is an algebra over the cyclic operad \(\mathcal{O}_{\text{Lie}}\)) to an arbitrary cyclic operad.
+
 
 \begin{definition}
 	\label{def:metric-algebra-over-cyclic-operad}
@@ -1371,7 +1361,8 @@ comes from the symmetry of the symmetric monoidal category \(\mathcal{C}\). But 
 		\end{shaded}
 	\end{itemize}
 \end{definition}
-%TODO (Zsuzsi) We checked this in my office at some point and I recall it's fine, once you untangle what the definition means. We can talk about it in LD.Co
+% TODO: (Zsuzsi) We checked this in my office at some point and I recall it's fine, once you untangle what the definition means. We can talk about it in LD.Co
+% Reply: Yes, I recall we checked it! But I had a hunch we agreed that Hinnich-Vaintrob had a typo. At least I haven't managed to untangle it myself.
 
 The conditions above can alternatively and more naturally be phrased in terms of props.
 \begin{definition}

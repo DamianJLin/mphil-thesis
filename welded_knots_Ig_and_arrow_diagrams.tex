@@ -321,11 +321,13 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
 
+The following category fills the role that was played by the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}})\) in the classical setting. Since the morphisms in the welded case should reflect the structure of \(I(\mathfrak{g})\), and the bracket on \(I(\mathfrak{g})\) decomposes depending on whether \(x \in I(\mathfrak{g})\) is in \(\mathfrak{g}\) or \(\mathfrak{g}^{\ast}\), the category ought to have two objects, \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\) and be linear.
+
 \begin{definition}
 	\label{def:2-coloured-casimir-prop}
-	We define a two-coloured prop \(\mathbf{T}_{m}\). Its generating objects are \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
+	We define a symmetric monoidal category \(\mathbf{T}_{m}\). It is a \(k\)-linear category and it is generated additively and monoidally by the objects \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
 
-	The symmetric monoidal category \(\mathbf{T}_{m}\) generating morphisms
+	The generating morphisms of \(\mathbf{T}_{m}\) are given by
 	\[
 		\mathbf{T}_{m}(\mathbf{k}, \mathbf{n})
 		=
@@ -342,7 +344,7 @@ The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}
 	(that is, \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\) are rigid with coevaluation and evaluation maps \(c\) and \(m\) respectively).
 \end{definition}
 
-In view of the difference between \(\mathcal{U}(\mathfrak{g})\) and \(\mathcal{U}(I\mathfrak{g})\), the category \(\mathbf{T}_{m}\) generalises the metric envelope of the Lie operad \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}})\) to include as objects both tensor powers of \(\mathfrak{g}\) but also tensor powers of \(\mathfrak{g}^{\ast}\). In terms of string diagrams, the string diagrams that describe \(\mathbf{T}_{m}\) are oriented, so they have heads and tails. The property of \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}})\) to describe the internal structure of \(\mathcal{A}\) is thus generalised to \(\mathcal{A}_{w}\), whose internal structure is described by \(\mathbf{T}_{m}\).
+In view of the difference between \(\mathcal{U}(\mathfrak{g})\) and \(\mathcal{U}(I\mathfrak{g})\), the category \(\mathbf{T}_{m}\) generalises the metric envelope of the Lie operad \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}})\) to include as objects both tensor powers of \(\mathfrak{g}\) but also tensor powers of \(\mathfrak{g}^{\ast}\). In terms of string diagrams, the string diagrams that describe \(\mathbf{T}_{m}\) are oriented, so they have heads and tails. The property of \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}})\) used to describe the internal structure of \(\mathcal{A}\) is thus generalised to \(\mathcal{A}_{w}\), whose internal structure is described by \(\mathbf{T}_{m}\).
 
 Again however, there is the problem that \(\mathbf{T}_{m}\) also describes arrow diagrams with no univalent vertices. Recall that the motivation behind Definition \ref{def:casimir-envelope-of-cyclic-operad} was to exclude the metric morphism as not to describe chord diagrams with no univalent vertices. The motivation for the following definition is similar.
 
@@ -447,7 +449,7 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 			\[(y \circ (y \otimes \id_{\mathbf{I}})) \circ (1 + \tau_{123} + \tau_{132}) = 0.\]
 	\end{enumerate}
 
-	For the proof of \ref{prf:generalised-antisymmetry-y}, observe that \(t + y \circ \tau\) contains six terms:
+	For the proof of \ref{prf:generalised-antisymmetry-y}, observe that \(y + y \circ \tau\) contains six terms:
 	\(\beta + \beta \circ \tau \in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}, \mathbf{1})\),
 	\(a_{\ell} + a_{r} \circ \tau \in \mathbf{T}_{c}(\mathbf{1} \otimes \mathbf{1}^{\vee}, \mathbf{1}^{\vee})\) and
 	\(a_{r} + a_{\ell} \circ \tau \in \mathbf{T}_{c}(\mathbf{1}^{\vee} \otimes \mathbf{1}, \mathbf{1})\).
@@ -518,7 +520,7 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{c}\). 
 		\adjustbox{valign=c}{\input{graphics/two_coloured_coadjoint_action_left_with_twist_inserted.pdf_tex}}
 		}
 		\quad
-		=
+		+
 		\quad
 		{\scriptsize
 		\def\svgscale{0.38}
@@ -765,11 +767,5 @@ The proof follows the proof of Theorem \ref{thm:universal-casimir-lie-envelope-c
 Recall that the raison d'etre of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} was to formalise the informal statement that ``the algebra \(\mathcal{A}\) of chord diagrams behaves like the universal enveloping algebra of a Lie algebra''. Interpreting Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} in the same manner, its statement becomes that ``the algebra \(\mathcal{A}_{w}\) or arrow diagrams behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\) of a Lie algebra \(\mathfrak{g}\)''.
 
 \begin{remark}
-	For classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, for welded weight systems, this is already achieved as a corollary of \cite[Thm. 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots \(Z_{w}\) contains exactly the same information as the Alexander polynomial. Indeed, recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\), and since every welded weight system factors through \(Z_{w}\), they all factor through \(W_{\mathfrak{gl}_{1|1}}\). As such, all welded weight systems arise via Construction \ref{cons:lie-algebra-weight-system} from Lie superalgebras, specifically \(\mathfrak{gl}_{1|1}\). Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
+	For classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, for welded weight systems, this is already achieved as a corollary of \cite[Thm. 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots \(Z_{w}\) is equivalent to the Alexander polynomial. Indeed, recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\), and since every welded weight system factors through \(Z_{w}\), they all factor through \(W_{\mathfrak{gl}_{1|1}}\). As such, all welded weight systems arise via Construction \ref{cons:lie-algebra-weight-system} from Lie superalgebras, specifically \(\mathfrak{gl}_{1|1}\). Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
 \end{remark}
-
-\begin{shaded}
-	Actually \cite[Thm 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} says that the \(Z\) for welded knots is Alexander polynomial plus self-linking numbers (so I guess, Milnor invariants?) (arrow diagrams that are trees).
-
-	The Alexander polynomial factors through \(\mathfrak{gl}_{1|1}\), but what about Milnor invariants. My intuition tells me that trees should come from Lie algebras in which case the triviality still holds. Zsuzsi --- do you know if this is true?
-\end{shaded}

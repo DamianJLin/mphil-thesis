@@ -6,7 +6,7 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="string_diagram_eval_coeval_module_maps.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/string_diagram_eval_coeval_module_maps.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -26,11 +26,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="2.828427"
-     inkscape:cx="165.28622"
-     inkscape:cy="144.42657"
-     inkscape:window-width="2556"
-     inkscape:window-height="1394"
+     inkscape:zoom="3.381066"
+     inkscape:cx="170.80412"
+     inkscape:cy="181.15588"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -162,7 +162,7 @@
      sodipodi:nodetypes="cc" />
   <g
      id="g9-75"
-     transform="matrix(0.83493661,0.55034613,0.55034613,-0.83493661,-6.8383141,93.66417)"
+     transform="matrix(0.83493661,0.55034613,0.55034613,-0.83493661,-6.8383142,34.839294)"
      inkscape:transform-center-x="0.0093181637"
      inkscape:transform-center-y="8.7499048">
     <g
@@ -216,11 +216,11 @@
      fill-rule="nonzero"
      fill="#000000"
      fill-opacity="1"
-     d="m 96.810679,75.834485 c 3.412101,-5.90994 -5.45451,-11.02908 -8.86661,-5.11914 -3.41407,5.91333 5.45254,11.03247 8.86661,5.11914"
+     d="m 96.810679,132.05192 c 3.412101,-5.90994 -5.454509,-11.02908 -8.866609,-5.11914 -3.41407,5.91333 5.45254,11.03247 8.866609,5.11914"
      id="path10-6" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-     d="m 92.376984,73.27601 c 32.906256,28.5 176.077966,58.06399 176.077966,111.5882"
+     d="M 92.376984,129.49344 C 58.083655,115.74795 65.087312,90.825415 79.269953,81.427971 102.95144,65.736575 161.31572,71.194815 204.90945,101.00461 c 50.27621,34.37933 63.5455,70.47854 63.5455,83.8596"
      id="path3-3-2"
-     sodipodi:nodetypes="cc" />
+     sodipodi:nodetypes="cssc" />
 </svg>
