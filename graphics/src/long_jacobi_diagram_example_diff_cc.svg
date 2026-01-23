@@ -5,9 +5,9 @@
    viewBox="0 0 454.56293 196.54125"
    version="1.1"
    id="svg10"
-   sodipodi:docname="long_jacobi_diagram_example_same_cc.svg"
+   sodipodi:docname="long_jacobi_diagram_example_diff_cc.svg"
    inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
-   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/long_jacobi_diagram_example_same_cc.pdf"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/long_jacobi_diagram_example_diff_cc.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="1.6539288"
-     inkscape:cx="313.49596"
-     inkscape:cy="182.29321"
+     inkscape:zoom="2.4641147"
+     inkscape:cx="233.14661"
+     inkscape:cy="127.22622"
      inkscape:window-width="1916"
      inkscape:window-height="1034"
      inkscape:window-x="0"
@@ -48,12 +48,12 @@
        inkscape:locked="false" />
   </sodipodi:namedview>
   <rect
-     style="fill:#b3b3b3;stroke:#000000;stroke-width:0.397376;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
+     style="fill:#b3b3b3;stroke:#000000;stroke-width:0.421482;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0"
      id="rect1"
-     width="119.22743"
-     height="82.171806"
-     x="293.31815"
-     y="31.339153" />
+     width="119.17606"
+     height="92.483536"
+     x="116.72757"
+     y="40.897522" />
   <path
      fill="none"
      stroke-width="2.56"
@@ -142,9 +142,9 @@
      stroke="#000000"
      stroke-opacity="1"
      stroke-miterlimit="10"
-     d="M 333.03608,72.425053 C 290.41317,72.42505 354.21187,1.28 278.43455,1.28 c -51.15309,0 -36.20973,126.93973 8.71897,126.93973"
+     d="m 333.03608,72.425053 c -42.62291,-3e-6 -67.55409,-51.056702 -153.81456,-51.056702 -67.37948,0 -88.921101,12.921526 -101.369351,42.360025 -16.471343,38.952594 0.626945,83.198414 19.589412,83.198414"
      id="path2-9"
-     sodipodi:nodetypes="ccc" />
+     sodipodi:nodetypes="cssc" />
   <path
      fill="none"
      stroke-width="2.56"
@@ -164,7 +164,7 @@
      stroke="#000000"
      stroke-opacity="1"
      stroke-miterlimit="10"
-     d="m 200.92861,175.90698 c 0,-43.16465 152.00327,9.88385 152.00327,-83.586128"
+     d="m 200.92861,175.90698 c 0,-43.16465 152.00327,-49.17107 152.00327,-83.586128"
      id="path2-6-8"
      sodipodi:nodetypes="cc" />
   <path
@@ -228,7 +228,7 @@
      id="path4-5-6-3-6" />
   <path
      style="fill:none;stroke:#000000;stroke-width:2.56;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2.56, 2.56;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 304.96996,128.21973 H 286.55688"
+     d="M 113.50793,146.92679 H 95.094849"
      id="path1"
      sodipodi:nodetypes="cc" />
 </svg>
