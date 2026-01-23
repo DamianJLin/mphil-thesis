@@ -569,7 +569,8 @@ If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and 
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
 	\begin{enumerate}
-		\item A \textbf{Lie algebra object} in \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
+		\item \label{subdef:lie-algebra-object}
+			A \textbf{Lie algebra object} in \(\mathcal{C}\) is an object \(L\) equipped with a bracket morphism \(\beta : \mathcal{C} \otimes \mathcal{C} \to \mathcal{C}\) such that
 			\[\left( \beta \circ (\beta \otimes \operatorname{id}) \right) \circ (1 + \tau_{123} + (\tau_{123})^{2}) = 0 \qquad \text{and} \qquad \beta + \beta \circ \tau = 0.\]
             Graphically (in terms of the string diagrams of the previous section), this corresponds to
 			\[
@@ -704,7 +705,8 @@ If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and 
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_dual_id.pdf}
 				\;.
 			\]
-			%TODO (Zsuzsi) Now would be a good time to explain the arrows. An outgoing arrow at the top means the opposite as an outgoing arrow at the bottom. This is different from weight systems and needs to be said.
+			% TODO: (Zsuzsi) Now would be a good time to explain the arrows. An outgoing arrow at the top means the opposite as an outgoing arrow at the bottom. This is different from weight systems and needs to be said.
+			% Reply: Aren't these the same as the arrows before? The flow into 1 and out of 1 dual (in the direction of composition --- so down). This is just like the thin lines in weight systems (with g and g*) except there's no longer an identification from g to g*.
 			An object in a monoidal category \(\mathcal{C}\) is \textbf{rigid} if axioms above are satisfied just for that object without the whole category needing to be rigid.
 	\end{enumerate}
 \end{definitions}
@@ -723,11 +725,8 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 
 We will give concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
-%TODO (Zsuzsi) I don't want to give you too much editing work, but the sequence of definitions above would really benefit from some grounding examples. Maybe you could do some minimal rearranging and introduce the examples of even just Vect and SVect sooner, sort of as a running example that could illustrate everything.
-
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
-	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of modules over \(L\)).
-    %TODO (Zsuzsi) You haven't said that modules over $L$ form a monoidal category, and how.
+	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of right modules over \(L\)).
 	Then there is a weight system
 	\[W_{L, M}: \mathcal{A} \longrightarrow \mathcal{C}(k, k).\]
 	If \(\mathcal{C}\) is \(k\)-linear, then this is a \(k\)-valued weight system
@@ -745,9 +744,9 @@ The difference between this construction and Construction \ref{cons:lie-algebra-
 	\[[x, y] = - (-1)^{ij}[y, x].\]
 	The \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
 	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
+	Note that these identities are simply the axioms in Definition \ref{subdef:lie-algebra-object}, specialised to the category \(\mathcal{C} = \mathbf{sVect}\).
 
 	The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
-    %TODO (Zsuzsi) Explain why these are the Lie algebra objects in SVect.
 \end{example}
 
 Shortly after Conjecture \ref{conj:lie-algebra-weight-systems-span} was made, the following results were achieved based on constructions with the exceptional Lie superalgebra \(\mathfrak{D}(2, 1; \alpha)\) proving that metric Lie algebras alone do not see all the structure of \(\mathcal{A}\).
@@ -811,8 +810,7 @@ For example, \cite[Theorem 6.3(2)]{algebraic-structures-on-modules-of-diagrams} 
 		0
 	\end{array}
 \]
-in \(\mathcal{W}_{\mathfrak{g}_{2}}\). By some well-known identites internal to Jacobi diagrams, this relation can be simplified.
-%TODO (Zsuzsi) Add "as follows"
+in \(\mathcal{W}_{\mathfrak{g}_{2}}\). By some well-known identites internal to Jacobi diagrams, this relation can be simplified as follows.
 \begin{lemma}
 	\label{lem:tribubble-is-half-bibubble}
 	In \(\mathcal{A}\), the `trivalent-bubble' vertex is proportional to the regular trivalent vertex with a bivalent bubble inserted on any one of the half-edges.
