@@ -1398,6 +1398,7 @@ In other words, in \(\mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})\), the action of \
 \begin{proposition}
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the metric Lie algebra objects in the category \(\mathcal{C}\).
 \end{proposition}
+%TODO (Zsuzsi) Propositions should have proofs. If you don't want to write a proof, you can change this to an Example environment - same with the next proposition about Casimir.
 
 This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. But furthermore, this permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
 
@@ -1445,8 +1446,9 @@ The reason to consider casimir Lie algebra objects as opposed to just metric Lie
 		\mu
 	\]
 for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\) it is the superdimension. This relation is just one example of a relation between diagrams with only trivalent vertices and no univalent vertices to scalars.
+%TODO (Zsuzsi) I would delete "only trivalent vertices" and just have "no univalent vertices" - since in this example there are neither
 
-In \(\mathcal{A}\) there are no such relations. In fact, there are not even any objects that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
+In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diagrams that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
 
 \begin{definition}
 	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
