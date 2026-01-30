@@ -46,7 +46,7 @@ If an \(m\)-singular knot invariant is differentiable, we can extend it to an in
 	\[\delta f \left( \double \right) = f \left( \poscross \right) - f\left( \negcross \right).\]
 \end{definition}
 
-A regular knot invariant (which is an invariant of \(0\)-singular knots) is vaccuously differentiable and its derivative is an invariant of \(1\)-singular knots. Furthermore, if an invariant of \(m\)-singular knots is differentiable then so is its derivative, so it can be extended to any number of double points. In particular, regular knot invariants have derivatives of any order.
+A knot invariant (which is an invariant of \(0\)-singular knots) is vaccuously differentiable and its derivative is an invariant of \(1\)-singular knots. Furthermore, if an invariant of \(m\)-singular knots is differentiable then so is its derivative, so it can be extended to any number of double points. In particular, knot invariants have derivatives of all orders.
 
 Rather than thinking about functions on knots satisfying certain relations, the modern view of this subject takes the philosophy of imposing relations on the objects directly.
 
@@ -77,7 +77,7 @@ From Definition \ref{def:derivative}, any knot invariant \(f\) can be extended t
 and
 \[\delta^{m + 1} f \left(\double\right) = \delta^{m} f \left(\poscross\right) - \delta^{m} f \left(\negcross\right).\]
 
-The Vassiliev skein relation extends a knot via its derivative, or chooses a value on \((m + 1)\)-singular knots to agree with the difference of values on its boundary.
+The Vassiliev skein relation extends a knot via its derivative, that is, defines a function which on an \((m + 1)\)-singular knot agrees with the difference of values on its boundary.
 
 \begin{definitions}
 	\label{def:vassiliev-invariant}
@@ -177,7 +177,7 @@ Let us rephrase the definitions in Section~\ref{sec:singular-knots}, in the inte
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} Q'(\Psi_{s}).\]
 Note that due to the \ref{eq:codiff} relation this is always well-defined.
 
-Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knot such that
+Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knots such that
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} P(\Psi_{s}),\]
 in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate.
 
@@ -223,7 +223,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 \begin{remark}
 	Since we are considering framed knots, only the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T4Tstar} is closed, whereas the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T1Tstar} is not; so only \ref{eq:T4Tstar} holds. When considering unframed knots, the theory is the same as what we present below, but \ref{eq:T1Tstar} plays the same role as \ref{eq:T4Tstar}.
 
-	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams, indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the unframed version of the statement, hypothesis involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the unframed version. We give a few examples of the unframed statements. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
+	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams and indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the unframed version of the statement, hypotheses involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the framed version. We give a few examples of the unframed statements as we go. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
 \end{remark}
 
 Indeed, the definition of the primary obstructions to integration as \(P\mathcal{O}_{m} = \ker{\partial_{m}}\) is justified, as a cycle in \(\ker{\partial_{m}}\) is a combination of \((m + 1)\)-singular knots with signs through which a singular isotopy could pass. From Definition \ref{def:topological-singular-relations}, we have a cycle of the kind
@@ -247,7 +247,7 @@ in \(P\singularknots_{m} = \ker \partial_{m}\). However, we it is not clear whet
 	The corresponding unframed version of Stanford's theorem reads: \textit{An invariant \(f\) of \(m\)-singular unframed knots integrates to an invariant of \((m - 1)\)-singular unframed knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.}
 \end{remark}
 
-To answer our question about whether the primary obstructions are the only obstructions, it's helpful to define the constants of integration, which comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
+To answer the question about whether the primary obstructions are the only obstructions, it's helpful to define the constants of integration, which comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
 
 Recall from Definition \ref{def:integration-theory-spaces} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). Let us examine the classes of this quotient space. From the defintion of the derivative,
 \[\partial \left( \double \right) = \poscross - \negcross\]
@@ -257,7 +257,7 @@ so the difference of an \(m\)-singular knot and the same \(m\)-singular knot wit
 	\label{def:chord-diagram}
 	\begin{enumerate}
 		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphisms of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\). The oriented circle is called the \textbf{skeleton} of the chord diagram.
-		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the circle, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, and points with the same label are paired, forming \(\sigma(k)\).
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the skeleton, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, and points with the same label are paired, forming \(\sigma(k)\).
 	\end{enumerate}
 \end{definitions}
 
@@ -270,7 +270,7 @@ so the difference of an \(m\)-singular knot and the same \(m\)-singular knot wit
 \end{example}
 
 \begin{proposition}
-	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function on chord diagrams, that is
+	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function \(q\) on chord diagrams, that is
 	\[Q_{0}(k) = Q(k) + q(\sigma(k))\]
 	for \(q \in \mathcal{D}_{m}^{\ast}\)
 	Then \(Q_{0}\) is also an integral of \(P\).
@@ -303,7 +303,7 @@ The \ref{eq:T4Tstar} relations are what knot invariants must satisfy to be integ
 				= 0.
 			\end{equation}
 
-		\item A \textbf{one-term relation} (relevant in the unframed case) is a relation of the kind
+		\item A \textbf{one-term relation} (relevant only in the unframed case) is a relation of the kind
 			\begin{equation}
 				\label{eq:1Tstar}
 				\tag{\onetermstar}
@@ -318,7 +318,7 @@ The \ref{eq:T4Tstar} relations are what knot invariants must satisfy to be integ
 	Weight systems are exactly constants of integration that satisfy \textup{\ref{eq:4Tstar}}.
 \end{proposition}
 \begin{proof}
-	A weight system defines an \(m\)-singular invariant that is also invariant under crossing change. To be integrable, it must satisfy \ref{eq:4Tstar}. Since crossing changes are free, this is equivalent to satisfying the projection of \ref{eq:T4Tstar} into chord diagrams.
+	Recall that a weight system is an integrable \(w \in \mathcal{D}^{\ast}_{m}\). A functional \(w : \mathcal{D}_{m} \to \mathbb{Q}\) defines an \(m\)-singular invariant \(w \circ \sigma\) by precomposing with \(\sigma\). Such an \(m\)-singular invariant depends only on the chord diagram and so it is unchanged by crossing changes. To be integrable, \(w \circ \sigma\) must satisfy \ref{eq:T4Tstar}, but this is equivalent to \(w\) satisfying the projection of \ref{eq:T4Tstar} into chord diagrams, which is \ref{eq:4Tstar}.
 \end{proof}
 
 We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) is only defined up to constants of integration, so is of the form
@@ -333,14 +333,14 @@ For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be in
 \begin{remarks}
 	\begin{enumerate}
 		\item At first glance, this conjecture looks like it follows from Theorem~\ref{thm:stanford-integrates-once}. The point is that it may not be possible to choose the integral to again satisfy \(\ref{eq:T4Tstar}\), which is what \(S\singularknots\) measures.
-		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (we saw a similar thing with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- some elements of this space are found in \cite{integration-of-singular-braid-invariants}, but whether they generate the kernel remains open.
+		\item Computing \(S\singularknots_{m}\) is dual to computing \(\ker \partial_{m + 1} \partial_{m} / \ker \partial_{m}\) (a similar thing was seen with the primary obstructions). Computing \(\ker \partial^{2}\) is the hard part --- some elements of this space are found in \cite{integration-of-singular-braid-invariants}, but whether they suffice to generate the kernel remains open.
 		\item This conjecture is known in certain cases. It holds in the integration theory for braids \cite{integration-of-singular-braid-invariants}, and in a certain sense it's ``half''-proven for knots \cite{a-combinatorial-half-integration-from-weight-system-to-vassiliev-knot-invariant}.
 	\end{enumerate}
 \end{remarks}
 
 The finite type invariants in \(\singularknots_{\star}\) are simply the Vassiliev invariants, as checked by a simple comparison between Definitions \ref{def:vassiliev-invariant} and \ref{def:integration-theory-spaces}. In other words, Vassiliev invariants of order \(m\) are those which vanish on parts of the strata at and above some depth \(m + 1\).
 
-Restrict Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev invariants, yields the following.
+Restricting Conjecture \ref{conj:strong-fundamental-theorem} to Vassiliev invariants, yields the following.
 \begin{theorem}[Fundamental theorem of Vassiliev invariants]
 	\label{thm:fundamental-theorem-of-vassiliev-invariants}
 	Let \(v\) be an invariant of \(m\)-singular knots satsifying \textup{\ref{eq:T4Tstar}} and the additional condition that \(\delta v = 0\). Then \(v\) integrates \(m\) times into a genuine knot invariant (which is a Vassiliev invariant of order \(m\)).
@@ -913,7 +913,7 @@ Again, this is not, a-priori, a well-defined operation, as the location of the c
 		\right)
 		\ = \ 0.
 	\]
-	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:4T}. So, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:4T} relations, completing the proof.
+	A sliding move of our special chosen endpoint of \(a_{2}\) over an endpoint of some chord of \(a_{1}\) is achieved by subtracting the first two terms of the rearranged \ref{eq:4T}. But every chord of \(a_{1}\) is encountered twice in the path. In the other instance it is encountered, the sliding is achieved by subtracting the remaining two terms of \ref{eq:4T}. As such, the two connected sums \(a_{1} \connect a_{2}\) differ by a sum of \ref{eq:4T} relations, completing the proof.
 \end{proof}
 
 \begin{proposition}
@@ -957,7 +957,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 		\ftwest
 		\right)
 	\]
-	where there may be other chords \(O\) that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\) respectively. Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
+	where there may be other chords that the above diagrams have in common, as well as those shown. Note that there is one moving chord in the above diagram and one stationary chord. Let us label these \(m\) and \(s\) respectively. Take the same partition \(J \sqcup \overline{J}\) of \(S\) for all of the four chord diagrams at once, and write as the resulting coproduct \(\Delta(A_{i}) = C_{i} \otimes D_{i}\). Suppose without loss of generality that \(m\) was partitioned into the \(C_{i}\)'s. Then \(D_{1} = D_{2} = D_{3} = D_{4}\), so this term of the coproduct factors as \((C_{1} - C_{2} + C_{3} - C_{4}) \otimes D_{1}\) and either:
 	\begin{itemize}
 		\item \(s\) was also partitioned into the \(C_{i}\)'s and the relation remains a \ref{eq:4T}, or
 		\item \(s\) was partitioned into the \(D_{i}\)'s, and so \(C_{1} = C_{2}\) and \(C_{3} = C_{4}\).
@@ -1034,7 +1034,7 @@ Every graded object is a filtered object with the naturally induced filtration. 
 \section{The fundamental theorem of Vassiliev invariants}
 \label{sec:the-fundamental-theorem-of-vassiliev-invariants}
 
-In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that it establishes a particular relationship between the algebras of the previous two chapters, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). Admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of the theorem which makes the relationship explicit.
+In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, we gave the fundamental theorem of Vassiliev invariants. The point of this theorem is that it establishes a particular relationship between the algebras of the previous two sections, \(\mathcal{K}\) and \(\mathcal{A}\) (or equivalently, between \(\mathcal{W}\) and \(\mathcal{V}\)). Admittedly, in the form of Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants}, it's not a-priori obvious why this is the case. Here we give a restatement of the theorem which makes the relationship explicit.
 
 \begin{definition}
 	The \textbf{associated graded} bialgebra of a filtered bialgebra \(A\) is the bialgebra \(\gr A\) formed by the direct sum of the succesive quotients of the filtered components of \(A\). For a bialgebra with a descending filtration we have
@@ -1070,7 +1070,7 @@ In Section \ref{sec:the-stratification-on-the-space-of-knots-and-integration}, w
 
 The equivalence of Theorem \ref{thm:fundamental-theorem-restated} with Theorem \ref{thm:fundamental-theorem-of-vassiliev-invariants} will be proven at the end of this section.
 
-We can break the fundamental theorem up into two parts based on the direction of the map in \ref{thm:fundamental-theorem-restated}. The two maps being inverses gives the isomorphism. Historically one of the directions was shown first, by Vassiliev \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications}, and then later the direction due to Kontsevich \cite{vassilievs-knot-invariants}.
+We can break the fundamental theorem up into two parts based on the direction of the map in Theorem \ref{thm:fundamental-theorem-restated}. The two maps being inverses gives the isomorphism. Historically one of the directions was shown first, by Vassiliev \cite{cohomology-of-knot-spaces, complements-of-discriminants-of-smooth-maps-topology-and-applications}, and then later the direction due to Kontsevich \cite{vassilievs-knot-invariants}, proving the theorem.
 
 \begin{center}
 	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
@@ -1153,12 +1153,12 @@ The degree completion of a graded algebra \(A\) if a descending-filtered algebra
 \end{definition}
 
 \begin{remark}
-	An equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+	An equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, \(\gr f\) is a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
 
 	A universal Vassiliev invariant is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
 \end{remark}
 
-\begin{theorem}[Kontsevich Integral]
+\begin{theorem}[Kontsevich integral]
 	\label{thm:kontsevich-integral-is-universal}
 	There exists a universal Vassiliev invariant, \(Z(k)\); it is called the Kontsevich integral.
 \end{theorem}
@@ -1218,7 +1218,7 @@ Again, it is worth looking at the proof in the dual setting as well.
 		\end{cases}
 		.
 	\]
-	The case \(k \in \mathcal{K}_{> m}\) needn't be considered because \(W \circ Z\) is Vassiliev. As such, we have \(W \circ Z = \Omega + \Theta\). Obeserve \(\Omega\) recovers the weight system \(W\) when \(k \in \mathcal{K}_{m}\). Finally, \(\Theta\) is some Vassiliev invariant of order \(m - 1\) because it vanishes when \(k \in \mathcal{K}_{m}\).
+	The case \(k \in \mathcal{K}_{> m}\) needn't be considered because \(W \circ Z\) is Vassiliev. As such, we have \(W \circ Z = \Omega + \Theta\). Observe that \(\Omega\) recovers the weight system \(W\) when \(k \in \mathcal{K}_{m}\). Finally, \(\Theta\) is some Vassiliev invariant of order \(m - 1\) because it vanishes when \(k \in \mathcal{K}_{m}\).
 
 	In essence, we have found that the cokernel of \(Z^{\ast}\) is \(\mathcal{V}_{m - 1}\), so we get the desired isomorphism \(\mathcal{W}_{m} \cong \mathcal{V}_{m} / \mathcal{V}_{m - 1}\).
 \end{proofof}
@@ -1240,7 +1240,7 @@ Calling the Kontsevich integral and invariants of its kind is indeed justified: 
 		& \cong \mathcal{V}_{m}/\mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1} / \mathcal{V}_{m - 2} \oplus \cdots \oplus \mathcal{V}_{1} / \mathcal{V}_{0} \oplus \mathcal{V}_{0}\\
 		& \cong \mathcal{W}_{m} \oplus \mathcal{W}_{m - 1} \oplus \cdots \oplus \mathcal{W}_{1} \oplus \mathcal{W}_{0}
 	\end{align*}
-	and via this isomorphism, \(V\) can be written as a sequence of weight systems of degree from \(1\) to \(m\). Since each \(W_{m}\) factors through \(Z\), so does \(V\):
+	and via this isomorphism, \(V\) can be written as a sequence of weight systems of degree from \(0\) to \(m\). Since each \(W_{m}\) factors through \(Z\), so does \(V\):
 	\[V = \sum_{i = 0}^{m} (W_{m} \circ Z) = \left(\bigoplus_{i = 0}^{m} W_{m}\right) \circ Z.\]
 \end{proof}
 

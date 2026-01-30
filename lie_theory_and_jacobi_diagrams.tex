@@ -178,7 +178,7 @@ The result is standard --- see for example Chapter 5.2 of \cite{introduction-to-
 	\]
 	where \(\Theta\) is a sum of terms with the marked vertex now a trivalent vertex attached above each of the other univalent vertices. It suffices to show that \(\Theta\) vanishes.
 
-	We can split \(\Theta\) up based on which connected component the marked vertex now connects to. For connected components other than the connected component of the marked vertex, apply a vertical version of the generalised \ref{eq:IHX} relation (Proposition \ref{prop:generalised-ihx}), to the terms in which the markex vertex connects to that component (this is an \ref{eq:IHX} in which the grey box in Proposition \ref{prop:generalised-ihx} is around the whole connected component, except for where the univalent vertices connect to the skeleton).
+	We can split \(\Theta\) up based on which connected component the marked vertex now connects to. For connected components other than the connected component of the marked vertex, apply a vertical version of the generalised \ref{eq:IHX} relation (Proposition \ref{prop:generalised-ihx}), to the terms in which the marked vertex connects to that component. This is an \ref{eq:IHX} in which the grey box in Proposition \ref{prop:generalised-ihx} is around the whole connected component, except for where the univalent vertices connect to the skeleton.
 	As such, this is the case of the generalised \ref{eq:IHX} in which \(n = 0\):
 	\[
 		\sum \includegraphics[width=0.25\textwidth, valign=c]{graphics/long_jacobi_diagram_example_diff_cc.pdf}
@@ -308,7 +308,7 @@ From the discussion above, we see that the internal structure of Jacobi diagrams
 \]
 We omit the arrows because they're unneccesary again --- corresponding to the maps
 \[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}\]
-are vertices
+are diagrams
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_eval.pdf}
 	\qquad \text{and} \qquad
@@ -717,8 +717,6 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 	\quad
 	=
 	\quad
-	-
-	\quad
 	\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_eval_coeval_module_maps.pdf}
 	.
 \]
@@ -733,7 +731,7 @@ We will give concrete examples of Lie algebra objects in different symmetric mon
 	\[W_{L, M}: \mathcal{A} \longrightarrow k.\]
 \end{theorem}
 
-The proof of this theorem is exactly the same as the proof of construction \ref{cons:lie-algebra-weight-system}, but considering everything in the generality of \(\mathcal{C}\) rather than \(\mathbf{Vect}\). It is proved in \cite{on-the-rozansky-witten-weight-systems}.
+The proof of this theorem is exactly the same as the proof of Construction \ref{cons:lie-algebra-weight-system}, but considering everything in the generality of \(\mathcal{C}\) rather than \(\mathbf{Vect}\). It is proved in \cite{on-the-rozansky-witten-weight-systems}.
 
 The difference between this construction and Construction \ref{cons:lie-algebra-weight-system} is the treatment of the symmetry natural isomorphism \(\tau\) which tells us what isomorphism to use when rearranging the tensor factors. The most obvious isomorphism would be the identity (as it was in the original construction) corresponding to when \(\mathcal{C}\) is a strict symmetric (strict) monoidal category. However not every symmetric monoidal category is equivalent to a strict symmetric monoidal category. In other words, Lie algebra objects with non-trivial symmetry isomorphisms are necessary to pick up all the structure in \(\mathcal{A}\).
 
@@ -744,7 +742,7 @@ The difference between this construction and Construction \ref{cons:lie-algebra-
 	\[[x, y] = - (-1)^{ij}[y, x].\]
 	The \textbf{super Jacobi identity}, that for homogeneous elements \(x, y\) and \(z\) in \(\mathfrak{g}_{i}, \mathfrak{g}_{j}\) and \(\mathfrak{g}_{k}\),
 	\[(-1)^{ik}[x, [y, z]] + (-1)^{ji}[y, [z, x]] + (-1)^{kj}[z, [x, y]] = 0.\]
-	Note that these identities are simply the axioms in Definition \ref{subdef:lie-algebra-object}, specialised to the category \(\mathcal{C} = \mathbf{sVect}\).
+	Note that these identities are simply the axioms in Definition \ref{def:internal-to-additive-monoidal-category} \ref{subdef:lie-algebra-object}, specialised to the category \(\mathcal{C} = \mathbf{sVect}\).
 
 	The grading induces the splitting \(\mathfrak{g} = \mathfrak{g}_{0} \oplus \mathfrak{g}_{1}\), and the direct summand \(\mathfrak{g}_{0}\) is known as the \textbf{even} part and the summand \(\mathfrak{g}_{1}\) is known as the \textbf{odd} part.
 \end{example}
@@ -777,7 +775,7 @@ More recently Aizawa-Kimura \cite{universal-weight-systems-from-a-mimimal-Z22-gr
 
 The original motivation for the work of Vogel \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams} (seen more explicity in \cite{vassiliev-theory-and-the-universal-lie-algebra}) was to construct a universal object generalising all simple Lie algebras. Such an object would parametrise the relations in tensor powers of the adjoint representation of all simple Lie algebras, and its weight systems would span \(\mathcal{W}\). For example, the relation for \(W_{\mathfrak{sl}_{2}}\) given in Example \ref{ex:sl2-cv-relation} is entirely internal to the Lie algebra; it doesn't involve projecting to the universal enveloping algebra or choosing a representation (since the adjoint representation is canonical).
 
-Recently, it seems there is renewed interest in Vogel's methods \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra, on-refined-vogels-universality, can-yang-baxter-imply-lie-algebra}. In-particular, present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine local relations internal to any simple Lie algebra in terms of two independent ``Vogel parameters'', and some complicated marked elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in \cite[Appendix]{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}, but the use of different normalisations of the Vogel parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Moreover, the relations in Vogel's original work, are general enough to hold for any Lie superalgebra but when restricting to Lie algebras, the diagrammatic formulae can be simplified.
+Recently, it seems there is renewed interest in Vogel's methods \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra, on-refined-vogels-universality, can-yang-baxter-imply-lie-algebra}. In-particular, present implicitly in \cite{algebraic-structures-on-modules-of-diagrams} is a way to determine local relations internal to any simple Lie algebra in terms of two independent ``Vogel parameters'', and some complicated marked elements of \(\mathcal{A}\) defined recursively. These were written out explicitly in the appendix of \cite{construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}, but the use of different normalisations of the Vogel parameters between this and \cite{algebraic-structures-on-modules-of-diagrams} makes computing explicit relations tedious. Moreover, the relations in Vogel's original work, are general enough to hold for any Lie superalgebra but when restricting to Lie algebras, the diagrammatic formulae can be simplified.
 
 For example, \cite[Theorem 6.3(2)]{algebraic-structures-on-modules-of-diagrams} gives the relation
 \[
@@ -1156,7 +1154,9 @@ Furthermore, the this algebra is constructed as a generalised notion of a univer
 
 In this section we review the Hinich--Vaintrob construction, and in Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will generalise it from Vassiliev invariants of classical knots to those of welded long knots.
 
-An concept that is essential to the construction of Hinich--Vaintrob is that of an operad, which captures abstractly the general behaviour of associative operations and their iterated composition. Indeed, when operations on a set are composed by taking as one of their inputs the output of another operation, these compositions always obey certain rules. For example, if the set is a vector space, the operations too form a vector space, and there is an action of \(S_{n}\) coming from the permutation of the inputs of the operation. An operad captures this concept of operations on some object of a category abstractly. 
+A concept that is essential to the construction of Hinich--Vaintrob is that of an operad, which captures abstractly the general behaviour of associative operations and their iterated composition. Indeed, when operations on a set are composed by taking as one of their inputs the output of another operation, these compositions always obey certain rules. If the set is for example a vector space, the operations too form a vector space, and there is an action of the symmetric group \(S_{n}\) coming from the permutation of the inputs of the operation. An operad captures this concept of operations on some object of a category abstractly. 
+
+% TODO: Make the following definitions only for Vect or whatever, then remark that they also apply in other Categories.
 
 \begin{warning}
 	For all of the below, we assume the monoidal categories are \(k\)-linear, \(k\) a field of characteristic zero and the tensor product is bilinear (also known as tensor categories).
@@ -1169,9 +1169,9 @@ An concept that is essential to the construction of Hinich--Vaintrob is that of 
 	An \textbf{operad} \(\mathcal{O}\) in a symmetric monoidal category \(\mathcal{C}\) consists of:
 
 	\begin{itemize}
-		\item a collection of objects in \(\mathcal{C}\), \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations}
-		\item an element \(\id \in \mathcal{O}(1)\).
-		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
+		\item a collection of objects in \(\mathcal{C}\), \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations},
+		\item an element \(\id \in \mathcal{O}(1)\),
+		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)m
 		\item a series of \textbf{composition morphisms}:
         for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
 			\[
@@ -1185,11 +1185,11 @@ An concept that is essential to the construction of Hinich--Vaintrob is that of 
 					&\theta \circ (\theta_{1} \otimes \theta_{2} \otimes \cdots \otimes \theta_{n})
 				\end{array}
 			\]
+	satisfying the following axioms.
 	\end{itemize}
-	satisfying the following axioms. (Note: the axioms are listed for completeness, but won't be used heavily below.)
 		\begin{enumerate}
 			\item That for any \(\theta \in \mathcal{O}(n)\), \(\theta \circ_{n} (\id, \dots, \id) = \theta = \id \circ_{1} \theta\). (The \textbf{identity} axiom.)
-			\item \textbf{Associativity of composition}. Let \(\theta \in \mathcal{O}(n)\), and \(\theta_{1}\in \mathcal{O}(k_{1})\), \(\theta_{2} \in \mathcal{O}(k_{2})\), up to \(\theta_{n} \in \mathcal{O}(k_{n})\), and finally let \(\theta_{1, 1} \in \mathcal{O}(k_{1, 1})\), \(\theta_{1, 2} \in \mathcal{O}(k_{1, 2})\) through to \(\theta_{k_{n}, 1} \in \mathcal{O}(k_{k_{n}, 1})\). The two ways of forming the composition of the three layers of operations: \(\theta_{i, j}\) into \(\theta_{i}\) into \(\theta\) are the same. In notation,
+			\item \textbf{Associativity of composition}. Let \(\theta \in \mathcal{O}(n)\), and \(\theta_{1}\in \mathcal{O}(k_{1})\), \(\theta_{2} \in \mathcal{O}(k_{2})\), up to \(\theta_{n} \in \mathcal{O}(k_{n})\), and finally let \(\theta_{1, 1} \in \mathcal{O}(k_{1, 1})\), \(\theta_{1, 2} \in \mathcal{O}(k_{1, 2})\) through to \(\theta_{k_{n}, 1} \in \mathcal{O}(k_{k_{n}, 1})\). The two ways of forming the composition of the three layers of operations: \(\theta_{i, j}\) into \(\theta_{i}\) into \(\theta\) are equal. That is,
 				\[\theta \circ_{n} \Big( \theta_{1} \circ_{k_{1}} (\theta_{1, 1}, \dots, \theta_{1, k_{1}}), \dots, \theta_{n} \circ_{k_{n}} (\theta_{n, 1}, \dots, \theta_{n, k_{n}}) \Big)\]
 				is equal to
 				\[\big( \theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) \circ_{k_{1} + \cdots + k_{n}} (\theta_{1, 1}, \dots, \theta_{1, k_{n}}, \dots, \theta_{n, 1}, \dots, \theta_{n, k_{n}}).\]
@@ -1272,9 +1272,7 @@ An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey 
 
 The Hinich--Vaintrob construction is a Lie algebra object in a symmetric monoidal category whose universal enveloping algebra 
 
-Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category.
-
-The first step is to create an category whose morphisms encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
+Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category. The first step is to create an category whose morphisms encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
 
 Indeed, composition in operads is reminiscent of contraction in a symmetric monoidal category, with the caveat that there are restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, and as a result there is no natural notion of tensor product in an operad.
 
@@ -1386,12 +1384,11 @@ The conditions above can alternatively and more naturally be phrased in terms of
 \end{definition}
 In other words, in \(\mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})\), the action of \(\sigma_{c}\) corresponds to the cyclic permutation of inputs and outputs by means of the metric and the casimir.
 
-\begin{proposition}
+\begin{example}
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the metric Lie algebra objects in the category \(\mathcal{C}\).
-\end{proposition}
-%TODO (Zsuzsi) Propositions should have proofs. If you don't want to write a proof, you can change this to an Example environment - same with the next proposition about Casimir.
+\end{example}
 
-This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. But furthermore, this permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
+This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. This also permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
 
 \begin{definition}
 	\label{def:casimir-envelope-of-cyclic-operad}
@@ -1413,14 +1410,13 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 	\end{itemize}
 \end{definition}
 
-\begin{proposition}
+\begin{example}
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the casimir Lie algebra objects in the category \(\mathcal{C}\).
-\end{proposition}
+\end{example}
 
 This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimr Lie algebra object.
 
 The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
-
 
 The reason to consider casimir Lie algebra objects as opposed to just metric Lie algebra objects to make the universal construction is the following. Consider specifying a metric Lie algebra object \(\mathfrak{g}\) in some symmetric monoidal category \(\mathcal{C}\). Then the weight system \(\mathcal{W}_{\mathfrak{g}}\) has a relation of the form
 	\[
@@ -1436,8 +1432,7 @@ The reason to consider casimir Lie algebra objects as opposed to just metric Lie
 		\quad
 		\mu
 	\]
-for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\) it is the superdimension. This relation is just one example of a relation between diagrams with only trivalent vertices and no univalent vertices to scalars.
-%TODO (Zsuzsi) I would delete "only trivalent vertices" and just have "no univalent vertices" - since in this example there are neither
+for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\) it is the superdimension. This relation is just one example of a relation between diagrams with no univalent vertices to scalars.
 
 In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diagrams that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
 
@@ -1616,9 +1611,10 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 		\in
 		\quad
 		\mathcal{O}_{\text{Lie}}(3) \otimes \Gamma(\mathfrak{g}^{\otimes 2})
+		.
 	\]
 
-	So, in total, we have the relation
+	In total, we have the relation
 	\[
 		\def\svgscale{0.37}
 		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_element_lie_example_commutator.pdf_tex}}
