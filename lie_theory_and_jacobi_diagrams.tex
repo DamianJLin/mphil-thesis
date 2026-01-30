@@ -1345,8 +1345,6 @@ Recall that the action of the symmetric groups \(S_{n}\) on an operad come from 
 		\def\svgscale{0.3}
 		\raisebox{-37pt}{\input{graphics/cyclic_operad_condition_rhs.pdf_tex}}
 	\]
-	% TODO: (Zsuzsi) This might be more illuminating if instead of writing $\sigma_c$ you drew its action.
-	% Reply: Yes but I think that's actually too strong of a statement. That's only necessarily what the action looks like if the cyclic structure comes from a metric --- but nothing in the definition of a cyclic structure says it should look like that.
 	We denote a cyclic operad with underlying operad \(\mathcal{O}\) by \(\mathcal{O}^{\text{cyc}}\). This suffices because we do not consider operads with multiple cyclic structures.
 \end{definition}
 
@@ -1363,15 +1361,8 @@ The following definition generalises the definition of a metric Lie algebra (whi
 		\item the composition
 			\[\mathcal{O}(n) \otimes A^{\otimes n + 1} \longrightarrow A \otimes A \overset{m}{\longrightarrow} k\]
 			is \(S_{n + 1}\)-invariant (\(m\) is \(\mathcal{O}\)-\textbf{invariant}).
-
-		\begin{shaded}
-			(REALLY? Surely it just has to agree with the \(S_{n}\)-action. What about swapping! It can't be invariant under that, it has to be negative!?!)
-		\end{shaded}
 	\end{itemize}
 \end{definition}
-% TODO: (Zsuzsi) We checked this in my office at some point and I recall it's fine, once you untangle what the definition means. We can talk about it in LD.Co
-% Reply: Yes, I recall we checked it! But I had a hunch we agreed that Hinnich-Vaintrob had a typo. At least I haven't managed to untangle it myself.
-% Zsuzsi: If you untangle it for O=LIE, n=2, and m=(,) the Killing form, then the S_3-invariance written for the 3-cycle is the identity that ([x,y],z)=(x,[y,z]), in other words, the g-invariance of the Killing form. So this is fine, no typo. You could add this as an example or remark.
 
 The conditions above can alternatively and more naturally be phrased in terms of props.
 \begin{definition}
