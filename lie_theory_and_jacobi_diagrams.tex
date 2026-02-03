@@ -1156,23 +1156,19 @@ In this section we review the Hinich--Vaintrob construction, and in Chapter \ref
 
 A concept that is essential to the construction of Hinich--Vaintrob is that of an operad, which captures abstractly the general behaviour of associative operations and their iterated composition. Indeed, when operations on a set are composed by taking as one of their inputs the output of another operation, these compositions always obey certain rules. If the set is for example a vector space, the operations too form a vector space, and there is an action of the symmetric group \(S_{n}\) coming from the permutation of the inputs of the operation. An operad captures this concept of operations on some object of a category abstractly. 
 
-% TODO: Make the following definitions only for Vect or whatever, then remark that they also apply in other Categories.
-
 \begin{warning}
 	For all of the below, we assume the monoidal categories are \(k\)-linear, \(k\) a field of characteristic zero and the tensor product is bilinear (also known as tensor categories).
-
-	For the definitions below \(\mathcal{C}\) is not necessarily a category whose objects are sets, however we will simplify notation as if this were the case. For example we write \(x \in A\) for \(A \in \mathcal{C}\). If the objects are not necessarily sets, this should be interpreted as a morphism \(x: \mathbf{0} \to A\) where \(\mathbf{0}\) is the monoidal unit.
 \end{warning}
 
 \begin{definition}
-	\label{def:operad}
-	An \textbf{operad} \(\mathcal{O}\) in a symmetric monoidal category \(\mathcal{C}\) consists of:
+	\label{def:operad-over-set}
+	An \textbf{operad} \(\mathcal{O}\) in the symmetric monoidal category \(\mathbf{Set}\) consists of:
 
 	\begin{itemize}
-		\item a collection of objects in \(\mathcal{C}\), \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations},
+		\item a collection of sets, \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations},
 		\item an element \(\id \in \mathcal{O}(1)\),
-		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)m
-		\item a series of \textbf{composition morphisms}:
+		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
+		\item a series of \textbf{composition functions}:
         for each \(n\) and \(k_{1}, k_{2}, \cdots, k_{n} \in \mathbb{N}\)
 			\[
 				\begin{array}{rccc}
@@ -1199,9 +1195,11 @@ A concept that is essential to the construction of Hinich--Vaintrob is that of a
 			\item A further \textbf{equivariance} axiom, that for permutations \(\sigma_{i} \in S_{k_{i}}\), and all \(\theta \in \mathcal{O}(n)\), and all \(\theta_{1}, \dots, \theta_{n}\),
 				\[\theta \circ_{n} (\theta_{1}\sigma_{1}, \dots, \theta_{n} \sigma_{n}) = \big(\theta \circ_{n} (\theta_{1}, \dots, \theta_{n}) \big) (\sigma_{1} \connect \cdots \connect \sigma_{n})\]
 				where \((\sigma_{1} \connect \cdots \connect \sigma_{n}) \in S_{k_{1} + \cdots + k_{n}}\) is the block-wise permutation of block \(i\) by \(\sigma_{i}\).
-			\item That the action of the symmetric group agrees with its action in the symmetric monoidal category \(\mathcal{C}\).
+			\item That the action of the symmetric group agrees with its action in the symmetric monoidal category \(\mathbf{Set}\).
 		\end{enumerate}
 \end{definition}
+
+Accordingly, operads can be considered over any symmetric monoidal category \(\mathcal{C}\) by replacing \(\mathbf{Set}\) with \(\mathcal{C}\) in Definition \ref{def:operad-over-set} and adjusting sets to be objects of \(\mathcal{C}\) and functions between sets to be morphisms between the corresponding objects.
 
 An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
 
