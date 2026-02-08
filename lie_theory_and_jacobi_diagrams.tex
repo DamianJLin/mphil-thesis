@@ -1148,9 +1148,9 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not
 
 We return to the universal Lie algebra of Vogel which was discussed in Section \ref{sec:non-lie-algebraic-weight-systems}. For a long period, Vogel endevoured \cite{algebraic-structures-on-modules-of-diagrams-preprint, algebraic-structures-on-modules-of-diagrams, vassiliev-theory-and-the-universal-lie-algebra} to construct this univeral Lie algebra, however attempts at its construction have so far failed \cite{can-yang-baxter-imply-lie-algebra, on-refined-vogels-universality, construction-of-lie-algebra-weight-system-kernel-via-vogel-algebra}.
 
-There is, however, a theoretical construction of Hinnich-Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}: they construct a Lie algebra object in a symmetric monoidal category with a weight system which is isomorphic to \(\mathcal{A}\). This guarantees that every Vassiliev invariant can be constructed from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, it doesn't give any hints as to which symmetric monoidal category one needs to work in to construct a particular Vassiliev invariant. In this sense it is useful theoretically, but not computationally.
+There is, however, a theoretical construction of Hinnich--Vaintrob \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}: they construct a Lie algebra object in a symmetric monoidal category with a weight system which is isomorphic to \(\mathcal{A}\) as a bialgebra. This guarantees that every Vassiliev invariant can be constructed from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, it doesn't give any hints as to which symmetric monoidal category one needs to work in to construct a particular Vassiliev invariant. In this sense it is useful theoretically, but not computationally.
 
-Furthermore, the this algebra is constructed as a generalised notion of a universal enveloping algebra, applied to a Lie algebra object is some symmetric monoidal category, giving  credence to the statement hinted at by Construction \ref{cons:lie-algebra-weight-system} that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''.
+Furthermore, the this bialgebra is constructed as a generalised notion of a universal enveloping algebra, applied to a Lie algebra object is some symmetric monoidal category, giving  credence to the statement hinted at by Construction \ref{cons:lie-algebra-weight-system} that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''.
 
 In this section we review the Hinich--Vaintrob construction, and in Chapter \ref{ch:welded-knots-isometry-lie-algebras-and-arrow-diagrams}, we will generalise it from Vassiliev invariants of classical knots to those of welded long knots.
 
@@ -1268,9 +1268,9 @@ An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey 
 	\]
 \end{example}
 
-The Hinich--Vaintrob construction is a Lie algebra object in a symmetric monoidal category whose universal enveloping algebra 
+Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category. Indeed, \(\mathcal{A}\) is a bialgebra, and Hinich--Vaintrob construct an object which is categorically a universal enveloping algebra, has a compatible coalgebra structure, and as a bialgebra is isomorphic to \(\mathcal{A}\).
 
-Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category. The first step is to create an category whose morphisms encodes the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
+The first step is to create an category whose morphisms encode the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
 
 Indeed, composition in operads is reminiscent of contraction in a symmetric monoidal category, with the caveat that there are restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, and as a result there is no natural notion of tensor product in an operad.
 
@@ -1432,7 +1432,7 @@ The reason to consider casimir Lie algebra objects as opposed to just metric Lie
 	\]
 for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir \(c\) with the metric \(m\). This was discussed in Remark \ref{rem:metric-casimir-bubble-is-dimension}. For example if \(\mathcal{C} = \mathbf{Vect}\), this is the dimension of the Lie algebra, or if \(\mathcal{C} = \mathbf{sVect}\) it is the superdimension. This relation is just one example of a relation between diagrams with no univalent vertices to scalars.
 
-In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diagrams that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong thing to consider if we want to find an algebra isomorphic to \(\mathcal{A}\). Algebras having only casimirs are the correct choice.
+In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diagrams that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong objects to consider if we want to find a bialgebra isomorphic to \(\mathcal{A}\). Instead, algebras having only casimirs should be considered.
 
 \begin{definition}
 	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
@@ -1642,7 +1642,7 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 
 \begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
 	\label{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}
-	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
+	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as an algebra to \(\mathcal{A}\).
 \end{theorem}
 
 We fill out some details left out of the proof in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.
@@ -1674,7 +1674,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 	Recall from Example \ref{ex:lie-operad} the definition of the Lie operad as the free operad \(\Lambda([\cdot, \cdot])\) on a single generating binary operation \([\cdot, \cdot]\) modulo some relations. Let \(O \in \Lambda([\cdot, \cdot])\). From the equivariance axioms of the operad, if there is some composition into the second component in \(O\), then \((1 - \sigma) \in kS_{3}\) determines some \(\tau \in kS_{n}\) such that in \(\mathcal{O}_{\text{Lie}}\), \(O = O' \tau\) and the composition in \(O'\) is into the first component. Iterated application of this fact completes the proof.
 \end{proof}
 
-\begin{proofof}{Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} (sketch)}
+\begin{proofof}{Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}}
 	Let \(\mathbf{n}_{c}\) denote \((\mathbf{1}_{c})^{\otimes n}\). For the rest of this proof we denote \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) simply by \(\mathbf{E}_{c}\).
 
 	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is an associative algebra in \(\mathbf{Vect}\) whose objects are elements of
@@ -1716,9 +1716,24 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 
 	We need to show that \(f\) factors through the projection to \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). All of the relations of Definition \ref{def:external-enveloping-algebra} follow from the relation in Example \ref{ex:stu-in-external-enveloping-algebra}, so it suffices to prove that the map factors through that relation. This is just the \ref{eq:STU} in \(\mathcal{A}\).
 
-	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the the relation in Example \ref{ex:stu-in-external-enveloping-algebra}.
-
-	This proves the algebra isomorphism. The proof of the bialgebra isomorphism involves modular operads and we refer the reader to \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.
+	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
 \end{proofof}
+
+We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) and the bialgebra isomorphism to \(\mathcal{A}\).
+
+\begin{definition}
+	The coproduct \(\Delta\) on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is defined by setting elements of the form \([\cdot,\cdot] \otimes \id \otimes \xi \in \mathcal{O}_{\text{Lie}}(2) \otimes \mathcal{O}_{\text{Lie}}(1) \otimes \Gamma(\mathfrak{g})\) to be primitive, namely
+	\[
+		\Delta([\cdot,\cdot] \otimes \id \otimes \xi)
+		=
+		\left( [\cdot,\cdot] \otimes \id \otimes \xi \right) \otimes 1
+		+
+		1 \otimes \left( [\cdot,\cdot] \otimes \id \otimes \xi \right).
+	\]
+\end{definition}
+
+\begin{lemma}
+	The coproduct on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is well-defined and compatible with the product, hence \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is a bialgebra.
+\end{lemma}
 
 Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} is a formalisation of the statement that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.
