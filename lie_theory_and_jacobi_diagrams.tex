@@ -1641,7 +1641,7 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 \end{example}
 
 \begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
-	\label{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}
+	\label{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}
 	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as an algebra to \(\mathcal{A}\).
 \end{theorem}
 
@@ -1674,7 +1674,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 	Recall from Example \ref{ex:lie-operad} the definition of the Lie operad as the free operad \(\Lambda([\cdot, \cdot])\) on a single generating binary operation \([\cdot, \cdot]\) modulo some relations. Let \(O \in \Lambda([\cdot, \cdot])\). From the equivariance axioms of the operad, if there is some composition into the second component in \(O\), then \((1 - \sigma) \in kS_{3}\) determines some \(\tau \in kS_{n}\) such that in \(\mathcal{O}_{\text{Lie}}\), \(O = O' \tau\) and the composition in \(O'\) is into the first component. Iterated application of this fact completes the proof.
 \end{proof}
 
-\begin{proofof}{Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism}}
+\begin{proofof}{Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}}
 	Let \(\mathbf{n}_{c}\) denote \((\mathbf{1}_{c})^{\otimes n}\). For the rest of this proof we denote \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) simply by \(\mathbf{E}_{c}\).
 
 	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is an associative algebra in \(\mathbf{Vect}\) whose objects are elements of
@@ -1730,10 +1730,39 @@ We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{
 		+
 		1 \otimes \left( [\cdot,\cdot] \otimes \id \otimes \xi \right).
 	\]
+	and defining \(\Delta\) to extend to the whole of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) by being an algebra map.
 \end{definition}
 
 \begin{lemma}
 	The coproduct on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is well-defined and compatible with the product, hence \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is a bialgebra.
+
+
+	Diagramatically, such elements look like
+	\[
+		\def\svgscale{0.37}
+		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_one_cc.pdf_tex}}.
+	\]
 \end{lemma}
 
-Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-isomorphism} is a formalisation of the statement that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.
+\begin{proof}
+	Firstly, we check that the definition above determines the coproduct on the whole of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). Indeed, \(\mathcal{O}_{\text{Lie}}\) is generated as an algebra by \([\cdot, \cdot] \in \mathcal{O}_{\text{Lie}}(2)\), elements of the form \([\cdot, \cdot] \otimes \id \otimes \xi\) for \(\xi \in \Gamma(\mathfrak{g}))\) so it suffices that \(\Delta\) is an algebra map, and it was defined as such.
+
+	We now check that this is a well-defined operation. That \(\Delta\) is compatible with \ref{eq:AS} and \ref{eq:STU} directly follows from \ref{eq:AS} and \ref{eq:STU} in \(\Gamma(\mathfrak{g})\). We check that \(\Delta\) is compatible with the defining relation of the universal enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). Without loss of generality, the argument in Example \ref{ex:stu-in-external-enveloping-algebra}, but in the symmetric monoidal category \(\mathbf{E}_{c}\) rather than \(\mathbf{Vect}\).
+\end{proof}
+
+Finally, we upgrade the isomorphism in Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} to the level of bialgebras.
+
+\begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
+	\label{thm:universal-casimir-lie-envelope-chord-diagrams-bialgebra-isomorphism}
+	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
+\end{theorem}
+
+\begin{proof}
+	All that remains is to check that primitives in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) map to primitives in \(\mathcal{A}\), and vice-versa. Indeed, any primitive in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) can be written as an element of the form \([\cdot, \cdot] \otimes \id \otimes \xi\) for \(\xi \in \Gamma{\mathfrak{g}}\). Therefore it is mapped in \(\mathcal{A}\) to a diagram consisting of a single connected component, which is primitive in \(\mathcal{A}\).
+
+	Conversely, diagrams consisting of single connected components in \(\mathcal{A}\) have a vertex that is 
+\end{proof}
+
+% TODO: Wait, but how does this fare with primitives with more than one connection to the skeleton? Hmmmm.
+
+Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} is a formalisation of the statement that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.
