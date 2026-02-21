@@ -1435,23 +1435,30 @@ for some scalar \(\mu\). Here the first diagram is formed by pairing the casimir
 In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diagrams that have only trivalent vertices and no univalent vertices. So, metric Lie algebras are the wrong objects to consider if we want to find a bialgebra isomorphic to \(\mathcal{A}\). Instead, algebras having only casimirs should be considered.
 
 \begin{definition}
-	The \textbf{universal Casimir Lie algebra object} is the object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
+	The \textbf{universal Casimir Lie algebra object} is the generating object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
 \end{definition}
+
+This object \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}}\) is the object to which Hinich--Vaintrob apply the following construction which generalises the notion of a universal enveloping algebra. As in the construction of the classical universal enveloping algebra, this proceeds via constructing a generalisation of the tensor algebra.
 
 \begin{definitions}
 		The \textbf{global section} is the functor
 		\[
 			\begin{array}{rccc}
 				\Gamma:		&\mathcal{C}		&\longrightarrow	&\mathbf{Vect}\\
-						&X			&\longmapsto		&\mathcal{C}(k, X).
+						&X			&\longmapsto		&\mathcal{C}(k, X)
 			\end{array}
 		\]
+		where \(k\) is the tensor unit in \(\mathcal{C}\).
 \end{definitions}
 \begin{definitions}
 	\label{def:external-tensor-algebra}
 	The \textbf{external tensor algebra of the algebra \(A\) over the operad \(\mathcal{O}\)} is the algebra
 	\[T(\mathcal{O}, A) = \bigoplus_{n \in \mathbb{N}} \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n}).\]
-	Let \(o_{a} \otimes_{S_{n}} \alpha \in \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n})\), and \(o_{b} \otimes_{S_{n}} \beta \in \mathcal{O}(m + 1) \otimes_{S_{n}} \Gamma(A^{\otimes m})\). Their product is given by the composition
+	Let \(o_{a} \otimes_{S_{n}} \alpha \in \mathcal{O}(n + 1) \otimes_{S_{n}} \Gamma(A^{\otimes n})\), and \(o_{b} \otimes_{S_{n}} \beta \in \mathcal{O}(m + 1) \otimes_{S_{n}} \Gamma(A^{\otimes m})\). Their product is defined by the following operad composition
+	\[
+		(o_{a} \otimes_{S_{n}} \alpha) \cdot (o_{b} \otimes_{S_{n}} \beta) = (o_{a} \circ_{1} o_{b}) \otimes_{S_{n}} (\alpha \otimes \beta).
+	\]
+	Diagramatically this composition looks like
 	\[
 		\def\svgscale{0.35}
 		\raisebox{-20pt}{\input{graphics/external_tensor_algebra_element_a.pdf_tex}}
@@ -1465,10 +1472,7 @@ In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diag
 		\quad
 		\def\svgscale{0.35}
 		\raisebox{-40pt}{\input{graphics/external_tensor_algebra_product.pdf_tex}}
-	\]
-	so by the formula
-	\[
-		(o_{a} \otimes_{S_{n}} \alpha) \cdot (o_{b} \otimes_{S_{n}} \beta) = (o_{a} \circ_{1} o_{b}) \otimes_{S_{n}} (\alpha \otimes \beta).
+		.
 	\]
 \end{definitions}
 
@@ -1477,7 +1481,7 @@ Recall that since \(A\) is an \(\mathcal{O}\)-algebra it comes equipped with map
 For example, in \(\mathcal{O}_{\text{Lie}}\), setting \(o \in \mathcal{O}(k)\), induces the map \(A^{k} \to A\) implementing iterated composition of the bracket \([\cdot, \cdot]_{A}\) according to the binary tree \(o\).
 Taking tensor powers of these maps induces the maps
 \[\mathcal{O}(m_{1}) \otimes \cdots \otimes \mathcal{O}(m_{n}) \otimes A^{\otimes \sum_{i} m_{i}} \longrightarrow A^{\otimes n}\]
-and applying the functor global section functor, we have maps
+and applying the global section functor, we have maps
 \[\eta_{(m_{1}, \dots, m_{n})} : \mathcal{O}(m_{1}) \otimes \cdots \otimes \mathcal{O}(m_{n}) \otimes \Gamma(A^{\otimes \sum_{i} m_{i}}) \longrightarrow \Gamma(A^{\otimes n}).\]
 
 \begin{definitions}
@@ -1637,7 +1641,9 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 		\def\svgscale{0.37}
 		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_factor_1.pdf_tex}}
 	\]
-	in \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\).
+	in \(U(\mathcal{O}_{\text{Lie}}, \mathfrak{g})\). Alternatively, written as a formula, we have
+	\[[\xi_{1}, \xi_{2}] = \xi_{1} \cdot \xi_{2} - \xi_{2} - \xi_{1}\]
+	which is exactly the defining relation of a classical universal enveloping algebra.
 \end{example}
 
 \begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
@@ -1655,7 +1661,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 \end{lemma}
 
 \begin{proof}
-	Recall from the definition of an operad, there is a \(kS_{n}\)-action on \(\mathcal{O}_{\text{Lie}}(n)\).
+	Recall from the definition of an operad, there is a \(S_{n}\)-action on \(\mathcal{O}_{\text{Lie}}(n)\). We proceed by induction.
 
 	Firstly, the claim is true in \(\mathcal{O}_{\text{Lie}}(2)\), as a single bracket is left-skewed. The claim is also true in \(\mathcal{O}_{\text{Lie}}(3)\) because of the relations in \(\mathcal{O}_{\text{Lie}}\)
 	\[
@@ -1690,7 +1696,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 		\cong
 		\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})
 	\]
-	and therefore an isomorphism
+	and therefore an vector space isomorphism
 	\[
 		T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})
 		\cong
@@ -1701,7 +1707,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 		\def\svgscale{0.34}
 		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_as_chord_diagram.pdf_tex}}
 	\]
-	A morphism \(E \in \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\) is associated to a diagram in \(\mathcal{A}\); choose a presentation for \(E\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\), this determines a unitrivalent graph with a cyclic order on the internal vertices, and a linear order on the univalent vertices induced by the order \(\mathbf{1} < \mathbf{2} < \cdots < \mathbf{n}\). But by Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, this map factors through the natural projection from linear orders on univalent vertices to cyclic orders. This therefore defines a map \(f: T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}) \to \mathcal{A}\).
+	A morphism \(E \in \mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\) is associated to a diagram in \(\mathcal{A}\); choose a presentation for \(E\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})\), this determines a unitrivalent graph with a cyclic order on the internal vertices, and a linear order on the univalent vertices induced by the order \(\mathbf{1} < \mathbf{2} < \cdots < \mathbf{n}\). By Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant}, this map factors through the natural projection from linear orders on univalent vertices to cyclic orders. This therefore defines a map \(f: T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}) \to \mathcal{A}\).
 
 	Informally, \(f\) is the map which takes an element of the tensor algebra, and interprets it as a linear Jacobi diagram where the skeleton is the path from the leftmost leaf to the root.
 	\[
