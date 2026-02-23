@@ -684,10 +684,10 @@ If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and 
 			\]
 		\item
 			\label{def:rigid-category-and-object}
-			A symmetric monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\epsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
-			\[(\id_{A} \otimes \epsilon) \circ (\iota \otimes \id_{A}) = \id_{A}\]
+			A symmetric monoidal category \(\mathcal{C}\) is \textbf{rigid} if for every object \(A\) there exists an object \(A^{\vee}\) and a pair of morphisms \(\iota: A^{\vee} \otimes A \to k\) and \(\varepsilon: k \to A \otimes A^{\vee}\) --- respectively called the \textbf{evaluation} and \textbf{coevaluation} --- such that
+			\[(\id_{A} \otimes \varepsilon) \circ (\iota \otimes \id_{A}) = \id_{A}\]
 			and
-			\[(\epsilon \otimes \id_{A^{\vee}}) \circ (\id_{A^{\vee}} \otimes \iota) = \id_{A^{\vee}}\]
+			\[(\varepsilon \otimes \id_{A^{\vee}}) \circ (\id_{A^{\vee}} \otimes \iota) = \id_{A^{\vee}}\]
 			Diagramatically, these are
 			\[
 				\includegraphics[height=0.12\textwidth, valign=c]{graphics/string_diagram_rigidity_snake.pdf}
