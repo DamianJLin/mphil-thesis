@@ -204,6 +204,7 @@ The result is standard --- see for example Chapter 5.2 of \cite{introduction-to-
 We have already spoiled the surprise that \(\mathcal{A}\) and \(\mathcal{J}\) are isomorphic as bialgebras. This is clearly true as \(\mathcal{J}\) is just a change of basis from \(\mathcal{A}\). Since \(\mathcal{A}\) spans \(\mathcal{J}\), we can attempt to lift the coproduct from \(\mathcal{A}\) directly onto \(\mathcal{J}\).
 
 \begin{proposition}
+	\label{prop:jacobi-diagram-coproduct}
 	The coproduct \(\Delta\) on \(J \in \mathcal{J}\) defined by taking a Jacobi diagram, representing it as a chord diagram via \textup{\ref{eq:STU}}, taking the coproduct in \(\mathcal{A}\), then interpreting the result as a Jacobi diagram via the inclusion of \(\mathcal{A}\) into \(\mathcal{J}\) is given by the formula
 	\[\Delta(J) = \sum_{C \subset S} J_{C} \otimes J_{\overline{C}}\]
 	where \(S\) is the set of connected components of \(J\), and \(\overline{C} = S \smallsetminus C\).
@@ -214,6 +215,7 @@ We have already spoiled the surprise that \(\mathcal{A}\) and \(\mathcal{J}\) ar
 \end{proof}
 
 \begin{corollary}
+	\label{cor:primitives-equals-connected-jacobi-diagrams}
 	The primitive elements \(\mathcal{P}(\mathcal{A})\) are the connected Jacobi diagrams.
 \end{corollary}
 
@@ -336,9 +338,9 @@ The following construction of Bar-Natan is the focus of his seminal article \cit
 	\label{cons:lie-algebra-weight-system}
 	The construction takes a metric Lie algebra \(\mathfrak{g}\), and produces a map \({W_{\mathfrak{g}}: \mathcal{A} \to \mathcal{U}(\mathfrak{g})}\) which is a \(\mathcal{U}(\mathfrak{g})\)-valued weight system. Given further a representation \(\rho\) of \(\mathfrak{g}\) it produces a map \(W_{\mathfrak{g}}: \mathcal{A} \to k\) which is a \(k\)-valued weight system. That is, given \(\mathfrak{g}\) a metric Lie algebra and \(J \in \mathcal{A}\), it produces an element of \(\mathcal{U}(\mathfrak{g})\), and if also given a representation \(\rho\) it produces a scalar. We write \(v\) and \(u\) for the number of trivalent and univalent vertices respectively of \(J\).
 
-	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (when both components are covariant or both are contravariant, i.e. when there are two inputs or two outputs), contract one of them first with either the metric or the casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant).
+	To each trivalent vertex of \(J\), associate a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) (see Warning \ref{warn:cyclic-order-of-bracket}). For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. Where the signature of the components doesn't allow for contraction (when both components are covariant or both are contravariant, i.e. when there are two inputs or two outputs), contract one of them first with either the metric or the Casimir (whichever is allowed by its variance). The resulting tensor has \(u\) components (they may be co- or contra-variant).
 
-	Contract this tensor with a copy of the casimir along all remaining covariant components. We define the result to be the tensor \(T_{\mathfrak{g}}(J) \in \mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\), namely
+	Contract this tensor with a copy of the Casimir along all remaining covariant components. We define the result to be the tensor \(T_{\mathfrak{g}}(J) \in \mathfrak{g}^{\otimes u}\). The linear order of its components must be a linear order that agrees with the cyclic order of the corresponding univalent vertices in \(J\). Define \(W_{\mathfrak{g}}(J)\) to be the projection of this tensor into \(\mathcal{U}(\mathfrak{g})\), namely
 	\[W_{\mathfrak{g}}(J) = [T_{\mathfrak{g}}(J)] \in \mathcal{U}(\mathfrak{g}).\]
 
 	Constructing the \(k\)-valued weight system from the representation is as follows. A representation \(\rho: \mathfrak{g} \to \operatorname{Hom}(V)\) of a Lie algebra extends uniquely to a representation of its universal enveloping algebra \(\rho: \mathcal{U}(\mathfrak{g}) \to \operatorname{Hom}(V)\). Define \(W_{\mathfrak{g}, \rho}\) as the trace of \(W_{\mathfrak{g}}(J)\) with respect to this representation,
@@ -369,7 +371,7 @@ The following construction of Bar-Natan is the focus of his seminal article \cit
 	\]
 	Taking another copy \([\cdot, \cdot]'\) of the bracket tensor, one way to compute \(W_{\mathfrak{sl}_{2}} \left( J \right)\) is to let \([\cdot,\cdot]\) take the left trivalent vertex, and associate the upward facing half-edge to the first component. Let \([\cdot,\cdot]'\) take the right trivalent vertex and associate the downward facing half-edge to the first component --- the cyclic orders determine the rest. Then the computation is to take the contraction of \([\cdot,\cdot]\) along components 1 and 3 with \([\cdot,\cdot]'\) along components 3 and 1. This gives
 	\[2 h^{\ast} \otimes h^{\ast} + e^{\ast} \otimes f^{\ast} + f^{\ast} \otimes e^{\ast},\]
-	and contracting along each component with a casimir to make them contravariant yields
+	and contracting along each component with a Casimir to make them contravariant yields
 	\[
 		T_{\mathfrak{sl}_{2}}
 		\left(
@@ -447,7 +449,7 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 
 	\begin{remark}
 		\label{rem:metric-casimir-bubble-is-dimension}
-		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the casimir. In a finite-dimensional Lie algebra, this is just the dimension (so for \(\mathfrak{sl}_{2}\), the factor \(3\)). For example,
+		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the Casimir. In a finite-dimensional Lie algebra, this is just the dimension (so for \(\mathfrak{sl}_{2}\), the factor \(3\)). For example,
 		\[
 			W_{\mathfrak{sl}_{2}}
 			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble.pdf}
@@ -1725,50 +1727,32 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
 \end{proofof}
 
-We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) and the bialgebra isomorphism to \(\mathcal{A}\).
+We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) and the bialgebra isomorphism to \(\mathcal{A}\). Recall from Proposition \ref{prop:jacobi-diagram-coproduct}
+% and Corollary \ref{cor:primitives-equals-connected-jacobi-diagrams} 
+that the coproduct structure on \(\mathcal{A}\) is given by the formula
+\[\Delta(A) = \sum_{C \subset S} A_{C} \otimes A_{\overline{C}}\]
+where \(S\) is the set of connected components of \(A\) (not considering the skeleton), \(\overline{C} = S \smallsetminus C\), and \(A_{C}\) is the Jacobi diagram consisting of only the subset \(C\) of connected components.
+
+Since in the map \(f: U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}) \to \mathcal{A}\), the path from the leftmost leaf to the root becomes the skeleton, the correct notion of primitive in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is connected components, excluding the path from the leftmost leaf to the root.
 
 \begin{definition}
-	The coproduct \(\Delta\) on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is defined by setting elements of the form \([\cdot,\cdot] \otimes \id \otimes \xi \in \mathcal{O}_{\text{Lie}}(2) \otimes \mathcal{O}_{\text{Lie}}(1) \otimes \Gamma(\mathfrak{g})\) to be primitive, namely
-	\[
-		\Delta([\cdot,\cdot] \otimes \id \otimes \xi)
-		=
-		\left( [\cdot,\cdot] \otimes \id \otimes \xi \right) \otimes 1
-		+
-		1 \otimes \left( [\cdot,\cdot] \otimes \id \otimes \xi \right).
-	\]
-	and defining \(\Delta\) to extend to the whole of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) by being an algebra map.
+	\label{def:coproduct-on-generalised-enveloping-algebra}
+	The coproduct \(\Delta\) on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is defined by pulling the coproduct on \(\mathcal{A}\) back through the algebra isomorphism of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}.
 \end{definition}
 
-\begin{lemma}
-	The coproduct on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is well-defined and compatible with the product, hence \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is a bialgebra.
+\begin{remark}
+	In \cite{cyclic-operads-and-the-algebra-of-chord-diagrams} a operad-theoretic characterisation of the primitive elements is given. Recalling from Corollary \ref{cor:primitives-equals-connected-jacobi-diagrams} that by the formula for the coproduct, the primitive elements are exactly the connected components, this also gives a definition of the coproduct without reference to connected components. The characterisation is technical, involving modular operads, and out of the scope of this text.
+\end{remark}
 
-
-	Diagramatically, such elements look like
-	\[
-		\def\svgscale{0.37}
-		\adjustbox{valign=c}{\input{graphics/external_enveloping_algebra_lie_example_one_cc.pdf_tex}}.
-	\]
-\end{lemma}
-
-\begin{proof}
-	Firstly, we check that the definition above determines the coproduct on the whole of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). Indeed, \(\mathcal{O}_{\text{Lie}}\) is generated as an algebra by \([\cdot, \cdot] \in \mathcal{O}_{\text{Lie}}(2)\), elements of the form \([\cdot, \cdot] \otimes \id \otimes \xi\) for \(\xi \in \Gamma(\mathfrak{g}))\) so it suffices that \(\Delta\) is an algebra map, and it was defined as such.
-
-	We now check that this is a well-defined operation. That \(\Delta\) is compatible with \ref{eq:AS} and \ref{eq:STU} directly follows from \ref{eq:AS} and \ref{eq:STU} in \(\Gamma(\mathfrak{g})\). We check that \(\Delta\) is compatible with the defining relation of the universal enveloping algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). Without loss of generality, the argument in Example \ref{ex:stu-in-external-enveloping-algebra}, but in the symmetric monoidal category \(\mathbf{E}_{c}\) rather than \(\mathbf{Vect}\).
-\end{proof}
-
-Finally, we upgrade the isomorphism in Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} to the level of bialgebras.
+With this definition, we obtain as a corollary an upgrade of the isomorphism of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} to the level of bialgebras.
 
 \begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
 	\label{thm:universal-casimir-lie-envelope-chord-diagrams-bialgebra-isomorphism}
-	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
+	The bialgebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as a bialgebra to \(\mathcal{A}\).
 \end{theorem}
 
 \begin{proof}
-	All that remains is to check that primitives in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) map to primitives in \(\mathcal{A}\), and vice-versa. Indeed, any primitive in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}))\) can be written as an element of the form \([\cdot, \cdot] \otimes \id \otimes \xi\) for \(\xi \in \Gamma{\mathfrak{g}}\). Therefore it is mapped in \(\mathcal{A}\) to a diagram consisting of a single connected component, which is primitive in \(\mathcal{A}\).
-
-	Conversely, diagrams consisting of single connected components in \(\mathcal{A}\) have a vertex that is 
+	Recall that in the map \(f: U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c}) \to \mathcal{A}\) of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}, the path from the leftmost leaf to the root of an element of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) becomes the skeleton of a chord diagram in \(\mathcal{A}\). Therefore connected components in \(\mathcal{A}\) not considering the skeleton map to connected components in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) not considering the path from the leftmost leaf to the root. As such, the formula for the coproduct in both spaces is the same.
 \end{proof}
 
-% TODO: Wait, but how does this fare with primitives with more than one connection to the skeleton? Hmmmm.
-
-Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} is a formalisation of the statement that ``the algebra \(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.
+Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-bialgebra-isomorphism} is a formalisation of the statement that ``\(\mathcal{A}\) behaves like the universal enveloping algebra of a Lie algebra''. In the next chapter we look at a generalisation of this statement in the context of welded knots.

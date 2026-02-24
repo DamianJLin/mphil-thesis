@@ -205,23 +205,38 @@ As for the \ref{eq:TC} relation, it is a consequence of the \ref{eq:OC} relation
 		These hold for any compatible choice of both vertices in the diagrams.
 	\item The \ref{eq:TC} relations, as given in Definition \ref{def:tails-commute}.
 	\end{enumerate}
+	The algebra of long arrow Jacobi diagrams is denoted \(\mathcal{J}_{w}(|)\), and as in the classical case (since directed \ref{eq:STU}, \ref{eq:TC} imply directed \ref{eq:4T}) we also write it as \(\mathcal{A}_{w}(|)\).
 \end{definition}
 
-The main difference between \(\mathcal{J}_{w}(|)\) and \(\mathcal{J}(|)\) is the tails commute relation which drastically reduces the complexity of the algebra, as evident in the following important proposition about the structure of \(\mathcal{J}_{w}(|)\).
+The main difference between \(\mathcal{J}_{w}(|) = \mathcal{A}_{w}(|)\) and \(\mathcal{J}(|) = \mathcal{A}(|)\) is the tails commute relation which drastically reduces the complexity of the welded verson of the algebra, as evident in the following important proposition about the structure of \(\mathcal{A}_{w}(|)\).
 
 \begin{proposition}[Two-in-one-out rule]
-	In \(\mathcal{J}_{w}(|)\), any diagram containing a trivalent vertex with one edge oriented inwards and two edges oriented outward vanishes.
+	In \(\mathcal{A}_{w}(|)\), any diagram containing a trivalent vertex with one edge oriented inwards and two edges oriented outward vanishes.
 \end{proposition}
 
 \begin{proof}
-	Take a diagram with a one-in-two-out vertex. Apply \ref{eq:STU}'s to all other vertices of the arrow diagram. The result is a sum of arrow diagrams, each containing a trivalent one-in-two-out vertex. We show that each such arrow diagram vasnishes. Since there is only one trivalent vertex in each diagram, the one-in-two-out vertex's incoming edge has its tail on the skeleton. Therefore applying the relevant \ref{eq:STU} relation equates the diagram with a difference of two diagrams that differ only by the order of placement of two tails on the skeleton. By \ref{eq:TC}, the difference is zero.
+	Take a diagram with a one-in-two-out vertex. Apply \ref{eq:STU}'s to all other vertices of the arrow diagram. The result is a sum of arrow diagrams, each containing a trivalent one-in-two-out vertex. We show that each such arrow diagram vanishes. Since there is only one trivalent vertex in each diagram, the one-in-two-out vertex's incoming edge has its tail on the skeleton. Therefore applying the relevant \ref{eq:STU} relation equates the diagram with a difference of two diagrams that differ only by the order of placement of two tails on the skeleton. By \ref{eq:TC}, the difference is zero.
 \end{proof}
 
-Resultingly, only two versions of \ref{eq:STU}, one of \ref{eq:AS} and one of \ref{eq:IHX} remain nontrivial relations in \(\mathcal{J}_{w}(|)\).
+Resultingly, only two versions of \ref{eq:STU}, one of \ref{eq:AS} and one of \ref{eq:IHX} remain nontrivial relations in \(\mathcal{A}_{w}(|)\).
 
 \begin{warning}
 	From this point it is clear when talking about welded objects we mean long welded objects. So, we write \(\mathcal{A}_{w}(|)\) as \(\mathcal{A}_{w}\), and don't necessarily specify that they are long.
 \end{warning}
+
+The algebras \(\mathcal{K}_{w}\) and \(\mathcal{A}_{w}\) are also coalgebras, with coproducts that mirror the classical case.
+
+\begin{definitions}
+	\begin{enumerate}
+		\item The coproduct \(\Delta\) on \(k \in \mathcal{K}_{w}\) is given by the formula
+		\[\Delta(k) = k \otimes k.\]
+		\item The coproduct \(\Delta\) on \(A \in \mathcal{A}_{w}\) is given by the formula
+		\[\Delta(A) = \sum_{C \subset S} A_{C} \otimes A_{\overline{C}}\]
+		where \(S\) is the set of connected components (not considering the skeleton) of \(A\), and \(\overline{C} = S \smallsetminus C\).
+	\end{enumerate}
+\end{definitions}
+
+We omit the proofs that these turn the \(\mathcal{A}_{w}\) and \(\mathcal{K}_{w}\) into bialgebras because they mirror the proofs in the classical case.
 
 The existence of a finite type invariant \(Z\) for welded knots establishes a welded version of the fundamental theorem.
 
@@ -337,7 +352,6 @@ Similarly, the \ref{eq:AS} relation gives \([\phi \oplus 0, 0 \oplus y] = -\oper
 The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\mathcal{A}_{w}\). That is, to construct a Lie algebra object in a category, whose universal enveloping algebra is isomorphic to \(\mathcal{A}_{w}\).
 
 Recall that in the classical case, the Lie algebra object was in the category \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}})\), since its morphisms and composition can be used to implement contraction (the connection of trivalent vertices) in \(\mathcal{A}\) which resembles the structure of \(\mathfrak{g}\). In \(\mathcal{A}_{w}\), the contraction is similar, and as seen from Section \ref{sec:welded-weight-systems-and-lie-algebras} but instead resembles the structure of \(I(\mathfrak{g})\); trivalent vertices can only be contracted along half-edges whose orientations agree. Recall from Construction \ref{cons:lie-algebra-weight-system} that it was the addition of the Casimir element which casued the ambiguation of elements \(\mathfrak{g}\) with \(\mathfrak{g}^{\ast}\), allowing directionless contraction, and indeed \(I(\mathfrak{g})\) is not necessarily a Casimir Lie algebra. Thus, the corresponding category in the welded case should be able to distinguish elements of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). This can be achieved with a type of category called a \(2\)-coloured prop.
-% TODO: casimir -> Casimir
 
 \begin{definitions}
 	An \(n\)-\textbf{coloured prop} is a symmetric monoidal category generated by \(n\) objects.
@@ -348,7 +362,6 @@ The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}
 Since the morphisms in the welded case should reflect the structure of \(I(\mathfrak{g})\), and the bracket on \(I(\mathfrak{g})\) decomposes depending on whether \(x \in I(\mathfrak{g})\) is in \(\mathfrak{g}\) or \(\mathfrak{g}^{\ast}\), the category ought to have two objects, \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\) and be linear.
 Further, instead of the contraction being implemented through composition and the metric and Casimir elements as in \(\mathbf{E}_{c}\), the objects \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\) should behave like duals, so recalling Definition \ref{def:internal-to-additive-monoidal-category} \ref{def:rigid-category-and-object}, should be rigid with evaluation and coevaluation morphisms
 \(\iota: \mathbf{1}^{\vee} \otimes \mathbf{1} \to k\) and \(\varepsilon : k \to \mathbf{1} \otimes \mathbf{1}^{\vee}\). The contraction in the corresponding category for the welded case should be implemented via composition and these evaluation and coevaluation morphisms.
-% TODO: name coevaluation evaluation maps and put their signatures. The names T_{m} and T_{c} should become T_{eval, coeval} and T_{coeval}, since the coevaluation is NOT a casimir.
 
 In view of these comments, the following category \(\mathbf{T}_{\iota}\) is analogous to the metric envelope of the Lie operad \(\mathbf{E}_{m}\), but includes as objects both tensor powers of \(\mathfrak{g}\) but also tensor powers of \(\mathfrak{g}^{\ast}\) and its morphisms describe the structure of \(I\mathfrak{g}\) rather than \(\mathfrak{g}\).
 
@@ -722,8 +735,8 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{\varep
 We therefore obtain the following Hinnich--Vaintrob style description of the algebra \(\mathcal{A}_{w}\).
 
 \begin{theorem}
-	\label{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism}
-	Let \(\mathbf{I}\) denote the Lie algebra object \(\mathbf{1} \oplus \mathbf{1}^{\vee}\) (with the morphism \(y\)) in the two-coloured prop \(\mathbf{T}_{\varepsilon}\). The bialgerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered bialgebra.
+	\label{thm:universal-two-coloured-coeval-envelope-arrow-diagrams-isomorphism}
+	Let \(\mathbf{I}\) denote the Lie algebra object \(\mathbf{1} \oplus \mathbf{1}^{\vee}\) (with the morphism \(y\)) in the two-coloured prop \(\mathbf{T}_{\varepsilon}\). The algerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered algebra.
 \end{theorem}
 
 With the appropriate definitions in place, the proof follows the proof of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}.
@@ -793,8 +806,21 @@ With the appropriate definitions in place, the proof follows the proof of Theore
 	The map is injective because we have shown that \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) has the directed \ref{eq:STU} relations and the \ref{eq:TC} relation. Just like in the classical case, the \ref{eq:AS} and \ref{eq:IHX} relations follow from \ref{eq:STU}, so any equalities in \(\mathcal{A}\) are also observed in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\).
 \end{proof}
 
-Recall that the raison d'etre of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} was to formalise the informal statement that ``the algebra \(\mathcal{A}\) of chord diagrams behaves like the universal enveloping algebra of a Lie algebra''. Interpreting Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} in the same manner, its statement becomes that ``the algebra \(\mathcal{A}_{w}\) or arrow diagrams behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\) of a Lie algebra \(\mathfrak{g}\)''.
+Just like the classical case, we define a bialgebra structure on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) via the algebra isomorphism with \(A_{w}\).
+
+\begin{definition}
+	The coproduct \(\Delta\) on \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is defined by pulling the coproduct on \(A_{w}\) back via the isomorphism of Theorem \ref{thm:universal-two-coloured-coeval-envelope-arrow-diagrams-isomorphism}.
+\end{definition}
+
+We obtain as a corollary the following Hinich--Vaintrob theorem for the bialgebra \(\mathcal{A}_{w}\).
+
+\begin{theorem}
+	\label{thm:universal-two-coloured-coeval-envelope-arrow-diagrams-bialgebra-isomorphism}
+	The bialgerba \(U(\mathcal{O}_{\text{Lie}}, \mathbf{I})\) is isomorphic to \(\mathcal{A}_{w}\) as a filtered bialgebra.
+\end{theorem}
+
+Recall that the raison d'etre of Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-bialgebra-isomorphism} was to formalise the informal statement that ``the algebra \(\mathcal{A}\) of chord diagrams behaves like the universal enveloping algebra of a Lie algebra''. Interpreting Theorem \ref{thm:universal-two-coloured-coeval-envelope-arrow-diagrams-bialgebra-isomorphism} in the same manner, its statement becomes that ``the bialgebra \(\mathcal{A}_{w}\) or arrow diagrams behaves like the universal enveloping algebra \(\mathcal{U}(I\mathfrak{g})\) of a cocommutative Drinfeld double \(I\mathfrak{g}\) of a Lie algebra \(\mathfrak{g}\)''.
 
 \begin{remark}
-	For classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, for welded weight systems, this is also achieved in as a corollary of \cite[Thm. 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots \(Z_{w}\) is equivalent to the Alexander polynomial. Indeed, recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\), and since every welded weight system factors through \(Z_{w}\), they all factor through \(W_{\mathfrak{gl}_{1|1}}\). As such, all welded weight systems arise via Construction \ref{cons:lie-algebra-weight-system} from Lie superalgebras, specifically \(\mathfrak{gl}_{1|1}\). Theorem \ref{thm:universal-two-coloured-casimir-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
+	For classical weight systems Theorem \ref{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism} proves that every weight system (so every functional on \(\mathcal{A}\)) comes from applying Construction \ref{cons:lie-algebra-weight-system} to some Lie algebra object in some symmetric monoidal category. However, for welded weight systems, this is also achieved in as a corollary of \cite[Thm. 3.26]{finite-type-invariants-of-w-knotted-objects-I-w-knots-and-the-alexander-polynomial} which states that the universal finite type invariant of welded knots \(Z_{w}\) is equivalent to the Alexander polynomial. Indeed, recall that the Alexander polynomial factors through the weight system \(W_{\mathfrak{gl}_{1|1}}\), and since every welded weight system factors through \(Z_{w}\), they all factor through \(W_{\mathfrak{gl}_{1|1}}\). As such, all welded weight systems arise via Construction \ref{cons:lie-algebra-weight-system} from Lie superalgebras, specifically \(\mathfrak{gl}_{1|1}\). Theorem \ref{thm:universal-two-coloured-coeval-envelope-arrow-diagrams-isomorphism} gives an alternative, categorical proof of this fact.
 \end{remark}
