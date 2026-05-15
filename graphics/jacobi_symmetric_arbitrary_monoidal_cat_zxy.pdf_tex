@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'jacobi_symmetric_arbitrary_monoidal_cat_zxy.pdf' (pdf, eps, ps)
 %%
@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.32509602)%
+  \begin{picture}(1,1.32509592)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{jacobi_symmetric_arbitrary_monoidal_cat_zxy.pdf}}%
-    \put(0.33568076,1.15213545){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
+    \put(0.33568076,1.15213534){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{jacobi_symmetric_arbitrary_monoidal_cat_zxy.pdf}}%
-    \put(0.66431927,1.2030138){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
+    \put(0.66431927,1.20301369){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%

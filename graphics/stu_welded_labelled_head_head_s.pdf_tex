@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'stu_welded_labelled_head_head_s.pdf' (pdf, eps, ps)
 %%
@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.00960088)%
+  \begin{picture}(1,0.9845356)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{stu_welded_labelled_head_head_s.pdf}}%
-    \put(0.27633388,1.00050974){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle x^{\ast}\)}}\end{tabular}}}}%
-    \put(0.70942013,1.00050974){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle y^{\ast}\)}}\end{tabular}}}}%
-    \put(0.49287698,0.00303031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle [x, y]\)}}\end{tabular}}}}%
+    \put(0.27633388,0.97544446){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle x\)}}\end{tabular}}}}%
+    \put(0.70942013,0.97544446){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle y\)}}\end{tabular}}}}%
+    \put(0.49287698,-0.02203497){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle [x, y]\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%

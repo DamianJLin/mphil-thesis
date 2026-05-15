@@ -6,7 +6,7 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="stu_welded_labelled_head_head_s.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/stu_welded_labelled_head_head_s.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -47,11 +47,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="4"
-     inkscape:cx="91.125"
-     inkscape:cy="110.875"
-     inkscape:window-width="2556"
-     inkscape:window-height="1394"
+     inkscape:zoom="17.360302"
+     inkscape:cx="68.806408"
+     inkscape:cy="6.4803022"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -182,7 +182,7 @@
        id="tspan1"
        style="stroke-width:0.11901"
        x="43.409073"
-       y="1.42812">\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle x^{\ast}\)}</tspan></text>
+       y="1.42812">\raisebox{-.5\height}{\(\scriptstyle x\)}</tspan></text>
   <text
      xml:space="preserve"
      style="font-weight:500;font-size:1.90416px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.11901;-inkscape-stroke:none;stop-color:#000000"
@@ -193,7 +193,7 @@
        id="tspan1-7"
        style="stroke-width:0.11901"
        x="111.44225"
-       y="1.42812">\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle y^{\ast}\)}</tspan></text>
+       y="1.42812">\raisebox{-.5\height}{\(\scriptstyle y\)}</tspan></text>
   <text
      xml:space="preserve"
      style="font-weight:500;font-size:1.90416px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.11901;-inkscape-stroke:none;stop-color:#000000"

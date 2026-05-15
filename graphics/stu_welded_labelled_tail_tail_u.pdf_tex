@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'stu_welded_labelled_tail_tail_u.pdf' (pdf, eps, ps)
 %%
@@ -50,14 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.00960088)%
+  \begin{picture}(1,0.9845356)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{stu_welded_labelled_tail_tail_u.pdf}}%
-    \put(0.27633388,1.00050974){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle \phi^{\ast}\)}}\end{tabular}}}}%
-    \put(0.70942017,1.00050974){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle \psi^{\ast}\)}}\end{tabular}}}}%
-    \put(0.40704426,0.00303031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \psi\)}}\end{tabular}}}}%
-    \put(0.58124829,0.00303031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \phi\)}}\end{tabular}}}}%
+    \put(0.27633386,0.9479919){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \phi\)}}\end{tabular}}}}%
+    \put(0.70942012,0.9479919){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \psi\)}}\end{tabular}}}}%
+    \put(0.40704423,-0.04948752){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \psi\)}}\end{tabular}}}}%
+    \put(0.58124824,-0.04948752){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \phi\)}}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{stu_welded_labelled_tail_tail_u.pdf}}%
   \end{picture}%
 \endgroup%

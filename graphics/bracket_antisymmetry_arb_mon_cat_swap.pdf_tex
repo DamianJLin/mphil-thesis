@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'bracket_antisymmetry_arb_mon_cat_swap.pdf' (pdf, eps, ps)
 %%
@@ -50,10 +50,10 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.64814122)%
+  \begin{picture}(1,1.64814111)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{bracket_antisymmetry_arb_mon_cat_swap.pdf}}%
-    \put(0.49999995,1.38662126){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
+    \put(0.49999995,1.38662115){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\tau\)}}\end{tabular}}}}%
   \end{picture}%
 \endgroup%

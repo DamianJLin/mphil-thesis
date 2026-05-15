@@ -6,7 +6,7 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="jacobi_symmetric_yzx.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/jacobi_symmetric_yzx.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -26,11 +26,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="74.157824"
-     inkscape:cy="177.74897"
-     inkscape:window-width="2556"
-     inkscape:window-height="1394"
+     inkscape:zoom="3.5465833"
+     inkscape:cx="79.372166"
+     inkscape:cy="131.53505"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -141,7 +141,8 @@
      sodipodi:nodetypes="ccc" />
   <g
      id="path1"
-     transform="rotate(-86.762669,68.387959,92.837712)">
+     transform="rotate(-86.762669,68.387959,92.837712)"
+     style="display:none">
     <g
        id="g5">
       <path
@@ -152,7 +153,8 @@
   </g>
   <g
      id="path1-7"
-     transform="matrix(-0.05647203,-0.99840418,-0.99840418,0.05647203,100.16361,155.8738)">
+     transform="matrix(-0.05647203,-0.99840418,-0.99840418,0.05647203,100.16361,155.8738)"
+     style="display:none">
     <g
        id="g5-5">
       <path
@@ -163,7 +165,8 @@
   </g>
   <g
      id="path1-7-6"
-     transform="matrix(-0.09083444,-0.99586601,-0.99586601,0.09083444,141.38587,204.46813)">
+     transform="matrix(-0.09083444,-0.99586601,-0.99586601,0.09083444,141.38587,204.46813)"
+     style="display:none">
     <g
        id="g5-5-2">
       <path
@@ -176,7 +179,8 @@
      id="path1-7-6-6"
      transform="matrix(-0.83534483,-0.5497263,-0.5497263,0.83534483,170.23413,176.88431)"
      inkscape:transform-center-x="0.4118356"
-     inkscape:transform-center-y="-0.15728">
+     inkscape:transform-center-y="-0.15728"
+     style="display:none">
     <g
        id="g5-5-2-0">
       <path
@@ -186,7 +190,7 @@
     </g>
   </g>
   <path
-     style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000"
+     style="baseline-shift:baseline;display:none;overflow:visible;vector-effect:none;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000"
      d="m 54.351548,112.18581 -7.005731,-0.95903 14.564104,10.91498 -6.599339,-16.96169 z"
      id="path5-0" />
 </svg>

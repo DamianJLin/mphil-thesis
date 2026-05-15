@@ -6,7 +6,7 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="string_diagram_rigidity_snake.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/string_diagram_rigidity_snake.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -28,9 +28,9 @@
      inkscape:document-units="pt"
      inkscape:zoom="2.828427"
      inkscape:cx="169.88241"
-     inkscape:cy="106.59635"
-     inkscape:window-width="2556"
-     inkscape:window-height="1394"
+     inkscape:cy="106.2428"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -129,7 +129,8 @@
      id="g9"
      transform="rotate(-33.390762,56.005865,187.99045)"
      inkscape:transform-center-x="0.0093199299"
-     inkscape:transform-center-y="-8.7499011">
+     inkscape:transform-center-y="-8.7499011"
+     style="display:none">
     <g
        id="g8">
       <path
@@ -146,7 +147,7 @@
     <g
        id="g8-5">
       <path
-         style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+         style="baseline-shift:baseline;display:none;overflow:visible;vector-effect:none;fill-rule:evenodd;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
          d="M 94.07622,37.560916 92.64788,30.635611 87.20501,48.00297 101.00153,36.132578 Z"
          id="path8-3" />
     </g>
@@ -155,7 +156,8 @@
      id="g9-6"
      transform="rotate(-123.39076,95.492177,99.041037)"
      inkscape:transform-center-x="8.7499032"
-     inkscape:transform-center-y="0.0093171202">
+     inkscape:transform-center-y="0.0093171202"
+     style="display:none">
     <g
        id="g8-2">
       <path
@@ -168,7 +170,8 @@
      id="g9-6-2"
      transform="rotate(-123.39076,115.65657,31.834487)"
      inkscape:transform-center-x="8.749907"
-     inkscape:transform-center-y="0.0093158339">
+     inkscape:transform-center-y="0.0093158339"
+     style="display:none">
     <g
        id="g8-2-7">
       <path

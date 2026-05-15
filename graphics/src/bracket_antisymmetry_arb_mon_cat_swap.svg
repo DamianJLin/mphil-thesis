@@ -6,7 +6,7 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="bracket_antisymmetry_arb_mon_cat_swap.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/bracket_antisymmetry_arb_mon_cat_swap.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -15,27 +15,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs10">
-    <marker
-       style="overflow:visible"
-       id="marker2"
-       refX="15"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Dart arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         transform="scale(-0.5)"
-         id="path2" />
-    </marker>
-  </defs>
+     id="defs10" />
   <sodipodi:namedview
      id="namedview10"
      pagecolor="#ffffff"
@@ -47,10 +27,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      inkscape:zoom="2.8284271"
-     inkscape:cx="-6.1871843"
-     inkscape:cy="47.906484"
-     inkscape:window-width="2556"
-     inkscape:window-height="1394"
+     inkscape:cx="-6.1871844"
+     inkscape:cy="47.552931"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -132,7 +112,7 @@
      sodipodi:nodetypes="cc" />
   <g
      id="path1"
-     style="opacity:1"
+     style="display:none;opacity:1"
      transform="rotate(-100.32505,41.495964,56.147916)">
     <g
        id="g5">
@@ -144,7 +124,7 @@
   </g>
   <g
      id="g9"
-     style="opacity:1"
+     style="display:none;opacity:1"
      transform="matrix(0.17923236,-0.98380677,-0.98380677,-0.17923236,76.00919,107.03545)">
     <g
        id="g8">
@@ -155,7 +135,7 @@
     </g>
   </g>
   <path
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2)"
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:"
      d="M 34.851939,52.244084 V 114.88184"
      id="path3-6"
      sodipodi:nodetypes="cc" />

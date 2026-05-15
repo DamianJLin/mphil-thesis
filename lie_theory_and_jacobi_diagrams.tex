@@ -228,10 +228,58 @@ We have already spoiled the surprise that \(\mathcal{A}\) and \(\mathcal{J}\) ar
 \end{warning}
 
 \section{Lie algebra weight systems}
-Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied in \(\mathcal{A}\) appear also in the context of a graphical notation for multilinear maps, a fact which can be exploited to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}. The diagrammatic calculus is well-known but it goes by many names: string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus for tensors to name a few. We call them string diagrams.
+Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} satisfied in \(\mathcal{A}\) appear also in the context of a graphical notation for multilinear maps, a fact which can be exploited to probe \(\mathcal{A}\). Before seeing how, let us review this graphical notation following \cite{wheeling-a-diagrammatic-analogue-of-the-duflo-isomorphism, on-the-rozansky-witten-weight-systems}. The diagrammatic calculus is well-known but it goes by many names including string diagram calculus, Penrose calculus, tensor calculus, diagrammatic calculus. We call them string diagrams.
 
-A tensor is a multilinear map \(X_{1} \otimes X_{2} \otimes \cdots \otimes X_{n} \to Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\), or equivalently (via the canonical isomorphism) an element of the vector space \(X_{1}^{\ast} \otimes X_{2}^{\ast} \otimes \cdots X_{n}^{\ast} \otimes Y_{1} \otimes Y_{2} \otimes \cdots \otimes Y_{m}\). Such a tensor can be represented as a vertex with \(m + n\) unbound directed edges: \(m\) incoming edges decorated by the corresponding vector spaces (in the example above, \(X_{1}, \cdots X_{m}\)), and \(n\) outgoing edges decorated by \(Y_{1}, \cdots Y_{n}\). For example, the bracket in a Lie algebra \(\mathfrak{g}\) is an element \([\cdot,\cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) expressed as
-\[\def\svgscale{0.3} \input{graphics/bracket_string_diagram.pdf_tex}.\]
+% NOTE: This is all true for tensors in the category FinDimVect, not arbitrary categories. fix?
+\begin{definition}
+	\label{def:tensor-as-multilinear-map}
+	A \textbf{tensor} is a multilinear map \(X_{1} \times X_{2} \times \cdots \times X_{n} \to Y_{1} \times Y_{2} \times \cdots \times Y_{m}\)
+	for some vector spaces \(X_{1}, \dots, X_{n}\) and \(Y_{1}, \dots, Y_{m}\).
+
+	The data \(n, m \in \mathbb{N}\) and the spaces \(X_{i}\) and \(Y_{j}\) for \(0 \leq i \leq n\) and \(0 \leq j \leq m\) is known as the \textbf{signature} of the tensor.
+\end{definition}
+
+\begin{proposition}
+	\label{prop:tensor-multilinear-map-canonical-isomorphism}
+	The vector space of tensors with a given signature
+	\[X_{1} \times \cdots \times X_{n} \longrightarrow Y_{1} \times \cdots \times Y_{m}\]
+	where each \(X_{i}\) and \(Y_{j}\) are finite-dimensional vector spaces is naturally isomorphic as a vector space to the space \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}\).
+\end{proposition}
+
+\begin{proof}
+	Fix a vector space \(V\). The natural isomorphism is a composition of the following three natural isomorphisms.
+
+	Firstly, the universal property of the tensor product gives a natural isomorphism between the space of multilinear maps of the form \(X_{1} \times \cdots \times X_{n} \to V\), and the space of linear maps of the form \(X_{1} \otimes \cdots \otimes X_{n} \to V\).
+
+	Secondly, from the tensor-hom adjunction we get a natural isomorphism between maps of the form \(W \to V\) and the space \(V \otimes W^{\ast}\).
+
+	Finally, for finite-dimensional vector spaces there is a natural isomorphism \((V_{1} \otimes \cdots \otimes V_{m})^{\ast}\) to \(V_{1}^{\ast} \otimes \cdots \otimes V_{m}^{\ast}\).
+
+	Composing the first two natural isomorphisms with \(V = Y_{1} \otimes \cdots \otimes Y_{m}\), then the final with \(V_{i} = Y_{i}\) completes the proof.
+\end{proof}
+
+\begin{definition}
+	\label{def:string-diagram}
+	A \textbf{string diagram} is an equivalence class of labelled progressive planar graphs under progressive deformation.
+\end{definition}
+
+The details of the definition are beyond the scope of this thesis, however the interested reader is invited to consult \cite{the-geometry-of-tensor-calculus-one}. For our purposes, string diagrams constitute a graphical calculus for the operations of partial composition and tensor product in monoidal categories. A tensor of signature \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}^{\ast}\) is represented by a string diagram consisting of a vertex, labelled by the tensor, with \(n\) incoming edges, labelled by the domain spaces and \(m\) outgoing edges, labelled by the codomain spaces. We read these diagrams top-to-bottom, so domain edges come from above, and codomain arrows from below.
+
+% TODO: a little sus...
+The operation of partial composition of tensors corresponds to composing two string diagrams via vertically concatenating domain and codomain edge whose labellings agree. The tensor product of two tensors (as multilinear functions) corresponds to the string diagram formed by horizontal concatenation of two string diagrams. The use of string diagrams is that progressive deformation of string diagrams correspond to equivalent ways of performing iterated partial compositions and tensor products.
+
+For example, the bracket in a Lie algebra \(\mathfrak{g}\) is tensor \([\cdot,\cdot]\) of signature \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) expressed via the string diagram
+\[
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/bracket_string_diagram_labelled.pdf_tex}}
+	\qquad
+	\text{or}
+	\qquad
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/bracket_string_diagram.pdf_tex}}
+	\qquad
+\]
+where we drop the vertex labels, which can be read from context.
 It will be obvious from each string diagram what tensor it represents, so we drop the edge labels.
 
 Such a notation is useful because composition of tensors can be expressed graphically by connecting outgoing and incoming legs with the same decoration. In particular relations can therefore be expressed graphically. For example, the antisymmetry of the bracket \({[y, x] = -[x, y]}\) becomes
@@ -245,7 +293,7 @@ Such a notation is useful because composition of tensors can be expressed graphi
 	\quad
 	\text{and}
 \]
-the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
+where here the new type of vertex on the left hand side of signature \(\mathfrak{g} \otimes \mathfrak{g} \to \mathfrak{g} \otimes \mathfrak{g}\) represents the swap map \(\sigma: x \otimes y \mapsto y \otimes x\). Similarly, the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 \[
 	\includegraphics[width=0.10\textwidth, valign=c]{graphics/jacobi_symmetric_xyz.pdf}
 	\quad
@@ -265,20 +313,23 @@ the Jacobi relation \([[x, y], z] + [[y, z], x] + [[z, x], y] = 0\) becomes
 
 Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), a hint at the Lie-theoretic structure emerges. The antisymmetry of the bracket, (drawn as a string diagram) looks like a directed version of \ref{eq:AS}. Similarly the string diagrammmatic Jacobi relation can be arranged into a directed version of \ref{eq:IHX}.
 
-Furthermore, suppose \(\mathfrak{g}\) is a metric Lie algebra so that it has an invariant, nondegenerate, bilinear form \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\). Being nondegenerate, it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\) --- this element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These tensors can be diagrammatically represented as additional bivalent vertices
+\begin{definition}
+	\label{def:metric-lie-algebra}
+	A Lie algebra is \textbf{metric} if it has an ad-invariant, nondegenerate, bilinear form. That is a bilinear form \(\langle \cdot , \cdot \rangle\) such that for all \(x, y, z \in \mathfrak{g}\), \(\langle [x, y], z\rangle = \langle x, [y, z]\rangle\). If \(mathfrak{g}\) is metric, we call its bilinear form a metric.
+\end{definition}
+
+Now suppose \(\mathfrak{g}\) is a metric Lie algebra. Its metric \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\) is nondegenerate so it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). This element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These two tensors, the metric and the Casimir can be diagrammatically represented as additional bivalent vertices
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
 	\qquad \text{and} \qquad
-	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ .
-\]
-Recall that the bilinear form induces an isomorphism of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). Diagramatically, this can be used to change the arrow direction on any edge, allowing us to drop the edge arrows from the notation. Further, we also drop the dots in the metric and Casimir diagrams, so they look like
-\[
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir.pdf}\ ,
+	\qquad \text{or dropping the vertices} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric_no_dot.pdf}
 	\qquad \text{and} \qquad
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_casimir_no_dot.pdf}\ .
 \]
 
-Moreover, the invariance of the metric can be written as \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) which can be represented graphically as cyclic invariance of the contraction of the bracket and the metric:
+Moreover, the invariance of the metric,  \(\langle [x, y], z \rangle = \langle [y, z], x \rangle\) can be represented graphically as cyclic invariance of the tensor \(\langle [x, y], z\rangle\):
 \[
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketxy.pdf}
 	\quad
@@ -302,11 +353,10 @@ Diagramatically, we have
 	\;
 	.
 \]
-Just like the antisymmetry of the bracket and the Jacobi relation, these relations make sense when the diagrams are interpreted as parts of Jacobi diagrams. There is only one type of trivalent vertex in a Jacobi diagram, and since the edges around a vertex are only considered up to cyclic order, cyclic permutation of the order is ``unseen on the level of Jacobi diagrams''.
 
 From the discussion above, we see that the internal structure of Jacobi diagrams (internal meaning not near the skeleton) is reflected in a metric Lie algebra. Let us try to find a similar reflection of the structure near the skeleton. A representation \(\rho\) of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input and output, namely a \(v \in V\) which we denote by a thicker line, like the skeleton of a Jacobi diagram.
 \[
-	\includegraphics[width=0.11\textwidth, valign=c]{graphics/representation_vertex.pdf}
+	\includegraphics[width=0.06\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 \]
 We omit the arrows because they're unneccesary again --- corresponding to the maps
 \[f \otimes v \longmapsto f(v) \quad \text{and} \quad 1 \longmapsto \sum_{i} e_{i} \otimes e_{i}^{\ast}\]

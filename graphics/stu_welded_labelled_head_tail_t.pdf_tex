@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'stu_welded_labelled_head_tail_t.pdf' (pdf, eps, ps)
 %%
@@ -50,14 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.00766129)%
+  \begin{picture}(1,0.9845356)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{stu_welded_labelled_head_tail_t.pdf}}%
-    \put(0.27633388,0.99857015){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle x^{\ast}\)}}\end{tabular}}}}%
-    \put(0.70942017,0.99857015){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\phantom{{}^{\ast}}\scriptstyle \psi^{\ast}\)}}\end{tabular}}}}%
-    \put(0.4070443,0.00109073){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \vphantom{\psi} x\)}}\end{tabular}}}}%
-    \put(0.58124828,0.00109073){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \psi\)}}\end{tabular}}}}%
+    \put(0.27633385,0.9479919){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle x\)}}\end{tabular}}}}%
+    \put(0.70942013,0.9479919){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\psi\)}}\end{tabular}}}}%
+    \put(0.40704425,-0.04948748){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \vphantom{\psi} x\)}}\end{tabular}}}}%
+    \put(0.58124823,-0.04948748){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle \psi\)}}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{stu_welded_labelled_head_tail_t.pdf}}%
   \end{picture}%
 \endgroup%
