@@ -137,18 +137,20 @@ where \(\delta_{m}\) is adjoint to \(\partial_{m}\). The maps \(\delta\) behave 
 	We wish to understand how to invert this process, namely:
 	\begin{enumerate}
 		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' to a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
+		\label{subqu:when-integrates}
 		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there multiple solutions when integrating (akin to the constant of integration ``\({}+C\)'' on the real line)?
 		\item When does such a functional integrate multiple times, in particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
 		\item If there are multiple solutions when integrating, does this choice affect whether the new functional is integrable again?
 		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
 	\end{enumerate}
 \end{questions}
-The answers to the above questions are given precisely by the following spaces.
+The answers to the above questions are given precisely by the following spaces. For example, Question \ref{qu:integration-theory} \ref{subqu:when-integrates}, a functional in \(\mathcal{O}^{\ast}_{m}\) integrates to a functional in \(\mathcal{O}^{\ast}_{m - 1}\) exactly when it vanishes on \(P\mathcal{O}_{m}\) as defined in Definition \ref{def:integration-theory-spaces} \ref{subdef:primary-obstructions}. 
 \begin{definitions}
 	\label{def:integration-theory-spaces}
 	\begin{enumerate}
 		\item The \textbf{primary obstructions to integration} are the space
 			\[P\mathcal{O}_{m} = \ker{\partial_{m}}.\]
+		\label{subdef:primary-obstructions}
 		\item The \textbf{constants of integration} are the space
 			\[C\mathcal{O}_{m} = \mathcal{O}_{m} / \partial \mathcal{O}_{m + 1}.\]
 		\item The \textbf{secondary obstructions to integration} are the space
@@ -168,7 +170,9 @@ It may not be entirely obvious how these definitons provide answers to the quest
 Recall that \(m\)-singular knots are components of the stratification of the space of knots of codimension \(m\).
 
 \begin{definition}
-	A \textbf{singular isotopy} \(\Psi\) of \(m\)-singular knots is a path \(\Psi(t), t \in [0, 1]\) in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy. The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularities give the signs of the corresponding intersection.
+	A \textbf{singular isotopy} \(\Psi\) of \(m\)-singular knots is a path \(\Psi(t), t \in [0, 1]\) in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy.
+
+	The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularity \(s\) is defined as \(+1\) if a small \(U\) neighbourhood of \(\Psi(t + \varepsilon)\) around the location of the singularity in \(\Psi(t)\), \(U\) resembles a positive crossing. Otherwise \(\varepsilon(s) = -1\). This is equivalent to defining a coorientation on the \((m + 1)\)st stratum by choosing a normal vector in the direction in which the additional singular point of \(\Psi(t)\) becomes a positive crossing.
 
 	A singular isotopy is \textbf{closed} if \(\Psi(0) = \Psi(1)\).
 \end{definition}
@@ -180,7 +184,7 @@ For example in terms of our pictorial representation of the strata from the intr
 \]
 
 
-Let us rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}_{\star} = \singularknots_{\star}\). Differentiation takes an invariant \(Q\) of \(m\)-singular knots and defines an invariant \(Q'\) of \((m + 1)\)-singular knots. The values of \(Q'\) on the \((m + 1)\)-singular knot \(k^{\bullet}\) is the difference of values of \(Q\) on the combination of \(m\)-singular knots \(\partial k^{\bullet}\). Therefore if \(\Psi(t)\) is a singular isotopy of \(m\)-singular knots from \(k^{\bullet}_{0}\) to \(k^{\bullet}_{1}\), with singularity set \(\{\Psi_{s} : s \in I\}\), we have
+Let us rephrase the definitions in Section~\ref{sec:singular-knots}, in the integration theory \(\mathcal{O}_{\star} = \singularknots_{\star}\). Differentiation takes an invariant \(Q\) of \(m\)-singular knots and defines an invariant \(Q'\) of \((m + 1)\)-singular knots. The values of \(Q'\) on the \((m + 1)\)-singular knot \(k^{\bullet}\) is the difference of values of \(Q\) on the combination of \(m\)-singular knots \(\partial k^{\bullet}\). Therefore for any singular isotopy \(\Psi(t)\) of \(m\)-singular knots from \(k^{\bullet}_{0}\) to \(k^{\bullet}_{1}\), with singularity set \(\{\Psi_{s} : s \in I\}\), we have
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} Q'(\Psi_{s}).\]
 Note that due to the \ref{eq:codiff} relation this is always well-defined.
 
@@ -365,7 +369,9 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will pro
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
 
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections. This is done via the space of chord diagrams, which can be considered its linearisation or projectivisation. But these spaces are not just vector spaces --- there is further multiplicative structure which we wish to incorporate.
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections through the space of chord diagrams
+% NOTE: Dror calls this the linearisation of projectivisation, but I don't really understand that.
+But these spaces are not just vector spaces --- there is further multiplicative structure which we wish to incorporate.
 
 \begin{definitions}
 	\begin{enumerate}
@@ -813,9 +819,7 @@ The Conway and Jones polynomials and all quantum invariants \cite{knot-polynomia
 		\adjustbox{valign=c}{\input{graphics/twist_sequence_trefoil_detector_not_vassiliev.pdf_tex}}
 	\]
 	For \(i \in \mathbb{N}\), \(\partial^{i}(k_{i})\) is a sum of the \(2^{i}\) terms coming from resolving each double point. Exactly one of these terms is \(3_{1}\), with a coefficient of \(1\). So \(\delta^{i}(k_{i}) = 1 \neq 0\) for all \(i \in \mathbb{N}\). Hence \(f_{3_{1}}\) is not Vassiliev.
-	% NOTE: I don't know whether this is a power series Vassiliev invariant. But I wouldn't be surprised if not.
-
-	It is unknown whether the set of Vassiliev invariants detects the right-handed trefoil knot. But if so, then this invariant is a power series Vassiliev invariant.
+	% NOTE: I don't know whether this is a power series Vassiliev invariant. But I wouldn't be surprised if not. Maybe under the assumption that Vassiliev invariants detect the trefoil, or detect all knots. Perhaps some argument like choose a subspace of the Vassiliev invariants that suffices to detect the trefoil, normalise it somehow, ...?
 \end{example}
 
 More examples of non-Vassiliev invariants are the unknotting number, crossing number, signature, genus and bridge number \cite{many-classical-knot-invariants-are-not-vassiliev-invariants, twist-sequnces-and-vassiliev-invariants}. The proofs of these being non-Vassiliev touch on yet another dimension of the polynomial analogy, reviewed in \cite{vassiliev-invariants-as-polynomials}. It is unknown whether these invariants are power series Vassiliev invariants. 
@@ -983,7 +987,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\end{align*}
 \end{proof}
 
-We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. In fact \(\mathcal{A}\) is an even more specific structure.
+We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. Here finite type means it is finite-dimensional in each graded component. In fact \(\mathcal{A}\) is an even more specific structure.
 
 \begin{definition}
 	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra \(A\) of finite type for which
@@ -1152,6 +1156,7 @@ If \(A\) is graded, then it is also filtered with the natural descending filtrat
 The degree completion of a graded algebra \(A\) if a descending-filtered algebra that coincides with the completion \(\widehat{A}\) taken with respect to the natural descending filtration on \(A\).
 
 \begin{definition}
+	\label{def:universal-vassiliev-invariant}
 	A \textbf{universal Vassiliev invariant} is a knot invariant \(Z : \mathcal{K} \to \widehat{\mathcal{A}}\) with the following property. If \(k \in \mathcal{K}_{m}\) is a linear combination of knots with \(k = \partial^{m}(k^{\bullet})\) and \(k^{\bullet}\) has chord diagram \(a \in \mathcal{A}_{m}\), then
 	\[Z(k) = a + \text{higher degree terms.}\]
 
@@ -1160,9 +1165,11 @@ The degree completion of a graded algebra \(A\) if a descending-filtered algebra
 \end{definition}
 
 \begin{remark}
-	An equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, \(\gr f\) is a graded map coming from the filtered map \(f\) that forgets information about higher degrees. A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+	\label{rem:universal-vassiliev-invariant-universal-property-definition}
+	An equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, \(\gr f\) is a graded map coming from the filtered map \(f\) that forgets information about higher degrees.
 
-	A universal Vassiliev invariant is such a map with \(X = \widehat{\mathcal{A}}\). In particular, note that \(\gr \widehat{\mathcal{A}} = \mathcal{A}\) (because the direct sum implicit in \(\gr\) means \(a \in \gr \widehat{\mathcal{A}}\) cannot have infinitely many non-zero terms). So since \(Z\) is \(\mathcal{K} \to \widehat{\mathcal{A}}\) and satisfies this property, then \(\gr \mathcal{K} \cong \mathcal{A}\).
+	A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+
 \end{remark}
 
 \begin{theorem}[Kontsevich integral]
@@ -1265,11 +1272,12 @@ In other words, not all bases of \(\mathcal{V}_{m}\) are created equal. The cano
 \[\mathcal{V}_{m}/\mathcal{V}_{m - 1} \oplus \mathcal{V}_{m - 1} / \mathcal{V}_{m - 2} \oplus \cdots \oplus \mathcal{V}_{1} / \mathcal{V}_{0} \oplus \mathcal{V}_{0}\]
 of \(\mathcal{V}_{m}\) induced by the Kontsevich integral. Canonical Vassiliev invariants were first defined in \cite{on-the-melvin-morton-rozansky-conjecture} and used to prove the Melvin-Morton-Rozansky conjecture relating the coefficients of the Alexander polynomial to those of the coloured Jones polynomials. This is one example of how the theory of Vassiliev invariants is useful for probing the structure of knots.
 
-There are a few known from-the-bottom-up constructions of universal Vassiliev invariants of knots. However they are all equivalent to (or conjecturally equivalent to) the Kontsevich integral. Yet the Kontsevich integral is not the only invariant that can satisfy the defining degree property of a universal Vassiliev invariant.
 
-\begin{question}[Bar-Natan--Garoufalidis]
+\begin{remark}[\cite{on-the-melvin-morton-rozansky-conjecture}]
+	There are a few known from-the-bottom-up constructions of universal Vassiliev invariants of knots. However they are all equivalent to (or conjecturally equivalent to) the Kontsevich integral. Yet the Kontsevich integral is not the only invariant that can satisfy the defining degree property of a universal Vassiliev invariant.
+
 	Is there a reason why the Kontsevich integral, or equivalently, this splitting appears to be canonical?
-\end{question}
+\end{remark}
 
 Finally, we return to the equivalence of the two fundamental theorems.
 

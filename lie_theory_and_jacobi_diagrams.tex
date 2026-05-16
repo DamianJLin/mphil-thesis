@@ -315,7 +315,7 @@ Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), 
 
 \begin{definition}
 	\label{def:metric-lie-algebra}
-	A Lie algebra is \textbf{metric} if it has an ad-invariant, nondegenerate, bilinear form. That is a bilinear form \(\langle \cdot , \cdot \rangle\) such that for all \(x, y, z \in \mathfrak{g}\), \(\langle [x, y], z\rangle = \langle x, [y, z]\rangle\). If \(mathfrak{g}\) is metric, we call its bilinear form a metric.
+	A Lie algebra is \textbf{metric} if it has an ad-invariant, nondegenerate, bilinear form. That is a bilinear form \(\langle \cdot , \cdot \rangle\) such that for all \(x, y, z \in \mathfrak{g}\), \(\langle [x, y], z\rangle = \langle x, [y, z]\rangle\). If \(\mathfrak{g}\) is metric, we call its bilinear form a metric.
 \end{definition}
 
 Now suppose \(\mathfrak{g}\) is a metric Lie algebra. Its metric \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\) is nondegenerate so it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). This element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These two tensors, the metric and the Casimir can be diagrammatically represented as additional bivalent vertices
@@ -488,31 +488,34 @@ Let's look at a specific weight system for the Lie algebra \(\mathfrak{sl}_{2}\)
 	\]
 \end{example}
 
-	\begin{proof}
-		Compute both sides like in Construction \ref{cons:lie-algebra-weight-system}, but without projecting into \(\mathcal{U}(\mathfrak{g})\), leaving the result in \(\mathfrak{sl}_{2}^{\otimes 4}\). Both give
-		\begin{align*}
-			{}-h\otimes e\otimes h\otimes f+h\otimes e\otimes f\otimes h-h\otimes f\otimes h\otimes e+h\otimes f\otimes e\otimes h \\
-			{}+e\otimes h\otimes h\otimes f-e\otimes h\otimes f\otimes h + 2 e\otimes f\otimes e\otimes f -2 e\otimes f\otimes f\otimes e \\
-			{}+f\otimes h\otimes h\otimes e -f\otimes h\otimes e\otimes h -2 f\otimes e\otimes e\otimes f + 2 f\otimes e\otimes f\otimes e.
-		\end{align*}
-	\end{proof}
+\begin{proof}
+	Compute both sides like in Construction \ref{cons:lie-algebra-weight-system}, but without projecting into \(\mathcal{U}(\mathfrak{g})\), leaving the result in \(\mathfrak{sl}_{2}^{\otimes 4}\). Both give
+	\begin{align*}
+		{}-h\otimes e\otimes h\otimes f+h\otimes e\otimes f\otimes h-h\otimes f\otimes h\otimes e+h\otimes f\otimes e\otimes h \\
+		{}+e\otimes h\otimes h\otimes f-e\otimes h\otimes f\otimes h + 2 e\otimes f\otimes e\otimes f -2 e\otimes f\otimes f\otimes e \\
+		{}+f\otimes h\otimes h\otimes e -f\otimes h\otimes e\otimes h -2 f\otimes e\otimes e\otimes f + 2 f\otimes e\otimes f\otimes e.
+	\end{align*}
+\end{proof}
 
-	\begin{remark}
-		\label{rem:metric-casimir-bubble-is-dimension}
-		When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the Casimir. In a finite-dimensional Lie algebra, this is just the dimension (so for \(\mathfrak{sl}_{2}\), the factor \(3\)). For example,
-		\[
-			W_{\mathfrak{sl}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble.pdf}
-			\quad
-			=
-			\quad
-			3 W_{\mathfrak{sl}_{2}}
-			\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble_removed.pdf}.
-		\]
-	\end{remark}
-\begin{question}
-	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\) --- it also obeys a variant of the vector triple product rule. Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
-\end{question}
+\begin{remark}
+	\label{rem:metric-casimir-bubble-is-dimension}
+	When computing via the \(\mathfrak{sl}_{2}\) skein relation above, it's possible to create a ``bubble'' (part of a diagram without any trivalent vertices). Since we are computing via contractions in the tensor algebra, this is to be interpreted as the contraction of the metric with the Casimir. In a finite-dimensional Lie algebra, this is just the dimension (so for \(\mathfrak{sl}_{2}\), the factor \(3\)). For example,
+	\[
+		W_{\mathfrak{sl}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble.pdf}
+		\quad
+		=
+		\quad
+		3 W_{\mathfrak{sl}_{2}}
+		\includegraphics[width=0.115\textwidth, valign=c]{graphics/jacobi_diagram_with_bubble_removed.pdf}.
+	\]
+\end{remark}
+
+\begin{remark}
+	In \cite[Remark 16.9]{introduction-to-vassiliev-invariants} it is noted that the \(\mathfrak{sl}_{2}\) skein relation is an analogue of the vector triple product rule for the cross product in \(\mathbb{R}^{3}\). The relation has been further studied in \cite{riordan-trees-and-the-homotopy-sl2-weight-system} to determine a basis for \(\mathcal{W}_{\mathfrak{sl}_{2}}\). There is also a cross product in \(\mathbb{R}^{7}\), related to the exceptional Lie algebra \(\mathfrak{g}_{2}\) which obeys a variant of the vector triple product rule.
+
+	We note the following open questions: Is there a similar skein relation for \(\mathcal{W}_{\mathfrak{g}_{2}}\)? Are there other skein relations that the weight systems for the exceptional Lie algebras obey?
+\end{remark}
 
 Construction \ref{cons:lie-algebra-weight-system} yields a way of extracting some information from \(\mathcal{A}\) by plugging in a metric Lie algebra -- doing so constructs some quotient of \(\mathcal{A}\). This leads to the natural question of whether all of the information in \(\mathcal{A}\) can be extracted by metric Lie algebras in the manner of the construction.
 
@@ -585,7 +588,7 @@ The most general type of objects these constructions apply to are `Lie \(S\)-alg
 				\tau_{A, B}: A \otimes B \overset{\cong}{\longrightarrow} B \otimes A
 			\]
 			coming from the natural isomorphism \(\tau\) obey
-			\[\tau_{A, B \otimes C} = (\operatorname{id}_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \operatorname{id}_{C})\]
+			\[\tau_{A, B \otimes C} = (\id_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \id_{C})\]
 			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
 \end{definitions}
@@ -813,7 +816,7 @@ Indeed (and this was known about shortly after but not published until significa
 	The set of Lie (super)algebra weight systems does not span \(\mathcal{W}\).
 \end{corollary}
 
-In general, it is still unknown what exact level of generality one needs (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems. We hereby provide a succinct review of the current state of the literature on the subject.
+In general, it is still unknown what exact level of generality one needs (what type of symmetric monoidal categories need to be considered) in order to generate all weight systems, leaving Question \ref{ques:vogel-universal-lie-algebra} an open question. We hereby provide a succinct review of the current state of the literature on the subject.
 
 Roberts and Willerton in \cite{rozansky-witten-theory} and \cite{on-the-rozansky-witten-weight-systems} examine weight systems constructed from Lie algebra objects in the derived category of complex manifolds. Such weight systems are candidates for being able to detect knot orientation, which Lie algebra weight systems cannot \cite{on-the-vassiliev-knot-invariants}. However, computing these weight systems is difficult, and to our knowledge, no computations exist in the literature.
 
