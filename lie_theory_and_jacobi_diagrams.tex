@@ -341,20 +341,37 @@ Moreover, the invariance of the metric,  \(\langle [x, y], z \rangle = \langle [
 	\quad
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketyz.pdf}.
 \]
-A similar relation holds for the Casimir in a metric Lie algebra, namely if the Casimir is \({c = \sum_{i} e_{i} \otimes f_{i}}\), then for \(x \in \mathfrak{g}\), \(\sum_{i} e_{i} \otimes [f_{i}, x] = \sum_{i} [x, e_{i}] \otimes f_{i}\).
-% NOTE: I actually don't know how to prove this only using properties of the metric (and therefore Casimir) and bracket.
-Diagramatically, we have
-\[
-	\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_left.pdf}
-	\quad
-	=
-	\quad
-	\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_right.pdf}
-	\;
-	.
-\]
+Since the Casimir element is the inverse of the metric, the invariance of the metric should also be reflected in a property of the Casimir.
 
-From the discussion above, we see that the internal structure of Jacobi diagrams (internal meaning not near the skeleton) is reflected in a metric Lie algebra. Let us try to find a similar reflection of the structure near the skeleton. A representation \(\rho\) of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input and output, namely a \(v \in V\) which we denote by a thicker line, like the skeleton of a Jacobi diagram.
+\begin{proposition}
+	\label{prop:casimir-element-invariance}
+	Let \(c = \sum_{i} c_{i1} \otimes c_{i2}\) be the Casimir element of a metric Lie algebra. Then for \(x \in \mathfrak{g}\), it obeys the relation
+	\[\sum_{i} c_{i1} \otimes [c_{i2}, x] = \sum_{i} [x, c_{i1}] \otimes c_{i2}\]
+	Diagramatically, we have
+	\[
+		\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_left.pdf}
+		\quad
+		=
+		\quad
+		\includegraphics[width=0.1\textwidth, valign=c]{graphics/bracket_casimir_cyclic_invariance_right.pdf}
+	\]
+\end{proposition}
+% NOTE: This should really be done by string diagrams but, the reviewer asked for a proof.
+\begin{proof}
+	Applying the invariance of the metric \(\langle [x, y], z \rangle = \langle x, [y, z] \rangle\) to the expression
+	\(\sum_{i, j} \langle [c_{i2}, x], c_{j1}\rangle c_{i1} \otimes c_{j2}\)
+	gives
+	\[
+		\sum_{i, j} \langle [c_{i2}, x], c_{j1}\rangle c_{i1} \otimes c_{j2}
+		=
+		\sum_{i, j} \langle c_{i2}, [x, c_{j1}] \rangle c_{i1} \otimes c_{j2}.
+	\]
+	Since the metric and the Casimir elements are inverse, for all \(x \in \mathfrak{g}\) we have \(\sum_{i} c_{i1} \langle c_{i2}, x \rangle = x = \sum_{i} c_{i2} \langle x, c_{i1} \rangle\). Applying this to the equality above yields
+	\[\sum_{i} c_{i1} \otimes [c_{i2}, x] = \sum_{j} [x, c_{j1}] \otimes c_{j2}\]
+	which is the desired result after a change of index.
+\end{proof}
+
+From the diagrammatic interpretations of the antisymmetry and Jacobi relations above, we see that the internal structure of Jacobi diagrams (internal meaning not near the skeleton) is reflected in a metric Lie algebra. Let us try to find a similar reflection of the structure near the skeleton. A representation \(\rho\) of \(\mathfrak{g}\) on a finite-dimensional vector space \(V\) can be written as a tensor \(\rho \in \mathfrak{g}^{\ast} \otimes V^{\ast} \otimes V\). This takes a new kind of input and output, namely a \(v \in V\) which we denote by a thicker line, like the skeleton of a Jacobi diagram.
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/representation_vertex_before_dualisable.pdf}
 \]
