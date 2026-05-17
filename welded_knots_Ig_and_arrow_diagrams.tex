@@ -11,7 +11,7 @@ A good and thorough exposition of the theory of welded knots is \cite{finite-typ
 
 The definition of classical knots is first and foremost topological: they are ambient isotopy classes of embeddings of oriented circles into \(\mathbb{R}^{3}\). Due to the Reidemeister theorem, we may instead work with equivalence classes of planar knot diagrams under the Reidemeister moves.
 
-With welded knots, the definition is the other way around. We will define them diagrammatically as equivalence classes of planar knot diagrams under an extended set of Reidemeister moves.
+With welded knots, the definition is the other way around. We will define them diagrammatically as equivalence classes of an extended notion of knot diagrams under an extended set of Reidemeister moves.
 
 \begin{definition}
 	A \textbf{welded knot} is an immersed curve in \(\mathbb{R}^{3}\), where each four-valent planar vertex is decorated as one of the following types, respecting the orientation of the planar curve.
@@ -76,7 +76,7 @@ With welded knots, the definition is the other way around. We will define them d
 	\end{remarks}
 \end{definition}
 
-There is also a topological interpretation of welded knots, but it is not known exactly how well the topological object represents the diagrammatic one: welded knots are ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{4}\), up to a global orientation reversal move, and potentially some further moves \cite{virtual-knot-presentation-of-ribbon-torus-knots}. The map from welded knots to ribbon embedded tori is known as the tube map. We do not discuss the details here, instead referring the reader to \cite{on-the-welded-tube-map}. For the purposes of this thesis, we define finite type invariants of welded knots from their diagrammatic definition, remaining confident that welded knots topologically correspond to something close to ribbon-knotted tori modulo a global orientation reversal move in \(\mathbb{R}^{4}\).
+There is also a topological interpretation of welded knots, but it is not known exactly how well the topological object represents the diagrammatic one: welded knots are ambient isotopy classes of ribbon-embedded tori in \(\mathbb{R}^{4}\), up to a global orientation reversal move, and potentially some further moves \cite{virtual-knot-presentation-of-ribbon-torus-knots, welded-graphs-wirtinger-groups-and-knotted-punctured-spheres}. The map from welded knots to ribbon embedded tori is known as the tube map. We do not discuss the details here, instead referring the reader to \cite{on-the-welded-tube-map}. For the purposes of this thesis, we define finite type invariants of welded knots from their diagrammatic definition, remaining confident that welded knots topologically correspond to something close to ribbon-knotted tori modulo a global orientation reversal move in \(\mathbb{R}^{4}\).
 
 In fact, we can even avoid the trouble of the global orientation reversal move by passing to welded long knots. Since we have not yet defined classical long knots, we start with that. The word ``long'' indicates that the role of the circle in the definition is replaced by a line.
 
@@ -89,7 +89,7 @@ For the finite type theory, the algebra \(\mathcal{A}\) of Jacobi diagrams (and 
 There was no need to define long knots earlier because in the classical case, long knots and knots are in bijection with each other and the theory (including the finite type theory) is the same for both long and regular knots. Recall Proposition \ref{prop:linear-jacobi-diagrams-cyclically-invariant} as evidence of this fact. In the welded case however the long theory has the advantage of eliminating the global orientation reversal move.
 
 \begin{definition}
-	A \textbf{welded long knot} is a welded knot, but instead of a planar curve it is a planar immersion \(\ell: \mathbb{R} \to \mathbb{R}^{2}\) such that \(\ell(t) = (t, 0)\) for all large \(|t|\).
+	A \textbf{welded long knot} is similar to a welded knot except that instead of an equivalence classes of planar curves it is an equivalence planar immersions \(\ell: \mathbb{R} \to \mathbb{R}^{2}\) such that \(\ell(t) = (t, 0)\) for all large \(|t|\).
 \end{definition}
 
 For why this eliminates the global orientation reversal we refer the reader again to \cite{virtual-knot-presentation-of-ribbon-torus-knots} and also \cite[Corrigendum]{finite-type-invariants-of-w-knotted-objects-II-tangles-foams-and-the-kashiwara-vergne-problem}.
