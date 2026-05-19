@@ -64,7 +64,7 @@ Note that the for the chord diagrams inside the algebra of Jacobi diagrams, the 
 	The algebra \(\mathcal{J}\) of Jacobi diagrams is the vector space \(\mathcal{T} / \ref{eq:STU}\), with the product \(\connect\) defined the same way as it was for chord diagrams.
 \end{definition}
 
-This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. As such the \ref{eq:STU} relations suffice to determined the structure of \(\mathcal{J}\), but the following auxilliary relations which can be deduced from \ref{eq:STU} make the relations to Lie algebras more apparent.
+This is well-defined: the proof of Proposition \ref{prop:connected-sum-well-defined} showed that the product \(\connect\) being well-defined on \(\mathcal{A}\) was a consequence of the \ref{eq:4T} relations, which are implied by the \ref{eq:STU} relations. As such the \ref{eq:STU} relations suffice to determine the structure of \(\mathcal{J}\), but the following auxilliary relations which can be deduced from \ref{eq:STU} make the relations to Lie algebras more apparent.
 
 \begin{proposition}
 	\label{prop:stu-implies-as-ihx}
@@ -615,7 +615,7 @@ In fact, the construction of metric Lie algebra weight systems seen in \ref{cons
 			\]
 			coming from the natural isomorphism \(\tau\) obey
 			\[\tau_{A, B \otimes C} = (\id_{B} \mathbin{\otimes} \tau_{A, C}) \circ (\tau_{A, B} \mathbin{\otimes} \id_{C})\]
-			for every pair of objects \(A\), and \(B\) in \(\mathcal{C}\). 
+			for every triple of objects \(A\), and \(B\) in \(\mathcal{C}\). 
 	\end{enumerate}
 \end{definitions}
 One might notice that the hexagon relation involves only three terms, rather than the six that the name suggests. This is because we have omited the reassociation natural isomorphisms that we assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
@@ -1246,7 +1246,7 @@ A concept that is essential to the construction of Hinich--Vaintrob is that of a
 	An \textbf{operad} \(\mathcal{O}\) in the symmetric monoidal category \(\mathbf{Set}\) consists of:
 
 	\begin{itemize}
-		\item a collection of sets, \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the \textbf{\(n\)-ary operations},
+		\item a collection of sets, \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the set of \textbf{\(n\)-ary operations},
 		\item an element \(\id \in \mathcal{O}(1)\),
 		\item an action of the symmetric group \(S_{n}\) on each \(\mathcal{O}(n)\)
 		\item a series of \textbf{composition functions}:
@@ -1309,7 +1309,7 @@ An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey 
 		\alpha(3).
 	\]
 
-	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presenation in terms of generators and relations:
+	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presentation in terms of generators and relations:
 	\[
 		\mathcal{O}_{\text{Lie}}
 		\quad
@@ -1351,9 +1351,9 @@ An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey 
 
 Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category. Indeed, \(\mathcal{A}\) is a bialgebra, and Hinich--Vaintrob construct an object which is categorically a universal enveloping algebra, has a compatible coalgebra structure, and as a bialgebra is isomorphic to \(\mathcal{A}\).
 
-The first step is to create an category whose morphisms encode the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
+The first step is to create a category whose morphisms encode the internal structure of \(\mathcal{A}\), i.e. the \ref{eq:AS} and \ref{eq:IHX} relations, but not yet with a choice of representation or the \ref{eq:STU} relations. An important feature of \(\mathcal{A}\) that enabled the construction of Lie algebra weight systems was that contraction of tensors corresponding to the Lie bracket or metric/casimir elements was akin to joining parts of diagrams in \(\mathcal{A}\). So a contraction-like operation would be a good start.
 
-Indeed, composition in operads is reminiscent of contraction in a symmetric monoidal category, with the caveat that there are restictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, so taking the tensor product to produce an operaton with two outputs in not a natural operation.
+Indeed, composition in operads is reminiscent of contraction in a symmetric monoidal category, with the caveat that there are restrictions on what can be contracted: only outputs with inputs. Furthermore, in an operad, every operation has exactly one output, so taking the tensor product to produce an operaton with two outputs in not a natural operation.
 
 A step towards describing the internal structure of \(\mathcal{A}\) without specifying a Lie algebra is to allow multiple outputs, thereby considering not just operations with a single output, but with multiple outputs. Operads are abstractions of the operations on some object (say, \(A\)), i.e. morphisms \(A^{\otimes n} \to A\). Slightly more generally, props are abstractions of all maps \(A^{\otimes n} \to A^{\otimes m}\).
 
@@ -1431,7 +1431,7 @@ The following definition generalises the definition of a metric Lie algebra (whi
 
 \begin{definition}
 	\label{def:metric-algebra-over-cyclic-operad}
-	For a cyclic operad \(\mathcal{O}^{\text{cyc}}\) in category \(\mathcal{C}\), a \textbf{metric algebra} over \(\mathcal{O}^{\text{cyc}}\) is a pair \((A, m)\) of a choice of object \(A \in \mathcal{C}\) with together with a symmetric morphism \(m: A \otimes A \to k\), such that (informally) using \(m\) to turn the output into an input and using its inverse \(c\) to turn the last input into an output implements the action of the cyclic operad. Formally:
+	For a cyclic operad \(\mathcal{O}^{\text{cyc}}\) in category \(\mathcal{C}\), a \textbf{metric algebra} over \(\mathcal{O}^{\text{cyc}}\) is a pair \((A, m)\) of a choice of object \(A \in \mathcal{C}\) which is an algebra over \(\mathcal{O}^{\text{cyc}}\) together with a symmetric morphism \(m: A \otimes A \to k\), such that (informally) using \(m\) to turn the output into an input and using its inverse \(c\) to turn the last input into an output implements the action of the cyclic operad. Formally:
 	\begin{itemize}
 		\item there exists a morphism \(c: k \to A \otimes A\) such that the composition
 			\[A \overset{c \otimes \id}{\longrightarrow} A \otimes A \otimes A \overset{\id \otimes m}{\longrightarrow} A\]
@@ -1454,7 +1454,7 @@ The conditions above can alternatively and more naturally be phrased in terms of
 			{\mathbf{n}} && {\mathbf{1}} \\
 			\\
 			{\mathbf{n + 2}} && {\mathbf{3}}
-			\arrow["{f\sigma_{c} \otimes \id}", from=1-1, to=1-3]
+			\arrow["{f\sigma_{c}}", from=1-1, to=1-3]
 			\arrow["{c \otimes \id}"', from=1-1, to=3-1]
 			\arrow["{\id \otimes f \otimes \id}"', from=3-1, to=3-3]
 			\arrow["{\id \otimes m}"', from=3-3, to=1-3]
@@ -1494,7 +1494,7 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the casimir Lie algebra objects in the category \(\mathcal{C}\).
 \end{example}
 
-This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimr Lie algebra object.
+This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimir Lie algebra object.
 
 The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
 
@@ -1520,7 +1520,7 @@ In \(\mathcal{A}\) there are no such relations. In fact, there are no chord diag
 	The \textbf{universal Casimir Lie algebra object} is the generating object \(\mathbf{1}\) in the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). We denote this as \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\).
 \end{definition}
 
-This object \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}}\) is the object to which Hinich--Vaintrob apply the following construction which generalises the notion of a universal enveloping algebra. As in the construction of the classical universal enveloping algebra, this proceeds via constructing a generalisation of the tensor algebra.
+This object \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) is the object to which Hinich--Vaintrob apply the following construction which generalises the notion of a universal enveloping algebra. As in the construction of the classical universal enveloping algebra, this proceeds via constructing a generalisation of the tensor algebra.
 
 \begin{definitions}
 		The \textbf{global section} is the functor
@@ -1804,7 +1804,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 
 	We need to show that \(f\) factors through the projection to \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). All of the relations of Definition \ref{def:external-enveloping-algebra} follow from the relation in Example \ref{ex:stu-in-external-enveloping-algebra}, so it suffices to prove that the map factors through that relation. This is just the \ref{eq:STU} in \(\mathcal{A}\).
 
-	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
+	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
 \end{proofof}
 
 We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) and the bialgebra isomorphism to \(\mathcal{A}\). Recall from Proposition \ref{prop:jacobi-diagram-coproduct}

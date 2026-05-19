@@ -91,7 +91,7 @@ The Vassiliev skein relation extends a knot via its derivative, that is, defines
 	\begin{enumerate}
 		\item A knot invariant \(V\) is a \textbf{Vassiliev invariant} of order (or type) \(m\) if when extended to \((m + 1)\)-singular knots via its \((m + 1)\)st derivative, it vanishes
 			\[\delta^{m + 1} V \biggl( \underbrace{\double \cdots \double}_{{\scriptscriptstyle m + 1}} \biggr) = 0.\]
-		\item The \textbf{order} of a Vassiliev invariant \(V\) is the highest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the greatest number of double points a knot \(K\) can have without \(V(K)\) having to vanish).
+		\item The \textbf{order} of a Vassiliev invariant \(V\) is the lowest \(m\) such that \(V\) is a Vassiliev invariant of order \(m\). (That is, the order of a Vassiliev invariant is the greatest number of double points a knot \(K\) can have without \(V(K)\) having to vanish).
 	\end{enumerate}
 \end{definitions}
 
@@ -234,7 +234,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 \begin{remark}
 	Since we are considering framed knots, only the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T4Tstar} is closed, whereas the singular isotopy in Definition~\ref{def:topological-singular-relations}~\ref{subdef:T1Tstar} is not; so only \ref{eq:T4Tstar} holds. When considering unframed knots, the theory is the same as what we present below, but \ref{eq:T1Tstar} plays the same role as \ref{eq:T4Tstar}.
 
-	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams and indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the unframed version of the statement, hypotheses involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the framed version. We give a few examples of the unframed statements as we go. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
+	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams and indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the framed version of the statement, hypotheses involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the unframed version. We give a few examples of the unframed statements as we go. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
 \end{remark}
 
 Indeed, the definition of the primary obstructions to integration as \(P\mathcal{O}_{m} = \ker{\partial_{m}}\) is justified, as a cycle in \(\ker{\partial_{m}}\) is a combination of \((m + 1)\)-singular knots with signs through which a singular isotopy could pass. From Definition \ref{def:topological-singular-relations}, we have a cycle of the kind
@@ -247,7 +247,7 @@ Indeed, the definition of the primary obstructions to integration as \(P\mathcal
 	\ + \
 	\tftwest
 \]
-in \(P\singularknots_{m} = \ker \partial_{m}\). However, we it is not clear whether combinations of this form span \(P\mathcal{O}\), that is whether obstructions of this kind are the only type of obstruction.
+in \(P\singularknots_{m} = \ker \partial_{m}\). However, it is not clear whether combinations of this form span \(P\mathcal{O}\), that is whether obstructions of this kind are the only type of obstruction.
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
@@ -334,7 +334,7 @@ The \ref{eq:T4Tstar} relations are what knot invariants must satisfy to be integ
 
 We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) is only defined up to constants of integration, so is of the form
 \[Q + q \circ \sigma.\]
-For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be integrable since integration is linear. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. In our current case of \(\mathcal{O} = \mathcal{K}\), the secondary obstructions are conjectures to vanish.
+For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be integrable since integration is linear. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. In our current case of \(\mathcal{O} = \mathcal{K}\), the secondary obstructions are conjectured to vanish.
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
@@ -383,7 +383,7 @@ But these spaces are not just vector spaces --- there is further multiplicative 
 \end{definitions}
 
 \begin{proposition}
-	The singular knot filtration is indeed a descending filtration of vector spaces.
+	The singular knot filtration is a descending filtration of vector spaces.
 \end{proposition}
 
 \begin{proof}
@@ -468,7 +468,7 @@ The connected sum of knots is not a priori well-defined, as we have not specifie
 		& = (k \otimes k) \connect^{\otimes 2} (\ell \otimes \ell) \\
 		& = \Delta(k) \connect^{\otimes 2} \Delta(\ell)
 	\end{align*}
-	where \(\connect^{\otimes 2}\) denotes the component-wise tensor product on \(\mathcal{K} \otimes \mathcal{K}\).
+	where \(\connect^{\otimes 2}\) denotes the component-wise connected sum on \(\mathcal{K} \otimes \mathcal{K}\).
 	
 	Checking the unit and counit is trivial.
 \end{proof}
@@ -987,7 +987,7 @@ Just as there is a connected sum operation in \(\mathcal{A}\) reminiscent to tha
 	\end{align*}
 \end{proof}
 
-We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. Here finite type means it is finite-dimensional in each graded component. In fact \(\mathcal{A}\) is an even more specific structure.
+We have shown that \(\mathcal{A}\) is a graded bialgebra of finite type. Here finite type means it is finite-dimensional in each graded component. In fact \(\mathcal{A}\) has an even more specific structure.
 
 \begin{definition}
 	A \textbf{connected, commutative, cocommutative} graded bialgebra of finite type is a graded bialgebra \(A\) of finite type for which
@@ -1087,10 +1087,10 @@ We can break the fundamental theorem up into two parts based on the direction of
 	\begin{tblr}{|Q[c,m]|p{.36\textwidth}|p{.36\textwidth}|}
 		\hline
 		\textbf{Vassiliev}
-		& Every Vassiliev invariant modulo Vassiliev invariants of higher order gives a Weight system. \[\mathcal{V}_{m} / \mathcal{V}_{m - 1} \to \mathcal{W}_{m}\] \vspace{-20pt}
+		& Every Vassiliev invariant modulo Vassiliev invariants of lower order gives a Weight system. \[\mathcal{V}_{m} / \mathcal{V}_{m - 1} \to \mathcal{W}_{m}\] \vspace{-20pt}
 		& Every chord diagram gives an element of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\). \[\mathcal{A}_{m} \to \mathcal{K}_{m} / \mathcal{K}_{m + 1}\] \vspace{-20pt} \\ \hline
 		\textbf{Kontsevich}
-		& Every weight system gives a Vassiliev invariant modulo Vassiliev invariants of higher order. \[\mathcal{W}_{m} \to \mathcal{V}_{m} / \mathcal{V}_{m - 1}\] and this is inverse to the above.
+		& Every weight system gives a Vassiliev invariant modulo Vassiliev invariants of lower order. \[\mathcal{W}_{m} \to \mathcal{V}_{m} / \mathcal{V}_{m - 1}\] and this is inverse to the above.
 		& Every equivalence class of \(\mathcal{K}_{m}\) modulo \(\mathcal{K}_{m + 1}\) gives a chord diagram. \[\mathcal{K}_{m} / \mathcal{K}_{m + 1} \to \mathcal{A}_{m}.\] and this is inverse to the above. \\ \hline
 	\end{tblr}
 \end{center}
@@ -1153,7 +1153,7 @@ Let's turn to the other part of the fundamental theorem, due to Maxim Kontsevich
 
 If \(A\) is graded, then it is also filtered with the natural descending filtration
 \[\bigoplus_{i = 0}^{\infty} A_{i} \supseteq \bigoplus_{i = 1}^{\infty} A_{i} \supseteq \cdots.\]
-The degree completion of a graded algebra \(A\) if a descending-filtered algebra that coincides with the completion \(\widehat{A}\) taken with respect to the natural descending filtration on \(A\).
+The degree completion of a graded algebra \(A\) is a descending-filtered algebra that coincides with the completion \(\widehat{A}\) taken with respect to the natural descending filtration on \(A\).
 
 \begin{definition}
 	\label{def:universal-vassiliev-invariant}
