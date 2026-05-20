@@ -109,14 +109,17 @@ The finite type theory of welded long knots is defined similarly to that of clas
 	The algebra of \(0\)-singular welded long knots, or just the algebra of welded long knots \(\mathcal{K}^{\bullet}_{w, 0}(|) = \mathcal{K}_{w}(|)\) is filtered by the images of succesive powers of \(\partial\), and the filtration is compatible with the bialgebra structure.
 \end{definition}
 
-Just like in the classical case, the notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer over the the welded case. However now the derivative and boundary depend on the type of singularity.
+\begin{definition}
+	\label{def:welded-boundary}
+	The \textbf{boundary} operator \(\partial: \mathcal{K}^{\bullet}_{w, m} \to \mathcal{K}^{\bullet}_{w, m - 1}\) is defined dependent on the type of singularity.
+	\begin{align*}
+		\partial \left( \semivirtposcross \right) &= \poscross  - \virtcross \\
+		\partial \left( \semivirtnegcross \right) &= \virtcross - \negcross
+	\end{align*}
+	The \textbf{derivative} operator \(\delta\) is defined on \(m\)-singular invariants as the adjoint to \(\partial\).
+\end{definition}
 
-\begin{align*}
-	\partial \left( \semivirtposcross \right) &= \poscross  - \virtcross \\
-	\partial \left( \semivirtnegcross \right) &= \virtcross - \negcross
-\end{align*}
-
-Again, the derivative \(\delta\) is defined on \(m\)-singular invariants of welded long knots as the adjoint to \(\partial\). As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals
+The notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer from the classical case over to the welded case. As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals
 \[\partial \left( \semivirtposcross + \semivirtnegcross \right) = \poscross - \negcross.\]
 
 Long arrow diagrams are defined from singular welded knots just as chord diagrams are defined from singular knots.
@@ -285,13 +288,11 @@ There is a variant of Construction \ref{cons:lie-algebra-weight-system} for weld
 
 \begin{construction}
 	\label{cons:lie-algebra-weight-system-welded}
-	Given a Lie algebra \(\mathfrak{g}\), we obtain a map \(W_{\mathfrak{g}}: \mathcal{A}_{w} \to \mathcal{U}(I\mathfrak{g})\).
-
 	Apply Construction \ref{cons:lie-algebra-weight-system}, but when associating to each trivalent vertex a copy of the tensor \([\cdot, \cdot] \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\), also ensure that the inward oriented half-edges are associated to \(g^{\ast}\) components, and the outward oriented half-edges to the \(\mathfrak{g}\) component. In addition to the preservation of cyclic orders (recall Warning \ref{warn:cyclic-order-of-bracket}), this determines a bijection between the half-edges of each trivalent vertex and the components of the associated tensor.
 
 	For each edge between trivalent vertices, contract the corresponding tensors along the components corresponding to those half-edges. The signature of the components will always allow for the contraction from the fact that connected half-edges are always oriented coherently.
 
-	The result is a tensor product in copies of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\), which can be interpreted as an element of \((I\mathfrak{g})^{\otimes u}\) where \(u\) is the number of univalent vertices of the diagram in \(\mathcal{A}_{w}\).
+	The result is a tensor product in copies of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\), where the number of copies of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\) is the number of univalent vertices of the diagram in \(\mathcal{A}_{w}\).
 \end{construction}
 
 Note an imporant difference to the classical case. There are now two types of univalent vertices that connect to the external line: heads and tails. Heads correspond to elements of \(\mathfrak{g}\) and tails to elements of \(\mathfrak{g}^{\ast}\). Therefore, the role of \(\mathcal{U}(\mathfrak{g})\) in the classical case must be played here by some other associative algebra whose basis elements are words in \(\mathfrak{g} \sqcup \mathfrak{g}^{\ast}\).
@@ -474,6 +475,7 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{\varep
 \]
 
 \begin{theorem}
+	\label{thm:y-is-lie-algebra-object-in-casimir-envelope}
 	Let \(y: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) be the morphism
 	\[
 		y = \beta \oplus a_{\ell} \oplus a_{r} \oplus 0.

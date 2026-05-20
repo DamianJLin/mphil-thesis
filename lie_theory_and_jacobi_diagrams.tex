@@ -1017,7 +1017,7 @@ This is an analogue of a relation for \(\mathfrak{sl}_{3}\) found by Yoshizumi a
 In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite}, a third-order recursion relation for the values of the \(\mathfrak{sl}_{3}\) weight system on the bookshelf diagrams is found. We use the same idea with the new relation of Theorem \ref{thm:g2-unboxing-relation} to compute their values under the \(\mathfrak{g}_{2}\) weight system.
 
 \begin{theorem}
-	\label{thm:bookshelf_g2_formula}
+	\label{thm:bookshelf-g2-formula}
 	The values of the bookshelf diagram \(B_{n}\) are at most quadratic in the (quadratic) casimir element \(c\) of \(\mathfrak{g}_{2}\). In particular,
 	\[W_{\mathfrak{g}_{2}}(B_{i}) = c^{2} \left( \frac{1}{14} 4^{n} + \frac{27}{112} (5/3)^{n} + \frac{11}{16} (-1)^{n} \right) + c\left( 2^{n} + \frac{8}{3} (5/3)^{n} -\frac{11}{8}(-1)^{n} \right).\]
 \end{theorem}
@@ -1025,7 +1025,7 @@ In \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-gra
 \begin{proof}
 	Applying Theorem \ref{thm:g2-unboxing-relation} to the rightmost box on a bookshelf diagram gives
 	\begin{equation}
-		\tag{\ref{thm:bookshelf_g2_formula}a}
+		\tag{\ref{thm:bookshelf-g2-formula}a}
 		\label{eq:unboxed_bookshelf}
 		\begin{array}{lll}
 			W_{\mathfrak{g}_{2}}
@@ -1208,6 +1208,7 @@ The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sag
 Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
 
 \begin{theorem}
+	\label{thm:no-sl4-unboxing-relation}
 	In the weight system corresponding to the Lie algebra \(\mathfrak{sl}_{4}\), there is no linear relation between the diagrams
 	\[
 		\includegraphics[width=0.115\textwidth, valign=c]{graphics/local_jacobi_w4.pdf},
@@ -1284,8 +1285,6 @@ Accordingly, operads can be considered over any symmetric monoidal category \(\m
 
 An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
 
-\begin{example}
-	\label{ex:lie-operad}
 	Recall that an operad is in particular a collection of sets (or other objects of some symmetric monoidal category \(\mathcal{C}\)) \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). Such an object is called an \(S\)-module, and there is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
 
 	There is also a category \(\mathbf{Oper}\) of operads. The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
@@ -1309,6 +1308,9 @@ An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey 
 		\alpha(3).
 	\]
 
+	% TODO
+\begin{example}
+	\label{ex:lie-operad}
 	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presentation in terms of generators and relations:
 	\[
 		\mathcal{O}_{\text{Lie}}
@@ -1464,11 +1466,14 @@ The conditions above can alternatively and more naturally be phrased in terms of
 \end{definition}
 In other words, in \(\mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})\), the action of \(\sigma_{c}\) corresponds to the cyclic permutation of inputs and outputs by means of the metric and the casimir.
 
-\begin{example}
-	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the metric Lie algebra objects in the category \(\mathcal{C}\).
-\end{example}
+Using this prop, we can generalise the notion of a metric Lie algebra to an arbitrary symmetric monoidal category \(\mathcal{C}\).
 
-This generalises the definition of metric Lie algebra to an arbitrary symmetric monoidal category. Indeed any prop for metric algebras over a cyclic operad in any symmetric monoidal category gives rise to a weight system. This also permits the following slight \textit{further} generalisation of the type of objects that give rise to weight systems, which is necessary for the universal construction of Hinnich and Vaintrob.
+\begin{definition}
+	\label{def:metric-lie-algebra-object}
+	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category and \(\mathcal{O}_{\text{Lie}}^{\text{cyc}}\) the Lie operad in \(\mathcal{C}\). Then the \textbf{metric Lie algebra objects in \(\mathcal{C}\)} are the algebras over the prop \(\mathbf{E}_{m}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\).
+\end{definition}
+
+Indeed a metric Lie algebra object in any symmetric monoidal category gives rise to a weight system. However, we can be slightly more general with the type of objects we permit, and still product systems. This is is necessary for the universal construction of Hinnich and Vaintrob, and will be nevessary for our generalisation thereof.
 
 \begin{definition}
 	\label{def:casimir-envelope-of-cyclic-operad}
@@ -1490,11 +1495,12 @@ This generalises the definition of metric Lie algebra to an arbitrary symmetric 
 	\end{itemize}
 \end{definition}
 
-\begin{example}
-	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category. Then the algebras over the prop \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\) are exactly the casimir Lie algebra objects in the category \(\mathcal{C}\).
-\end{example}
+\begin{definition}
+	\label{def:casimir-lie-algebra-object}
+	Let \((\mathcal{C}, \tau)\) be a symmetric monoidal category and \(\mathcal{O}_{\text{Lie}}^{\text{cyc}}\) the Lie operad in \(\mathcal{C}\). Then the \textbf{casimir Lie algebra objects} are the algebras over the prop \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{cyc}})\).
+\end{definition}
 
-This generalises the notion of a Lie algebra object with a casimir element (but not necessarily with a metric). We call such an object a casimir Lie algebra object.
+This generalises the notion of a Lie algebra with a casimir element (but not necessarily with a metric). We call such an object a casimir Lie algebra object.
 
 The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
 
@@ -1739,7 +1745,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 	\label{lem:lie-operad-left-skewed-tree-normal-form}
 	Every element of \(\mathcal{O}_{\text{Lie}}(n)\), can be written in the form \(L \pi\) where \(L \in \mathcal{O}_{\text{Lie}}(n)\) is the left-skewed binary tree
 	\[L = [\cdot, \cdot] \circ_{1} \cdots \circ_{1} [\cdot, \cdot] \circ_{1} [\cdot, \cdot] \]
-	and \(\pi \in kS_{n}\).
+	and \(\pi \in kS_{n}\), the group algebra of \(S_{n}\) with coefficients in the monoidal unit of \(\mathcal{C}\).
 \end{lemma}
 
 \begin{proof}
