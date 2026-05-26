@@ -1283,32 +1283,53 @@ A concept that is essential to the construction of Hinich--Vaintrob is that of a
 
 Accordingly, operads can be considered over any symmetric monoidal category \(\mathcal{C}\) by replacing \(\mathbf{Set}\) with \(\mathcal{C}\) in Definition \ref{def:operad-over-set} and adjusting sets to be objects of \(\mathcal{C}\) and functions between sets to be morphisms between the corresponding objects.
 
+The operations in an operad can be also be represented graphically. An operation of arity \(n\) is drawn as a ball with \(n\) input lines (coming from above) and a single output line.
+	\[
+		\def\svgscale{0.3}
+		\input{graphics/operad_operation.pdf_tex}
+	\]
+Composition of operads can then be denoted graphically by connecting the inputs of an operation to outputs of other operations, to form a new compound operation of greater or equal arity.
+	\[
+		\def\svgscale{0.3}
+		\input{graphics/operad_multiplication.pdf_tex}
+	\]
+This way, relations in an operad can be expressed graphically. As a first example, the associativity axiom in Definition \ref{def:operad-over-set} asserts that when doing doing two series of compositions between three layers of operations, there is no need for brackets that specify a vertical bracketing. That is, connecting the first layer to the second layer to create a compound operation, then connecting this to the final layer creates the same operation as first connecting the second and third layers, and then taking the composition with the first layer. It is because of this axiom that the diagrams are well-defined without needing a vertical bracketing.
+
+% TODO: Make this precise and put in an appropriate environment and make Lie algebras an example of this.
+% NOTE: The compatibility conditions here are the following:
+% consider the type of diagram we are familiar with
+% objects objects objects (of C)
+% first layer of operads
+% second layer of operad
+% FIRST CONDITION: that plugging the objects in first to the first operations, then plugging in the resulting objects into the final poeration == plugging the objects into the product of the operations
+%
+
 An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
 
-	Recall that an operad is in particular a collection of sets (or other objects of some symmetric monoidal category \(\mathcal{C}\)) \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). Such an object is called an \(S\)-module, and there is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
+Recall that an operad is in particular a collection of sets (or other objects of some symmetric monoidal category \(\mathcal{C}\)) \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). Such an object is called an \(S\)-module, and there is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
 
-	There is also a category \(\mathbf{Oper}\) of operads. The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
+There is also a category \(\mathbf{Oper}\) of operads. The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
 
-	As such, there is a natural forgetful functor \(\square: \mathbf{Oper} \to S\text{-}\mathbf{mod}\). It has a left-adjoint free operad functor \(\Lambda: S\text{-}\mathbf{mod} \to \mathbf{Oper}\). For details of this construction we refer the reader to \cite{operads-and-props}. 
+As such, there is a natural forgetful functor \(\square: \mathbf{Oper} \to S\text{-}\mathbf{mod}\). It has a left-adjoint free operad functor \(\Lambda: S\text{-}\mathbf{mod} \to \mathbf{Oper}\). For details of this construction we refer the reader to \cite{operads-and-props}. 
 
-	We can build an \(S\)-module from a single generating operation. For example, let 
-	\[
-		\alpha
-		=
-		\def\svgscale{0.2}
-		\raisebox{-9pt}{\input{graphics/binary_operation.pdf_tex}}
-	\]
-	denote a generator operation with two inputs.
+We can build an \(S\)-module from a single generating operation. For example, let 
+\[
+	\alpha
+	=
+	\def\svgscale{0.2}
+	\raisebox{-9pt}{\input{graphics/binary_operation.pdf_tex}}
+\]
+denote a generator operation with two inputs.
 
-	By abuse of notation we denote by \(\alpha\) the \(S\)-module in which each \(\mathcal{O}(n)\) is the set of iterated compositions of \(\alpha\). For example
-	\[
-		\def\svgscale{0.2}
-		\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
-		\in
-		\alpha(3).
-	\]
+By abuse of notation we denote by \(\alpha\) the \(S\)-module in which each \(\mathcal{O}(n)\) is the set of iterated compositions of \(\alpha\). For example
+\[
+	\def\svgscale{0.2}
+	\raisebox{-15pt}{\input{graphics/ternary_operation_from_binary.pdf_tex}}
+	\in
+	\alpha(3).
+\]
 
-	% TODO
+% TODO
 \begin{example}
 	\label{ex:lie-operad}
 	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presentation in terms of generators and relations:
