@@ -3,6 +3,8 @@
 
 \lettrine{\libertineInitialGlyph{T}}{he} fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)). As we will see in this chapter, the structure of \(\mathcal{A}\) is related to Lie theory.
 
+Indeed, we will see that from any metric Lie algebra, there is construction that associates to it a weight system. However this by itself is not enough to produce all weight systems, and to go further the construction can be extended to a generalised notion of metric Lie algebras: metric Lie algebra objects in an arbitrary symmetric monoidal category. But even this is not enough. However, the slightly more general notion of casimir Lie algebra objects in an arbitrary symmetric monoidal category does suffice to product all weight systems, and and operadic framework is introduced to prove this fact.
+
 \section{Jacobi diagrams}
 To see the Lie theory connections, we see that \(\mathcal{A}\) is isomorphic as a bialgebra of Jacobi diagrams, whose elements are represented by graphs with one- and three-valent vertices.
 
@@ -1205,7 +1207,7 @@ The same computational method as in \ref{thm:g2-unboxing-relation} can be used t
 
 The dimension of \(\mathfrak{g}_{2}\) is \(14\), and tensor contraction with sagemath is computable on the author's ThinkPad T14s with processor AMD Ryzen 7 PRO 5850U in a few seconds. One the other hand, \(\operatorname{dim} \mathfrak{f}_{4} = 52\), and calculation takes several hours on a server with two Intel Xeon E5-2667v3 CPUs. The main bottleneck is tensor contraction, and indeed for \(\mathfrak{e}_{6}\) (which has dimension 78), the computation is not feasible on this hardware, at least not with the current algorithm. There is some hope that this can be done using more efficient tensor contraction algorithms than those offered by sagemath, but this has not yet been explored.
 
-Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not work.
+Finally, we note that for \(\mathfrak{sl}_{4}\) there is no similar linear relation between the same diagrams.
 
 \begin{theorem}
 	\label{thm:no-sl4-unboxing-relation}
@@ -1224,6 +1226,8 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) the arguments given above do not
 \begin{proof}
 	By computer verification with sagemath, the span of the corresponding tensors in \((\mathfrak{sl}_{4})^{\otimes 4}\) is six-dimensional.
 \end{proof}
+
+As a result, the methods applied to \(\mathfrak{g}_{2}\) and \(\mathfrak{f}_{4}\) cannot be used to produce a similar quadraticity bound for the values of the bookshelf diagrams under the \(\mathfrak{sl}_{4}\) weight system.
 
 \section{A universal casimir Lie algebra object}
 \label{sec:a-universal-casimir-lie-algebra-object}
@@ -1847,7 +1851,7 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 		\cong
 		\mathbf{E}_{c}(\mathbf{0}, \mathbf{n})
 	\]
-	and therefore an vector space isomorphism
+	and therefore a vector space isomorphism
 	\[
 		T(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})
 		\cong
@@ -1873,7 +1877,9 @@ We fill out some details left out of the proof in \cite{cyclic-operads-and-the-a
 
 	We need to show that \(f\) factors through the projection to \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\). All of the relations of Definition \ref{def:external-enveloping-algebra} follow from the relation in Example \ref{ex:stu-in-external-enveloping-algebra}, so it suffices to prove that the map factors through that relation. This is just the \ref{eq:STU} in \(\mathcal{A}\).
 
-	The map \(f\) is surjective because every Jacobi diagram can be presented by a graph whose edges do not have local minima, informally, the casimir and the bracket suffice to draw any unitrivalent graph. It is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
+	The map \(f\) is surjective: we claim every Jacobi diagram can be presented by a graph whose edges do not have local minima. If the Jacobi diagram is genus zero, so a tree, then this is obvious. Suppose the Jacobi diagram as genus \(m\). Then by removing \(m\) short arcs from \(m\) of its edges, there is a way to obtain a modified diagram which is again a tree. This can be presented without local minima, and can be restored to a diagram equivalent to the original diagram by attaching casimirs to connect those edges that were formed by the removal of short arcs, a process which doesn't ontroduce local minima, proving the claim.
+
+	The map \(f\) is injective because \(\ref{eq:STU}\) is a generating relation for \(\mathcal{A}\) (Proposition \ref{prop:stu-implies-as-ihx}) and its preimages in \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) are related by the relation in Example \ref{ex:stu-in-external-enveloping-algebra}. This proves the algebra isomorphism.
 \end{proofof}
 
 We turn to the coalgebra structure of \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) and the bialgebra isomorphism to \(\mathcal{A}\). Recall from Proposition \ref{prop:jacobi-diagram-coproduct}
