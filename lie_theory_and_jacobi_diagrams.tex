@@ -318,7 +318,7 @@ Looking at these relations in the tensor algebra \(\mathcal{T}(\mathfrak{g})\), 
 	A Lie algebra is \textbf{metric} if it has an ad-invariant, nondegenerate, bilinear form. That is a bilinear form \(\langle \cdot , \cdot \rangle\) such that for all \(x, y, z \in \mathfrak{g}\), \(\langle [x, y], z\rangle = \langle x, [y, z]\rangle\). If \(\mathfrak{g}\) is metric, we call its bilinear form a metric.
 \end{definition}
 
-Now suppose \(\mathfrak{g}\) is a metric Lie algebra. Its metric \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\) is nondegenerate so it can be inverted to an element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). This element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These two tensors, the metric and the Casimir can be diagrammatically represented as additional bivalent vertices
+Now suppose \(\mathfrak{g}\) is a metric Lie algebra. Its metric \(\langle \cdot, \cdot \rangle \in \mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast}\) is nondegenerate so it always has an adjoint element \(c \in \mathfrak{g} \otimes \mathfrak{g}\). This element is known as the Casimir element associated to \(\mathfrak{g}\) (or simply the Casimir). These two tensors, the metric and the Casimir can be diagrammatically represented as additional bivalent vertices
 \[
 	\includegraphics[width=0.06\textwidth, valign=c]{graphics/string_diagram_metric.pdf}
 	\qquad \text{and} \qquad
@@ -341,7 +341,7 @@ Moreover, the invariance of the metric,  \(\langle [x, y], z \rangle = \langle [
 	\quad
 	\includegraphics[width=0.08\textwidth, valign=c]{graphics/bracket_metric_cyclic_invariance_bracketyz.pdf}.
 \]
-Since the Casimir element is the inverse of the metric, the invariance of the metric should also be reflected in a property of the Casimir.
+Since the Casimir element is adjoint to the metric, the invariance of the metric should also be reflected in a property of the Casimir.
 
 \begin{proposition}
 	\label{prop:casimir-element-invariance}
@@ -366,7 +366,7 @@ Since the Casimir element is the inverse of the metric, the invariance of the me
 		=
 		\sum_{i, j} \langle c_{i2}, [x, c_{j1}] \rangle c_{i1} \otimes c_{j2}.
 	\]
-	Since the metric and the Casimir elements are inverse, for all \(x \in \mathfrak{g}\) we have \(\sum_{i} c_{i1} \langle c_{i2}, x \rangle = x = \sum_{i} c_{i2} \langle x, c_{i1} \rangle\). Applying this to the equality above yields
+	Since the metric and the Casimir elements are adjoint, for all \(x \in \mathfrak{g}\) we have \(\sum_{i} c_{i1} \langle c_{i2}, x \rangle = x = \sum_{i} c_{i2} \langle x, c_{i1} \rangle\). Applying this to the equality above yields
 	\[\sum_{i} c_{i1} \otimes [c_{i2}, x] = \sum_{j} [x, c_{j1}] \otimes c_{j2}\]
 	which is the desired result after a change of index.
 \end{proof}
@@ -426,7 +426,7 @@ The following construction of Bar-Natan is the focus of his seminal article \cit
 	\[[h, e] = 2e, \quad [h, f] = -2f, \quad [e, f] = h,\]
 	and the metric is
 	\[\langle h, h \rangle = 2, \quad \langle e, f \rangle = 1, \quad \langle f, e \rangle = 1.\]
-	Inverting the metric gives the Casimir element
+	Adjoint to the metric is the Casimir element
 	\[c = \frac{1}{2} h^{\ast} \otimes h^{\ast} + e^{\ast} \otimes f^{\ast} + f^{\ast} \otimes e^{\ast}.\]
 	Here we have chosen the normalisation of the metric that agrees with the trace in the adjoint representation, so
 	\[
@@ -1245,7 +1245,6 @@ A concept that is essential to the construction of Hinich--Vaintrob is that of a
 \begin{definition}
 	\label{def:operad-over-set}
 	An \textbf{operad} \(\mathcal{O}\) in the symmetric monoidal category \(\mathbf{Set}\) consists of:
-
 	\begin{itemize}
 		\item a collection of sets, \(\{\mathcal{O}(n)\}_{n \in \mathbb{N}}\), with \(\mathcal{O}(n)\) known as the set of \textbf{\(n\)-ary operations},
 		\item an element \(\id \in \mathcal{O}(1)\),
@@ -1302,15 +1301,27 @@ This way, relations in an operad can be expressed graphically. As a first exampl
 % first layer of operads
 % second layer of operad
 % FIRST CONDITION: that plugging the objects in first to the first operations, then plugging in the resulting objects into the final poeration == plugging the objects into the product of the operations
-%
 
-An algebra over an operad is an object in \(\mathcal{C}\) whose operations obey the rules defined by \(\mathcal{O}\).
+\begin{definition}
+	\label{def:algebra-over-operad}
+	An \textbf{algebra over an operad \(\mathcal{O}\) in the symmetric monoidal category \(\mathcal{C}\)} is an object \(X\) of \(\mathcal{C}\) with a sequence of \textbf{operation evaluation maps}
+	\[\mathcal{O}(n) \otimes X^{\otimes n} \longrightarrow X\]
+	for all \(n \in \mathbb{N}\), such that
+	\begin{itemize}
+		\item the operation evaluation maps are compatible with operad composition,
+		\item the operation evaluation maps are compatible with permutations in the symmetric monoidal category \(\mathcal{C}\),
+		\item for \(\id \in \mathcal{O}(1)\), the operation evaluation map \(\id \otimes X \to X\) is the identity map on objects of \(\mathcal{C}\).
+	\end{itemize}
+	All of these conditions are written out explicitly in \cite[Ch. 3]{operads-and-props}.
+\end{definition}
 
-Recall that an operad is in particular a collection of sets (or other objects of some symmetric monoidal category \(\mathcal{C}\)) \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). Such an object is called an \(S\)-module, and there is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
+Essentially, an algebra over an operad in \(\mathcal{C}\) is an object in \(\mathcal{C}\) that comes equipped with operations whose successive compositions obey the rules defined by \(\mathcal{O}\).
 
-There is also a category \(\mathbf{Oper}\) of operads. The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
+We now aim to construct the Lie operad as an example of an operad following \cite[Ch. 4]{operads-and-props}. For constructing the Lie operad, let \(\mathcal{O}\) be an operad in the symmetric monoidal category \(\mathbf{Vect}\). By Definition \ref{def:operad-over-set}, \(\mathcal{O}\) is in particular a collection of vector spaces \(\mathcal{O}(n)\) for \(n \in \mathbb{N}\), with a \(S_{n}\) action on each \(\mathcal{O}(n)\). In fact, \(\mathcal{O}\) has a richer structure that this since Definition \ref{def:operad-over-set} also requires \(\mathcal{O}\) to come equipped with composition functions satisfying some axioms, but forgetting this for now, the structure thus described by itself is called an \(S\)-module. There is the category \(S\text{-}\mathbf{mod}\) of \(S\)-modules whose morphisms are \(S\)-module morphisms: morphisms that commute with the action of \(S_{n}\).
 
-As such, there is a natural forgetful functor \(\square: \mathbf{Oper} \to S\text{-}\mathbf{mod}\). It has a left-adjoint free operad functor \(\Lambda: S\text{-}\mathbf{mod} \to \mathbf{Oper}\). For details of this construction we refer the reader to \cite{operads-and-props}. 
+Similarly, we write the category \(\mathbf{Oper}(\mathbf{Vect})\) of operads in the symmetric monoidal category \(\mathbf{Vect}\). The morphisms from operads \(\mathcal{O}\) to \(\mathcal{P}\) are sequences of linear maps \(\mathcal{O}(n) \to \mathcal{P}(n)\), \(n \in \mathbb{N}\) that preserve the identity, preserve composition and commute with the action of \(S_{n}\).
+
+As such, there is a natural forgetful functor \(\square: \mathbf{Oper}(\mathbf{Vect}) \to S\text{-}\mathbf{mod}\). It has a left-adjoint free operad functor \(\Lambda: S\text{-}\mathbf{mod} \to \mathbf{Oper}(\mathbf{Vect})\). For details of this construction we refer the reader to \cite{operads-and-props}. 
 
 We can build an \(S\)-module from a single generating operation. For example, let 
 \[
@@ -1329,10 +1340,11 @@ By abuse of notation we denote by \(\alpha\) the \(S\)-module in which each \(\m
 	\alpha(3).
 \]
 
-% TODO
+With this in mind, we can describe the Lie operad in a simple graphical presentation in terms of generators and relations
+
 \begin{example}
 	\label{ex:lie-operad}
-	With this in mind, we can describe the \textbf{Lie operad} in a simple graphical presentation in terms of generators and relations:
+	The \textbf{Lie operad} over the symmetric monoidal category \(\mathbf{Vect}\), denoted \(\mathcal{O}_{\text{Lie}}\) is defined as
 	\[
 		\mathcal{O}_{\text{Lie}}
 		\quad
@@ -1371,6 +1383,13 @@ By abuse of notation we denote by \(\alpha\) the \(S\)-module in which each \(\m
 		.
 	\]
 \end{example}
+
+\begin{proposition}
+	The algebras over the Lie operad over the symmetric monoidal category \(\mathbf{Vect}\), \(\mathcal{O}_{\text{Lie}}\) are exactly the Lie algebras.
+\end{proposition}
+\begin{proof}[sketch]
+	Being objects of \(\mathbf{Vect}\), the algebras over Lie are vector spaces. The relations of example \ref{ex:lie-operad} provide the axioms of antisymmetry and the Jacobi identity. Since \(\mathcal{O}_{\text{Lie}}\) is constructed as a quotient of the free operad functor on a single generating binary operation, there are no additional relations than those that can be deduced from antisymmetry and the Jacobi identity.
+\end{proof}
 
 Recall that the goal of the Hinich--Vaintrob construction is to realise \(\mathcal{A}\) as the universal enveloping algebra (or an appropriate generalisation thereof) of a Lie algebra object in some symmetric monoidal category. Indeed, \(\mathcal{A}\) is a bialgebra, and Hinich--Vaintrob construct an object which is categorically a universal enveloping algebra, has a compatible coalgebra structure, and as a bialgebra is isomorphic to \(\mathcal{A}\).
 
@@ -1429,7 +1448,7 @@ Recall that the action of the symmetric groups \(S_{n}\) on an operad come from 
 
 	Let \(S_{n}^{+} \cong S_{n + 1}\) be the group of permutations of \(\{0, \cdots n\}\), and note that the subgroup of \(S_{n}^{+}\) that fixes \(0\) is isomorphic to \(S_{n}\). We say an action of \(S_{n}^{+}\) extends the action of \(S_{n}\) if the restriction of the action to \(S_{n} \subseteq S_{n}^{+}\) agrees with the action of \(S_{n}\) on \(\mathcal{O}(n)\).
 
-	Let \(\sigma_{c} \in S_{n + 1}\) denote the cyclic permutation sending \(0 \mapsto 1, 1 \mapsto 2, \cdots, n \mapsto 0\). To be a cyclic operad, the action of \(S_{n + 1}\) must satisfy the \textbf{cyclic action condition}
+	For each \(n \leq 1\), let \(\sigma_{c} \in S_{n + 1}\) denote the cyclic permutation sending \(0 \mapsto 1, 1 \mapsto 2, \cdots, n \mapsto 0\). We abuse notation by not making explicit in the name of \(\sigma_{c}\) the size \(n + 1\) of the symmetric group \(S_{n + 1}\) on which \(\sigma_{c}\) acts as this can be read from context. To be a cyclic operad, the action of \(S_{n + 1}\) must satisfy the \textbf{cyclic action condition}
 	\[(a \circ_{1} b) \sigma_{c} = (b\sigma_{c}) \circ_{n} (a\sigma_{c})\]
 	for any \(a \in \mathcal{O}(m)\), \(b \in \mathcal{O}(n)\). The axiom ensures that the action of \(S_{n + 1}\) encodes that cyclically acting on a composition of operations is the same as cyclically acting and then composing. Graphically, this looks like the following.
 	\[
@@ -1449,16 +1468,37 @@ Recall that the action of the symmetric groups \(S_{n}\) on an operad come from 
 	We denote a cyclic operad with underlying operad \(\mathcal{O}\) by \(\mathcal{O}^{\text{cyc}}\). This suffices because we do not consider operads with multiple cyclic structures.
 \end{definition}
 
-The following definition generalises the definition of a metric Lie algebra (which is an algebra over the cyclic operad \(\mathcal{O}_{\text{Lie}}\)) to an arbitrary cyclic operad.
+If we allow the action of \(\sigma_{c}\) to be pictured as
+\[
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/cyclic_operad_action_definition_lhs.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/cyclic_operad_action_definition_rhs.pdf_tex}}
+\]
+then the relation becomes
+\[
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/cyclic_operad_picture_lhs.pdf_tex}}
+	\quad
+	=
+	\quad
+	\def\svgscale{0.3}
+	\adjustbox{valign=c}{\input{graphics/cyclic_operad_picture_rhs.pdf_tex}}
+\]
+so the cyclic action condition is natural to consider when trying to cyclically permute the inputs and outputs of the operations in an operad.
 
+The following definition generalises the definition of a metric Lie algebra (which is an algebra over the cyclic operad object \(\mathcal{O}_{\text{Lie}}\)) to an arbitrary cyclic operad.
 
 \begin{definition}
 	\label{def:metric-algebra-over-cyclic-operad}
-	For a cyclic operad \(\mathcal{O}^{\text{cyc}}\) in category \(\mathcal{C}\), a \textbf{metric algebra} over \(\mathcal{O}^{\text{cyc}}\) is a pair \((A, m)\) of a choice of object \(A \in \mathcal{C}\) which is an algebra over \(\mathcal{O}^{\text{cyc}}\) together with a symmetric morphism \(m: A \otimes A \to k\), such that (informally) using \(m\) to turn the output into an input and using its inverse \(c\) to turn the last input into an output implements the action of the cyclic operad. Formally:
+	For a cyclic operad \(\mathcal{O}^{\text{cyc}}\) in category \(\mathcal{C}\), a \textbf{metric algebra} over \(\mathcal{O}^{\text{cyc}}\) is a pair \((A, m)\) of a choice of object \(A \in \mathcal{C}\) which is an algebra over \(\mathcal{O}^{\text{cyc}}\) together with a symmetric morphism \(m: A \otimes A \to k\), such that (informally) using \(m\) to turn the output into an input and using its adjoint \(c\) to turn the last input into an output implements the action of the cyclic operad. Formally:
 	\begin{itemize}
 		\item there exists a morphism \(c: k \to A \otimes A\) such that the composition
 			\[A \overset{c \otimes \id}{\longrightarrow} A \otimes A \otimes A \overset{\id \otimes m}{\longrightarrow} A\]
-			is the identity (\(m\) is \textbf{invertible}).
+			is the identity (\(m\) has an \textbf{adjoint}).
 		\item the composition
 			\[\mathcal{O}(n) \otimes A^{\otimes n + 1} \longrightarrow A \otimes A \overset{m}{\longrightarrow} k\]
 			is \(S_{n + 1}\)-invariant (\(m\) is \(\mathcal{O}\)-\textbf{invariant}).
@@ -1470,7 +1510,7 @@ The conditions above can alternatively and more naturally be phrased in terms of
 	\label{def:metric-envelope-of-cyclic-operad}
 	We define the \textbf{metric envelope of the cyclic operad} \(\mathcal{O}^{\text{cyc}}\), denoted \(\mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})\) as the prop generated by the prop \(\mathbf{E}(\mathcal{O}^{\text{cyc}})\) along with two elements \(m \in \mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})(\mathbf{2}, \mathbf{0})\) and \(c \in \mathbf{E}_{m}(\mathcal{O}^{\text{cyc}})(\mathbf{0}, \mathbf{2})\), satisfying the following conditions:
 	\begin{itemize}
-		\item The morphisms \(m\) and \(c\) are are symmetric and mutually inverse (in the sense of Definition \ref{def:metric-algebra-over-cyclic-operad}).
+		\item The morphisms \(m\) and \(c\) are are symmetric and mutually adjoint (in the sense of Definition \ref{def:metric-algebra-over-cyclic-operad}).
 		\item Let \(\sigma_{c} \in S_{n + 1}\) be the cyclic permutation of Definition \ref{def:cyclic-operad}. For each \(f \in \mathcal{O}(n)\), the diagram
 		% https://q.uiver.app/#q=WzAsNCxbMCwyLCJcXG1hdGhiZntuICsgMn0iXSxbMiwyLCJcXG1hdGhiZnszfSJdLFswLDAsIlxcbWF0aGJme259Il0sWzIsMCwiXFxtYXRoYmZ7MX0iXSxbMCwxLCJcXGlkIFxcb3RpbWVzIGYgXFxvdGltZXMgXFxpZCIsMl0sWzIsMCwiYyBcXG90aW1lcyBcXGlkIiwyXSxbMSwzLCJcXGlkIFxcb3RpbWVzIG0iLDJdLFsyLDMsImZcXHNpZ21hX3tjfSBcXG90aW1lcyBcXGlkIl1d
 		\[\begin{tikzcd}
@@ -1498,7 +1538,7 @@ Indeed a metric Lie algebra object in any symmetric monoidal category gives rise
 
 \begin{definition}
 	\label{def:casimir-envelope-of-cyclic-operad}
-	The \textbf{casimir envelope of the cyclic operad} \(\mathcal{O}^{\text{cyc}}\), denoted \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}})\) is the prop generated by the prop \(\mathbf{E}(\mathcal{O})\) along with the element \(c \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}})(\mathbf{0}, \mathbf{2})\) such that:
+	The \textbf{casimir envelope of the cyclic operad} \(\mathcal{O}^{\text{cyc}}\), denoted \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}})\) is the prop generated by the prop \(\mathbf{E}(\mathcal{O}^{\text{cyc}})\) along with the element \(c \in \mathbf{E}_{c}(\mathcal{O}^{\text{cyc}})(\mathbf{0}, \mathbf{2})\) such that:
 	\begin{itemize}
 		\item The morphism \(c\) is symmetric.
 		\item For each \(f \in \mathcal{O}(n)\), the diagram
@@ -1523,7 +1563,7 @@ Indeed a metric Lie algebra object in any symmetric monoidal category gives rise
 
 This generalises the notion of a Lie algebra with a casimir element (but not necessarily with a metric). We call such an object a casimir Lie algebra object.
 
-The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always invertible, and its inverse is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
+The reason we did not see an analagous definition earlier in this chapter is the following. In the case of finite-dimensional Lie algebras, every casimir Lie algebra is a metric Lie algebra. This is because in finite-dimensional vector spaces, a casimir, being an invariant symmetric map \(c: k \to A \otimes A\) is always has an adjoint, and its adjoint is a metric. So, any rigid casimir Lie algebra object is a metric one. For example, finite-dimensional casimir Lie algebras, superalgebras, etc.
 
 The reason to consider casimir Lie algebra objects as opposed to just metric Lie algebra objects to make the universal construction is the following. Consider specifying a metric Lie algebra object \(\mathfrak{g}\) in some symmetric monoidal category \(\mathcal{C}\). Then the weight system \(\mathcal{W}_{\mathfrak{g}}\) has a relation of the form
 	\[
@@ -1755,9 +1795,11 @@ to \(o_{m_{1}} \otimes \cdots \otimes o_{m_{n}} \otimes \xi\). The second is to 
 	which is exactly the defining relation of a classical universal enveloping algebra.
 \end{example}
 
+Let \(\mathcal{O}_{\text{Lie}}\) denote the Lie algebra operad over the prop (so therefore symmetric monoidal category) \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). Recall that \(\mathbf{E}_{c}(\mathcal{O}^{cyc}_{Lie}\) is formed from adding the morphism \(c\) to \(\mathbf{E}(\mathcal{O})\), and the only additional relations imposed involve \(c\), therefore by Definition \ref{def:algebra-over-prop}, \(\mathbf{1}_{c}\) is an algebra over the operad \(\mathcal{O}_{\text{Lie}}\) over the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\)
+
 \begin{theorem}[\cite{cyclic-operads-and-the-algebra-of-chord-diagrams}]
 	\label{thm:universal-casimir-lie-envelope-chord-diagrams-algebra-isomorphism}
-	The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as an algebra to \(\mathcal{A}\).
+	Let \(U(\mathcal{O}_{\text{Lie}})\) denote the Lie operad over the symmetric monoidal category \(\mathbf{E}_{c}(\mathcal{O}^{\text{cyc}}_{\text{Lie}})\). The algebra \(U(\mathcal{O}_{\text{Lie}}, \mathbf{1}_{c})\) is isomorphic as an algebra to \(\mathcal{A}\).
 \end{theorem}
 
 We fill out some details left out of the proof in \cite{cyclic-operads-and-the-algebra-of-chord-diagrams}.

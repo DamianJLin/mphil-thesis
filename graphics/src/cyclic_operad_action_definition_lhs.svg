@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="65.472015mm"
+   height="46.555519mm"
+   viewBox="0 0 65.472015 46.555519"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="cyclic_operad_action_definition_lhs.svg"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/cyclic_operad_action_definition_lhs.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="18.641472"
+     inkscape:cx="104.20315"
+     inkscape:cy="104.84687"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.5562515,-77.7875)">
+    <path
+       fill="none"
+       stroke-width="3.84"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#000000"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="m 41.561592,101.15617 c -1.691403,-5.205596 -7.282102,-8.054199 -12.487701,-6.362795 -5.2056,1.6914 -8.054202,7.282095 -6.362802,12.487695 1.691403,5.2056 7.282098,8.0542 12.487701,6.3628 5.2056,-1.6914 8.054202,-7.28209 6.362802,-12.4877"
+       id="path1-5"
+       style="stroke:#000000;stroke-width:0.903111;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:0.576509px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.0360317;-inkscape-stroke:none;stop-color:#000000"
+       x="32.136337"
+       y="104.21862"
+       id="text17-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan17-5-9"
+         style="stroke-width:0.0360317"
+         x="32.136337"
+         y="104.21862">\raisebox{-.5\height}{\(a\)}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:0.576509px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.0360317;-inkscape-stroke:none;stop-color:#000000"
+       x="9.8584518"
+       y="93.106117"
+       id="text17-3-2-7"><tspan
+         sodipodi:role="line"
+         id="tspan17-5-9-0"
+         style="stroke-width:0.0360317"
+         x="9.8584518"
+         y="93.106117">\raisebox{-.5\height}{\(\Bigg(\)}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:0.576509px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.0360317;-inkscape-stroke:none;stop-color:#000000"
+       x="66.058182"
+       y="101.04362"
+       id="text17-3-2-7-9"><tspan
+         sodipodi:role="line"
+         id="tspan17-5-9-0-20"
+         style="stroke-width:0.0360317"
+         x="66.058182"
+         y="101.04362">\raisebox{-.5\height}{\(\sigma_{c}\)}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:0.576509px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';font-variant-ligatures:none;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#000000;stroke-width:0.0360317;-inkscape-stroke:none;stop-color:#000000"
+       x="54.41423"
+       y="93.106117"
+       id="text17-3-2-7-3"><tspan
+         sodipodi:role="line"
+         id="tspan17-5-9-0-6"
+         style="stroke-width:0.0360317"
+         x="54.41423"
+         y="93.106117">\raisebox{-.5\height}{\(\Bigg)\)}</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 27.238836,95.550821 v 0 c 0,0 -10.255659,-10.811477 -10.255659,-17.763321"
+       id="path12-7"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 32.131151,94.25568 V 77.787501"
+       id="path13-5" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 37.025117,95.547959 c 0,0 10.254005,-10.800552 10.254005,-17.760459"
+       id="path14-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 32.136341,124.34302 V 114.13163"
+       id="path13-2"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
