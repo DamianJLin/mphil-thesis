@@ -7,9 +7,9 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="triple_point_singular_isotopy.svg"
-   inkscape:export-filename="../triple_point_singular_isotopy.pdf"
+   inkscape:export-filename="/home/damian/Projects/mphil-thesis/graphics/triple_point_singular_isotopy.pdf"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,16 +26,22 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.1433922"
-     inkscape:cx="247.97142"
-     inkscape:cy="585.28719"
-     inkscape:window-width="2560"
-     inkscape:window-height="1412"
-     inkscape:window-x="1440"
-     inkscape:window-y="560"
-     inkscape:window-maximized="1"
+     inkscape:zoom="1.5963263"
+     inkscape:cx="269.05527"
+     inkscape:cy="653.06197"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
-     showguides="false" />
+     showguides="true">
+    <sodipodi:guide
+       position="90.052122,147.64631"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs1">
     <marker
@@ -115,7 +121,7 @@
      id="layer1">
     <g
        id="g4"
-       transform="translate(0,35.745791)">
+       transform="translate(10.706775,35.745791)">
       <path
          style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-3)"
          d="m 113.47626,112.75421 h 33.34165"
@@ -199,13 +205,13 @@
     <text
        xml:space="preserve"
        style="font-weight:500;font-size:2.82223px;font-family:'CMU Typewriter Text';-inkscape-font-specification:'CMU Typewriter Text Medium';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#000000;stroke-width:0.2;stroke-miterlimit:2.7;stroke-dasharray:none"
-       x="90.052124"
-       y="149.3537"
+       x="95.552773"
+       y="149.71283"
        id="text2"><tspan
          sodipodi:role="line"
          id="tspan2"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Typewriter Text';-inkscape-font-specification:'CMU Typewriter Text Ultra-Light';fill:#000000;stroke:none;stroke-width:0.2;stroke-dasharray:none"
-         x="90.052124"
-         y="149.3537">around</tspan></text>
+         x="95.552773"
+         y="149.71283">around the triple point</tspan></text>
   </g>
 </svg>

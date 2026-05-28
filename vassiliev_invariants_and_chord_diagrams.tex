@@ -3,7 +3,7 @@
 
 \lettrine{\libertineInitialGlyph{P}}{olynomials} are a special type of function: they are related in a natural way to the derivative, they are defined by a finite amount of combinatorial data, and they can be used to approximate any continuous function.
 
-In a similar way, the Vassiliev knot invariants are a special type of knot invariant. This analogy, first made by Dror Bar-Natan in \cite{on-the-vassiliev-knot-invariants} is in no way superficial. As we will come to see, Vassiliev invariants enjoy analogues of the first two properties above. They are also conjectured to enjoy the third, at the very least being able to approximate many well-known invariants, for example the Conway and Jones polynomials.
+In a similar way, the Vassiliev knot invariants are a special type of knot invariant. This analogy, first made by Dror Bar-Natan in \cite{on-the-vassiliev-knot-invariants} is in no way superficial. As we will come to see in Definition \ref{def:vassiliev-invariant}, Vassiliev invariants enjoy analogues of the first two properties above. They are also conjectured to enjoy the third, at the very least being able to approximate many well-known invariants, for example the Conway and Jones polynomials.
 
 In this chapter we present the introductory theory of Vassiliev invariants with the aim of making the analogy above as explicit as possible. This also leads a natural interpretation of the defining relations of the algebra \(\mathcal{A}\) of chord diagrams, which is the fundamental object of study in the field.
 
@@ -172,14 +172,14 @@ Recall that \(m\)-singular knots are components of the stratification of the spa
 \begin{definition}
 	A \textbf{singular isotopy} \(\Psi\) of \(m\)-singular knots is a path \(\Psi(t), t \in [0, 1]\) in the union of the \(m\)th and \((m + 1)\)st strata such that the path only intersects the \((m + 1)\)st stratum transversally and finitely many times. The intersections \(\{\Psi_{s} : s \in I\}\) of the path with the \((m + 1)\)st stratum are called the \textbf{singularities} of the singular isotopy.
 
-	The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularity \(s\) is defined as \(+1\) if a small \(U\) neighbourhood of \(\Psi(t + \varepsilon)\) around the location of the singularity in \(\Psi(t)\), \(U\) resembles a positive crossing. Otherwise \(\varepsilon(s) = -1\). This is equivalent to defining a coorientation on the \((m + 1)\)st stratum by choosing a normal vector in the direction in which the additional singular point of \(\Psi(t)\) becomes a positive crossing.
+	The \textbf{signs} \(\varepsilon_{s} = {\varepsilon(s): \{s\} \to \{\pm 1\}}\) of the singularity \(s\) is defined as \(+1\) if a small \(U\) neighbourhood of \(\Psi(t + \varepsilon)\) around the location of the singularity in \(\Psi(t)\), \(U\) resembles a positive crossing. Otherwise \(\varepsilon(s) = -1\). (This is equivalent to specifying that moving from a negative crossing to a positive crossing yields a positive sign, and also equivalent to defining a coorientation on the \((m + 1)\)st stratum by choosing a normal vector in the direction in which the additional singular point of \(\Psi(t)\) becomes a positive crossing.)
 
 	A singular isotopy is \textbf{closed} if \(\Psi(0) = \Psi(1)\).
 \end{definition}
 
 For example in terms of our pictorial representation of the strata from the introduction, a singular isotopy might look like the following.
 \[
-	\def\svgscale{0.25}
+	\def\svgscale{0.3}
 	\adjustbox{valign=c}{\input{graphics/singular_isotopy_example.pdf_tex}}
 \]
 
@@ -190,19 +190,14 @@ Note that due to the \ref{eq:codiff} relation this is always well-defined.
 
 Integration is to construct from an invariant \(P\) of \((m + 1)\)-singular knots an invariant \(Q\) of \(m\)-singular knots such that
 \[Q(k^{\bullet}_{0}) - Q(k^{\bullet}_{1}) = \sum_{s \in I}\varepsilon_{s} P(\Psi_{s}),\]
-in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate.
+in which case we write \(P = Q'\). This is like a ``path-integral'' along a singular isotopy. For this to be well-defined, \(P\) needs to be path-independent. Equivalently, all integrals along closed paths (where \(k_{0} = k_{1}\)) must vanish. In particular, recall from Remark \ref{rem:other-singularities} that for example, triple points are excluded from all levels of the stratification, leaving ``holes'' in the strata. The vanishing of integrals along closed singular isotopies around such holes give rise to the following relations, and satisfying these are necessary conditions for \(P\) to integrate.
 
 \begin{definition}
 	\label{def:topological-singular-relations}
 	\begin{enumerate}
 		\item
 			\label{subdef:T4Tstar}
-			The closed singular isotopy around a triple point given by
-			\begin{center}
-				\def\svgwidth{0.6\columnwidth}
-				\input{graphics/triple_point_singular_isotopy.pdf_tex}
-			\end{center}
-		gives rise to a \textbf{topological four-term relation}
+			A \textbf{topological four-term relation} on a functional \(f \in (\mathcal{K}_{m}^{\bullet})^{\ast}\) is a relation of the form
 			\begin{equation}
 				\label{eq:T4Tstar}
 				\tag{\topologicalfourtermstar}
@@ -215,19 +210,25 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				f\left( \tftwest \right)
 				= 0.
 			\end{equation}
-		\item
-			\label{subdef:T1Tstar}
-			The singular isotopy
+			Specifically, it is any relation that arises by asserting that \(f\) vanishes on the sum of the singularities (with signs) of a closed singular isotopy of the form
 			\begin{center}
 				\def\svgwidth{0.6\columnwidth}
-				\input{graphics/vanishing_derivative_singular_isotopy.pdf_tex}
+				\input{graphics/triple_point_singular_isotopy.pdf_tex}
 			\end{center}
-		around a point with a vanishing derivative gives rise to a \textbf{topological one-term relation}
+		\item
+			\label{subdef:T1Tstar}
+			A \textbf{topological one-term relation} on a functional \(f \in (\mathcal{K}_{m}^{\bullet})^{\ast}\) is a relation of the form
 			\begin{equation}
 				\label{eq:T1Tstar}
 				\tag{\topologicalonetermstar}
 				f\left( \topologicalonecotermgraphic \right) = 0.
 			\end{equation}
+			Specifically, it is any relation that arises by asserting that \(f\) vanishes on the singularity of a closed dingular isotopy
+			\begin{center}
+				\def\svgwidth{0.6\columnwidth}
+				\input{graphics/vanishing_derivative_singular_isotopy.pdf_tex}
+			\end{center}
+		around a point with a vanishing derivative.
 	\end{enumerate}
 \end{definition}
 
@@ -237,7 +238,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 	In particular, for every statement in the rest of this chapter about weight systems, chord diagrams and indeed every space in Definition \ref{def:integration-theory-spaces}, a corresponding statement holds for an unframed version of that space. In the framed version of the statement, hypotheses involve only \ref{eq:T4Tstar} (or a variant thereof), rather than both \ref{eq:T4Tstar} and \ref{eq:T1Tstar} like in the unframed version. We give a few examples of the unframed statements as we go. For all of the statements, and the relationship between the framed and unframed spaces, we refer the reader to \cite{introduction-to-vassiliev-invariants}.
 \end{remark}
 
-Indeed, the definition of the primary obstructions to integration as \(P\mathcal{O}_{m} = \ker{\partial_{m}}\) is justified, as a cycle in \(\ker{\partial_{m}}\) is a combination of \((m + 1)\)-singular knots with signs through which a singular isotopy could pass. From Definition \ref{def:topological-singular-relations}, we have a cycle of the kind
+Indeed, the definition of the primary obstructions to integration as \(P\mathcal{O}_{m} = \ker{\partial_{m}}\) (Definition \ref{def:integration-theory-spaces} \ref{subdef:primary-obstructions}) is justified, as a cycle in \(\ker{\partial_{m}}\) is a combination of \((m + 1)\)-singular knots with signs through which a closed singular isotopy could pass. Thus, if this space of primary obstructions doesn't vanish, an integral of an invariant \(f \in (\mathcal{K}_{m}^{\bullet})^{\ast}\) is necessarily not well-defined. From Definition \ref{def:topological-singular-relations}, we have a cycle of the kind
 \[
 	\tftsouth
 	\ - \
@@ -247,7 +248,7 @@ Indeed, the definition of the primary obstructions to integration as \(P\mathcal
 	\ + \
 	\tftwest
 \]
-in \(P\singularknots_{m} = \ker \partial_{m}\). However, it is not clear whether combinations of this form span \(P\mathcal{O}\), that is whether obstructions of this kind are the only type of obstruction.
+in \(P\singularknots_{m} = \ker \partial_{m}\). However, it is not clear whether combinations of this form span \(P\mathcal{O}\), that is whether obstructions of this kind are the only type of primary obstruction. As it turns out, they are, answering Question \ref{qu:integration-theory} \ref{subqu:when-integrates}.
 
 \begin{theorem}[Stanford \cite{finite-type-invariants-of-knots-links-and-graphs}]
 	\label{thm:stanford-integrates-once}
@@ -267,24 +268,25 @@ so the difference of an \(m\)-singular knot and the same \(m\)-singular knot wit
 \begin{definitions}
 	\label{def:chord-diagram}
 	\begin{enumerate}
-		\item A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphisms of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\). The oriented circle is called the \textbf{skeleton} of the chord diagram.
-		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the skeleton, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, and points with the same label are paired, forming \(\sigma(k)\).
+		\item 
+			\label{def:chord-diagram-general}
+			A \textbf{chord diagram} of order \(m\) is an element of \(\singularknots_{m} / \partial \singularknots_{m + 1}\). An equivalent combinatorial description of such an element is an oriented circle with a distinguished set of \(m\) unordered pairs of points, considered up to orientation-preserving diffeomorphisms of the circle. In figures, chords are drawn between each pair of points. The vector space spanned by chord diagrams of order \(m\) is denoted \(\mathcal{D}_{m}\), so \(\mathcal{D}_{m} = C\singularknots_{m}\). The oriented circle is called the \textbf{skeleton} of the chord diagram.
+		\item The \textbf{chord diagram of an \(m\)-singular knot \(k\)}, denoted \(\sigma(k)\) is the chord diagram (in the sense of \ref{def:chord-diagram-general}) formed by the following process. Place \(2m\) points on the skeleton, two for each singular point of \(k\). Traversing both \(k\) and the skeleton, label the points on the skeleton in the order in which the singular points of \(k\) are traversed. Each label is given twice, and points with the same label are paired, forming \(\sigma(k)\).
 	\end{enumerate}
 \end{definitions}
 
 \begin{example}
+	The following is a pair of a singular knot \(k\) and its chord diagram \(\sigma(k)\). We have illistrated which double point corresponds to which chord.
 	\[
-		\includegraphics[width=0.14\textwidth, valign=c]{graphics/knot_9_33_singular.pdf}
-		\quad \overset{\sigma}{\longmapsto} \quad
-		\includegraphics[width=0.13\textwidth, valign=c]{graphics/chord_diagram_of_knot_9_33_singular.pdf}
+		\def\svgscale{0.3}
+		\adjustbox{valign=c}{\input{graphics/chord_diagram_of_knot_9_33_singular_with_knot.pdf_tex}}
 	\]
 \end{example}
 
 \begin{proposition}
 	Suppose \(P\) is an integrable \(m\)-singular invariant with integral \(Q\). Let \(Q_{0}\) differ from \(Q\) by a function \(q\) on chord diagrams, that is
 	\[Q_{0}(k) = Q(k) + q(\sigma(k))\]
-	for \(q \in \mathcal{D}_{m}^{\ast}\)
-	Then \(Q_{0}\) is also an integral of \(P\).
+	for \(q \in \mathcal{D}_{m}^{\ast}\). Then \(Q_{0}\) is also an integral of \(P\).
 \end{proposition}
 
 \begin{proof}
@@ -619,7 +621,10 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 	The operators \(\partial^{I}\) and \(\mu^{\bar{I}}\) commute since they are evaluating different singular points. Let \(I\) be an arbitrary subset of \(S\), and let \(|I| = i\) and \(|S| = j\), then the left cofactor is in \(\mathcal{K}_{i}\) and the right in \(\mathcal{K}_{j - i}\).
 \end{proofof}
 
-Not all knot invariants respect the singular knot filtration, as we will see. The point of the Vassiliev invariants is that they are the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
+% NOTE: What this Chapter would really benefit from is an example of an invariant that is not Vassiliev due to not satisfying the Vassiliev skein relation, rather than not satisfying the finiteness condition i.e. an invariant that is known not to be power-series Vassiliev.
+% However I do not know of any such invariants, though perhaps the trefoil indicator invariant is a good guess. See also the note there.
+% Such an invariant can honestly be said to ``not respect the Vassiliev filtration''.
+The point of the Vassiliev invariants is that they are the ones that are natural to consider with respect to the singular knot filtration. Indeed, the Vassiliev invariants are obtained directly from \(\mathcal{K}\) via the following construction.
 
 A decreasing filtration on a bialgebra induces an ascending filtration on its dual bialgebra. The dual bialgebra's \(m\)th filtered component is the space of functionals on the original bialgebra that vanish on the \((m + 1)\)st filtered component. In the case of \(\mathcal{K}\), this is the set of knot invriants that vanish on \(\mathcal{K}_{m + 1}\): exactly the Vassiliev invariants of order \(m\). The product/coproduct in the dual bialgebra are those operations adjoint to the coproduct/product in the original bialgebra. The construction is standard and the details can be found in \cite[Appendix A.2.4]{introduction-to-vassiliev-invariants}.
 
@@ -791,6 +796,7 @@ The power series Vassiliev invariants are those with a particular topological in
 
 The Conway and Jones polynomials and all quantum invariants \cite{knot-polynomials-and-vassilievs-invariants} are power series Vassiliev invariants. Let us now examine an invariant which is not obviously a power series Vassiliev invariant.
 \begin{example}
+	\label{ex:trefoil-indicator}
 	Let \(3_{1}\) denote the right-handed trefoil knot. 
 	The trefoil indicator invariant \(f_{3_{1}}\) is defined
 	\[
@@ -1135,7 +1141,7 @@ We discuss and prove the direction due to Vassiliev, then return to the directio
 
 We also give a more illustrative direct proof of the dual theorem later.
 
-Let's turn to the other part of the fundamental theorem, due to Maxim Kontsevich (which is much more involved). In \cite{vassilievs-knot-invariants}, Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, such treatments are abundant in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants}. Rather, we will boil the Kontsevich integral down to a single universal property.
+Let's turn to the other part of the fundamental theorem, due to Maxim Kontsevich (which is much more involved). In \cite{vassilievs-knot-invariants}, Konsevich constructed an integral invariant which proves the fundamental theorem, as well as containing the information of all Vassiliev invariants at the same time. We will not give a detailed exposition of Kontsevich's invariant here, such treatments are abundant in the literature, for example \cite{the-fundamental-theorem-of-vassiliev-invariants, the-kontsevich-integral, introduction-to-vassiliev-invariants}. Rather, we will boil the Kontsevich integral down to the single universal property of Definition \ref{def:universal-vassiliev-invariant}.
 
 \begin{definition}
 	The \textbf{completion} of a descending-filtered algebra \(A\) is the descending-filtered algebra
@@ -1244,6 +1250,7 @@ Applying the projection \(\pi_{m}\), all that remains are some chord diagrams of
 Calling the Kontsevich integral and invariants of its kind is indeed justified: every Vassiliev invariant can be obtained through the Kontsevich integral.
 
 \begin{theorem}
+	\label{thm:universal-vassiliev-invariant-is-universal}
 	If \(Z\) is a universal Vassiliev invariant, then every Vassiliev invariant factors through \(Z\).
 \end{theorem}
 
@@ -1262,7 +1269,7 @@ Calling the Kontsevich integral and invariants of its kind is indeed justified: 
 	A universal Vassiliev invariant (in particular, the Kontsevich integral \(Z\)) is exactly as strong as the set of Vassiliev invariants.
 \end{corollary}
 
-As we have seen, taking the projection \(\mathcal{V}_{m} \to \mathcal{V}_{m}/\mathcal{V}_{m - 1} \cong \mathcal{W}_{m}\) yields a weight system, but loses the additional information of a Vassiliev invariant of order \(m - 1\).
+As we have seen in the proof of Theorem \ref{thm:universal-vassiliev-invariant-is-universal}, taking the projection \(\mathcal{V}_{m} \to \mathcal{V}_{m}/\mathcal{V}_{m - 1} \cong \mathcal{W}_{m}\) yields a weight system, but loses the additional information of a Vassiliev invariant of order \(m - 1\).
 
 \begin{definition}
 	 The \textbf{canonical Vassiliev invariants} are those Vassiliev invariants whose weight systems \(W\) recover them completely via \(W \circ Z\).

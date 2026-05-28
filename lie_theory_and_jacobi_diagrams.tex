@@ -1,9 +1,11 @@
 \chapter{Lie theory and Jacobi diagrams}
 \label{ch:lie-theory-and-jacobi-diagrams}
 
-\lettrine{\libertineInitialGlyph{T}}{he} fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)). As we will see in this chapter, the structure of \(\mathcal{A}\) is related to Lie theory.
+\lettrine{\libertineInitialGlyph{T}}{he} fundamental theorem of Vassiliev invariants states that the bialgebra of Vassiliev invariants can be broken up into ``nice'' combinatorial weight systems. So to understand \(\mathcal{V}\) it suffices to understand \(\mathcal{W}\) (or equivalently its dual \(\mathcal{A}\)).
 
-Indeed, we will see that from any metric Lie algebra, there is construction that associates to it a weight system. However this by itself is not enough to produce all weight systems, and to go further the construction can be extended to a generalised notion of metric Lie algebras: metric Lie algebra objects in an arbitrary symmetric monoidal category. But even this is not enough. However, the slightly more general notion of casimir Lie algebra objects in an arbitrary symmetric monoidal category does suffice to product all weight systems, and and operadic framework is introduced to prove this fact.
+As we will see in this chapter, the structures of \(\mathcal{W}\) and \(\mathcal{A}\) are closely related to Lie theory: from any metric Lie algebra, there is construction that associates to it a weight system. This by itself is not enough to produce all weight systems --- to do so needs the construction must be extended to a generalised notion of metric Lie algebras. The metric Lie algebras are generalised to metric Lie algebra objects in an arbitrary symmetric monoidal category to account for the possibility of nontrivial symmetry natural isomorphisms in the symmetric monoidal category, and thereby every weight system can be obtainted.
+
+An operadic framework is introduced to prove this fact, and metric Lie algebra objects are replaced by the restricted notion of Casimir Lie algebra objects for technical reasons.
 
 \section{Jacobi diagrams}
 To see the Lie theory connections, we see that \(\mathcal{A}\) is isomorphic as a bialgebra of Jacobi diagrams, whose elements are represented by graphs with one- and three-valent vertices.
@@ -571,7 +573,7 @@ Conjecture \ref{conj:lie-algebra-weight-systems-span} is false and the \ref{eq:S
 
 The hidden assumption of \(\rho([x, y]) = \rho(x)\rho(y) - \rho(y)\rho(x)\) is that the isomorphism used to rearrange the tensor factors is the swap map \(\sigma: x \otimes y \mapsto y \otimes x\) which needn't be the case.
 
-In fact, the construction of metric Lie algebra weight systems seen in \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob. Lie algebras, are Lie algebra objects in the symmetric monoidal category of vector spaces, which happens to be a strict symmetric monoidal category, meaning the symmetry natural isomorphism is the swap map \(\sigma\). However the more general construction also works for non-strict symmetric monoidal categories. To name an example that we will come back to in detail, in the category of super vector spaces, the Lie algebra objects are the Lie superalgebras, and the symmetry isomorphism is not the swap map.
+In fact, the construction of metric Lie algebra weight systems seen in \ref{cons:lie-algebra-weight-system} is just one example of a more general construction introduced by Vogel and Vaintrob. Lie algebras, are Lie algebra objects in the symmetric monoidal category of vector spaces, which happens to be a strict symmetric monoidal category, meaning the symmetry natural isomorphism is the swap map \(\sigma\). However the more general construction also works for non-strict symmetric monoidal categories. To name an example that we will come back to in detail in Example \ref{ex:symmetric-monoidal-categories}~\ref{ex:cat-super-vector-spaces}, in the category of super vector spaces, the Lie algebra objects are the Lie superalgebras, and the symmetry isomorphism is not the swap map.
 
 \begin{remark}
 	The more general construction was originally developed by Vaintrob as applicable to a class of objects called ``Lie \(S\)-algebras''. The more modern and categorical approach we choose to follow in this section of Lie algebra objects in arbitrary symmetric monoidal categories is due to \cite{on-the-rozansky-witten-weight-systems, rozansky-witten-theory}
@@ -623,8 +625,11 @@ In fact, the construction of metric Lie algebra weight systems seen in \ref{cons
 One might notice that the hexagon relation involves only three terms, rather than the six that the name suggests. This is because we have omited the reassociation natural isomorphisms that we assume are identities by Remark \ref{rem:coherence-for-monoidal-categories}.
 
 \begin{examples}
+	\label{ex:symmetric-monoidal-categories}
 	\begin{enumerate}
-		\item Let \(\mathbf{Vect}\) be the category of vector spaces and linear transformations. The symmetry natural isomorphism
+		\item
+			\label{ex:cat-vector-space}
+			Let \(\mathbf{Vect}\) be the category of vector spaces and linear transformations. The symmetry natural isomorphism
 			\[
 				\begin{array}{rccc}
 					\tau:	& X \times Y		&\longrightarrow	& Y \times X\\
@@ -632,7 +637,9 @@ One might notice that the hexagon relation involves only three terms, rather tha
 				\end{array}
 			\]
 			gives \(\mathbf{Vect}\) the structure of a symmetric monoidal category.
-		\item A \textbf{super vector space} is a \(\mathbb{Z}/2\mathbb{Z}\)-graded vector space \(V\) with the decomposition
+		\item
+			\label{ex:cat-super-vector-spaces}
+			A \textbf{super vector space} is a \(\mathbb{Z}/2\mathbb{Z}\)-graded vector space \(V\) with the decomposition
 			\[V = V_{0} \oplus V_{1}.\]
 			The degree, \(|x|\) of a homogeneous element \(x \in V = V_{0} \oplus V_{1}\) is \(|x| = i \in \mathbb{Z}/2\mathbb{Z}\) where \(x \in V_{i}\).
 
@@ -1505,7 +1512,7 @@ The following definition generalises the definition of a metric Lie algebra (whi
 			is the identity (\(m\) has an \textbf{adjoint}).
 		\item the composition
 			\[\mathcal{O}(n) \otimes A^{\otimes n + 1} \longrightarrow A \otimes A \overset{m}{\longrightarrow} k\]
-			is \(S_{n + 1}\)-invariant (\(m\) is \(\mathcal{O}\)-\textbf{invariant}).
+			is invariant under the cyclic subgroup \(C_{n + 1}\) of \(S_{n + 1}\).
 	\end{itemize}
 \end{definition}
 

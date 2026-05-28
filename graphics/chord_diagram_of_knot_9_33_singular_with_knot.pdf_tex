@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'singular_isotopy_example.pdf' (pdf, eps, ps)
+%% Accompanies image file 'chord_diagram_of_knot_9_33_singular_with_knot.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{736.31443775bp}%
+    \setlength{\unitlength}{714.87469482bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,11 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.72270375)%
+  \begin{picture}(1,0.43397221)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{singular_isotopy_example.pdf}}%
-    \put(0.40583228,0.27082077){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\Psi(0)\)}}\end{tabular}}}}%
-    \put(0.02954174,0.46440923){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptscriptstyle\varepsilon = -1\)}}\end{tabular}}}}%
-    \put(0.92891048,0.48810161){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\scriptstyle\Psi(1)\)}}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{singular_isotopy_example.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{chord_diagram_of_knot_9_33_singular_with_knot.pdf}}%
+    \put(0.56276406,0.23989597){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\raisebox{-.5\height}{\(\overset{\sigma}{\longmapsto}\)}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{chord_diagram_of_knot_9_33_singular_with_knot.pdf}}%
   \end{picture}%
 \endgroup%
