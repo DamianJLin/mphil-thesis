@@ -139,9 +139,13 @@ where \(\delta_{m}\) is adjoint to \(\partial_{m}\). The maps \(\delta\) behave 
 		\item When does a functional in \(\mathcal{O}^{\ast}_{m}\) ``integrate'' to a functional in \(\mathcal{O}^{\ast}_{m - 1}\)?
 		\label{subqu:when-integrates}
 		\item Is the integral of a functional in \(\mathcal{O}_{m}^{\ast}\) uniquely defined, or are there multiple solutions when integrating (akin to the constant of integration ``\({}+C\)'' on the real line)?
+		\label{subqu:integral-defined-uniquely-or-constants}
 		\item When does such a functional integrate multiple times, in particular when does it integrate \(m\) times into a functional in \(\mathcal{O}^{\ast}_{0}\), (i.e. a function on the non-singular objects)?
+		\label{subqu:when-integrates-multiple-times}
 		\item If there are multiple solutions when integrating, does this choice affect whether the new functional is integrable again?
+		\label{subqu:multiple-solutions-affects-integrates-multiple-times}
 		\item Which functions on the non-singular objects \(\mathcal{O}_{0}\) are obtained by \(m\) consecutive integrations of functionals in \(\mathcal{O}_{m}^{\ast}\)?
+		\label{subqu:which-functionals-derivatives}
 	\end{enumerate}
 \end{questions}
 The answers to the above questions are given precisely by the following spaces. For example, Question \ref{qu:integration-theory} \ref{subqu:when-integrates}, a functional in \(\mathcal{O}^{\ast}_{m}\) integrates to a functional in \(\mathcal{O}^{\ast}_{m - 1}\) exactly when it vanishes on \(P\mathcal{O}_{m}\) as defined in Definition \ref{def:integration-theory-spaces} \ref{subdef:primary-obstructions}. 
@@ -259,7 +263,7 @@ in \(P\singularknots_{m} = \ker \partial_{m}\). However, it is not clear whether
 	The corresponding unframed version of Stanford's theorem reads: \textit{An invariant \(f\) of \(m\)-singular unframed knots integrates to an invariant of \((m - 1)\)-singular unframed knots if and only if it satisfies \textup{\ref{eq:T4Tstar}} and \textup{\ref{eq:T1Tstar}}.}
 \end{remark}
 
-To answer the question about whether the primary obstructions are the only obstructions, it's helpful to define the constants of integration, which comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
+To answer Question \ref{qu:integration-theory} \ref{subqu:integral-defined-uniquely-or-constants}, it's helpful to define the constants of integration, which comprise the information that is lost when differentiating. In the case of knots, given an invariant \(f\) of \(m\)-singular knots, differentiating defines an invariant \(\delta f\) on \((m + 1)\)-singular knots as the difference of \(f\) on two ``neighbouring'' \(m\)-singular knots. This way, the individual value of \(f\) on either of these \(m\)-singular knots is lost, and when integrating, a choice has to be made.
 
 Recall from Definition \ref{def:integration-theory-spaces} (b) that \(C\singularknots_{m} = \singularknots_{m} / \partial \singularknots_{m + 1}\). Let us examine the classes of this quotient space. From the defintion of the derivative,
 \[\partial \left( \double \right) = \poscross - \negcross\]
@@ -293,7 +297,7 @@ so the difference of an \(m\)-singular knot and the same \(m\)-singular knot wit
 	The derivative of an \(n\)-singular invariant that factors through \(\sigma\) is zero: crossing changes do not change the chord diagram, so when a crossing change occurs, the function does not change. Hence \(Q\) and \(Q_{0}\) have the same derivative \(P\).
 \end{proof}
 
-Since we are trying to integrate more than once, we might wish to know which constants of integration are themselves integrable.
+Questions \ref{qu:integration-theory} \ref{subqu:when-integrates-multiple-times} and \ref{subqu:multiple-solutions-affects-integrates-multiple-times} have to do with integrating multiple times consecutively. After integrating the first time, we have introduced the constants of integration, so we might wish to know which constants of integration are themselves integrable.
 
 \begin{definition}
 	\label{def:weight-system}
@@ -336,7 +340,7 @@ The \ref{eq:T4Tstar} relations are what knot invariants must satisfy to be integ
 
 We return now to the secondary (and higher) obstructions. A general integral of an \(m\)-singular \(P\) is only defined up to constants of integration, so is of the form
 \[Q + q \circ \sigma.\]
-For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be integrable since integration is linear. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. In our current case of \(\mathcal{O} = \mathcal{K}\), the secondary obstructions are conjectured to vanish.
+For this to be integrable again, both \(Q\) and \(q \circ \sigma\) need to be integrable since integration is linear. The latter we have just seen as the condition that \(q\) is a weight system. A sufficient condition for the former to be integrable is that the secondary obstructions \(S\singularknots_{m}\) vanish. In our current case of \(\mathcal{O} = \mathcal{K}\), the secondary obstructions are conjectured to vanish, in fact the conjecture is stronger: that all higher obstructions vanish, giving a conjectural answer to Question \ref{qu:integration-theory} \ref{subqu:which-functionals-derivatives}.
 
 \begin{conjecture}
 	\label{conj:strong-fundamental-theorem}
