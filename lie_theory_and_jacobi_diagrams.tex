@@ -292,7 +292,6 @@ Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} sat
 
 The details of the definition are beyond the scope of this thesis, however the interested reader is invited to consult \cite{the-geometry-of-tensor-calculus-one}. For our purposes, string diagrams constitute a graphical calculus for the operations of partial composition and tensor product in monoidal categories. A tensor of signature \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}^{\ast}\) is represented by a string diagram consisting of a vertex, labelled by the tensor, with \(n\) incoming edges, labelled by the domain spaces and \(m\) outgoing edges, labelled by the codomain spaces. We read these diagrams top-to-bottom, so domain edges come from above, and codomain arrows from below.
 
-% TODO: a little sus...
 The operation of partial composition of tensors corresponds to composing two string diagrams via vertically concatenating domain and codomain edge whose labellings agree. The tensor product of two tensors (as multilinear functions) corresponds to the string diagram formed by horizontal concatenation of two string diagrams. The use of string diagrams is that progressive deformation of string diagrams correspond to equivalent ways of performing iterated partial compositions and tensor products.
 
 For example, the bracket in a Lie algebra \(\mathfrak{g}\) is tensor \([\cdot,\cdot]\) of signature \(\mathfrak{g}^{\ast} \otimes \mathfrak{g}^{\ast} \otimes \mathfrak{g}\) expressed via the string diagram
@@ -677,7 +676,7 @@ One might notice that the hexagon relation involves only three terms, rather tha
 	\end{enumerate}
 \end{examples}
 
-If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined. These generalise Lie algebras in that they satisfy analogues of the Jacobi and antisymmetry identities involving the symmetry natural isomorphism \(\tau\). Of course, in the case \(\mathcal{C} = \mathbf{Vect}\), \(\tau\) is the trivial swap isomorphism, so the Lie algebra objects satisfy exactly the Jacobi and antisymmetry relations and are exactly the Lie algebras.
+An additive category, roughly, is one where there are direct sums of objects, and each hom space is an abelian group, so and morphisms with like domain and codomain can be added. A fulldefinition is given in \cite[Sec. 8.2]{categories-and-sheaves}, and all our examples of symmetric monoidal categories are additive, for example \(\mathbf{Vect}\) and \(\mathbf{sVect}\). If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined. These generalise Lie algebras in that they satisfy analogues of the Jacobi and antisymmetry identities involving the symmetry natural isomorphism \(\tau\). Of course, in the case \(\mathcal{C} = \mathbf{Vect}\), \(\tau\) is the trivial swap isomorphism, so the Lie algebra objects satisfy exactly the Jacobi and antisymmetry relations and are exactly the Lie algebras.
 
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
@@ -835,7 +834,7 @@ For a rigid monoidal category \(\mathcal{C}\), the dual of a (right) module may 
 We will give concrete examples of Lie algebra objects in different symmetric monoidal categories later. For now, let's show that this data can be used to construct weight systems, generalising Construction \ref{cons:lie-algebra-weight-system}.
 
 \begin{theorem}[\cite{vassiliev-knot-invariants-and-lie-s-algebras}]
-	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of right modules over \(L\)).
+	Let \(\mathcal{C}\) be a rigid, additive, symmetric monoidal category, \(L\) a metric Lie algebra in \(\mathcal{C}\), and \(M\) a rigid module (a rigid object in the monoidal category of right modules over \(L\)). Here \(k\) denotes the monoidal unit of \(\mathcal{C}\).
 	Then there is a weight system
 	\[W_{L, M}: \mathcal{A} \longrightarrow \mathcal{C}(k, k).\]
 	If \(\mathcal{C}\) is \(k\)-linear, then this is a \(k\)-valued weight system
@@ -1328,14 +1327,6 @@ Composition of operads can then be denoted graphically by connecting the inputs 
 	\]
 This way, relations in an operad can be expressed graphically. As a first example, the associativity axiom in Definition \ref{def:operad-over-set} asserts that when doing doing two series of compositions between three layers of operations, there is no need for brackets that specify a vertical bracketing. That is, connecting the first layer to the second layer to create a compound operation, then connecting this to the final layer creates the same operation as first connecting the second and third layers, and then taking the composition with the first layer. It is because of this axiom that the diagrams are well-defined without needing a vertical bracketing.
 
-% TODO: Make this precise and put in an appropriate environment and make Lie algebras an example of this.
-% NOTE: The compatibility conditions here are the following:
-% consider the type of diagram we are familiar with
-% objects objects objects (of C)
-% first layer of operads
-% second layer of operad
-% FIRST CONDITION: that plugging the objects in first to the first operations, then plugging in the resulting objects into the final poeration == plugging the objects into the product of the operations
-
 \begin{definition}
 	\label{def:algebra-over-operad}
 	An \textbf{algebra over an operad \(\mathcal{O}\) in the symmetric monoidal category \(\mathcal{C}\)} is an object \(X\) of \(\mathcal{C}\) with a sequence of \textbf{operation evaluation maps}
@@ -1659,7 +1650,7 @@ This object \(\mathbf{1}_{c} \in \mathbf{E}_{c}(\mathcal{O}_{\text{Lie}}^{\text{
 	\]
 \end{definitions}
 
-Recall that since \(A\) is an \(\mathcal{O}\)-algebra it comes equipped with maps
+Recall from \ref{def:algebra-over-operad} that since \(A\) is an algebra over \(\mathcal{O}\), it comes equipped with maps
 \[\mathcal{O}(k) \otimes A^{\otimes k} \longrightarrow A.\]
 For example, in \(\mathcal{O}_{\text{Lie}}\), setting \(o \in \mathcal{O}(k)\), induces the map \(A^{k} \to A\) implementing iterated composition of the bracket \([\cdot, \cdot]_{A}\) according to the binary tree \(o\).
 Taking tensor powers of these maps induces the maps

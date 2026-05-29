@@ -99,12 +99,14 @@ For why this eliminates the global orientation reversal we refer the reader agai
 The finite type theory of welded long knots is defined similarly to that of classical long knots.
 
 \begin{definition}
-	A \textbf{singular welded long knot} is a welded long knot whose crossings can also be of the following types
+	A \textbf{singular welded long knot} is a welded long knot whose crossings can also (as well as being a double point) be of the following types
 	\[\semivirtposcross \;, \quad \semivirtnegcross.\]
 	They are known as \textbf{positive semi-virtual crossings} and \textbf{negative semi-virtual crossings}, and they correspond to topological singularities of ribbon-knotted tori.
 
-	% FIX: There's probably better notation.
+	A singular welded long knot is \textbf{\(m\)-singular} when it has a total of \(m\) singularities.
+
 	The set of \(m\)-singular welded long knots forms an algebra with the product given by concatenation and coproduct \(\Delta(k) = k \otimes k\). This is called the \textbf{algebra of \(m\)-singular welded long knots}, \(\mathcal{K}_{w, m}^{\bullet}(|)\).
+	% FIX: There's probably better notation.
 
 	The algebra of \(0\)-singular welded long knots, or just the algebra of welded long knots \(\mathcal{K}^{\bullet}_{w, 0}(|) = \mathcal{K}_{w}(|)\) is filtered by the images of succesive powers of \(\partial\), and the filtration is compatible with the bialgebra structure.
 \end{definition}
@@ -121,6 +123,9 @@ The finite type theory of welded long knots is defined similarly to that of clas
 
 The notions of invariants of \(m\)-singular welded long knots, their differentiability, and the derivative and boundary operators transfer from the classical case over to the welded case. As a consequence of these definitons, we can express the positive-to-negative crossing change via a sum of semivirtuals
 \[\partial \left( \semivirtposcross + \semivirtnegcross \right) = \poscross - \negcross.\]
+Note also that the above is also equal to
+\[\partial \left( \double \right),\]
+and this relation is homogenous, so the filtration of \(\mathcal{K}^{\bullet}_{w, m}\) is respected.
 
 Long arrow diagrams are defined from singular welded knots just as chord diagrams are defined from singular knots.
 
@@ -205,7 +210,7 @@ As for the \ref{eq:TC} relation, it is a consequence of the \ref{eq:OC} relation
 			\includegraphics[width=0.10\textwidth, valign=c]{graphics/stu_welded_tail_head_u.pdf}.
 		\end{equation}
 		Note that even though the skeleton is the line rather than the circle, we still draw it curved to distinguish it.
-		\item Any \textbf{directed AS} relation. For example,
+		\item The \textbf{directed AS} relation for any rotation of two-invalent-one-outvalent vertex. For example,
 		\begin{equation}
 			\tag{\as}
 			\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_welded_head_head_a.pdf}
@@ -215,7 +220,7 @@ As for the \ref{eq:TC} relation, it is a consequence of the \ref{eq:OC} relation
 			-
 			\includegraphics[width=0.05\textwidth, valign=c]{graphics/as_welded_head_head_s.pdf}.
 		\end{equation}
-		\item Any \textbf{directed IHX} relations. For example,
+		\item The \textbf{directed IHX} relations, for any pair of neighbouring two-invalent-one-outvalent vertices. For example,
 		\begin{equation}
 			\tag{\ihx}
 			\includegraphics[width=0.10\textwidth, valign=c]{graphics/ihx_welded_example_i.pdf}
@@ -305,8 +310,8 @@ Analysing the \ref{eq:STU} relations involving the external line should tell us 
 \]
 All three cases, are commutator-like relations, so the correct associative algebra target for the weight system is still the universal enveloping algebra of some Lie algebra. However since the connections to the external line can now be either heads or tails, representing elements of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\), the Lie algebra as a vector space is \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\).
 
-Interpreting tails and heads in these \ref{eq:STU} relations as elements of \(\mathfrak{g}^{\ast} \oplus 0\) or \(0 \oplus \mathfrak{g}\) rather than \(\mathfrak{g}^{\ast}\) or \(\mathfrak{g}\) determines the bracket on \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\). For example, the \ref{eq:STU} with two heads on the external line implies that the bracket on \(0 \oplus \mathfrak{g}\) should be inherited from the bracket on \(\mathfrak{g}\).
-% TODO: Labels are not the spaces but the elements. This needs to be explained.
+Interpreting tails and heads in these \ref{eq:STU} relations as elements of \(\mathfrak{g}^{\ast} \oplus 0\) or \(0 \oplus \mathfrak{g}\) rather than \(\mathfrak{g}^{\ast}\) or \(\mathfrak{g}\) determines the bracket on \(\mathfrak{g}^{\ast} \oplus \mathfrak{g}\). For example, the \ref{eq:STU} with two heads on the external line implies that the bracket on \(0 \oplus \mathfrak{g}\) should be inherited from the bracket on \(\mathfrak{g}\). Note that below, the text labels denote arbitrary elements of the relevant spaces, rather than the relevant spaces themselves, as usually appear in string diagrams.
+
 \[
 	\def\svgscale{0.3} \raisebox{-20pt}{\input{graphics/stu_welded_labelled_head_head_s.pdf_tex}}
 	\quad
@@ -384,7 +389,7 @@ The aim of this section is to prove a Hinnich-Vaintrob style statement for \(\ma
 Recall that in the classical case, the Lie algebra object was in the category \(\mathbf{E}_{c}(\mathcal{O}_{\text{Lie}})\), since its morphisms and composition can be used to implement contraction (the connection of trivalent vertices) in \(\mathcal{A}\) which resembles the structure of \(\mathfrak{g}\). In \(\mathcal{A}_{w}\), the contraction is similar, and as seen from Section \ref{sec:welded-weight-systems-and-lie-algebras} but instead resembles the structure of \(I(\mathfrak{g})\); trivalent vertices can only be contracted along half-edges whose orientations agree. Recall from Construction \ref{cons:lie-algebra-weight-system} that it was the addition of the Casimir element which casued the ambiguation of elements \(\mathfrak{g}\) with \(\mathfrak{g}^{\ast}\), allowing directionless contraction, and indeed \(I(\mathfrak{g})\) is not necessarily a Casimir Lie algebra. Thus, the corresponding category in the welded case should be able to distinguish elements of \(\mathfrak{g}\) and \(\mathfrak{g}^{\ast}\). This can be achieved with a type of category called a \(2\)-coloured prop.
 
 \begin{definitions}
-	An \(n\)-\textbf{coloured prop} is a symmetric monoidal category generated by \(n\) objects.
+	An \(n\)-\textbf{coloured prop} is a symmetric monoidal category whose object monoid is generated freely by \(n\) objects.
 \end{definitions}
 
 The definition of an algebra over a prop (Definition \ref{def:algebra-over-prop}) extends naturally to coloured props as well.
@@ -397,7 +402,7 @@ In view of these comments, the following category \(\mathbf{T}_{\iota}\) is anal
 
 \begin{definition}
 	\label{def:2-coloured-eval-coeval-prop}
-	We define a symmetric monoidal category \(\mathbf{T}_{\iota}\). It is a \(k\)-linear category and it is generated additively and monoidally by the objects \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
+	We define a symmetric monoidal category \(\mathbf{T}_{\iota}\). It is a \(k\)-linear category and its object monoid is freely generated additively and monoidally by the objects \(\mathbf{1}\) and \(\mathbf{1}^{\vee}\). Denote the objects \(\mathbf{1}^{\otimes n}\) and \((\mathbf{1}^{\vee})^{\otimes n}\) as \(\mathbf{n}\) and \(\mathbf{n}^{\vee}\) respectively, as well as \((\mathbf{1}^{\vee})^{\otimes n} \otimes \mathbf{1}^{\otimes k}\) as \(\mathbf{n}^{\vee} + \mathbf{k}\).
 
 	The generating morphisms of \(\mathbf{T}_{\iota}\) are given by
 	\[
@@ -478,12 +483,52 @@ Denote \(\mathbf{I} = \mathbf{1}^{\vee} \oplus \mathbf{1} \in \mathbf{T}_{\varep
 	\label{thm:y-is-lie-algebra-object-in-casimir-envelope}
 	Let \(y: \mathbf{I} \otimes \mathbf{I} \to \mathbf{I}\) be the morphism
 	\[
-		y = \beta \oplus a_{\ell} \oplus a_{r} \oplus 0.
+		y = \beta \oplus a_{\ell} \oplus a_{r}.
 	\]
 	Then \(\mathbf{I}\) is a Lie algebra object of \(\mathbf{T}_{\varepsilon}\) with morphism \(y\).
 \end{theorem}
 
 \begin{proof}
+	Recall that \(y\) is a morphism from
+	\[
+	y
+	:
+	(\mathbf{1}^{\vee} \otimes \mathbf{1}^{\vee})
+	\oplus
+	(\mathbf{1}^{\vee} \otimes \mathbf{1})
+	\oplus
+	(\mathbf{1} \otimes \mathbf{1}^{\vee})
+	\oplus
+	(\mathbf{1} \otimes \mathbf{1})
+	\longrightarrow
+	\mathbf{1}^{\vee} \oplus \mathbf{1}
+	.
+	\]
+	but that a morphism with this domain and codomain is by definition of \(\oplus\) a sum of eight maps of signatures
+	\begin{align*}
+		&
+		\mathbf{1}^{\vee} \otimes \mathbf{1}^{\vee} \to \mathbf{1}^{\vee}, \quad
+		&&
+		\mathbf{1}^{\vee} \otimes \mathbf{1}^{\vee} \to \mathbf{1},
+		\\
+		&
+		\mathbf{1}^{\vee} \otimes \mathbf{1} \to \mathbf{1}^{\vee}, \quad
+		&&
+		\mathbf{1}^{\vee} \otimes \mathbf{1} \to \mathbf{1},
+		\\
+		&
+		\mathbf{1} \otimes \mathbf{1}^{\vee} \to \mathbf{1}^{\vee}, \quad
+		&&
+		\mathbf{1} \otimes \mathbf{1}^{\vee} \to \mathbf{1},
+		\\
+		&
+		\mathbf{1} \otimes \mathbf{1} \to \mathbf{1}^{\vee}, \quad
+		&&
+		\mathbf{1} \otimes \mathbf{1} \to \mathbf{1}
+		\\
+	\end{align*}
+	but that \(y\) is defined to be the respective zero morphism for all but three of these terms, namely \(\beta: \mathbf{1} \otimes \mathbf{1} \to \mathbf{1}\), \(a_{\ell}: \mathbf{1} \otimes \mathbf{1}^{\vee} \to \mathbf{1}^{\vee}\) and \(a_{r}: \mathbf{1}^{\vee} \otimes \mathbf{1} \to \mathbf{1}^{\vee}\). Thus, by linearlity when taking compositions of \(y\) with itself (including with symmetries such as \(\tau\) in various places), the only non-zero terms will be found where the codomains of \(\beta, a_{\ell}\) and \(a_{r}\) in the first factor of the composition match with the domains of \(\beta, a_{\ell}\) and \(a_{r}\) in the second factor of the composition. We will use this fact frequently without statement in the proof.
+
 	We have
 	\[
 		y
