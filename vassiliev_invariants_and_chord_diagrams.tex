@@ -375,7 +375,7 @@ In Section \ref{sec:the-fundamental-theorem-of-vassiliev-invariants} we will pro
 \section{Knots and Vassiliev invariants}
 \label{sec:knots-and-vassiliev-invariants}
 
-Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections through the space of chord diagrams
+Speaking broadly, the aim of Vassiliev theory is to study the space of knots using information from the stratification of knots introduced in the first two sections through the space of chord diagrams.
 % NOTE: Dror calls this the linearisation of projectivisation, but I don't really understand that.
 But these spaces are not just vector spaces --- there is further multiplicative structure which we wish to incorporate.
 
@@ -419,7 +419,7 @@ The connected sum of knots is not a priori well-defined, as we have not specifie
 \end{proposition}
 
 \begin{proof}
-	We exhibit an ambient isotopy starting at \(k_{1} \connect k_{2}\) where the small arc is removed from \(k_{1}\) as in the example above. The part of the connected sum coming from \(k_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(k_{1}\).
+	Since Definition \ref{def:connected-sum} defines \(\connect\) bilinearly, it suffices to show that \(k_{1} \connect k_{2}\) is well-defined for any \(k_{1}\) and \(k_{2}\) genuine knots (that is, generating elements of \(\mathcal{K}\)). We exhibit an ambient isotopy starting at \(k_{1} \connect k_{2}\) where the small arc is removed from \(k_{1}\) as in the example above. The part of the connected sum coming from \(k_{2}\) is shrunk by ambient isotopy. Since it can be shrunk arbitrarily small, let it be shrunk to lie within a small tubular neighbourhood of \(k_{1}\).
 	\[
 		\includegraphics[height=0.15\textwidth, valign=c]{graphics/connected_sum_isotopy_frame_1.pdf}
 		\rightsquigarrow
@@ -447,7 +447,7 @@ The connected sum of knots is not a priori well-defined, as we have not specifie
 \begin{proof}
 	Indeed, the connected sum being a well-defined operation makes \(\mathcal{K}\) into an algebra. The question is whether the connected sum respects the filtration.
 
-	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k^{\bullet}\) and \(\ell^{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. Similarly, the `connected sum' \(k^{\bullet} \connect \ell^{\bullet}\) resolves by \(\partial^{i + j}\) to \(k \connect \ell\), which is therefore in \(\partial^{i + j}(\mathcal{K}_{i + j})\).
+	If \(k \otimes \ell \in \mathcal{K}_{i} \otimes \mathcal{K}_{j}\), then there are \(k^{\bullet}\) and \(\ell^{\bullet}\) in \(\singularknots_{i}\) and \(\singularknots_{j}\) that resolve to \(k\) and \(\ell\), respectively. By linearity of \(\connect\), it again suffices to assume \(k^{\bullet}\) and \(\ell^{\bullet}\) are generating elements (rather than linear combinations). Similarly, the `connected sum' \(k^{\bullet} \connect \ell^{\bullet}\) resolves by \(\partial^{i + j}\) to \(k \connect \ell\), which is therefore in \(\partial^{i + j}(\mathcal{K}_{i + j})\).
 
 	Here, `connected sum' is enclosed in inverted commas due to the following technicality. Connected sums of singular knots with singular knots were not part of Definition \ref{def:connected-sum}. Even if we ensure that the small arcs removed from a singular knot do not contain a singular point, this is still ill-defined. The ambiguity is that the resulting singular knot may depend on from which side of the singular point the arc was removed, i.e. the repositioning argument in the proof of Proposition \ref{prop:connected-sum-well-defined} fails due to the presence of singular points. After taking the resolution under \(\partial^{i + j}\) the repositioning argument now works again, so any of the choices of connected sum in \(k^{\bullet} \connect \ell^{\bullet}\) produce a singular knot which resolves to \(k \connect \ell\).
 \end{proof}
@@ -509,7 +509,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 \end{lemma}
 
 \begin{proof}
-	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a genuine knot, so
+	We proceed by induction on \(m\). In the base case of \(m = 0\), \(S = \emptyset\), and \(k^{\bullet} = k\) is a linear combination of genuine knots. Since everything is linear, it suffices to assume \(k^{\bullet} = k\) is a knot. So,
 	\begin{align*}
 		\Delta(\partial^{0}(k))
 		& = \Delta(k) \\
@@ -520,7 +520,7 @@ If \(I\) is a subset of the singular points of a singular knot, let \(\partial^{
 			\mu^{I}\partial^{\bar{I}}(k). \\
 	\end{align*}
 
-	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\), let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) be a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\partial^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We proceed by examining
+	The inductive step is as follows. Let \(k^{\bullet} \in \singularknots_{m + 1}\), again by linearity it suffices to assume this is a single singular knot. Let \(J\) denote all singular points of \(k^{\bullet}\), and \(x \in J\) be a specific singular point. Furthermore, let \(k^{\bullet +}\) (resp. \(k^{\bullet - }\)) denote the \(m\)-singular knots obtained from \(k^{\bullet}\) when \(x\) is replaced by a positive (resp. negative) crossing, so that \(\partial^{\{x\}}(k^{\bullet}) = k^{\bullet +} - k^{\bullet -}\). We proceed by examining
 	\[
 		\sum_{\mathclap{I \subset J}}
 			\mu^{\bar{I}}\partial^{I}(k^{\bullet})
@@ -689,7 +689,7 @@ Here we rely on the fact that \(\mathcal{K}\) is of finite type (finite-dimensio
 
 	As it turns out, this generalised ``co-Leibniz theorem'' is pretty useless in the multivariable calculus case. The filtration on \(\mathbb{R}\) coming from being the derivative of some function evaluated at some point is trivial, and so every \(c \in \mathbb{R}\) comes from some such \(f\) and \(g\), and it's easy to construct such \(f\) and \(g\). But the co-Leibniz theorem in the case of knots is exactly Willerton's Lemma \ref{lem:co-leibniz-formula-for-knots}, where the averaging map plays the role of evaluation. Recall that this was used to show that the coproduct respects the filtration.
 
-	Furthermore, the knot version of the generalised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) and \(S\) the set of singular points of \(k^{\bullet}\), then
+	Furthermore, the knot version of the generalised Leibniz theorem \cite{vassiliev-invariants-and-the-hopf-algebra-of-chord-diagrams} is that if \(k^{\bullet} \in \singularknots_{m}\) (assume a generating element, as suffices by linearity) and \(S\) the set of singular points of \(k^{\bullet}\), then
 	\[
 		(V_{1} \cdot V_{2})(\partial^{S}(k^{\bullet}))
 		=
