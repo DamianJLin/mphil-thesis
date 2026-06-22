@@ -227,7 +227,7 @@ in which case we write \(P = Q'\). This is like a ``path-integral'' along a sing
 				\tag{\topologicalonetermstar}
 				f\left( \topologicalonecotermgraphic \right) = 0.
 			\end{equation}
-			Specifically, it is any relation that arises by asserting that \(f\) vanishes on the singularity of a closed dingular isotopy
+			Specifically, it is any relation that arises by asserting that \(f\) vanishes on the singularity of a closed singular isotopy
 			\begin{center}
 				\def\svgwidth{0.6\columnwidth}
 				\input{graphics/vanishing_derivative_singular_isotopy.pdf_tex}
@@ -1176,10 +1176,11 @@ The degree completion of a graded algebra \(A\) is a descending-filtered algebra
 
 \begin{remark}
 	\label{rem:universal-vassiliev-invariant-universal-property-definition}
-	An equivalent way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \gr A \to \gr B\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\). In other words, \(\gr f\) is a graded map coming from the filtered map \(f\) that forgets information about higher degrees.
+	An equivalent, and more categorically motivated way of defining a universal Vassiliev invariant is as follows. If \(f\) is a descending-filtration-respecting map \(f: A \to B\), then define the associated graded map \(\gr f: \widehat{\gr A} \to \widehat{\gr B}\) that sends \(a_{m} + A_{m + 1} \mapsto f(a_{m}) + B_{m + 1}\) and extends linearly to the completion. In other words, \(\gr f\) is a graded map coming from the filtered map \(f\) that forgets information about higher degrees.
 
-	A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to X\) whose associated graded \(\gr Z: \gr \mathcal{K} \to \gr X\) is an isomorphism.
+	A universal Vassiliev invariant is a map \(Z: \mathcal{K} \to \widehat{X}\) where \(X\) is some graded bialgebra such that the associated graded map \(\gr Z: \widehat{\gr \mathcal{K}} \to \widehat{\gr X}\) is an isomorphism.
 
+	The two definitions are equivalent as a consequence of the fundamental theorem (\ref{thm:fundamental-theorem-of-vassiliev-invariants}) that \(\mathcal{A} \cong \gr \mathcal{K}\) . Indeed then the definition of this remark implies the Definition~\ref{def:universal-vassiliev-invariant}: if \(\gr Z: \widehat{\gr \mathcal{K}} \to \widehat{\gr X}\) is an isomorphism and \(X\) is graded, then \(\gr X = X\), so \(\gr Z\) is an isomorphism \(\widehat{ \gr \mathcal{K}} \to \widehat{X}\). Applying the fundamental theorem to the domain, we have an isomorphism \(\widehat{\mathcal{A}} \cong \widehat{X}\) so Definition \ref{def:universal-vassiliev-invariant} holds. Conversely, the associated graded of the map \(Z\) in Definition \ref{def:universal-vassiliev-invariant} is the map \(\gr Z: \widehat{\gr \mathcal{K}} \to \widehat{\gr \mathcal{A}}\) taking \([\partial^{m}(k^{\bullet})] \mapsto [\sigma(k^{\bullet})]\). Proving that this is an isomorphism amounts to proving the funamental theorem, which we do below.
 \end{remark}
 
 \begin{theorem}[Kontsevich integral]

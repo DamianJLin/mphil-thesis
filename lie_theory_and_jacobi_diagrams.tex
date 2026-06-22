@@ -293,7 +293,7 @@ Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} sat
 
 	A progressive deformation of labelled progressive vertical planar graphs is a family of vertical progressive planar graphs \(\Gamma_{t}\) indexed by a parameter \(t \in [0, 1]\), which is continuous as a map \(\Gamma \times [0, 1] \to \mathbb{R} \times [a, b]\), and where all vertices that are inner at some time \(t \in [0, 1]\) stay inner vertices for all \(t \in [0, 1]\).
 
-	A \textbf{string diagram} is an equivalence class of labelled progressive vertical planar graphs under progressive deformation. That is two labelled vertical progressive planar graphs are equivalent as string diagrams if there exists a progressive deformation taking one to the other.
+	A \textbf{string diagram} is an equivalence class of labelled progressive vertical planar graphs under progressive deformation. That is, two labelled vertical progressive planar graphs are equivalent as string diagrams if there exists a progressive deformation between them.
 \end{definition}
 
 For our purposes, string diagrams constitute a graphical calculus for the operations of partial composition and tensor product in monoidal categories. A tensor of signature \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}^{\ast}\) is represented by a string diagram consisting of a vertex, labelled by the tensor, with \(n\) incoming edges, labelled by the domain spaces and \(m\) outgoing edges, labelled by the codomain spaces. We read these diagrams top-to-bottom, so domain edges come from above, and codomain arrows from below.
@@ -682,7 +682,7 @@ One might notice that the hexagon relation involves only three terms, rather tha
 	\end{enumerate}
 \end{examples}
 
-An additive category, roughly, is one where there are direct sums of objects, and each hom space is an abelian group, so and morphisms with like domain and codomain can be added. A fulldefinition is given in \cite[Sec. 8.2]{categories-and-sheaves}, and all our examples of symmetric monoidal categories are additive, for example \(\mathbf{Vect}\) and \(\mathbf{sVect}\). If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined. These generalise Lie algebras in that they satisfy analogues of the Jacobi and antisymmetry identities involving the symmetry natural isomorphism \(\tau\). Of course, in the case \(\mathcal{C} = \mathbf{Vect}\), \(\tau\) is the trivial swap isomorphism, so the Lie algebra objects satisfy exactly the Jacobi and antisymmetry relations and are exactly the Lie algebras.
+An additive category, roughly, is one where there are direct sums of objects, and each hom space is an abelian group, so and morphisms with like domain and codomain can be added. A full definition is given in \cite[Sec. 8.2]{categories-and-sheaves}, and all our examples of symmetric monoidal categories are additive, for example \(\mathbf{Vect}\) and \(\mathbf{sVect}\). If (like in our examples) the monoidal category \(\mathcal{C}\) is additive and the functor \(\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}\) is bilinear, then Lie algebra objects internal to \(\mathcal{C}\) can be defined. These generalise Lie algebras in that they satisfy analogues of the Jacobi and antisymmetry identities involving the symmetry natural isomorphism \(\tau\). Of course, in the case \(\mathcal{C} = \mathbf{Vect}\), \(\tau\) is the trivial swap isomorphism, so the Lie algebra objects satisfy exactly the Jacobi and antisymmetry relations and are exactly the Lie algebras.
 
 \begin{definitions}
 	\label{def:internal-to-additive-monoidal-category}
@@ -1262,7 +1262,7 @@ Finally, we note that for \(\mathfrak{sl}_{4}\) there is no similar linear relat
 	By computer verification with sagemath, the span of the corresponding tensors in \((\mathfrak{sl}_{4})^{\otimes 4}\) is six-dimensional.
 \end{proof}
 
-As a result, the methods applied to \(\mathfrak{g}_{2}\) and \(\mathfrak{f}_{4}\) cannot be used to produce a similar quadraticity bound for the values of the bookshelf diagrams under the \(\mathfrak{sl}_{4}\) weight system.
+In summary, while the bookshelf diagrams \(B_{n}\) can have arbitrary degree as chord diagrams, their values under the Lie algebra \(\mathfrak{sl}_{3}\) \cite{on-values-of-sl3-weight-system-on-chord-diagrams-whose-intersection-graph-is-complete-bipartite}, and as we show, also the \(\mathfrak{g}_{2}\) and \(\mathfrak{f}_{4}\) exceptional Lie algebras are bounded in the degree of the quadratic casimir elements of their respective Lie algebras. While there is hope for using the same method to bound the bookshelf diagrams' weights under the remaining exceptional Lie algebras, namely \(\mathfrak{e}_{6}, \mathfrak{e}_{7}\) and \(\mathfrak{e}_{8}\), new computational techniques are almost certainly needed. However for \(\mathfrak{sl}_{4}\), Theorem~\ref{thm:no-sl4-unboxing-relation} shows that the same techniques will certainly not work. As such, this would be a promising place to look for a counterexample to a theorem in the style of Theorem~\ref{thm:bookshelf-g2-formula}, that is a Lie algebra weight system in which the bookshelf diagrams have a worse-than-quadratic bound or are unbounded in casimir-degree.
 
 \section{A universal casimir Lie algebra object}
 \label{sec:a-universal-casimir-lie-algebra-object}
@@ -1416,7 +1416,7 @@ With this in mind, we can describe the Lie operad in a simple graphical presenta
 \end{example}
 
 \begin{proposition}
-	The algebras over the Lie operad over the symmetric monoidal category \(\mathbf{Vect}\), \(\mathcal{O}_{\text{Lie}}\) are exactly the Lie algebras.
+	The algebras over the Lie operad \(\mathcal{O}_{\text{Lie}}\) over the symmetric monoidal category \(\mathbf{Vect}\)  are exactly the Lie algebras.
 \end{proposition}
 \begin{proof}[sketch]
 	Being objects of \(\mathbf{Vect}\), the algebras over Lie are vector spaces. The relations of example \ref{ex:lie-operad} provide the axioms of antisymmetry and the Jacobi identity. Since \(\mathcal{O}_{\text{Lie}}\) is constructed as a quotient of the free operad functor on a single generating binary operation, there are no additional relations than those that can be deduced from antisymmetry and the Jacobi identity.
