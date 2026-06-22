@@ -285,12 +285,18 @@ Similar diagrammatic relations to \ref{eq:STU}, \ref{eq:AS} and \ref{eq:IHX} sat
 	Composing the first two natural isomorphisms with \(V = Y_{1} \otimes \cdots \otimes Y_{m}\), then the final with \(V_{i} = Y_{i}\) completes the proof.
 \end{proof}
 
-\begin{definition}
+\begin{definition}[\cite{the-geometry-of-tensor-calculus-one}]
 	\label{def:string-diagram}
-	A \textbf{string diagram} is an equivalence class of labelled progressive planar graphs under progressive deformation.
+	A vertical planar graph from \(a\) to \(b\) is a finite topological graph embedded in \(\mathbb{R} \times [a, b]\), where vertices in \(\mathbb{R} \times \{b\}\) (resp. \(\mathbb{R} \times \{a\}\)) are considered incoming (resp. outgoing) outer nodes, and connect to exactly one edge of the graph.
+
+	A vertical planar graph is progressive if the vertical projection is injective for every edge. In this case every edge can be oriented from top to bottom, and has a well-defined input vertex (at the top) and output vertex (at the bottom). A labelled progressive vertical planar graph is a progressive vertical planar graph equipped with a function on the set of vertices (resp. edges) to the generating objects (resp. generating morphisms) of some monoidal category such that the labels of the input and output vertices of an edge agree with the domain and codomain of the associated generating morphism.
+
+	A progressive deformation of labelled progressive vertical planar graphs is a family of vertical progressive planar graphs \(\Gamma_{t}\) indexed by a parameter \(t \in [0, 1]\), which is continuous as a map \(\Gamma \times [0, 1] \to \mathbb{R} \times [a, b]\), and where all vertices that are inner at some time \(t \in [0, 1]\) stay inner vertices for all \(t \in [0, 1]\).
+
+	A \textbf{string diagram} is an equivalence class of labelled progressive vertical planar graphs under progressive deformation. That is two labelled vertical progressive planar graphs are equivalent as string diagrams if there exists a progressive deformation taking one to the other.
 \end{definition}
 
-The details of the definition are beyond the scope of this thesis, however the interested reader is invited to consult \cite{the-geometry-of-tensor-calculus-one}. For our purposes, string diagrams constitute a graphical calculus for the operations of partial composition and tensor product in monoidal categories. A tensor of signature \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}^{\ast}\) is represented by a string diagram consisting of a vertex, labelled by the tensor, with \(n\) incoming edges, labelled by the domain spaces and \(m\) outgoing edges, labelled by the codomain spaces. We read these diagrams top-to-bottom, so domain edges come from above, and codomain arrows from below.
+For our purposes, string diagrams constitute a graphical calculus for the operations of partial composition and tensor product in monoidal categories. A tensor of signature \(X_{1}^{\ast} \otimes \cdots \otimes X_{n}^{\ast} \otimes Y_{1} \otimes \cdots \otimes Y_{m}^{\ast}\) is represented by a string diagram consisting of a vertex, labelled by the tensor, with \(n\) incoming edges, labelled by the domain spaces and \(m\) outgoing edges, labelled by the codomain spaces. We read these diagrams top-to-bottom, so domain edges come from above, and codomain arrows from below.
 
 The operation of partial composition of tensors corresponds to composing two string diagrams via vertically concatenating domain and codomain edge whose labellings agree. The tensor product of two tensors (as multilinear functions) corresponds to the string diagram formed by horizontal concatenation of two string diagrams. The use of string diagrams is that progressive deformation of string diagrams correspond to equivalent ways of performing iterated partial compositions and tensor products.
 
